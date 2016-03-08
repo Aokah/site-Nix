@@ -30,14 +30,19 @@
 		switch($line ["rank"] )
 				{
 					
-					case 9:
+					case 10:
 					$img = "rankcrea.png" ;
 					break;
 					
-					case 8:
+					case 9:
 					$img = "ranktitan.png" ;
 					break;
 					
+					case 8:
+					$img = "rank8.png" ;
+					break;
+
+
 					case 7:
 					$img = "rank7.png" ;
 					break;
@@ -103,12 +108,16 @@
 
 		switch($line ["rank"] )
 				{
-					case 9:
+					case 10:
 					$img = "rankcrea.png" ;
 					break;
 					
-					case 8:
+					case 9:
 					$img = "ranktitan.png" ;
+					break;
+					
+					case 8:
+					$img = "rank8.png" ;
 					break;
 					
 					case 7:
