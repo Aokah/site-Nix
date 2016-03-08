@@ -8,7 +8,9 @@
 	{
 		if (isset($_GET['action']) && $_GET['action'] == 'disconnection')
 		{ if ($_SESSION['pionier'] == 1) { $pionier = "-P";} else { $pionier = '';} if ($_SESSION['technician'] == 1) { $tech = "-T";} else { $tech = '';}
-			?><div class="login">Au revoir <em class="name<?= $_SESSION['rank']?><? echo $tech?><? echo $pionier?>" ><?= $_SESSION['title']?> <?= $_SESSION['name'] ?>.</em> </div><?php
+			?><div class="login">Au revoir <em class="name<?= $_SESSION['rank']?><? echo $tech?><? echo $pionier?>" ><?= $_SESSION['title']?> <?= $_SESSION['name'] ?>.</em> </div>
+				<img src="/pics/logout.png" alt="" class="guild" style="text-align: center;" />
+			<?php
 
 			$_SESSION['connected'] = false;
 		}
@@ -41,7 +43,7 @@
 				else { $imgrank = 'over';}
 				?> 
 					<p><div class="login">Bien le bonjour <em class="name<?= $_SESSION['rank']?><? echo $tech?><? echo $pionier?>"><?= $_SESSION['title']?> <?= $_SESSION['name'] ?>.</em></div></p>
-					<img src="pics/login_<? echo $imgrank ?>.png" alt="" class="guild" style="text-align: center;" />
+					<img src="/pics/login_<? echo $imgrank ?>.png" alt="" class="guild" style="text-align: center;" />
 				<?php
 			}
 			else
