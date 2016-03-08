@@ -1,7 +1,7 @@
 <?php function nav ()
 {
-	define('rank_cbm', 5);
-	define('rank_admin',5);
+	define('rank_cbm', 6);
+	define('rank_admin',6);
 	define('6', 3);
 
 	global $db, $_SESSION, $_GET;
@@ -28,7 +28,7 @@
 			<a class="link" href="index.php?p=candid" >
 				<li class="navbg" <?php echo ($page == 'candid') ? 'class="cur_page"' : '';?>>
 					<img src="includes/img/candid.gif" alt="" />Votre Candidature 
-						<?if ($_SESSION["rank"] >= 5) { if ($line['count'] >= 1) {?>
+						<?if ($_SESSION["rank"] >= 6) { if ($line['count'] >= 1) {?>
 							<span style="color: red">[<?= $line['count']?>]</span>
 						<? } } ?>
 				</li>
@@ -65,8 +65,8 @@
 			</a>
 		</ul>
 		
-<?php if ($_SESSION["rank"] >= 4) { ?>
-	<div class="navtitle">Contenu</div>
+<?php if ($_SESSION["rank"] >= 5) { ?>
+	<div class="navtitle">Modération</div>
 		<ul class="nav">
 			<a class="link" href="index.php?p=whitelist" >
 				<li class="navbg" <?php echo ($page == 'whitelist') ? 'class="cur_page"' : '';?>><img src="includes/img/wl.gif" alt="" />La Whitelist</li>
