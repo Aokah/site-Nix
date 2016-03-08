@@ -173,8 +173,8 @@
 	<?php if ($_SESSION["rank"] <= 4) { ?>
 	
 	<div class="navtitle">Activité Membres</div>
-	Joueurs connectés :
 		<ul class="nav">
+			Joueurs connectés :
 	<?php
 
 	$answer1 = $db->query('SELECT *
