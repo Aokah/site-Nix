@@ -65,7 +65,7 @@
 	<form method="POST" action="index.php?p=login">
 		<table>
 			<tr>
-				<td>
+				<td colspan="2">
 					Veuiller entre votre nom d'utilisateur ainsi que votre mot de passe afin d'accéder à votre compte.
 				</td>
 			</tr>
