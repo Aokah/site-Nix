@@ -436,6 +436,12 @@ textarea {
 
 /* Classes CB */
 
+#chatbox {
+	background-color: #9d9d9d;
+	width: 100%;
+	padding : 15px;
+	
+}
 .stafftag	{	color: red;		text-shadow: 1px 1px 1px grey;	}
 .tag		{	color: yellow;	text-shadow: 2px 2px 2px black;	}
 
