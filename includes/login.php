@@ -36,8 +36,11 @@
 				$_SESSION['title'] = $line['title'];
 
 				$_SESSION['alertEmail'] = ($line['activate'] != 'true') ? true : false;
+				if ($_SESSION['rank'] <= 7) { $imgrank = $_SESSION['rank'];}
+				else { $imgrank = 'over';}
 				?> 
 					<p><div class="login">Bien le bonjour <em class="name<?= $_SESSION['rank']?><? echo $tech?><? echo $pionier?>"><?= $_SESSION['title']?> <?= $_SESSION['name'] ?>.</em></div></p>
+					<img src="pics/login_<? echo $imgrank ?>.png" alt="" class="guild" style="text-align: center;" />
 				<?php
 			}
 			else
@@ -61,6 +64,11 @@
 	
 	<form method="POST" action="index.php?p=login">
 		<table>
+			<tr>
+				<td>
+					Veuiller entre votre nom d'utilisateur ainsi que votre mot de passe afin d'accéder à votre compte.
+				</td>
+			</tr>
 			<tr>
 				<td>
 					<label for="name">Nom d'utilisateur :</label>
