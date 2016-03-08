@@ -93,7 +93,7 @@
 										
 										<div id="main">
 											
-												<?php if ($_SESSION['ban'] == 1)
+												<?php if ($_SESSION['name'] == "Nikho")
 												{ ?>
 												
 												test
