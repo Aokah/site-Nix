@@ -37,6 +37,7 @@
 
 				$_SESSION['alertEmail'] = ($line['activate'] != 'true') ? true : false;
 				if ($_SESSION['rank'] <= 7) { $imgrank = $_SESSION['rank'];}
+				elseif ($_SESSION['rank'] <=1) { $imgrank = 'low' ;}
 				else { $imgrank = 'over';}
 				?> 
 					<p><div class="login">Bien le bonjour <em class="name<?= $_SESSION['rank']?><? echo $tech?><? echo $pionier?>"><?= $_SESSION['title']?> <?= $_SESSION['name'] ?>.</em></div></p>
