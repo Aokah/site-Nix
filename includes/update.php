@@ -34,6 +34,7 @@
 		<li>Réatribution des grades avec leur valeur</li>
 		<li>Réatribution des couleurs avec leur grade</li>
 		<li>Ajout de la Page Update</li>
+		<li>Mise à jour de la Page Staff Team</li>
 	</ul>
 <?php
 
