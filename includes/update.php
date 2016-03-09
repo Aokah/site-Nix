@@ -18,6 +18,7 @@
 		<li>Mettre à jour les permissions de la Page Candidatures</li>
 		<li>Réadapter la Page d'Acceuil aux évènements passés IG</li>
 		<li>Reconstruire la Structure de la ChatBox</li>
+		<li>Ajout de la Page Infos Bêta</li>
 	</ul>
 	
 	<p>Tâches effectuées :</p>
@@ -32,6 +33,7 @@
 		<li>Ajout de l'icone de grade Encadrant</li>
 		<li>Réatribution des grades avec leur valeur</li>
 		<li>Réatribution des couleurs avec leur grade</li>
+		<li>Ajout de la Page Update</li>
 	</ul>
 <?php
 
