@@ -9,7 +9,10 @@
 <?php if (isset($_GET['s']))
 	{
 		$sondage = intval($_GET['s']);
-		$answer = $db->prepare('SELECT * FROM sondage WHERE id = ? ');
+		$answer = $db->prepare('SELECT s.id AS sondage, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id, m.name, m.rank AS rank, m.technician, m.pionier
+		FROM sondage s
+		RIGHT JOIN member m ON m.id = s.sender_id
+		WHERE id = ? ');
 		$answer->execute(array($sondage));
 		
 		if ($line = $answer->fetch())
@@ -20,17 +23,27 @@
 			<tbody>
 				<tr>
 					<td>
-						<img src="includes/img/magiepapertop.png" alt=" " />
+						<img src="/pics/ico/magiepapertop.png" alt=" " />
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<table background="includes/img/magiepapercenter.png">
+						<table background="/pics/ico/magiepapercenter.png">
 							<tbody>
+								<tr>
+									<td>Initié par :</td>
+									<td class="name<?= $line['rank']?>"> <?= $line['title']?></td>
+									<tdclass="name<?= $line['rank']?>"> <?= $line['name']?></td>
+								</tr>
 								<tr>
 									<td colspan="3">
 										<?= $line['text'] ?>
 									</td>
+								</tr>
+								<tr>
+									<td>Vote Pour</td>
+									<td>Vote Blanc</td>
+									<td>Vote Contre</td>
 								</tr>
 							</tbody>
 						</table>
@@ -38,7 +51,7 @@
 				</tr>
 				<tr>
 					<td>
-						<img src="includes/img/magiepapebottom.png" alt="" />
+						<img src="/pics/ico/magiepapebottom.png" alt="" />
 					</td>
 				</tr>
 			</tbody>
