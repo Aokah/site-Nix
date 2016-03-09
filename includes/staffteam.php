@@ -9,22 +9,22 @@
 	
 	<table id="member">
 	<th>Opérateurs</th>
-	<tr>
+	<tr class="member_top">
 	<td><img src="pics/staff_team/Ange_Modo_1.png" alt="Opératrice Ange" /></td>
 	<td><span style="color:red">Ange</span><br />14 ans<br />France</td>
 	<td>"Rien n'est impossible, quand nous ne sommes pas seul."</td>
 	</tr>
-	<tr>
+	<tr class="member_top">
 	<td><img src="pics/staff_team/Balka_MJ_1.png" alt="Opérateur Balka" /></td>
 	<td><span style="color:red">Balka</span><br />15 ans<br />France<br />"Biscotte"</td>
 	<td>"Finissons comme nous avons commencé , ensemble !"</td>
 	</tr>
-	<tr>
+	<tr class="member_top">
 	<td><img src="pics/staff_team/Eftarthadeth_OP_1.png" alt="Opérateur Eftarthadeth" /></td>
 	<td><span style="color:red">Eftarthadeth</span><br />18 ans<br />Normandie, France</td>
 	<td>"Il n'y a si petit buisson qui ne porte son ombre, ceci est l'adéquation entre la réalité et l'Homme qui la pense."</td>
 	</tr>
-	<tr>
+	<tr class="member_top">
 	<td><img src="pics/staff_team/Etzu_OP_1.png" alt="Opérateur Etzu" /></td>
 	<td>
 		<span style="color:red">Etzu</span>
@@ -40,13 +40,13 @@
 	Mais elle doit être détruite, les feuilles, les branches, le tronc et les racines, combattue sans répit pour l'empêcher de se propager et de nous engloutir définitivement, car ce jour-là nous serions condamnés."<br/>
 	</td>
 	</tr>
-	<tr>
+	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Nikho_OP_1.png" alt="Opérateur Nikho" /></td>
 	<td><span style="color:red">Nikho</span><br/>18 ans <br />Normandie, France<br />"Le Boulet"</td>
 	<td>"Il n'existe aucun phénomène dont on ne peut trouver une explication ! L'investissement paye toujours."</td>
 	</tr>
 	
-	<th>Maîtres du Jeu</th>
+	<th class="member_top">Maîtres du Jeu</th>
 
 	<tr>
 	<td><img src="pics/staff_team/Draug_MJ_1.png" alt="Maître Draug" /></td>
