@@ -74,13 +74,13 @@
 	
 	<th>Encadrants</th>
 	<tr class="memberbg_4">
-		<td><img src="pics/staffteam/Chugo_Enca_1.png" alt="Encadrant Chugo" /></td>
+		<td><img src="pics/staff_team/Chugo_Enca_1.png" alt="Encadrant Chugo" /></td>
 		<td><span style="color:blue;">Chugo</span><br />France</td>
 		<td> </td>
 	</tr>
 	
 	<tr class="memberbg_4">
-		<td><img src="pics/staffteam/Dragoniya_Enca_1.png" alt="Encadrante Dragoniya" /></td>
+		<td><img src="pics/staff_team/Dragoniya_Enca_1.png" alt="Encadrante Dragoniya" /></td>
 		<td><span style="color:blue;">Dragoniya</span><br />Normande, France<br />"Môman"</td>
 		<td>"Ce qui importe n'est pas l'emballage qu'est le corps, mais l'âme qui est l'essence de l'être !"</td>
 	</tr>
