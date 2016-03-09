@@ -32,9 +32,9 @@
 						<table background="/pics/ico/magiepapercenter.png">
 							<tbody>
 								<tr>
-									<td>Initié par :</td>
-									<td class="name<?= $line['rank']?>"> <?= $line['title']?></td>
-									<td class="name<?= $line['rank']?>"> <?= $line['name']?></td>
+									<td>Initié par : 
+									<span class="name<?= $line['rank']?>"> <?= $line['title']?> <?= $line['name']?></span>
+									</td>
 								</tr>
 								<tr>
 									<td colspan="3">
