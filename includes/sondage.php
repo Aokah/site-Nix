@@ -9,11 +9,11 @@
 <?php if (isset($_GET['s']))
 	{
 		$sondage = intval($_GET['s']);
-		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id, m.name, m.rank AS rank, m.technician, m.pionier
+		$answer = $db->execute('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
-		WHERE id = ? ');
-		$answer->execute(array($sondage));
+		WHERE id = 1 ');
+		//$answer->execute(array($sondage));
 		
 		if ($line = $answer->fetch())
 		{
