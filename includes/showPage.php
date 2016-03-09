@@ -141,6 +141,7 @@
 												case 'bg_category': 		{ 	include('includes/bg_category.php'); 			bg_category(); 			break; }
 												case 'bg_sub': 				{ 	include('includes/bg_sub.php'); 				bg_sub(); 				break; }
 												case 'bg_content': 			{	include('includes/bg_content.php'); 			bg_content(); 			break; }
+												case 'update': 				{ 	include('includes/update.php'); 				update(); 				break; }
 											} ?>
 											
 										</div>
