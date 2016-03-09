@@ -46,7 +46,7 @@
 	</center>
 	<?php	}
 	else {
-	echo '<p>Une erreur s\'est produite</p>'
+	echo '<p>Une erreur s\'est produite</p>' ;
 	}
 	}
 	else
