@@ -29,7 +29,7 @@
 							<tbody>
 								<tr>
 									<td colspan="3">
-										<?php= $line['text'] ?>
+										<?= $line['text'] ?>
 									</td>
 								</tr>
 							</tbody>
