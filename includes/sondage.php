@@ -18,6 +18,7 @@
 		if ($line = $answer->fetch())
 		{
 	?>
+	<h2><?= $line['titre']?></h2>
 	<center>
 		<table width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
@@ -33,7 +34,7 @@
 								<tr>
 									<td>Initié par :</td>
 									<td class="name<?= $line['rank']?>"> <?= $line['title']?></td>
-									<tdclass="name<?= $line['rank']?>"> <?= $line['name']?></td>
+									<td class="name<?= $line['rank']?>"> <?= $line['name']?></td>
 								</tr>
 								<tr>
 									<td colspan="3">
