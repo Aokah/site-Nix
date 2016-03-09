@@ -72,7 +72,7 @@
 	<td>"No pasaran !"</td>
 	</tr>
 	
-	<th>Encadrants</th>
+	<th class="member_top">Encadrants</th>
 	<tr class="memberbg_4">
 		<td><img src="pics/staff_team/Chugo_Enca_1.png" alt="Encadrant Chugo" /></td>
 		<td><span style="color:blue;">Chugo</span><br />France</td>
