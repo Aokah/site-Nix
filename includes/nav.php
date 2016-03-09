@@ -133,7 +133,7 @@
 <?php if ($_SESSION['connected']) { if ($_SESSION['pionier'] == 1) { $pionier = "-P";} else { $pionier = '';} if ($_SESSION['technician'] == 1) { $tech = "-T";} else { $tech = '';} ?>
 		<div class="navtitle">Compte</div>
 		<ul class="nav">
-			<li class="navbg"><span class="name<?= $_SESSION['rank']?><?echo $tech?><?echo $pionier?>"><? if ($_SESSION['pionier'] == 1) { echo "Pionier";} else { echo $_SESSION['title'] ;}?> <?= $_SESSION['name' ]?></span></li>
+			<li class="navbg2"><span class="name<?= $_SESSION['rank']?><?echo $tech?><?echo $pionier?>"><? if ($_SESSION['pionier'] == 1) { echo "Pionier";} else { echo $_SESSION['title'] ;}?> <?= $_SESSION['name' ]?></span></li>
 			<a class="link" href="index.php?p=perso" >
 				<li class="navbg" <?php echo ($page == 'perso') ? 'class="cur_page"' : '';?>><img src="/pics/ico/page.gif" alt="" />Personnage</li>
 			</a>
