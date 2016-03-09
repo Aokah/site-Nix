@@ -142,6 +142,7 @@
 												case 'bg_sub': 				{ 	include('includes/bg_sub.php'); 				bg_sub(); 				break; }
 												case 'bg_content': 			{	include('includes/bg_content.php'); 			bg_content(); 			break; }
 												case 'update': 				{ 	include('includes/update.php'); 				update(); 				break; }
+												case 'sondage': 				{ 	include('includes/sondage.php'); 				sondage(); 				break; }
 											} ?>
 											
 										</div>
