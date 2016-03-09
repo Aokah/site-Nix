@@ -75,8 +75,8 @@
 	<th class="member_top">Encadrants</th>
 	<tr class="memberbg_4">
 		<td><img src="pics/staff_team/Chugo_Enca_1.png" alt="Encadrant Chugo" /></td>
-		<td><span style="color:blue;">Chugo</span><br />France</td>
-		<td> </td>
+		<td><span style="color:blue;">Chugo</span><br />25 ans<br />France</td>
+		<td>"Je préfére rire de tout que pleurer  pour un rien. Aprés tout, tout arrive a temps a qui sait attendre."</td>
 	</tr>
 	
 	<tr class="memberbg_4">
