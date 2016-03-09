@@ -16,7 +16,8 @@
 		<li>Recréer le CSS du site et si possible l'améliorer au mieux</li>
 		<li>Mettre à jour les permissions de la Page Incantations</li>
 		<li>Mettre à jour les permissions de la Page Candidatures</li>
-		<li>Réadapter la PAge d'Acceuil aux évènements passés IG</li>
+		<li>Réadapter la Page d'Acceuil aux évènements passés IG</li>
+		<li>Reconstruire la Structure de la ChatBox</li>
 	</ul>
 	
 	<p>Tâches effectuées :</p>
@@ -28,6 +29,9 @@
 		<li>Ajouter le Grade Encadrant</li>
 		<li>Mettre à jour le contenu de la Page Règles</li>
 		<li>Ajout du descriptif de la Race Zaknafein</li>
+		<li>Ajout de l'icone de grade Encadrant</li>
+		<li>Réatribution des grades avec leur valeur</li>
+		<li>Réatribution des couleurs avec leur grade</li>
 	</ul>
 <?php
 
