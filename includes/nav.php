@@ -2,7 +2,7 @@
 {
 	define('rank_cbm', 6);
 	define('rank_admin',6);
-	define('6', 3);
+	//define('6', 3);
 
 	global $db, $_SESSION, $_GET;
 
