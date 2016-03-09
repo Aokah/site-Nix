@@ -66,13 +66,31 @@
 	
 	<th class="member_top">Modérateurs</th>
 	
-	<tr>
-	<td class="memberbg_5"><img src="pics/staff_team/Zimon_Modo_1.png" alt="Modérateur Zimon" /></td>
+	<tr class="memberbg_5">
+	<td><img src="pics/staff_team/Zimon_Modo_1.png" alt="Modérateur Zimon" /></td>
 	<td><span style="color:green">Zimon</span><br />15 ans<br />Toulouse, France<br />"Le roux"</td>
 	<td>"No pasaran !"</td>
 	</tr>
 	
+	<th>Encadrants</th>
+	<tr class="memberbg_4">
+		<td><img src="pics/staffteam/Chugo_Enca_1.png" alt="Encadrant Chugo" /></td>
+		<td><span style="color:blue;">Chugo</span><br />France</td>
+		<td> </td>
+	</tr>
+	
+	<tr class="memberbg_4">
+		<td><img src="pics/staffteam/Dragoniya_Enca_1.png" alt="Encadrante Dragoniya" /></td>
+		<td><span style="color:blue;">Dragoniya</span><br />Normande, France<br />"Môman"</td>
+		<td>"Ce qui importe n'est pas l'emballage qu'est le corps, mais l'âme qui est l'essence de l'être !"</td>
+	</tr>
+	
 	<th class="member_top">Anciens Opérateurs</th>
+	<tr class="memberbg_6">
+	<td><img src="pics/staff_team/Anateh_MJ_1.png" alt="Dignitaire Anateh" /></td>
+	<td><span style="color:red">Anateh</span><br />14 ans<br />Paris, France<br />"Norowette"</td>
+	<td>"Quand le masque tombe, le démon entre en scène"</td>
+	</tr>
 	<tr class="memberbg_6">
 	<td><img src="pics/staff_team/Langa_MJ_1.png" alt="Dignitaire Langä" /></td>
 	<td><span style="color:red">Langä</span><br />France</td>
@@ -81,11 +99,6 @@
 	
 	<th class="member_top">Anciens Maîtres du Jeu</th>
 	
-	<tr class="memberbg_5">
-	<td><img src="pics/staff_team/Anateh_MJ_1.png" alt="Dignitaire Anateh" /></td>
-	<td><span style="color:red">Anateh</span><br />14 ans<br />Paris, France<br />"Norowette"</td>
-	<td>"Quand le masque tombe, le démon entre en scène"</td>
-	</tr>
 	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Herborus_MJ_1.png" alt="Difnitaire Herborus" /></td>
 	<td><span style="color:red">Herborus</span><br />16 ans<br />Belgique</td>
@@ -101,9 +114,9 @@
 	<td><span style="color:red">Koshoff</span><Br />France</td>
 	<td> </td>
 	</tr>
-	<tr>
-	<td class="memberbg_5"><img src="pics/staff_team/Vahlm_MJ_1.png" alt="Dignitaire Vahlm" /></td>
-	<td><span style="color:red">Vahlm</span><br />Suisse</td>
+	<tr class="memberbg_5">
+	<td><img src="pics/staff_team/Vahlm_MJ_1.png" alt="Dignitaire Alyssa" /></td>
+	<td><span style="color:red">Alyssa</span><br />Suisse</td>
 	<td> </td>
 	</tr>
 	<tr class="memberbg_5">
@@ -111,8 +124,8 @@
 	<td><span style="color:red">Shaolern</span><br />15 ans</td>
 	<td>"Après tout, le monde sur lequel vous évoluez n'est qu'un ramassis d'équations. Donc le réel dieu de ce monde, c'est moi!"</td>
 	</tr>
-	<tr>
-	<td class="memberbg_5"><img src="pics/staff_team/Zelenan_MJ_1.png" alt="Dignitaire Zelenan" /></td>
+	<tr class="memberbg_5">
+	<td><img src="pics/staff_team/Zelenan_MJ_1.png" alt="Dignitaire Zelenan" /></td>
 	<td><span style="color:red">Zelenan</span><br />19 ans<br />Normandie, France<br />"Pro'Vanish"</td>
 	<td> </td>
 	</tr>
