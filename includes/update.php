@@ -9,7 +9,7 @@
 	<p>Ici vous sera expliqué les travaux effectués et les tâches terminée de la maintenance actuelle</p>
 	
 	<p>Tâches à effectuer :</p>
-	<ul>
+	<ul syle="color: red;">
 		<li>Mettre à jour les permissions de la Page Personnage</li>
 		<li>Mettre à jour les permissions des Pages de Modération</li>
 		<li>Mettre à jour les permissions des Pages d'Administration</li>
@@ -20,7 +20,7 @@
 	</ul>
 	
 	<p>Tâches effectuées :</p>
-	<ul>
+	<ul style="color:green;">
 		<li>Mettre à jour les permissions de la Page Chatbox</li>
 		<li>Mettre à jour les Permissions de la Page Membres</li>
 		<li>Mettre à jour les permissions de la Page Forum</li>
