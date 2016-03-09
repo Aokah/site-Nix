@@ -7,8 +7,13 @@
 	<h2>Sondages d'RPNix.com</h2>
 
 <?php if (isset($_GET['s']))
-	
 	{
+		$sondage = intval($_GET['s']);
+		$answer = $db->prepare('SELECT * FROM sondage WHERE id = ? ');
+		$answer->execute(array($sondage));
+		
+		if ($line = $answer->fetch())
+		{
 	?>
 	<center>
 		<table width="100%" cellspacing="0" cellpadding="0">
@@ -21,7 +26,13 @@
 				<tr>
 					<td>
 						<table background="includes/img/magiepapercenter.png">
-						
+							<tbody>
+								<tr>
+									<td colspan="3">
+										<?php= $line['text'] ?>
+									</td>
+								</tr>
+							</tbody>
 						</table>
 					</td>
 				</tr>
@@ -33,7 +44,10 @@
 			</tbody>
 		</table>
 	</center>
-	<?php
+	<?php	}
+	else {
+	echo '<p>Une erreur s\'est produite</p>'
+	}
 	}
 	else
 	{
