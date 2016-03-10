@@ -8,7 +8,7 @@
 	
 	
 	<div class="navtitle">Activité Membres</div>
-		<ul class="nav">
+		<ul class="nav" style="padding-left: 10px;">
 			Joueurs connectés :
 			
 	<?php
@@ -181,7 +181,7 @@
 	<?php if ($_SESSION["rank"] <= 4) { ?>
 	
 	<div class="navtitle">Activité Membres</div>
-		<ul class="nav">
+		<ul class="nav" style="padding-left: 10px;">
 			Joueurs connectés :
 	<?php
 
