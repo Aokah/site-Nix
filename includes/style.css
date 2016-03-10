@@ -104,9 +104,9 @@ ul.nav {
 .navbg2 {
 	background-color: #8080EE ;
     line-height: 20px;
-    margin-bottom: 16px;
     margin-top: 0;
     padding-left: 10px;
+    padding-right: 10px;
 }
 .navbg2 a:hover
 {
