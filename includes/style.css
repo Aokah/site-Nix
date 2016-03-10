@@ -101,7 +101,7 @@ ul.nav {
     margin-top: 0;
     padding: 0;
 }
-p.navbg2 {
+.navbg2 {
 	background-color: #8080EE ;
     line-height: 20px;
     margin-bottom: 16px;
