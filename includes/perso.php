@@ -728,7 +728,7 @@
 													</td>
 											</tr>
 											<tr>
-												<th>ArrivÃ©(e) le : </th>
+												<th>Arrivé(e) le : </th>
 													<td>
 														<?= $line['registration_date']?>
 													</td>
@@ -766,7 +766,7 @@
 													</td>
 											</tr>
 											<tr>
-											<th>SpÃ©cialisation Magique : </th>
+											<th>Spécialisation Magique : </th>
 													<td>
 														<img src="pics/spe_<?= ($line['specialisation'])?>" width="27" class="magie_type" alt="" />
 													</td>
