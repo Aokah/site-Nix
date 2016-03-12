@@ -42,7 +42,7 @@
 		{
 			$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}):(.{2}):.{2}$#', 'Le $3/$2 à $4h$5', $line['date']);
 			?>
-				<li><?=$date?> par <a href="index.php?p=viewmember&amp;perso=<?=$line['m_id']?>" class="name<?= $line["rank"]?><? echo $tech?><? echo $pionnier?>"><?=$line['name']?></a> : <?=$line['msg']?></li>
+				<li><?=$date?> par <a href="index.php?p=perso&amp;perso=<?=$line['m_id']?>" class="name<?= $line["rank"]?><? echo $tech?><? echo $pionnier?>"><?=$line['name']?></a> : <?=$line['msg']?></li>
 			<?php
 		}
 
