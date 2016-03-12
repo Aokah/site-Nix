@@ -19,6 +19,7 @@
 		<li>Réadapter la Page d'Acceuil aux évènements passés IG</li>
 		<li>Reconstruire la Structure de la ChatBox</li>
 		<li>Ajout de la Page Infos Bêta</li>
+		<li>Fusionner les pages 'Perso' & 'viewmember'</li>
 	</ul>
 	
 	<p>Tâches effectuées :</p>
