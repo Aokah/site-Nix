@@ -49,8 +49,8 @@
 		if ($line["rank"] == 0) { $rank= "0" ;} elseif ($line["rank"] == 1) { $rank= "1" ;} elseif ($line["rank"] == 2) { $rank= "2" ;} elseif ($line["rank"] == 3) { $rank= "3" ;} elseif ($line["rank"] == 4) { $rank= "4" ;}
 		elseif ($line["rank"] == 5) { $rank= "5" ;} elseif ($line["rank"] == 6) { $rank= "6" ;} elseif ($line["rank"] == 7) { $rank= "7" ;} elseif ($line["rank"] == 8) { $rank= "titan" ;} elseif ($line["rank"] == 9) { $rank= "crea" ;} if ($line["removed"] == 1) { $rank = "del";} if ($line["ban"] == 1) { $rank = "ban";} 
 		if ($line["technician"] == 1 ) { $rank = "tech";}
-			if  ($line['rank'] >=7) { echo '<p class="error">Le grade de ce personnage est trop Ã©levÃ© pour vous ! <br />
-			<img src="pics/locked.gif" alt="BG vÃ©rouillÃ©" /><br />Vous ne pouvez visiter la page des PNJs trop haut gradÃ©s</p>';}
+			if  ($line['rank'] >=7) { echo '<p class="error">Le grade de ce personnage est trop élevé pour vous ! <br />
+			<img src="pics/locked.gif" alt="" /><br />Vous ne pouvez visiter la page des PNJs trop haut gradés</p>';}
 			else {
 		?>
 		<h3><?= $line['title']?> <?= $line['name']?></h3>
