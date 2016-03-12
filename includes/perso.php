@@ -45,7 +45,7 @@
 			$ranker_name = ($_SESSION["name"]);
 	?>
 	<?
-	if ($_SESSION["rank"] <=4) {
+	if ($_SESSION["rank"] <= 5) {
 		if ($line["rank"] == 0) { $rank= "0" ;} elseif ($line["rank"] == 1) { $rank= "1" ;} elseif ($line["rank"] == 2) { $rank= "2" ;} elseif ($line["rank"] == 3) { $rank= "3" ;} elseif ($line["rank"] == 4) { $rank= "4" ;}
 		elseif ($line["rank"] == 5) { $rank= "5" ;} elseif ($line["rank"] == 6) { $rank= "6" ;} elseif ($line["rank"] == 7) { $rank= "7" ;} elseif ($line["rank"] == 8) { $rank= "titan" ;} elseif ($line["rank"] == 9) { $rank= "crea" ;} if ($line["removed"] == 1) { $rank = "del";} if ($line["ban"] == 1) { $rank = "ban";} 
 		if ($line["technician"] == 1 ) { $rank = "tech";}
@@ -55,7 +55,7 @@
 		?>
 		<h3><?= $line['title']?> <?= $line['name']?></h3>
 		<? if ($line['ban'] == 1) {?><h5 class="error">Attention, ce personnage est banni !</h5> <? } ?>
-		<? if ($line['removed'] == 1) {?><h5 class="error">Attention, ce personnage a Ã©tÃ© supprimÃ© !</h5> <? } ?>
+		<? if ($line['removed'] == 1) {?><h5 class="error">Attention, ce personnage a été supprimé !</h5> <? } ?>
 		
 			<center id="background">
 				<table with="584" cellspacing="0" cellpadding="0" style="margin-bottom:20px">
@@ -67,15 +67,15 @@
 										<tbody>
 											<tr>
 												<th rowspan="13"> 	<? $filename = 'pics/avatar/skin_' .$line['id']. '.png';if (file_exists($filename)) {$skin = $line['id'];} else {$skin = 'no';} ?>
-												 <img src="pics/avatar/skin_<? echo $skin?>.png" width="100" />
+												 <img src="pics/avatar/skin_<? echo $skin?>.png" alt="" width="100" />
 												</th>
 												<th>Nom : </th>
 													<td>
 														<?= $line['name']?>
 													</td>
 													<td>
-														<?php if ($_SESSION["rank"] >= 4) { ?>
-															<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+														<?php if ($_SESSION["rank"] >= 5) { ?>
+															<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 															
 															<?php if ($line['rank'] < 8) { if ($line['rank']+1 < $_SESSION['rank']) { ?>
 															<input type="submit" name="up" value='[+]' style="color:green" id="upgrade_button" />			<? } } ?>
@@ -88,12 +88,12 @@
 															<!-- <input type="submit" name="avert" value="[A]" style="color:red" id="upgrade_button" /> -->
 															
 															<?if(isset($_POST['up'])) { echo '<span class="error">Personnage promu !</span>';
-																$db->exec("UPDATE members SET rank = rank + 1 WHERE id = $perso"); $db->exec("INSERT INTO chatbox (post_date, user_id, message) VALUES (NOW(), 92, 'FÃ©licitations Ã&nbsp; $nom pour sa montÃ©e en grade !')");
+																$db->exec("UPDATE members SET rank = rank + 1 WHERE id = $perso"); $db->exec("INSERT INTO chatbox (post_date, user_id, message) VALUES (NOW(), 92, 'Félicitations à $nom pour sa montée en grade !')");
 																$db->exec('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (\'' .$_SESSION['id']. '\', 1, \'' .$perso. '\', NOW() )');}?>
-															<?if(isset($_POST['down'])) { echo '<span class="error">Personnage dÃ©gradÃ© !</span>';	$db->exec("UPDATE members SET rank = rank - 1 WHERE id = $perso");
+															<?if(isset($_POST['down'])) { echo '<span class="error">Personnage dégradé !</span>';	$db->exec("UPDATE members SET rank = rank - 1 WHERE id = $perso");
 															$db->exec('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (\'' .$_SESSION['id']. '\', 0, \'' .$perso. '\', NOW() )');	}?>
-															<?if(isset($_POST['mute'])) { echo '<span class="error">Joueur rÃ©duit au silence !</span>';	$db->exec("UPDATE members SET mute = 1 WHERE id = $perso");	}?>
-															<?if(isset($_POST['demute'])) { echo '<span class="error">Joueur dÃ©mute !</span>';	$db->exec("UPDATE members SET mute = 0 WHERE id = $perso");	}?>
+															<?if(isset($_POST['mute'])) { echo '<span class="error">Joueur réduit au silence !</span>';	$db->exec("UPDATE members SET mute = 1 WHERE id = $perso");	}?>
+															<?if(isset($_POST['demute'])) { echo '<span class="error">Joueur démute !</span>';	$db->exec("UPDATE members SET mute = 0 WHERE id = $perso");	}?>
 															<?if(isset($_POST['avert'])) { echo '<span class="error">Fonction en cours de dÃ©veloppement ...</span>';	}?>
 															</form>
 														<? } ?>
@@ -102,7 +102,7 @@
 											<tr>
 												<th>Titre : </th>
 													<td>
-														<img src="pics/rank<? echo $rank ?>.png" width="27" class="magie_type" alt="Grade HRP du Joueur" />  <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?>
+														<img src="pics/rank<? echo $rank ?>.png" width="27" class="magie_type" alt="" />  <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?>
 													</td>
 											</tr>
 											<tr>
@@ -201,11 +201,11 @@
 														if ($line['magie_rank'] >= 7) { $tmagie = 'inf';}
 													?>	
 												<td>
-													<img src="includes/img/magie/EM_<? echo $tmagie ?>.png" title="<?= $line['E_magique']?> PM restants !" alt="Energie Magique" />
+													<img src="includes/img/magie/EM_<? echo $tmagie ?>.png" title="<?= $line['E_magique']?> PM restants !" alt="" />
 												</td>
-												<? if ($_SESSION['rank'] >= 4) { ?>
+												<? if ($_SESSION['rank'] >= 5) { ?>
 												<td>
-													<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+													<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 												<? if ($line['E_magique'] >= 1 ) { ?>
 														<input type="submit" name="moins1" style="color: red" value="[-1]" id="upgrade_button" /> <? } ?>
 														<? if ($line['E_magique'] >= 5 ) { ?>
@@ -241,11 +241,11 @@
 															if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 													?>
 												<td>
-												<img src="includes/img/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="Energie Magique" />
+												<img src="includes/img/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 												</td>
-												<? if ($_SESSION['rank'] >= 4) { ?>
+												<? if ($_SESSION['rank'] >= 5) { ?>
 												<td>
-													<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+													<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 														<? if ($line['E_vitale'] <= 199 ) { ?>
 														<input type="submit" name="vplus1" style="color: green" value="[+1]" id="upgrade_button" /> <? } ?>
 														<? if ($line['E_vitale'] < 195) { ?>
@@ -275,50 +275,30 @@
 												<? } ?>
 											</tr>
 											<tr>
-												<?
-													if ($line['Orientation'] >= 0  AND $line['Orientation'] <= 9) 	{	$equi = 0 ;	}
-															if ($line['Orientation'] >= 10 AND $line['Orientation'] <= 19) 	{	$equi = 10 ;	}
-															if ($line['Orientation'] >= 20 AND $line['Orientation'] <= 29) 	{	$equi = 20 ;	}
-															if ($line['Orientation'] >= 30 AND $line['Orientation'] <= 39) 	{	$equi = 30 ;	}
-															if ($line['Orientation'] >= 40 AND $line['Orientation'] <= 49) 	{	$equi = 40 ;	}
-															if ($line['Orientation'] >= 50 AND $line['Orientation'] <= 59) 	{	$equi = 50 ;	}
-															if ($line['Orientation'] >= 60 AND $line['Orientation'] <= 69)	{	$equi = 60 ;	}
-															if ($line['Orientation'] >= 70 AND $line['Orientation'] <= 79) 	{	$equi = 70 ;	}
-															if ($line['Orientation'] >= 80 AND $line['Orientation'] <= 89) 	{	$equi = 80 ;	}
-															if ($line['Orientation'] >= 90 AND $line['Orientation'] <= 99) 	{	$equi = 90 ;	}
-															if ($line['Orientation'] == 100) 	{	$equi = 100 ;	}
-															$corrupt = (100 - $line['Orientation']);
-												?>
-												<?php if ($_SESSION['id'] == 10 ) { ?><th>Equilibre : </th>
-													<td>
-														<img src="includes/img/magie/TM_<? echo $equi ?>" alt="Corruption Magique" title="Mana <? if ($line['Orientation'] < 50) { ?>corrompue Ã&nbsp; <? echo $corrupt?>%<? }if ($line['Orientation'] == 50) { ?>Ã©quilibrÃ©e<? }if ($line['Orientation'] > 50) {  ?>pure Ã&nbsp; <?= $line['Orientation']?>%<? } ?>." />
-													</td>
-											</tr><?php } ?>
-											<tr>
 												<th>Race : </th>
 													<td>
 														<?= $line['race']?>
 													</td>
 											</tr>
-											<?php if ($_SESSION['rank'] >= 4) { ?><tr>
-												<th>InvisibilitÃ© : </th>
+											<?php if ($_SESSION['rank'] >= 5) { ?><tr>
+												<th>Invisibilité : </th>
 													<td>
-														<img src="pics/vanish<?= $line['invisible']?>.gif" alt="Icone d'InvisibilitÃ©" />
+														<img src="pics/vanish<?= $line['invisible']?>.gif" alt="" />
 													</td>
 											</tr>	<? } ?>
 											<tr>
 												<th>Pratique de la Magie : </th>
 													<td>
-														<img src="pics/magieok_<?= ($line['magieok'])?>.gif" alt="Magie MaÃ®trisÃ©e ou non" />
+														<img src="pics/magieok_<?= ($line['magieok'])?>.gif" alt="" />
 													</td>
 											</tr>
 											<tr>
-											<th>SpÃ©cialisation Magique : </th>
+											<th>Spécialisation Magique : </th>
 													<td>
 														<img src="pics/spe_<?= ($line['specialisation'])?>" width="27" class="magie_type" alt="SpÃ©cialisation" />
 													</td>
-											<?php if ($_SESSION["rank"] >= 4) { ?>		<td>
-														 <form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+											<?php if ($_SESSION["rank"] >= 5) { ?>		<td>
+														 <form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 															<input type="submit" name="speair" value="Air" id="upgrade_button" />
 															<input type="submit" name="spearc" value="Arcane" id="upgrade_button" />
 															<input type="submit" name="specha" value="Chaos" id="upgrade_button" />
@@ -356,13 +336,13 @@
 											<tr>
 												<th>Niveau Magique : </th>
 													<td>
-													<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="Mage de niveau <?= ($line["magie_rank"])?>"/>	
+													<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt=""/>	
 													</td>
 											</tr>
 											<tr>
 												<th>Cycle de Vie : </th>
 													<td>
-														<img src="pics/hardcore<?= ($line['hardcore'])?>.png" alt="Icone de RemortalitÃ©" />
+														<img src="pics/hardcore<?= ($line['hardcore'])?>.png" alt="" />
 													</td>
 											</tr>
 										</tbody>
@@ -382,11 +362,11 @@
 		<br />
 		<br />
 		
-		BackGround <? if ($line['valid_bg'] == 1) { ?> <img src="pics/valid_bg_on.gif" alt="BG ValidÃ©" title="Background RolePlay vÃ©rifiÃ© par le Staff" /><? }?><br />
+		BackGround <? if ($line['valid_bg'] == 1) { ?> <img src="pics/valid_bg_on.gif" alt="" title="Background RolePlay vérifié par le Staff" /><? }?><br />
 		<?
 		
 		$bg = preg_replace('#\n#', '<br />', $line['background']);
-		$bg = ($bg != 'none') ? $bg : '[Ce personnage n\'a pas commencÃ© l\'Ã©criture de son background.]';
+		$bg = ($bg != 'none') ? $bg : '[Ce personnage n\'a pas commencé l\'écriture de son background.]';
 	
 		?>
 		
@@ -398,7 +378,7 @@
 			
 			
 	<?php } } 
-	if ($_SESSION["rank"] >=5) {
+	if ($_SESSION["rank"] >=6) {
 		if ($line["rank"] == 0) { $rank= "0" ;} elseif ($line["rank"] == 1) { $rank= "1" ;} elseif ($line["rank"] == 2) { $rank= "2" ;} elseif ($line["rank"] == 3) { $rank= "3" ;} elseif ($line["rank"] == 4) { $rank= "4" ;}
 		elseif ($line["rank"] == 5) { $rank= "5" ;} elseif ($line["rank"] == 6) { $rank= "6" ;} elseif ($line["rank"] == 7) { $rank= "7" ;} elseif ($line["rank"] == 8) { $rank= "titan" ;} elseif ($line["rank"] == 9) { $rank= "crea" ;}
 		if ($line["removed"] == 1) { $rank = "del";} if ($line["ban"] == 1) { $rank="ban";} 
@@ -406,7 +386,7 @@
 		?>
 		<h3><?= $line['title']?> <?= $line['name']?></h3>
 		<? if ($line['ban'] == 1) {?><h5 class="error">Attention, ce personnage est banni !</h5> <? } ?>
-		<? if ($line['removed'] == 1) {?><h5 class="error">Attention, ce personnage a Ã©tÃ© supprimÃ© !</h5> <? } ?>
+		<? if ($line['removed'] == 1) {?><h5 class="error">Attention, ce personnage a été supprimé !</h5> <? } ?>
 		
 			<center id="background">
 				<table with="584" cellspacing="0" cellpadding="0" style="margin-bottom:20px">
@@ -419,14 +399,14 @@
 											<tr>
 												<th rowspan="14">
 												<? $filename = 'pics/avatar/skin_' .$line['id']. '.png';if (file_exists($filename)) {$skin = $line['id'];} else {$skin = 'no';} ?>
-												 <img src="pics/avatar/skin_<? echo $skin?>.png" width="100" />
+												 <img src="pics/avatar/skin_<? echo $skin?>.png" width="100" alt="" />
 												</th>
 												<th>Nom : </th>
 													<td>
 														<?= $line['name']?>
 													</td>
 													<td>
-														<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+														<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 																<?php if ($line['rank'] < 8) { if ($line['rank']+1 < $_SESSION['rank']) { ?>
 																	<? if ($line['valid_bg'] == 1 ) {?>
 																<input type="submit" name="up" value='[+]' style="color:green" id="upgrade_button" />			<? } } } ?>
@@ -458,40 +438,40 @@
 															<input type="submit" name="del" value="[X]" style="color:red" id="upgrade_button" /> <? } ?>
 																<?php if ($line['removed'] == 1) { ?>
 															<input type="submit" name="restore" value="[X]" style="color:blue" id="upgrade_button" /> <? } } ?>
-																<?php if ($_SESSION['rank'] == 6 OR $_SESSION['name'] == 'Frost') { if ($line['technician'] == 0) {?>
+																<?php if ($_SESSION['rank'] == 7 OR $_SESSION['name'] == 'Frost') { if ($line['technician'] == 0) {?>
 															<input type="submit" name="settech" value="[T]" style="color:blue" id="upgrade_button" /> <? } ?>
 																<?php if ($line["technician"] == 1) { ?>
 															<input type="submit" name="destech" value="[T]" style="color:red" id="upgrade_button" /> <? }	} ?>
 															
 															<?php if(isset($_POST['end'])){ echo '<span class="error">Fin du personnage !</span>'; $db->exec('UPDATE members SET rank = 7 WHERE id = \'' .$perso. '\' '); $db->exec('UPDATE members SET magie_rank = 6 WHERE id = \'' .$perso. '\' '); } ?>
 															<?if(isset($_POST['up'])) { echo '<span class="error">Personnage promu !</span>';
-																$db->exec("UPDATE members SET rank = rank + 1 WHERE id = $perso"); $db->exec("INSERT INTO chatbox (post_date, user_id, message) VALUES (NOW(), 92, 'FÃ©licitations Ã&nbsp; $nom pour sa montÃ©e en grade !')");
+																$db->exec("UPDATE members SET rank = rank + 1 WHERE id = $perso"); $db->exec("INSERT INTO chatbox (post_date, user_id, message) VALUES (NOW(), 92, 'Félicitations à $nom pour sa montée en grade !')");
 																$db->exec('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (\'' .$_SESSION['id']. '\', 1, \'' .$perso. '\', NOW() )');}?>
-															<?if(isset($_POST['down'])) { echo '<span class="error">Personnage dÃ©gradÃ© !</span>';	$db->exec("UPDATE members SET rank = rank - 1 WHERE id = $perso");
+															<?if(isset($_POST['down'])) { echo '<span class="error">Personnage dégradé !</span>';	$db->exec("UPDATE members SET rank = rank - 1 WHERE id = $perso");
 															$db->exec('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (\'' .$_SESSION['id']. '\', 0, \'' .$perso. '\', NOW() )');	}?>
-															<?if(isset($_POST['dign'])) { echo '<span class="error">Retraite donnÃ©e !</span>';	$db->exec("UPDATE members SET rank = rank - 1 WHERE id = $perso"); $db->exec("UPDATE members SET dignitaire = 1 WHERE id = $perso"); $db->exec("UPDATE members SET title = 'Dignitaire' WHERE id = $perso");
+															<?if(isset($_POST['dign'])) { echo '<span class="error">Retraite donnée !</span>';	$db->exec("UPDATE members SET rank = rank - 1 WHERE id = $perso"); $db->exec("UPDATE members SET dignitaire = 1 WHERE id = $perso"); $db->exec("UPDATE members SET title = 'Dignitaire' WHERE id = $perso");
 																$db->exec('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (\'' .$_SESSION['id']. '\', 0, \'' .$perso. '\', NOW() )');}?>
-															<?if(isset($_POST['return'])) { echo '<span class="error">ActivitÃ© redonnÃ©e !</span>';	$db->exec("UPDATE members SET rank = rank + 1 WHERE id = $perso"); $db->exec("UPDATE members SET dignitaire = 0 WHERE id = $perso"); $db->exec("INSERT INTO chatbox (post_date, user_id, message) VALUES (NOW(), 92, 'FÃ©licitations Ã&nbsp; $nom pour sa montÃ©e en grade !')");
+															<?if(isset($_POST['return'])) { echo '<span class="error">Activité redonnée !</span>';	$db->exec("UPDATE members SET rank = rank + 1 WHERE id = $perso"); $db->exec("UPDATE members SET dignitaire = 0 WHERE id = $perso"); $db->exec("INSERT INTO chatbox (post_date, user_id, message) VALUES (NOW(), 92, 'Félicitations à $nom pour sa montée en grade !')");
 																$db->exec('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (\'' .$_SESSION['id']. '\', 1, \'' .$perso. '\', NOW() )');}?>
 															<?if(isset($_POST['ban'])) { echo '<span class="error">Personnage banni !</span>';	$db->exec("UPDATE members SET ban = 1 WHERE id = $perso"); $db->exec("UPDATE members SET title = 'Banni' WHERE id = $perso");	}?>
-															<?if(isset($_POST['deban'])) { echo '<span class="error">Personnage dÃ©banni !</span>';	$db->exec("UPDATE members SET ban = 0 WHERE id = $perso");	}?>
-															<?if(isset($_POST['mute'])) { echo '<span class="error">Joueur rÃ©duit au silence !</span>';	$db->exec("UPDATE members SET mute = 1 WHERE id = $perso");	}?>
-															<?if(isset($_POST['demute'])) { echo '<span class="error">Joueur dÃ©mute !</span>';	$db->exec("UPDATE members SET mute = 0 WHERE id = $perso");	}?>
+															<?if(isset($_POST['deban'])) { echo '<span class="error">Personnage débanni !</span>';	$db->exec("UPDATE members SET ban = 0 WHERE id = $perso");	}?>
+															<?if(isset($_POST['mute'])) { echo '<span class="error">Joueur réduit au silence !</span>';	$db->exec("UPDATE members SET mute = 1 WHERE id = $perso");	}?>
+															<?if(isset($_POST['demute'])) { echo '<span class="error">Joueur démute !</span>';	$db->exec("UPDATE members SET mute = 0 WHERE id = $perso");	}?>
 															<?if(isset($_POST['avert'])) { echo '<span class="error">Fonction en cours de dÃ©veloppement ...</span>';	}?>
-															<?if(isset($_POST['del'])) { echo '<span class="error">Personnage SupprimÃ©.</span>'; $db->exec("UPDATE members SET removed = 1 WHERE id = $perso");	}?>
-															<?if(isset($_POST['restore'])) { echo '<span class="error">Personnage rÃ©storÃ© !</span>';	$db->exec("UPDATE members SET removed = 0 WHERE id = $perso"); }?>
-															<?if(isset($_POST['settech'])) { echo '<span class="error">Joueur dÃ©sormais Technicien HRP !</span>';	$db->exec("UPDATE members SET technician = 1 WHERE id = $perso"); }?>
-															<?if(isset($_POST['destech'])) { echo '<span class="error">Technicien dÃ©sormais Joueur !</span>';	$db->exec("UPDATE members SET technician = 0 WHERE id = $perso"); }?>
+															<?if(isset($_POST['del'])) { echo '<span class="error">Personnage Supprimé.</span>'; $db->exec("UPDATE members SET removed = 1 WHERE id = $perso");	}?>
+															<?if(isset($_POST['restore'])) { echo '<span class="error">Personnage réstoré !</span>';	$db->exec("UPDATE members SET removed = 0 WHERE id = $perso"); }?>
+															<?if(isset($_POST['settech'])) { echo '<span class="error">Joueur désormais Technicien HRP !</span>';	$db->exec("UPDATE members SET technician = 1 WHERE id = $perso"); }?>
+															<?if(isset($_POST['destech'])) { echo '<span class="error">Technicien désormais Joueur !</span>';	$db->exec("UPDATE members SET technician = 0 WHERE id = $perso"); }?>
 														</form>
 													</td>
 											</tr>
 											<tr>
 												<th>Titre : </th>
 													<td>
-														<img src="pics/rank<?echo $rank ?>.png" width="27" class="magie_type" alt="Grade HRP du Joueur" /> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?>
+														<img src="pics/rank<?echo $rank ?>.png" width="27" class="magie_type" alt="" /> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?>
 													</td>
 													<td>
-														<form method="POST" action="index.php?p=viewmember&perso=<?php echo $perso; ?>"><input type="text" name="title" placeholder="Nouveau Titre" /><input type="submit" value="Valider" />
+														<form method="POST" action="index.php?p=perso&perso=<?php echo $perso; ?>"><input type="text" name="title" placeholder="Nouveau Titre" /><input type="submit" value="Valider" />
 			
 															<?php
 															if(!empty($_POST['title']))
@@ -599,7 +579,7 @@
 														if ($line['magie_rank'] >= 7) { $tmagie = 'inf';}
 													?>	
 												<td>
-													<img src="includes/img/magie/EM_<? echo $tmagie ?>.png" title="<?if ($line['magie_rank'] <= 6) { ?> <?=$line['E_magique']?> PM restants !<? } ?> <?if ($line['magie_rank'] >= 7) { echo "PM IllimitÃ©s" ;} ?>" alt="Energie Magique" />
+													<img src="includes/img/magie/EM_<? echo $tmagie ?>.png" title="<?if ($line['magie_rank'] <= 6) { ?> <?=$line['E_magique']?> PM restants !<? } ?> <?if ($line['magie_rank'] >= 7) { echo "PM Illimités" ;} ?>" alt="" />
 												</td>
 												<td>
 													
@@ -657,10 +637,10 @@
 															if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 													?>
 												<td>
-												<img src="includes/img/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="Energie Magique" />
+												<img src="includes/img/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 												</td>
 												<td>
-													<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+													<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 														<? if ($line['E_vitale'] <= 199 ) { ?>
 														<input type="submit" name="vplus1" style="color: green" value="[+1]" id="upgrade_button" /> <? } ?>
 														<? if ($line['E_vitale'] < 195) { ?>
@@ -703,35 +683,13 @@
 															if ($line['Orientation'] == 100) 	{	$equi = 100 ;	}
 															$corrupt = (100 - $line['Orientation']);
 												?>
-												<?php if ($_SESSION['id'] == 10 ) { ?><th>Equilibre : </th>
-													<td>
-														<img src="includes/img/magie/TM_<? echo $equi ?>" alt="Corruption Magique" title="Mana <? if ($line['Orientation'] < 50) { ?>corrompue Ã&nbsp; <? echo $corrupt?>%<? }if ($line['Orientation'] == 50) { ?>Ã©quilibrÃ©e<? }if ($line['Orientation'] > 50) {  ?>pure Ã&nbsp; <?= $line['Orientation']?>%<? } ?>." />
-													</td>
-													<td>
-														<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
-															<input type="submit" name="eplus1" style="color:green" value="[+1]" id="upgrade_button" />
-															<input type="submit" name="eplus5" style="color:green" value="[+5]" id="upgrade_button" />
-															<input type="submit" name="eplus10" style="color:green" value="[+10]" id="upgrade_button" />
-															<br />
-															<input type="submit" name="emoins1" style="color:red" value="[-1]" id="upgrade_button" />
-															<input type="submit" name="emoins5" style="color:red" value="[-5]" id="upgrade_button" />
-															<input type="submit" name="emoins10" style="color:red" value="[-10]" id="upgrade_button" />
-														</form>
-														<?	if(isset($_POST['eplus1'])) { echo '<br /><span class="error">Personnage purifiÃ© de 1% !</span>';	$db->exec("UPDATE members SET Orientation = Orientation +1 WHERE id = $perso");		}
-															if(isset($_POST['eplus5'])) { echo '<br /><span class="error">Personnage purifiÃ© de 5% !</span>';	$db->exec("UPDATE members SET Orientation = Orientation +5 WHERE id = $perso");		}
-															if(isset($_POST['eplus10'])) { echo '<br /><span class="error">Personnage purifiÃ© de 10% !</span>';	$db->exec("UPDATE members SET Orientation = Orientation +10 WHERE id = $perso");		}
-															if(isset($_POST['emoins1'])) { echo '<br /><span class="error">Personnage corrompu de 1% !</span>';	$db->exec("UPDATE members SET Orientation = Orientation -1 WHERE id = $perso");		}
-															if(isset($_POST['emoins5'])) { echo '<br /><span class="error">Personnage corrompu de 5% !</span>';	$db->exec("UPDATE members SET Orientation = Orientation -5 WHERE id = $perso");		}
-															if(isset($_POST['emoins10'])) { echo '<br /><span class="error">Personnage corrompu de 10% !</span>';	$db->exec("UPDATE members SET Orientation = Orientation -10 WHERE id = $perso");		} ?>
-													</td>
-											</tr><?php } ?>
 											<tr>
 												<th>Race : </th>
 													<td>
 														<?= $line['race']?>
 													</td>
 													<td>
-														<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+														<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 															<input type="submit" name="racehum" value="[Humain]" id="upgrade_button" />
 															<input type="submit" name="racechim" value="[ChimÃ¨re]" id="upgrade_button" />
 															<input type="submit" name="raceonyx" value="[Onyx]" id="upgrade_button" />
@@ -740,14 +698,14 @@
 															<input type="submit" name="racenain" value="[Nain]" id="upgrade_button" />
 															<input type="submit" name="raceern" value="[Ernelien]" id="upgrade_button" />
 															<input type="submit" name="racespe" value="[SpÃ©cial]" id="upgrade_button" /> 
-																<?if(isset($_POST['racehum'])) { echo '<br /><span class="error">Race changÃ©e !</span>';	$db->exec("UPDATE members SET race = 'Humain' WHERE id = $perso");		}
-																if(isset($_POST['racechim'])) { echo '<br /><span class="error">Race changÃ©e !</span>';		$db->exec("UPDATE members SET race = 'ChimÃ¨re' WHERE id = $perso");		}
-																if(isset($_POST['raceonyx'])) { echo '<br /><span class="error">Race changÃ©e !</span>';		$db->exec("UPDATE members SET race = 'Onyx' WHERE id = $perso");		}
-																if(isset($_POST['racestrom'])) { echo '<br /><span class="error">Race changÃ©e !</span>';	$db->exec("UPDATE members SET race = 'Stromnole' WHERE id = $perso");	}
-																if(isset($_POST['raceorq'])) { echo '<br /><span class="error">Race changÃ©e !</span>';		$db->exec("UPDATE members SET race = 'Orque' WHERE id = $perso");		}
-																if(isset($_POST['racenain'])) { echo '<br /><span class="error">Race changÃ©e !</span>';		$db->exec("UPDATE members SET race = 'Nain' WHERE id = $perso");		}
-																if(isset($_POST['raceern'])) { echo '<br /><span class="error">Race changÃ©e !</span>';		$db->exec("UPDATE members SET race = 'Ernelien' WHERE id = $perso");	}
-																if(isset($_POST['racespe'])) { echo '<br /><span class="error">Race changÃ©e !</span>';		$db->exec("UPDATE members SET race = 'SpÃ©cial' WHERE id = $perso");		}?>
+																<?if(isset($_POST['racehum'])) { echo '<br /><span class="error">Race changée !</span>';	$db->exec("UPDATE members SET race = 'Humain' WHERE id = $perso");		}
+																if(isset($_POST['racechim'])) { echo '<br /><span class="error">Race changée !</span>';		$db->exec("UPDATE members SET race = 'Chimère' WHERE id = $perso");		}
+																if(isset($_POST['raceonyx'])) { echo '<br /><span class="error">Race changée !</span>';		$db->exec("UPDATE members SET race = 'Onyx' WHERE id = $perso");		}
+																if(isset($_POST['racestrom'])) { echo '<br /><span class="error">Race changée !</span>';	$db->exec("UPDATE members SET race = 'Stromnole' WHERE id = $perso");	}
+																if(isset($_POST['raceorq'])) { echo '<br /><span class="error">Race changée !</span>';		$db->exec("UPDATE members SET race = 'Orque' WHERE id = $perso");		}
+																if(isset($_POST['racenain'])) { echo '<br /><span class="error">Race changée !</span>';		$db->exec("UPDATE members SET race = 'Nain' WHERE id = $perso");		}
+																if(isset($_POST['raceern'])) { echo '<br /><span class="error">Race changée !</span>';		$db->exec("UPDATE members SET race = 'Ernelien' WHERE id = $perso");	}
+																if(isset($_POST['racespe'])) { echo '<br /><span class="error">Race changée !</span>';		$db->exec("UPDATE members SET race = 'Spécial' WHERE id = $perso");		}?>
 														</form>
 													</td>
 											</tr>
@@ -757,13 +715,13 @@
 														<?= $line['Minecraft_Account']?>
 													</td>
 													<td>
-														<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>">
+														<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>">
 															<input type="text" name="pseudo" placeholder="Nouveau Compte" /><input type="submit" value="Valider" />
 																<?php 
 																if(!empty($_POST['pseudo']))
 																{
 																	$db->exec('UPDATE members SET Minecraft_Account = \'' .$_POST['pseudo']. '\' WHERE id = \'' .$perso. '\'');
-																	echo '<span class="error">Le compte minecraft a Ã©tÃ© changÃ©.</span>';
+																	echo '<span class="error">Le compte minecraft a été changé.</span>';
 																}
 																?>
 														</form>
@@ -776,12 +734,12 @@
 													</td>
 											</tr>
 											<tr>
-												<th>InvisibilitÃ© : </th>
+												<th>Invisibilité : </th>
 													<td>
-														<img src="pics/vanish<?= $line['invisible']?>.gif" alt="Icone d'InvisibilitÃ©" />
+														<img src="pics/vanish<?= $line['invisible']?>.gif" alt="" />
 													</td>
 													<td>
-														<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+														<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 																<?php if ($line['invisible'] == 0) { ?>
 															<input type="submit" name="vanishon" value="[ON]" style="color:green" id="upgrade_button" />	<? } ?>
 																<?php if ($line['invisible'] == 1) { ?>
@@ -794,10 +752,10 @@
 											<tr>
 												<th>Pratique de la Magie : </th>
 													<td>
-														<img src="pics/magieok_<?= ($line['magieok'])?>.gif" alt="Magie MaÃ®trisÃ©e ou non" />
+														<img src="pics/magieok_<?= ($line['magieok'])?>.gif" alt="" />
 													</td>
 													<td>
-														<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+														<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 																<?php if ($line['magieok'] == 0) { ?>
 															<input type="submit" name="magieon" value="[ON]" style="color:green" id="upgrade_button" />	<? } ?>
 																<?php if ($line['magieok'] == 1) { ?>
@@ -810,10 +768,10 @@
 											<tr>
 											<th>SpÃ©cialisation Magique : </th>
 													<td>
-														<img src="pics/spe_<?= ($line['specialisation'])?>" width="27" class="magie_type" alt="SpÃ©cialisation" />
+														<img src="pics/spe_<?= ($line['specialisation'])?>" width="27" class="magie_type" alt="" />
 													</td>
 													<td>
-														 <form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+														 <form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 															<input type="submit" name="speair" value="Air" id="upgrade_button" />
 															<input type="submit" name="spearc" value="Arcane" id="upgrade_button" />
 															<input type="submit" name="specha" value="Chaos" id="upgrade_button" />
@@ -829,20 +787,20 @@
 															<input type="submit" name="spespe" value="SpÃ©ciale" id="upgrade_button" />
 															<input type="submit" name="speter" value="Terre" id="upgrade_button" />
 																<?
-																if(isset($_POST['speeau'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>'; 	$db->exec("UPDATE members SET specialisation = 'Eau' WHERE id = $perso");	}
-																if(isset($_POST['speener'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>';	$db->exec("UPDATE members SET specialisation = 'Energie' WHERE id = $perso");	}
-																if(isset($_POST['spefeu'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>'; 	$db->exec("UPDATE members SET specialisation = 'Feu' WHERE id = $perso");	}
-																if(isset($_POST['spelum'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>';	$db->exec("UPDATE members SET specialisation = 'Lumiere' WHERE id = $perso");	}
-																if(isset($_POST['spespe'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>'; 	$db->exec("UPDATE members SET specialisation = 'SpÃ©ciale' WHERE id = $perso");	}
-																if(isset($_POST['speomb'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>';	$db->exec("UPDATE members SET specialisation = 'Ombre' WHERE id = $perso");	}
-																if(isset($_POST['speter'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>'; 	$db->exec("UPDATE members SET specialisation = 'Terre' WHERE id = $perso");	}
-																if(isset($_POST['speair'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>';	$db->exec("UPDATE members SET specialisation = 'Air' WHERE id = $perso");	}
-																if(isset($_POST['spearc'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>';	$db->exec("UPDATE members SET specialisation = 'Arcane' WHERE id = $perso");	}
-																if(isset($_POST['specha'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>';	$db->exec("UPDATE members SET specialisation = 'Chaos' WHERE id = $perso");	}
-																if(isset($_POST['spepsy'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>';	$db->exec("UPDATE members SET specialisation = 'Psy' WHERE id = $perso");	}
-																if(isset($_POST['spenat'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>';	$db->exec("UPDATE members SET specialisation = 'Nature' WHERE id = $perso");
-																if(isset($_POST['speice'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>';	$db->exec("UPDATE members SET specialisation = 'Glace' WHERE id = $perso");	}
-																if(isset($_POST['spemet'])) { echo '<span class="error">SpÃ©cialisation changÃ©e !</span>';	$db->exec("UPDATE members SET specialisation = 'Metal' WHERE id = $perso");	}																}
+																if(isset($_POST['speeau'])) { echo '<span class="error">Spécialisation changée !</span>'; 	$db->exec("UPDATE members SET specialisation = 'Eau' WHERE id = $perso");	}
+																if(isset($_POST['speener'])) { echo '<span class="error">Spécialisation changée !</span>';	$db->exec("UPDATE members SET specialisation = 'Energie' WHERE id = $perso");	}
+																if(isset($_POST['spefeu'])) { echo '<span class="error">Spécialisation changée !</span>'; 	$db->exec("UPDATE members SET specialisation = 'Feu' WHERE id = $perso");	}
+																if(isset($_POST['spelum'])) { echo '<span class="error">Spécialisation changée !</span>';	$db->exec("UPDATE members SET specialisation = 'Lumiere' WHERE id = $perso");	}
+																if(isset($_POST['spespe'])) { echo '<span class="error">Spécialisation changée !</span>'; 	$db->exec("UPDATE members SET specialisation = 'SpÃ©ciale' WHERE id = $perso");	}
+																if(isset($_POST['speomb'])) { echo '<span class="error">Spécialisation changée !</span>';	$db->exec("UPDATE members SET specialisation = 'Ombre' WHERE id = $perso");	}
+																if(isset($_POST['speter'])) { echo '<span class="error">Spécialisation changée !</span>'; 	$db->exec("UPDATE members SET specialisation = 'Terre' WHERE id = $perso");	}
+																if(isset($_POST['speair'])) { echo '<span class="error">Spécialisation changée !</span>';	$db->exec("UPDATE members SET specialisation = 'Air' WHERE id = $perso");	}
+																if(isset($_POST['spearc'])) { echo '<span class="error">Spécialisation changée !</span>';	$db->exec("UPDATE members SET specialisation = 'Arcane' WHERE id = $perso");	}
+																if(isset($_POST['specha'])) { echo '<span class="error">Spécialisation changée !</span>';	$db->exec("UPDATE members SET specialisation = 'Chaos' WHERE id = $perso");	}
+																if(isset($_POST['spepsy'])) { echo '<span class="error">Spécialisation changée !</span>';	$db->exec("UPDATE members SET specialisation = 'Psy' WHERE id = $perso");	}
+																if(isset($_POST['spenat'])) { echo '<span class="error">Spécialisation changée !</span>';	$db->exec("UPDATE members SET specialisation = 'Nature' WHERE id = $perso");
+																if(isset($_POST['speice'])) { echo '<span class="error">Spécialisation changée !</span>';	$db->exec("UPDATE members SET specialisation = 'Glace' WHERE id = $perso");	}
+																if(isset($_POST['spemet'])) { echo '<span class="error">Spécialisation changée !</span>';	$db->exec("UPDATE members SET specialisation = 'Metal' WHERE id = $perso");	}																}
 																?>
 														</form>
 													</td>
@@ -850,15 +808,15 @@
 											<tr>
 												<th>Niveau Magique : </th>
 													<td>
-													<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="Mage de niveau <?= ($line["magie_rank"])?>"/>	
+													<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt=""/>	
 													</td>
 													<td>
-														<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
-																<?php if ($line['magie_rank'] < 9) { ?>
+														<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
+																<?php if ($line['magie_rank'] < 10) { ?>
 															<input type="submit" name="rankup" value="UP" style="color:green" id="upgrade_button" /> <? } ?>
 																<?php if ($line['magie_rank'] > 0) { ?>
 															<input type="submit" name="rankdown" value="DOWN" style="color:red" id="upgrade_button" /> <? } ?>
-																<?if(isset($_POST['rankup'])) { echo '<span class="error">Niveau montÃ© !</span>'; 	$db->exec("UPDATE members SET magie_rank = magie_rank + 1 WHERE id = $perso"); $db->exec("INSERT INTO chatbox (post_date, user_id, message) VALUES (NOW(), 92, 'Tuduung !~ $nom gagne un niveau !')");	}
+																<?if(isset($_POST['rankup'])) { echo '<span class="error">Niveau monté !</span>'; 	$db->exec("UPDATE members SET magie_rank = magie_rank + 1 WHERE id = $perso"); $db->exec("INSERT INTO chatbox (post_date, user_id, message) VALUES (NOW(), 92, 'Tuduung !~ $nom gagne un niveau !')");	}
 																if(isset($_POST['rankdown'])) { echo '<span class="error">Niveau descendu !</span>';	$db->exec("UPDATE members SET magie_rank = magie_rank - 1  WHERE id = $perso");	}?>
 														</form>
 														
@@ -870,28 +828,28 @@
 														<p><?echo  $line['puis_norma']?> Norma</p>
 													</td>
 													<td>
-														<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+														<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 															<input type="number" name="norma" min="0" max="3000" step="0.00000000000001" /> <input type="submit" value="Valider" />
-																<?if(isset($_POST['norma'])) { echo '<span class="error">Puissance changÃ©e !</span>'; 	$db->exec("UPDATE members SET puis_norma = \"".$_POST['norma']."\" WHERE id = $perso");	}?>
+																<?if(isset($_POST['norma'])) { echo '<span class="error">Puissance changée !</span>'; 	$db->exec("UPDATE members SET puis_norma = \"".$_POST['norma']."\" WHERE id = $perso");	}?>
 														</form>
 													</td>
 											</tr>
 											<tr>
 												<th>Cycle de Vie : </th>
 													<td>
-														<img src="pics/hardcore<?= ($line['hardcore'])?>.png" alt="Icone de RemortalitÃ©" />
+														<img src="pics/hardcore<?= ($line['hardcore'])?>.png" alt="" />
 													</td>
 													<td>
-														<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form">
+														<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form">
 																<?php if ($line['hardcore'] == 1) { ?>
 															<input type="submit" name="remortel" value="[Remortel]" style="color:green" id="upgrade_button" />	<? } ?>
 																<?php if ($line['hardcore'] == 1) { ?>
 															<input type="submit" name="mortdef" value="[Tuer]" style="color:orange" id="upgrade_button" />	<? } ?>
 																<?php if ($line['hardcore'] == 0) { ?>
 															<input type="submit" name="mortel" value="[Mortel]" style="color:red" id="upgrade_button" />	<? } ?>
-																<?if(isset($_POST['mortel'])) { echo '<span class="error">RemortalitÃ© retirÃ©e !</span>'; 	$db->exec("UPDATE members SET hardcore = 1 WHERE id = $perso");	}
-																if(isset($_POST['remortel'])) { echo '<span class="error">RemortalitÃ© donnÃ©e !</span>';	$db->exec("UPDATE members SET hardcore = 0 WHERE id = $perso");	}
-																if(isset($_POST['mortdef'])) { echo '<span class="error">Personnage mort dÃ©finitivement !</span>';	$db->exec("UPDATE members SET title = 'Mort' WHERE id = $perso");	}?>
+																<?if(isset($_POST['mortel'])) { echo '<span class="error">Remortalité retirée !</span>'; 	$db->exec("UPDATE members SET hardcore = 1 WHERE id = $perso");	}
+																if(isset($_POST['remortel'])) { echo '<span class="error">Remortalité donnée !</span>';	$db->exec("UPDATE members SET hardcore = 0 WHERE id = $perso");	}
+																if(isset($_POST['mortdef'])) { echo '<span class="error">Personnage mort définitivement !</span>';	$db->exec("UPDATE members SET title = 'Mort' WHERE id = $perso");	}?>
 														</form>
 													</td>
 											</tr>
@@ -910,15 +868,15 @@
 			</center>
 		<br />
 		
-		BackGround <? if ($line['valid_bg'] == 1) { ?> <img src="pics/valid_bg_on.gif" alt="BG ValidÃ©" title="Background RolePlay vÃ©rifiÃ© par le Staff" /><? } ?>
+		BackGround <? if ($line['valid_bg'] == 1) { ?> <img src="pics/valid_bg_on.gif" alt="" title="Background RolePlay vérifié par le Staff" /><? } ?>
 		
-		<form method="POST" action="index.php?p=viewmember&perso=<? echo $perso?>" class="grade_form"> <? if ($line['valid_bg'] == 0) {?><input type="submit" name="valid" value="Valider" /><? } else { ?>
+		<form method="POST" action="index.php?p=perso&perso=<? echo $perso?>" class="grade_form"> <? if ($line['valid_bg'] == 0) {?><input type="submit" name="valid" value="Valider" /><? } else { ?>
 		<input type="submit" name="unvalid" value="Invalider" /> </form><? } 
-		if (isset($_POST['valid'])) {echo '<span class="error">Background ValidÃ© !</span>' ; $db->exec("UPDATE members SET valid_bg = 1 WHERE id = $perso"); $db->exec('UPDATE members SET valider_id = \'' .$_SESSION['id']. '\' WHERE id = \''.$perso.'\''); }
-		if (isset($_POST['unvalid'])) { echo '<span class="error">Background InvalidÃ© !</span>' ; $db->exec("UPDATE members SET valid_bg = 0 WHERE id = $perso"); }
+		if (isset($_POST['valid'])) {echo '<span class="error">Background Validé !</span>' ; $db->exec("UPDATE members SET valid_bg = 1 WHERE id = $perso"); $db->exec('UPDATE members SET valider_id = \'' .$_SESSION['id']. '\' WHERE id = \''.$perso.'\''); }
+		if (isset($_POST['unvalid'])) { echo '<span class="error">Background Invalidé !</span>' ; $db->exec("UPDATE members SET valid_bg = 0 WHERE id = $perso"); }
 		
 		$bg = preg_replace('#\n#', '<br />', $line['background']);
-		$bg = ($bg != 'none') ? $bg : '[Ce personnage n\'a pas commencÃ© l\'Ã©criture de son background.]';
+		$bg = ($bg != 'none') ? $bg : '[Ce personnage n\'a pas commencé l\'écriture de son background.]';
 	
 		?>
 		
