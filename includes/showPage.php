@@ -93,7 +93,7 @@
 										
 										<div id="main">
 											<?php
-										if $_SESSION['connected'] {
+										if ($_SESSION['connected']) {
 											if ($_SESSION['ban'] == 1) {
 												include('includes/ban_page.php'); ban_page(); ?>
 											<?php
