@@ -44,17 +44,17 @@
 								<tr>
 									<td>
 										<a>
-											<img src="pics/ico/vote_on.png" title="Voter oui" alt="" />
+											<img src="pics/ico/vote_on.png" title="Voter oui" alt="" width="50px" />
 										</a>
 									</td>
 									<td>
 										<a>
-											<img src="pics/ico/vote_no.png" title="Voter blanc" alt="" />
+											<img src="pics/ico/vote_no.png" title="Voter blanc" alt="" width="50px" />
 										</a>
 									</td>
 									<td>
 										<a>
-											<img src="pics/ico/vote_off.png" title="Voter non" alt="" />
+											<img src="pics/ico/vote_off.png" title="Voter non" alt="" width="50px" />
 										</a>
 									</td>
 								</tr>
