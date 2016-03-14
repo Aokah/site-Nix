@@ -20,7 +20,7 @@
 	?>
 	<h2><?= $line['titre']?></h2>
 	<center>
-		<table width="100%" cellspacing="0" cellpadding="0" style="border-collapse: collapse; margin-left: 25%; width: 640px;">
+		<table width="100%" cellspacing="0" cellpadding="0" style="border-collapse: collapse; text-align: center;">
 			<tbody>
 				<tr>
 					<td>
@@ -29,7 +29,7 @@
 				</tr>
 				<tr>
 					<td>
-						<table background="/pics/ico/magiepapercenter.png">
+						<table background="/pics/ico/magiepapercenter.png" style="width=100%;">
 							<tbody>
 								<tr>
 									<td colspan="3">Initié par : 
