@@ -153,11 +153,7 @@
 											?>
 											
 										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div id="main">
+										<div id="main" style="margin-top:20px;">
 											<?php 
 											include('includes/chatbox/chatboxPagemini.php'); chatboxminiPage(); 
 											?>
