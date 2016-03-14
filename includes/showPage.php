@@ -158,7 +158,7 @@
 											<?php if (!$page = 'chatbox') {
 											include('includes/chatbox/chatboxPagemini.php'); chatboxminiPage(); 
 											}?>
-											
+											test
 										</div>
 									</td>
 								</tr>
