@@ -8,7 +8,8 @@
 
 <?php if (isset($_GET['s']))
 	{
-	if (isset($_GET['v']) && $_GET['v'] == 'pour') {
+	if (isset($_GET['v']) && $_GET['v'] == 'pour')
+	{
 		
 	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'blanc')
@@ -58,17 +59,17 @@
 								</tr>
 								<tr>
 									<td style="text-align:center;">
-										<a>
+										<a href="index.php?p=sondage&s=<?php echo $sondage; ?>&v=pour">
 											<img src="pics/ico/vote_on.png" title="Voter oui" alt="" width="50px" />
 										</a>
 									</td>
 									<td style="text-align:center;">
-										<a>
+										<a href="index.php?p=sondage&s=<?php echo $sondage; ?>&v=blanc">
 											<img src="pics/ico/vote_no.png" title="Voter blanc" alt="" width="50px" />
 										</a>
 									</td>
 									<td style="text-align:center;">
-										<a>
+										<a href="index.php?p=sondage&s=<?php echo $sondage; ?>&v=contre">
 											<img src="pics/ico/vote_off.png" title="Voter non" alt="" width="50px" />
 										</a>
 									</td>
