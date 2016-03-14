@@ -29,22 +29,22 @@
 				</tr>
 				<tr>
 					<td>
-						<table background="/pics/ico/magiepapercenter.png" width="640px" cellspacing="0" cellpadding="0">
+						<table background="/pics/ico/magiepapercenter.png" width="640px" cellspacing="0" cellpadding="0" style="text-align: center;">
 							<tbody>
 								<tr>
-									<td colspan="3">Initié par : 
+									<td colspan="3" style="padding:1%;">Initié par : 
 									<span class="name<?= $line['rank']?>"> <?= $line['title']?> <?= $line['name']?></span>
 									</td>
 								</tr>
 								<tr>
-									<td colspan="3">
+									<td colspan="3" style="padding:1%;">
 										<?= $line['text'] ?>
 									</td>
 								</tr>
 								<tr>
-									<td>Vote Pour</td>
-									<td>Vote Blanc</td>
-									<td>Vote Contre</td>
+									<td style="padding:1%;">Vote Pour</td>
+									<td style="padding:1%;">Vote Blanc</td>
+									<td style="padding:1%;">Vote Contre</td>
 								</tr>
 							</tbody>
 						</table>
