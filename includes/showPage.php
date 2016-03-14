@@ -93,6 +93,12 @@
 										
 										<div id="main">
 											<?php
+											if ($_SESSION['ban'] == 1) {
+												$_SESSION['connected'] == false;
+												echo "pouet";
+											}
+											else
+											{
 
 											switch ($page)
 											{
@@ -143,7 +149,8 @@
 												case 'bg_content': 			{	include('includes/bg_content.php'); 			bg_content(); 			break; }
 												case 'update': 				{ 	include('includes/update.php'); 				update(); 				break; }
 												case 'sondage': 				{ 	include('includes/sondage.php'); 				sondage(); 				break; }
-											} ?>
+											} 
+											}?>
 											
 										</div>
 									</td>
