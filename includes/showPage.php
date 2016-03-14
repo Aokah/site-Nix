@@ -153,6 +153,13 @@
 											?>
 											
 										</div>
+										
+										<div>
+											<?php if (!$page = 'chatbox') {
+											include('includes/chatbox/chatboxPagemini.php'); chatboxminiPage(); 
+											}?>
+											
+										</div>
 									</td>
 								</tr>
 							
