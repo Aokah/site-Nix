@@ -100,7 +100,7 @@
 	
 	<ul id="categories">
 		<li class="forum_category">
-		<p>Votes Publics</p>
+		<p class="name2">Votes Publics</p>
 		
 		<?php
 		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
@@ -134,7 +134,7 @@
 		</table>
 		</li>
 		<li class="forum_category">
-		<p>Votes Modérateurs</p>
+		<p class="name5">Votes Modérateurs</p>
 		
 		<?php
 		$answer1 = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
@@ -168,7 +168,7 @@
 		</table>
 		</li>
 		<li class="forum_category">
-		<p>Votes Maitres du Jeu</p>
+		<p class="name6">Votes Maitres du Jeu</p>
 		
 		<?php
 		$answer2 = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
@@ -202,7 +202,7 @@
 		</table>
 		</li>
 		<li class="forum_category">
-		<p>Votes Opérateurs</p>
+		<p class="name7">Votes Opérateurs</p>
 		
 		<?php
 		$answer3 = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
