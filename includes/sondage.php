@@ -29,7 +29,7 @@
 				</tr>
 				<tr>
 					<td>
-						<table background="/pics/ico/magiepapercenter.png">
+						<table background="/pics/ico/magiepapercenter.png" width="100%" cellspacing="0" cellpadding="0">
 							<tbody>
 								<tr>
 									<td colspan="3">Initié par : 
