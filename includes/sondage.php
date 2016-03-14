@@ -122,7 +122,7 @@
 		</table>
 		</li>
 		<li class="forum_category">
-		<p>Votes Maitres du Jeu</p>
+		<p>Votes Modérateurs</p>
 		
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
@@ -145,7 +145,7 @@
 		</table>
 		</li>
 		<li class="forum_category">
-		<p>Votes Publics</p>
+		<p>Votes Maitres du Jeu</p>
 		
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
