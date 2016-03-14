@@ -208,7 +208,7 @@
 		$answer3 = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
-		WHERE s.rank = 7 ');
+		WHERE level = 7 ');
 		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
