@@ -208,7 +208,7 @@
 		$answer3 = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
-		WHERE level = 7 ');
+		WHERE s.rank = 7 ');
 		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
@@ -223,8 +223,8 @@
 					<a href="index?p=sondage&s=<?= $line3['s_id'] ?>"> <?= $line3['titre']?></a>
 					</td>
 					<td>
-					<img width="20px" src="pics/avatar/miniskin_no.png">
-					<a class="name7-T" href="#"> Opérateur Etzu</a>
+					<img width="20px" src="pics/avatar/miniskin_<?= $line3['m.id']?>.png" alt="">
+					<a class="name7-T" href="index?perso=<?= $line3['m.id']?>"> <?= $line3['title']?> <?= $line3['m.name']?></a>
 					<br>
 					Le 26/02/2016 à 22:29
 					</td>
