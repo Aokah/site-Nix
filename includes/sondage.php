@@ -8,6 +8,19 @@
 
 <?php if (isset($_GET['s']))
 	{
+	if (isset($_GET['v']) && $_GET['v'] == 'pour') {
+		
+	}
+	elseif (isset($_GET['v']) && $_GET['v'] == 'blanc')
+	{
+		
+	}
+	elseif (isset($_GET['v']) && $_GET['v'] == 'contre')
+	{
+		
+	}
+	else
+	{
 		$sondage = intval($_GET['s']);
 		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
@@ -78,7 +91,7 @@
 	else {
 	echo '<p>Une erreur s\'est produite</p>' ;
 	}
-	}
+	} }
 	else
 	{
 ?>
