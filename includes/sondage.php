@@ -17,6 +17,8 @@
 		
 		if ($line = $answer->fetch())
 		{
+			if ($_SESSION['rank'] >= $line['level'])
+			{
 	?>
 	<h2><?= $line['titre']?></h2>
 	<center>
@@ -71,6 +73,7 @@
 		</table>
 	</center>
 	<?php	}
+		}
 	else {
 	echo '<p>Une erreur s\'est produite</p>' ;
 	}
