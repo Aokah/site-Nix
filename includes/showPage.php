@@ -154,6 +154,8 @@
 											
 										</div>
 									</td>
+								</tr>
+								<tr>
 									<td>
 										<div id="main">
 											<?php 
