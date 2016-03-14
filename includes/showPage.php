@@ -153,11 +153,13 @@
 											?>
 											
 										</div>
+										<?php  if ($page != "chatbox") { ?>
 										<div id="main" style="margin-top:20px;">
-											<?php  if (!$page = "chatbox") {
-											include('includes/chatbox/chatboxPagemini.php'); chatboxminiPage(); 
-											}?>
-										</div>
+										<?php include('includes/chatbox/chatboxPagemini.php'); chatboxminiPage(); ?>
+										</div>	
+										<?php
+										}
+										?>
 									</td>
 								</tr>
 							
