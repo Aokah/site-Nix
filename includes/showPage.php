@@ -154,10 +154,9 @@
 											
 										</div>
 										<div id="main" style="margin-top:20px;">
-											<?php 
+											<?php  if (!$page == "chatbox") {
 											include('includes/chatbox/chatboxPagemini.php'); chatboxminiPage(); 
-											?>
-											test
+											}?>
 										</div>
 									</td>
 								</tr>
