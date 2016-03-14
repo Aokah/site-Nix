@@ -95,6 +95,7 @@
 	} }
 	else
 	{
+		$vide = '<p>Aucun sondage n\'est disponible pour ce grade.</p>';
 ?>
 	
 	<ul id="categories">
@@ -125,7 +126,9 @@
 					<br>
 					Le 26/02/2016 à 22:29
 					</td>
-				<?php } ?>
+				<?php } 
+				else { echo $vide ;
+				}?>
 				</tr>
 			</tbody>
 		</table>
@@ -134,7 +137,7 @@
 		<p>Votes Modérateurs</p>
 		
 		<?php
-		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer1 = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 5 ');
@@ -146,10 +149,10 @@
 					<th class="last_post">Créé par</th>
 				</tr>
 				<tr>
-				<?php if ($line = $answer->fetch())
+				<?php if ($line1 = $answer1->fetch())
 				{	?>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?></a>
+					<a href="index?p=sondage&s=<?= $line1['s_id'] ?>"> <?= $line1['titre']?></a>
 					</td>
 					<td>
 					<img width="20px" src="pics/avatar/miniskin_no.png">
@@ -157,7 +160,9 @@
 					<br>
 					Le 26/02/2016 à 22:29
 					</td>
-				<?php } ?>
+				<?php }
+				else { echo $vide ;
+				}?>
 				</tr>
 			</tbody>
 		</table>
@@ -166,7 +171,7 @@
 		<p>Votes Maitres du Jeu</p>
 		
 		<?php
-		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer2 = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 6 ');
@@ -178,10 +183,10 @@
 					<th class="last_post">Créé par</th>
 				</tr>
 				<tr>
-				<?php if ($line = $answer->fetch())
+				<?php if ($lin2e = $answer2->fetch())
 				{	?>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?></a>
+					<a href="index?p=sondage&s=<?= $line2['s_id'] ?>"> <?= $line2['titre']?></a>
 					</td>
 					<td>
 					<img width="20px" src="pics/avatar/miniskin_no.png">
@@ -189,7 +194,9 @@
 					<br>
 					Le 26/02/2016 à 22:29
 					</td>
-				<?php } ?>
+				<?php } 
+				else { echo $vide ;
+				}?>
 				</tr>
 			</tbody>
 		</table>
@@ -198,7 +205,7 @@
 		<p>Votes Opérateurs</p>
 		
 		<?php
-		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer3 = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 7 ');
@@ -210,10 +217,10 @@
 					<th class="last_post">Créé par</th>
 				</tr>
 				<tr>
-				<?php if ($line = $answer->fetch())
+				<?php if ($line3 = $answer3->fetch())
 				{	?>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?></a>
+					<a href="index?p=sondage&s=<?= $line3['s_id'] ?>"> <?= $line3['titre']?></a>
 					</td>
 					<td>
 					<img width="20px" src="pics/avatar/miniskin_no.png">
@@ -221,7 +228,9 @@
 					<br>
 					Le 26/02/2016 à 22:29
 					</td>
-				<?php } ?>
+				<?php } 
+				else { echo $vide ;
+				}?>
 				</tr>
 			</tbody>
 		</table>
