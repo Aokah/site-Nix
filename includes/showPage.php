@@ -19,18 +19,18 @@
 						<table>
 							<tbody>
 								<tr>
-									<td width="80px">
+									<td width="20%">
 										<a href="index.php"><img src="pics/logo1.gif" alt="" /></a>
 									</td>
-									<td style="text-align: right;" width="1200">
+									<td style="text-align: right;" width="60%">
 										<p>
 											<?php include('includes/news.php'); news('disp');?>
 										</p>
 									</td>
-									<td width="80px">
+									<td width="10%">
 										<img src="http://herobrine.fr/blapproved.php?bid=3" title="Approved by BL">
 									</td>
-									<td width="50px">
+									<td width="10%x">
 										<a href="https://minecraft.net/" target=_blank><img src="http://herobrine.fr/pics/mc1.png" alt="" /></a>
 									</td>
 								</tr>
