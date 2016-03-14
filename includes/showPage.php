@@ -93,21 +93,21 @@
 										
 										<div id="main">
 											<?php
-										if ($_SESSION['connected']) {
 											if ($_SESSION['ban'] == 1) {
 												include('includes/ban_page.php'); ban_page(); ?>
 											<?php
 											}
-										}
+											else
+											{
 
 											switch ($page)
 											{
-												case '' : 					{	include('includes/home.php'); 					home(); 				break; }
+												case '' : 				{	include('includes/home.php'); 					home(); 				break; }
 												case 'login': 				{	include('includes/login.php'); 					login(); 				break; }
 												case 'glennforum':			{	include('includes/glennforum.php');				glennforum(); 			break; }
 												case 'glenngroups':			{	include('includes/glenngroups.php');			glenngroups(); 			break; }
 												case 'register':			{	include('includes/register.php'); 				register(); 			break; }
-												case 'a': 					{ 	include('includes/activate.php'); 				activate(); 			break; }
+												case 'a': 				{ 	include('includes/activate.php'); 				activate(); 			break; }
 												case 'members': 			{ 	include('includes/members.php'); 				members(); 				break; }
 												case 'chatbox': 			{ 	include('includes/chatbox/chatboxPage.php'); 	chatboxPage(); 			break; }
 												case 'chatboxmj': 			{ 	if ($_SESSION['rank'] >= rank_cbm) { 	include('includes/chatbox_mj/chatboxPage.php');
@@ -117,9 +117,9 @@
 												case 'rules': 				{ 	include('includes/rules.php'); 					rules(); 				break; }
 												case 'account': 			{ 	include('includes/account.php'); 				account(); 				break; }
 												case 'guilds': 				{ 	include('includes/guilds.php'); 				guilds(); 				break; }
-												case 'incantations_admin': 	{ 	include('includes/incantations_admin.php'); 	incantations_admin(); 	break; }
+												case 'incantations_admin': 		{ 	include('includes/incantations_admin.php'); 	incantations_admin(); 	break; }
 												case 'pnj_list': 			{ 	include('includes/pnj_list.php'); 				pnj_list(); 			break; }
-												case 'pm': 					{ 	include('includes/pm.php'); 					pm(); 					break; }
+												case 'pm': 				{ 	include('includes/pm.php'); 					pm(); 					break; }
 												case 'news': 				{ 													news('page'); 			break; }
 												case 'races': 				{ 	include('includes/races.php'); 					races(); 				break; }
 												case 'chat_ig': 			{ 	include('includes/interface/chat_ig.php'); 		chat_ig(); 				break; }
@@ -128,29 +128,29 @@
 												case 'groups': 				{ 	include('includes/groups.php'); 				groups(); 				break; }
 												case 'candid': 				{ 	include('includes/candid.php'); 				candid(); 				break; }
 												case 'server': 				{ 	include('includes/server.php'); 				server(); 				break; }
-												case 'magie_admin': 		{ 	include('includes/magie_admin.php'); 			magie_admin(); 			break; }
+												case 'magie_admin': 			{ 	include('includes/magie_admin.php'); 			magie_admin(); 			break; }
 												case 'viewmember': 			{ 	include('includes/viewmember.php'); 			viewmember(); 			break; }
 												case 'testpage': 			{ 	include('includes/testpage.php'); 				testpage(); 			break; }
 												case 'testpage_3': 			{ 	include('includes/testpage_3.php'); 			testpage_3(); 			break; }
 												case 'testpage_2': 			{ 	include('includes/testpage_2.php');				testpage_2(); 			break; }
 												case 'staffteam': 			{ 	include('includes/staffteam.php'); 				staffteam(); 			break; }
-												case 'staffcontent': 		{ 	include('includes/staffcontent.php'); 			staffcontent(); 		break; }
+												case 'staffcontent': 			{ 	include('includes/staffcontent.php'); 			staffcontent(); 		break; }
 												case 'rulesmj': 			{ 	include('includes/rulesmj.php'); 				rulesmj(); 				break; }
 												//Erreur 404 
 												case '404': 				{ 					?><p>Page inexistante.</p><?php 						break; }
-												default : 					{ 					?><p>Page inexistante.</p><?php 						break; }
+												default : 				{ 					?><p>Page inexistante.</p><?php 						break; }
 												case 'chrono': 				{ 	include('includes/chrono.php'); 				chrono(); 				break; }
-												case 'incantations': 		{ 	include('includes/incantations.php'); 			incantations(); 		break; }
+												case 'incantations': 			{ 	include('includes/incantations.php'); 			incantations(); 		break; }
 												case 'bg_admin': 			{ 	include('includes/bg_admin.php'); 				bg_admin(); 			break; }
 												case 'bg_package': 			{ 	include('includes/bg_package.php'); 			bg_package(); 			break; }
 												case 'bg_class': 			{ 	include('includes/bg_class.php'); 				bg_class();				break; }
-												case 'bg_category': 		{ 	include('includes/bg_category.php'); 			bg_category(); 			break; }
+												case 'bg_category': 			{ 	include('includes/bg_category.php'); 			bg_category(); 			break; }
 												case 'bg_sub': 				{ 	include('includes/bg_sub.php'); 				bg_sub(); 				break; }
 												case 'bg_content': 			{	include('includes/bg_content.php'); 			bg_content(); 			break; }
 												case 'update': 				{ 	include('includes/update.php'); 				update(); 				break; }
-												case 'sondage': 				{ 	include('includes/sondage.php'); 				sondage(); 				break; }
+												case 'sondage': 			{ 	include('includes/sondage.php'); 				sondage(); 				break; }
 											} 
-											?>
+											}?>
 											
 										</div>
 									</td>
