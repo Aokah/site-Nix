@@ -20,6 +20,7 @@
 		<li>Reconstruire la Structure de la ChatBox</li>
 		<li>Ajout de la Page Infos Bêta</li>
 		<li>Fusionner les pages 'Perso' & 'viewmember'</li>
+		
 	</ul>
 	
 	<p>Tâches effectuées :</p>
@@ -36,6 +37,7 @@
 		<li>Réatribution des couleurs avec leur grade</li>
 		<li>Ajout de la Page Update</li>
 		<li>Mise à jour de la Page Staff Team</li>
+		<li>Ajout de la fonction de bannissement <span style="color:orange;">A améliorer.</span></li>
 	</ul>
 <?php
 
