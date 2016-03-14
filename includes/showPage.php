@@ -22,7 +22,7 @@
 									<td width="20%">
 										<a href="index.php"><img src="pics/logo1.gif" alt="" /></a>
 									</td>
-									<td style="text-align: right;" width="100%">
+									<td style="text-align: right;" width="600%">
 										<p>
 											<?php include('includes/news.php'); news('disp');?>
 										</p>
