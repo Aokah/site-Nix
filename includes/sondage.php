@@ -10,15 +10,15 @@
 	{
 	if (isset($_GET['v']) && $_GET['v'] == 'pour')
 	{
-		
+		echo 'tu as voté "pour" !'	 ;
 	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'blanc')
 	{
-		
+		echo 'tu as voté blanc !'	 ;	
 	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'contre')
 	{
-		
+		echo 'tu as voté "contre" !'	 ;	
 	}
 	else
 	{
