@@ -94,8 +94,10 @@
 										<div id="main">
 											<?php
 											if ($_SESSION['ban'] == 1) {
-												$_SESSION['connected'] == false;
+												$_SESSION['connected'] = false; ?>
 												echo "pouet";
+												<?php include('includes/ban_page.php'); ban_page(); ?>
+												<?php
 											}
 											else
 											{
