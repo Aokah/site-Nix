@@ -125,6 +125,7 @@
 					<br>
 					Le 26/02/2016 à 22:29
 					</td>
+				<?php } ?>
 				</tr>
 			</tbody>
 		</table>
@@ -145,6 +146,8 @@
 					<th class="last_post">Créé par</th>
 				</tr>
 				<tr>
+				<?php if ($line = $answer->fetch())
+				{	?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?></a>
 					</td>
@@ -154,6 +157,7 @@
 					<br>
 					Le 26/02/2016 à 22:29
 					</td>
+				<?php } ?>
 				</tr>
 			</tbody>
 		</table>
@@ -174,6 +178,8 @@
 					<th class="last_post">Créé par</th>
 				</tr>
 				<tr>
+				<?php if ($line = $answer->fetch())
+				{	?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?></a>
 					</td>
@@ -183,6 +189,7 @@
 					<br>
 					Le 26/02/2016 à 22:29
 					</td>
+				<?php } ?>
 				</tr>
 			</tbody>
 		</table>
@@ -203,6 +210,8 @@
 					<th class="last_post">Créé par</th>
 				</tr>
 				<tr>
+				<?php if ($line = $answer->fetch())
+				{	?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?></a>
 					</td>
@@ -212,6 +221,7 @@
 					<br>
 					Le 26/02/2016 à 22:29
 					</td>
+				<?php } ?>
 				</tr>
 			</tbody>
 		</table>
