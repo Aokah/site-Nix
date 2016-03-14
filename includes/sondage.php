@@ -101,6 +101,12 @@
 		<li class="forum_category">
 		<p>Votes Publics</p>
 		
+		<?php
+		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		FROM sondage s
+		RIGHT JOIN members m ON m.id = s.sender_id
+		WHERE s.rank <= 4 ');
+		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="head_table">
@@ -108,8 +114,10 @@
 					<th class="last_post">Créé par</th>
 				</tr>
 				<tr>
+				<?php if ($line = $answer->fetch())
+				{	?>
 					<td class="read">
-					<a href="#"> Sondage A</a>
+					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?> </a>
 					</td>
 					<td>
 					<img width="20px" src="pics/avatar/miniskin_no.png">
@@ -124,6 +132,12 @@
 		<li class="forum_category">
 		<p>Votes Modérateurs</p>
 		
+		<?php
+		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		FROM sondage s
+		RIGHT JOIN members m ON m.id = s.sender_id
+		WHERE s.rank = 5 ');
+		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="head_table">
@@ -132,7 +146,7 @@
 				</tr>
 				<tr>
 					<td class="read">
-					<a href="#"> Sondage A</a>
+					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?></a>
 					</td>
 					<td>
 					<img width="20px" src="pics/avatar/miniskin_no.png">
@@ -147,6 +161,12 @@
 		<li class="forum_category">
 		<p>Votes Maitres du Jeu</p>
 		
+		<?php
+		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		FROM sondage s
+		RIGHT JOIN members m ON m.id = s.sender_id
+		WHERE s.rank = 6 ');
+		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="head_table">
@@ -155,7 +175,7 @@
 				</tr>
 				<tr>
 					<td class="read">
-					<a href="#"> Sondage A</a>
+					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?></a>
 					</td>
 					<td>
 					<img width="20px" src="pics/avatar/miniskin_no.png">
@@ -170,6 +190,12 @@
 		<li class="forum_category">
 		<p>Votes Opérateurs</p>
 		
+		<?php
+		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		FROM sondage s
+		RIGHT JOIN members m ON m.id = s.sender_id
+		WHERE s.rank = 7 ');
+		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr class="head_table">
@@ -178,7 +204,7 @@
 				</tr>
 				<tr>
 					<td class="read">
-					<a href="#"> Sondage A</a>
+					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?></a>
 					</td>
 					<td>
 					<img width="20px" src="pics/avatar/miniskin_no.png">
