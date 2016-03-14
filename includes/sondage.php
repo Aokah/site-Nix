@@ -29,7 +29,7 @@
 				</tr>
 				<tr>
 					<td>
-						<table background="/pics/ico/magiepapercenter.png" width="640px" cellspacing="0" cellpadding="0" style="text-align: center;">
+						<table background="/pics/ico/magiepapercenter.png" width="640px" cellspacing="0" cellpadding="0" style="text-align:center;">
 							<tbody>
 								<tr>
 									<td colspan="3" style="padding:1%;">Initié par : 
