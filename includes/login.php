@@ -36,6 +36,9 @@
 				$_SESSION['id'] = $line['id'];
 				$_SESSION['rank'] = $line['rank'];
 				$_SESSION['title'] = $line['title'];
+				$_SESSION['ban'] = $line['ban'];
+				$_SESSION['removed'] = $line['removed'];
+				$_SESSION['end'] = $line['end'];
 
 				$_SESSION['alertEmail'] = ($line['activate'] != 'true') ? true : false;
 				if ($_SESSION['rank'] <= 7) { $imgrank = $_SESSION['rank'];}
@@ -66,7 +69,7 @@
 	<h3>Connexion</h3>
 	
 	<p>
-		Veuiller entre votre nom d'utilisateur ainsi que votre mot de passe afin d'accéder à votre compte.
+		Veuillez entre votre nom d'utilisateur ainsi que votre mot de passe afin d'accéder à votre compte.
 	</p>
 			
 	<form method="POST" action="index.php?p=login">
