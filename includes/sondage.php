@@ -20,7 +20,7 @@
 	?>
 	<h2><?= $line['titre']?></h2>
 	<center>
-		<table width="100%" cellspacing="0" cellpadding="0">
+		<table width="100%" cellspacing="0" cellpadding="0" style="border-collapse: collapse; margin-left: 25%; width: 640px;">
 			<tbody>
 				<tr>
 					<td>
