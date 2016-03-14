@@ -153,11 +153,12 @@
 											?>
 											
 										</div>
-										
+									</td>
+									<td>
 										<div id="main">
-											<?php if (!$page = 'chatbox') {
+											<?php 
 											include('includes/chatbox/chatboxPagemini.php'); chatboxminiPage(); 
-											}?>
+											?>
 											test
 										</div>
 									</td>
