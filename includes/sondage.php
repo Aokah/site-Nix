@@ -161,7 +161,7 @@
 		<table width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr>
-					<td style="text-align:center;">
+					<td>
 						<img src="/pics/ico/magiepapertop.png" alt=" " />
 					</td>
 				</tr>
@@ -202,7 +202,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td style="text-align:center;">
+					<td>
 						<img src="/pics/ico/magiepapebottom.png" alt="" />
 					</td>
 				</tr>
