@@ -13,7 +13,7 @@
 				FROM sondage_votes sv
 				RIGHT JOIN members m
 				ON m_id = sv.sender_id
-				WHERE sv.id = ? AND sender_id = ?');
+				WHERE sv.sondage_id = ? AND sender_id = ?');
 	$verif->execute(array($sondage, $_SESSION['id']));
 	if (isset($_GET['v']) && $_GET['v'] == 'pour')
 	{
