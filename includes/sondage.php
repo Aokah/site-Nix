@@ -234,7 +234,7 @@
 			
 			if ($verif->fecth())
 			{ echo '<p>Navré, mais ce sondage existe déjà.</p>'; }
-			elseif(!empty($name, $title, $text)) { echo '<p>Certains champs n\'ont pas été remplis, veuillez réessayer.</p>'; }
+			elseif (empty($name) OR empty($title) OR empty($text)) { echo '<p>Certains champs n\'ont pas été remplis, veuillez réessayer.</p>'; }
 			else
 			{
 			$ajout = $db->prepare("INSERT INTO sondage VALUES('', ?, ?, ?; ?, NOW())");
