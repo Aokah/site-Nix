@@ -3,7 +3,7 @@
 	global $db, $_SESSION, $_POST, $_GET;
 	?>
 
-
+<?php if ($_SESSION['connected']) { ?>
 	<h2>Sondages d'RPNix.com</h2>
 
 <?php if (isset($_GET['s']))
@@ -440,6 +440,8 @@
 ?>
 	
 <?php
-
+}
+else
+{ echo '<p>Veuiller vous connecter pour consulter cette page</p>'; }
 
 } ?>
