@@ -215,10 +215,9 @@
 		}
 		else 	{echo '<p>Vous n\'avez pas le grade suffisant pour voir le contenu de ce sondage.</p>' ;}
 		}
-	else {
-	echo '<p>Une erreur s\'est produite</p>' ;
-	}
-		else { echo '<p>Vous n\'avez pas le grade suffisant pour accéder à cette page.</p>'; }
+		else {
+		echo '<p>Une erreur s\'est produite</p>' ;
+		}
 	}
 	}
 	elseif (isset($_GET['action']) && $_GET['action'] == 'valid')
