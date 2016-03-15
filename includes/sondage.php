@@ -146,8 +146,14 @@
 		$votes = $db->prepare('SELECT s.id, s.sender_id, s.sondage_id, s.vote, m.id AS m_id, m.name, m.title
 		FROM sondage_votes s
 		RIGHT JOIN members m ON m.id = s.sender_id
-		WHERE s.id = ?');
+		WHERE s.sondage_id = ?');
 		$votes->execute(array($sondage));
+		$votes_pour = $db->prepare('SELECT COUNT(*) AS pour FROM sondage_votes WHERE sondage_id = ? AND vote = 2'); $votes_pour->execute(array($sondage));
+		$line0 = $votes_pour->fetch();
+		$votes_blancr = $db->prepare('SELECT COUNT(*) AS blanc FROM sondage_votes WHERE sondage_id = ? AND vote = 1'); $votes_blanc->execute(array($sondage));
+		$line1 = $votes_blanc->fetch();
+		$votes_contre = $db->prepare('SELECT COUNT(*) AS contre FROM sondage_votes WHERE sondage_id = ? AND vote = 0'); $votes_contre->execute(array($sondage));
+		$line2 = $votes_contre->fetch();
 	?>
 	
 	<h2>Votants :</h2>
@@ -165,8 +171,19 @@
 							<tbody>
 								<tr>
 									<td>
+										<img src="pics/ico/vote_on.png" title="Voter oui" alt="" width="50px" /> x<?= $line0['pour'] ?>
+									</td>
+									<td>
+										<img src="pics/ico/vote_o.opng" title="Voter oui" alt="" width="50px" /> x<?= $line1['blanc'] ?>
+									</td>
+									<td>
+										<img src="pics/ico/vote_off.png" title="Voter oui" alt="" width="50px" /> x<?= $line2['contre'] ?>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3>
 										<p style="padding: 2%;">
-											<?php while ($line = $votes->fetch()) {
+											<?php if ($line = $votes->fetch()) {
 												switch ($line['vote']) {
 													case 0: $color = "red"; $title = "A voté Contre"; break;
 													case 1: $color = "white"; $title = "A voté Blanc"; break;
@@ -175,7 +192,8 @@
 												<span class="name1" style="color:<?php echo $color; ?>" title="<?php echo $title; ?>">
 													<?= $line['title']?> <?= $line['name'] ?>
 												</span>
-											<?php } ?>
+											<?php }
+										else { echo "Aucun vote n'a encore été enregistré."; } ?>
 										</p>
 									</td>
 								</tr>
