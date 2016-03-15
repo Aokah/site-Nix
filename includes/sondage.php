@@ -308,7 +308,9 @@
 				</tr>
 				<tr>
 				<?php if ($line = $answer->fetch())
-				{	?>
+				{	
+				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date']);
+				?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?> </a>
 					</td>
@@ -316,7 +318,7 @@
 					<img width="20px" src="pics/avatar/miniskin_<?= $line['m.id']?>.png" alt="" />
 					<a class="name<?= $line['rank']?>" href="index?p=perso&perso=<?= $line['m.id']?>"> <?= $line['title']?> <?= $line['name']?></a>
 					<br>
-					Le 26/02/2016 à 22:29
+					Le <?php echo $date; ?>
 					</td>
 				<?php } 
 				else { echo $vide ;
@@ -342,7 +344,9 @@
 				</tr>
 				<tr>
 				<?php if ($line1 = $answer1->fetch())
-				{	?>
+				{	
+				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line1['date']);
+				?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line1['s_id'] ?>"> <?= $line1['titre']?></a>
 					</td>
@@ -350,7 +354,7 @@
 					img width="20px" src="pics/avatar/miniskin_<?= $line1['m.id']?>.png" alt="" />
 					<a class="name<?= $line1['rank']?>" href="index?p=perso&perso=<?= $line1['m.id']?>"> <?= $line1['title']?> <?= $line1['name']?></a>
 					<br>
-					Le 26/02/2016 à 22:29
+					Le <?php echo $date; ?>
 					</td>
 				<?php }
 				else { echo $vide ;
@@ -376,7 +380,9 @@
 				</tr>
 				<tr>
 				<?php if ($line2 = $answer2->fetch())
-				{	?>
+				{	
+				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line2['date']);
+				?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line2['s_id'] ?>"> <?= $line2['titre']?></a>
 					</td>
@@ -384,7 +390,7 @@
 					<img width="20px" src="pics/avatar/miniskin_<?= $line2['m.id']?>.png" alt="" />
 					<a class="name<?= $line2['rank']?>" href="index?p=perso&perso=<?= $line2['m.id']?>"> <?= $line2['title']?> <?= $line2['name']?></a>
 					<br>
-					Le 26/02/2016 à 22:29
+					Le <?php echo $date; ?>
 					</td>
 				<?php } 
 				else { echo $vide ;
@@ -410,14 +416,16 @@
 				</tr>
 				<tr>
 				<?php if ($line3 = $answer3->fetch())
-				{	?>
+				{	
+				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line3['date']);
+				?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line3['s_id'] ?>"> <?= $line3['titre']?></a>
 					</td>
 					<td>
 					<img width="20px" src="pics/avatar/miniskin_<?= $line3['m.id']?>.png" alt="" />
 					<a class="name<?= $line3['rank']?>" href="index?p=perso&perso=<?= $line3['m.id']?>"> <?= $line3['title']?> <?= $line3['name']?></a>					<br>
-					Le 26/02/2016 à 22:29
+					Le <?php echo $date; ?>
 					</td>
 				<?php }
 				else { echo $vide ;
