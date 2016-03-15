@@ -234,7 +234,10 @@
 			
 			if ($verif->fetch())
 			{ echo '<p>Navré, mais ce sondage existe déjà.</p>'; }
-			elseif (empty($name) OR empty($title) OR empty($text)) { echo '<p>Certains champs n\'ont pas été remplis, veuillez réessayer.</p>'; }
+			elseif (empty($name) OR empty($title) OR empty($text)) { ?>
+			<p>Certains champs n'ont pas été remplis, veuillez <a href="index?p=sondage">réessayer</a>.</p>
+			<?php
+			}
 			else
 			{
 			$ajout = $db->prepare("INSERT INTO sondage VALUES('', ?, ?, ?; ?, NOW())");
