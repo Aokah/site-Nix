@@ -182,7 +182,6 @@
 										<img src="pics/ico/vote_off.png" alt="" width="50px" /> x<?= $line2['contre'] ?>
 									</td>
 								</tr>
-							<?php if ($_SESSION['rank'] >= 6 OR $line['private'] == 0) { ?>
 								<tr>
 									<td colspan="3">
 										<p style="padding: 2%;">
@@ -195,14 +194,12 @@
 												<span class="name1" style="color:<?php echo $color; ?>" title="<?php echo $title; ?>">
 													<?= $line['title']?> <?= $line['name'] ?>
 												</span>
-											<?php } 
+											<?php 
 											}
-											else { echo 'La liste de votant est actuellement masquée par décision du créateur du sondage.'; }
 											?>
 										</p>
 									</td>
 								</tr>
-								<?php } ?>
 							</tbody>
 						</table>
 					</td>
