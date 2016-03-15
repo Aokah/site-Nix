@@ -260,14 +260,10 @@
 						<input type="submit" name="valid" />
 					</td>
 				</tr>
-				<tr colspan="3">
-					<td>
-						<p>Sondage :</p>
-						<textarea name="text"></textarea>
-					</td>
-				</tr>
 			</tbody>
 		</table>
+						<p>Sondage :</p>
+						<textarea name="text"></textarea>
 		</form>
 		</li>
 		<?php } ?>
