@@ -213,9 +213,7 @@
 		
 	<?php
 		}
-		{
-		else 	echo '<p>Vous n\'avez pas le grade suffisant pour voir le contenu de ce sondage.</p>' ;
-		}
+		else 	{echo '<p>Vous n\'avez pas le grade suffisant pour voir le contenu de ce sondage.</p>' ;}
 		}
 	else {
 	echo '<p>Une erreur s\'est produite</p>' ;
