@@ -20,26 +20,62 @@
 		{
 			$vote = $db->prepare("UPDATE sondage_votes SET vote= 1 WHERE sender_id = ? AND sondage_id = ?");
 			$vote->execute(array($_SESSION['id'], $sondage));
-			echo 'vote mis à jour : pour' ;
+			echo { ?>
+				<p>A voté !</p>
+				<p><a href="index?p=sondage">Cliquez ici</a> Pour retourner à la liste des sondages.</p>
+			<?php }
 		}
 		else
 		{
 			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 1, ?)");
 			$vote->execute(array($sondage, $_SESSION['id']));
-			echo 'tu as voté "pour" !'	 ;
+			echo { ?>
+				<p>A voté !</p>
+				<p><a href="index?p=sondage">Cliquez ici</a> Pour retourner à la liste des sondages.</p>
+			<?php }
 		}
 	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'blanc')
 	{
-		$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 0, ?)");
-		$vote->execute(array($sondage, $_SESSION['id']));
-		echo 'tu as voté blanc !'	 ;	
+		if ($verif->fetch())
+		{
+			$vote = $db->prepare("UPDATE sondage_votes SET vote= 0 WHERE sender_id = ? AND sondage_id = ?");
+			$vote->execute(array($_SESSION['id'], $sondage));
+			echo { ?>
+				<p>A voté !</p>
+				<p><a href="index?p=sondage">Cliquez ici</a> Pour retourner à la liste des sondages.</p>
+			<?php }
+		}
+		else
+		{
+			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 0, ?)");
+			$vote->execute(array($sondage, $_SESSION['id']));
+			echo { ?>
+			<p>A voté !</p>
+			<p><a href="index?p=sondage">Cliquez ici</a> Pour retourner à la liste des sondages.</p>
+			<?php }	
+		}
 	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'contre')
 	{
-		$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, -1, ?)");
-		$vote->execute(array($sondage, $_SESSION['id']));
-		echo 'tu as voté "contre" !'	 ;	
+		if ($verif->fetch())
+		{
+			$vote = $db->prepare("UPDATE sondage_votes SET vote= 1 WHERE sender_id = ? AND sondage_id = ?");
+			$vote->execute(array($_SESSION['id'], $sondage));
+			echo { ?>
+				<p>A voté !</p>
+				<p><a href="index?p=sondage">Cliquez ici</a> Pour retourner à la liste des sondages.</p>
+			<?php }
+		}
+		else
+		{
+			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, -1, ?)");
+			$vote->execute(array($sondage, $_SESSION['id']));
+			echo { ?>
+				<p>A voté !</p>
+				<p><a href="index?p=sondage">Cliquez ici</a> Pour retourner à la liste des sondages.</p>
+			<?php }	
+		}
 	}
 	else
 	{
@@ -54,7 +90,7 @@
 			if ($_SESSION['rank'] >= $line['level'])
 			{
 	?>
-	<h2><?= $line['titre']?></h2>
+	<h3><?= $line['titre']?></h3>
 	<center>
 		<table width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
