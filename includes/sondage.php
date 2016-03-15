@@ -146,7 +146,7 @@
 		$votes = $db->prepare('SELECT s.id, s.sender_id, s.sondage_id, s.vote, m.id AS m_id, m.name, m.title
 		FROM sondage_votes s
 		RIGHT JOIN members m ON m.id = s.sender_id
-		WHERE s.id = ?');
+		WHERE s.id = 1');
 		$votes->execute(array($sondage));
 	?>
 	
@@ -167,6 +167,10 @@
 									<td>
 										<p style="padding: 2%;">
 											<?php if ($line = $votes->fetch()) {
+												switch ($line['vote']) {
+													case 0: $color = "red"; $title = "A voté Contre"; break;
+													case 1: $color = "white"; $title = "A voté Blanc"; break;
+													case 2: $color = "green"; $title = "A voté Pour"; break; }
 											?>
 												<span class="name1" style="color:<?php echo $color; ?>" title="<?php echo $title; ?>">
 													<?= $line['title']?> <?= $line['name'] ?>
