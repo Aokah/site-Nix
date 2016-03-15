@@ -254,10 +254,10 @@
 						</select>
 					</td>
 					<td>
-						<input type="text" name="name" />
+						<input type="text" name="name" width="20%" />
 					</td>
 					<td>
-						<input type="text" name="text" />
+						<input type="text" name="text"  width="80%" />
 					</td>
 				</tr>
 			</tbody>
