@@ -228,7 +228,7 @@
 		if (isset($_POST['valid'])) {
 			$name = htmlentities($_POST['name']);
 			$level = htmlentities($_POST['level']);
-			$level = htmlentities($_POST['text']);
+			$text = htmlentities($_POST['text']);
 			$verif = $db->prepare('SELECT * FROM sondage WHERE title = ?');
 			$verif->execute(array($name));
 			
