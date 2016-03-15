@@ -9,18 +9,33 @@
 <?php if (isset($_GET['s']))
 	{
 		$sondage = intval($_GET['s']);
+	$verif = $db->prepare('SELECT sv.id, sv.sondage_id AS sondage, sv.sender_id, sv.vote, m.id AS m_id,
+				FROM sondage_votes sv
+				RIGHT JOIN members m
+				ON m_id = sv.sender_id
+				WHERE sv.id = ? AND sender_id = ?');
+	$verif->execute(array($sondage, $_SESSION['id']));
 	if (isset($_GET['v']) && $_GET['v'] == 'pour')
 	{
+		if ($verif->fetch())
+		{
+			$vote = $db->prepare("UPDATE sondage_votes SET vote= 1 WHERE sender_id = ? AND sondage_id = ?");
+			$vote->execute(array($_SESSION['id'], $sondage));
+		}
 		$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 1, ?)");
 		$vote->execute(array($sondage, $_SESSION['id']));
 		echo 'tu as voté "pour" !'	 ;
 	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'blanc')
 	{
+		$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 0, ?)");
+		$vote->execute(array($sondage, $_SESSION['id']));
 		echo 'tu as voté blanc !'	 ;	
 	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'contre')
 	{
+		$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, -1, ?)");
+		$vote->execute(array($sondage, $_SESSION['id']));
 		echo 'tu as voté "contre" !'	 ;	
 	}
 	else
