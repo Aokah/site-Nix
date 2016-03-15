@@ -156,7 +156,7 @@
 		$line2 = $votes_contre->fetch();
 	?>
 	
-	<h2>Votants :</h2>
+	<h3>Votants :</h3>
 	<center>
 		<table width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
@@ -182,9 +182,9 @@
 								</tr>
 							<?php if ($_SESSION['rank'] >= 6) { ?>
 								<tr>
-									<td colspan="3>
+									<td colspan="3">
 										<p style="padding: 2%;">
-											<?php if ($line = $votes->fetch()) {
+											<?php while ($line = $votes->fetch()) {
 												switch ($line['vote']) {
 													case 0: $color = "red"; $title = "A voté Contre"; break;
 													case 1: $color = "white"; $title = "A voté Blanc"; break;
@@ -193,8 +193,7 @@
 												<span class="name1" style="color:<?php echo $color; ?>" title="<?php echo $title; ?>">
 													<?= $line['title']?> <?= $line['name'] ?>
 												</span>
-											<?php }
-										else { echo "Aucun vote n'a encore été enregistré."; } ?>
+											<?php } ?>
 										</p>
 									</td>
 								</tr>
