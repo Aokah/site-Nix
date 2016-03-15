@@ -110,7 +110,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td colspan="3" style="text-align:center;">
+									<td colspan="3" style="text-align:center;" style="padding-left:2%; padding-right:2%;">
 										<?php echo $text ?>
 									</td>
 								</tr>
