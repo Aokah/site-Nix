@@ -10,6 +10,8 @@
 	{
 	if (isset($_GET['v']) && $_GET['v'] == 'pour')
 	{
+		$vote = $db->prepare('INSERT INTO sondage_votes(sondage_id = ?, vote = 1, sender_id = ?)');
+		$vote->execute(array($sondage, $_SESSION['id']));
 		echo 'tu as voté "pour" !'	 ;
 	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'blanc')
