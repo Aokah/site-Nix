@@ -255,8 +255,9 @@
 					<td>
 						<input type="text" name="name" width="20%" />
 					</td>
+					<td><p> </p></td>
 				</tr>
-				<tr colspan="2">
+				<tr colspan="3">
 					<td>
 						<p>Sondage :</p>
 						<textarea name="text"></textarea>
