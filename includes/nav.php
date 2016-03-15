@@ -53,7 +53,7 @@
 			<a class="link" href="index.php?p=update" >
 				<li class="navbg" <?php echo ($page == 'update') ? 'class="cur_page"' : '';?>><img src="/pics/ico/alert.gif" alt="" />Maintenance</li>
 			</a>
-			<a class="link" href="index.php?p=update" >
+			<a class="link" href="index.php?p=sondage" >
 				<li class="navbg" <?php echo ($page == 'sondage') ? 'class="cur_page"' : '';?>><img src="/pics/ico/interro.gif" alt="" />Sondages</li>
 			</a>
 		</ul>
