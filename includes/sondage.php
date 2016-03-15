@@ -238,14 +238,18 @@
 			<p>Certains champs n'ont pas été remplis, veuillez <a href="index?p=sondage">réessayer</a>.</p>
 			<?php
 			}
-			else
+			elseif (!empty($name) AND !empty($title) AND !empty($text))
 			{
 			$ajout = $db->prepare("INSERT INTO sondage VALUES('', ?, ?, ?; ?, NOW())");
 			$ajout->execute(array($_SESSION['id'], $level, $name, $text));
 			?>
 			<p>Sondage créé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
 			<?php
-			}	
+			}
+			else
+			{
+				echo '<p>Une erreur s\'est produite</p>';
+			}
 		}	
 	
 	}
