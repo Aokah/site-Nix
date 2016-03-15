@@ -171,13 +171,13 @@
 							<tbody>
 								<tr>
 									<td>
-										<img src="pics/ico/vote_on.png" title="Voter oui" alt="" width="50px" /> x<?= $line0['pour'] ?>
+										<img src="pics/ico/vote_on.png" alt="" width="50px" /> x<?= $line0['pour'] ?>
 									</td>
 									<td>
-										<img src="pics/ico/vote_no.opng" title="Voter oui" alt="" width="50px" /> x<?= $line1['blanc'] ?>
+										<img src="pics/ico/vote_no.png" alt="" width="50px" /> x<?= $line1['blanc'] ?>
 									</td>
 									<td>
-										<img src="pics/ico/vote_off.png" title="Voter oui" alt="" width="50px" /> x<?= $line2['contre'] ?>
+										<img src="pics/ico/vote_off.png" alt="" width="50px" /> x<?= $line2['contre'] ?>
 									</td>
 								</tr>
 							<?php if ($_SESSION['rank'] >= 6) { ?>
