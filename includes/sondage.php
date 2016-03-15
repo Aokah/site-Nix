@@ -142,7 +142,7 @@
 			</tbody>
 		</table>
 	</center>
-	<?php if ($_SESSION['rank'] <= 6) { ?>
+	<?php if ($_SESSION['rank'] >= 6) { ?>
 	
 	<center>
 		<table width="100%" cellspacing="0" cellpadding="0">
