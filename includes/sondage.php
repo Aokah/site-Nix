@@ -21,7 +21,7 @@
 			$vote = $db->prepare("UPDATE sondage_votes SET vote= 1 WHERE sender_id = ? AND sondage_id = ?");
 			$vote->execute(array($_SESSION['id'], $sondage));
 			{ ?>
-				<p>A voté !</p>
+				<p>Vote modifié !</p>
 				<p><a href="index?p=sondage">Cliquez ici</a> Pour retourner à la liste des sondages.</p>
 			<?php }
 		}
@@ -42,7 +42,7 @@
 			$vote = $db->prepare("UPDATE sondage_votes SET vote= 0 WHERE sender_id = ? AND sondage_id = ?");
 			$vote->execute(array($_SESSION['id'], $sondage));
 			 { ?>
-				<p>A voté !</p>
+				<p>Vote modifié !</p>
 				<p><a href="index?p=sondage">Cliquez ici</a> Pour retourner à la liste des sondages.</p>
 			<?php }
 		}
@@ -62,8 +62,8 @@
 		{
 			$vote = $db->prepare("UPDATE sondage_votes SET vote= 1 WHERE sender_id = ? AND sondage_id = ?");
 			$vote->execute(array($_SESSION['id'], $sondage));
-			echo { ?>
-				<p>A voté !</p>
+			{ ?>
+				<p>Vote modifié !</p>
 				<p><a href="index?p=sondage">Cliquez ici</a> Pour retourner à la liste des sondages.</p>
 			<?php }
 		}
@@ -71,7 +71,7 @@
 		{
 			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, -1, ?)");
 			$vote->execute(array($sondage, $_SESSION['id']));
-			echo { ?>
+			{ ?>
 				<p>A voté !</p>
 				<p><a href="index?p=sondage">Cliquez ici</a> Pour retourner à la liste des sondages.</p>
 			<?php }	
