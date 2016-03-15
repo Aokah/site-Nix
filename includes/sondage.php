@@ -144,7 +144,7 @@
 		</table>
 	</center>
 	<?php 
-		$votes = $db->prepare('SELECT s.id, s.sender_id, s.sondage_id, s.vote, s.private, m.id AS m_id, m.name, m.title
+		$votes = $db->prepare('SELECT s.id, s.sender_id, s.sondage_id, s.vote, m.id AS m_id, m.name, m.title
 		FROM sondage_votes s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.sondage_id = ?');
