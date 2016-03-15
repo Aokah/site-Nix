@@ -77,6 +77,16 @@
 			<?php }	
 		}
 	}
+	elseif (isset($_GET['action']) && $_GET['action'] == 'create')
+	{
+		if ($_SESSION['rank'] >=5)
+		{
+	?>
+		<h3>Création d'un sondage</h3>
+	<?php	
+		}
+		else { echo '<p>Vous n\'avez pas le grade suffisant pour accéder à cette page.</p>'; }
+	}
 	else
 	{
 		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
@@ -225,6 +235,15 @@
 ?>
 	
 	<ul id="categories">
+		<?php if ($_SESSION['rank'] >=5)
+		{
+		?>
+		<li>
+			<a href="index?p=sondage&action=create">
+				Créer un sondage
+			</a>
+		</li>
+		<?php } ?>
 		<li class="forum_category">
 		<p class="name2">Votes Publics</p>
 		
