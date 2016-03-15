@@ -219,15 +219,15 @@
 	echo '<p>Une erreur s\'est produite</p>' ;
 	}
 	} }
-	elseif (isset($_GET['action']) && $_GET['action'] == 'create')
+		else { echo '<p>Vous n\'avez pas le grade suffisant pour accéder à cette page.</p>'; }
+	}
+	elseif (isset($_GET['action']) && $_GET['action'] == 'valid')
 	{
-		if ($_SESSION['rank'] >=5)
-		{
 	?>
 		<h3>Création d'un sondage</h3>
-	<?php	
-		}
-		else { echo '<p>Vous n\'avez pas le grade suffisant pour accéder à cette page.</p>'; }
+		
+		<p>Sondage créé. <a href="#">Cliquez ici</a> pour accéder au sondage en question.</p>
+	<?php
 	}
 	else
 	{
@@ -238,9 +238,29 @@
 		{
 		?>
 		<li>
-			<a href="index?p=sondage&action=create">
-				Créer un sondage
-			</a>
+			<h3>Création d'un sondage</h3>
+		<form action="index.php?p=sondage&action=valid" method="POST">
+		<table cellspacing="0" cellpadding="0">
+			<tbody>
+				<th>Rang du sondage</th>
+				<th>Intitulé</th>
+				<th></th>
+				<tr>
+					<td>
+						<select type="text" name="level">
+						<option value="1">Public</option>
+						<option value="5">Modérateur</option>
+						<? if ($_SESSION['rank'] >= 6) { ?> <option value="6">Maitre du Jeu</option> <?php } ?>
+						<? if ($_SESSION['rank'] >= 7) { ?> <option value="7">Opérateur</option> <?php } ?>
+						</select>
+					</td>
+					<td>
+						<input type="text" name="name" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
 		</li>
 		<?php } ?>
 		<li class="forum_category">
