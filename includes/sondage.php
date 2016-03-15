@@ -50,7 +50,7 @@
 		{
 			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 0, ?)");
 			$vote->execute(array($sondage, $_SESSION['id']));
-			echo { ?>
+			 { ?>
 			<p>A voté !</p>
 			<p><a href="index?p=sondage">Cliquez ici</a> Pour retourner à la liste des sondages.</p>
 			<?php }	
