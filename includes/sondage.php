@@ -8,6 +8,7 @@
 
 <?php if (isset($_GET['s']))
 	{
+		$sondage = intval($_GET['s']);
 	if (isset($_GET['v']) && $_GET['v'] == 'pour')
 	{
 		$vote = $db->prepare('INSERT INTO sondage_votes(sondage_id , vote, sender_id) VALUES (?, 1, ?)');
@@ -24,7 +25,6 @@
 	}
 	else
 	{
-		$sondage = intval($_GET['s']);
 		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
