@@ -243,7 +243,6 @@
 			<tbody>
 				<th>Rang du sondage</th>
 				<th>Intitulé</th>
-				<th>Sondage</th>
 				<tr>
 					<td>
 						<select type="text" name="level">
@@ -256,8 +255,11 @@
 					<td>
 						<input type="text" name="name" width="20%" />
 					</td>
+				</tr>
+				<tr colspan="2">
 					<td>
-						<input type="text" name="text"  width="80%" />
+						<p>Sondage :</p>
+						<textarea name="text"></textarea>
 					</td>
 				</tr>
 			</tbody>
