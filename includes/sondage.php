@@ -142,7 +142,15 @@
 			</tbody>
 		</table>
 	</center>
-	<?php if ($_SESSION['rank'] >= 6) { ?>
+	<?php if ($_SESSION['rank'] >= 6) { 
+		$votes = $db->prepare('SELECT s.id, s.sender_id, s.sondage_id, s.vote, m.id, m.name, m.title
+		FROM sondage_votes s
+		RIGHT JOIN members m
+		ON m.id = s.sender_id
+		WHERE s.id = ?');
+		$vote->execute(array($sondage));
+		
+	?>
 	
 	<h2>Votants :</h2>
 	<center>
