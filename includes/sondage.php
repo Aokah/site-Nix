@@ -255,7 +255,7 @@
 					<td>
 						<input type="text" name="name" width="20%" />
 					</td>
-					<td><p> </p></td>
+					<td width="80%"><p> </p></td>
 				</tr>
 				<tr colspan="3">
 					<td>
