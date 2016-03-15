@@ -222,12 +222,28 @@
 	}
 	elseif (isset($_GET['action']) && $_GET['action'] == 'valid')
 	{
-		
 	?>
 		<h3>Création d'un sondage</h3>
-		
-		<p>Sondage créé. <a href="index?p=sondage&s=X">Cliquez ici</a> pour accéder au sondage en question.</p>
 	<?php
+		if (isset($_POST['valid'])) {
+			$name = (htmlentities($_POST['name']);
+			$level = (htmlentities($_POST['level']));
+			$level = (htmlentities($_POST['text']));
+			$verif = $db->prepare('SELECT * FROM sondage WHERE title = ?');
+			$verif->execute(array($name));
+			
+			if ($verif->fecth())
+			{ echo '<p>Navré, mais ce sondage existe déjà.</p>'; }
+			else
+			{
+			$ajout = $db->prepare('INSERT INTO sondage VALUE('', ?, ?, ?; ?, NOW())');
+			$ajout->execute(array($_SESSION['id'], $level, $name, $text));
+			?>
+			<p>Sondage créé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
+			<?php
+			}	
+		}	
+	
 	}
 	else
 	{
