@@ -172,11 +172,9 @@
 													case 1: $color = "white"; $title = "A voté Blanc"; break;
 													case 2: $color = "green"; $title = "A voté Pour"; break; }
 											?>
-											<li>
 												<span class="name1" style="color:<?php echo $color; ?>" title="<?php echo $title; ?>">
 													<?= $line['title']?> <?= $line['name'] ?>
 												</span>
-											</li>
 											<?php } ?>
 										</p>
 									</td>
