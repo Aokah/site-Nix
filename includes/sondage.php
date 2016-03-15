@@ -166,11 +166,8 @@
 								<tr>
 									<td>
 										<p style="padding: 2%;">
-											<?php if ($line = $votes->fetch()) { 
-												switch ($line['vote']) {
-													case 0 : $color = "red"; $title = "A voté Contre"; break;
-													case 1: $color = "white"; $title = "A voté Blanc"; break;
-													case 2: $color = "green"; $title = "A voté Pour"; break; }?>
+											<?php if ($line = $votes->fetch()) {
+											?>
 												<span class="name1" style="color:<?php echo $color; ?>" title="<?php echo $title; ?>">
 													<?= $line['title']?> <?= $line['name'] ?>
 												</span>
