@@ -12,7 +12,7 @@
 	$verif = $db->prepare('SELECT s.id, s.sondage_id AS sondage, s.sender_id, s.vote, m.id AS m_id
 				FROM sondage_votes s
 				RIGHT JOIN members m ON m.id = s.sender_id
-				WHERE s.sondage_id = 1 AND s.sender_id = 10');
+				WHERE s.sondage_id = ? AND s.sender_id = ?');
 	$verif->execute(array($sondage, $_SESSION['id']));
 	if (isset($_GET['v']) && $_GET['v'] == 'pour')
 	{
@@ -20,12 +20,13 @@
 		{
 			$vote = $db->prepare("UPDATE sondage_votes SET vote= 1 WHERE sender_id = ? AND sondage_id = ?");
 			$vote->execute(array($_SESSION['id'], $sondage));
+			echo 'vote mis à jour : pour' ;
 		}
 		else
 		{
-		$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 1, ?)");
-		$vote->execute(array($sondage, $_SESSION['id']));
-		echo 'tu as voté "pour" !'	 ;
+			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 1, ?)");
+			$vote->execute(array($sondage, $_SESSION['id']));
+			echo 'tu as voté "pour" !'	 ;
 		}
 	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'blanc')
