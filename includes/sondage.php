@@ -228,9 +228,8 @@
 					<br>
 					Le 26/02/2016 à 22:29
 					</td>
-				<?php } 
-				else { echo $vide ;
-				}?>
+				<?php }
+				?>
 				</tr>
 			</tbody>
 		</table>
