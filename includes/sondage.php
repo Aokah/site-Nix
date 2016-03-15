@@ -320,6 +320,7 @@
 			</tbody>
 		</table>
 		</li>
+		<?php if ($_SESSION['rank'] >= 5) { ?>
 		<li class="forum_category">
 		<p class="name5">Votes Modérateurs</p>
 		
@@ -356,6 +357,8 @@
 			</tbody>
 		</table>
 		</li>
+		<?php }
+		if ($_SESSION['rank'] >= 6) { ?>
 		<li class="forum_category">
 		<p class="name6">Votes Maitres du Jeu</p>
 		
@@ -392,6 +395,8 @@
 			</tbody>
 		</table>
 		</li>
+		<?php }
+		if ($_SESSION['rank'] >= 7) { ?>
 		<li class="forum_category">
 		<p class="name7">Votes Opérateurs</p>
 		
@@ -428,6 +433,7 @@
 			</tbody>
 		</table>
 		</li>
+		<?php } ?>
 	</ul>
 <?php
 	}
