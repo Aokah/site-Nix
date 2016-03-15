@@ -191,7 +191,7 @@
 													case 2: $color = "green"; $title = "A voté Pour"; break; }
 											?>
 												<span class="name1" style="color:<?php echo $color; ?>" title="<?php echo $title; ?>">
-													<?= $line['title']?> <?= $line['name'] ?>
+													<?= $line['name'] ?>
 												</span>
 											<?php 
 											}
