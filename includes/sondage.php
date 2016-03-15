@@ -144,6 +144,7 @@
 	</center>
 	<?php if ($_SESSION['rank'] >= 6) { ?>
 	
+	<h2>Votants :</h2>
 	<center>
 		<table width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
@@ -156,11 +157,6 @@
 					<td>
 						<table background="/pics/ico/magiepapercenter.png" width="640px">
 							<tbody>
-								<tr>
-									<td>
-										<p>Votants :</p>
-									</td>
-								</tr>
 								<tr>
 									<td>
 										<p> Votants</p>
