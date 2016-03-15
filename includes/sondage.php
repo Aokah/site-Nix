@@ -226,7 +226,7 @@
 		<h3>Création d'un sondage</h3>
 	<?php
 		if (isset($_POST['valid'])) {
-			$name = (htmlentities($_POST['name']);
+			$name = (htmlentities($_POST['name']));
 			$level = (htmlentities($_POST['level']));
 			$level = (htmlentities($_POST['text']));
 			$verif = $db->prepare('SELECT * FROM sondage WHERE title = ?');
