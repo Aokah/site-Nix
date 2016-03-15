@@ -295,7 +295,7 @@
 		<p class="name2">Votes Publics</p>
 		
 		<?php
-		$answer = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank <= 4 ');
@@ -309,7 +309,7 @@
 				<tr>
 				<?php if ($line = $answer->fetch())
 				{	
-				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date']);
+				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_post']);
 				?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?> </a>
@@ -331,7 +331,7 @@
 		<p class="name5">Votes Modérateurs</p>
 		
 		<?php
-		$answer1 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer1 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 5 ');
@@ -345,7 +345,7 @@
 				<tr>
 				<?php if ($line1 = $answer1->fetch())
 				{	
-				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line1['date']);
+				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line1['date_post']);
 				?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line1['s_id'] ?>"> <?= $line1['titre']?></a>
@@ -367,7 +367,7 @@
 		<p class="name6">Votes Maitres du Jeu</p>
 		
 		<?php
-		$answer2 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer2 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 6 ');
@@ -381,7 +381,7 @@
 				<tr>
 				<?php if ($line2 = $answer2->fetch())
 				{	
-				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line2['date']);
+				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line2['date_post']);
 				?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line2['s_id'] ?>"> <?= $line2['titre']?></a>
@@ -403,7 +403,7 @@
 		<p class="name7">Votes Opérateurs</p>
 		
 		<?php
-		$answer3 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer3 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 7 ');
@@ -417,7 +417,7 @@
 				<tr>
 				<?php if ($line3 = $answer3->fetch())
 				{	
-				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line3['date']);
+				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line3['date_post']);
 				?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line3['s_id'] ?>"> <?= $line3['titre']?></a>
