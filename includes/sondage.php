@@ -144,11 +144,12 @@
 		</table>
 	</center>
 	<?php 
-		$votes = $db->prepare('SELECT s.id, s.sender_id, s.sondage_id, s.vote, m.id AS m_id, m.name, m.title
+		$votes = $db->prepare('SELECT s.id, s.sender_id, s.sondage_id, s.vote, s.private, m.id AS m_id, m.name, m.title
 		FROM sondage_votes s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.sondage_id = ?');
 		$votes->execute(array($sondage));
+		$line = $votes->fetch();
 		$votes_pour = $db->prepare('SELECT COUNT(*) AS pour FROM sondage_votes WHERE sondage_id = ? AND vote = 2'); $votes_pour->execute(array($sondage));
 		$line0 = $votes_pour->fetch();
 		$votes_blanc = $db->prepare('SELECT COUNT(*) AS blanc FROM sondage_votes WHERE sondage_id = ? AND vote = 1'); $votes_blanc->execute(array($sondage));
@@ -181,7 +182,7 @@
 										<img src="pics/ico/vote_off.png" alt="" width="50px" /> x<?= $line2['contre'] ?>
 									</td>
 								</tr>
-							<?php if ($_SESSION['rank'] >= 6) { ?>
+							<?php if ($_SESSION['rank'] >= 6 OR $line['private'] == 0) { ?>
 								<tr>
 									<td colspan="3">
 										<p style="padding: 2%;">
@@ -194,7 +195,9 @@
 												<span class="name1" style="color:<?php echo $color; ?>" title="<?php echo $title; ?>">
 													<?= $line['title']?> <?= $line['name'] ?>
 												</span>
-											<?php } ?>
+											<?php } 
+											else { echo 'La liste de votant est actuellement masquée par décision du créateur du sondage.' };
+											?>
 										</p>
 									</td>
 								</tr>
