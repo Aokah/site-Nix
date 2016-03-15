@@ -77,7 +77,7 @@
 			<?php }	
 		}
 	}
-	elseif (isset($_GET['action']) && $_GET['action'] == 'create')
+	if (isset($_GET['action']) && $_GET['action'] == 'create')
 	{
 		if ($_SESSION['rank'] >=5)
 		{
