@@ -142,7 +142,45 @@
 			</tbody>
 		</table>
 	</center>
-	<?php	}
+	<?php if ($_SESSION['rank'] <= 6) { ?>
+	
+	<center>
+		<table width="100%" cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr>
+					<td>
+						<img src="/pics/ico/magiepapertop.png" alt=" " />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table background="/pics/ico/magiepapercenter.png" width="640px">
+							<tbody>
+								<tr>
+									<td>
+										<p>Votants :</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p> Votants</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="/pics/ico/magiepapebottom.png" alt="" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</center>
+		
+	<?php }
+	}
 		else 	echo '<p>Vous n\'avez pas le grade suffisant pour voir le contenu de ce sondage.</p>' ;
 		}
 	else {
