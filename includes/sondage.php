@@ -196,6 +196,7 @@
 													<?= $line['title']?> <?= $line['name'] ?>
 												</span>
 											<?php } 
+											}
 											else { echo 'La liste de votant est actuellement masquée par décision du créateur du sondage.' };
 											?>
 										</p>
