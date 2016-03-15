@@ -425,7 +425,7 @@
 					<td>
 					<img width="20px" src="pics/avatar/miniskin_<?= $line3['m.id']?>.png" alt="" />
 					<a class="name<?= $line3['rank']?>" href="index?p=perso&perso=<?= $line3['m.id']?>"> <?= $line3['title']?> <?= $line3['name']?></a>					<br>
-					Le <?php echo $date; ?>
+					Le <?php echo $date; ?> <?= $line3['date_post'] ?>
 					</td>
 				<?php }
 				else { echo $vide ;
