@@ -12,7 +12,7 @@
 	$verif = $db->prepare('SELECT v.id, v.sondage_id AS sondage, v.sender_id, v.vote, m.id AS m_id,
 				FROM sondage_votes v
 				RIGHT JOIN members m
-				ON m_id = sv.sender_id
+				ON v.sender_id = m_id
 				WHERE v.sondage_id = ? AND v.sender_id = ?');
 	$verif->execute(array($sondage, $_SESSION['id']));
 	if (isset($_GET['v']) && $_GET['v'] == 'pour')
