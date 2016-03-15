@@ -149,7 +149,6 @@
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.sondage_id = ?');
 		$votes->execute(array($sondage));
-		$line = $votes->fetch();
 		$votes_pour = $db->prepare('SELECT COUNT(*) AS pour FROM sondage_votes WHERE sondage_id = ? AND vote = 2'); $votes_pour->execute(array($sondage));
 		$line0 = $votes_pour->fetch();
 		$votes_blanc = $db->prepare('SELECT COUNT(*) AS blanc FROM sondage_votes WHERE sondage_id = ? AND vote = 1'); $votes_blanc->execute(array($sondage));
