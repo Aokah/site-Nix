@@ -222,6 +222,7 @@
 	}
 	elseif (isset($_GET['action']) && $_GET['action'] == 'valid')
 	{
+		
 	?>
 		<h3>Création d'un sondage</h3>
 		
@@ -253,9 +254,11 @@
 						</select>
 					</td>
 					<td>
-						<input type="text" name="name" width="20%" />
+						<input type="text" name="name" />
 					</td>
-					<td width="80%"><p> </p></td>
+					<td>
+						<input type="submit" name="valid" />
+					</td>
 				</tr>
 				<tr colspan="3">
 					<td>
