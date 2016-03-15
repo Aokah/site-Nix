@@ -18,7 +18,7 @@
 	{
 		if ($verif->fetch())
 		{
-			$vote = $db->prepare("UPDATE sondage_votes SET vote= 1 WHERE sender_id = ? AND sondage_id = ?");
+			$vote = $db->prepare("UPDATE sondage_votes SET vote= 2 WHERE sender_id = ? AND sondage_id = ?");
 			$vote->execute(array($_SESSION['id'], $sondage));
 			{ ?>
 				<p>Vote modifié !</p>
@@ -27,7 +27,7 @@
 		}
 		else
 		{
-			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 1, ?)");
+			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 2, ?)");
 			$vote->execute(array($sondage, $_SESSION['id']));
 			 { ?>
 				<p>A voté !</p>
@@ -39,7 +39,7 @@
 	{
 		if ($verif->fetch())
 		{
-			$vote = $db->prepare("UPDATE sondage_votes SET vote= 0 WHERE sender_id = ? AND sondage_id = ?");
+			$vote = $db->prepare("UPDATE sondage_votes SET vote= 1 WHERE sender_id = ? AND sondage_id = ?");
 			$vote->execute(array($_SESSION['id'], $sondage));
 			 { ?>
 				<p>Vote modifié !</p>
@@ -48,7 +48,7 @@
 		}
 		else
 		{
-			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 0, ?)");
+			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 1, ?)");
 			$vote->execute(array($sondage, $_SESSION['id']));
 			 { ?>
 			<p>A voté !</p>
@@ -60,7 +60,7 @@
 	{
 		if ($verif->fetch())
 		{
-			$vote = $db->prepare("UPDATE sondage_votes SET vote= 1 WHERE sender_id = ? AND sondage_id = ?");
+			$vote = $db->prepare("UPDATE sondage_votes SET vote= 0 WHERE sender_id = ? AND sondage_id = ?");
 			$vote->execute(array($_SESSION['id'], $sondage));
 			{ ?>
 				<p>Vote modifié !</p>
@@ -69,7 +69,7 @@
 		}
 		else
 		{
-			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, -1, ?)");
+			$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 0, ?)");
 			$vote->execute(array($sondage, $_SESSION['id']));
 			{ ?>
 				<p>A voté !</p>
