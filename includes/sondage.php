@@ -142,7 +142,7 @@
 			</tbody>
 		</table>
 	</center>
-	<?php if ($_SESSION['rank'] >= 6) { 
+	<?php 
 		$votes = $db->prepare('SELECT s.id, s.sender_id, s.sondage_id, s.vote, m.id AS m_id, m.name, m.title
 		FROM sondage_votes s
 		RIGHT JOIN members m ON m.id = s.sender_id
@@ -180,6 +180,7 @@
 										<img src="pics/ico/vote_off.png" title="Voter oui" alt="" width="50px" /> x<?= $line2['contre'] ?>
 									</td>
 								</tr>
+							<?php if ($_SESSION['rank'] >= 6) { ?>
 								<tr>
 									<td colspan="3>
 										<p style="padding: 2%;">
@@ -197,6 +198,7 @@
 										</p>
 									</td>
 								</tr>
+								<?php } ?>
 							</tbody>
 						</table>
 					</td>
@@ -210,8 +212,8 @@
 		</table>
 	</center>
 		
-	<?php }
-	}
+	<?php
+		}
 		else 	echo '<p>Vous n\'avez pas le grade suffisant pour voir le contenu de ce sondage.</p>' ;
 		}
 	else {
