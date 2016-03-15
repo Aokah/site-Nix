@@ -11,7 +11,7 @@
 		$sondage = intval($_GET['s']);
 	if (isset($_GET['v']) && $_GET['v'] == 'pour')
 	{
-		$vote = $db->prepare('INSERT INTO sondage_votes(sondage_id , vote, sender_id) VALUES (?, 1, ?)');
+		$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 1, ?)");
 		$vote->execute(array($sondage, $_SESSION['id']));
 		echo 'tu as voté "pour" !'	 ;
 	}
