@@ -220,7 +220,15 @@
 	}
 		else { echo '<p>Vous n\'avez pas le grade suffisant pour accéder à cette page.</p>'; }
 	}
-	
+	}
+	elseif (isset($_GET['action']) && $_GET['action'] == 'valid')
+	{
+	?>
+		<h3>Création d'un sondage</h3>
+		
+		<p>Sondage créé. <a href="#">Cliquez ici</a> pour accéder au sondage en question.</p>
+	<?php
+	}
 	else
 	{
 		$vide = '<p>Aucun sondage n\'est disponible pour ce grade.</p>';
