@@ -150,7 +150,7 @@
 		$votes->execute(array($sondage));
 		$votes_pour = $db->prepare('SELECT COUNT(*) AS pour FROM sondage_votes WHERE sondage_id = ? AND vote = 2'); $votes_pour->execute(array($sondage));
 		$line0 = $votes_pour->fetch();
-		$votes_blancr = $db->prepare('SELECT COUNT(*) AS blanc FROM sondage_votes WHERE sondage_id = ? AND vote = 1'); $votes_blanc->execute(array($sondage));
+		$votes_blanc = $db->prepare('SELECT COUNT(*) AS blanc FROM sondage_votes WHERE sondage_id = ? AND vote = 1'); $votes_blanc->execute(array($sondage));
 		$line1 = $votes_blanc->fetch();
 		$votes_contre = $db->prepare('SELECT COUNT(*) AS contre FROM sondage_votes WHERE sondage_id = ? AND vote = 0'); $votes_contre->execute(array($sondage));
 		$line2 = $votes_contre->fetch();
