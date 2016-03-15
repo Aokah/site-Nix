@@ -218,8 +218,9 @@
 	else {
 	echo '<p>Une erreur s\'est produite</p>' ;
 	}
-	} }
+	}
 		else { echo '<p>Vous n\'avez pas le grade suffisant pour accéder à cette page.</p>'; }
+	}
 	elseif (isset($_GET['action']) && $_GET['action'] == 'valid')
 	{
 	?>
