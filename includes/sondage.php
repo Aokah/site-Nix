@@ -89,6 +89,7 @@
 		{
 			if ($_SESSION['rank'] >= $line['level'])
 			{
+				$text = preg_replace('#\n#', '<br />', $line['text']);
 	?>
 	<h3><?= $line['titre']?></h3>
 	<center>
@@ -110,7 +111,7 @@
 								</tr>
 								<tr>
 									<td colspan="3" style="text-align:center;">
-										<?= $line['text'] ?>
+										<?php echo $text ?>
 									</td>
 								</tr>
 								<tr>
