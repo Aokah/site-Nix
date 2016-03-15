@@ -225,7 +225,7 @@
 	?>
 		<h3>Création d'un sondage</h3>
 		
-		<p>Sondage créé. <a href="#">Cliquez ici</a> pour accéder au sondage en question.</p>
+		<p>Sondage créé. <a href="index?p=sondage&s=X">Cliquez ici</a> pour accéder au sondage en question.</p>
 	<?php
 	}
 	else
@@ -239,11 +239,11 @@
 		<li>
 			<h3>Création d'un sondage</h3>
 		<form action="index.php?p=sondage&action=valid" method="POST">
-		<table cellspacing="0" cellpadding="0">
+		<table>
 			<tbody>
 				<th>Rang du sondage</th>
 				<th>Intitulé</th>
-				<th></th>
+				<th>Sondage</th>
 				<tr>
 					<td>
 						<select type="text" name="level">
@@ -255,6 +255,9 @@
 					</td>
 					<td>
 						<input type="text" name="name" />
+					</td>
+					<td>
+						<input type="text" name="text" />
 					</td>
 				</tr>
 			</tbody>
