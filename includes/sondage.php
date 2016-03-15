@@ -318,7 +318,7 @@
 					<img width="20px" src="pics/avatar/miniskin_<?= $line['m.id']?>.png" alt="" />
 					<a class="name<?= $line['rank']?>" href="index?p=perso&perso=<?= $line['m.id']?>"> <?= $line['title']?> <?= $line['name']?></a>
 					<br>
-					Le <?php echo $date; ?>
+					<?php echo $date; ?>
 					</td>
 				<?php } 
 				else { echo $vide ;
@@ -354,7 +354,7 @@
 					img width="20px" src="pics/avatar/miniskin_<?= $line1['m.id']?>.png" alt="" />
 					<a class="name<?= $line1['rank']?>" href="index?p=perso&perso=<?= $line1['m.id']?>"> <?= $line1['title']?> <?= $line1['name']?></a>
 					<br>
-					Le <?php echo $date; ?>
+					<?php echo $date; ?>
 					</td>
 				<?php }
 				else { echo $vide ;
@@ -390,7 +390,7 @@
 					<img width="20px" src="pics/avatar/miniskin_<?= $line2['m.id']?>.png" alt="" />
 					<a class="name<?= $line2['rank']?>" href="index?p=perso&perso=<?= $line2['m.id']?>"> <?= $line2['title']?> <?= $line2['name']?></a>
 					<br>
-					Le <?php echo $date; ?>
+					<?php echo $date; ?>
 					</td>
 				<?php } 
 				else { echo $vide ;
@@ -425,7 +425,7 @@
 					<td>
 					<img width="20px" src="pics/avatar/miniskin_<?= $line3['m.id']?>.png" alt="" />
 					<a class="name<?= $line3['rank']?>" href="index?p=perso&perso=<?= $line3['m.id']?>"> <?= $line3['title']?> <?= $line3['name']?></a>					<br>
-					Le <?php echo $date; ?>
+					<?php echo $date; ?>
 					</td>
 				<?php }
 				else { echo $vide ;
