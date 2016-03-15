@@ -217,7 +217,7 @@
 					<th class="last_post">Créé par</th>
 				</tr>
 				<tr>
-				<?php if ($line3 = $answer3->fetch())
+				<?php while ($line3 = $answer3->fetch())
 				{	?>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line3['s_id'] ?>"> <?= $line3['titre']?></a>
