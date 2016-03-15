@@ -9,11 +9,11 @@
 <?php if (isset($_GET['s']))
 	{
 		$sondage = intval($_GET['s']);
-	$verif = $db->prepare('SELECT sv.id, sv.sondage_id AS sondage, sv.sender_id, sv.vote, m.id AS m_id,
-				FROM sondage_votes sv
+	$verif = $db->prepare('SELECT v.id, v.sondage_id AS sondage, v.sender_id, v.vote, m.id AS m_id,
+				FROM sondage_votes v
 				RIGHT JOIN members m
 				ON m_id = sv.sender_id
-				WHERE sv.sondage_id = ? AND sender_id = ?');
+				WHERE v.sondage_id = ? AND v.sender_id = ?');
 	$verif->execute(array($sondage, $_SESSION['id']));
 	if (isset($_GET['v']) && $_GET['v'] == 'pour')
 	{
@@ -22,9 +22,12 @@
 			$vote = $db->prepare("UPDATE sondage_votes SET vote= 1 WHERE sender_id = ? AND sondage_id = ?");
 			$vote->execute(array($_SESSION['id'], $sondage));
 		}
+		else
+		{
 		$vote = $db->prepare("INSERT INTO sondage_votes VALUES('', ?, 1, ?)");
 		$vote->execute(array($sondage, $_SESSION['id']));
 		echo 'tu as voté "pour" !'	 ;
+		}
 	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'blanc')
 	{
