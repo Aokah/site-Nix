@@ -234,21 +234,13 @@
 			
 			if ($verif->fetch())
 			{ echo '<p>Navré, mais ce sondage existe déjà.</p>'; }
-			elseif (empty($name) OR empty($title) OR empty($text)) { ?>
-			<p>Certains champs n'ont pas été remplis, veuillez <a href="index?p=sondage">réessayer</a>.</p>
-			<?php
-			}
-			elseif (!empty($name) AND !empty($title) AND !empty($text))
+			else
 			{
 			$ajout = $db->prepare("INSERT INTO sondage VALUES('', ?, ?, ?; ?, NOW())");
 			$ajout->execute(array($_SESSION['id'], $level, $name, $text));
 			?>
 			<p>Sondage créé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
 			<?php
-			}
-			else
-			{
-				echo '<p>Une erreur s\'est produite</p>';
 			}
 		}	
 	
