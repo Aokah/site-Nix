@@ -199,7 +199,7 @@
 	?>
 		<h3>Liste de PNJ</h3>
 	<p>Liste des PNJs officiels de Nix</p>
-	<p><a href="index.php?p=pnj_list&action=createpage">Créer une nouvelle fiche</a></p>
+	<p><a href="index.php?p=pnj_list&a=create">Créer une nouvelle fiche</a></p>
 	
 	<table id="members">
 		<tbody>
