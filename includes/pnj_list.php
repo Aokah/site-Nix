@@ -94,7 +94,7 @@
 			<table class="pnjtable"  cellspacing="10px">
 				<tbody>
 					<form action="index.php?p=pnj_list&a=valid" method="POST">
-						<input type="hidden" name="id" value"<?php echo $id;?>" />
+						<input type="hidden" name="id" value="<?php echo $id;?>" />
 						<tr>
 							<td rowspan="4" width="150px" height="150px" style="border-radius: 10px;"> <input type="hidden" value="<?= $line['id']?>" name="p_id" />
 							<img width="150px" height="150px" src="pics/pnj/pnj_<?echo $img?>.png" /></td>	<td height="20px" style="border: 0px grey solid; background-color: grey;"> <p></p></td>
