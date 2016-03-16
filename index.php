@@ -1,32 +1,23 @@
+
 <?php
-
 ini_set('display_errors', 1);
-
 session_start();
-
 //Nombre de pages vues
-
 $views = fopen('../views.txt', 'r+');
 $viewsNbr = intval(fgets($views));
 $viewsNbr++;
 fseek($views, 0);
 fputs($views, $viewsNbr);
 fclose($views);
-
 	//Recupération de la base de donnée
-
-
 include_once('../db.php');
 $db = init_db();
-
 	//Définition si nécessaire des variables de sessions
 	//Actualisation de la dernière action
-
 if (!isset($_SESSION['connected']))
 {
 	$_SESSION['connected'] = false;
 }
-
 function color ($id, $cssStyle = false)
 {
 	//Couleur
@@ -38,7 +29,7 @@ function color ($id, $cssStyle = false)
 	{
 		switch ($line['rank'])
 		{ 
-			case 0: $color= "#404040" ;
+				case 0: $color= "#404040" ;
 			case 1: $color= "#000000" ;
 			case 2: $color= "#00e5e6" ;
 			case 3: $color= "#007acc" ;
@@ -51,20 +42,14 @@ function color ($id, $cssStyle = false)
 			case 10: $color= "#9900FF" ;
 			default: $color = "inherit" ; break;
 		}
-	}
-	else
-	{
-		$color = "inherit";
-	}
 
 	if ($cssStyle)
 	{
-		$color = ($color) ? "style=\"color :$color\"":'';
+		$color = ($color) ? "style=\"color:$color;\"":'';
 	}
 
 	return $color;
 }
-
 function rank ($id)
 {
 	global $db;
@@ -81,40 +66,32 @@ function rank ($id)
 	}
 	return $rank;
 }
-
 function shirka_say ($msg)
 {
 	global $db;
-
 	$insert = $db->prepare('INSERT INTO chatbox (post_date, user_id, message) VALUES (NOW(), 92, ?)');
 	$insert->execute(array(htmlspecialchars($msg)));
 }
-
 if ($_SESSION['connected'])
 {
 	$update = $db->prepare('UPDATE members SET last_action = NOW() WHERE id = ?');
 	$update->execute(array($_SESSION['id']));
-
 	$answer = $db->prepare('SELECT rank, title FROM members WHERE id = ?');
 	$answer->execute(array($_SESSION['id']));
 	$line = $answer->fetch();
 	$answer->closeCursor();
-
 	$rank = $line['rank'];
 	$_SESSION['title'] = $line['title'];
-
 	$answer = $db->prepare('SELECT COUNT(*) AS number FROM private_message WHERE to_id = ? AND unread = 1');
 	$answer->execute(array($_SESSION['id']));
 	$line = $answer->fetch();
 	$answer->closeCursor();
 	$_SESSION['alertNewMsgs'] = $line['number'];
-
 }
 else
 {
 	$_SESSION['rank'] = 0;
 }
-
 	//Définition des rangs
 	//Insertion de la fonction affichant la page
 if (isset($_GET['p']) && $_GET['p'] == 'chatboxsystem')
@@ -158,7 +135,6 @@ else
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
 		ga('create', 'UA-63605557-1', 'auto');
 		ga('send', 'pageview');
 		</script>
