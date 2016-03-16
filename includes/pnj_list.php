@@ -187,6 +187,60 @@
   						<?php
   					}
   				}
+  				elseif ($_GET['a'] == "create")
+  				{
+  				?>
+  				<h3>Création d'une fiche PNJ</h3>
+	
+					<table class="pnjtable"  cellspacing="10px">
+						<tbody>
+							<form action="index.php?p=pnj_list&a=valid" method="POST">
+								<tr>
+									<td rowspan="4" width="150px" height="150px" style="border-radius: 10px;">Image à Envoyer via FTP</td>	<td height="20px" style="border: 0px grey solid; background-color: grey;"> <p></p></td>
+								</tr>
+								<tr>
+									<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;"><p></p></td> 	<td height="20px">Prénom : <input name="prenom" type="text"/> </td> <td height="20px">Nom : <input name="nom"  type="text"/> </td><td width="89px" style="border: 0px grey solid; background-color: grey;"> <p></p></td>
+								</tr>
+								<tr>
+									<td style="border: 0px grey solid; background-color: grey;"><p></p></td> <td width="80px" height="20px">Origine :<input name="origine" type="text"/> </td> <td width="80px" height="20px">Race : <input name="race" type="text"/> </td><td style="border: 0px grey solid; background-color: grey;"> <p></p></td>
+								</tr>
+								<tr>
+									<td height="20px" style="border: 0px grey solid; background-color: grey;"> <p></p></td>
+								</tr>
+								<tr>
+									<td>Taille : <input name="taille" type="text"/> </td> <td rowspan="2"><p>Signes distinctifs :</p><textarea style="width: 149px; height: 45px;" name="sd" ></textarea></td>
+								</tr>
+								<tr>
+									<td>Poids :<input name="poids" type="text"/> </td>
+									<td>Importance : <input name="role"  type="number" min=0 max=4 step=1/></td>
+								</tr>
+								<tr>
+									<td>Elément : <input name="element" type="text"/> </td> <td colspan="3">Event d'apparition : <input name="event"  type="text"/></td>
+								</tr>
+								<tr>
+									<td><p>Qualités :</p><p><input name="qualite" type="text"/></p></td>
+																				<td style="vertical-align: top;" colspan="4" rowspan="5" width="100%" ><p>Histoire : </p>
+																				<p><textarea style="width: 616px; height: 282px;" name="bg" ></textarea></p></td>
+								</tr>
+								<tr>
+									<td><p>Défaults :</p><p><input name="default" type="text"/></p></td>
+								</tr>
+								
+								<tr>
+									<td><p>Caractère :</p> <p><input name="caractere" type="text"/></p></td>
+								</tr>
+								<tr>
+									<td><p>Equipement :</p>
+									<p><input name="equipement" type="text"/></p></td>
+								</tr>
+								<tr>
+								<input name="envoi" type="submit">
+								</tr>
+							</form>
+						</tbody>
+					</table>
+				<?php
+  				}
   				else  { echo '<p>Une erreur s\'est produite</p>'; }
   	}
   	else 
