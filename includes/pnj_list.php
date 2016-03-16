@@ -82,9 +82,15 @@
 				if ($line = $answer->fetch())
 				{
   				$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
-  				
+  				if ($line['role'] == 0) { $color = "#0066FF"; $role = "Moindre";  }
+				elseif ($line['role'] == 1) { $color = "#00FF00"; $role = "Mineure";  }
+				elseif ($line['role'] == 2) { $color = "#FFCC00"; $role = "Intermédiaire";  }
+				elseif ($line['role'] == 3) { $color = "#CC3300"; $role = "Majeure";  }
+				elseif ($line['role'] == 4) { $color = "#FF0000"; $role = "Primaire";  }
+				else { $color = "#808080"; $role = "Inconnu";  }
+				$bg = preg_replace('#\n#', '<br />', $line['bg']);
 			?>	
-			
+		<h3 style="color:<? echo $color?>; text-shadow: 2px 2px 2px #000000;">PNJ <?= $line['prenom']?></h3>
 			<table class="pnjtable"  cellspacing="10px">
 				<tbody>
 					<form action="index.php?p=pnj_list&a=valid" method="POST">
