@@ -347,7 +347,7 @@
 					<a href="index?p=sondage&s=<?= $line1['s_id'] ?>"> <?= $line1['titre']?></a>
 					</td>
 					<td>
-					img width="20px" src="pics/avatar/miniskin_<?= $line1['m.id']?>.png" alt="" />
+					<img width="20px" src="pics/avatar/miniskin_<?= $line1['m.id']?>.png" alt="" />
 					<a class="name<?= $line1['rank']?>" href="index?p=perso&perso=<?= $line1['m.id']?>"> <?= $line1['title']?> <?= $line1['name']?></a>
 					<br>
 					<?php echo $date; ?>
