@@ -145,8 +145,6 @@
   			elseif  ($_GET['a'] == 'valid')
   			{
   				$id = $_POST['id'] ;
-  					$answer = $db->prepare('SELECT * FROM pnj_list AS p WHERE p.id = ?');
-					$answer->execute(array($id));
   				$prenom = "Inconnu";	$nom = "?";	$origine = "Inconnue";	$race = "Inconnue" ;
   				$taille = "?";		$poids = "?";	$sd = "Aucun";		$element = "?";
   				$qualité = "?";		$defaut = "?";	$event = "Inconnu";	$caractère = "?";
