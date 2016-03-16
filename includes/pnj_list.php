@@ -226,8 +226,8 @@
 	</table>
 	<?php
   	}
+	}
   	else { echo '<p>Vous n\'avez pas le grade suffisant pour visionner cette page</p>'; }
-  	}
   	}
   	else { '<p>Vous devez être connecté pour visionner cette page.</p>'; }
 }
