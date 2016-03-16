@@ -2,7 +2,7 @@
 {
   global $db, $_SESSION, $_GET, $_POST;
   
-  if ($_SESSION['connected']) {
+  if ($_SESSION['connected']) { 
 
 	if ($_SESSION['rank'] >= 6) {
 		
