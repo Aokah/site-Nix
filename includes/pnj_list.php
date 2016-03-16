@@ -74,7 +74,7 @@
   	}
   	elseif (isset($_GET['a']))
   	{
-  			if ($_GET ['a'] == 'edit')
+  			if (isset($_GET['a']) AND $_GET ['a'] == 'edit')
   			{
   				$id = $_POST['id'] ;
   				$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
@@ -130,7 +130,7 @@
 			</table>
 	<?php
   			}
-  			elseif  ($_GET ['a'] == 'valid')
+  			elseif  (isset($_GET['a']) AND $_GET ['a'] == 'valid')
   			{
   				$prenom = "Inconnu";	$nom = "?";	$origine = "Inconnue";	$race = "Inconnue" ;
   				$taille = "?";		$poids = "?";	$sd = "Aucun";		$element = "?";
