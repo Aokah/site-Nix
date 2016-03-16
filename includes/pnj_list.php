@@ -129,9 +129,9 @@
 				</tbody>
 			</table>
 	<?php
-  	}
-  	elseif  ($_GET ['a'] == 'valid')
-  	{
+  			}
+  			elseif  ($_GET ['a'] == 'valid')
+  			{
   				$prenom = "Inconnu";	$nom = "?";	$origine = "Inconnue";	$race = "Inconnue" ;
   				$taille = "?";		$poids = "?";	$sd = "Aucun";		$element = "?";
   				$qualité = "?";		$defaut = "?";	$event = "Inconnu";	$caractère = "?";
@@ -173,7 +173,8 @@
   						<p><a href="index?p=pnj_list">Cliquez ici</a> pour retourner à la Liste des Personnages Non Joueurs</p>
   						<?php
   					}
-  					else  { echo '<p>Une erreur s\'est produite</p>'; }
+  				}
+  				else  { echo '<p>Une erreur s\'est produite</p>'; }
   	}
   	else 
   	{
@@ -226,6 +227,7 @@
 	<?php
   	}
   	else { echo '<p>Vous n\'avez pas le grade suffisant pour visionner cette page</p>'; }
+  	}
   	}
   	else { '<p>Vous devez être connecté pour visionner cette page.</p>'; }
 }
