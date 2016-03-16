@@ -77,7 +77,7 @@
   			if ($_GET ['a'] == 'edit')
   			{
   				$id = $_POST['id'] ;
-  				$answer = $db->prepare('SELECT * FROM pnj_list AS p WHERE p.id = ?');
+  				$answer = $db->prepare('SELECT * FROM pnj_list AS p WHERE p.id = 8');
 				$answer->execute(array($id));
 				if ($line = $answer->fetch())
 				{
