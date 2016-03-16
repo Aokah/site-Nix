@@ -24,7 +24,7 @@
 ?>
 	<h3 style="color:<? echo $color?>; text-shadow: 2px 2px 2px #000000;">PNJ <?= $line['prenom']?></h3>
 	<form action="index.php?p=pnj_list&a=edit" method="POST">
-	<input type="hidden" name ="id" value="<?= $line['id']?>" />
+	<input type="hidden" name ="id" value="<? echo $pnj;?>" />
 	<input type="submit" name="modifier" value="Modifier" style="color:blue;" />
 	</form>
 	
@@ -77,7 +77,7 @@
   			if ($_GET ['a'] == 'edit')
   			{
   				$id = $_POST['id'] ;
-  				$answer = $db->prepare('SELECT * FROM pnj_list AS p WHERE p.id = 8');
+  				$answer = $db->prepare('SELECT * FROM pnj_list AS p WHERE p.id = ?');
 				$answer->execute(array($id));
 				if ($line = $answer->fetch())
 				{
@@ -88,7 +88,7 @@
 			<table class="pnjtable"  cellspacing="10px">
 				<tbody>
 					<form action="index.php?p=pnj_list&a=valid" method="POST">
-						<input type="hidder" name="id" value"<?php echo $id;?>" />
+						<input type="hidden" name="id" value"<?php echo $id;?>" />
 						<tr>
 							<td rowspan="4" width="150px" height="150px" style="border-radius: 10px;"> <input type="hidden" value="<?= $line['id']?>" name="p_id" />
 							<img width="150px" height="150px" src="pics/pnj/pnj_<?echo $img?>.png" /></td>	<td height="20px" style="border: 0px grey solid; background-color: grey;"> <p></p></td>
