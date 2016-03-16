@@ -92,6 +92,7 @@
 				$text = preg_replace('#\n#', '<br />', $line['text']);
 	?>
 	<h3><?= $line['titre']?></h3>
+	<p><a href="index.php?p=sondage">Retourner à la liste des sondages.</a></p>
 	<center>
 		<table width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
