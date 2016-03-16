@@ -59,7 +59,7 @@ function color ($id, $cssStyle = false)
 
 	if ($cssStyle)
 	{
-		$color = ($color) ? "style=\"color :"$color"\"":'';
+		$color = ($color) ? "style=\"color :$color\"":'';
 	}
 
 	return $color;
