@@ -1,16 +1,24 @@
 <?php
+
 ini_set('display_errors', 1);
+
 session_start();
+
 //Nombre de pages vues
+
 $views = fopen('../views.txt', 'r+');
 $viewsNbr = intval(fgets($views));
 $viewsNbr++;
 fseek($views, 0);
 fputs($views, $viewsNbr);
 fclose($views);
+
 	//Recupération de la base de donnée
+
+
 include_once('../db.php');
 $db = init_db();
+
 	//Définition si nécessaire des variables de sessions
 	//Actualisation de la dernière action
 
@@ -24,25 +32,29 @@ function color ($id, $cssStyle = false)
 	//Couleur
 	
 	global $db;
-	$answer = $db->prepare('SELECT * FROM members');
+	$answer = $db->prepare('SELECT rank FROM members WHERE id = ?');
 	$answer->execute(array(intval($id)));
-	$line = $answer->fetch();
+	if ($line = $answer->fetch())
 	{
 		switch ($line['rank'])
 		{ 
-				case 0: $color= "#404040" ;
-			case 1: $color= "#000000" ;
-			case 2: $color= "#00e5e6" ;
-			case 3: $color= "#007acc" ;
-			case 4: $color= "#0000cc" ; 
-			case 5: $color= "#339900" ;
-			case 6: $color= "#ff4d4d" ; 
-			case 7: $color= "#ff0000" ; 
-			case 8: $color= "#FFD700" ;
-			case 9: $color= "#FF8C00" ; 
-			case 10: $color= "#9900FF" ;
+			case 0: $color= "#404040" ; break;
+			case 2: $color= "#00e5e6" ; break;
+			case 3: $color= "#007acc" ; break;
+			case 4: $color= "#0000cc" ; break;
+			case 5: $color= "#339900" ; break;
+			case 6: $color= "#ff4d4d" ; break;
+			case 7: $color= "#ff0000" ; break;
+			case 8: $color= "#FFD700" ; break;
+			case 9: $color= "#FF8C00" ; break;
+			case 10: $color= "#9900FF" ;break;
 			default: $color = "inherit" ; break;
 		}
+	}
+	else
+	{
+		$color = "inherit";
+	}
 
 	if ($cssStyle)
 	{
@@ -51,11 +63,22 @@ function color ($id, $cssStyle = false)
 
 	return $color;
 }
-}
 
-function rank ($truc)
+function rank ($id)
 {
-	echo $_SESSION['rank'];
+	global $db;
+	$answer = $db->prepare('SELECT rank FROM members WHERE id = ?');
+	$answer->execute(array(intval($id)));
+	
+	if ($line = $answer->fetch())
+	{
+		$rank = $line['rank'];
+	}
+	else
+	{
+		$rank = 0;
+	}
+	return $rank;
 }
 
 function shirka_say ($msg)
