@@ -1,97 +1,106 @@
-
 <?php
+
 ini_set('display_errors', 1);
+
 session_start();
+
 //Nombre de pages vues
-$views = fopen('../views.txt', 'r+');
+
+$views = fopen('views.txt', 'r+');
 $viewsNbr = intval(fgets($views));
 $viewsNbr++;
 fseek($views, 0);
 fputs($views, $viewsNbr);
 fclose($views);
+
 	//Recupération de la base de donnée
-include_once('../db.php');
-$db = init_db();
+
+try
+{
+	$db = new PDO('mysql:host=rpnixcomso1998.mysql.db;dbname=rpnixcomso1998', 'rpnixcomso1998', 'Dragonball76', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch (Exception $e)
+{
+	die('Erreur : ' . $e->getMessage());
+}
+
+$db->query('SET NAMES UTF8');
+
 	//Définition si nécessaire des variables de sessions
 	//Actualisation de la dernière action
+
 if (!isset($_SESSION['connected']))
 {
 	$_SESSION['connected'] = false;
 }
+
 function color ($id, $cssStyle = false)
 {
 	//Couleur
 	
 	global $db;
-	$answer = $db->prepare('SELECT rank FROM members WHERE id = ?');
+	$answer = $db->prepare('SELECT * FROM members');
 	$answer->execute(array(intval($id)));
-	if ($line = $answer->fetch())
-	{
-		switch ($line['rank'])
-		{ 
-				case 0: $color= "#404040" ;
-			case 1: $color= "#000000" ;
-			case 2: $color= "#00e5e6" ;
-			case 3: $color= "#007acc" ;
-			case 4: $color= "#0000cc" ; 
-			case 5: $color= "#339900" ;
-			case 6: $color= "#ff4d4d" ; 
-			case 7: $color= "#ff0000" ; 
-			case 8: $color= "#FFD700" ;
-			case 9: $color= "#FF8C00" ; 
-			case 10: $color= "#9900FF" ;
-			default: $color = "inherit" ; break;
-		}
+	$line = $answer->fetch();
+		while ($line = $answer->fetch()) {
+			switch ($line ['rank']) { 
+				case 0: $color= "#404040" ; break;
+				case 1: $color= "#000000" ; break;
+				case 2: $color= "#10DEDE" ; break;
+				case 3: $color= "#5F9EA0" ; break;
+				case 4: $color= "#339900" ; break;
+				case 5: $color= "#FF8383" ; break;
+				case 6: $color= "#FF3333" ; break;
+				case 7: $color= "#FFD700" ; break;
+				case 8: $color= "#FF8C00" ; break;
+				case 9: $color= "#9900FF" ; break; }
 
 	if ($cssStyle)
 	{
 		$color = ($color) ? "style=\"color:$color;\"":'';
 	}
 
-	return $color;
+	return $color; }
 }
-function rank ($id)
+
+function rank ($truc)
 {
-	global $db;
-	$answer = $db->prepare('SELECT rank FROM members WHERE id = ?');
-	$answer->execute(array(intval($id)));
-	
-	if ($line = $answer->fetch())
-	{
-		$rank = $line['rank'];
-	}
-	else
-	{
-		$rank = 0;
-	}
-	return $rank;
+	echo $_SESSION['rank'];
 }
+
 function shirka_say ($msg)
 {
 	global $db;
+
 	$insert = $db->prepare('INSERT INTO chatbox (post_date, user_id, message) VALUES (NOW(), 92, ?)');
 	$insert->execute(array(htmlspecialchars($msg)));
 }
+
 if ($_SESSION['connected'])
 {
 	$update = $db->prepare('UPDATE members SET last_action = NOW() WHERE id = ?');
 	$update->execute(array($_SESSION['id']));
+
 	$answer = $db->prepare('SELECT rank, title FROM members WHERE id = ?');
 	$answer->execute(array($_SESSION['id']));
 	$line = $answer->fetch();
 	$answer->closeCursor();
+
 	$rank = $line['rank'];
 	$_SESSION['title'] = $line['title'];
+
 	$answer = $db->prepare('SELECT COUNT(*) AS number FROM private_message WHERE to_id = ? AND unread = 1');
 	$answer->execute(array($_SESSION['id']));
 	$line = $answer->fetch();
 	$answer->closeCursor();
 	$_SESSION['alertNewMsgs'] = $line['number'];
+
 }
 else
 {
 	$_SESSION['rank'] = 0;
 }
+
 	//Définition des rangs
 	//Insertion de la fonction affichant la page
 if (isset($_GET['p']) && $_GET['p'] == 'chatboxsystem')
@@ -135,6 +144,7 @@ else
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
 		ga('create', 'UA-63605557-1', 'auto');
 		ga('send', 'pageview');
 		</script>
