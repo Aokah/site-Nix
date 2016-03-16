@@ -1,31 +1,16 @@
 <?php
-
 ini_set('display_errors', 1);
-
 session_start();
-
 //Nombre de pages vues
-
-$views = fopen('views.txt', 'r+');
+$views = fopen('../views.txt', 'r+');
 $viewsNbr = intval(fgets($views));
 $viewsNbr++;
 fseek($views, 0);
 fputs($views, $viewsNbr);
 fclose($views);
-
 	//Recupération de la base de donnée
-
-try
-{
-	$db = new PDO('mysql:host=rpnixcomso1998.mysql.db;dbname=rpnixcomso1998', 'rpnixcomso1998', 'Dragonball76', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-}
-catch (Exception $e)
-{
-	die('Erreur : ' . $e->getMessage());
-}
-
-$db->query('SET NAMES UTF8');
-
+include_once('../db.php');
+$db = init_db();
 	//Définition si nécessaire des variables de sessions
 	//Actualisation de la dernière action
 
