@@ -243,10 +243,10 @@
 			?,
 			?,
 			NOW())");
-			$ajout->execute(array($_SESSION['id'], 
-			$level, 
-			$name,
-			$text));
+			$ajout->execute(array($_SESSION['id'], $level, $name,
+			$text)
+			)
+			;
 			?>
 			<p>Sondage créé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
 			<?php
