@@ -230,7 +230,6 @@
 			$name = htmlentities($_POST['name']);
 			$level = htmlentities($_POST['level']);
 			$text = htmlentities($_POST['text']);
-			$private = 0;
 			$verif = $db->prepare('SELECT * FROM sondage WHERE title = ?');
 			$verif->execute(array($name));
 			
@@ -238,8 +237,8 @@
 			{ echo '<p>Navré, mais ce sondage existe déjà.</p>'; }
 			else
 			{
-			$ajout = $db->prepare("INSERT INTO sondage VALUES('',?, ?, ?,?,NOW()),?");
-			$ajout->execute(array($_SESSION['id'], $level, $name, $text, $private));
+			$ajout = $db->prepare("INSERT INTO sondage VALUES('',?, ?, ?,?,NOW())");
+			$ajout->execute(array($_SESSION['id'], $level, $name, $text));
 			?>
 			<p>Sondage créé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
 			<?php
