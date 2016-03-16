@@ -50,7 +50,7 @@
 					<td>Importance : <?php echo $role ?></td>
 				</tr>
 				<tr>
-					<td>Elément : <?= $line['element']?> </td> <td colspan="3">Event d'apparition : <?= $line['event']?></td>
+					<td>Elément : <?= $line['element']?> </td> <td colspan="3">Event d'apparition : <?= $line['events']?></td>
 				</tr>
 				<tr>
 					<td><p>Qualités :</p><p><?= $line['qualite']?></p></td>
@@ -58,7 +58,7 @@
 																<p><?= $line['bg']?><p> </td>
 				</tr>
 				<tr>
-					<td><p>Défaults :</p><p><?= $line['default']?></p></td>
+					<td><p>Défaults :</p><p><?= $line['defauts']?></p></td>
 				</tr>
 				
 				<tr>
@@ -116,7 +116,7 @@
 							<td>Importance : <input name="role" value="<?= $line['role']?>" type="number" min=0 max=4 step=1/></td>
 						</tr>
 						<tr>
-							<td>Elément : <input name="element" value="<?= $line['element']?>" type="text"/> </td> <td colspan="3">Event d'apparition : <input name="event" value="<?= $line['event']?>" type="text"/></td>
+							<td>Elément : <input name="element" value="<?= $line['element']?>" type="text"/> </td> <td colspan="3">Event d'apparition : <input name="event" value="<?= $line['events']?>" type="text"/></td>
 						</tr>
 						<tr>
 							<td><p>Qualités :</p><p><input name="qualite" value="<?= $line['qualite']?>" type="text"/></p></td>
@@ -124,7 +124,7 @@
 																		<p><textarea style="width: 616px; height: 282px;" name="bg" ><?= $line['bg']?></textarea></p></td>
 						</tr>
 						<tr>
-							<td><p>Défaults :</p><p><input name="default" value="<?= $line['default']?>" type="text"/></p></td>
+							<td><p>Défaults :</p><p><input name="default" value="<?= $line['defauts']?>" type="text"/></p></td>
 						</tr>
 						
 						<tr>
@@ -167,7 +167,7 @@
   				if (isset($_POST['end']))
   					{
   						$edit = $db->prepare('UPDATE pnj_list SET role = ?, prenom = ?, nom = ?, origine = ?, race = ?, taille = ?,
-  						poids = ?, sd=  ?, element = ?, qualite = ?, "default" = ?, "event" = ?, caractere = ?, equipement = ?, bg = ? WHERE id = ?');
+  						poids = ?, sd=  ?, element = ?, qualite = ?, defauts = ?, events = ?, caractere = ?, equipement = ?, bg = ? WHERE id = ?');
   						$edit->execute(array($role, $prenom, $nom, $origine, $race, $taille, $poids, $sd, $element, $qualite,
   						 $defaut, $event, $caractere, $equipement, $bg, $id));
   						?>
