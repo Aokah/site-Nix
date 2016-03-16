@@ -237,8 +237,16 @@
 			{ echo '<p>Navré, mais ce sondage existe déjà.</p>'; }
 			else
 			{
-			$ajout = $db->prepare("INSERT INTO sondage VALUES('', ?, ?, ?, ?, NOW())");
-			$ajout->execute(array($_SESSION['id'], $level, $name, $text));
+			$ajout = $db->prepare("INSERT INTO sondage VALUES('',
+			?, 
+			?, 
+			?,
+			?,
+			NOW())");
+			$ajout->execute(array($_SESSION['id'], 
+			$level, 
+			$name,
+			$text));
 			?>
 			<p>Sondage créé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
 			<?php
