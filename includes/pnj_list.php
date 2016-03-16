@@ -23,7 +23,7 @@
 			$bg = preg_replace('#\n#', '<br />', $line['bg']);
 ?>
 	<h3 style="color:<? echo $color?>; text-shadow: 2px 2px 2px #000000;">PNJ <?= $line['prenom']?></h3>
-	<form action="index.php?p=pnj&a=edit" method="POST">
+	<form action="index.php?p=pnj_list&a=edit" method="POST">
 	<input type="hidden" name ="id" value="<?= $line['id']?>" />
 	<input type="submit" name="modifier" value="Modifier" style="color:blue;" />
 	</form>
@@ -74,7 +74,7 @@
   	}
   	elseif (isset($_GET['a']))
   	{
-  			if (isset($_GET['a']) AND $_GET ['a'] == 'edit')
+  			if ($_GET ['a'] == 'edit')
   			{
   				$id = $_POST['id'] ;
   				$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
@@ -130,7 +130,7 @@
 			</table>
 	<?php
   			}
-  			elseif  (isset($_GET['a']) AND $_GET ['a'] == 'valid')
+  			elseif  ($_GET ['a'] == 'valid')
   			{
   				$prenom = "Inconnu";	$nom = "?";	$origine = "Inconnue";	$race = "Inconnue" ;
   				$taille = "?";		$poids = "?";	$sd = "Aucun";		$element = "?";
