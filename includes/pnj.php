@@ -3,12 +3,10 @@
   global $db, $_SESSION, $_GET, $_POST;
 ?>
 
-  <? if (isset($_GET['pnj']))
-  {
-    $pnj = intval($_GET['pnj']);
-		$answer = $db->prepare('SELECT *
-					FROM pnj_list AS p
-					WHERE p.id = ?');
+	  <? if (isset($_GET['pnj']))
+	  {
+    		$pnj = intval($_GET['pnj']);
+		$answer = $db->prepare('SELECT * FROM pnj_list AS p WHERE p.id = ?');
 		$answer->execute(array($pnj));
 		if ($line = $answer->fetch())
 		{
@@ -22,7 +20,8 @@
 			$bg = preg_replace('#\n#', '<br />', $line['bg']);
 ?>
 	<h3 style="color:<? echo $color?>; text-shadow: 2px 2px 2px #000000;">PNJ <?= $line['prenom']?></h3>
-	<form action="index.php?p=pnj_list&pnj=<?= $line['id']?>" method="POST">
+	<form action="index.php?p=pnj&a=edit" method="POST">
+	<input type="hidden" name="<?= $line['id']?>" />
 	<input type="submit" name="modifier" value="Modifier" style="color:blue;" />
 	</form>
 	
@@ -68,8 +67,81 @@
 				</tr>
 		</tbody>
 	</table>
+	<?php  } else { echo  "<p>Une erreur s'est produite ou le PNJ n'existe pas.</p>"; }
+  	}
+  	elseif (isset($_GET['a']))
+  		{
+  			if ($_GET ['a'] == 'edit')
+  			{
+  				$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
+			?>	
+			
+			<table class="pnjtable"  cellspacing="10px">
+				<tbody>
+					<form action="index.php?p=pnj_list&action=validpage" method="POST">
+						<tr>
+							<td rowspan="4" width="150px" height="150px" style="border-radius: 10px;"> <input type="hidden" value="<?= $line['id']?>" name="p_id" />
+							<img width="150px" height="150px" src="pics/pnj/pnj_<?echo $img?>.png" /></td>	<td height="20px" style="border: 0px grey solid; background-color: grey;"> <p></p></td>
+						</tr>
+						<tr>
+							<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;"><p></p></td> 	<td height="20px">Prénom : <input name="prenom" value="<?= $line['prenom']?>" type="text"/> </td> <td height="20px">Nom : <input name="nom" value="<?= $line['nom']?>" type="text"/> </td><td width="89px" style="border: 0px grey solid; background-color: grey;"> <p></p></td>
+						</tr>
+						<tr>
+							<td style="border: 0px grey solid; background-color: grey;"><p></p></td> <td width="80px" height="20px">Origine :<input name="origine" value="<?= $line['origine']?>" type="text"/> </td> <td width="80px" height="20px">Race : <input name="race" value="<?= $line['race']?>" type="text"/> </td><td style="border: 0px grey solid; background-color: grey;"> <p></p></td>
+						</tr>
+						<tr>
+							<td height="20px" style="border: 0px grey solid; background-color: grey;"> <p></p></td>
+						</tr>
+						<tr>
+							<td>Taille : <input name="taille" value="<?= $line['taille']?>" type="text"/> </td> <td rowspan="2"><p>Signes distinctifs :</p><textarea style="width: 149px; height: 45px;" name="sd" ><?= $line['sd']?></textarea></td>
+						</tr>
+						<tr>
+							<td>Poids :<input name="poids" value="<?= $line['poids']?>" type="text"/> </td>
+							<td>Importance : <input name="role" value="<?= $line['role']?>" type="number" min=0 max=4 step=1/></td>
+						</tr>
+						<tr>
+							<td>Elément : <input name="element" value="<?= $line['element']?>" type="text"/> </td> <td colspan="3">Event d'apparition : <input name="event" value="<?= $line['event']?>" type="text"/></td>
+						</tr>
+						<tr>
+							<td><p>Qualités :</p><p><input name="qualite" value="<?= $line['qualite']?>" type="text"/></p></td>
+																		<td style="vertical-align: top;" colspan="4" rowspan="5" width="100%" ><p>Histoire : </p>
+																		<p><textarea style="width: 616px; height: 282px;" name="bg" ><?= $line['bg']?></textarea></p></td>
+						</tr>
+						<tr>
+							<td><p>Défaults :</p><p><input name="default" value="<?= $line['default']?>" type="text"/></p></td>
+						</tr>
+						
+						<tr>
+							<td><p>Caractère :</p> <p><input name="caractere" value="<?= $line['caractere']?>" type="text"/></p></td>
+						</tr>
+						<tr>
+							<td><p>Equipement :</p>
+							<p><input name="equipement" value="<?= $line['equipement']?>" type="text"/></p></td>
+						</tr>
+						<tr>
+						<input name="end" type="submit" value="Terminer">
+						</tr>
+					</form>
+				</tbody>
+			</table>
 	<?php
-  } else { echo  "<p>Une erreur s'est produite ou le PNJ n'existe pas.</p>"; }
+  		}
+  		elseif  ($_GET ['a'] == 'valid')
+  			{
+  				$prenom = "Inconnu";	$nom = "?";	$origine = "Inconnue";	$race = "Inconnue" ;
+  				$taille = "?";		$poids = "?";	$sd = "Aucun";		$element = "?";
+  				$qualité = "?";		$defaut = "?";	$event = "Inconnu";	$caractère = "?";
+  				$equipement = "Inconnu";		$bg = "Non défini";
+  				if(!empty($_POST['prenom'])) { $prenom = htmlentities($_POST['prenom']); }
+  				if(!empty($_POST['nom'])) { $nom = htmlentities($_POST['nom']); }
+  				if(!empty($_POST['origine'])) { $origine = htmlentities($_POST['origine']); }
+  				if(!empty($_POST['origine'])) { $origine = htmlentities($_POST['origine']); }
+  				if(!empty($_POST['origine'])) { $origine = htmlentities($_POST['origine']); }
+  				if(!empty($_POST['origine'])) { $origine = htmlentities($_POST['origine']); }
+  				if(!empty($_POST['origine'])) { $origine = htmlentities($_POST['origine']); }
+  				if(!empty($_POST['origine'])) { $origine = htmlentities($_POST['origine']); }
+  			}
+  		 else { echo '<p>Une erreur s\'est produite</p>'; }
   ?>
   
 <?php
