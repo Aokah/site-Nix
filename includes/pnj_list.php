@@ -135,7 +135,7 @@
   				$prenom = "Inconnu";	$nom = "?";	$origine = "Inconnue";	$race = "Inconnue" ;
   				$taille = "?";		$poids = "?";	$sd = "Aucun";		$element = "?";
   				$qualité = "?";		$defaut = "?";	$event = "Inconnu";	$caractère = "?";
-  				$equipement = "Inconnu";		$bg = "Non défini";	$role = htmlentities($_POST['role');
+  				$equipement = "Inconnu";		$bg = "Non défini";	$role = htmlentities($_POST['role']);
   				if(!empty($_POST['prenom'])) { $prenom = htmlentities($_POST['prenom']); }
   				if(!empty($_POST['nom'])) { $nom = htmlentities($_POST['nom']); }
   				if(!empty($_POST['origine'])) { $origine = htmlentities($_POST['origine']); }
