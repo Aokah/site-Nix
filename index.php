@@ -32,7 +32,7 @@ function color ($id, $cssStyle = false)
 	//Couleur
 	
 	global $db;
-	$answer = $db->prepare('SELECT rank FROM members WHERE id = ?');
+	$answer = $db->prepare('SELECT rank, technician, pionier FROM members WHERE id = ?');
 	$answer->execute(array(intval($id)));
 	if ($line = $answer->fetch())
 	{
@@ -59,7 +59,7 @@ function color ($id, $cssStyle = false)
 
 	if ($cssStyle)
 	{
-		$color = ($color) ? "style=\"color:$color;\"":'';
+		$color = ($color) ? "class=\"name"$line['rank']"\"":'';
 	}
 
 	return $color;
