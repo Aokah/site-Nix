@@ -77,12 +77,18 @@
   			if ($_GET ['a'] == 'edit')
   			{
   				$id = $_POST['id'] ;
+  				$answer = $db->prepare('SELECT * FROM pnj_list AS p WHERE p.id = ?');
+				$answer->execute(array($id));
+				if ($line = $answer->fetch())
+				{
   				$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
+  				
 			?>	
 			
 			<table class="pnjtable"  cellspacing="10px">
 				<tbody>
 					<form action="index.php?p=pnj_list&a=valid" method="POST">
+						<input type="hidder" name="id" value"<?php echo $id;?>" />
 						<tr>
 							<td rowspan="4" width="150px" height="150px" style="border-radius: 10px;"> <input type="hidden" value="<?= $line['id']?>" name="p_id" />
 							<img width="150px" height="150px" src="pics/pnj/pnj_<?echo $img?>.png" /></td>	<td height="20px" style="border: 0px grey solid; background-color: grey;"> <p></p></td>
@@ -128,10 +134,11 @@
 					</form>
 				</tbody>
 			</table>
-	<?php
+	<?php		}
   			}
-  			elseif  ($_GET ['a'] == 'valid')
+  			elseif  ($_GET['a'] == 'valid')
   			{
+  				$id = $_POST['id'] ;
   				$prenom = "Inconnu";	$nom = "?";	$origine = "Inconnue";	$race = "Inconnue" ;
   				$taille = "?";		$poids = "?";	$sd = "Aucun";		$element = "?";
   				$qualité = "?";		$defaut = "?";	$event = "Inconnu";	$caractère = "?";
