@@ -144,6 +144,7 @@
   			}
   			elseif  ($_GET['a'] == 'valid')
   			{
+  				echo $_POST['id'];
   				$id = $_POST['id'] ;
   				$prenom = "Inconnu";	$nom = "?";	$origine = "Inconnue";	$race = "Inconnue" ;
   				$taille = "?";		$poids = "?";	$sd = "Aucun";		$element = "?";
