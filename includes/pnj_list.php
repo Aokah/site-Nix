@@ -166,8 +166,8 @@
   				
   				if (isset($_POST['end']))
   					{
-  						$edit = $db->prepare("UPDATE pnj_list SET role = ?, prenom = ?, nom = ?, origine = ?, race = ?, taille = ?,
-  						poids = ?, sd=  ?, element = ?, qualite = ?, 'default' = ?, 'event' = ?, caractere = ?, equipement = ?, bg = ? WHERE id = ?");
+  						$edit = $db->prepare('UPDATE pnj_list SET role = ?, prenom = ?, nom = ?, origine = ?, race = ?, taille = ?,
+  						poids = ?, sd=  ?, element = ?, qualite = ?, \'default\' = ?, \'event\' = ?, caractere = ?, equipement = ?, bg = ? WHERE id = ?');
   						$edit->execute(array($role, $prenom, $nom, $origine, $race, $taille, $poids, $sd, $element, $qualite,
   						$defaut, $event, $caractere, $equipement, $bg, $id));
   						?>
