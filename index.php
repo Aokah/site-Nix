@@ -38,17 +38,17 @@ function color ($id, $cssStyle = false)
 	{
 		switch ($line['rank'])
 		{ 
-			case 0: $color= "#404040" ; $rank = "0"; break;
-			case 1: $color= "#000000" ; $rank = "1"; break;
-			case 2: $color= "#00e5e6" ; $rank = "2"; break;
-			case 3: $color= "#007acc" ; $rank = "3"; break;
-			case 4: $color= "#0000cc" ; $rank = "4"; break;
-			case 5: $color= "#339900" ; $rank = "5"; break;
-			case 6: $color= "#ff4d4d" ; $rank = "6"; break;
-			case 7: $color= "#ff0000" ; $rank = "7"; break;
-			case 8: $color= "#FFD700" ; $rank = "8"; break;
-			case 9: $color= "#FF8C00" ; $rank = "9"; break;
-			case 10: $color= "#9900FF" ; $rank = "10"; break;
+			case 0: $color= "#404040" ;
+			case 1: $color= "#000000" ;
+			case 2: $color= "#00e5e6" ;
+			case 3: $color= "#007acc" ;
+			case 4: $color= "#0000cc" ;
+			case 5: $color= "#339900" ;
+			case 6: $color= "#ff4d4d" ;
+			case 7: $color= "#ff0000" ;
+			case 8: $color= "#FFD700" ;
+			case 9: $color= "#FF8C00" ;
+			case 10: $color= "#9900FF" ;
 			default: $color = "inherit" ; break;
 		}
 	}
@@ -59,7 +59,7 @@ function color ($id, $cssStyle = false)
 
 	if ($cssStyle)
 	{
-		$color = ($color) ? "class=\"name$rank;\"":'';
+		$color = ($color) ? "style=\"color: $color;\"":'';
 	}
 
 	return $color;
