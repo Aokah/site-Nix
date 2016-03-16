@@ -1,5 +1,6 @@
 <?php function sondage ()
 {
+
 	global $db, $_SESSION, $_POST, $_GET;
 	?>
 
