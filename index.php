@@ -42,12 +42,13 @@ function color ($id, $cssStyle = false)
 			case 1: $color= "#000000" ; break;
 			case 2: $color= "#00e5e6" ; break;
 			case 3: $color= "#007acc" ; break;
-			case 4: $color= "#339900" ; break;
-			case 5: $color= "#ff4d4d" ; break;
-			case 6: $color= "#ff0000" ; break;
-			case 7: $color= "#FFD700" ; break;
-			case 8: $color= "#FF8C00" ; break;
-			case 9: $color= "#9900FF" ; break;
+			case 4: $color= "#0000cc" ; break;
+			case 5: $color= "#339900" ; break;
+			case 6: $color= "#ff4d4d" ; break;
+			case 7: $color= "#ff0000" ; break;
+			case 8: $color= "#FFD700" ; break;
+			case 9: $color= "#FF8C00" ; break;
+			case 10: $color= "#9900FF" ; break;
 			default: $color = "inherit" ; break;
 		}
 	}
