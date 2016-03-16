@@ -169,7 +169,7 @@
   						$edit = $db->prepare('UPDATE pnj_list SET role = ?, prenom = ?, nom = ?, origine = ?, race = ?, taille = ?,
   						poids = ?, sd=  ?, element = ?, qualite = ?, "default" = ?, "event" = ?, caractere = ?, equipement = ?, bg = ? WHERE id = ?');
   						$edit->execute(array($role, $prenom, $nom, $origine, $race, $taille, $poids, $sd, $element, $qualite,
-  						 $caractere, $equipement, $bg, $id));
+  						 $defaut, $event, $caractere, $equipement, $bg, $id));
   						?>
   						<p>Votre page a bien été modifiée !</p> 
   						<p><a href = "index?p=pnj_list&pnj=<?php echo $id; ?>">Cliquez ici</a> Pour accéder à la page.</p>
