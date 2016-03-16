@@ -145,6 +145,8 @@
   			elseif  ($_GET['a'] == 'valid')
   			{
   				$id = $_POST['id'] ;
+  					$answer = $db->prepare('SELECT * FROM pnj_list AS p WHERE p.id = ?');
+					$answer->execute(array($id));
   				$prenom = "Inconnu";	$nom = "?";	$origine = "Inconnue";	$race = "Inconnue" ;
   				$taille = "?";		$poids = "?";	$sd = "Aucun";		$element = "?";
   				$qualité = "?";		$defaut = "?";	$event = "Inconnu";	$caractère = "?";
@@ -167,9 +169,9 @@
   				if (isset($_POST['end']))
   					{
   						$edit = $db->prepare('UPDATE pnj_list SET role = ?, prenom = ?, nom = ?, origine = ?, race = ?, taille = ?,
-  						poids = ?, sd=  ?, element = ?, qualite = ?, defaut = ?, event = ?, caractere = ?, equipement = ?, bg = ?, WHERE id = 8');
+  						poids = ?, sd=  ?, element = ?, qualite = ?, defaut = ?, event = ?, caractere = ?, equipement = ?, bg = ?, WHERE id = ?');
   						$edit->execute(array($role, $prenom, $nom, $origine, $race, $taille, $poids, $sd, $element, $qualite,
-  						$defaut, $event, $caractere, $equipement, $bg));
+  						$defaut, $event, $caractere, $equipement, $bg, $id));
   						?>
   						<p>Votre page a bien été modifiée !</p> 
   						<p><a href = "index?p=pnj_list&pnj=<?php echo $id; ?>">Cliquez ici</a> Pour accéder à la page.</p>
