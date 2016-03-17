@@ -235,7 +235,9 @@
 							</tr>
 							<tr>
 								<td colspan="2">
+									<p>
 									<?php echo $notestaff ;?>
+									</p>
 								</td>
 							</tr>
 						</tbody>
@@ -257,7 +259,7 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
-												<p>
+												<p style="padding:3%;">
 													<? echo $bg; ?>
 												</p>
 											</td>
@@ -286,7 +288,7 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
-												<p>
+												<p style="padding:3%;">
 													<? echo $hrp; ?>
 												</p>
 											</td>
@@ -320,7 +322,7 @@
 									<table width="640px" background="/pics/ico/notespersocenter.png">
 										<tr>
 											<td>
-												<p>
+												<p style="padding:3%;">
 													<? echo $notes; ?>
 												</p>
 											</td>
