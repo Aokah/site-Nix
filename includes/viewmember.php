@@ -114,12 +114,12 @@
 							</tr>
 							<tr>
 								<td colspan="3">
-									Element primaire : <?= $line['specialisation']?>
+									Elément primaire : <?= $line['specialisation']?>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="3">
-									Elemenn secondaire : <?= $line['spe_2']?>
+									Elément secondaire : <?= $line['spe_2']?>
 								</td>
 							</tr>
 							<tr>
