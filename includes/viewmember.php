@@ -38,7 +38,7 @@
 					<table cellspacing="5" cellpadding="5" class="pnjtable">
 						<tbody>
 							<tr>
-								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="4">
+								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="3">
 									Image
 								</td>
 							</tr>
@@ -56,14 +56,6 @@
 							<tr>
 								<td colspan="2">
 									<p>Titre : <img src="pics/rank<?= $_SESSION['rank']?>.png" alt="" width="25" /> <?= $_SESSION['title']?></p>
-								</td>
-							</tr>
-							<tr>
-								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
-									<p> </p>
-								</td>
-								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
-									<p> </p>
 								</td>
 							</tr>
 							<tr>
