@@ -38,7 +38,7 @@
 					<table cellspacin="0" cellpadding="0" class="pnjtable">
 						<tbody>
 							<tr>
-								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="3">
+								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="4">
 									Image
 								</td>
 								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
@@ -56,6 +56,19 @@
 							<tr>
 								<td colspan="2">
 									<p>Magie : <? echo $magieok; ?></p>
+								</td>
+							</tr>
+							<tr>
+								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									Energie Magique
+								</td>
+								<td colspan="2">
+									Energie Vitale
 								</td>
 							</tr>
 						</tbody>
