@@ -78,8 +78,8 @@
 					<table cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
-								<td colspan="3" width="100">
-									Miniature
+								<td colspan="3">
+									<img src="pics/avatar/skin_<?= $_SESSION['id']?>.png" alt="" width="100" />
 								</td>
 							</tr>
 							<tr>
