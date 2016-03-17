@@ -54,7 +54,7 @@
 					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
-								<td style="border-radius: 10px;" rowspan="4">
+								<td style="border-radius: 10px;" rowspan="4" width="200px">
 									<img src="pics/persoimg/perso_<?= $line['id']?>.png" alt="" width="200px" />
 								</td>
 							</tr>
