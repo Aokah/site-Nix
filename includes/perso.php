@@ -34,21 +34,6 @@
 		{
 			if ($line = $perso->fetch())
 			{
-				if (isset($_POST['save_bg'])) {
-					$editbg = (htmlentities($_POST['editbg']));
-					$update = $db->prepare('UPDATE members SET bacground = ? WHERE id = ?');
-					$update->execute(array($editbg, $_SESSION['id']));
-				}
-				if (isset($_POST['save_notes'])) {
-					$editnotes = (htmlentities($_POST['editnotes']));
-					$update = $db->prepare('UPDATE members SET notes_perso = ? WHERE id = ?');
-					$update->execute(array($editnotes, $_SESSION['id']));
-				}
-				if (isset($_POST['save_hrp'])) {
-					$edithrp = (htmlentities($_POST['edithrp']));
-					$update = $db->prepare('UPDATE members SET bg_hrp = ? WHERE id = ?');
-					$update->execute(array($edithrp, $_SESSION['id']));
-				}
 			if ($_GET['modif'] == "bg")
 			{
 			?>
@@ -90,6 +75,21 @@
 		}
 	else
 		{
+		if (isset($_POST['save_bg'])) {
+			$editbg = (htmlentities($_POST['editbg']));
+			$update = $db->prepare('UPDATE members SET bacground = ? WHERE id = ?');
+			$update->execute(array($editbg, $_SESSION['id']));
+		}
+		if (isset($_POST['save_notes'])) {
+			$editnotes = (htmlentities($_POST['editnotes']));
+			$update = $db->prepare('UPDATE members SET notes_perso = ? WHERE id = ?');
+			$update->execute(array($editnotes, $_SESSION['id']));
+		}
+		if (isset($_POST['save_hrp'])) {
+			$edithrp = (htmlentities($_POST['edithrp']));
+			$update = $db->prepare('UPDATE members SET bg_hrp = ? WHERE id = ?');
+			$update->execute(array($edithrp, $_SESSION['id']));
+		}
 		if ($line = $perso->fetch()) {
 		$magieok = 'Non acquise';
 		if ($line['magieok'] == 1) { $magietest = true; }
