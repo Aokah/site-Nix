@@ -30,7 +30,30 @@
 	<?php
 		$perso = $db->prepare('SELECT * FROM members WHERE id= ?');
 		$perso->execute(array($_SESSION['id']));
-		
+	if (isset($_GET['modif']))
+		{
+			if ($_GET['modif'] == "bg")
+			{
+			?>
+			<h3>Edition du BackGround Roleplay</h3>
+			<?php
+			}
+			elseif ($_GET['modif'] == "notesp")
+			{
+			?>
+			<h3>Edition des Notes Personnelles</h3>
+			<?php	
+			}
+			elseif ($_GET['modif'] == "jdesc")
+			{
+			?>
+			<h3>Edition de la Description du Joueur</h3>
+			<?php	
+			}
+			else { echo '<p>Tu n\'essaieraies pas de chercher là où tu ne devrais pas aller ? :P</p>'; }
+		}
+	else
+		{
 		if ($line = $perso->fetch()) {
 		$magieok = 'Non acquise';
 		if ($line['magieok'] == 1) { $magietest = true; }
@@ -351,7 +374,9 @@
 			</tr>
 		</tbody>
 	</table>
-	<?php } else { echo '<p>Une erreur s\'est produite.</p>'; }
+	<?php
+	}
+	} else { echo '<p>Une erreur s\'est produite.</p>'; }
 	
 	}
 	
