@@ -20,6 +20,72 @@
 
 	if (isset($_GET['perso']))
 	{
+		if (isset($_GET['modif']))
+		{
+			if($_GET['modif'] == 'info')
+			{
+				
+			}
+			elseif($_GET['modif'] == 'admin')
+			{
+				
+			}
+			elseif($_GET['modif'] == 'magie')
+			{
+				
+			}
+			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
+		}
+		elseif (isset($_GET['action']))
+		{
+			if($_GET['action'] == 'upgrade')
+			{
+				
+			}
+			elseif($_GET['action'] == 'downgrade')
+			{
+				
+			}
+			elseif($_GET['action'] == 'dignitaire')
+			{
+				
+			}
+			elseif($_GET['action'] == 'return')
+			{
+				
+			}
+			elseif($_GET['action'] == 'end')
+			{
+				
+			}
+			elseif($_GET['action'] == 'avert')
+			{
+				
+			}
+			elseif($_GET['action'] == 'tech')
+			{
+				
+			}
+			elseif($_GET['action'] == 'ban')
+			{
+				
+			}
+			elseif($_GET['action'] == 'pardon')
+			{
+				
+			}
+			elseif($_GET['action'] == 'delete')
+			{
+				
+			}
+			elseif($_GET['action'] == 'restore')
+			{
+				
+			}
+			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
+		}
+		else
+		{
 		$perso = intval($_GET['perso']);
 		$page = $db->prepare('SELECT * FROM members WHERE id= ?');
 		$page->execute(array($perso));
@@ -397,6 +463,7 @@
 	</table>
 	<?php
 	}
+		}
 	}
 	else
 	{
