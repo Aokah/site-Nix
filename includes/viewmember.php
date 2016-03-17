@@ -25,11 +25,18 @@
 	}
 	else
 	{
+	?>
+	<h2>Mon personnage</h2>
+	<?php
+		$perso = $db->prepare('SELECT * FROM members WHERE id= ?');
+		$perso->execute(array($_SESSION['id']));
+		
+		if ($line = $perso->fetch()) {
 		$magieok = 'Non acquise';
 		if ($_SESSION['magieok'] == 1) { $magietest = true; }
 		if ($magietest) { $magieok = 'Acquise'; }
 	?>
-	<h2>Mon personnage</h2>
+	
 	
 	<table cellspacing="5" cellpadding="5">
 		<tbody>
@@ -39,12 +46,12 @@
 						<tbody>
 							<tr>
 								<td style="border-radius: 10px;" rowspan="4">
-									<img src="pics/persoimg/perso_<?= $_SESSION['id']?>.png" alt="" width="200px" />
+									<img src="pics/persoimg/perso_<?= $line['id']?>.png" alt="" width="200px" />
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2">
-									<p>Nom : <?= $_SESSION['name']?></p>
+									<p>Nom : <?= $line['name']?></p>
 								</td>
 							</tr>
 								
@@ -55,7 +62,7 @@
 							</tr>
 							<tr>
 								<td colspan="2">
-									<p>Titre : <img src="pics/rank<?= $_SESSION['rank']?>.png" alt="" width="25" /> <?= $_SESSION['title']?></p>
+									<p>Titre : <img src="pics/rank<?= $line['rank']?>.png" alt="" width="25" /> <?= $_SESSION['title']?></p>
 								</td>
 							</tr>
 							<tr>
@@ -74,18 +81,18 @@
 						<tbody>
 							<tr>
 								<td colspan="3" style="text-align:center;">
-									<img src="pics/avatar/skin_<?= $_SESSION['id']?>.png" alt="" width="100" />
+									<img src="pics/avatar/skin_<?= $line['id']?>.png" alt="" width="100" />
 								</td>
 							</tr>
 							<tr>
 								<td colspan="3">
-									Identité : <?= $_SESSION['name']?> Nom
+									Identité : <?= $line['name']?> Nom
 								</td>
 							</tr>
 							<tr>
 								
 								<td>
-									Race : <?= $_SESSION['race']?>
+									Race : <?= $line['race']?>
 								</td>
 								<td>
 									Origine :
@@ -93,17 +100,17 @@
 							</tr>
 							<tr>
 								<td colspan="3">
-									Element primaire : <?= $_SESSION['specialisation']?>
+									Element primaire : <?= $line['specialisation']?>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="3">
-									Elemenn secondaire : <?= $_SESSION['spe_2']?>
+									Elemenn secondaire : <?= $line['spe_2']?>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="3">
-									Niveau magique : <?= $_SESSION['magie_rank']?>
+									Niveau magique : <?= $line['magie_rank']?>
 								</td>
 							</tr>
 							<tr>
@@ -123,7 +130,33 @@
 			</tr>
 			<tr>
 				<td>
-					Histoire
+					<table cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr>
+								<td>
+									<img alt=" " src="/pics/ico/magiepapertop.png">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="640px" background="/pics/ico/magiepapercenter.png">
+										<tr>
+											<td>
+												<p>
+													<? echo $bg; ?>
+												</p>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img alt="" src="/pics/ico/magiepapebottom.png">
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</td>
 				<td>
 					Le joueur
@@ -131,7 +164,8 @@
 			</tr>
 		</tbody>
 	</table>
-	<?php
+	<?php } else { echo '<p>Une erreur s\'est produite.</p>' };
+	
 	}
 	
 	
