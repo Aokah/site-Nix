@@ -41,7 +41,7 @@
 								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="3">
 									Image
 								</td>
-								<td>
+								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
 								</td>
 							</tr>
