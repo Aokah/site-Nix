@@ -108,8 +108,8 @@
 								<td>
 									Race : <?= $line['race']?>
 								</td>
-								<td>
-									Origine :
+								<td style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
 								</td>
 								<td>
 									Caractère :
@@ -131,17 +131,6 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="border: 0px grey solid; background-color: grey; color: grey;">
-									<p> </p>
-								</td>
-								<td style="border: 0px grey solid; background-color: grey; color: grey;">
-									<p> </p>
-								</td>
-								<td style="border: 0px grey solid; background-color: grey; color: grey;">
-									<p> </p>
-								</td>
-							</tr>
-							<tr>
 								<td colspan="3">
 									Qualités :
 								</td>
@@ -149,6 +138,27 @@
 							<tr>
 								<td colspan="3">
 									Défauts :
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									Caractère :
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									Signes distinctifs :
+								</td>
+							</tr>
+							<tr>
+								<td style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
+								</td>
+								<td style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
+								</td>
+								<td style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
 								</td>
 							</tr>
 						</tbody>
