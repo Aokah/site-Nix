@@ -185,7 +185,7 @@
 									Pseudo Minecraft :
 								</td>
 								<td width="50%">
-									<?= $line['minecraft_Account'] ?>
+									<?= $line['Minecraft_Account'] ?>
 								</td>
 							</tr>
 							<tr>
@@ -216,6 +216,8 @@
 								<td>
 									Note du Staff :
 								</td>
+							</tr>
+							<tr>
 								<td>
 									<?php echo $notestaff ;?>
 								</td>
