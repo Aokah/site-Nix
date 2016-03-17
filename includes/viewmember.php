@@ -25,7 +25,30 @@
 	}
 	else
 	{
-		echo 'viison banale';
+	?>
+	<h2>Mon personnage</h2>
+	
+	<table>
+		<tbody>
+			<tr>
+				<td>
+					Identité
+				</td>
+				<td>
+					Détails
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Histoire
+				</td>
+				<td>
+					Le joueur
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<?php
 	}
 	
 	
