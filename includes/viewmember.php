@@ -43,6 +43,7 @@
 			case 6: $magie = "Sage"; break;		case 7: $magie = "Divin"; break;	case 8: $magie = "Titanèsque"; break;
 			case 9: $magie = "Pouvoir Suprême"; break;
 		}
+		$vanish = ($line['invisible'] == 1) ? 'Activée' : 'Désactivée';
 	?>
 	
 	
@@ -209,6 +210,14 @@
 								</td>
 								<td>
 									<?= $line['email']?>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Note du Staff :
+								</td>
+								<td>
+									<?php echo $notestaff ;?>
 								</td>
 							</tr>
 						</tbody>
