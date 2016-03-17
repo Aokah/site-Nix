@@ -37,6 +37,13 @@
 		if ($magietest) { $magieok = 'Acquise'; }
 		$bg = preg_replace('#\n#', '<br />', $line['background']);
 		$bg = ($bg != 'none') ? $bg : 'En attente ...';
+		$notestaff = preg_replace('#\n#', '<br />', $line['staffnote']);
+		$notestaff = ($notestaff != 'none') ? $notestaff : 'En attente ...';
+		$hrp = preg_replace('#\n#', '<br />', $line['bg_hrp']);
+		$hrp = ($hrp != 'none') ? $hrp : 'En attente ...';
+		$notes = preg_replace('#\n#', '<br />', $line['notes_perso']);
+		$notes = ($notes != 'none') ? $notes : 'En attente ...';
+		
 		switch ($line['magie_rank']) {
 			case 0: $magie = "Profane"; break;	case 1: $magie = "Adepte"; break;	case 2: $magie = "Apprenti Magicien"; break;
 			case 3: $magie = "Magicien"; break;	case 4: $magie = "Mage"; break;		case 5: $magie = "Archimage"; break;
@@ -292,6 +299,41 @@
 									<img alt="" src="/pics/ico/magiepapebottom.png">
 								</td>
 							</tr>
+							
+						</tbody>
+					</table>
+			</tr>
+			<tr>
+				<td>
+					<p> </p>
+				</td>
+				<td valign="top">
+					<table cellspacing="0" cellpadding="0" width="100%" >
+						<tbody>
+							<tr>
+								<td>
+									<img alt=" " src="/pics/ico/notespersobottom.png">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="640px" background="/pics/ico/notespersocenter.png">
+										<tr>
+											<td>
+												<p>
+													<? echo $notes; ?>
+												</p>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img alt="" src="/pics/ico/notespersotop.png">
+								</td>
+							</tr>
+							
 						</tbody>
 					</table>
 				</td>
