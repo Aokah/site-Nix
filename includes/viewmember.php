@@ -180,11 +180,35 @@
 					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
-								<td>
+								<td width="50%">
 									Pseudo Minecraft :
 								</td>
-								<td>
+								<td width="50%">
 									<?= $line['minecraft_Account'] ?>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Invisibilité :
+								</td>
+								<td>
+									<?php echo $vanish; ?>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Date d'arrivée :
+								</td>
+								<td>
+									<?= $line['registration_date'] ?>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Adresse Mail :
+								</td>
+								<td>
+									<?= $line['email']?>
 								</td>
 							</tr>
 						</tbody>
