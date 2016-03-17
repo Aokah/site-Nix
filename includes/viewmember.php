@@ -37,6 +37,12 @@
 		if ($magietest) { $magieok = 'Acquise'; }
 		$bg = preg_replace('#\n#', '<br />', $line['background']);
 		$bg = ($bg != 'none') ? $bg : 'En attente ...';
+		switch ($line['magie_rank']) {
+			case 0: $magie = "Profane"; break;	case 1: $magie = "Audit"; break;	case 2: $magie = "Apprenti Magicien"; break;
+			case 3: $magie = "Magicien"; break;	case 4: $magie = "Mage"; break;		case 5: $magie = "Archimage"; break;
+			case 6: $magie = "Sage"; break;		case 7: $magie = "Divin"; break;	case 8: $magie = "Titanèsque"; break;
+			case 9: $magie = "Pouvoir Suprême"; break;
+		}
 	?>
 	
 	
@@ -118,7 +124,7 @@
 							</tr>
 							<tr>
 								<td colspan="3">
-									Niveau magique : <?= $line['magie_rank']?>
+									Niveau magique : <im src="pics/magie_rank_<?= $line['magie_rank']?>.png" alt="" /> <? echo $magie; ?>
 								</td>
 							</tr>
 							<tr>
