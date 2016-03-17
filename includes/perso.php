@@ -50,9 +50,7 @@
 					$update->execute(array($edithrp, $_SESSION['id']));
 				}
 			if ($_GET['modif'] == "bg")
-			{		
-				$bg = preg_replace('#\n#', '<br />', $line['background']);
-				$bg = ($bg != 'none') ? $bg : 'En attente ...';
+			{
 			?>
 			<h3>Edition du BackGround Roleplay</h3>
 			<form action='index?p=perso' method="POST">
@@ -65,8 +63,6 @@
 			}
 			elseif ($_GET['modif'] == "notesp")
 			{
-				$notes = preg_replace('#\n#', '<br />', $line['notes_perso']);
-				$notes = ($notes != 'none') ? $notes : 'En attente ...';
 			?>
 			<h3>Edition des Notes Personnelles</h3>
 			<form action='index?p=perso' method="POST">
@@ -79,8 +75,6 @@
 			}
 			elseif ($_GET['modif'] == "jdesc")
 			{
-				$hrp = preg_replace('#\n#', '<br />', $line['bg_hrp']);
-				$hrp = ($hrp != 'none') ? $hrp : 'En attente ...';
 			?>
 			<h3>Edition de la Description du Joueur</h3>
 			<form action='index?p=perso' method="POST">
