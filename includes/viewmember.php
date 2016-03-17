@@ -108,8 +108,11 @@
 								<td>
 									Race : <?= $line['race']?>
 								</td>
-								<td colspan="1">
+								<td>
 									Origine :
+								</td>
+								<td>
+									Caractère :
 								</td>
 							</tr>
 							<tr>
@@ -136,6 +139,16 @@
 								</td>
 								<td style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									Qualités :
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									Défauts :
 								</td>
 							</tr>
 						</tbody>
