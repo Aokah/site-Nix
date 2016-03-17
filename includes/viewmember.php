@@ -84,7 +84,7 @@
 						</tbody>
 					</table>
 				</td>
-				<td valign="top" width="50%">
+				<td valign="top" width="50%" rowspan="2">
 					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
@@ -172,6 +172,11 @@
 							</tr>
 						</tbody>
 					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					test
 				</td>
 			</tr>
 			<tr>
