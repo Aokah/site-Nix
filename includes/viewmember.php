@@ -50,12 +50,12 @@
 									<p>Nom : <?= $_SESSION['name']?></p>
 								</td>
 								<td>
-									<p>Titre : <img src="pics/rank<?= $_SESSION['rank']?>.png" alt="" width="25" /> <?= $_SESSION['title']?></p>
+									<p>Magie : <? echo $magieok; ?></p>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2">
-									<p>Magie : <? echo $magieok; ?></p>
+									<p>Titre : <img src="pics/rank<?= $_SESSION['rank']?>.png" alt="" width="25" /> <?= $_SESSION['title']?></p>
 								</td>
 							</tr>
 							<tr>
