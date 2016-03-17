@@ -19,7 +19,7 @@
 		<li>Réadapter la Page d'Acceuil aux évènements passés IG</li>
 		<li>Reconstruire la Structure de la ChatBox</li>
 		<li>Ajout de la Page Infos Bêta</li>
-		<li>Fusionner les pages 'Perso' & 'viewmember'</li>
+		<li>Réécriture des fonctions des pages personnage</li>
 		
 	</ul>
 	
@@ -38,8 +38,9 @@
 		<li>Ajout de la Page Update</li>
 		<li>Mise à jour de la Page Staff Team</li>
 		<li>Ajout de la page des Sondages</li>
-		<li>Ajout de la fonction de bannissement <span style="color:red;">(A améliorer)</span>.</li>
-		<li>Insertion de la ChatBox sous les pages<span style="color:red;">(A améliorer)</span>.</li>
+		<li>Ajout de la fonction de bannissement <span style="color:red;">(A améliorer)</span></li>
+		<li>Insertion de la ChatBox sous les pages<span style="color:red;">(A améliorer)</span></li>
+		<li>Réécriture de la page personnage</li>
 	</ul>
 <?php
 
