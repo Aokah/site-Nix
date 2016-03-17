@@ -31,7 +31,7 @@
 	?>
 	<h2>Mon personnage</h2>
 	
-	<table cellspacing="5" cellpadding="5">
+	<table cellspacing="5" cellpadding="5" valign="top">
 		<tbody>
 			<tr>
 				<td>
@@ -87,7 +87,34 @@
 									Identité : Prénom Nom
 								</td>
 								<td>
+									Origine :
+								</td>
+							</tr>
+							<tr>
+								
+								<td>
 									Race : <?= $_SESSION['race']?>
+								</td>
+								<td>
+									Taille :
+								</td>
+								<td>
+									Poids : 
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									Element primaire : <?= $_SESSION['specialisation']?>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									Elemenn secondaire : <?= $_SESSION['spe_2']?>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									Niveau magique : <?= $_SESSION['magie_rank']?>
 								</td>
 							</tr>
 						</tbody>
