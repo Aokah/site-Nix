@@ -78,67 +78,47 @@
 					<table cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
-								<td colspan="5">
+								<td colspan="3">
 									Miniature
 								</td>
 							</tr>
 							<tr>
-								<td colspan="5">
-									Identité : Prénom Nom
+								<td colspan="3">
+									Identité : <?= $_SESSION['name']?> Nom
 								</td>
 							</tr>
 							<tr>
 								
-								<td colspan="2">
+								<td>
 									Race : <?= $_SESSION['race']?>
 								</td>
-								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
-									<p> </p>
-								</td>
-								<td colspan="2">
+								<td>
 									Origine :
 								</td>
 							</tr>
 							<tr>
-								<td colspan="2">
-									Taille :
-								</td>
-								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
-									<p> </p>
-								</td>
-								<td colspan="2">
-									Poids : 
-								</td>
-							</tr>
-							<tr>
-								<td colspan="5">
+								<td colspan="3">
 									Element primaire : <?= $_SESSION['specialisation']?>
 								</td>
 							</tr>
 							<tr>
-								<td colspan="5">
+								<td colspan="3">
 									Elemenn secondaire : <?= $_SESSION['spe_2']?>
 								</td>
 							</tr>
 							<tr>
-								<td colspan="5">
+								<td colspan="3">
 									Niveau magique : <?= $_SESSION['magie_rank']?>
 								</td>
 							</tr>
 							<tr>
-								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
+								<td width="1px" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
 								</td>
-								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
+								<td width="1px" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
 								</td>
-								<td>
-									Mortel
-								</td>
-								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
-									<p> </p>
-								</td>
-								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
+								<td width="1px" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
 								</td>
 							</tr>
