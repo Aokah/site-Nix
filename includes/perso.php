@@ -40,7 +40,7 @@
 			<h3>Edition du BackGround Roleplay</h3>
 			<form action='index?p=perso' method="POST">
 				<textarea name="editbg">
-					<?php echo $bg; ?>
+					<?= $line['background']?>
 				</textarea>
 				<input type="submit" name=save_bg value="Terminer" />
 			</form>
@@ -52,7 +52,7 @@
 			<h3>Edition des Notes Personnelles</h3>
 			<form action='index?p=perso' method="POST">
 				<textarea name="editnotes">
-					<?php echo $notes; ?>
+					<?= $line['notes_perso'] ?>
 				</textarea>
 				<input type="submit" name=save_notes value="Terminer" />
 			</form>
@@ -64,7 +64,7 @@
 			<h3>Edition de la Description du Joueur</h3>
 			<form action='index?p=perso' method="POST">
 				<textarea name="edithrp">
-					<?php echo $hrp; ?>
+					<?= $line['bg_hrp'] ?>
 				</textarea>
 				<input type="submit" name=save_hrp value="Terminer" />
 			</form>
