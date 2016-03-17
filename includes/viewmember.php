@@ -78,7 +78,7 @@
 						</tbody>
 					</table>
 				</td>
-				<td valign="top" style="text-align:right;" width="50%">
+				<td valign="top" width="50%">
 					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
@@ -131,7 +131,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td valign="top">
 					<table cellspacing="0" cellpadding="0" width="100%">
 						<tbody>
 							<tr>
@@ -160,8 +160,8 @@
 						</tbody>
 					</table>
 				</td>
-				<td>
-					<table cellspacing="0" cellpadding="0" width="100%">
+				<td valign="top">
+					<table cellspacing="0" cellpadding="0" width="100%" >
 						<tbody>
 							<tr>
 								<td>
