@@ -49,7 +49,7 @@
 								<td>
 									<p>Nom : <?= $_SESSION['name']?></p>
 								</td>
-								<td>
+								<td colspan = 2>
 									<p>Titre : <img src="pics/rank<?= $_SESSION['rank']?>.png" alt="" width="25" /> <?= $_SESSION['title']?></p>
 								</td>
 							</tr>
