@@ -43,7 +43,7 @@
 	<table cellspacing="5" cellpadding="5">
 		<tbody>
 			<tr>
-				<td valign="top">
+				<td valign="top" width="50%">
 					<table cellspacing="5" cellpadding="5" class="pnjtable">
 						<tbody>
 							<tr>
@@ -78,7 +78,7 @@
 						</tbody>
 					</table>
 				</td>
-				<td valign="top" style="text-align:right;">
+				<td valign="top" style="text-align:right;" width="50%">
 					<table cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
