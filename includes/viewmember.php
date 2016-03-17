@@ -78,7 +78,7 @@
 					<table cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
-								<td colspan="3">
+								<td colspan="3" style="text-align:center;">
 									<img src="pics/avatar/skin_<?= $_SESSION['id']?>.png" alt="" width="100" />
 								</td>
 							</tr>
