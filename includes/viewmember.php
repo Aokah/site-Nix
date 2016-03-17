@@ -31,11 +31,11 @@
 	?>
 	<h2>Mon personnage</h2>
 	
-	<table cellspacing="5" cellpadding="5" valign="top">
+	<table cellspacing="5" cellpadding="5">
 		<tbody>
 			<tr>
-				<td>
-					<table cellspacing="0" cellpadding="0" class="pnjtable">
+				<td valign="top">
+					<table cellspacing="5" cellpadding="5" class="pnjtable">
 						<tbody>
 							<tr>
 								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="4">
@@ -75,7 +75,7 @@
 					</table>
 				</td>
 				<td>
-					<table cellspacing="0" cellpading="0" class="pnjtable">
+					<table cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
 								<td colspan="3">
