@@ -78,12 +78,17 @@
 							</tr>
 							<tr>
 								<td colspan="4" style="border: 0px grey solid; background-color: grey; color: grey; text-align:justify;">
-									<a href="index?p=perso&perso=<?php echo $perso; ?>&action=upgrade" style="color:green;">[+]</a>	
-									<a href="index?p=perso&perso=<?php echo $perso; ?>&action=downgrade" style="color:red;">[-]</a>	
-									<a href="index?p=perso&perso=<?php echo $perso; ?>&action=dignitaire" style="color:orange;">[D]</a> 
-									<a href="index?p=perso&perso=<?php echo $perso; ?>&action=end" style="color:yellow;">[F]</a> 
-									<a href="index?p=perso&perso=<?php echo $perso; ?>&action=avert" style="color:red;">[A]</a> 
-									<a href="index?p=perso&perso=<?php echo $perso; ?>&action=tech" style="color:aqua;">[T]</a>	
+									<a title="Monter le joueur en grade" href="index?p=perso&perso=<?php echo $perso; ?>&action=upgrade" style="color:green;">[+]</a>	
+									<a title="Dégrader le joueur" href="index?p=perso&perso=<?php echo $perso; ?>&action=downgrade" style="color:red;">[-]</a>	
+									<a title="Dégrader le joueur en tant qu'Ex-Staffeux" href="index?p=perso&perso=<?php echo $perso; ?>&action=dignitaire" style="color:orange;">[D]</a> 
+									<a title="Faire revenir le compte dans le Staff" href="index?p=perso&perso=<?php echo $perso; ?>&action=return" style="color:lime;">[R]</a> 
+									<a title="Faire finir le jeu au joueur" href="index?p=perso&perso=<?php echo $perso; ?>&action=end" style="color:yellow;">[F]</a> 
+									<a title="Coller un avertissement au joueur" href="index?p=perso&perso=<?php echo $perso; ?>&action=avert" style="color:red;">[A]</a> 
+									<a title="Attribuer lela fonction de Technicien" href="index?p=perso&perso=<?php echo $perso; ?>&action=tech" style="color:aqua;">[T]</a> 
+									<a title="Bannir le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=ban" style="color:red;">[B]</a> 
+									<a title="Supprimer le bannissement du compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=pardon" style="color:green;">[P]</a>
+									<a title="Supprimer le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=delete" style="color:red;">[X]</a> 
+									<a title="Restaurer le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=restore" style="color:blue;">[X]</a> 
 								</td>
 							</tr>
 						</tbody>
