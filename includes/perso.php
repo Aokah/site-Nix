@@ -45,7 +45,7 @@
 		}
 		$vanish = ($line['invisible'] == 1) ? 'Activée' : 'Désactivée';
 		$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
-		if ($line['technician'] == 1) { $tech = "-T"; } if ($line['pionier'] == 1) { $pionier = '-P'; }
+		if ($line['technician'] == 1) { $tech = "-T"; $techmode = "Retirer" } else { $techmode = "Attribuer";}  if ($line['pionier'] == 1) { $pionier = '-P'; }
 	?>
 	<h2 class="name<?= $line['rank']?><?php echo $tech; echo $pionier;?>"><?= $line['title']?> <?= $line['name']?></h2>
 	
@@ -78,17 +78,41 @@
 							</tr>
 							<tr>
 								<td colspan="4" style="border: 0px grey solid; background-color: grey; color: grey; text-align:justify;">
+									<?php if ($line['rank'] == 2 OR $line['rank'] == 3) { if($_SESSION['rank'] > $line['rank']+1) { ?>
 									<a title="Monter le joueur en grade" href="index?p=perso&perso=<?php echo $perso; ?>&action=upgrade" style="color:green;">[+]</a>	
-									<a title="Dégrader le joueur" href="index?p=perso&perso=<?php echo $perso; ?>&action=downgrade" style="color:red;">[-]</a>	
+									<?php } } 
+									elseif ($line['rank'] >= 4 AND $line['rank'] <= 10 AND $line['valid_bg'] == 1 AND $_SESSION['rank'] > $line['rank']+1) {?>
+									<a title="Monter le joueur en grade" href="index?p=perso&perso=<?php echo $perso; ?>&action=upgrade" style="color:green;">[+]</a>
+									<?php } 
+									if ($_SESSION['rank'] > $line['rank'] AND $line['rank'] >= 2) { ?>
+									<a title="Dégrader le joueur" href="index?p=perso&perso=<?php echo $perso; ?>&action=downgrade" style="color:red;">[-]</a>
+									<?php } 
+									if ($_SESSION['rank'] > $line['rank'] AND $line['rank'] >= 5 AND $line['dignitaire'] == 1) { ?>
 									<a title="Dégrader le joueur en tant qu'Ex-Staffeux" href="index?p=perso&perso=<?php echo $perso; ?>&action=dignitaire" style="color:orange;">[D]</a> 
+									<?php } 
+									if ($_SESSION['rank'] > $line['rank'] AND $line['dignitaire'] == 1) {?>
 									<a title="Faire revenir le compte dans le Staff" href="index?p=perso&perso=<?php echo $perso; ?>&action=return" style="color:lime;">[R]</a> 
+									<?php } 
+									if ($_SESSION['rank'] >= 6 AND $line['rank'] >=2 AND $line['rank'] <= 7) { ?>
 									<a title="Faire finir le jeu au joueur" href="index?p=perso&perso=<?php echo $perso; ?>&action=end" style="color:yellow;">[F]</a> 
+									<?php }
+									if ($_SESSION['rank'] >= 4 AND $_SESSION['rank'] > $line['rank']) { ?>
 									<a title="Coller un avertissement au joueur" href="index?p=perso&perso=<?php echo $perso; ?>&action=avert" style="color:red;">[A]</a> 
-									<a title="Attribuer lela fonction de Technicien" href="index?p=perso&perso=<?php echo $perso; ?>&action=tech" style="color:aqua;">[T]</a> 
+									<?php }
+									if ($_SESSION['rank'] >= 7) { ?>
+									<a title="<? echo $techmode; ?> la fonction de Technicien" href="index?p=perso&perso=<?php echo $perso; ?>&action=tech" style="color:aqua;">[T]</a> 
+									<?php } 
+									if ($_SESSION['rank'] >= 5 AND $_SESSION['rank'] > $line['rank'] AND $line['ban'] == 0) { ?>
 									<a title="Bannir le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=ban" style="color:red;">[B]</a> 
+									<?php }
+									if ($_SESSION['rank'] >= 5 AND $_SESSION['rank'] > $line['rank'] AND $line['ban'] == 1) { ?>
 									<a title="Supprimer le bannissement du compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=pardon" style="color:green;">[P]</a>
-									<a title="Supprimer le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=delete" style="color:red;">[X]</a> 
+									<?php } if ($_SESSION['name'] == "Eftarthadeth" OR $_SESSION['name'] == "Nikho") { 
+									if ($line['removed'] == 0) {?>
+									<a title="Supprimer le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=delete" style="color:red;">[X]</a>
+									<?php } else { ?>
 									<a title="Restaurer le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=restore" style="color:blue;">[X]</a> 
+									<?php } } ?>
 								</td>
 							</tr>
 						</tbody>
