@@ -78,12 +78,12 @@
 					<table cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
-								<td colspan="3">
+								<td colspan="5">
 									Miniature
 								</td>
 							</tr>
 							<tr>
-								<td colspan="3">
+								<td colspan="5">
 									Identité : Prénom Nom
 								</td>
 							</tr>
@@ -97,25 +97,28 @@
 								</td>
 							</tr>
 							<tr>
-								<td colspan="1,5">
+								<td colspan="2">
 									Taille :
 								</td>
-								<td colspan="1,5">
+								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
+								</td>
+								<td colspan="2">
 									Poids : 
 								</td>
 							</tr>
 							<tr>
-								<td colspan="3">
+								<td colspan="5">
 									Element primaire : <?= $_SESSION['specialisation']?>
 								</td>
 							</tr>
 							<tr>
-								<td colspan="3">
+								<td colspan="5">
 									Elemenn secondaire : <?= $_SESSION['spe_2']?>
 								</td>
 							</tr>
 							<tr>
-								<td colspan="3">
+								<td colspan="5">
 									Niveau magique : <?= $_SESSION['magie_rank']?>
 								</td>
 							</tr>
@@ -123,8 +126,14 @@
 								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
 								</td>
+								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
+								</td>
 								<td>
 									Mortel
+								</td>
+								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
 								</td>
 								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
