@@ -32,7 +32,18 @@
 		<tbody>
 			<tr>
 				<td>
-					Identité
+					<table cellspacin="0" cellpadding="0" class="pnjtable">
+						<tbody>
+							<tr>
+								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="4">
+									Image
+								</td>
+								<td>
+									
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</td>
 				<td>
 					Détails
