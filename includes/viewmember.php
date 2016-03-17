@@ -43,11 +43,11 @@
 	<table cellspacing="5" cellpadding="5">
 		<tbody>
 			<tr>
-				<td valign="top" width="50%">
+				<td valign="top">
 					<table cellspacing="5" cellpadding="5" class="pnjtable">
 						<tbody>
 							<tr>
-								<td style="border-radius: 10px;" rowspan="4" width="100%">
+								<td style="border-radius: 10px;" rowspan="4">
 									<img src="pics/persoimg/perso_<?= $line['id']?>.png" alt="" width="200px" />
 								</td>
 							</tr>
@@ -78,8 +78,8 @@
 						</tbody>
 					</table>
 				</td>
-				<td valign="top" style="text-align:right;" width="50%">
-					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
+				<td valign="top" style="text-align:right;">
+					<table cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
 								<td colspan="3" style="text-align:center;">
@@ -132,7 +132,7 @@
 			</tr>
 			<tr>
 				<td>
-					<table cellspacing="0" cellpadding="0" width="100%">
+					<table cellspacing="0" cellpadding="0">
 						<tbody>
 							<tr>
 								<td>
@@ -161,7 +161,33 @@
 					</table>
 				</td>
 				<td>
-					Le joueur
+					<table cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr>
+								<td>
+									<img alt=" " src="/pics/ico/magiepapertop.png">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="640px" background="/pics/ico/magiepapercenter.png">
+										<tr>
+											<td>
+												<p>
+													<? echo $hrp; ?>
+												</p>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img alt="" src="/pics/ico/magiepapebottom.png">
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</td>
 			</tr>
 		</tbody>
