@@ -38,8 +38,8 @@
 					<table cellspacing="5" cellpadding="5" class="pnjtable">
 						<tbody>
 							<tr>
-								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="4">
-									<img src="pics/persoimg/perso_<?= $_SESSION['id']?>.png" alt="" width="150px" />
+								<td style="border-radius: 10px;" rowspan="4">
+									<img src="pics/persoimg/perso_<?= $_SESSION['id']?>.png" alt="" width="200px" />
 								</td>
 							</tr>
 							<tr>
