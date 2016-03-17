@@ -39,7 +39,7 @@
 						<tbody>
 							<tr>
 								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="4">
-									Image
+									<img src="pics/persoimg/perso_<?= $_SESSION['id']?>.png" alt="" width="150px" />
 								</td>
 							</tr>
 							<tr>
@@ -69,7 +69,7 @@
 						</tbody>
 					</table>
 				</td>
-				<td valign="top">
+				<td valign="top" style="text-align:right;">
 					<table cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
