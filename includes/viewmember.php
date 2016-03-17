@@ -76,20 +76,8 @@
 							</tr>
 						</tbody>
 					</table>
-					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
-						<tbody>
-							<tr>
-								<td>
-									Energie Magique
-								</td>
-								<td>
-									Energie Vitale
-								</td>
-							</tr>
-						</tbody>
-					</table>
 				</td>
-				<td valign="top" width="50%" rowspan="2">
+				<td valign="top" width="50%" rowspan="3">
 					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
@@ -173,6 +161,22 @@
 								</td>
 								<td style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
+						<tbody>
+							<tr>
+								<td>
+									Energie Magique
+								</td>
+								<td>
+									Energie Vitale
 								</td>
 							</tr>
 						</tbody>
