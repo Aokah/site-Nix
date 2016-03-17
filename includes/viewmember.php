@@ -312,7 +312,7 @@
 						<tbody>
 							<tr>
 								<td>
-									<img alt=" " src="/pics/ico/notespersobottom.png">
+									<img alt=" " src="/pics/ico/notespersotop.png">
 								</td>
 							</tr>
 							<tr>
@@ -330,7 +330,7 @@
 							</tr>
 							<tr>
 								<td>
-									<img alt="" src="/pics/ico/notespersotop.png">
+									<img alt="" src="/pics/ico/notespersobottom.png">
 								</td>
 							</tr>
 							
