@@ -77,7 +77,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td colspan="4" style="border: 0px grey solid; background-color: grey; color: grey; text-align:center;">
+								<td colspan="4" style="border: 0px grey solid; background-color: grey; color: grey; text-align:justify;">
 									<a href="index?p=perso&perso=<?php echo $perso; ?>&action=upgrade" style="color:green;">[+]</a>	
 									<a href="index?p=perso&perso=<?php echo $perso; ?>&action=downgrade" style="color:red;">[-]</a>	
 									<a href="index?p=perso&perso=<?php echo $perso; ?>&action=dignitaire" style="color:orange;">[D]</a> 
