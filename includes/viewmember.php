@@ -26,7 +26,7 @@
 	else
 	{
 		$magieok = 'Non acquise';
-		if ($line['magieok'] == 1) { $magietest = true; }
+		if ($_SESSION['magieok'] == 1) { $magietest = true; }
 		if ($magietest) { $magieok = 'Acquise'; }
 	?>
 	<h2>Mon personnage</h2>
@@ -47,10 +47,10 @@
 							</tr>
 							<tr>
 								<td>
-									<p>Nom : <?= $line['name']?></p>
+									<p>Nom : <?= $_SESSION['name']?></p>
 								</td>
 								<td>
-									<p>Titre : <img src="pics/rank<?= $line['rank']?>.png" alt="" width="25" /> <?= $line['title']?></p>
+									<p>Titre : <img src="pics/rank<?= $_SESSION['rank']?>.png" alt="" width="25" /> <?= $_SESSION['title']?></p>
 								</td>
 							</tr>
 							<tr>
