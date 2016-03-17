@@ -44,7 +44,7 @@
 		<tbody>
 			<tr>
 				<td valign="top" width="50%">
-					<table cellspacing="5" cellpadding="5" class="pnjtable">
+					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
 								<td style="border-radius: 10px;" rowspan="4">
@@ -79,7 +79,7 @@
 					</table>
 				</td>
 				<td valign="top" style="text-align:right;" width="50%">
-					<table cellspacing="5" cellpading="5" class="pnjtable">
+					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
 								<td colspan="3" style="text-align:center;">
@@ -132,7 +132,7 @@
 			</tr>
 			<tr>
 				<td>
-					<table cellspacing="0" cellpadding="0">
+					<table cellspacing="0" cellpadding="0" width="100%">
 						<tbody>
 							<tr>
 								<td>
@@ -161,7 +161,7 @@
 					</table>
 				</td>
 				<td>
-					<table cellspacing="0" cellpadding="0">
+					<table cellspacing="0" cellpadding="0" width="100%">
 						<tbody>
 							<tr>
 								<td>
