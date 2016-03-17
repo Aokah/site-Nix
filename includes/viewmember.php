@@ -31,11 +31,11 @@
 	?>
 	<h2>Mon personnage</h2>
 	
-	<table>
+	<table cellspacing="5" cellpadding="5">
 		<tbody>
 			<tr>
 				<td>
-					<table cellspacin="0" cellpadding="0" class="pnjtable">
+					<table cellspacing="0" cellpadding="0" class="pnjtable">
 						<tbody>
 							<tr>
 								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="4">
@@ -75,7 +75,23 @@
 					</table>
 				</td>
 				<td>
-					Détails
+					<table cellspacing="0" cellpading="0" class="pnjtable">
+						<tbody>
+							<tr>
+								<td colspan="3">
+									Miniature
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									Identité : Prénom Nom
+								</td>
+								<td>
+									Race : <?= $_SESSION['race']?>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</td>
 			</tr>
 			<tr>
