@@ -174,11 +174,24 @@
 					</table>
 				</td>
 			</tr>
+			<?php if ($_SESSION['rank'] >= 5) { ?>
 			<tr>
 				<td>
-					test
+					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
+						<tbody>
+							<tr>
+								<td>
+									Pseudo Minecraft :
+								</td>
+								<td>
+									<?= $line['minecraft_Account'] ?>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</td>
 			</tr>
+			<?php } ?>
 			<tr>
 				<td valign="top">
 					<table cellspacing="0" cellpadding="0" width="100%">
