@@ -38,7 +38,7 @@
 					<table cellspacing="5" cellpadding="5" class="pnjtable">
 						<tbody>
 							<tr>
-								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="3">
+								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="4">
 									Image
 								</td>
 							</tr>
