@@ -78,7 +78,7 @@
 					<table cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
-								<td colspan="3">
+								<td colspan="3" width="100">
 									Miniature
 								</td>
 							</tr>
