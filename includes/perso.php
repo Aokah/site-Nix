@@ -258,15 +258,10 @@
 											<td>
 												<p style="padding:4%;">
 													<? echo $bg; ?>
-												</p>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<p style="padding:4%;">
+													<br />
 													<a href="index?p=perso&modif=bg">
 														Modifier votre Background.
-													</a>	
+													</a>
 												</p>
 											</td>
 										</tr>
@@ -296,16 +291,10 @@
 											<td>
 												<p style="padding:4%;">
 													<? echo $hrp; ?>
-												</p>
-											</td>
-										</tr>
-										
-										<tr>
-											<td>
-												<p style="padding:4%;">
+													<br />
 													<a href="index?p=perso&modif=jdesc">
 														Modifier votre Background.
-													</a>	
+													</a>
 												</p>
 											</td>
 										</tr>
@@ -340,16 +329,10 @@
 											<td>
 												<p style="padding:4%;">
 													<? echo $notes; ?>
-												</p>
-											</td>
-										</tr>
-										
-										<tr>
-											<td>
-												<p style="padding:4%;">
+													<br />
 													<a href="index?p=perso&modif=notesp">
 														Modifier votre Background.
-													</a>	
+													</a>
 												</p>
 											</td>
 										</tr>
