@@ -46,10 +46,13 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td colspan="2">
 									<p>Nom : <?= $_SESSION['name']?></p>
 								</td>
-								<td>
+							</tr>
+								
+							<tr>
+								<td colspan="2">
 									<p>Magie : <? echo $magieok; ?></p>
 								</td>
 							</tr>
