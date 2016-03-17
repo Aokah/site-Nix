@@ -120,11 +120,14 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
 								</td>
 								<td>
 									Mortel
+								</td>
+								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
 								</td>
 							</tr>
 						</tbody>
