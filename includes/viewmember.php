@@ -33,8 +33,10 @@
 		
 		if ($line = $perso->fetch()) {
 		$magieok = 'Non acquise';
-		if ($_SESSION['magieok'] == 1) { $magietest = true; }
+		if ($line['magieok'] == 1) { $magietest = true; }
 		if ($magietest) { $magieok = 'Acquise'; }
+		$bg = preg_replace('#\n#', '<br />', $line['background']);
+		$bg = ($bg != 'none') ? $bg : 'En attente ...';
 	?>
 	
 	
