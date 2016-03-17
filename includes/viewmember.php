@@ -82,8 +82,14 @@
 					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
-								<td colspan="3" style="text-align:center;">
+								<td width="1px" style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
+								</td>
+								<td style="text-align:center;">
 									<img src="pics/avatar/skin_<?= $line['id']?>.png" alt="" width="100" />
+								</td>
+								<td width="1px" style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
 								</td>
 							</tr>
 							<tr>
