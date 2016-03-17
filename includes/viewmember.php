@@ -83,11 +83,8 @@
 								</td>
 							</tr>
 							<tr>
-								<td colspan="2">
+								<td colspan="3">
 									Identité : Prénom Nom
-								</td>
-								<td>
-									Origine :
 								</td>
 							</tr>
 							<tr>
@@ -96,9 +93,14 @@
 									Race : <?= $_SESSION['race']?>
 								</td>
 								<td>
+									Origine :
+								</td>
+							</tr>
+							<tr>
+								<td colspan="1,5">
 									Taille :
 								</td>
-								<td>
+								<td colspan="1,5">
 									Poids : 
 								</td>
 							</tr>
@@ -118,6 +120,9 @@
 								</td>
 							</tr>
 							<tr>
+								<td>
+									<p> </p>
+								</td>
 								<td>
 									Mortel
 								</td>
