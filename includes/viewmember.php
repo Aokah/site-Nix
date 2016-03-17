@@ -89,10 +89,13 @@
 							</tr>
 							<tr>
 								
-								<td>
+								<td colspan="2">
 									Race : <?= $_SESSION['race']?>
 								</td>
-								<td>
+								<td width="60px" style="border: 0px grey solid; background-color: grey; color: grey;">
+									<p> </p>
+								</td>
+								<td colspan="2">
 									Origine :
 								</td>
 							</tr>
