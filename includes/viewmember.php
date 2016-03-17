@@ -259,7 +259,7 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
-												<p style="padding:3%;">
+												<p style="padding:4%;">
 													<? echo $bg; ?>
 												</p>
 											</td>
@@ -288,7 +288,7 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
-												<p style="padding:3%;">
+												<p style="padding:4%;">
 													<? echo $hrp; ?>
 												</p>
 											</td>
@@ -322,7 +322,7 @@
 									<table width="640px" background="/pics/ico/notespersocenter.png">
 										<tr>
 											<td>
-												<p style="padding:3%;">
+												<p style="padding:4%;">
 													<? echo $notes; ?>
 												</p>
 											</td>
