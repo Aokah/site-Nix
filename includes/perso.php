@@ -73,7 +73,7 @@
 							</tr>
 							<tr>
 								<td colspan="2">
-									<p>Titre : <img src="pics/rank<?= $line['rank']?>.png" alt="" width="25" /> <?= $_SESSION['title']?></p>
+									<p>Titre : <img src="pics/rank<?= $line['rank']?>.png" alt="" width="25" /> <?= $line['title']?></p>
 								</td>
 							</tr>
 						</tbody>
@@ -162,6 +162,13 @@
 									<p> </p>
 								</td>
 							</tr>
+							<tr>
+								<td colspan="3" style="border: 0px grey solid; background-color: grey; color: grey;">
+									<a href="index?p=perso&perso=<?php echo $perso; ?>&modif=info">
+										Modifier les informations
+									</a>
+								</td>
+							</tr>
 						</tbody>
 					</table>
 				</td>
@@ -176,6 +183,13 @@
 								</td>
 								<td>
 									Energie Vitale
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="border: 0px grey solid; background-color: grey; color: grey;">
+									<a href="index?p=perso&perso=<?php echo $perso; ?>&modif=magie">
+										Modifier les informations
+									</a>
 								</td>
 							</tr>
 						</tbody>
@@ -229,6 +243,13 @@
 									<p>
 									<?php echo $notestaff ;?>
 									</p>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="border: 0px grey solid; background-color: grey; color: grey;">
+									<a href="index?p=perso&perso=<?php echo $perso; ?>&modif=admin">
+										Modifier les informations
+									</a>
 								</td>
 							</tr>
 						</tbody>
@@ -447,7 +468,7 @@
 							</tr>
 							<tr>
 								<td colspan="2">
-									<p>Titre : <img src="pics/rank<?= $line['rank']?>.png" alt="" width="25" /> <?= $_SESSION['title']?></p>
+									<p>Titre : <img src="pics/rank<?= $line['rank']?>.png" alt="" width="25" /> <?= $line['title']?></p>
 								</td>
 							</tr>
 						</tbody>
