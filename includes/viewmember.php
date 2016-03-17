@@ -36,13 +36,13 @@
 		if ($line['magieok'] == 1) { $magietest = true; }
 		if ($magietest) { $magieok = 'Acquise'; }
 		$bg = preg_replace('#\n#', '<br />', $line['background']);
-		$bg = ($bg != 'none') ? $bg : 'En attente ...';
+		$bg = ($bg != ' ') ? $bg : 'En attente ...';
 		$notestaff = preg_replace('#\n#', '<br />', $line['staffnote']);
-		$notestaff = ($notestaff != 'none') ? $notestaff : 'En attente ...';
+		$notestaff = ($notestaff != ' ') ? $notestaff : 'En attente ...';
 		$hrp = preg_replace('#\n#', '<br />', $line['bg_hrp']);
-		$hrp = ($hrp != 'none') ? $hrp : 'En attente ...';
+		$hrp = ($hrp != ' ') ? $hrp : 'En attente ...';
 		$notes = preg_replace('#\n#', '<br />', $line['notes_perso']);
-		$notes = ($notes != 'none') ? $notes : 'En attente ...';
+		$notes = ($notes != ' ') ? $notes : 'En attente ...';
 		
 		switch ($line['magie_rank']) {
 			case 0: $magie = "Profane"; break;	case 1: $magie = "Adepte"; break;	case 2: $magie = "Apprenti Magicien"; break;
