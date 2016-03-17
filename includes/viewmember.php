@@ -25,6 +25,9 @@
 	}
 	else
 	{
+		$magieok = 'Non acquise';
+		if ($line['magieok'] == 1) { $magietest = true; }
+		if ($magietest) { $magieok = 'Acquise'; }
 	?>
 	<h2>Mon personnage</h2>
 	
@@ -35,11 +38,24 @@
 					<table cellspacin="0" cellpadding="0" class="pnjtable">
 						<tbody>
 							<tr>
-								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="4">
+								<td height="150px" width="150px" style="border-radius: 10px;" rowspan="3">
 									Image
 								</td>
 								<td>
-									
+									<p> </p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Nom : <?= $line['name']?></p>
+								</td>
+								<td>
+									<p>Titre : <img src="pics/rank<?= $line['rank']?>.png" alt="" width="25" /> <?= $line['title']?></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Magie : <? echo $magieok; ?></p>
 								</td>
 							</tr>
 						</tbody>
