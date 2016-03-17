@@ -82,13 +82,13 @@
 					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
-								<td style="border: 0px grey solid; background-color: grey; color: grey;">
+								<td width="33%" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
 								</td>
 								<td style="text-align:center;">
 									<img src="pics/avatar/skin_<?= $line['id']?>.png" alt="" width="100" />
 								</td>
-								<td style="border: 0px grey solid; background-color: grey; color: grey;">
+								<td width="33%" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
 								</td>
 							</tr>
@@ -102,7 +102,7 @@
 								<td>
 									Race : <?= $line['race']?>
 								</td>
-								<td>
+								<td colspan="1">
 									Origine :
 								</td>
 							</tr>
