@@ -258,7 +258,7 @@
 											<td>
 												<p style="padding:4%;">
 													<? echo $bg; ?>
-													<br />
+													<br /><br />
 													<a href="index?p=perso&modif=bg">
 														Modifier votre Background.
 													</a>
@@ -291,7 +291,7 @@
 											<td>
 												<p style="padding:4%;">
 													<? echo $hrp; ?>
-													<br />
+													<br /><br />
 													<a href="index?p=perso&modif=jdesc">
 														Modifier votre Background.
 													</a>
@@ -329,7 +329,7 @@
 											<td>
 												<p style="padding:4%;">
 													<? echo $notes; ?>
-													<br />
+													<br /><br />
 													<a href="index?p=perso&modif=notesp">
 														Modifier votre Background.
 													</a>
