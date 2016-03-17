@@ -99,8 +99,14 @@
 								</td>
 							</tr>
 							<tr>
-								<td colspan="3">
-									Identité : <?= $line['name']?> Nom
+								<td>
+									Identité :
+								</td>
+								<td>
+									<?= $line['name']?>
+								</td>
+								<td>
+									Nom
 								</td>
 							</tr>
 							<tr>
@@ -126,8 +132,11 @@
 								</td>
 							</tr>
 							<tr>
-								<td colspan="3">
-									Niveau magique : <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
+								<td>
+									Niveau magique :
+								</td>
+								<td style="text-align:center;" colspan="2">
+									 <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
 								</td>
 							</tr>
 							<tr>
