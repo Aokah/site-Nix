@@ -33,21 +33,45 @@
 	if (isset($_GET['modif']))
 		{
 			if ($_GET['modif'] == "bg")
-			{
+			{		
+				$bg = preg_replace('#\n#', '<br />', $line['background']);
+				$bg = ($bg != 'none') ? $bg : 'En attente ...';
 			?>
 			<h3>Edition du BackGround Roleplay</h3>
+			<form action='index?p=perso' method="POST">
+				<textarea name="editbg">
+					<?php echo $bg; ?>
+				</textarea>
+				<input type="submit" name=save_bg value="Terminer" />
+			</form>
 			<?php
 			}
 			elseif ($_GET['modif'] == "notesp")
 			{
+				$notes = preg_replace('#\n#', '<br />', $line['notes_perso']);
+				$notes = ($notes != 'none') ? $notes : 'En attente ...';
 			?>
 			<h3>Edition des Notes Personnelles</h3>
+			<form action='index?p=perso' method="POST">
+				<textarea name="editnotes">
+					<?php echo $notes; ?>
+				</textarea>
+				<input type="submit" name=save_notes value="Terminer" />
+			</form>
 			<?php	
 			}
 			elseif ($_GET['modif'] == "jdesc")
 			{
+				$hrp = preg_replace('#\n#', '<br />', $line['bg_hrp']);
+				$hrp = ($hrp != 'none') ? $hrp : 'En attente ...';
 			?>
 			<h3>Edition de la Description du Joueur</h3>
+			<form action='index?p=perso' method="POST">
+				<textarea name="edithrp">
+					<?php echo $hrp; ?>
+				</textarea>
+				<input type="submit" name=save_hrp value="Terminer" />
+			</form>
 			<?php	
 			}
 			else { echo '<p>Tu n\'essaieraies pas de chercher là où tu ne devrais pas aller ? :P</p>'; }
@@ -270,7 +294,7 @@
 					<table cellspacing="0" cellpadding="0" width="100%">
 						<tbody>
 							<tr>
-								<td>
+								<td width="50px">
 									<img alt=" " src="/pics/ico/magiepapertop.png">
 								</td>
 							</tr>
@@ -292,7 +316,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td width="50px">
 									<img alt="" src="/pics/ico/magiepapebottom.png">
 								</td>
 							</tr>
@@ -303,7 +327,7 @@
 					<table cellspacing="0" cellpadding="0" width="100%" >
 						<tbody>
 							<tr>
-								<td>
+								<td width="50px">
 									<img alt=" " src="/pics/ico/magiepapertop.png">
 								</td>
 							</tr>
@@ -325,7 +349,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td width="50px">
 									<img alt="" src="/pics/ico/magiepapebottom.png">
 								</td>
 							</tr>
@@ -341,7 +365,7 @@
 					<table cellspacing="0" cellpadding="0" width="100%" >
 						<tbody>
 							<tr>
-								<td>
+								<td width="50px">
 									<img alt=" " src="/pics/ico/notespersotop.png">
 								</td>
 							</tr>
@@ -363,7 +387,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td width="50px">
 									<img alt="" src="/pics/ico/notespersobottom.png">
 								</td>
 							</tr>
@@ -375,7 +399,7 @@
 		</tbody>
 	</table>
 	<?php
-	} //else { echo '<p>Une erreur s\'est produite.</p>'; }
+	}
 	}
 	
 	}
