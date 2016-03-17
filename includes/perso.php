@@ -47,7 +47,7 @@
 		$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
 		if ($line['technician'] == 1) { $tech = "-T"; } if ($line['pionier'] == 1) { $pionier = '-P'; }
 	?>
-	<h2 class=name<?= $line['rank']?><?php echo $tech; echo $pionier;?>"><?= $line['title']?> <?= $line['name']?></h2>
+	<h2 class="name<?= $line['rank']?><?php echo $tech; echo $pionier;?>"><?= $line['title']?> <?= $line['name']?></h2>
 	
 	<table cellspacing="5" cellpadding="5">
 		<tbody>
