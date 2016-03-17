@@ -74,7 +74,7 @@
 						</tbody>
 					</table>
 				</td>
-				<td>
+				<td valign="top">
 					<table cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
@@ -115,6 +115,11 @@
 							<tr>
 								<td colspan="3">
 									Niveau magique : <?= $_SESSION['magie_rank']?>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Mortel
 								</td>
 							</tr>
 						</tbody>
