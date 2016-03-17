@@ -77,7 +77,7 @@
 		{
 		if (isset($_POST['save_bg'])) {
 			$editbg = (htmlentities($_POST['editbg']));
-			$update = $db->prepare('UPDATE members SET bacground = ? WHERE id = ?');
+			$update = $db->prepare('UPDATE members SET background = ? WHERE id = ?');
 			$update->execute(array($editbg, $_SESSION['id']));
 		}
 		if (isset($_POST['save_notes'])) {
