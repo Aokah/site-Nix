@@ -45,7 +45,7 @@
 		}
 		$vanish = ($line['invisible'] == 1) ? 'Activée' : 'Désactivée';
 		$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
-		if ($line['technician'] == 1) { $tech = "-T"; $techmode = "Retirer" } else { $techmode = "Attribuer";}  if ($line['pionier'] == 1) { $pionier = '-P'; }
+		if ($line['technician'] == 1) { $tech = "-T"; $techmode = "Retirer"; } else { $techmode = "Attribuer";}  if ($line['pionier'] == 1) { $pionier = '-P'; }
 	?>
 	<h2 class="name<?= $line['rank']?><?php echo $tech; echo $pionier;?>"><?= $line['title']?> <?= $line['name']?></h2>
 	
