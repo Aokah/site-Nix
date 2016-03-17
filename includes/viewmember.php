@@ -74,11 +74,15 @@
 									<p>Titre : <img src="pics/rank<?= $line['rank']?>.png" alt="" width="25" /> <?= $_SESSION['title']?></p>
 								</td>
 							</tr>
+						</tbody>
+					</table>
+					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
+						<tbody>
 							<tr>
-								<td colspan="2">
+								<td>
 									Energie Magique
 								</td>
-								<td colspan="2">
+								<td>
 									Energie Vitale
 								</td>
 							</tr>
@@ -218,7 +222,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td colspan="2">
 									<?php echo $notestaff ;?>
 								</td>
 							</tr>
