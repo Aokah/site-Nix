@@ -44,6 +44,7 @@
 			case 9: $magie = "Pouvoir Suprême"; break;
 		}
 		$vanish = ($line['invisible'] == 1) ? 'Activée' : 'Désactivée';
+		$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
 	?>
 	
 	
