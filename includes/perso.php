@@ -258,11 +258,15 @@
 		}
 		elseif (isset($_GET['action']))
 		{
+			$perso = intval($_GET['perso']);
+			$page = $db->prepare('SELECT * FROM members WHERE id= ?');
+			$page->execute(array($perso));
+			
+			if ($line = $page->fetch()) {
 			if($_GET['action'] == 'upgrade')
 			{
 				if ($_SESSION['rank'] >= 5) {
-					echo $rank;
-				$rank = ($line['rank'] + 1);
+				$rank = $line['rank'] + 1;
 				$update = $db->prepare('UPDATE members SET rank = ? WHERE = ?');
 				$update->execute(array($perso, $rank));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
@@ -383,7 +387,9 @@
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
-			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
+			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>';}
+			}
+			else { echo '<p>Une erreur s\'est produite.</p>';}
 		}
 		else
 		{
