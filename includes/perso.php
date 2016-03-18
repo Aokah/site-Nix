@@ -322,7 +322,7 @@
 			elseif($_GET['action'] == 'end')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				$rank = 8; $magie = 7
+				$rank = 8; $magie = 7;
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
