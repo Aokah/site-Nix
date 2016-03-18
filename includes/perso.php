@@ -469,13 +469,14 @@
 									Niveau magique :
 								</td>
 								<td style="text-align:center;" colspan="2">
+									<?php if ($_SESSION['rank'] >= 5) { ?>
 									 <a href="index?p=perso&perso=<? echo $perso;?>&action=magieup" title="Monter le niveau magique" style="color:green;">
 									 	[UP]
 									 </a>
 									  <a href="index?p=perso&perso=<? echo $perso;?>&action=magiedown" title="Descendre le niveau magique" style="color:red;">
 									 	[DOWN]
 									 </a>
-									 
+									 <?php } ?>
 									 <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
 								</td>
 							</tr>
@@ -510,6 +511,7 @@
 									<p> </p>
 								</td>
 							</tr>
+							<?php if ($_SESSION['rank'] >= 5) { ?>
 							<tr>
 								<td colspan="3" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<a href="index?p=perso&perso=<?php echo $perso; ?>&modif=info">
@@ -517,6 +519,7 @@
 									</a>
 								</td>
 							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 				</td>
@@ -533,6 +536,7 @@
 									Energie Vitale
 								</td>
 							</tr>
+							<?php if ($_SESSION['rank'] >= 5) { ?>
 							<tr>
 								<td colspan="2" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<a href="index?p=perso&perso=<?php echo $perso; ?>&modif=magie">
@@ -540,6 +544,7 @@
 									</a>
 								</td>
 							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 				</td>
@@ -593,6 +598,7 @@
 									</p>
 								</td>
 							</tr>
+							<?php if ($_SESSION['rank'] >= 5) { ?>
 							<tr>
 								<td colspan="2" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<a href="index?p=perso&perso=<?php echo $perso; ?>&modif=admin">
@@ -600,6 +606,7 @@
 									</a>
 								</td>
 							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 				</td>
