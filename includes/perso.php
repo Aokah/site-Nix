@@ -261,7 +261,8 @@
 			if($_GET['action'] == 'upgrade')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				$rank = $line['rank'] + 1;
+					echo $rank;
+				$rank = ($line['rank'] + 1);
 				$update = $db->prepare('UPDATE members SET rank = ? WHERE = ?');
 				$update->execute(array($perso, $rank));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
