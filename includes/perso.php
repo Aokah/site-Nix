@@ -104,7 +104,7 @@
 											</select>
 									</td>
 									<td>
-										<input type="text" name"titre" value="<?= $line['titel']?>" />
+										<label>Titre :</label> <input type="text" name"titre" value="<?= $line['title']?>" />
 									</td>
 								</tr>
 								<tr>
