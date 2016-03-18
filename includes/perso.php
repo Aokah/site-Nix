@@ -264,7 +264,7 @@
 				$update = $db->prepare('UPDATE members SET rank = rank +1 WHERE = ?');
 				$update->execute(array($perso));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
-				$add->execute(array($_SESSION['id'], $perso))
+				$add->execute(array($_SESSION['id'], $perso));
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -274,7 +274,7 @@
 				$update = $db->prepare('UPDATE members SET rank = rank +1 WHERE = ?');
 				$update->execute(array($perso));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
-				$add->execute(array($_SESSION['id'], $perso))
+				$add->execute(array($_SESSION['id'], $perso));
 				echo '<p>Le personnage a bien été dégradé.</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
@@ -285,7 +285,7 @@
 				$update = $db->prepare('UPDATE members SET rank = rank -1, dignitaire = 1 WHERE = ?');
 				$update->execute(array($perso));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
-				$add->execute(array($_SESSION['id'], $perso))
+				$add->execute(array($_SESSION['id'], $perso));
 				echo '<p>Le personnage a bien été dégradé.</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
@@ -297,7 +297,7 @@
 				$update->execute(array($perso));
 				
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
-				$add->execute(array($_SESSION['id'], $perso))
+				$add->execute(array($_SESSION['id'], $perso));
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
