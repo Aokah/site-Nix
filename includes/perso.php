@@ -267,7 +267,7 @@
 			{
 				if ($_SESSION['rank'] >= 5) {
 				$rank = $line['rank'] + 1;
-				$update = $db->prepare('UPDATE members SET rank = ? WHERE = ?');
+				$update = $db->prepare('UPDATE members SET rank = ? WHERE id = ?');
 				$update->execute(array( $rank, $perso));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
@@ -278,7 +278,7 @@
 			{
 				if ($_SESSION['rank'] >= 5) {
 				$rank = $line['rank'] - 1;
-				$update = $db->prepare('UPDATE members SET rank = ? WHERE = ?');
+				$update = $db->prepare('UPDATE members SET rank = ? WHERE id = ?');
 				$update->execute(array( $rank, $perso));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
@@ -290,7 +290,7 @@
 			{
 				if ($_SESSION['rank'] >= 5) {
 				$rank = $line['rank'] - 1;
-				$update = $db->prepare('UPDATE members SET rank = ? WHERE = ?');
+				$update = $db->prepare('UPDATE members SET rank = ?, dignitaire = 1 WHERE id = ?');
 				$update->execute(array( $rank, $perso));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
@@ -302,7 +302,7 @@
 			{
 				if ($_SESSION['rank'] >= 5) {
 				$rank = $line['rank'] + 1;
-				$update = $db->prepare('UPDATE members SET rank = ? WHERE = ?');
+				$update = $db->prepare('UPDATE members SET rank = ?, dignitaire = 0 WHERE id = ?');
 				$update->execute(array( $rank, $perso));
 				
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
