@@ -269,6 +269,10 @@
 				$rank = $line['rank'] + 1;
 				$update = $db->prepare('UPDATE members SET rank = ? WHERE id = ?');
 				$update->execute(array( $rank, $perso));
+				$nom = $line['name'];
+				$msg = "Félicitations à "$nom" pour sa montée en grade !";
+				$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '' ?)");
+				$shirka->execute(array($msg));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
 				echo '<p>Le personnage a bien été promu.</p>';
@@ -305,7 +309,10 @@
 				$rank = $line['rank'] + 1;
 				$update = $db->prepare('UPDATE members SET rank = ?, dignitaire = 0 WHERE id = ?');
 				$update->execute(array( $rank, $perso));
-				
+				$nom = $line['name'];
+				$msg = "Félicitations à "$nom" pour sa montée en grade !";
+				$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '' ?)");
+				$shirka->execute(array($msg));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
 				echo '<p>Le personnage a bien été promu.</p>';
@@ -315,7 +322,7 @@
 			elseif($_GET['action'] == 'end')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				
+				$rank = 8; $magie = 7
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -462,7 +469,7 @@
 									if ($_SESSION['rank'] > $line['rank'] AND $line['rank'] >= 2) { ?>
 									<a title="Dégrader le joueur" href="index?p=perso&perso=<?php echo $perso; ?>&action=downgrade" style="color:red;">[-]</a>
 									<?php } 
-									if ($_SESSION['rank'] > $line['rank'] AND $line['rank'] >= 5 AND $line['dignitaire'] == 1) { ?>
+									if ($_SESSION['rank'] > $line['rank'] AND $line['rank'] >= 5 AND $line['dignitaire'] == 0) { ?>
 									<a title="Dégrader le joueur en tant qu'Ex-Staffeux" href="index?p=perso&perso=<?php echo $perso; ?>&action=dignitaire" style="color:orange;">[D]</a> 
 									<?php } 
 									if ($_SESSION['rank'] > $line['rank'] AND $line['dignitaire'] == 1) {?>
