@@ -29,7 +29,39 @@
 			if ($line = $page->fetch()) {
 				if($_GET['modif'] == "save")
 					{
-						
+						if(isset($_POST['confirm']))
+						{
+							if ($_SESSION['rank'] >= 5) {
+							$prenom = $line['name']; $nom = "?"; $race = htmlentities($_POST['race']); $qualite = "?";
+							$defauts = "?"; $sd = "Non définis"; $caractere = "?";
+							
+							if (!empty($_POST['prenom'])) { $prenom = htmlentities($_POST['prenom']); }
+							if (!empty($_POST['nom'])) { $nom = htmlentities($_POST['nom']); }
+							if (!empty($_POST['qualite'])) { $qualite = htmlentities($_POST['qualite']); }
+							if (!empty($_POST['defauts'])) { $defauts = htmlentities($_POST['defauts']); }
+							if (!empty($_POST['sd'])) { $sd = htmlentities($_POST['sd']); }
+							if (!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
+							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
+							$update->execute(array($prenom, $nom, $race, $qualite, $defauts, $sd, $caractere, $perso));
+							echo '<p>Modifications des informations personnelles effectuées avec succès</p>';
+							}
+							else { echo '<p>Tara tata ta ! ON force pas le système ici !</p>'; }
+						}
+						elseif(isset($_POST['terminer']))
+						{
+							if ($_SESSION['rank'] >= 5) {
+								
+							}
+							else { echo '<p>Tara tata ta ! ON force pas le système ici !</p>'; }
+						}
+						elseif(isset($_POST['valid']))
+						{
+							if ($_SESSION['rank'] >= 5) {
+								
+							}
+							else { echo '<p>Tara tata ta ! ON force pas le système ici !</p>'; }
+						}
+						else { echo '<p>Une erreur s\'est produite.</p>'; }
 					}
 				elseif($_GET['modif'] == 'info')
 				{
@@ -98,7 +130,29 @@
 						<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 							<tbody>
 								<tr>
-									
+									<td>
+										<label for="pseudo">
+											Pseudo Minecraft :
+										</label>
+										<input type="text" id"pseudo" name="pseudo" value="<?= $line['Minecraft_Account']?>" />
+									</td>
+									<td>
+										<label for="email">
+											Pseudo Minecraft :
+										</label>
+										<input type="text" id"email" name="email" value="<?= $line['email']?>" />
+									</td>
+									<td>
+										<input type="submit" name"terminer" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>
+											Note du Staff :
+										</label>
+										<textarea><?= $line['staffnote']?></textarea>
+									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -131,7 +185,7 @@
 										<input type="range" name"e-vie" min="0" step="1" max="200"></code>
 									</td>
 									<td>
-										<input type="submit" name="end" />
+										<input type="submit" name="valid" />
 									</td>
 								</tr>
 							</tbody>
