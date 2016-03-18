@@ -266,9 +266,8 @@
 			if($_GET['action'] == 'upgrade')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				$rank = $line['rank'] + 1;
 				$update = $db->prepare('UPDATE members SET rank = ? WHERE id = ?');
-				$update->execute(array( $rank, $perso));
+				$update->execute(array( $line['rank'] +1, $perso));
 				$nom = $line['name'];
 				$msg = "Félicitations à $nom pour sa montée en grade !";
 				$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '', ?)");
@@ -293,9 +292,8 @@
 			elseif($_GET['action'] == 'dignitaire')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				$rank = $line['rank'] - 1;
 				$update = $db->prepare('UPDATE members SET rank = ?, dignitaire = 1 WHERE id = ?');
-				$update->execute(array( $rank, $perso));
+				$update->execute(array( $line['rank'] -1, $perso));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
 				echo '<p>Le personnage a bien été dégradé.</p>';
@@ -305,9 +303,8 @@
 			elseif($_GET['action'] == 'return')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				$rank = $line['rank'] + 1;
 				$update = $db->prepare('UPDATE members SET rank = ?, dignitaire = 0 WHERE id = ?');
-				$update->execute(array( $rank, $perso));
+				$update->execute(array( $line['rank'] +1, $perso));
 				$nom = $line['name'];
 				$msg = "Félicitations à $nom pour sa montée en grade !";
 				$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '', ?)");
@@ -321,77 +318,106 @@
 			elseif($_GET['action'] == 'end')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				$rank = 8; $magie = 7;
+					$update = $db->prepare('UPDATE members SET rank = 8, magie_rank = 6 WHERE id = ?');
+					$update->execute(array($perso));
+					echo '<p>Le personnage a fini le jeu.</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'avert')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				
+				echo '<p>Fonction en cours de développment.</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'tech')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				
+					if ($line['technician'] == 0) {
+				$update = $db->prepare('UPDATE members SET technician = 1 WHERE id = ?');
+				$update->execute(array($perso));
+				echo '<p>Attribution des pouvoirs de techniciens effectuée !</p>'; }
+				else {
+				$update = $db->prepare('UPDATE members SET technician = 0 WHERE id = ?');
+				$update->execute(array($perso));
+				echo '<p>Retrait des pouvoirs de techniciens effectuée !</p>'; }
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'ban')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				
+				$update = $db->prepare('UPDATE members SET ban = 1 WHERE id= ?');
+				$update->execute(array($perso));
+				echo '<p>Joueur banni.</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'pardon')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				
+				$update = $db->prepare('UPDATE members SET ban = 0 WHERE id= ?');
+				$update->execute(array($perso));
+				echo '<p>Joueur débanni.</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'delete')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				
+				$update = $db->prepare('UPDATE members SET removed = 1 WHERE id= ?');
+				$update->execute(array($perso));
+				echo '<p>Compte supprimé.</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'restore')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				
+				$update = $db->prepare('UPDATE members SET removed = 0 WHERE id= ?');
+				$update->execute(array($perso));
+				echo '<p>Compte restauré.</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'magieup')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				
+				$update = $db->prepare('UPDATE members SET magie_rank = ? WHERE id = ?');
+				$update->execute(array( $line['magie_rank'] +1, $perso));
+				$nom = $line['name'];
+				$msg = "Tuduung~~ ! $nom gagne un niveau !";
+				$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '', ?)");
+				$shirka->execute(array($msg));
+				echo "<p>$nom gagne un niveau !</p>";
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'magiedown')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				
+				$update = $db->prepare('UPDATE members SET magie_rank = ? WHERE id = ?');
+				$update->execute(array( $line['magie_rank'] -1, $perso));
+				echo "<p>$nom perd un niveau !</p>";
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'vanishoff')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				
+				$update = $db->prepare('UPDATE members SET invisible = 0 WHERE id = ?');
+				$update->execute(array($perso));
+				echo '<p>PErsonnage apparent ausur le listing !</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'vanishon')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				
+				$update = $db->prepare('UPDATE members SET invisible = 0 WHERE id = ?');
+				$update->execute(array($perso));
+				echo '<p>Personnage masqué du listing.</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
