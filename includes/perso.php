@@ -83,7 +83,7 @@
 									</td>
 									<td>
 										<label for="race">Race :</label>
-											<select name="race" type="text">
+											<select name="race" type="text" value="<?= $line['race']?>">
 												<option value="Elfe">Elfe</option>
 												<option value="Ernelien">Ernelien</option>
 												<option value="Humain">Humain</option>
