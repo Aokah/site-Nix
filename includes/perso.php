@@ -390,7 +390,7 @@
 				$msg = "Tuduung~~ ! $nom gagne un niveau !";
 				$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '', ?)");
 				$shirka->execute(array($msg));
-				echo "<p>"$nom" gagne un niveau !</p>";
+				echo "<p>Le personnage gagne un niveau !</p>";
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -399,7 +399,7 @@
 				if ($_SESSION['rank'] >= 5) {
 				$update = $db->prepare('UPDATE members SET magie_rank = ? WHERE id = ?');
 				$update->execute(array( $line['magie_rank'] -1, $perso));
-				echo "<p>"$nom" perd un niveau !</p>";
+				echo "<p>Le personnage perd un niveau !</p>";
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -408,7 +408,7 @@
 				if ($_SESSION['rank'] >= 5) {
 				$update = $db->prepare('UPDATE members SET invisible = 0 WHERE id = ?');
 				$update->execute(array($perso));
-				echo '<p>PErsonnage apparent ausur le listing !</p>';
+				echo '<p>Personnage apparent ausur le listing !</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
