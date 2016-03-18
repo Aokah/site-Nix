@@ -260,63 +260,123 @@
 		{
 			if($_GET['action'] == 'upgrade')
 			{
-				
+				if ($_SESSION['rank'] >= 5) {
+				$update = $db->prepare('UPDATE members SET rank = rank +1 WHERE = ?');
+				$update->execute(array($perso));
+				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
+				$add->execute(array($_SESSION['id'], $perso))
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'downgrade')
 			{
-				
+				if ($_SESSION['rank'] >= 5) {
+				$update = $db->prepare('UPDATE members SET rank = rank +1 WHERE = ?');
+				$update->execute(array($perso));
+				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
+				$add->execute(array($_SESSION['id'], $perso))
+				echo '<p>Le personnage a bien été dégradé.</p>';
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'dignitaire')
 			{
-				
+				if ($_SESSION['rank'] >= 5) {
+				$update = $db->prepare('UPDATE members SET rank = rank -1, dignitaire = 1 WHERE = ?');
+				$update->execute(array($perso));
+				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
+				$add->execute(array($_SESSION['id'], $perso))
+				echo '<p>Le personnage a bien été dégradé.</p>';
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'return')
 			{
+				if ($_SESSION['rank'] >= 5) {
+				$update = $db->prepare('UPDATE members SET rank = rank +1, dignitaire = 0 WHERE = ?');
+				$update->execute(array($perso));
 				
+				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
+				$add->execute(array($_SESSION['id'], $perso))
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'end')
 			{
+				if ($_SESSION['rank'] >= 5) {
 				
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'avert')
 			{
+				if ($_SESSION['rank'] >= 5) {
 				
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'tech')
 			{
+				if ($_SESSION['rank'] >= 5) {
 				
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'ban')
 			{
+				if ($_SESSION['rank'] >= 5) {
 				
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'pardon')
 			{
+				if ($_SESSION['rank'] >= 5) {
 				
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'delete')
 			{
+				if ($_SESSION['rank'] >= 5) {
 				
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'restore')
 			{
+				if ($_SESSION['rank'] >= 5) {
 				
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'magieup')
 			{
+				if ($_SESSION['rank'] >= 5) {
 				
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'magiedown')
 			{
+				if ($_SESSION['rank'] >= 5) {
 				
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'vanishoff')
 			{
+				if ($_SESSION['rank'] >= 5) {
 				
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'vanishon')
 			{
+				if ($_SESSION['rank'] >= 5) {
 				
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
 		}
