@@ -33,17 +33,18 @@
 						{
 							if ($_SESSION['rank'] >= 5) {
 							$prenom = $line['name']; $nom = "?"; $race = htmlentities($_POST['race']); $qualite = "?";
-							$defauts = "?"; $sd = "Non définis"; $caractere = "?";
+							$defauts = "?"; $sd = "Non définis"; $caractere = "?"; $title = $line['title'];
 							if ($race = "defaut") { $race = $line['race']; }
 							
+							if (!empty($_POST['titre'])) { $title = htmlentities($_POST['titre']); }
 							if (!empty($_POST['prenom'])) { $prenom = htmlentities($_POST['prenom']); }
 							if (!empty($_POST['nom'])) { $nom = htmlentities($_POST['nom']); }
 							if (!empty($_POST['qualite'])) { $qualite = htmlentities($_POST['qualite']); }
 							if (!empty($_POST['defauts'])) { $defauts = htmlentities($_POST['defauts']); }
 							if (!empty($_POST['sd'])) { $sd = htmlentities($_POST['sd']); }
 							if (!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
-							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
-							$update->execute(array($prenom, $nom, $race, $qualite, $defauts, $sd, $caractere, $perso));
+							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title= ? qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
+							$update->execute(array($prenom, $nom, $race,$title, $qualite, $defauts, $sd, $caractere, $perso));
 							echo '<p>Modifications des informations personnelles effectuées avec succès</p>';
 							}
 							else { echo '<p>Tara tata ta ! On force pas le système ici !</p>'; }
@@ -103,7 +104,7 @@
 											</select>
 									</td>
 									<td>
-										<input type="submit" name="confirm" value="Valider" />
+										<input type="text" name"titre" value="<?= $line['titel']?>" />
 									</td>
 								</tr>
 								<tr>
@@ -125,6 +126,7 @@
 								</tr>
 							</tbody>
 						</table>
+						<input type="submit" name="confirm" value="Valider" />
 					</form>
 				<?php
 				}
