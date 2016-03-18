@@ -53,6 +53,14 @@
 						{
 							if ($_SESSION['rank'] >= 5) {
 								
+								$pseudo = $line['Minecraft_Account']; $email = $line['email']; $staffnote = "none";
+								if (!empty($_POST['pseudo'])) { $pseudo = htmlentities($_POST['pseudo']); }
+								if(!empty($_POST['email'])) { $email = $_POST['email']; }
+								if(!empty($_POST['staffnote'])) { $staffnote = htmlentities($_POST['staffnote']); }
+								
+								$update = $db->prepare('UPDATE members SET Mainecraft_Account = ?, email = ?, staffnote = ? WHERE id = ?');
+								$update->execute(array($pseudo, $email, $staffnote, $perso));
+								echo '<p>Modifications des informations administratives effectuées avec succès</p>';
 							}
 							else { echo '<p>Tara tata ta ! On force pas le système ici !</p>'; }
 						}
@@ -148,10 +156,10 @@
 										<label for="email">
 											E-mail :
 										</label>
-										<input type="text" id"email" name="email" value="<?= $line['email']?>" />
+										<input type="email" id"email" name="email" value="<?= $line['email']?>" />
 									</td>
 									<td>
-										<input type="submit" name"terminer" />
+										<input type="submit" name="terminer" />
 									</td>
 								</tr>
 								<tr>
@@ -159,7 +167,7 @@
 										<label>
 											Note du Staff :
 										</label>
-										<textarea><?= $line['staffnote']?></textarea>
+										<textarea name='staffnote'><?= $line['staffnote']?></textarea>
 									</td>
 								</tr>
 							</tbody>
