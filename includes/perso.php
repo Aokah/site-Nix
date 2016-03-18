@@ -271,6 +271,7 @@
 				$update->execute(array( $rank, $perso));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
+				echo '<p>Le personnage a bien été promu.</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -307,6 +308,7 @@
 				
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
+				echo '<p>Le personnage a bien été promu.</p>';
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
