@@ -67,9 +67,12 @@
 						elseif(isset($_POST['valid']))
 						{
 							if ($_SESSION['rank'] >= 5) {
-								
+								$spe_1 = htmlentities($_POST['spe_1']);
+								$spe_2 = htmlentities($_POST['spe_2']);
+								if ($spe_1 = "defaut") { $spe_1 = $line['specialisation']; }
+								if ($spe_2 = "defaut") { $spe_2 = $line['spe_2']; }
 								$update = $db->prepare('UPDATE members SET E_Magique = ?, E_Vitale = ?, specialisation = ?, spe_2 = ? WHERE id = ?');
-								$update->execute(array($_POST['e-magie'], $_POST['e-vie'], $_POST['spe_1'], $_POST['spe_2'], $perso));
+								$update->execute(array($_POST['e-magie'], $_POST['e-vie'], $spe_1, $spe_2, $perso));
 								echo '<p>Modifications des informations magiques effectuées avec succès</p>';
 							}
 							else { echo '<p>Tara tata ta ! On force pas le système ici !</p>'; }
@@ -574,14 +577,17 @@
 									Niveau magique :
 								</td>
 								<td style="text-align:center;" colspan="2">
-									<?php if ($_SESSION['rank'] >= 5) { ?>
+									<?php if ($_SESSION['rank'] >= 5) { 
+									if ($line['magie_rank'] < 0 AND $line['magie_rank'] < 8 ) { ?>
 									 <a href="index?p=perso&perso=<? echo $perso;?>&action=magieup" title="Monter le niveau magique" style="color:green;">
 									 	[UP]
 									 </a>
+									 <?php }
+									 if ($line['magie_rank'] < 1 AND $line['magie_rank'] < 9 ) { ?>
 									  <a href="index?p=perso&perso=<? echo $perso;?>&action=magiedown" title="Descendre le niveau magique" style="color:red;">
 									 	[DOWN]
 									 </a>
-									 <?php } ?>
+									 <?php } } ?>
 									 <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
 								</td>
 							</tr>
