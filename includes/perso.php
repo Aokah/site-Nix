@@ -278,6 +278,10 @@
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
 				echo '<p>Le personnage a bien été promu.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -289,6 +293,10 @@
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
 				echo '<p>Le personnage a bien été dégradé.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -300,6 +308,10 @@
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
 				echo '<p>Le personnage a bien été dégradé.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -315,6 +327,10 @@
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
 				echo '<p>Le personnage a bien été promu.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -324,6 +340,10 @@
 					$update = $db->prepare('UPDATE members SET rank = 8, magie_rank = 6 WHERE id = ?');
 					$update->execute(array($perso));
 					echo '<p>Le personnage a fini le jeu.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -331,6 +351,10 @@
 			{
 				if ($_SESSION['rank'] >= 5) {
 				echo '<p>Fonction en cours de développment.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -345,6 +369,10 @@
 				$update = $db->prepare('UPDATE members SET technician = 0 WHERE id = ?');
 				$update->execute(array($perso));
 				echo '<p>Retrait des pouvoirs de techniciens effectuée !</p>'; }
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -354,6 +382,36 @@
 				$update = $db->prepare('UPDATE members SET ban = 1 WHERE id= ?');
 				$update->execute(array($perso));
 				echo '<p>Joueur banni.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
+			}
+			elseif($_GET['action'] == 'magieok')
+			{
+				if ($_SESSION['rank'] >= 5) {
+				$update = $db->prepare('UPDATE members SET magieok = 1 WHERE id= ?');
+				$update->execute(array($perso));
+				echo '<p>Magie maitrisée.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
+			}
+			elseif($_GET['action'] == 'magieko')
+			{
+				if ($_SESSION['rank'] >= 5) {
+				$update = $db->prepare('UPDATE members SET magieok = 0 WHERE id= ?');
+				$update->execute(array($perso));
+				echo '<p>Magie perdue.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -363,6 +421,10 @@
 				$update = $db->prepare('UPDATE members SET ban = 0 WHERE id= ?');
 				$update->execute(array($perso));
 				echo '<p>Joueur débanni.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -372,6 +434,10 @@
 				$update = $db->prepare('UPDATE members SET removed = 1 WHERE id= ?');
 				$update->execute(array($perso));
 				echo '<p>Compte supprimé.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -381,6 +447,10 @@
 				$update = $db->prepare('UPDATE members SET removed = 0 WHERE id= ?');
 				$update->execute(array($perso));
 				echo '<p>Compte restauré.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -394,6 +464,10 @@
 				$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '', ?)");
 				$shirka->execute(array($msg));
 				echo "<p>Le personnage gagne un niveau !</p>";
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -403,6 +477,10 @@
 				$update = $db->prepare('UPDATE members SET magie_rank = ? WHERE id = ?');
 				$update->execute(array( $line['magie_rank'] -1, $perso));
 				echo "<p>Le personnage perd un niveau !</p>";
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -412,6 +490,10 @@
 				$update = $db->prepare('UPDATE members SET invisible = 0 WHERE id = ?');
 				$update->execute(array($perso));
 				echo '<p>Personnage apparent ausur le listing !</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
@@ -421,6 +503,10 @@
 				$update = $db->prepare('UPDATE members SET invisible = 0 WHERE id = ?');
 				$update->execute(array($perso));
 				echo '<p>Personnage masqué du listing.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
