@@ -61,7 +61,9 @@
 							}
 							else { echo '<p>Tara tata ta ! ON force pas le système ici !</p>'; }
 						}
+						else { echo '<p>Une erreur s\'est produite.</p>'; }
 					}
+					
 				elseif($_GET['modif'] == 'info')
 				{
 				?>
@@ -96,7 +98,7 @@
 											</select>
 									</td>
 									<td>
-										<input type="submit" name"confirm" value="Valider" />
+										<input type="submit" name="confirm" value="Valider" />
 									</td>
 								</tr>
 								<tr>
