@@ -367,7 +367,7 @@
 									<?= $line['name']?>
 								</td>
 								<td>
-									Nom
+									<?= $line['nom']?>
 								</td>
 							</tr>
 							<tr>
@@ -399,22 +399,22 @@
 							</tr>
 							<tr>
 								<td colspan="3">
-									Qualités :
+									Qualités : <?= $line['qualite']?>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="3">
-									Défauts :
+									Défauts : <?= $line['defauts']?>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="3">
-									Caractère :
+									Caractère : <?= $line['caractere']?>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="3">
-									Signes distinctifs :
+									Signes distinctifs : <?= $line['sd']?>
 								</td>
 							</tr>
 							<tr>
