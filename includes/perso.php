@@ -270,7 +270,7 @@
 				$update = $db->prepare('UPDATE members SET rank = ? WHERE id = ?');
 				$update->execute(array( $rank, $perso));
 				$nom = $line['name'];
-				$msg = "Félicitations à "$nom" pour sa montée en grade !";
+				$msg = "Félicitations à $nom pour sa montée en grade !";
 				$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '' ?)");
 				$shirka->execute(array($msg));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
@@ -310,7 +310,7 @@
 				$update = $db->prepare('UPDATE members SET rank = ?, dignitaire = 0 WHERE id = ?');
 				$update->execute(array( $rank, $perso));
 				$nom = $line['name'];
-				$msg = "Félicitations à "$nom" pour sa montée en grade !";
+				$msg = "Félicitations à $nom pour sa montée en grade !";
 				$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '' ?)");
 				$shirka->execute(array($msg));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
