@@ -70,7 +70,7 @@
 									</td>
 									<td>
 										<label for="qualite">Qualité :</label>  <input type="text" id="qualite" name="qualite" value="<?= $line['qualites']?>" />
-									</td
+									</td>
 									<td>
 										<label for="defauts">Défauts :</label> <input type="text" id="defauts" name="defauts" value="<?= $line['defauts']?>" />
 									</td>
