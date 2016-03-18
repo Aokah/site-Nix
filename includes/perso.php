@@ -19,25 +19,52 @@
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 
 	if (isset($_GET['perso']))
-	{
-		if (isset($_GET['modif']))
-		{
-			if($_GET['modif'] == 'info')
+	{	
+		$perso = intval($_GET['perso']);
+		$page = $db->prepare('SELECT * FROM members WHERE id= ?');
+		$page->execute(array($perso));
+		
+		if ($line = $page->fetch()) {
+			if (isset($_GET['modif']))
 			{
-				
+				if($_GET['modif'] == 'info')
+				{
+				?>
+					<h3>Modification des informations du personnage</h3>
+					<form action="index?p=perso=<?php echo $perso;?>&modif=save" method="POST">
+						<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
+							<tbody>
+								<tr>
+									<td>
+										Identité :
+									</td>
+									<td>
+										<label for="prenom">Prénom :</label> <input type="text" id="prenom" name="prenom" value="<?= $line['name']?>" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				<?php
+				}
+				elseif($_GET['modif'] == 'admin')
+				{
+					
+				}
+				elseif($_GET['modif'] == 'magie')
+				{
+					
+				}
+				else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
 			}
-			elseif($_GET['modif'] == 'admin')
-			{
-				
-			}
-			elseif($_GET['modif'] == 'magie')
-			{
-				
-			}
-			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
 		}
 		elseif (isset($_GET['action']))
 		{
+			$perso = intval($_GET['perso']);
+		$page = $db->prepare('SELECT * FROM members WHERE id= ?');
+		$page->execute(array($perso));
+		
+		if ($line = $page->fetch()) {
 			if($_GET['action'] == 'upgrade')
 			{
 				
@@ -83,6 +110,7 @@
 				
 			}
 			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
+		}
 		}
 		else
 		{
