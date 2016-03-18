@@ -56,15 +56,9 @@
 					
 				}
 				else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
-			}
 		}
 		elseif (isset($_GET['action']))
 		{
-			$perso = intval($_GET['perso']);
-		$page = $db->prepare('SELECT * FROM members WHERE id= ?');
-		$page->execute(array($perso));
-		
-		if ($line = $page->fetch()) {
 			if($_GET['action'] == 'upgrade')
 			{
 				
