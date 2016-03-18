@@ -57,8 +57,28 @@
 												<option value="Orque">Orque</option>
 												<option value="Spécial">Spécial</option>
 												<option value="Stromnole">Stromnole</option>
-												<option value="Titanoïde">titanoïde</option>
+												<option value="Titanoide">Titanoïde</option>
 											</select>
+									</td>
+									<td>
+										<input type="submit" name"confirm" value="Valider" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Personalité :
+									</td>
+									<td>
+										<label for="qualite">Qualité :</label>  <input type="text" id="qualite" name="qualite" value="<?= $line['qualites']?>" />
+									</td
+									<td>
+										<label for="defauts">Défauts :</label> <input type="text" id="defauts" name="defauts" value="<?= $line['defauts']?>" />
+									</td>
+									<td>
+										<label for="sd">Signes Distinctifs :</label> <input type="text" id="sd" name="sd" value="<?= $line['sd']?>" />
+									</td>
+									<td>
+										<label for="caractere">Caractère :</label> <input type="text" id="caractere" name="caractere" value="<?= $line['caractere']?>" />
 									</td>
 								</tr>
 							</tbody>
