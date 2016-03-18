@@ -41,6 +41,25 @@
 									<td>
 										<label for="prenom">Prénom :</label> <input type="text" id="prenom" name="prenom" value="<?= $line['name']?>" />
 									</td>
+									<td>
+										<label for="nom">Nom :</label> <input type="text" id="nom" name="nom" value="<?= $line['nom']?>" />
+									</td>
+									<td>
+										<label for="race">Race :</label>
+											<select name="race" type="text">
+												<option value="Elfe">Elfe</option>
+												<option value="Ernelien">Ernelien</option>
+												<option value="Humain">Humain</option>
+												<option value="Hybride (Animal)">Hybride (Animal)</option>
+												<option value="Inconnue">Inconnue</option>
+												<option value="Nain">Nain</option>
+												<option value="Onyx">Onyx</option>
+												<option value="Orque">Orque</option>
+												<option value="Spécial">Spécial</option>
+												<option value="Stromnole">Stromnole</option>
+												<option value="Titanoïde">titanoïde</option>
+											</select>
+									</td>
 								</tr>
 							</tbody>
 						</table>
