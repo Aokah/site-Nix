@@ -59,6 +59,9 @@
 						{
 							if ($_SESSION['rank'] >= 5) {
 								
+								$update = $db->prepare('UPDATE members SET E_Magique = ?, E_Vitale = ?, specialisation = ?, spe_2 = ? WHERE id = ?');
+								$update->execute(array($_POST['e-magie'], $_POST['e-vie'], $_POST['spe_1'], $_POST['spe_2'], $perso));
+								echo '<p>Modifications des informations magiques effectuées avec succès</p>';
 							}
 							else { echo '<p>Tara tata ta ! On force pas le système ici !</p>'; }
 						}
@@ -89,7 +92,7 @@
 												<option value="Elfe">Elfe</option>
 												<option value="Ernelien">Ernelien</option>
 												<option value="Humain">Humain</option>
-												<option value="Hybride (Animal)">Hybride (Animal)</option>
+												<option value="Hybride">Hybride (Animal)</option>
 												<option value="Inconnue">Inconnue</option>
 												<option value="Nain">Nain</option>
 												<option value="Onyx">Onyx</option>
@@ -178,14 +181,14 @@
 									</td>
 									<td>
 										<?php if ($line['magie_rank'] < 7) { ?>
-										<input type="number" name"e-magie" min="0" step="1" max="<?php echo $maxmagie; ?>"></code> <?php } else { ?>
+										<input type="number" name"e-magie" min="0" step="1" value="<?= $line['E_Magique']?>" max="<?php echo $maxmagie; ?>"></code> <?php } else { ?>
 										<?php echo $overmagie; }?>
 									</td>
 									<td>
 										Energie Vitale :
 									</td>
 									<td>
-										<input type="number" name"e-vie" min="0" step="1" max="200"></code>
+										<input type="number" name"e-vie" min="0" step="1"  value="<?= $line['E_Vitale']?>" max="200"></code>
 									</td>
 									<td>
 										<input type="submit" name="valid" />
@@ -193,7 +196,46 @@
 								</tr>
 								<tr>
 									<td>
-										
+										<label for="race">Spécialisation primaire :</label>
+											<select name="spe_1" type="text">
+												<option value="defaut">--Option par défaut--</option>
+												<option value="Air">Air</option>
+												<option value="Arcane">Arcane</option>
+												<option value="Chaos">Chaos</option>
+												<option value="Eau">Eau</option>
+												<option value="Energie">Energie</option>
+												<option value="Feu">Feu</option>
+												<option value="Glace">Glace</option>
+												<option value="Inconnue">Inconnue</option>
+												<option value="Lumiere">Lumière</option>
+												<option value="Metal">Métal</option>
+												<option value="Nature">Nature</option>
+												<option value="Ombre">Ombre</option>
+												<option value="Psy">Psy</option>
+												<option value="Spécial">Spécial</option>
+												<option value="Terre">Terre</option>
+											</select>
+									</td>
+									<td>
+										<label for="race">Spécialisation secondaire :</label>
+											<select name="spe_2" type="text">
+												<option value="defaut">--Option par défaut--</option>
+												<option value="Air">Air</option>
+												<option value="Arcane">Arcane</option>
+												<option value="Chaos">Chaos</option>
+												<option value="Eau">Eau</option>
+												<option value="Energie">Energie</option>
+												<option value="Feu">Feu</option>
+												<option value="Glace">Glace</option>
+												<option value="Inconnue">Inconnue</option>
+												<option value="Lumiere">Lumière</option>
+												<option value="Metal">Métal</option>
+												<option value="Nature">Nature</option>
+												<option value="Ombre">Ombre</option>
+												<option value="Psy">Psy</option>
+												<option value="Spécial">Spécial</option>
+												<option value="Terre">Terre</option>
+											</select>
 									</td>
 								</tr>
 							</tbody>
