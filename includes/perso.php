@@ -294,6 +294,22 @@
 			{
 				
 			}
+			elseif($_GET['action'] == 'magieup')
+			{
+				
+			}
+			elseif($_GET['action'] == 'magiedown')
+			{
+				
+			}
+			elseif($_GET['action'] == 'vanishoff')
+			{
+				
+			}
+			elseif($_GET['action'] == 'vanishon')
+			{
+				
+			}
 			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
 		}
 		else
@@ -445,6 +461,13 @@
 									Niveau magique :
 								</td>
 								<td style="text-align:center;" colspan="2">
+									 <a href="index?p=perso&perso=<? echo $perso;?>&action=magieup" title="Monter le niveau magique" style="color:green;">
+									 	[UP]
+									 </a>
+									  <a href="index?p=perso&perso=<? echo $perso;?>&action=magiedown" title="Descendre le niveau magique" style="color:red;">
+									 	[DOWN]
+									 </a>
+									 
 									 <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
 								</td>
 							</tr>
