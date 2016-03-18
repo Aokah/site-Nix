@@ -261,8 +261,9 @@
 			if($_GET['action'] == 'upgrade')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				$update = $db->prepare('UPDATE members SET rank = rank +1 WHERE = ?');
-				$update->execute(array($perso));
+				$rank = $line['rank'] + 1;
+				$update = $db->prepare('UPDATE members SET rank = ? WHERE = ?');
+				$update->execute(array($perso, $rank));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
 				}
@@ -271,8 +272,9 @@
 			elseif($_GET['action'] == 'downgrade')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				$update = $db->prepare('UPDATE members SET rank = rank +1 WHERE = ?');
-				$update->execute(array($perso));
+				$rank = $line['rank'] - 1;
+				$update = $db->prepare('UPDATE members SET rank = ? WHERE = ?');
+				$update->execute(array($perso, $rank));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
 				echo '<p>Le personnage a bien été dégradé.</p>';
@@ -282,8 +284,9 @@
 			elseif($_GET['action'] == 'dignitaire')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				$update = $db->prepare('UPDATE members SET rank = rank -1, dignitaire = 1 WHERE = ?');
-				$update->execute(array($perso));
+				$rank = $line['rank'] - 1;
+				$update = $db->prepare('UPDATE members SET rank = ? WHERE = ?');
+				$update->execute(array($perso, $rank));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
 				echo '<p>Le personnage a bien été dégradé.</p>';
@@ -293,8 +296,9 @@
 			elseif($_GET['action'] == 'return')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				$update = $db->prepare('UPDATE members SET rank = rank +1, dignitaire = 0 WHERE = ?');
-				$update->execute(array($perso));
+				$rank = $line['rank'] + 1;
+				$update = $db->prepare('UPDATE members SET rank = ? WHERE = ?');
+				$update->execute(array($perso, $rank));
 				
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 1, ?, NOW() )');
 				$add->execute(array($_SESSION['id'], $perso));
