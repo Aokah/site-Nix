@@ -58,7 +58,7 @@
 								if(!empty($_POST['email'])) { $email = $_POST['email']; }
 								if(!empty($_POST['staffnote'])) { $staffnote = htmlentities($_POST['staffnote']); }
 								
-								$update = $db->prepare('UPDATE members SET Mainecraft_Account = ?, email = ?, staffnote = ? WHERE id = ?');
+								$update = $db->prepare('UPDATE members SET Minecraft_Account = ?, email = ?, staffnote = ? WHERE id = ?');
 								$update->execute(array($pseudo, $email, $staffnote, $perso));
 								echo '<p>Modifications des informations administratives effectuées avec succès</p>';
 							}
