@@ -34,6 +34,7 @@
 							if ($_SESSION['rank'] >= 5) {
 							$prenom = $line['name']; $nom = "?"; $race = htmlentities($_POST['race']); $qualite = "?";
 							$defauts = "?"; $sd = "Non définis"; $caractere = "?";
+							if ($race = "defaut") { $race = $line['race']; }
 							
 							if (!empty($_POST['prenom'])) { $prenom = htmlentities($_POST['prenom']); }
 							if (!empty($_POST['nom'])) { $nom = htmlentities($_POST['nom']); }
@@ -45,21 +46,21 @@
 							$update->execute(array($prenom, $nom, $race, $qualite, $defauts, $sd, $caractere, $perso));
 							echo '<p>Modifications des informations personnelles effectuées avec succès</p>';
 							}
-							else { echo '<p>Tara tata ta ! ON force pas le système ici !</p>'; }
+							else { echo '<p>Tara tata ta ! On force pas le système ici !</p>'; }
 						}
 						elseif(isset($_POST['terminer']))
 						{
 							if ($_SESSION['rank'] >= 5) {
 								
 							}
-							else { echo '<p>Tara tata ta ! ON force pas le système ici !</p>'; }
+							else { echo '<p>Tara tata ta ! On force pas le système ici !</p>'; }
 						}
 						elseif(isset($_POST['valid']))
 						{
 							if ($_SESSION['rank'] >= 5) {
 								
 							}
-							else { echo '<p>Tara tata ta ! ON force pas le système ici !</p>'; }
+							else { echo '<p>Tara tata ta ! On force pas le système ici !</p>'; }
 						}
 						else { echo '<p>Une erreur s\'est produite.</p>'; }
 					}
@@ -83,7 +84,8 @@
 									</td>
 									<td>
 										<label for="race">Race :</label>
-											<select name="race" type="text" value="<?= $line['race']?>">
+											<select name="race" type="text">
+												<option value="defaut">--Option par défaut--</option>
 												<option value="Elfe">Elfe</option>
 												<option value="Ernelien">Ernelien</option>
 												<option value="Humain">Humain</option>
@@ -139,7 +141,7 @@
 									</td>
 									<td>
 										<label for="email">
-											Pseudo Minecraft :
+											E-mail :
 										</label>
 										<input type="text" id"email" name="email" value="<?= $line['email']?>" />
 									</td>
@@ -175,18 +177,23 @@
 										Energie Magique :
 									</td>
 									<td>
-										<?php if ($line['E_magique'] < 7) { ?>
-										<input type="range" name"e-magie" min="0" step="1" max="<?php echo $maxmagie; ?>"></code> <?php } else { ?>
+										<?php if ($line['magie_rank'] < 7) { ?>
+										<input type="number" name"e-magie" min="0" step="1" max="<?php echo $maxmagie; ?>"></code> <?php } else { ?>
 										<?php echo $overmagie; }?>
 									</td>
 									<td>
 										Energie Vitale :
 									</td>
 									<td>
-										<input type="range" name"e-vie" min="0" step="1" max="200"></code>
+										<input type="number" name"e-vie" min="0" step="1" max="200"></code>
 									</td>
 									<td>
 										<input type="submit" name="valid" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										
 									</td>
 								</tr>
 							</tbody>
