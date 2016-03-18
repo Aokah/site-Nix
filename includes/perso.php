@@ -19,14 +19,9 @@
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 
 	if (isset($_GET['perso']))
-	{	
-		$perso = intval($_GET['perso']);
-		$page = $db->prepare('SELECT * FROM members WHERE id= ?');
-		$page->execute(array($perso));
-		
-		if ($line = $page->fetch()) {
-			if (isset($_GET['modif']))
-			{
+	{
+		if (isset($_GET['modif']))
+		{
 				if($_GET['modif'] == 'info')
 				{
 				?>
@@ -104,7 +99,6 @@
 				
 			}
 			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
-		}
 		}
 		else
 		{
