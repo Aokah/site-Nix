@@ -44,7 +44,7 @@
 							if (!empty($_POST['sd'])) { $sd = htmlentities($_POST['sd']); }
 							if (!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
 							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title= ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
-							$update->execute(array($prenom, $nom, $race,$titre, $qualite, $defauts, $sd, $caractere, $perso));
+							$update->execute(array($prenom, $nom, $race, $titre, $qualite, $defauts, $sd, $caractere, $perso));
 							echo '<p>Modifications des informations personnelles effectuées avec succès</p>';
 								?>
 								<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
@@ -111,7 +111,7 @@
 									</td>
 									<td>
 										<label for="race">Race :</label>
-											<select name="race" type="text">
+											<select id="race" name="race" type="text">
 												<option value="defaut">--Option par défaut--</option>
 												<option value="Elfe">Elfe</option>
 												<option value="Ernelien">Ernelien</option>
@@ -221,7 +221,7 @@
 								</tr>
 								<tr>
 									<td>
-										<label for="race">Spécialisation primaire :</label>
+										<label for="spe_1">Spécialisation primaire :</label>
 											<select name="spe_1" type="text">
 												<option value="defaut">--Option par défaut--</option>
 												<option value="Air">Air</option>
@@ -242,7 +242,7 @@
 											</select>
 									</td>
 									<td>
-										<label for="race">Spécialisation secondaire :</label>
+										<label for=""race"spe_2">Spécialisation secondaire :</label>
 											<select name="spe_2" type="text">
 												<option value="defaut">--Option par défaut--</option>
 												<option value="Air">Air</option>
