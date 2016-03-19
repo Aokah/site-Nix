@@ -1303,15 +1303,14 @@
 									<img alt="" src="/pics/ico/notespersobottom.png">
 								</td>
 							</tr>
-							<tr>
-								<td colspan="2">
-									<h3>La race de votre personnage :</h3>
-									<p>Il sera bientôt possible de changer de race</p>
-								</td>
-							</tr>
-							
 						</tbody>
 					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h3>La race de votre personnage :</h3>
+					<p>Il sera bientôt possible de changer de race</p>
 				</td>
 			</tr>
 		</tbody>
