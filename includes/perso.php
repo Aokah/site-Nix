@@ -47,7 +47,7 @@
 							if (!empty($_POST['defauts'])) { $defauts = htmlentities($_POST['defauts']); }
 							if (!empty($_POST['sd'])) { $sd = htmlentities($_POST['sd']); }
 							if (!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
-							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title= ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
+							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
 							$update->execute(array($prenom, $nom, $race, $titre, $qualite, $defauts, $sd, $caractere, $perso));
 							echo '<p>Modifications des informations personnelles effectuées avec succès</p>';
 								?>
