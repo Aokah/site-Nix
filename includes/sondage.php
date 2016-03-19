@@ -316,6 +316,7 @@
 					<?php echo $date; ?>
 					</td>
 				</tr>
+				<?php } ?>
 			</tbody>
 		</table>
 		</li>
@@ -350,6 +351,7 @@
 					<?php echo $date; ?>
 					</td>
 				</tr>
+				<?php } ?>
 			</tbody>
 		</table>
 		</li>
@@ -385,7 +387,7 @@
 					<?php echo $date; ?>
 					</td>
 				</tr>
-				
+				<?php } ?>
 			</tbody>
 		</table>
 		</li>
@@ -420,6 +422,7 @@
 					<?php echo $date; ?>
 					</td>
 				</tr>
+				<?php } ?>
 			</tbody>
 		</table>
 		</li>
