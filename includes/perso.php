@@ -1258,24 +1258,28 @@
 						</tr>
 					</tbody>
 				</table>
+				<input name="valider" type="submit" value="Terminer" />
 			</form>
 			<?php	} else { echo '<p>Une erreur s\'est produite.</p>'; }
 			}
 			elseif ($_GET['edit'] == "save")
 			{
-			$nom = "?"; $qualite = "?"; $defauts = "?"; $sd = "Non définis"; $caractere = "?";
-			
-			if (!empty($_POST['nom'])) { $nom = htmlentities($_POST['nom']); }
-			if (!empty($_POST['qualite'])) { $qualite = htmlentities($_POST['qualite']); }
-			if (!empty($_POST['defauts'])) { $defauts = htmlentities($_POST['defauts']); }
-			if (!empty($_POST['sd'])) { $sd = htmlentities($_POST['sd']); }
-			if (!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
-			$update = $db->prepare('UPDATE members SET nom = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
-			$update->execute(array( $nom, $qualite, $defauts, $sd, $caractere, $_SESSION['id']));
-			echo '<p>Modifications effectuées avec succès</p>';
-			?>
-			<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				if (isset($_POST['valider']))
+				{
+					$nom = "?"; $qualite = "?"; $defauts = "?"; $sd = "Non définis"; $caractere = "?";
+					
+					if (!empty($_POST['nom'])) { $nom = htmlentities($_POST['nom']); }
+					if (!empty($_POST['qualite'])) { $qualite = htmlentities($_POST['qualite']); }
+					if (!empty($_POST['defauts'])) { $defauts = htmlentities($_POST['defauts']); }
+					if (!empty($_POST['sd'])) { $sd = htmlentities($_POST['sd']); }
+					if (!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
+					$update = $db->prepare('UPDATE members SET nom = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
+					$update->execute(array( $nom, $qualite, $defauts, $sd, $caractere, $_SESSION['id']));
+					echo '<p>Modifications effectuées avec succès</p>';
+					?>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
 			<?php	
+				} else { echo '<p>Il ma	nque pas des informations là ? Ou alors tu fouilles le site. :P</p>' ;}
 			}
 			else
 			{
