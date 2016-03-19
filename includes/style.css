@@ -329,9 +329,7 @@ textarea {
 
 div .validbg
 {
-    position: absolute;
-    right: 20px;
-    top: -64px;
+   float: right;
 }
 
 .del_form {
