@@ -884,7 +884,7 @@
 												</p>
 												<?php if ($_SESSION['rank'] >= 5 AND $line['valid_bg'] == 0) { ?>
 												<p style="padding-left:10%; padding-right:10%;">
-													<a href="index?p=perso&perso=<?php echo $perso;?>&action=validbg">
+													<a href="index?p=perso&perso=<?php echo $perso;?>&action=validbg" style="color:red;">
 														[Valider le BG]
 													</a>
 												</p>
