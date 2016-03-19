@@ -293,7 +293,8 @@
 		$answer = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
-		WHERE s.rank <= 4 ');
+		WHERE s.rank = <=4
+		ORDER BY id asc');
 		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
@@ -328,7 +329,8 @@
 		$answer1 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
-		WHERE s.rank = 5 ');
+		WHERE s.rank = 5
+		ORDER BY id asc');
 		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
@@ -364,7 +366,8 @@
 		$answer2 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
-		WHERE s.rank = 6 ');
+		WHERE s.rank = 6
+		ORDER BY id asc');
 		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
@@ -400,7 +403,8 @@
 		$answer3 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
-		WHERE s.rank = 7 ');
+		WHERE s.rank = 7
+		ORDER BY id asc');
 		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
