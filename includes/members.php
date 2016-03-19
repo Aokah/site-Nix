@@ -75,7 +75,7 @@
 	if ($line['magie_rank'] >= 7) { $tmagie = 'inf';} 
 	if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}if ($line['E_vitale'] >= 80 AND $line['E_vitale'] <= 99) 	{	$tvie = 40 ;	}if ($line['E_vitale'] >= 100 AND $line['E_vitale'] <= 119) 	{	$tvie = 50 ;	}if ($line['E_vitale'] >= 120 AND $line['E_vitale'] <= 139)	{	$tvie = 60 ;	}if ($line['E_vitale'] >= 140 AND $line['E_vitale'] <= 159) 	{	$tvie = 70 ;	}if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}?>
 	<tr class="memberbg_10">
-		<td><img class="magie_type" width="27" src="pics/<? echo $rank?>" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=viewmember&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" style="color: white"><?= $line['name']?></a></td>
+		<td><img class="magie_type" width="27" src="pics/<? echo $rank?>" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=perso&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" style="color: white"><?= $line['name']?></a></td>
 		<td> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?></td>
 		<td style="text-align: center;"><img src="pics/valid_bg_<? echo $valid_bg ?>.gif" alt="" title="<? echo $bgtitle ?>" /></td>
 		<td style="text-align: center;"><? echo $line3['fofo']?></td>
@@ -130,7 +130,7 @@
 	if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}if ($line['E_vitale'] >= 80 AND $line['E_vitale'] <= 99) 	{	$tvie = 40 ;	}if ($line['E_vitale'] >= 100 AND $line['E_vitale'] <= 119) 	{	$tvie = 50 ;	}if ($line['E_vitale'] >= 120 AND $line['E_vitale'] <= 139)	{	$tvie = 60 ;	}if ($line['E_vitale'] >= 140 AND $line['E_vitale'] <= 159) 	{	$tvie = 70 ;	}if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 	?>
 	<tr class="memberbg_9">
-		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png"  width="20px"/> <a href="index.php?p=viewmember&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
+		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png"  width="20px"/> <a href="index.php?p=perso&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
 		<td> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?></td>
 		<td style="text-align: center;"><img src="pics/valid_bg_<? echo $valid_bg ?>.gif" alt="" title="<? echo $bgtitle ?>" /></td>
 		<td style="text-align: center;"><? echo $line3['fofo']?></td>
@@ -185,7 +185,7 @@
 	if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}if ($line['E_vitale'] >= 80 AND $line['E_vitale'] <= 99) 	{	$tvie = 40 ;	}if ($line['E_vitale'] >= 100 AND $line['E_vitale'] <= 119) 	{	$tvie = 50 ;	}if ($line['E_vitale'] >= 120 AND $line['E_vitale'] <= 139)	{	$tvie = 60 ;	}if ($line['E_vitale'] >= 140 AND $line['E_vitale'] <= 159) 	{	$tvie = 70 ;	}if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 	?>
 	<tr class="memberbg_9">
-		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27"  alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=viewmember&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
+		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27"  alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=perso&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
 		<td> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?></td>
 		<td style="text-align: center;"><img src="pics/valid_bg_<? echo $valid_bg ?>.gif" alt="" title="<? echo $bgtitle ?>" /></td>
 		<td style="text-align: center;"><? echo $line3['fofo']?></td>
@@ -238,7 +238,7 @@
 	if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}if ($line['E_vitale'] >= 80 AND $line['E_vitale'] <= 99) 	{	$tvie = 40 ;	}if ($line['E_vitale'] >= 100 AND $line['E_vitale'] <= 119) 	{	$tvie = 50 ;	}if ($line['E_vitale'] >= 120 AND $line['E_vitale'] <= 139)	{	$tvie = 60 ;	}if ($line['E_vitale'] >= 140 AND $line['E_vitale'] <= 159) 	{	$tvie = 70 ;	}if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 	?>
 	<tr class="memberbg_pnj">
-		<td><img class="magie_type" src="pics/rank<? echo $rank?>.png" width="27" alt=" " /> <img src="pics/avatar/miniskin_<? echo $skin?>.png"  width="20px"/> <a href="index.php?p=viewmember&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
+		<td><img class="magie_type" src="pics/rank<? echo $rank?>.png" width="27" alt=" " /> <img src="pics/avatar/miniskin_<? echo $skin?>.png"  width="20px"/> <a href="index.php?p=perso&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
 		<td> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?></td>
 		<td style="text-align: center;"><img src="pics/valid_bg_<? echo $valid_bg ?>.gif" alt="" title="<? echo $bgtitle ?>" /></td>
 		<td style="text-align: center;"><? echo $line3['fofo']?></td>
@@ -292,7 +292,7 @@
 	if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}if ($line['E_vitale'] >= 80 AND $line['E_vitale'] <= 99) 	{	$tvie = 40 ;	}if ($line['E_vitale'] >= 100 AND $line['E_vitale'] <= 119) 	{	$tvie = 50 ;	}if ($line['E_vitale'] >= 120 AND $line['E_vitale'] <= 139)	{	$tvie = 60 ;	}if ($line['E_vitale'] >= 140 AND $line['E_vitale'] <= 159) 	{	$tvie = 70 ;	}if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 	?>
 	<tr class="memberbg_8">
-		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=viewmember&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
+		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=perso&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
 		<td> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?></td>
 		<td style="text-align: center;"><img src="pics/valid_bg_<? echo $valid_bg ?>.gif" alt="" title="<? echo $bgtitle ?>" /></td>
 		<td style="text-align: center;"><? echo $line3['fofo']?></td>
@@ -345,7 +345,7 @@
 	if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}if ($line['E_vitale'] >= 80 AND $line['E_vitale'] <= 99) 	{	$tvie = 40 ;	}if ($line['E_vitale'] >= 100 AND $line['E_vitale'] <= 119) 	{	$tvie = 50 ;	}if ($line['E_vitale'] >= 120 AND $line['E_vitale'] <= 139)	{	$tvie = 60 ;	}if ($line['E_vitale'] >= 140 AND $line['E_vitale'] <= 159) 	{	$tvie = 70 ;	}if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 	?>
 	<tr class="memberbg_7">
-		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=viewmember&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
+		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=perso&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
 		<td> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?></td>
 		<td style="text-align: center;"><img src="pics/valid_bg_<? echo $valid_bg ?>.gif" alt="" title="<? echo $bgtitle ?>" /></td>
 		<td style="text-align: center;"><? echo $line3['fofo']?></td>
@@ -398,7 +398,7 @@
 	if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}if ($line['E_vitale'] >= 80 AND $line['E_vitale'] <= 99) 	{	$tvie = 40 ;	}if ($line['E_vitale'] >= 100 AND $line['E_vitale'] <= 119) 	{	$tvie = 50 ;	}if ($line['E_vitale'] >= 120 AND $line['E_vitale'] <= 139)	{	$tvie = 60 ;	}if ($line['E_vitale'] >= 140 AND $line['E_vitale'] <= 159) 	{	$tvie = 70 ;	}if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 	?>
 	<tr class="memberbg_6">
-		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=viewmember&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
+		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=perso&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
 		<td> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?></td>
 		<td style="text-align: center;"><img src="pics/valid_bg_<? echo $valid_bg ?>.gif" alt="" title="<? echo $bgtitle ?>" /></td>
 		<td style="text-align: center;"><? echo $line3['fofo']?></td>
@@ -451,7 +451,7 @@
 	if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}if ($line['E_vitale'] >= 80 AND $line['E_vitale'] <= 99) 	{	$tvie = 40 ;	}if ($line['E_vitale'] >= 100 AND $line['E_vitale'] <= 119) 	{	$tvie = 50 ;	}if ($line['E_vitale'] >= 120 AND $line['E_vitale'] <= 139)	{	$tvie = 60 ;	}if ($line['E_vitale'] >= 140 AND $line['E_vitale'] <= 159) 	{	$tvie = 70 ;	}if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 	?>
 	<tr class="memberbg_5">
-		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27"  alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=viewmember&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
+		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27"  alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=perso&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
 		<td> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?></td>
 		<td style="text-align: center;"><img src="pics/valid_bg_<? echo $valid_bg ?>.gif" alt="" title="<? echo $bgtitle ?>" /></td>
 		<td style="text-align: center;"><? echo $line3['fofo']?></td>
@@ -504,7 +504,7 @@
 	if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}if ($line['E_vitale'] >= 80 AND $line['E_vitale'] <= 99) 	{	$tvie = 40 ;	}if ($line['E_vitale'] >= 100 AND $line['E_vitale'] <= 119) 	{	$tvie = 50 ;	}if ($line['E_vitale'] >= 120 AND $line['E_vitale'] <= 139)	{	$tvie = 60 ;	}if ($line['E_vitale'] >= 140 AND $line['E_vitale'] <= 159) 	{	$tvie = 70 ;	}if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 	?>
 	<tr class="memberbg_4">
-		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27"  alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=viewmember&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
+		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27"  alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=perso&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
 		<td> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?></td>
 		<td style="text-align: center;"><img src="pics/valid_bg_<? echo $valid_bg ?>.gif" alt="" title="<? echo $bgtitle ?>" /></td>
 		<td style="text-align: center;"><? echo $line3['fofo']?></td>
@@ -556,7 +556,7 @@
 	if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}if ($line['E_vitale'] >= 80 AND $line['E_vitale'] <= 99) 	{	$tvie = 40 ;	}if ($line['E_vitale'] >= 100 AND $line['E_vitale'] <= 119) 	{	$tvie = 50 ;	}if ($line['E_vitale'] >= 120 AND $line['E_vitale'] <= 139)	{	$tvie = 60 ;	}if ($line['E_vitale'] >= 140 AND $line['E_vitale'] <= 159) 	{	$tvie = 70 ;	}if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 	?>
 	<tr class="memberbg_3">
-		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=viewmember&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
+		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=perso&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
 		<td> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?></td>
 		<td style="text-align: center;"><img src="pics/valid_bg_<? echo $valid_bg ?>.gif" alt="" title="<? echo $bgtitle ?>" /></td>
 		<td style="text-align: center;"><? echo $line3['fofo']?></td>
@@ -608,7 +608,7 @@
 	if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}if ($line['E_vitale'] >= 80 AND $line['E_vitale'] <= 99) 	{	$tvie = 40 ;	}if ($line['E_vitale'] >= 100 AND $line['E_vitale'] <= 119) 	{	$tvie = 50 ;	}if ($line['E_vitale'] >= 120 AND $line['E_vitale'] <= 139)	{	$tvie = 60 ;	}if ($line['E_vitale'] >= 140 AND $line['E_vitale'] <= 159) 	{	$tvie = 70 ;	}if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 	?>
 	<tr class="memberbg_2">
-		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=viewmember&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
+		<td><img class="magie_type" src="pics/<? echo $rank?>" width="27" alt="" /> <img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=perso&amp;perso=<?= $line['id']?>" title="Nom Minecraft : <?= $line["Minecraft_Account"]?>" ><?= $line['name']?></a></td>
 		<td> <? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?></td>
 		<td style="text-align: center;"><img src="pics/valid_bg_<? echo $valid_bg ?>.gif" alt="" title="<? echo $bgtitle ?>" /></td>
 		<td style="text-align: center;"><? echo $line3['fofo']?></td>
