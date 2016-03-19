@@ -545,8 +545,8 @@
 		if ($line['technician'] == 0 AND $line['removed'] == 0 AND $line['ban'] == 0 AND $line['rank'] < 9) { $grade = $line['rank']; }
 		if ($line['rank'] == 9) { $grade = "titan";} if ($line['rank'] == 10) { $grade = "crea"; }
 		if ($line['technician'] == 1) { $tech = "-T"; $techmode = "Retirer"; $grade = "tech"; } else { $techmode = "Attribuer";}  if ($line['pionier'] == 1) { $pionier = '-P'; }
-		if ($line['ban'] == 1) { $grade = "ban";}
-		if ($line['removed'] == 1) { $grade = "del";}
+		if ($line['ban'] == 1) { $grade = "ban";} if ($line['removed'] == 1) { $grade = "del";}
+		if ($line['pionier'] == 1) { $title = "Pionier"; } else { $title = $line['title']; }
 	?>
 	<h2 class="name<?= $line['rank']?><?php echo $tech; echo $pionier;?>"><?= $line['title']?> <?= $line['name']?></h2>
 	
@@ -574,7 +574,7 @@
 							</tr>
 							<tr>
 								<td colspan="2">
-									<p>Titre : <img src="pics/rank<?php echo $grade;?>.png" alt="" width="25" /> <?= $line['title']?></p>
+									<p>Titre : <img src="pics/rank<?php echo $grade;?>.png" alt="" width="25" /> <?php echo $title;?></p>
 								</td>
 							</tr>
 							<tr>
