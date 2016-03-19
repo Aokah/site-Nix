@@ -140,7 +140,7 @@
 					<tr>
 						<th>Auteur :</th>
 						<td>
-						<a href="index.php?p=viewmember&amp;perso=<?= $line['auth_id']?>" class="rank<?= $line['auth_rank']?>"><? if ($line['pionier'] == 1) { echo "Pionier";}
+						<a href="index.php?p=perso&amp;perso=<?= $line['auth_id']?>" class="rank<?= $line['auth_rank']?>"><? if ($line['pionier'] == 1) { echo "Pionier";}
 						else { echo $line['auth_title'] ;}?> <?= $line['author']?></a>
 						</td>
 					</tr>
@@ -359,7 +359,7 @@
 				<tr>
 					<td><a href="index.php?p=pm&amp;pm=<?= $line['id']?>"><?php
 					echo($line['unread'])?'<span class="unread">[!]</span> ':'';?><?= $line['subject']?></a></td>
-					<td><a href="index.php?p=viewmember&amp;perso=<?= $line['auth_id']?>" class="rank<?= $line['auth_rank']?>"><? if ($line['pionier'] == 1) { echo "Pionier";}
+					<td><a href="index.php?p=perso&amp;perso=<?= $line['auth_id']?>" class="rank<?= $line['auth_rank']?>"><? if ($line['pionier'] == 1) { echo "Pionier";}
 						else { echo $line['auth_title'] ;}?> <?= $line['author']?></a></td>
 					<td><?= $date?></td>
 				</tr>
