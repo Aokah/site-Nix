@@ -1259,7 +1259,7 @@
 					</tbody>
 				</table>
 			</form>
-			<?php	} else { echo '<p>Une erreur s\'est produite.</p>';
+			<?php	} else { echo '<p>Une erreur s\'est produite.</p>'; }
 			}
 			elseif ($_GET['edit'] == "save")
 			{
