@@ -545,6 +545,18 @@
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
+			elseif ($_GET['action'] == "validbg")
+			{
+				if($_SESSION['rank'] >= 5) {
+				$update = $db->prepare('UPDATE members SET valid_bg = 0, valider_id = ? WHERE id = ?');
+				$update->execute(array($_SESSION['id'], $perso));
+				echo '<p>BackGround RolePlya validé !</p>';?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
+			}
 			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>';}
 			}
 			else { echo '<p>Une erreur s\'est produite.</p>';}
