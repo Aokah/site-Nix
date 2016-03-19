@@ -294,7 +294,7 @@
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank <= 4
-		ORDER BY id DESC');
+		ORDER BY date_post ASC');
 		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
@@ -330,7 +330,7 @@
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 5
-		ORDER BY id DESC');
+		ORDER BY date_post ASC');
 		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
@@ -367,7 +367,7 @@
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 6
-		ORDER BY id DESC');
+		ORDER BY date_post ASC');
 		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
@@ -404,7 +404,7 @@
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 7
-		ORDER BY id DESC');
+		ORDER BY date_post ASC');
 		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
