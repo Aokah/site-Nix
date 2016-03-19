@@ -1579,14 +1579,38 @@
 					</table>
 				</td>
 			</tr>
+			<?php
+			
+			switch ($line['race']) 
+				{
+				case "Elfe" : $titlerace = "Elfe"; $racedesc = "Similaires aux humains, les Elfes se caractérisent par leurs oreilles plus grandes que les oreilles humaines et leur rapport très proche envers la nature, qui est très souvent leur habitat naturel."; break;
+				case "Ernelien": $titlerace = "Ernelien"; $racedesc = "Peu de choses sont connus des humains sur cette race bien étrange, mais pourtant l'esclavagisme est omniprésent, même en Nix. Les Erneliens sont une étranges communautés, Ils sont vert et ont une peau rigide, qui est semblable à des os, ils ont des os qui sortent de leurs coudes, de leurs genoux, ils ont des longues griffes, des dents acérés, et même des cornes, mais malheureusement, leurs corps est trop fragiles pour se battre, ils ne supportent pas les trops grosses température, ni les trop basses, ils ne peuvent supporter les endroits secs, et ont en plus un besoin d'humidité pour respirer et pour que la peau ne dessèche pas."; break;
+				case "Humain" : $titlerace = "Humain"; $racedesc = "Très généralement remortels, les humains sont des personnes constituées d'os, de muscle, d'organes et de peau. Ils vivent généralement en communauté pour mieux survivre et savent s'adapter aux intempéries. Malgré le fait qu'ils soient une même race, plusieurs peuples aux coutumes différentes existent."; break;
+				case "Nain": $titlerace = "Nain"; $racedesc = "Ces êtres sont un quart de fois plus petits que les hommes normaux. Ils sont généralement installés dans la région des Feldspaths, car les cavernes leurs ont permis de faire un tas de mine, et leur marché de forge prospère chez les autres races."; break;
+				case "Onyx": $titlerace = "Onyx"; $racedesc = "Race très peu connues, étant donné la rareté de ces personnes qui naissent du Ciel. Les Onyx sont semblables aux humains sauf qu'au lieu d'avoir un nez, ils respirent par les pores de leur peau, qui est aussi noire que leurs yeux sont luisants. Les Onyx sont très généralement des personnes pacifiques et peu violentes, ce qui est surtout dû à leurs faible constitution, les rendant plus fragiles que des humains."; break;
+				case "Orque": $titlerace = "Orque"; $racedesc = "Les Orques vivent reclus dans Orsiclame, une région fermés et dictatoriale, et ne veulent pas conquérir le monde. Ils protègent quelque chose qu'ils gardent jalousement, mais il reste encore à découvrir quoi car ces guerriers redoutables ne laisseront personne entrer."; break;
+				case "Stromnole": $titlerace = "Stromnole"; $racedesc = "Une contrée mystérieuse et inhabitée s'est reveillé. Il s'agit du Volcan Stromnoli longtemps endormi, qui laissa il y a cent ans de cela, une grosse éruption, agrandissant ses contours de par le magma, et créant même des petites îles. Mais ce qui est le plus remarquable c'est surtout les Stronnoles. Des créatures humanoïdes rouges, semblant résister à la lave et à la chaleur. Elles ont fait surfaces après l'éruption du Stromnoli, beaucoup étudient cette race jusque là inconnues. Il faudra faire des recherches pour en savoir plus sur cette race extrêmement discrète."; break;
+				case "Zaknafein" : $titlerace = "Zaknafein"; $racedesc = "Très semblables aux humains, les Zaknafeins sont des bipèdes humanoïdes avec une peau pâle et une sensibilité à la lumière bien supérieure aux Humains, ce qui rend leur évolution compliquée en lieu ensoleillé, personne n'est encore à ce jour capable de dire d'où une race telle que la leur trouve son origine."; break;
+				case "Hybride" : $titlerace = "Hybride"; $racedesc = "Etrange spécimens que sont les Hybrides, comme leur nom l'indique, ils sont le resultat du mélange de deux espèces qui n'étaient pas fait pour se rencontrer, leur apparence peu des fois repousser. Ils conservent généralement les défauts et les qualités de leur race d'origine, mais ceci ne sera évidemment pas sans contre-coût !"; break;
+				}
+			?>
 			<tr>
 				<td colspan="2">
 					<h3>La race de votre personnage :</h3>
+					<?php if ($line['race'] == "Inconnue") {
+					?>
+					<p>Vous n'avez pas encore choisi de race. Rendez-vous <a href="index?p=perso&edit=race">ici</a> pour en choisir une !</p>
+					<?php
+					}
+					else
+					{
+					?>
 					<p><?php echo $titlerace; ?></p>
 					<p><img src="pics/img_<?= $line['race']?>.png" alt="" style="float:left;" /> <?php echo $descrace; ?></p>
 					<p>
-						<a href="index?p=perso&edit=race">Cliquez ici</a> pour changer de race.
+						<a style="clear: both;" href="index?p=perso&edit=race">Cliquez ici</a> pour changer de race.
 					</p>
+					<?php } ?>
 				</td>
 			</tr>
 			<?php if ($line['valid_bg'] == 1) {
