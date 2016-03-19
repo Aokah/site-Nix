@@ -999,11 +999,60 @@
 			else { echo '<p>Tu n\'essaieraies pas de chercher là où tu ne devrais pas aller ? :P</p>'; }
 		}
 		}
+	elseif (isset($_GET['edit']))
+		{
+			if ($_GET['edit'] == "race")
+			{
+			?>
+				<h3>Changement de race</h3>
+				<p>Cliquez sur l'une des images disponibles pour afficher la description dela race.</p>
+				<table width="100%">
+					<tbody>
+						<tr>
+							<th></th>
+						</tr>
+						<tr>
+							<td>
+								<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+							</td>
+							<td>
+								<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+							</td>
+							<td>
+								<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+							</td>
+							<td>
+								<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+							</td>
+							<td>
+								<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			<?php
+			}
+			elseif ($_GET['edit'] == "infos")
+			{
+			?>
+			
+			<?php	
+			}
+			elseif ($_GET['edit'] == "save")
+			{
+				
+				
+			}
+			else
+			{
+				echo '<p>Bien tenté, mais ici il n`\'y a rien à voir. :)</p>';
+			}
+		}
 	else
 		{
 		if (isset($_POST['save_bg'])) {
 			$editbg = (htmlentities($_POST['editbg']));
-			$update = $db->prepare('UPDATE members SET background = ? WHERE id = ?');
+			$update = $db->prepare('UPDATE members SET background = ?, valid_bg = 0 WHERE id = ?');
 			$update->execute(array($editbg, $_SESSION['id']));
 		}
 		if (isset($_POST['save_notes'])) {
@@ -1248,7 +1297,7 @@
 													<? echo $bg; ?>
 													<br /><br />
 													<a href="index?p=perso&modif=bg">
-														Modifier votre Background.
+														[Modifier votre Background.]
 													</a>
 												</p>
 												
@@ -1282,7 +1331,7 @@
 													<? echo $hrp; ?>
 													<br /><br />
 													<a href="index?p=perso&modif=jdesc">
-														Modifier votre description HRP.
+														[Modifier votre description HRP.]
 													</a>
 												</p>
 											</td>
@@ -1320,7 +1369,7 @@
 													<? echo $notes; ?>
 													<br /><br />
 													<a href="index?p=perso&modif=notesp">
-														Modifier vos notes.
+														[Modifier vos notes.]
 													</a>
 												</p>
 											</td>
@@ -1340,7 +1389,11 @@
 			<tr>
 				<td colspan="2">
 					<h3>La race de votre personnage :</h3>
-					<p>Il sera bientôt possible de changer de race</p>
+					<p><?php echo $titlerace; ?></p>
+					<p><img src="pics/base_<?= $line['race']?>.png" alt="" style="float:left;" /> <?php echo $descrace; ?></p>
+					<p style="color:red;">
+						<a href="index?p=perso&edit=race">Cliquez ici</a> pour changer de race.
+					</p>
 				</td>
 			</tr>
 			<?php if ($line['valid_bg'] == 1) {
@@ -1360,6 +1413,12 @@
 				</td>
 			</tr>
 			<?php } } ?>
+			<tr>
+				<td colspan="3">
+					<h3>Progression</h3> 
+					<p>Un schéma de votre progression possible au sein du serveur sera bientôt disponible.</p>
+				</td>
+			</tr>
 		</tbody>
 	</table>
 	<?php
