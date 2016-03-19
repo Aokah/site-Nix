@@ -298,6 +298,7 @@
 			if($_GET['action'] == 'upgrade')
 			{
 				if ($_SESSION['rank'] >= 5) {
+					if ($line['rank'] < 10) {
 				$update = $db->prepare('UPDATE members SET rank = ? WHERE id = ?');
 				$update->execute(array( $line['rank'] +1, $perso));
 				$nom = $line['name'];
@@ -310,13 +311,16 @@
 				?>
 				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
-				<?php
+				<?php	
+					}
+				else { echo '<p>Tu veux monter en grade un joueur au-dessus des limites, fuat arrêter de rêver un jour ! :D</p>'; }
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			elseif($_GET['action'] == 'downgrade')
 			{
 				if ($_SESSION['rank'] >= 5) {
+					if ($line['rank'] > 1) {
 				$update = $db->prepare('UPDATE members SET rank = ? WHERE id = ?');
 				$update->execute(array( $line['rank'] -1, $perso));
 				$add = $db->prepare('INSERT INTO hist_grada (upper_id, method, upped_id, up_date) VALUES (?, 0, ?, NOW() )');
@@ -326,6 +330,8 @@
 				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
 				<?php
+				}
+				else { echo '<p>Tu veux dégrader un joueur en-dessous des limites, fuat arrêter de rêver un jour ! :D</p>'; }
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
