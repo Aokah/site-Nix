@@ -1071,12 +1071,12 @@
 						<tbody>
 							<tr>
 								<th>Elfe</th>
-								<th>Elfe</th>
-								<th>Elfe</th>
-								<th>Elfe</th>
-								<th>Elfe</th>
-								<th>Elfe</th>
-								<th>Elfe</th>
+								<th>Ernelien</th>
+								<th>Humain</th>
+								<th>Nain</th>
+								<th>Onyx</th>
+								<th>Orque</th>
+								<th>Stromnole</th>
 							</tr>
 							<tr>
 								<td>
