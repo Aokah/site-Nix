@@ -1583,9 +1583,9 @@
 				<td colspan="2">
 					<h3>La race de votre personnage :</h3>
 					<p><?php echo $titlerace; ?></p>
-					<p><img src="pics/base_<?= $line['race']?>.png" alt="" style="float:left;" /> <?php echo $descrace; ?></p>
+					<p><img src="pics/img_<?= $line['race']?>.png" alt="" style="float:left;" /> <?php echo $descrace; ?></p>
 					<p style="color:red;">
-						<a href="index?p=perso&edit=race">Cliquez ici</a> pour changer de race.
+						<a style="color:red;" href="index?p=perso&edit=race">Cliquez ici</a> pour changer de race.
 					</p>
 				</td>
 			</tr>
