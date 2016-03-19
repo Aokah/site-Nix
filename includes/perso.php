@@ -1689,8 +1689,10 @@
 				</td>
 			</tr>
 			<tr>
-				<h3>Vos informations personnelles RP</h3>
-				<p><a href="index?p=perso&edit=infos">Cliquez ici</a> pour éditer les informations personnelles de votre personnage.</p>
+				<td colspan="3">
+					<h3>Vos informations personnelles RP</h3>
+					<p><a href="index?p=perso&edit=infos">Cliquez ici</a> pour éditer les informations personnelles de votre personnage.</p>
+				</td>
 			</tr>
 		</tbody>
 	</table>
