@@ -614,7 +614,7 @@
 									elseif ($line['rank'] >= 4 AND $line['rank'] <= 10 AND $line['valid_bg'] == 1 AND $_SESSION['rank'] > $line['rank']+1) {?>
 									<a title="Monter le joueur en grade" href="index?p=perso&perso=<?php echo $perso; ?>&action=upgrade" style="color:green;">[+]</a>
 									<?php } 
-									if ($_SESSION['rank'] > $line['rank'] AND $line['rank'] >= 2) { ?>
+									if ($_SESSION['rank'] > $line['rank'] AND $line['rank'] > 2 AND $_SESSION['rank'] >= 5) { ?>
 									<a title="Dégrader le joueur" href="index?p=perso&perso=<?php echo $perso; ?>&action=downgrade" style="color:red;">[-]</a>
 									<?php } 
 									if ($_SESSION['rank'] > $line['rank'] AND $line['rank'] >= 5 AND $line['dignitaire'] == 0) { ?>
