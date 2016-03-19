@@ -301,7 +301,7 @@
 					<th>Intitulé</th>
 					<th class="last_post">Créé par</th>
 				</tr>
-				<?php if ($line = $answer->fetch())
+				<?php while ($line = $answer->fetch())
 				{	
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_post']);
 				?>
@@ -316,10 +316,6 @@
 					<?php echo $date; ?>
 					</td>
 				</tr>
-				<?php }
-				else { echo $vide ;
-				}
-				?>
 			</tbody>
 		</table>
 		</li>
@@ -339,7 +335,7 @@
 					<th>Intitulé</th>
 					<th class="last_post">Créé par</th>
 				</tr>
-				<?php if ($line1 = $answer1->fetch())
+				<?php while ($line1 = $answer1->fetch())
 				{	
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line1['date_post']);
 				?>
@@ -354,10 +350,6 @@
 					<?php echo $date; ?>
 					</td>
 				</tr>
-				<?php }
-				else { echo $vide ;
-				}
-				?>
 			</tbody>
 		</table>
 		</li>
@@ -378,7 +370,7 @@
 					<th>Intitulé</th>
 					<th class="last_post">Créé par</th>
 				</tr>
-				<?php if ($line2 = $answer2->fetch())
+				<?php while ($line2 = $answer2->fetch())
 				{	
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line2['date_post']);
 				?>
@@ -393,9 +385,6 @@
 					<?php echo $date; ?>
 					</td>
 				</tr>
-				<?php } 
-				else { echo $vide ;
-				}?>
 				
 			</tbody>
 		</table>
@@ -417,7 +406,7 @@
 					<th>Intitulé</th>
 					<th class="last_post">Créé par</th>
 				</tr>
-				<?php if ($line3 = $answer3->fetch())
+				<?php while ($line3 = $answer3->fetch())
 				{	
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line3['date_post']);
 				?>
@@ -431,10 +420,6 @@
 					<?php echo $date; ?>
 					</td>
 				</tr>
-				<?php }
-				else { echo $vide ;
-				}
-				?>
 			</tbody>
 		</table>
 		</li>
