@@ -1606,7 +1606,7 @@
 					{
 					?>
 					<p><?php echo $titlerace; ?></p>
-					<p><img src="pics/img_<?= $line['race']?>.png" alt="" style="float:left;" /> <?php echo $descrace; ?></p>
+					<p><img src="pics/img_<?= $line['race']?>.png" alt="" style="float:left;" /> <?php echo $racedesc; ?></p>
 					<p>
 						<a style="clear: both;" href="index?p=perso&edit=race">Cliquez ici</a> pour changer de race.
 					</p>
