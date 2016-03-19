@@ -33,7 +33,7 @@
 						{
 							if ($_SESSION['rank'] >= 5) {
 							$prenom = $line['name']; $nom = "?"; $qualite = "?";
-							$defauts = "?"; $sd = "Non définis"; $caractere = "?"; $title = $line['title'];
+							$defauts = "?"; $sd = "Non définis"; $caractere = "?";
 							switch ($_POST['race']) {
 								case 0 : $race = $line['race']; break; case 1: $race = "Elfe"; break; case 1: $race = "Elfe"; break; case 2: $race = "Ernelien"; break;
 								case 3: $race = "Humain"; break; case 4: $race = "Hybride"; break; case 5: $race = "Inconnue"; break; case 6: $race = "Nain"; break;
