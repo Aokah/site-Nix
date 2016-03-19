@@ -32,9 +32,13 @@
 						if(isset($_POST['confirm']))
 						{
 							if ($_SESSION['rank'] >= 5) {
-							$prenom = $line['name']; $nom = "?"; $race = htmlentities($_POST['race']); $qualite = "?";
+							$prenom = $line['name']; $nom = "?"; $qualite = "?";
 							$defauts = "?"; $sd = "Non définis"; $caractere = "?"; $titre = $line['title'];
-							if ($race = "defaut") { $race = $line['race']; }
+							switch ($_POST['race']) {
+								case 0 : $race = $line['race']; break; case 1: $race = "Elfe"; break; case 1: $race = "Elfe"; break; case 2: $race = "Ernelien"; break;
+								case 3: $race = "Humain"; break; case 4: $race = "Hybride"; break; case 5: $race = "Inconnue"; break; case 6: $race = "Nain"; break;
+								case 7: $race = "Onyx"; break; case 8: $race = "Orque"; break; case 9: $race = "Spécialr"; break; case 10: $race = "Stromnole"; break;
+								case 11: $race = "Titanoïde"; break; }
 							
 							if (!empty($_POST['titre'])) { $titre = htmlentities($_POST['titre']); }
 							if (!empty($_POST['prenom'])) { $prenom = htmlentities($_POST['prenom']); }
@@ -112,18 +116,18 @@
 									<td>
 										<label>Race :</label>
 											<select name="race" type="text">
-												<option value="defaut">--Option par défaut--</option>
-												<option value="Elfe">Elfe</option>
-												<option value="Ernelien">Ernelien</option>
-												<option value="Humain">Humain</option>
-												<option value="Hybride">Hybride (Animal)</option>
-												<option value="Inconnue">Inconnue</option>
-												<option value="Nain">Nain</option>
-												<option value="Onyx">Onyx</option>
-												<option value="Orque">Orque</option>
-												<option value="Spécial">Spécial</option>
-												<option value="Stromnole">Stromnole</option>
-												<option value="Titanoide">Titanoide</option>
+												<option value="0">--Option par défaut--</option>
+												<option value="1">Elfe</option>
+												<option value="2">Ernelien</option>
+												<option value="3">Humain</option>
+												<option value="4">Hybride (Animal)</option>
+												<option value="5">Inconnue</option>
+												<option value="6">Nain</option>
+												<option value="7">Onyx</option>
+												<option value="8">Orque</option>
+												<option value="9">Spécial</option>
+												<option value="10">Stromnole</option>
+												<option value="11">Titanoide</option>
 											</select>
 									</td>
 									<td>
@@ -135,16 +139,16 @@
 										Personalité :
 									</td>
 									<td>
-										<label for="qualite">Qualité :</label>  <input type="text" id="qualite" name="qualite" value="<?= $line['qualites']?>" />
+										<label for="qualite">Qualité :</label>  <textarea id="qualite" name="qualite"><?= $line['qualites']?></textarea>
 									</td>
 									<td>
-										<label for="defauts">Défauts :</label> <input type="text" id="defauts" name="defauts" value="<?= $line['defauts']?>" />
+										<label for="defauts">Défauts :</label> <textarea id="defauts" name="defauts"><?= $line['defauts']?></textarea>
 									</td>
 									<td>
-										<label for="sd">Signes Distinctifs :</label> <input type="text" id="sd" name="sd" value="<?= $line['sd']?>" />
+										<label for="sd">Signes Distinctifs :</label> <textarea id="sd" name="sd"><?= $line['sd']?></textarea>
 									</td>
 									<td>
-										<label for="caractere">Caractère :</label> <input type="text" id="caractere" name="caractere" value="<?= $line['caractere']?>" />
+										<label for="caractere">Caractère :</label> <textarea id="caractere" name="caractere"><?= $line['caractere']?></textarea>
 									</td>
 								</tr>
 							</tbody>
