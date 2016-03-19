@@ -46,6 +46,10 @@
 							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title= ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
 							$update->execute(array($prenom, $nom, $race,$titre, $qualite, $defauts, $sd, $caractere, $perso));
 							echo '<p>Modifications des informations personnelles effectuées avec succès</p>';
+								?>
+								<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+								<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+								<?php
 							}
 							else { echo '<p>Tara tata ta ! On force pas le système ici !</p>'; }
 						}
@@ -61,6 +65,10 @@
 								$update = $db->prepare('UPDATE members SET Minecraft_Account = ?, email = ?, staffnote = ? WHERE id = ?');
 								$update->execute(array($pseudo, $email, $staffnote, $perso));
 								echo '<p>Modifications des informations administratives effectuées avec succès</p>';
+								?>
+								<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+								<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+								<?php
 							}
 							else { echo '<p>Tara tata ta ! On force pas le système ici !</p>'; }
 						}
@@ -74,6 +82,10 @@
 								$update = $db->prepare('UPDATE members SET E_Magique = ?, E_Vitale = ?, specialisation = ?, spe_2 = ? WHERE id = ?');
 								$update->execute(array($_POST['e-magie'], $_POST['e-vie'], $spe_1, $spe_2, $perso));
 								echo '<p>Modifications des informations magiques effectuées avec succès</p>';
+								?>
+								<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+								<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+								<?php
 							}
 							else { echo '<p>Tara tata ta ! On force pas le système ici !</p>'; }
 						}
