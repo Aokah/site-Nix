@@ -1343,7 +1343,7 @@
 					<p>Il sera bientôt possible de changer de race</p>
 				</td>
 			</tr>
-			<?php $line['valid_bg'] == 1) {
+			<?php ($line['valid_bg'] == 1) {
 				
 				$valier = $db->prepare('SELECT name, id, title FROM members WHERE id = ?');
 				$valider->execute(array($line['valider_id']));
