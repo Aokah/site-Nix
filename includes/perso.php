@@ -33,14 +33,14 @@
 						{
 							if ($_SESSION['rank'] >= 5) {
 							$prenom = $line['name']; $nom = "?"; $qualite = "?";
-							$defauts = "?"; $sd = "Non définis"; $caractere = "?"; $titre = $line['title'];
+							$defauts = "?"; $sd = "Non définis"; $caractere = "?"; $title = $line['title'];
 							switch ($_POST['race']) {
 								case 0 : $race = $line['race']; break; case 1: $race = "Elfe"; break; case 1: $race = "Elfe"; break; case 2: $race = "Ernelien"; break;
 								case 3: $race = "Humain"; break; case 4: $race = "Hybride"; break; case 5: $race = "Inconnue"; break; case 6: $race = "Nain"; break;
 								case 7: $race = "Onyx"; break; case 8: $race = "Orque"; break; case 9: $race = "Spécialr"; break; case 10: $race = "Stromnole"; break;
 								case 11: $race = "Titanoïde"; break; }
 							
-							if (!empty($_POST['titre'])) { $titre = htmlentities($_POST['titre']); }
+							if (!empty($_POST['titre'])) { $title = htmlentities($_POST['titre']); }
 							if (!empty($_POST['prenom'])) { $prenom = htmlentities($_POST['prenom']); }
 							if (!empty($_POST['nom'])) { $nom = htmlentities($_POST['nom']); }
 							if (!empty($_POST['qualite'])) { $qualite = htmlentities($_POST['qualite']); }
@@ -48,7 +48,7 @@
 							if (!empty($_POST['sd'])) { $sd = htmlentities($_POST['sd']); }
 							if (!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
 							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
-							$update->execute(array($prenom, $nom, $race, $titre, $qualite, $defauts, $sd, $caractere, $perso));
+							$update->execute(array($prenom, $nom, $race, $title, $qualite, $defauts, $sd, $caractere, $perso));
 							echo '<p>Modifications des informations personnelles effectuées avec succès</p>';
 								?>
 								<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
