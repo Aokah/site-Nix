@@ -1345,7 +1345,7 @@
 			</tr>
 			<?php if ($line['valid_bg'] == 1) {
 				
-				$valier = $db->prepare('SELECT name, id, title FROM members WHERE id = ?');
+				$valider = $db->prepare('SELECT name, id, title FROM members WHERE id = ?');
 				$valider->execute(array($line['valider_id']));
 				if ($bgline = $valider->fetch())
 				{
