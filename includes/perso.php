@@ -1081,37 +1081,37 @@
 							<tr>
 								<td>
 									<a href="index?p=page&edit=race&r=elfe">
-										<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+										<img src="pics/img_Elfe.png" alt="" width="150px" title="Cliquez pour voir les informations." />
 									</a>
 								</td>
 								<td>
 									<a href="index?p=page&edit=race&r=ernelien">
-										<img src="pics/img_Ernelien.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+										<img src="pics/img_Ernelien.png" alt="" width="150px" title="Cliquez pour voir les informations." />
 									</a>
 								</td>									
 								<td>
 									<a href="index?p=page&edit=race&r=humain">
-										<img src="pics/img_Humain.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+										<img src="pics/img_Humain.png" alt="" width="150px" title="Cliquez pour voir les informations." />
 									</a>
 								</td>										
 								<td>
 									<a href="index?p=page&edit=race&r=nain">
-										<img src="pics/img_Nain.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+										<img src="pics/img_Nain.png" alt="" width="150px" title="Cliquez pour voir les informations." />
 									</a>
 								</td>
 								<td>										
 									<a href="index?p=page&edit=race&r=onyx">
-										<img src="pics/img_Onyx.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+										<img src="pics/img_Onyx.png" alt="" width="150px" title="Cliquez pour voir les informations." />
 									</a>
 								</td>
 								<td>
 									<a href="index?p=page&edit=race&r=orque">
-										<img src="pics/img_Orque.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+										<img src="pics/img_Orque.png" alt="" width="150px" title="Cliquez pour voir les informations." />
 									</a>
 								</td>
 								<td>
 								<a href="index?p=page&edit=race&r=stromnole">
-									<img src="pics/img_Stromnole.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+									<img src="pics/img_Stromnole.png" alt="" width="150px" title="Cliquez pour voir les informations." />
 								</a>
 								</td>
 							</tr>
