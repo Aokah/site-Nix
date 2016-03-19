@@ -1004,33 +1004,123 @@
 			if ($_GET['edit'] == "race")
 			{
 			?>
-				<h3>Changement de race</h3>
-				<p>Cliquez sur l'une des images disponibles pour afficher la description dela race.</p>
-				<table width="100%">
-					<tbody>
-						<tr>
-							<th></th>
-						</tr>
-						<tr>
-							<td>
-								<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
-							</td>
-							<td>
-								<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
-							</td>
-							<td>
-								<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
-							</td>
-							<td>
-								<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
-							</td>
-							<td>
-								<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
-							</td>
-						</tr>
-					</tbody>
-				</table>
+			<h3>Changement de race</h3>
 			<?php
+				if (isset($_GET['r'])) 
+				{
+					if ($_GET['r'] == "elfe")
+					{
+					?>
+					<h
+					<div align="center">
+						<p>
+							
+						</p>
+						<p>
+							
+						</p>
+					</div>
+					<?php
+					}
+					elseif ($_GET['r'] == "ernelien")
+					{
+					?>
+					
+					<?php	
+					}
+					elseif ($_GET['r'] == "humain")
+					{
+					?>
+					
+					<?php	
+					}
+					elseif ($_GET['r'] == "nain")
+					{
+					?>
+					
+					<?php	
+					}
+					elseif ($_GET['r'] == "onyx")
+					{
+					?>
+					
+					<?php	
+					}
+					elseif ($_GET['r'] == "orque")
+					{
+					?>
+					
+					<?php	
+					}
+					elseif ($_GET['r'] == "stromnole")
+					{
+					?>
+					
+					<?php	
+					}
+					else
+					{
+						echo '<p>Non non non. Il n\'y a rien à voir ici. :P</p>';
+					}
+				}
+				else
+				{
+			?>
+				<p>Cliquez sur l'une des images disponibles pour afficher la description dela race.</p>
+					<table width="100%">
+						<tbody>
+							<tr>
+								<th>Elfe</th>
+								<th>Elfe</th>
+								<th>Elfe</th>
+								<th>Elfe</th>
+								<th>Elfe</th>
+								<th>Elfe</th>
+								<th>Elfe</th>
+							</tr>
+							<tr>
+								<td>
+									<a href="index?p=page&edit=race&r=elfe">
+										<img src="pics/img_Elfe.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+									</a>
+								</td>
+								<td>
+									<a href="index?p=page&edit=race&r=ernelien">
+										<img src="pics/img_Ernelien.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+									</a>
+								</td>									
+								<td>
+									<a href="index?p=page&edit=race&r=humain">
+										<img src="pics/img_Humain.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+									</a>
+								</td>										
+								<td>
+									<a href="index?p=page&edit=race&r=nain">
+										<img src="pics/img_Nain.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+									</a>
+								</td>
+								<td>										
+									<a href="index?p=page&edit=race&r=onyx">
+										<img src="pics/img_Onyx.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+									</a>
+								</td>
+								<td>
+									<a href="index?p=page&edit=race&r=orque">
+										<img src="pics/img_Orque.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+									</a>
+								</td>
+								<td>
+								<a href="index?p=page&edit=race&r=stromnole">
+									<img src="pics/img_Stromnole.png" alt="" width="200px" title="Cliquez pour voir les informations." />
+								</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+							
+				
+			<?php	}
+				}
 			}
 			elseif ($_GET['edit'] == "infos")
 			{
