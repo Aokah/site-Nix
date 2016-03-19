@@ -550,7 +550,7 @@
 				if($_SESSION['rank'] >= 5) {
 				$update = $db->prepare('UPDATE members SET valid_bg = 0, valider_id = ? WHERE id = ?');
 				$update->execute(array($_SESSION['id'], $perso));
-				echo '<p>BackGround RolePlya validé !</p>';?>
+				echo '<p>BackGround RolePlay validé !</p>';?>
 				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
 				<?php
@@ -816,7 +816,9 @@
 									Invisibilité :
 								</td>
 								<td>
-									<?php echo $vanish; ?>
+									<?php echo $vanish; ?> <?php if ($line['invisible'] == 1) { ?><a href="index?p=perso&action=vanishoff" title="Désactiver l'invisibilité du compte" style="color:red;">[OFF]</a><?php } else {
+										?><a href="index?p=perso&action=vanishon" title="Activer l'invisibilité du compte" style="color:green;">[ON]</a><?php }?>
+									}
 								</td>
 							</tr>
 							<tr>
