@@ -1685,7 +1685,8 @@
 					</p>
 				</td>
 			</tr>
-			<?php } } ?>
+			<?php } } 
+			?>
 			<tr>
 				<td colspan="3">
 					<h3>Progression</h3> 
