@@ -404,7 +404,7 @@
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 7
-		ORDER BY date_post ASC');
+		ORDER BY date_post DESC');
 		?>
 		<table class="forum" width="100%" cellspacing="0" cellpadding="0">
 			<tbody>
