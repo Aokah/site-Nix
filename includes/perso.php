@@ -863,7 +863,7 @@
 			</tr>
 			<?php } ?>
 			<tr>
-				<td valign="top" rowspan="1">>
+				<td valign="top" rowspan="1">
 					<table cellspacing="0" cellpadding="0" width="100%">
 						<tbody>
 							<tr>
