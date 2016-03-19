@@ -548,7 +548,7 @@
 		if ($line['ban'] == 1) { $grade = "ban";} if ($line['removed'] == 1) { $grade = "del";}
 		if ($line['pionier'] == 1) { $title = "Pionier"; } else { $title = $line['title']; }
 	?>
-	<h2 class="name<?= $line['rank']?><?php echo $tech; echo $pionier;?>"><?= $line['title']?> <?= $line['name']?></h2>
+	<h2 class="name<?= $line['rank']?><?php echo $tech; echo $pionier;?>"><?php echo $title;?> <?= $line['name']?></h2>
 	
 	<table cellspacing="5" cellpadding="5">
 		<tbody>
