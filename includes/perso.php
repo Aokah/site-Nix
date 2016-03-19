@@ -1606,11 +1606,21 @@
 					{
 					?>
 					<h4><?php echo $titlerace; ?></h4>
-					<p style="padding:2%;"><img src="pics/img_<?= $line['race']?>.png" alt="" style="float:left;" /></p>
-					<p><?php echo $racedesc; ?></p>
-					<p>
-						<a style="clear: both;" href="index?p=perso&edit=race">Cliquez ici</a> pour changer de race.
-					</p>
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<img src="pics/img_<?= $line['race']?>.png" alt="" style="float:left;" />
+								</td>
+								<td>
+									<p><?php echo $racedesc; ?></p>
+									<p>
+										<a href="index?p=perso&edit=race">Cliquez ici</a> pour changer de race.
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 					<?php } ?>
 				</td>
 			</tr>
