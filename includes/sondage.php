@@ -301,11 +301,11 @@
 					<th>Intitulé</th>
 					<th class="last_post">Créé par</th>
 				</tr>
-				<tr>
 				<?php if ($line = $answer->fetch())
 				{	
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_post']);
 				?>
+				<tr>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?> </a>
 					</td>
@@ -338,11 +338,11 @@
 					<th>Intitulé</th>
 					<th class="last_post">Créé par</th>
 				</tr>
-				<tr>
 				<?php if ($line1 = $answer1->fetch())
 				{	
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line1['date_post']);
 				?>
+				<tr>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line1['s_id'] ?>"> <?= $line1['titre']?></a>
 					</td>
@@ -376,11 +376,11 @@
 					<th>Intitulé</th>
 					<th class="last_post">Créé par</th>
 				</tr>
-				<tr>
 				<?php if ($line2 = $answer2->fetch())
 				{	
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line2['date_post']);
 				?>
+				<tr>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line2['s_id'] ?>"> <?= $line2['titre']?></a>
 					</td>
@@ -414,11 +414,11 @@
 					<th>Intitulé</th>
 					<th class="last_post">Créé par</th>
 				</tr>
-				<tr>
 				<?php if ($line3 = $answer3->fetch())
 				{	
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line3['date_post']);
 				?>
+				<tr>
 					<td class="read">
 					<a href="index?p=sondage&s=<?= $line3['s_id'] ?>"> <?= $line3['titre']?></a>
 					</td>
