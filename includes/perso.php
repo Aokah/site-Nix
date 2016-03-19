@@ -1228,13 +1228,51 @@
 			elseif ($_GET['edit'] == "infos")
 			{
 			?>
-			
+			<form action="index?p=perso&edit=save" method="POST">
+				<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
+					<tbody>
+						<tr>
+							<td width="33%" style="border: 0px grey solid; background-color: grey; color: grey;">
+								<p> </p>
+							</td>
+							<td colspan="2">
+								<label>Nom :</label> <input type="text" name="nom" value="<?= $line['nom']?>" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="qualite">Qualité :</label>  <textarea id="qualite" name="qualite"><?= $line['qualites']?></textarea>
+							</td>
+							<td>
+								<label for="defauts">Défauts :</label> <textarea id="defauts" name="defauts"><?= $line['defauts']?></textarea>
+							</td>
+							<td>
+								<label for="sd">Signes Distinctifs :</label> <textarea id="sd" name="sd"><?= $line['sd']?></textarea>
+							</td>
+							<td>
+								<label for="caractere">Caractère :</label> <textarea id="caractere" name="caractere"><?= $line['caractere']?></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
 			<?php	
 			}
 			elseif ($_GET['edit'] == "save")
 			{
-				
-				
+			$nom = "?"; $qualite = "?"; $defauts = "?"; $sd = "Non définis"; $caractere = "?";
+			
+			if (!empty($_POST['nom'])) { $nom = htmlentities($_POST['nom']); }
+			if (!empty($_POST['qualite'])) { $qualite = htmlentities($_POST['qualite']); }
+			if (!empty($_POST['defauts'])) { $defauts = htmlentities($_POST['defauts']); }
+			if (!empty($_POST['sd'])) { $sd = htmlentities($_POST['sd']); }
+			if (!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
+			$update = $db->prepare('UPDATE members SET nom = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
+			$update->execute(array( $nom, $qualite, $defauts, $sd, $caractere, $_SESSION['id']));
+			echo '<p>Modifications effectuées avec succès</p>';
+			?>
+			<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+			<?php	
 			}
 			else
 			{
@@ -1606,7 +1644,7 @@
 					{
 					?>
 					<h4><?php echo $titlerace; ?></h4>
-					<table>
+					<table cellspacing="5">
 						<tbody>
 							<tr>
 								<td>
@@ -1646,6 +1684,10 @@
 					<h3>Progression</h3> 
 					<p>Un schéma de votre progression possible au sein du serveur sera bientôt disponible.</p>
 				</td>
+			</tr>
+			<tr>
+				<h3>Vos informations personnelles RP</h3>
+				<p><a href="index?p=perso&edit=infos">Cliquez ici</a> pour éditer les informations personnelles de votre personnage.</p>
 			</tr>
 		</tbody>
 	</table>
