@@ -390,10 +390,11 @@
 					<br>
 					<?php echo $date; ?>
 					</td>
+				</tr>
 				<?php } 
 				else { echo $vide ;
 				}?>
-				</tr>
+				
 			</tbody>
 		</table>
 		</li>
