@@ -540,8 +540,8 @@
 			case 9: $magie = "Pouvoir Suprême"; break;
 		}
 		$vanish = ($line['invisible'] == 1) ? 'Activée' : 'Désactivée';
-		$filename = 'pics/pics/persoimg/perso_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
-		$filename = 'pics/pics/avatar/skin_' .$line['id']. '.png';if (file_exists($filename)) {$avatar = $line['id'];} else {$avatar = 'no';}
+		$filename = 'pics/persoimg/perso_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
+		$filename = 'pics/avatar/skin_' .$line['id']. '.png';if (file_exists($filename)) {$avatar = $line['id'];} else {$avatar = 'no';}
 		if ($line['technician'] == 0 AND $line['removed'] == 0 AND $line['ban'] == 0 AND $line['rank'] < 9) { $grande = $line['rank']; }
 		if ($line['rank'] == 9) { $grade = "titan";} if ($line['rank'] == 10) { $grade = "crea"; }
 		if ($line['technician'] == 1) { $tech = "-T"; $techmode = "Retirer"; $grade = "tech"; } else { $techmode = "Attribuer";}  if ($line['pionier'] == 1) { $pionier = '-P'; }
