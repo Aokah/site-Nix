@@ -327,6 +327,13 @@ textarea {
 
 /* Utilitaires */
 
+.validbg
+{
+    position: absolute;
+    right: 20px;
+    top: -64px;
+}
+
 .del_form {
 	display: inline;
 }
