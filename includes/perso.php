@@ -38,7 +38,7 @@
 								case 0 : $race = $line['race']; break; case 1: $race = "Elfe"; break; case 1: $race = "Elfe"; break; case 2: $race = "Ernelien"; break;
 								case 3: $race = "Humain"; break; case 4: $race = "Hybride"; break; case 5: $race = "Inconnue"; break; case 6: $race = "Nain"; break;
 								case 7: $race = "Onyx"; break; case 8: $race = "Orque"; break; case 9: $race = "Spéciale"; break; case 10: $race = "Stromnole"; break;
-								case 11: $race = "Titanoïde"; break; }
+								case 11: $race = "Titanoïde"; break; case 12: $race = "Zaknafein"; break;}
 							
 							if (!empty($_POST['titre'])) { $title = htmlentities($_POST['titre']); }
 							if (!empty($_POST['prenom'])) { $prenom = htmlentities($_POST['prenom']); }
@@ -140,6 +140,7 @@
 												<option value="9">Spécial</option>
 												<option value="10">Stromnole</option>
 												<option value="11">Titanoide</option>
+												<option value="12">Zaknafein</option>
 											</select>
 									</td>
 									<td>
@@ -1645,6 +1646,12 @@
 					<?php if ($line['race'] == "Inconnue") {
 					?>
 					<p>Vous n'avez pas encore choisi de race. Rendez-vous <a href="index?p=perso&edit=race">ici</a> pour en choisir une !</p>
+					<?php
+					}
+					elseif ($line['race'] == "Spéciale")
+					{
+					?>
+						<p>Vous possédez une race hors catégorie, vous ne possez donc aucune information la concernant hors mis celles qui vous ont été confirmées par un Maitre du Jeu.</p>
 					<?php
 					}
 					else
