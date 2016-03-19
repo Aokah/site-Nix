@@ -683,12 +683,12 @@
 							</tr>
 							<tr>
 								<td colspan="3">
-									Elément primaire : <?= $line['specialisation']?>
+									Elément primaire : <img src="pics/magie/magie_<?= $line['specialisation']?>.png" alt="" class="magie_type" /> <?= $line['specialisation']?>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="3">
-									Elément secondaire : <?= $line['spe_2']?>
+									Elément secondaire : <img src="pics/magie/magie_<?= $line['spe_2']?>.png" alt="" class="magie_type" /> <?= $line['spe_2']?>
 								</td>
 							</tr>
 							<tr>
