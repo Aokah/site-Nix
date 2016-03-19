@@ -50,7 +50,6 @@
 							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
 							$update->execute(array($prenom, $nom, $race, $title, $qualite, $defauts, $sd, $caractere, $perso));
 							echo '<p>Modifications des informations personnelles effectuées avec succès</p>';
-							echo $title; 
 								?>
 								<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 								<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
@@ -80,10 +79,22 @@
 						elseif(isset($_POST['valid']))
 						{
 							if ($_SESSION['rank'] >= 5) {
-								$spe_1 = htmlentities($_POST['spe_1']);
-								$spe_2 = htmlentities($_POST['spe_2']);
-								if ($spe_1 = "defaut") { $spe_1 = $line['specialisation']; }
-								if ($spe_2 = "defaut") { $spe_2 = $line['spe_2']; }
+								switch ($_POST['spe_1']) {
+									case 0: $spe_1 = $line['specialisation']; break; case 1 : $spe_1 = "Air"; break;
+									case 2 : $spe_1 = "Arcane"; break; case 3 : $spe_1 = "Chaos"; break; case 4 : $spe_1 = "Eau"; break;
+									case 5 : $spe_1 = "Energie"; break; case 6 : $spe_1 = "Feu"; break; case 7 : $spe_1 = "Glace"; break;
+									case 8 : $spe_1 = "Inconnue"; break; case 9 : $spe_1 = "Lumière"; break; case 10 : $spe_1 = "Métal"; break;
+									case 11 : $spe_1 = "Nature"; break; case 12 : $spe_1 = "Ombre"; break; case 13 : $spe_1 = "Psy"; break;
+									case 14 : $spe_1 = "Spécial"; break; case 15 : $spe_1 = "Terre"; break;
+								}
+								switch ($_POST['spe_2']) {
+									case 0: $spe_2 = $line['spe_2']; break; case 1 : $spe_2 = "Air"; break;
+									case 2 : $spe_2 = "Arcane"; break; case 3 : $spe_2 = "Chaos"; break; case 4 : $spe_2 = "Eau"; break;
+									case 5 : $spe_2 = "Energie"; break; case 6 : $spe_2 = "Feu"; break; case 7 : $spe_2 = "Glace"; break;
+									case 8 : $spe_2 = "Inconnue"; break; case 9 : $spe_2 = "Lumière"; break; case 10 : $spe_2 = "Métal"; break;
+									case 11 : $spe_2 = "Nature"; break; case 12 : $spe_2 = "Ombre"; break; case 13 : $spe_2 = "Psy"; break;
+									case 14 : $spe_2 = "Spécial"; break; case 15 : $spe_2 = "Terre"; break;
+								}
 								$update = $db->prepare('UPDATE members SET E_Magique = ?, E_Vitale = ?, specialisation = ?, spe_2 = ? WHERE id = ?');
 								$update->execute(array($_POST['e-magie'], $_POST['e-vie'], $spe_1, $spe_2, $perso));
 								echo '<p>Modifications des informations magiques effectuées avec succès</p>';
@@ -132,7 +143,7 @@
 											</select>
 									</td>
 									<td>
-										<label>Titre :</label> <input type="text" name"titre" id="titre" value="<?= $line['title']?>" />
+										<label>Titre :</label> <input type="text" name="titre" value="<?= $line['title']?>" />
 									</td>
 								</tr>
 								<tr>
@@ -228,43 +239,43 @@
 									<td>
 										<label for="spe_1">Spécialisation primaire :</label>
 											<select name="spe_1" type="text">
-												<option value="defaut">--Option par défaut--</option>
-												<option value="Air">Air</option>
-												<option value="Arcane">Arcane</option>
-												<option value="Chaos">Chaos</option>
-												<option value="Eau">Eau</option>
-												<option value="Energie">Energie</option>
-												<option value="Feu">Feu</option>
-												<option value="Glace">Glace</option>
-												<option value="Inconnue">Inconnue</option>
-												<option value="Lumiere">Lumière</option>
-												<option value="Metal">Métal</option>
-												<option value="Nature">Nature</option>
-												<option value="Ombre">Ombre</option>
-												<option value="Psy">Psy</option>
-												<option value="Spécial">Spécial</option>
-												<option value="Terre">Terre</option>
+												<option value="0">--Option par défaut--</option>
+												<option value="1">Air</option>
+												<option value="2">Arcane</option>
+												<option value="3">Chaos</option>
+												<option value="4">Eau</option>
+												<option value="5">Energie</option>
+												<option value="6">Feu</option>
+												<option value="7">Glace</option>
+												<option value="8">Inconnue</option>
+												<option value="9">Lumière</option>
+												<option value="10">Métal</option>
+												<option value="11">Nature</option>
+												<option value="12">Ombre</option>
+												<option value="13">Psy</option>
+												<option value="14">Spécial</option>
+												<option value="15">Terre</option>
 											</select>
 									</td>
 									<td>
 										<label for=""race"spe_2">Spécialisation secondaire :</label>
 											<select name="spe_2" type="text">
-												<option value="defaut">--Option par défaut--</option>
-												<option value="Air">Air</option>
-												<option value="Arcane">Arcane</option>
-												<option value="Chaos">Chaos</option>
-												<option value="Eau">Eau</option>
-												<option value="Energie">Energie</option>
-												<option value="Feu">Feu</option>
-												<option value="Glace">Glace</option>
-												<option value="Inconnue">Inconnue</option>
-												<option value="Lumiere">Lumière</option>
-												<option value="Metal">Métal</option>
-												<option value="Nature">Nature</option>
-												<option value="Ombre">Ombre</option>
-												<option value="Psy">Psy</option>
-												<option value="Spécial">Spécial</option>
-												<option value="Terre">Terre</option>
+												<option value="0">--Option par défaut--</option>
+												<option value="1">Air</option>
+												<option value="2">Arcane</option>
+												<option value="3">Chaos</option>
+												<option value="4">Eau</option>
+												<option value="5">Energie</option>
+												<option value="6">Feu</option>
+												<option value="7">Glace</option>
+												<option value="8">Inconnue</option>
+												<option value="9">Lumière</option>
+												<option value="10">Métal</option>
+												<option value="11">Nature</option>
+												<option value="12">Ombre</option>
+												<option value="13">Psy</option>
+												<option value="14">Spécial</option>
+												<option value="15">Terre</option>
 											</select>
 									</td>
 								</tr>
