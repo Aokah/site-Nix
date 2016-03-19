@@ -1252,7 +1252,7 @@
 													<? echo $hrp; ?>
 													<br /><br />
 													<a href="index?p=perso&modif=jdesc">
-														Modifier votre Background.
+														Modifier votre description HRP.
 													</a>
 												</p>
 											</td>
@@ -1290,7 +1290,7 @@
 													<? echo $notes; ?>
 													<br /><br />
 													<a href="index?p=perso&modif=notesp">
-														Modifier votre Background.
+														Modifier vos notes.
 													</a>
 												</p>
 											</td>
