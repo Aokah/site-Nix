@@ -109,7 +109,7 @@
 					}
 					
 				elseif($_GET['modif'] == 'info')
-				{
+					{
 				?>
 					<h3>Modification des informations personnelles du personnage</h3>
 					<form action="index?p=perso&perso=<?php echo $perso;?>&modif=save" method="POST">
@@ -167,11 +167,11 @@
 						</table>
 						<input type="submit" name="confirm" value="Valider" />
 					</form>
-				<?php
-				}
-				elseif($_GET['modif'] == 'admin')
-				{
-				?>
+					<?php
+					}
+					elseif($_GET['modif'] == 'admin')
+					{
+					?>
 					<h3>Modification des informations administratives du personnage</h3>
 					<form action="index?p=perso&perso=<?php echo $perso;?>&modif=save" method="POST">
 						<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
@@ -204,10 +204,10 @@
 							</tbody>
 						</table>
 					</form>
-				<?php
-				}
-				elseif($_GET['modif'] == 'magie')
-				{
+					<?php
+					}
+					elseif($_GET['modif'] == 'magie')
+					{
 					switch ($line['magie_rank']) { case 0: $maxmagie = 50; break;	case 1: $maxmagie = 100; break;	case 2: $maxmagie = 150; break;
 					case 3: $maxmagie = 200; break;	case 4: $maxmagie = 300; break;	case 5: $maxmagie = 400; break;	case 6: $maxmagie = 500; break; }
 					if ($line['E_magique'] >= 7) { $overmagie = 'Inutile de modifier l\'énergie d\'un personnage aux poubvoirs illimités !'; }
@@ -282,10 +282,10 @@
 							</tbody>
 						</table>
 					</form>
-				<?php
+					<?php
+					}
+					else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
 				}
-				else { echo '<p>Hop hop hop ! Où tu va ? :D</p>'; }
-			}
 		}
 		elseif (isset($_GET['action']))
 		{
@@ -1120,7 +1120,6 @@
 							
 				
 			<?php	}
-				}
 			}
 			elseif ($_GET['edit'] == "infos")
 			{
@@ -1514,6 +1513,6 @@
 	<?php
 	}
 	}
-	
 	}
+}
 ?>
