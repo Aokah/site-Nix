@@ -1344,6 +1344,9 @@
 		}
 		$vanish = ($line['invisible'] == 1) ? 'Activée' : 'Désactivée';
 		$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
+		if ($line['technician'] == 1) { $grade = "tech"; }
+		if ($line['ban'] == 1) { $grade = "ban";} if ($line['removed'] == 1) { $grade = "del";}
+		if ($line['pionier'] == 1) { $title = "Pionier"; } else { $title = $line['title']; }
 	?>
 	
 	
@@ -1371,7 +1374,7 @@
 							</tr>
 							<tr>
 								<td colspan="2">
-									<p>Titre : <img src="pics/rank<?= $line['rank']?>.png" alt="" width="25" /> <?= $line['title']?></p>
+									<p>Titre : <img src="pics/rank<?php echo $grade;?>.png" alt="" width="25" /> <?php echo $title;?></p>
 								</td>
 							</tr>
 						</tbody>
