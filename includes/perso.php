@@ -110,8 +110,8 @@
 										<label for="nom">Nom :</label> <input type="text" id="nom" name="nom" value="<?= $line['nom']?>" />
 									</td>
 									<td>
-										<label for="race">Race :</label>
-											<select id="race" name="race" type="text">
+										<label>Race :</label>
+											<select name="race" type="text">
 												<option value="defaut">--Option par défaut--</option>
 												<option value="Elfe">Elfe</option>
 												<option value="Ernelien">Ernelien</option>
@@ -123,7 +123,7 @@
 												<option value="Orque">Orque</option>
 												<option value="Spécial">Spécial</option>
 												<option value="Stromnole">Stromnole</option>
-												<option value="Titanoide">Titanoïde</option>
+												<option value="Titanoide">Titanoide</option>
 											</select>
 									</td>
 									<td>
