@@ -331,7 +331,8 @@ textarea {
 {
    float: right;
    position: relative;
-   top: -30px;
+   top: -110px;
+   left: 30px;
 }
 
 .del_form {
