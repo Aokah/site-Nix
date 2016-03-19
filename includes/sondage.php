@@ -430,11 +430,7 @@
 	</ul>
 <?php
 	}
-?>
-	
-<?php
 }
 else
 { echo '<p>Veuiller vous connecter pour consulter cette page</p>'; }
-
-} ?>
+?>
