@@ -856,10 +856,12 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
-												<img src="pics/ico/tick.png" alt="" class="validbg" width="70" title="Background Roleplay vérifié par le Staff" />
-												<p style="padding:4%;">
-													<? echo $bg; ?>
-												</p>
+												<div>
+													<img src="pics/ico/tick.png" alt="" class="validbg" width="70" title="Background Roleplay vérifié par le Staff" />
+													<p style="padding:4%;">
+														<? echo $bg; ?>
+													</p>
+												</div>
 											</td>
 										</tr>
 									</table>
@@ -1232,14 +1234,16 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
-												<img src="pics/ico/tick.png" alt="" class="validbg" width="70" title="Background Roleplay vérifié par le Staff" />
-												<p style="padding:4%;">
-													<? echo $bg; ?>
-													<br /><br />
-													<a href="index?p=perso&modif=bg">
-														Modifier votre Background.
-													</a>
-												</p>
+												<div>
+													<img src="pics/ico/tick.png" alt="" class="validbg" width="70" title="Background Roleplay vérifié par le Staff" /><img src="pics/ico/tick.png" alt="" class="validbg" width="70" title="Background Roleplay vérifié par le Staff" />
+													<p style="padding:4%;">
+														<? echo $bg; ?>
+														<br /><br />
+														<a href="index?p=perso&modif=bg">
+															Modifier votre Background.
+														</a>
+													</p>
+												</div>
 											</td>
 										</tr>
 									</table>
