@@ -1011,51 +1011,57 @@
 					if ($_GET['r'] == "elfe")
 					{
 					?>
-					<h
-					<div align="center">
-						<p>
-							
-						</p>
-						<p>
-							
-						</p>
-					</div>
+						<h3>Les Elfes</h3>
+						<p>Similaires aux humains, les Elfes se caractérisent par leurs oreilles plus grandes que les oreilles humaines et leur rapport très proche envers la nature, qui est très souvent leur habitat naturel.</p>
 					<?php
 					}
 					elseif ($_GET['r'] == "ernelien")
 					{
 					?>
-					
+						<h3>Les Erneliens</h3>
+						<p>Peu de choses sont connus des humains sur cette race bien étrange, mais pourtant l'esclavagisme est omniprésent, même en Nix. Les Erneliens sont une étranges communautés, Ils sont vert et ont une peau rigide, qui est semblable à des os, 
+						ils ont des os qui sortent de leurs coudes, de leurs genoux, ils ont des longues griffes, des dents acérés, et même des cornes, mais malheureusement, leurs corps est trop fragiles pour se battre, ils ne supportent pas les trops grosses température, 
+						ni les trop basses, ils ne peuvent supporter les endroits secs, et ont en plus un besoin d'humidité pour respirer et pour que la peau ne dessèche pas.</p>
 					<?php	
 					}
 					elseif ($_GET['r'] == "humain")
 					{
 					?>
-					
+						<h3>Les Humains</h3>
+						<p>Très généralement remortels, les humains sont des personnes constituées d'os, de muscle, d'organes et de peau. Ils vivent généralement en communauté pour mieux survivre et savent s'adapter aux intempéries. 
+						Malgré le fait qu'ils soient une même race, plusieurs peuples aux coutumes différentes existent.</p>
 					<?php	
 					}
 					elseif ($_GET['r'] == "nain")
 					{
 					?>
-					
+						<h3>Les Nains</h3>
+						<p>Ces êtres sont un quart de fois plus petits que les hommes normaux. Ils sont généralement installés dans la région des Feldspaths, car les cavernes leurs ont permis de faire un tas de mine, et leur marché de forge prospère chez les autres races.</p>
 					<?php	
 					}
 					elseif ($_GET['r'] == "onyx")
 					{
 					?>
-					
+						<h3>Les Onyxs</h3>
+						<p>Race très peu connues, étant donné la rareté de ces personnes qui naissent du Ciel. Les Onyx sont semblables aux humains sauf qu'au lieu d'avoir un nez, ils respirent par les pores de leur peau, qui est aussi noire que leurs yeux sont luisants. 
+						Les Onyx sont très généralement des personnes pacifiques et peu violentes, ce qui est surtout dû à leurs faible constitution, les rendant plus fragiles que des humains.</p>
 					<?php	
 					}
 					elseif ($_GET['r'] == "orque")
 					{
 					?>
-					
+						<h3>Les Orques</h3>
+						<p>Les Orques vivent reclus dans Orsiclame, une région fermés et dictatoriale, et ne veulent pas conquérir le monde. Ils protègent quelque chose qu'ils gardent jalousement,
+						mais il reste encore à découvrir quoi car ces guerriers redoutables ne laisseront personne entrer.</p>
 					<?php	
 					}
 					elseif ($_GET['r'] == "stromnole")
 					{
 					?>
-					
+						<h3>Les Stromnoles</h3>
+						<p>Une contrée mystérieuse et inhabitée s'est reveillé. Il s'agit du Volcan Stromnoli longtemps endormi, qui laissa il y a cent ans de cela, une grosse éruption, agrandissant ses contours de par le magma, et créant même des petites îles. 
+						Mais ce qui est le plus remarquable c'est surtout les Stronnoles. Des créatures humanoïdes rouges, semblant résister à la lave et à la chaleur. Elles ont fait surfaces après l'éruption du Stromnoli, beaucoup étudient cette race jusque là inconnues. 
+						Il faudra faire des recherches pour en savoir plus sur cette race extrêmement discrète.</p>
 					<?php	
 					}
 					else
@@ -1100,7 +1106,7 @@
 									</a>
 								</td>
 								<td>										
-									<a href="index?p=page&edit=race&r=onyx">
+									<a href="index?p=perso&edit=race&r=onyx">
 										<img src="pics/img_Onyx.png" alt="" width="150px" title="Cliquez pour voir les informations." />
 									</a>
 								</td>
