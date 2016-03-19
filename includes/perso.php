@@ -540,8 +540,13 @@
 			case 9: $magie = "Pouvoir Suprême"; break;
 		}
 		$vanish = ($line['invisible'] == 1) ? 'Activée' : 'Désactivée';
-		$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
-		if ($line['technician'] == 1) { $tech = "-T"; $techmode = "Retirer"; } else { $techmode = "Attribuer";}  if ($line['pionier'] == 1) { $pionier = '-P'; }
+		$filename = 'pics/pics/persoimg/perso_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
+		$filename = 'pics/pics/avatar/skin_' .$line['id']. '.png';if (file_exists($filename)) {$avatar = $line['id'];} else {$avatar = 'no';}
+		if ($line['technician'] == 0 AND $line['removed'] == 0 AND $line['ban'] == 0 AND $line['rank'] < 9) { $grande = $line['rank']; }
+		if ($line['rank'] == 9) { $grade = "titan";} if ($line['rank'] == 10) { $grade = "crea"; }
+		if ($line['technician'] == 1) { $tech = "-T"; $techmode = "Retirer"; $grade = "tech"; } else { $techmode = "Attribuer";}  if ($line['pionier'] == 1) { $pionier = '-P'; }
+		if ($line['ban'] == 1) { $grade = "ban";}
+		if ($line['removed'] == 1) { $grade = "del";}
 	?>
 	<h2 class="name<?= $line['rank']?><?php echo $tech; echo $pionier;?>"><?= $line['title']?> <?= $line['name']?></h2>
 	
@@ -553,7 +558,7 @@
 						<tbody>
 							<tr>
 								<td style="border-radius: 10px;" rowspan="4" width="200px">
-									<img src="pics/persoimg/perso_<?= $line['id']?>.png" alt="" width="200px" />
+									<img src="pics/persoimg/perso_<?php echo $img; ?>.png" alt="" width="200px" />
 								</td>
 							</tr>
 							<tr>
@@ -569,7 +574,7 @@
 							</tr>
 							<tr>
 								<td colspan="2">
-									<p>Titre : <img src="pics/rank<?= $line['rank']?>.png" alt="" width="25" /> <?= $line['title']?></p>
+									<p>Titre : <img src="pics/rank<?php echo $grade;?>.png" alt="" width="25" /> <?= $line['title']?></p>
 								</td>
 							</tr>
 							<tr>
@@ -622,7 +627,7 @@
 									<p> </p>
 								</td>
 								<td style="text-align:center;">
-									<img src="pics/avatar/skin_<?= $line['id']?>.png" alt="" width="100" />
+									<img src="pics/avatar/skin_<?php echo $avatar;?>.png" alt="" width="100" />
 								</td>
 								<td width="33%" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<p> </p>
