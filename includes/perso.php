@@ -856,14 +856,14 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
-												<p style="padding:4%;">
+												<p style="padding-left:10%; padding-right:10%;">
 												<?php if ($line['valid_bg'] == 1) { ?>
 												<img src="pics/ico/tick.png" alt="" class="validbg" width="100" title="Background Roleplay vérifié par le Staff" />
 												<?php } ?>
 													<? echo $bg; ?>
 												</p>
 												<?php if ($_SESSION['rank'] >= 5 AND $line['valid_bg'] == 0) { ?>
-												<p style="padding:4%;">
+												<p style="padding-left:10%; padding-right:10%;">
 													<a href="index?p=perso&perso=<?php echo $perso;?>&action=validbg">
 														[Valider le BG]
 													</a>
@@ -895,7 +895,7 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
-												<p style="padding:4%;">
+												<p style="padding-left:10%; padding-right:10%;">
 													<? echo $hrp; ?>
 												</p>
 											</td>
@@ -930,7 +930,7 @@
 									<table width="640px" background="/pics/ico/notespersocenter.png">
 										<tr>
 											<td>
-												<p style="padding:4%;">
+												<p style="padding-left:10%; padding-right:10%;">
 													<? echo $notes; ?>
 												</p>
 											</td>
@@ -1241,7 +1241,7 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
-												<p style="padding:4%;">
+												<p style="padding-left:10%; padding-right:10%;">
 													<?php if ($line['valid_bg'] == 1) { ?>
 												<img src="pics/ico/tick.png" alt="" class="validbg" width="100" title="Background Roleplay vérifié par le Staff" />
 													<?php } ?>
@@ -1278,7 +1278,7 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
-												<p style="padding:4%;">
+												<p style="padding-left:10%; padding-right:10%;">
 													<? echo $hrp; ?>
 													<br /><br />
 													<a href="index?p=perso&modif=jdesc">
@@ -1316,7 +1316,7 @@
 									<table width="640px" background="/pics/ico/notespersocenter.png">
 										<tr>
 											<td>
-												<p style="padding:4%;">
+												<p style="padding-left:10%; padding-right:10%;">
 													<? echo $notes; ?>
 													<br /><br />
 													<a href="index?p=perso&modif=notesp">
