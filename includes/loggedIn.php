@@ -91,7 +91,7 @@
 
 		
 		?>
-			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>" /><a href="index.php?p=viewmember&perso=<?= $line['id']?>" title="<? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?> <?= $line['name']?>"> <?= $line['name']?></a> <? echo $vanish ?></li>
+			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>" /><a href="index.php?p=perso&perso=<?= $line['id']?>" title="<? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?> <?= $line['name']?>"> <?= $line['name']?></a> <? echo $vanish ?></li>
 		<?php
 	}
 	?>
@@ -169,7 +169,7 @@
 
 
 		?>
-			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>"/><a href="index.php?p=viewmember&perso=<?= $line['id']?>" title="<? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?> <?= $line['name']?>"> <?= $line['name']?></a> <? echo $vanish ?> </li>
+			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>"/><a href="index.php?p=perso&perso=<?= $line['id']?>" title="<? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?> <?= $line['name']?>"> <?= $line['name']?></a> <? echo $vanish ?> </li>
 		<?php
 	}
 
@@ -250,7 +250,7 @@
 				if ($line["removed"] == 1) { $img = "rankdel.png" ;}
 		
 		?>
-			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>" /><a href="index.php?p=viewmember&perso=<?= $line['id']?>" title="<?= $line['title']?> <?= $line['name']?>" style="margin-right:6px;color: <?= $line2['color']?>;"> <?= $line['name']?></a></li>
+			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>" /><a href="index.php?p=perso&perso=<?= $line['id']?>" title="<?= $line['title']?> <?= $line['name']?>" style="margin-right:6px;color: <?= $line2['color']?>;"> <?= $line['name']?></a></li>
 		<?php
 	}
 	?>
@@ -314,7 +314,7 @@
 				if ($line["removed"] == 1) { $img = "rankdel.png" ;}
 
 		?>
-			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>"/><a href="index.php?p=viewmember&perso=<?= $line['id']?>" title="<?= $line['title']?>  <?= $line['name']?>" style="margin-right:6px;color: <?= $line2['color']?>;"> <?= $line['name']?></a></li>
+			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>"/><a href="index.php?p=perso&perso=<?= $line['id']?>" title="<?= $line['title']?>  <?= $line['name']?>" style="margin-right:6px;color: <?= $line2['color']?>;"> <?= $line['name']?></a></li>
 		<?php
 	}
 
