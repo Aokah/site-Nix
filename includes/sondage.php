@@ -315,10 +315,11 @@
 					<br>
 					<?php echo $date; ?>
 					</td>
-				<?php } 
-				else { echo $vide ;
-				}?>
 				</tr>
+				<?php }
+				else { echo $vide ;
+				}
+				?>
 			</tbody>
 		</table>
 		</li>
@@ -352,10 +353,11 @@
 					<br>
 					<?php echo $date; ?>
 					</td>
+				</tr>
 				<?php }
 				else { echo $vide ;
-				}?>
-				</tr>
+				}
+				?>
 			</tbody>
 		</table>
 		</li>
@@ -428,11 +430,11 @@
 					<a class="name<?= $line3['rank']?>" href="index?p=perso&perso=<?= $line3['m.id']?>"> <?= $line3['title']?> <?= $line3['name']?></a>					<br>
 					<?php echo $date; ?>
 					</td>
+				</tr>
 				<?php }
 				else { echo $vide ;
 				}
 				?>
-				</tr>
 			</tbody>
 		</table>
 		</li>
