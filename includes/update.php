@@ -19,7 +19,7 @@
 		<li>Réadapter la Page d'Acceuil aux évènements passés IG</li>
 		<li>Reconstruire la Structure de la ChatBox</li>
 		<li>Ajout de la Page Infos Bêta</li>
-		<li>Réécriture des fonctions des pages personnage</li>
+		<li>Réécriture de la page membres dans son intégralité</li>
 		
 	</ul>
 	
@@ -41,6 +41,7 @@
 		<li>Ajout de la fonction de bannissement <span style="color:red;">(A améliorer)</span></li>
 		<li>Insertion de la ChatBox sous les pages<span style="color:red;">(A améliorer)</span></li>
 		<li>Réécriture de la page personnage</li>
+		<li>Réécriture des fonctions des pages personnage</li>
 	</ul>
 <?php
 
