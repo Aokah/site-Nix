@@ -1227,6 +1227,9 @@
 			}
 			elseif ($_GET['edit'] == "infos")
 			{
+				$perso = $db->prepare('SELECT * FROM members WHERE id= ?');
+				$perso->execute(array($_SESSION['id']));
+				if ($line = $perso->fetch()) {
 			?>
 			<form action="index?p=perso&edit=save" method="POST">
 				<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
@@ -1256,7 +1259,7 @@
 					</tbody>
 				</table>
 			</form>
-			<?php	
+			<?php	} else { echo '<p>Une erreur s\'est produite.</p>';
 			}
 			elseif ($_GET['edit'] == "save")
 			{
