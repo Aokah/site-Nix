@@ -857,7 +857,9 @@
 										<tr>
 											<td>
 												<p style="padding:4%;">
-												<img src="pics/ico/tick.png" alt="" class="validbg" width="70" title="Background Roleplay vérifié par le Staff" />
+												<?php if ($line['valid_bg'] == 1) { ?>
+												<img src="pics/ico/tick.png" alt="" class="validbg" width="100" title="Background Roleplay vérifié par le Staff" />
+												<?php } ?>
 													<? echo $bg; ?>
 												</p>
 											</td>
@@ -1233,7 +1235,9 @@
 										<tr>
 											<td>
 												<p style="padding:4%;">
-												<img src="pics/ico/tick.png" alt="" class="validbg" width="70" title="Background Roleplay vérifié par le Staff" />
+													<?php if ($line['valid_bg'] == 1) { ?>
+												<img src="pics/ico/tick.png" alt="" class="validbg" width="100" title="Background Roleplay vérifié par le Staff" />
+													<?php } ?>
 													<? echo $bg; ?>
 													<br /><br />
 													<a href="index?p=perso&modif=bg">
