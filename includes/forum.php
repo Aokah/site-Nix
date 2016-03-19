@@ -231,7 +231,7 @@
 
 					<?php } ?></p></td>
 					<td class="post_aside">
-						<p ><img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=viewmember&perso=<?= $line['m_id']?>" class="name<?= $line['rank']?><? echo $tech ?><? echo $pionier?>" >
+						<p ><img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=perso&perso=<?= $line['m_id']?>" class="name<?= $line['rank']?><? echo $tech ?><? echo $pionier?>" >
 						
 						<? //Affichage du titre "Pionier" //
 						if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?>
@@ -520,7 +520,7 @@
 				?></td>
 				<td
 				<?php echo (isset($line2['unread']) && $line2['unread']) ? 'class="unread" ' : ' '; ?>
-				><img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=viewmember&perso=<?= $line2['m_id']?>" class="name<?= $line2['rank']?><?echo $tech ?><? echo $pionier?>">
+				><img src="pics/avatar/miniskin_<? echo $skin?>.png" width="20px" /> <a href="index.php?p=perso&perso=<?= $line2['m_id']?>" class="name<?= $line2['rank']?><?echo $tech ?><? echo $pionier?>">
 				
 				<? //Affichage du titre "Pionier" //
 				if ($line2['pionier'] == 1) { echo "Pionier";} else { echo $line2['title'] ;}?>
