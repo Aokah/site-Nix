@@ -627,10 +627,10 @@
 							<tr>
 								<td colspan="4" style="border: 0px grey solid; background-color: grey; color: grey; text-align:justify;">
 									<?php if ($line['rank'] == 2 OR $line['rank'] == 3) { if($_SESSION['rank'] > $line['rank']+1) { ?>
-									<a title="Monter le joueur en grade" href="index?p=perso&perso=<?php echo $perso; ?>&action=upgrade" style="color:green;">[+]</a>	
+									<a title="Monter le joueur en grade" href="index?p=perso&perso=<?php echo $perso; ?>&action=upgrade" style="color:lime;">[+]</a>	
 									<?php } } 
 									elseif ($line['rank'] >= 4 AND $line['rank'] <= 10 AND $line['valid_bg'] == 1 AND $_SESSION['rank'] > $line['rank']+1) {?>
-									<a title="Monter le joueur en grade" href="index?p=perso&perso=<?php echo $perso; ?>&action=upgrade" style="color:green;">[+]</a>
+									<a title="Monter le joueur en grade" href="index?p=perso&perso=<?php echo $perso; ?>&action=upgrade" style="color:lime;">[+]</a>
 									<?php } 
 									if ($_SESSION['rank'] > $line['rank'] AND $line['rank'] > 2 AND $_SESSION['rank'] >= 5) { ?>
 									<a title="Dégrader le joueur" href="index?p=perso&perso=<?php echo $perso; ?>&action=downgrade" style="color:red;">[-]</a>
@@ -654,7 +654,7 @@
 									<a title="Bannir le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=ban" style="color:red;">[B]</a> 
 									<?php }
 									if ($_SESSION['rank'] >= 5 AND $_SESSION['rank'] > $line['rank'] AND $line['ban'] == 1) { ?>
-									<a title="Supprimer le bannissement du compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=pardon" style="color:green;">[P]</a>
+									<a title="Supprimer le bannissement du compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=pardon" style="color:lime;">[P]</a>
 									<?php } if ($_SESSION['name'] == "Eftarthadeth" OR $_SESSION['name'] == "Nikho") { 
 									if ($line['removed'] == 0) {?>
 									<a title="Supprimer le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=delete" style="color:red;">[X]</a>
