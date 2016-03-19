@@ -681,7 +681,7 @@
 								</td>
 								<td style="text-align:center;" colspan="2">
 									<?php if ($_SESSION['rank'] >= 5) { 
-									if ($line['magie_rank'] > 0 AND $line['magie_rank'] < 8 ) { ?>
+									if ($line['magie_rank'] >= 0 AND $line['magie_rank'] < 8 ) { ?>
 									 <a href="index?p=perso&perso=<? echo $perso;?>&action=magieup" title="Monter le niveau magique" style="color:green;">
 									 	[UP]
 									 </a>
