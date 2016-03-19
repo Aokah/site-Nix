@@ -745,7 +745,7 @@
 							<tr>
 								<td colspan="3" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<a href="index?p=perso&perso=<?php echo $perso; ?>&modif=info">
-										Modifier les informations
+										[Modifier les informations]
 									</a>
 								</td>
 							</tr>
@@ -770,7 +770,7 @@
 							<tr>
 								<td colspan="2" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<a href="index?p=perso&perso=<?php echo $perso; ?>&modif=magie">
-										Modifier les informations
+										[Modifier les informations]
 									</a>
 								</td>
 							</tr>
@@ -832,7 +832,7 @@
 							<tr>
 								<td colspan="2" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<a href="index?p=perso&perso=<?php echo $perso; ?>&modif=admin">
-										Modifier les informations
+										[Modifier les informations]
 									</a>
 								</td>
 							</tr>
@@ -1013,6 +1013,11 @@
 					?>
 						<h3>Les Elfes</h3>
 						<p>Similaires aux humains, les Elfes se caractérisent par leurs oreilles plus grandes que les oreilles humaines et leur rapport très proche envers la nature, qui est très souvent leur habitat naturel.</p>
+						<p>
+							<a href="index?p=perso&edit=race&choose=elfe">
+								[Choisir cette race.]
+							</a>
+						</p>
 					<?php
 					}
 					elseif ($_GET['r'] == "ernelien")
@@ -1022,6 +1027,11 @@
 						<p>Peu de choses sont connus des humains sur cette race bien étrange, mais pourtant l'esclavagisme est omniprésent, même en Nix. Les Erneliens sont une étranges communautés, Ils sont vert et ont une peau rigide, qui est semblable à des os, 
 						ils ont des os qui sortent de leurs coudes, de leurs genoux, ils ont des longues griffes, des dents acérés, et même des cornes, mais malheureusement, leurs corps est trop fragiles pour se battre, ils ne supportent pas les trops grosses température, 
 						ni les trop basses, ils ne peuvent supporter les endroits secs, et ont en plus un besoin d'humidité pour respirer et pour que la peau ne dessèche pas.</p>
+						<p>
+							<a href="index?p=perso&edit=race&choose=ernelien">
+								[Choisir cette race.]
+							</a>
+						</p>
 					<?php	
 					}
 					elseif ($_GET['r'] == "humain")
@@ -1030,6 +1040,11 @@
 						<h3>Les Humains</h3>
 						<p>Très généralement remortels, les humains sont des personnes constituées d'os, de muscle, d'organes et de peau. Ils vivent généralement en communauté pour mieux survivre et savent s'adapter aux intempéries. 
 						Malgré le fait qu'ils soient une même race, plusieurs peuples aux coutumes différentes existent.</p>
+						<p>
+							<a href="index?p=perso&edit=race&choose=humain">
+								[Choisir cette race.]
+							</a>
+						</p>
 					<?php	
 					}
 					elseif ($_GET['r'] == "nain")
@@ -1037,6 +1052,11 @@
 					?>
 						<h3>Les Nains</h3>
 						<p>Ces êtres sont un quart de fois plus petits que les hommes normaux. Ils sont généralement installés dans la région des Feldspaths, car les cavernes leurs ont permis de faire un tas de mine, et leur marché de forge prospère chez les autres races.</p>
+						<p>
+							<a href="index?p=perso&edit=race&choose=nain">
+								[Choisir cette race.]
+							</a>
+						</p>
 					<?php	
 					}
 					elseif ($_GET['r'] == "onyx")
@@ -1045,6 +1065,11 @@
 						<h3>Les Onyxs</h3>
 						<p>Race très peu connues, étant donné la rareté de ces personnes qui naissent du Ciel. Les Onyx sont semblables aux humains sauf qu'au lieu d'avoir un nez, ils respirent par les pores de leur peau, qui est aussi noire que leurs yeux sont luisants. 
 						Les Onyx sont très généralement des personnes pacifiques et peu violentes, ce qui est surtout dû à leurs faible constitution, les rendant plus fragiles que des humains.</p>
+						<p>
+							<a href="index?p=perso&edit=race&choose=onyx">
+								[Choisir cette race.]
+							</a>
+						</p>
 					<?php	
 					}
 					elseif ($_GET['r'] == "orque")
@@ -1053,6 +1078,11 @@
 						<h3>Les Orques</h3>
 						<p>Les Orques vivent reclus dans Orsiclame, une région fermés et dictatoriale, et ne veulent pas conquérir le monde. Ils protègent quelque chose qu'ils gardent jalousement,
 						mais il reste encore à découvrir quoi car ces guerriers redoutables ne laisseront personne entrer.</p>
+						<p>
+							<a href="index?p=perso&edit=race&choose=orque">
+								[Choisir cette race.]
+							</a>
+						</p>
 					<?php	
 					}
 					elseif ($_GET['r'] == "stromnole")
@@ -1062,6 +1092,11 @@
 						<p>Une contrée mystérieuse et inhabitée s'est reveillé. Il s'agit du Volcan Stromnoli longtemps endormi, qui laissa il y a cent ans de cela, une grosse éruption, agrandissant ses contours de par le magma, et créant même des petites îles. 
 						Mais ce qui est le plus remarquable c'est surtout les Stronnoles. Des créatures humanoïdes rouges, semblant résister à la lave et à la chaleur. Elles ont fait surfaces après l'éruption du Stromnoli, beaucoup étudient cette race jusque là inconnues. 
 						Il faudra faire des recherches pour en savoir plus sur cette race extrêmement discrète.</p>
+						<p>
+							<a href="index?p=perso&edit=race&choose=stromnole">
+								[Choisir cette race.]
+							</a>
+						</p>
 					<?php	
 					}
 					else
@@ -1069,6 +1104,69 @@
 						echo '<p>Non non non. Il n\'y a rien à voir ici. :P</p>';
 					}
 				}
+				elseif ($_GET['choose'])
+					{
+						if($_GET['choose'] == "elfe")
+						{
+							$update = $db->prepare('UPDATE members SET race = "Elfe" WHERE id = ?');
+							$update->execute(array($_SESSION['id']));
+						?>
+						<p>Race définie ! <a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+						<?php
+						}
+						elseif($_GET['choose'] == "ernelien")
+						{
+							$update = $db->prepare('UPDATE members SET race = "Ernelien" WHERE id = ?');
+							$update->execute(array($_SESSION['id']));
+						?>
+						<p>Race définie ! <a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+						<?php	
+						}
+						elseif($_GET['choose'] == "humain")
+						{
+							$update = $db->prepare('UPDATE members SET race = "Humain" WHERE id = ?');
+							$update->execute(array($_SESSION['id']));
+						?>
+						<p>Race définie ! <a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+						<?php	
+						}
+						elseif($_GET['choose'] == "nain")
+						{
+							$update = $db->prepare('UPDATE members SET race = "Nain" WHERE id = ?');
+							$update->execute(array($_SESSION['id']));
+						?>
+						<p>Race définie ! <a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+						<?php	
+						}
+						elseif($_GET['choose'] == "onyx")
+						{
+							$update = $db->prepare('UPDATE members SET race = "Onyx" WHERE id = ?');
+							$update->execute(array($_SESSION['id']));
+						?>
+						<p>Race définie ! <a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+						<?php	
+						}
+						elseif($_GET['choose'] == "orque")
+						{
+							$update = $db->prepare('UPDATE members SET race = "Orque" WHERE id = ?');
+							$update->execute(array($_SESSION['id']));
+						?>
+						<p>Race définie ! <a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+						<?php	
+						}
+						elseif($_GET['choose'] == "stromnole")
+						{
+							$update = $db->prepare('UPDATE members SET race = "Stromnole" WHERE id = ?');
+							$update->execute(array($_SESSION['id']));
+						?>
+						<p>Race définie ! <a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+						<?php	
+						}
+						else
+						{
+							echo '<p>Ehm... Non, c\'est pas par là la création de race ! :)</p>';
+						}
+					}
 				else
 				{
 			?>
