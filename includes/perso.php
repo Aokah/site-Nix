@@ -856,6 +856,7 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
+												<img src="pics/ico/tick.png" alt="" class="validbg" width="70" title="Background Roleplay vérifié par le Staff" />
 												<p style="padding:4%;">
 													<? echo $bg; ?>
 												</p>
@@ -1231,6 +1232,7 @@
 									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
+												<img src="pics/ico/tick.png" alt="" class="validbg" width="70" title="Background Roleplay vérifié par le Staff" />
 												<p style="padding:4%;">
 													<? echo $bg; ?>
 													<br /><br />
