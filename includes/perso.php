@@ -817,8 +817,7 @@
 								</td>
 								<td>
 									<?php echo $vanish; ?> <?php if ($line['invisible'] == 1) { ?><a href="index?p=perso&action=vanishoff" title="Désactiver l'invisibilité du compte" style="color:red;">[OFF]</a><?php } else {
-										?><a href="index?p=perso&action=vanishon" title="Activer l'invisibilité du compte" style="color:green;">[ON]</a><?php }?>
-									}
+										?><a href="index?p=perso&action=vanishon" title="Activer l'invisibilité du compte" style="color:green;">[ON]</a><?php } ?>
 								</td>
 							</tr>
 							<tr>
