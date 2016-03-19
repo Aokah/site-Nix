@@ -37,7 +37,7 @@
 							switch ($_POST['race']) {
 								case 0 : $race = $line['race']; break; case 1: $race = "Elfe"; break; case 1: $race = "Elfe"; break; case 2: $race = "Ernelien"; break;
 								case 3: $race = "Humain"; break; case 4: $race = "Hybride"; break; case 5: $race = "Inconnue"; break; case 6: $race = "Nain"; break;
-								case 7: $race = "Onyx"; break; case 8: $race = "Orque"; break; case 9: $race = "Spécialr"; break; case 10: $race = "Stromnole"; break;
+								case 7: $race = "Onyx"; break; case 8: $race = "Orque"; break; case 9: $race = "Spéciale"; break; case 10: $race = "Stromnole"; break;
 								case 11: $race = "Titanoïde"; break; }
 							
 							if (!empty($_POST['titre'])) { $title = htmlentities($_POST['titre']); }
@@ -1343,6 +1343,23 @@
 					<p>Il sera bientôt possible de changer de race</p>
 				</td>
 			</tr>
+			<?php $line['valid_bg'] == 1) {
+				
+				$valier = $db->prepare('SELECT name, id, title FROM members WHERE id = ?');
+				$valider->execute(array($line['valider_id']));
+				if ($bgline = $valider->fecth())
+				{
+				?>
+			<tr>
+				<td>
+					<h3>Validation du Background</h3>
+					<p style="color:red;">
+						Votre background porte actuellement la validation de <?= $bgline['title']?> <?=$bgline['name']?>, si vous le modifiez, vil perdra sa validité.<br />
+						Il faudra donc le faire vérifier à nouveau par un Maître du Jeu.
+					</p>
+				</td>
+			</tr>
+			<?php } } ?>
 		</tbody>
 	</table>
 	<?php
