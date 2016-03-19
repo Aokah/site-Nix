@@ -32,7 +32,7 @@
 						if(isset($_POST['confirm']))
 						{
 							if ($_SESSION['rank'] >= 5) {
-							$prenom = $line['name']; $nom = "?"; $qualite = "?";
+							$prenom = $line['name']; $nom = "?"; $qualite = "?"; $title = $line['title'];
 							$defauts = "?"; $sd = "Non définis"; $caractere = "?";
 							switch ($_POST['race']) {
 								case 0 : $race = $line['race']; break; case 1: $race = "Elfe"; break; case 1: $race = "Elfe"; break; case 2: $race = "Ernelien"; break;
@@ -131,7 +131,7 @@
 											</select>
 									</td>
 									<td>
-										<label>Titre :</label> <input type="text" name"titre" value="<?= $line['title']?>" />
+										<label>Titre :</label> <input type="text" name"titre" id="titre" value="<?= $line['title']?>" />
 									</td>
 								</tr>
 								<tr>
