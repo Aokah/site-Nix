@@ -1351,9 +1351,9 @@
 				{
 				?>
 			<tr>
-				<td>
+				<td colspan="2">
 					<h3>Validation du Background</h3>
-					<p style="color:red;">
+					<p style="color:red; font-style: bolt;">
 						Votre background porte actuellement la validation de <?= $bgline['title']?> <?=$bgline['name']?>, si vous le modifiez, vil perdra sa validité.<br />
 						Il faudra donc le faire vérifier à nouveau par un Maître du Jeu.
 					</p>
