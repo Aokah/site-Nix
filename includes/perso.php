@@ -50,6 +50,7 @@
 							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
 							$update->execute(array($prenom, $nom, $race, $title, $qualite, $defauts, $sd, $caractere, $perso));
 							echo '<p>Modifications des informations personnelles effectuées avec succès</p>';
+							echo $title; 
 								?>
 								<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 								<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
