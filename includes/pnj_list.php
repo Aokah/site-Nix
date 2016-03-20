@@ -55,7 +55,7 @@
 				<tr>
 					<td><p>Qualités :</p><p><?= $line['qualite']?></p></td>
 																<td style="vertical-align: top;" colspan="4" rowspan="5" width="100%" ><p>Histoire : </p>
-																<p><?= $line['bg']?><p> </td>
+																<p><?php echo $bg; ?><p> </td>
 				</tr>
 				<tr>
 					<td><p>Défaults :</p><p><?= $line['defauts']?></p></td>
