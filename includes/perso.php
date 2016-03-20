@@ -20,6 +20,20 @@
 
 	if (isset($_GET['perso']))
 	{
+		if ($_SESSION['rank'] < 6)
+		{
+		$perso = intval($_GET['perso']);
+		$page = $db->prepare('SELECT * FROM members WHERE id= ? AND rank < 8');
+		$page->execute(array($perso));
+		}
+		else
+		{
+		$perso = intval($_GET['perso']);
+		$page = $db->prepare('SELECT * FROM members WHERE id= ?');
+		$page->execute(array($perso));
+		}
+		if ($line = $page->fetch()) {
+		
 		if (isset($_GET['modif']))
 		{
 			$perso = intval($_GET['perso']);
@@ -974,6 +988,13 @@
 	<?php
 	}
 		}
+	} else 
+	{
+	?>
+	<h2>Compte vérouillé</h2>
+	<p>Vous ne pouvez pas visionner les pages des PNJs de rang trop élevés.</p>
+	<?php
+	}
 	}
 	else
 	{
