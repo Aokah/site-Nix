@@ -334,6 +334,15 @@ textarea {
    top: -80px;
    left: 50px;
 }
+.validerbg
+{
+	color: red;
+}
+.validerbg:hover
+{
+	color: white;
+	text-shadow: 1px 1px 1px #555555;
+}
 
 .del_form {
 	display: inline;
