@@ -158,7 +158,7 @@
   				if(!empty($_POST['sd'])) { $sd = htmlentities($_POST['sd']); }
   				if(!empty($_POST['element'])) { $element = htmlentities($_POST['element']); }
   				if(!empty($_POST['qualite'])) { $qualite = htmlentities($_POST['qualite']); }
-  				if(!empty($_POST['defaut'])) { $defaut = htmlentities($_POST['defaut']); }
+  				if(!empty($_POST['default'])) { $defaut = htmlentities($_POST['default']); }
   				if(!empty($_POST['event'])) { $event = htmlentities($_POST['event']); }
   				if(!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
   				if(!empty($_POST['equipement'])) { $equipement = htmlentities($_POST['equipement']); }
