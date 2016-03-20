@@ -1050,6 +1050,10 @@
 					$editbg = (htmlentities($_POST['editbg']));
 					$update = $db->prepare('UPDATE members SET background = ?, valid_bg = 0 WHERE id = ?');
 					$update->execute(array($editbg, $_SESSION['id']));
+					?>
+					<p>Modifications du BackGround effectuées !</p>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+					<?php
 				}
 			}
 			elseif ($_GET['valid'] == "jdesc")
@@ -1059,6 +1063,10 @@
 					$edithrp = (htmlentities($_POST['edithrp']));
 					$update = $db->prepare('UPDATE members SET bg_hrp = ? WHERE id = ?');
 					$update->execute(array($edithrp, $_SESSION['id']));
+					?>
+					<p>Modifications de la description joueur effectuées !</p>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+					<?php
 				}
 				
 			}
@@ -1069,6 +1077,10 @@
 					$editnotes = (htmlentities($_POST['editnotes']));
 					$update = $db->prepare('UPDATE members SET notes_perso = ? WHERE id = ?');
 					$update->execute(array($editnotes, $_SESSION['id']));
+					?>
+					<p>Modifications des notes personnelles effectuées !</p>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+					<?php
 				}
 			}
 			else { echo '<p>Euh... Non ? On fouille pas le site voyons~ .</p>'; }
