@@ -990,7 +990,7 @@
 			{
 			?>
 			<h3>Edition du BackGround Roleplay</h3>
-			<form action='index?p=perso' method="POST">
+			<form action='index?p=perso&valid=bg' method="POST">
 				<textarea name="editbg"><?= $line['background']?></textarea>
 				<input type="submit" name=save_bg value="Terminer" />
 			</form>
@@ -1000,7 +1000,7 @@
 			{
 			?>
 			<h3>Edition des Notes Personnelles</h3>
-			<form action='index?p=perso' method="POST">
+			<form action='index?p=perso&valid=notesp' method="POST">
 				<textarea name="editnotes"><?= $line['notes_perso'] ?></textarea>
 				<input type="submit" name=save_notes value="Terminer" />
 			</form>
@@ -1010,7 +1010,7 @@
 			{
 			?>
 			<h3>Edition de la Description du Joueur</h3>
-			<form action='index?p=perso' method="POST">
+			<form action='index?p=perso&valid=jdesc' method="POST">
 				<textarea name="edithrp"><?= $line['bg_hrp'] ?></textarea>
 				<input type="submit" name=save_hrp value="Terminer" />
 			</form>
@@ -1018,6 +1018,38 @@
 			}
 			else { echo '<p>Tu n\'essaieraies pas de chercher là où tu ne devrais pas aller ? :P</p>'; }
 		}
+		}
+	elseif (isset($_GET['valid']))
+		{
+			if ($_GET6['valid'] == "bg")
+			{
+				if (isset($_POST['save_bg']))
+				{
+					$editbg = (htmlentities($_POST['editbg']));
+					$update = $db->prepare('UPDATE members SET background = ?, valid_bg = 0 WHERE id = ?');
+					$update->execute(array($editbg, $_SESSION['id']));
+				}
+			}
+			elseif ($_GET['valid'] == "jdesc")
+			{
+				if (isset($_POST['save_hrp']))
+				{
+					$edithrp = (htmlentities($_POST['edithrp']));
+					$update = $db->prepare('UPDATE members SET bg_hrp = ? WHERE id = ?');
+					$update->execute(array($edithrp, $_SESSION['id']));
+				}
+				
+			}
+			elseif ($_GET['valid'] == "notesp")
+			{
+				if (isset($_POST['save_notes']))
+				{
+					$editnotes = (htmlentities($_POST['editnotes']));
+					$update = $db->prepare('UPDATE members SET notes_perso = ? WHERE id = ?');
+					$update->execute(array($editnotes, $_SESSION['id']));
+				}
+			}
+			else { echo '<p>Euh... Non ? On fouille pas le site voyons~ .</p>'; }
 		}
 	elseif (isset($_GET['edit']))
 		{
@@ -1308,21 +1340,6 @@
 		}
 	else
 		{
-		if (isset($_POST['save_bg'])) {
-			$editbg = (htmlentities($_POST['editbg']));
-			$update = $db->prepare('UPDATE members SET background = ?, valid_bg = 0 WHERE id = ?');
-			$update->execute(array($editbg, $_SESSION['id']));
-		}
-		if (isset($_POST['save_notes'])) {
-			$editnotes = (htmlentities($_POST['editnotes']));
-			$update = $db->prepare('UPDATE members SET notes_perso = ? WHERE id = ?');
-			$update->execute(array($editnotes, $_SESSION['id']));
-		}
-		if (isset($_POST['save_hrp'])) {
-			$edithrp = (htmlentities($_POST['edithrp']));
-			$update = $db->prepare('UPDATE members SET bg_hrp = ? WHERE id = ?');
-			$update->execute(array($edithrp, $_SESSION['id']));
-		}
 		if ($line = $perso->fetch()) {
 		$magieok = 'Non acquise';
 		if ($line['magieok'] == 1) { $magietest = true; }
