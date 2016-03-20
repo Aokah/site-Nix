@@ -156,8 +156,8 @@
 	<td>"La vérité est la croyance du naïf !"</td>
 	</tr>
 	<tr class="memberbg_4">
-	<td><img src="pics/staff_team/Diablox_Modo_3.png" alt="Modérateur Mephisto" /></td>
-	<td><span style="color:green">Méphisto</span><br />16 ans<br />France<br />"l'Ours"</td>
+	<td><img src="pics/staff_team/Diablox_Modo_3.png" alt="Modérateur Matsuya" /></td>
+	<td><span style="color:green">Matsuya</span><br />16 ans<br />France<br />"l'Ours"</td>
 	<td> </td>
 	</tr>
 	<tr class="memberbg_4">
