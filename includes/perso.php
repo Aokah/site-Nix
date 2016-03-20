@@ -680,7 +680,8 @@
 						</tbody>
 					</table>
 				</td>
-				<td valign="top" width="50%" rowspan="3">
+				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; } ?>
+				<td valign="top" width="50%" rowspan="<?php echo $span; ?>">
 					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
@@ -1418,7 +1419,8 @@
 						</tbody>
 					</table>
 				</td>
-				<td valign="top" width="50%" rowspan="3">
+				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; } ?>
+				<td valign="top" width="50%" rowspan="<?php echo $span; ?>">
 					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
