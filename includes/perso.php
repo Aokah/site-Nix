@@ -1043,7 +1043,7 @@
 		}
 	elseif (isset($_GET['valid']))
 		{
-			if ($_GET6['valid'] == "bg")
+			if ($_GET['valid'] == "bg")
 			{
 				if (isset($_POST['save_bg']))
 				{
