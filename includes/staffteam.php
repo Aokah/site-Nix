@@ -15,11 +15,6 @@
 	<td>"Rien n'est impossible, quand nous ne sommes pas seul."</td>
 	</tr>
 	<tr class="memberbg_7">
-	<td><img src="pics/staff_team/Balka_MJ_1.png" alt="Opérateur Balka" /></td>
-	<td><span style="color:red">Balka</span><br />15 ans<br />France<br />"Biscotte"</td>
-	<td>"Finissons comme nous avons commencé , ensemble !"</td>
-	</tr>
-	<tr class="memberbg_7">
 	<td><img src="pics/staff_team/Eftarthadeth_OP_1.png" alt="Opérateur Eftarthadeth" /></td>
 	<td><span style="color:red">Eftarthadeth</span><br />18 ans<br />Normandie, France</td>
 	<td>"Il n'y a si petit buisson qui ne porte son ombre, ceci est l'adéquation entre la réalité et l'Homme qui la pense."</td>
@@ -67,6 +62,16 @@
 	<th class="member_top">Modérateurs</th>
 	
 	<tr class="memberbg_5">
+	<td><img src="pics/staff_team/Artemis_Modo_1.png" alt="Modérateur Artemis" /></td>
+	<td><span style="color:green">Artemis</span><br />France<br /></td>
+	<td>"No pasaran !"</td>
+	</tr>
+	<tr class="memberbg_5">
+	<td><img src="pics/staff_team/Niyo_Modo_1.png" alt="Modérateur Niyo" /></td>
+	<td><span style="color:green">Niyo</span><br />France<br /></td>
+	<td></td>
+	</tr>
+	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Zimon_Modo_1.png" alt="Modérateur Zimon" /></td>
 	<td><span style="color:green">Zimon</span><br />15 ans<br />Toulouse, France<br />"Le roux"</td>
 	<td>"No pasaran !"</td>
@@ -90,6 +95,11 @@
 	<td><img src="pics/staff_team/Anateh_MJ_1.png" alt="Dignitaire Anateh" /></td>
 	<td><span style="color:red">Anateh</span><br />14 ans<br />Paris, France<br />"Norowette"</td>
 	<td>"Quand le masque tombe, le démon entre en scène"</td>
+	</tr>
+	<tr class="memberbg_6">
+	<td><img src="pics/staff_team/Balka_MJ_1.png" alt="Opérateur Balka" /></td>
+	<td><span style="color:red">Balka</span><br />15 ans<br />France<br />"Biscotte"</td>
+	<td>"Finissons comme nous avons commencé , ensemble !"</td>
 	</tr>
 	<tr class="memberbg_6">
 	<td><img src="pics/staff_team/Langa_MJ_1.png" alt="Dignitaire Langä" /></td>
