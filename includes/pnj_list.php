@@ -4,7 +4,7 @@
   
   if ($_SESSION['connected']) { 
 
-	if ($_SESSION['rank'] >= 6) {
+	if ($_SESSION['rank'] >= 5) {
 		
 	  if (isset($_GET['pnj']))
 	  {
