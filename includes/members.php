@@ -28,7 +28,7 @@
 				case 4: $linename = "Encadrants"; break; case 3 : $linename = "Joueurs Investis"; break; case 2 : $linename = "Joueurs"; break;
 				case 1: $linename = "Nouveaux"; break;
 			}
-			if ($linerank == 10) { $imgrank = "Crea"; } elseif ($linerank == 9) { $imgrank = "Titan"; } else { $imgrank = $linerank; }
+			if ($linerank == 10) { $imgrank = "crea"; } elseif ($linerank == 9) { $imgrank = "titan"; } else { $imgrank = $linerank; }
 			switch ($line['magie_rank'])
 			{
 				case 0: $level = "Profane"; break; case 1:$level = "Adepte"; break; case 2: $level = "Apprenti Magicien"; break;
