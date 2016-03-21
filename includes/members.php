@@ -30,7 +30,7 @@
 				case 9: $level = "Suprême"; break;
 			}
 			
-			$page = $db->prepare('SELECT * FROM members WHERE rank == ? ORDER BY name ASC');
+			$page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC');
 			$page->execute(array($linerank));
 			?>
 			<tr>
