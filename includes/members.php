@@ -39,6 +39,8 @@
 				<th>BG</th>
 				<th>Spé'</th>
 				<th>Niv'</th>
+				<th>Sorts</th>
+				<th>Msg</th>
 			</tr>
 			<?php while ($line = $page->fetch()) { 
 			
@@ -46,7 +48,12 @@
 			$validbg = ($line['valid_bg'] == 1) ? 'on' : 'off';
 			$title = ($line['pionier'] == 1) ? 'Pionier' : $line['title'];
 			$title = ($line['ban'] == 1) ? 'Banni' : $line['title'];
-			$title = ($line['removed'] == 1) ? 'Oublié' : $line['title'];?>
+			$title = ($line['removed'] == 1) ? 'Oublié' : $line['title'];
+			$incan = $db->prepare('SELECT COUNT(*) AS sorts FROM incan_get WHERE user_id = ?');
+			$incan->execute(array($line['id'])); $incan = $incan->fetch();
+			$fofo = $db->prepare('SELECT COUNT(*) AS msg FROM forum_post WHERE user_id = ?');
+			$fofo->execute(array($line['id'])); $fofo = $fofo->fetch();
+			?>
 			<tr>
 				<td>
 					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
@@ -62,6 +69,12 @@
 				</td>
 				<td>
 					<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" title="Niveau <?php echo $level ;?>" />
+				</td>
+				<td>
+					<?= $incan['sorts']?>
+				</td>
+				<td>
+					<?= $fofo['msg']?>
 				</td>
 			</tr>
 			<?php
