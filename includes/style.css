@@ -165,7 +165,7 @@ li.navbg:hover {
 
 .memberbg_10
 {
-	background-color: #101010;
+	background-color: #202020;
 	color: #ffffff;
 }
 .memberbg_10 a
@@ -177,10 +177,9 @@ li.navbg:hover {
 	color:yellow;
 }
 
-.memberbg_9	{	background-color: #202020;	}
-.memberbg_8	{	background-color: #303030;	}
-.memberbg_7	{	background-color: #404040;	}
-.memberbg_pnj {		background-color: #505050;	}
+.memberbg_9	{	background-color: #303030;	}
+.memberbg_8	{	background-color: #404040;	}
+.memberbg_7	{	background-color: #505050;	}
 .memberbg_6	{	background-color: #606060;	}
 .memberbg_5	{	background-color: #707070;	}
 .memberbg_4	{	background-color: #808080;	}
