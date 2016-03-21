@@ -6,6 +6,8 @@
 	elseif ($_SESSIOON['rank'] == 5) { $ranklimit = 8; } else { $ranklimit = 7; }
 	
 	?>
+	<h2>Les Membres</h2>
+	<h3 style="color:red;">Maintenance en cours. . .</h3>
 	<table>
 		<tbody>
 	<?php
