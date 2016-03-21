@@ -62,19 +62,19 @@
 				<td>
 					<?php echo $title; ?> <?php echo $pnj;?>
 				</td>
-				<td>
+				<td style="text-align:center;">
 					<img src="pics/valid_bg_<?php echo $validbg;?>.gif" alt="" title="<?php echo $bgmsg; ?>" width="30" />
 				</td>
-				<td>
+				<td style="text-align:center;">
 					<img src="pics/magie/Magie_<?= $line['specialisation']?>.png" width="30" alt="" class="magie_type" title="<?= $line['specialisation']?>"/> / <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" width="30" alt="" title="<?= $line['spe_2']?>" class="magie_type" />
 				</td>
-				<td>
+				<td style="text-align:center;">
 					<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" title="Niveau <?php echo $level ;?>" />
 				</td>
-				<td>
+				<td style="text-align:center;">
 					<?= $incan['sorts']?>
 				</td>
-				<td>
+				<td style="text-align:center;">
 					<?= $fofo['msg']?>
 				</td>
 			</tr>
