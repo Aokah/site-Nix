@@ -21,7 +21,6 @@
 				case 4: $linename = "Encadrants"; break; case 3 : $linename = "Joueurs Investis"; break; case 2 : $linename = "Joueurs"; break;
 				case 1: $linename = "Nouveaux"; break;
 			}
-			if ($linerank == 10) { $imgrank = "crea"; } elseif ($linerank == 9) { $imgrank = "titan"; } else { $imgrank = $linerank; }
 			switch ($line['magie_rank'])
 			{
 				case 0: $level = "Profane"; break; case 1:$level = "Adepte"; break; case 2: $level = "Apprenti Magicien"; break;
@@ -54,8 +53,9 @@
 			$fofo = $db->prepare('SELECT COUNT(*) AS msg FROM forum_post WHERE user_id = ?');
 			$fofo->execute(array($line['id'])); $fofo = $fofo->fetch();
 			$pnj = ($line['pnj'] == 1) ? '(PNJ)' : '';
-			$imgrank = ($line['ban'] == 1) ? 'ban' : $imgrank;
-			$imgrank = ($line['removed'] == 1) ? 'del' : $imgrank; 
+			if ($linerank == 10) { $imgrank = "crea"; } elseif ($linerank == 9) { $imgrank = "titan"; } else { $imgrank = $linerank; }
+			$imgrank = ($line['ban'] == 1) ? 'ban' : $line['rank'];
+			$imgrank = ($line['removed'] == 1) ? 'del' : $line['rank']; 
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
 				<td>
