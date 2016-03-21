@@ -5,15 +5,6 @@
 	if ($_SESSION['rank'] >= 7) { $ranklimit = 10; } elseif ($_SESSION['rank'] == 6) { $ranklimit = 9;}
 	elseif ($_SESSIOON['rank'] == 5) { $ranklimit = 8; } else { $ranklimit = 7; }
 	
-	if (isset($_GET['search']))
-	{
-		$search = intval($_GET['search']);
-	}
-	else
-	{
-		$page = $db->prepare('SELECT * FROM members WHERE rank >= ? ORDER BY rank DESC, name ASC');
-		$page->execute(array($ranklimit));
-	}
 	?>
 	<table>
 		<tbody>
@@ -21,6 +12,15 @@
 	$linerank = $ranklimit;
 	while ($linerank >= 1)
 	{
+		if (isset($_GET['search']))
+		{
+			$search = intval($_GET['search']);
+		}
+		else
+		{
+			$page = $db->prepare('SELECT * FROM members WHERE rank >= ? ORDER BY rank DESC, name ASC');
+			$page->execute(array($ranklimit));
+		}
 			switch ($linerank)
 			{
 				case 10 : $linename = "Consciences"; break; case 9 : $linename = "Titans"; break; case 8: $linename = "Dieux"; break;
