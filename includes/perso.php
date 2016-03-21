@@ -237,14 +237,14 @@
 									</td>
 									<td>
 										<?php if ($line['magie_rank'] < 7) { ?>
-										<input type="number" name"e-magie" min="0" step="1" value="<?= $line['E_magique']?>" max="<?php echo $maxmagie; ?>"></code> <?php } else { ?>
+										<input type="number" name="e-magie" min="0" step="1" value="<?= $line['E_magique']?>" max="<?php echo $maxmagie; ?>"></code> <?php } else { ?>
 										<?php echo $overmagie; }?>
 									</td>
 									<td>
 										Energie Vitale :
 									</td>
 									<td>
-										<input type="number" name"e-vie" min="0" step="1"  value="<?= $line['E_vitale']?>" max="200"></code>
+										<input type="number" name="e-vie" min="0" step="1"  value="<?= $line['E_vitale']?>" max="200"></code>
 									</td>
 									<td>
 										<input type="submit" name="valid" />
