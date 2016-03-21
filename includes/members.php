@@ -5,7 +5,6 @@
 	if ($_SESSION['rank'] >= 7) { $ranklimit = 10; } elseif ($_SESSION['rank'] == 6) { $ranklimit = 9;}
 	elseif ($_SESSIOON['rank'] == 5) { $ranklimit = 8; } else { $ranklimit = 7; }
 	
-	$total = $db->exec('SELECT COUNT(*) AS cons FROM rank > 0 AND pnj = 1'); $total = $total->fetch();
 	$op = $db->exec('SELECT COUNT(*) AS op FROM rank = 7'); $op = $op->fetch();
 	$mj = $db->exec('SELECT COUNT(*) AS mj FROM rank = 6'); $mj = $mj->fetch();
 	$modo = $db->exec('SELECT COUNT(*) AS dieu FROM rank = 5'); $modo = $modo->fetch();
