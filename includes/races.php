@@ -33,5 +33,6 @@
 
 	<h4 style="clear: both;">Les Zaknafeins</h4>
 	<p>Êtres humanoïdes hypersensibles aux rayons UV, les Zaknafein ont su rester dans les diverses histoires commes des personnes de haute responsabilité depuis la nuit des temps, toujours à chercher un moyen d'éviter les conflits et d'un sens de la diplomatie pointu, jouer ce personnage reviendra à jouer un personnage calme et réfléchis.
-	<br /><span style="color:red;">Pmour obtenir cette race, il vous faudra adresser un MP à Nikho avec vos motivations afin d'ionterpréter cette races au psyché complexe et montrer l'étendu de votre vocabulaire qui, pour cette race, est cruciale.</span></p>
+	<br /><span style="color:red;">Pour obtenir cette race, il vous faudra adresser un MP à Nikho avec vos motivations afin d'ionterpréter cette races au psyché complexe et montrer l'étendu de votre vocabulaire qui, pour cette race, est cruciale.</span></p>
+	</div>
 	<?php } ?>
