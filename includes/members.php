@@ -31,7 +31,6 @@
 			
 			$page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC');
 			$page->execute(array($linerank));
-			if ($linerank == 10) { $imgrank = "crea"; } elseif ($linerank == 9) { $imgrank = "titan"; } else { $imgrank = $linerank; }
 			?>
 			<tr class="member_top">
 				<th><?php echo $linename; ?></th>
@@ -55,6 +54,7 @@
 			$pnj = ($line['pnj'] == 1) ? '(PNJ)' : '';
 			$imgrank = ($line['ban'] == 1) ? 'ban' : $line['rank'];
 			$imgrank = ($line['removed'] == 1) ? 'del' : $line['rank']; 
+			if ($linerank == 10) { $imgrank = "crea"; } elseif ($linerank == 9) { $imgrank = "titan"; } else { $imgrank = $linerank; }
 			$filename = 'pics/avatar/miniskin_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
