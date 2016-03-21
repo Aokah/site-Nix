@@ -50,7 +50,7 @@
 			</tr>
 			<tr>
 				<td>
-					<img src="pics/rank<?php echo $linerank; ?>.png" alt="" width="27" /> <img src="pics/avatar/miniskin_<?= $line['id'?>.png" alt="" /> <?= $line['name']?>
+					<img src="pics/rank<?php echo $linerank; ?>.png" alt="" width="27" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
 				</td>
 				<td>
 					<?php echo $title; ?>
