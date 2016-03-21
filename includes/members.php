@@ -31,6 +31,7 @@
 			
 			$page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC');
 			$page->execute(array($linerank));
+			if ($linerank == 10) { $imgrank = "crea"; } elseif ($linerank == 9) { $imgrank = "titan"; } else { $imgrank = $linerank; }
 			?>
 			<tr class="member_top">
 				<th><?php echo $linename; ?></th>
@@ -52,7 +53,6 @@
 			$fofo = $db->prepare('SELECT COUNT(*) AS msg FROM forum_post WHERE user_id = ?');
 			$fofo->execute(array($line['id'])); $fofo = $fofo->fetch();
 			$pnj = ($line['pnj'] == 1) ? '(PNJ)' : '';
-			if ($linerank == 10) { $imgrank = "crea"; } elseif ($linerank == 9) { $imgrank = "titan"; } else { $imgrank = $linerank; }
 			if ($line['ban'] == 1) { $imgrank = 'ban' ; }
 			if ($line['removed'] == 1) { $imgrank = 'del' ; } 
 			$filename = 'pics/avatar/miniskin_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
