@@ -53,13 +53,14 @@
 			$incan->execute(array($line['id'])); $incan = $incan->fetch();
 			$fofo = $db->prepare('SELECT COUNT(*) AS msg FROM forum_post WHERE user_id = ?');
 			$fofo->execute(array($line['id'])); $fofo = $fofo->fetch();
+			$pnj = ($line['pnj'] == 1) ? '(PNJ)' : '';
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>">
 				<td>
 					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
 				</td>
 				<td>
-					<?php echo $title; ?>
+					<?php echo $title; ?> <?php echo $pnj;?>
 				</td>
 				<td>
 					<img src="pics/valid_bg_<?php echo $validbg;?>.gif" alt="" title="<?php echo $bgmsg; ?>" width="30" />
