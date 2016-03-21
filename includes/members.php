@@ -54,6 +54,8 @@
 			$fofo = $db->prepare('SELECT COUNT(*) AS msg FROM forum_post WHERE user_id = ?');
 			$fofo->execute(array($line['id'])); $fofo = $fofo->fetch();
 			$pnj = ($line['pnj'] == 1) ? '(PNJ)' : '';
+			$rank = ($line['ban'] == 1) ? 'ban' : $imgrank;
+			$rank = ($line['removed'] == 1) ? 'del' : $imgrank; 
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
 				<td>
