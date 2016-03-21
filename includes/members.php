@@ -20,9 +20,7 @@
 	<?php
 	$linerank = $ranklimit;
 	while ($linerank >= 1)
-	{	
-		if ($line = $page->fetch())
-		{
+	{
 			switch ($linerank)
 			{
 				case 10 : $linename = "Consciences"; break; case 9 : $linename = "Titans"; break; case 8: $linename = "Dieux"; break;
@@ -66,7 +64,6 @@
 			echo '<p>Tableau du rang '. $linerank .' ('. $linename .').</p>';
 			$linerank--;
 		}
-		else { echo '<p>Une erreur s\'est produite.</p>'; }
 	}
 	?>
 		</tbody>
