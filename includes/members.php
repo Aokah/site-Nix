@@ -5,13 +5,13 @@
 	if ($_SESSION['rank'] >= 7) { $ranklimit = 10; } elseif ($_SESSION['rank'] == 6) { $ranklimit = 9;}
 	elseif ($_SESSIOON['rank'] == 5) { $ranklimit = 8; } else { $ranklimit = 7; }
 	
-	$op = $db->exec('SELECT COUNT(*) AS op FROM members WHERE rank = 7'); $op = $op->fetch();
-	$mj = $db->exec('SELECT COUNT(*) AS mj FROM members WHERE rank = 6'); $mj = $mj->fetch();
-	$modo = $db->exec('SELECT COUNT(*) AS dieu FROM members WHERE rank = 5'); $modo = $modo->fetch();
-	$enca = $db->exec('SELECT COUNT(*) AS op FROM members WHERE rank = 4'); $enca = $enca->fetch();
-	$jplus = $db->exec('SELECT COUNT(*) AS mj FROM members WHERE rank = 3'); $jplus = $jplus->fetch();
-	$joueur = $db->exec('SELECT COUNT(*) AS dieu FROM members WHERE rank = 2'); $joueur = $joueur->fetch();
-	$new = $db->exec('SELECT COUNT(*) AS op FROM members WHERE rank = 1'); $new = $new->fetch();
+//	$op = $db->exec('SELECT COUNT(*) AS op FROM members WHERE rank = 7'); $op = $op->fetch();
+//	$mj = $db->exec('SELECT COUNT(*) AS mj FROM members WHERE rank = 6'); $mj = $mj->fetch();
+//	$modo = $db->exec('SELECT COUNT(*) AS dieu FROM members WHERE rank = 5'); $modo = $modo->fetch();
+//	$enca = $db->exec('SELECT COUNT(*) AS op FROM members WHERE rank = 4'); $enca = $enca->fetch();
+//	$jplus = $db->exec('SELECT COUNT(*) AS mj FROM members WHERE rank = 3'); $jplus = $jplus->fetch();
+//	$joueur = $db->exec('SELECT COUNT(*) AS dieu FROM members WHERE rank = 2'); $joueur = $joueur->fetch();
+//	$new = $db->exec('SELECT COUNT(*) AS op FROM members WHERE rank = 1'); $new = $new->fetch();
 	
 	?>
 	<h2>Les Membres</h2>
