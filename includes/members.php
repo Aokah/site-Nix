@@ -56,10 +56,12 @@
 			if ($linerank == 10) { $imgrank = "crea"; } elseif ($linerank == 9) { $imgrank = "titan"; } else { $imgrank = $linerank; }
 			$imgrank = ($line['ban'] == 1) ? 'ban' : $line['rank'];
 			$imgrank = ($line['removed'] == 1) ? 'del' : $line['rank']; 
+			$filename = 'pics/avatar/miniskin' .$line['id']. '.png';
+			$skin = (file_exists($filename)) ? $line['id'] : 'no';
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
 				<td>
-					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <a href="index?p=perso&perso=<?= $line['id']?>"><?= $line['name']?></a>
+					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?php echo $skin;?>.png" alt="" /> <a href="index?p=perso&perso=<?= $line['id']?>"><?= $line['name']?></a>
 				</td>
 				<td>
 					<?php echo $title; ?> <?php echo $pnj;?>
