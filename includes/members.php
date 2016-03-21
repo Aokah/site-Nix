@@ -31,6 +31,7 @@
 			
 			$page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC');
 			$page->execute(array($linerank));
+			if ($linerank == 10) { $imgrank = "crea"; } elseif ($linerank == 9) { $imgrank = "titan"; } else { $imgrank = $linerank; }
 			?>
 			<tr class="member_top">
 				<th><?php echo $linename; ?></th>
@@ -42,7 +43,6 @@
 				<th>Msg</th>
 			</tr>
 			<?php while ($line = $page->fetch()) { 
-			
 			$bgmsg = ($line['valid_bg'] == 1) ? 'BackGround RolePlay validé par le Staff' : 'BackGround en cours d\'écriture...';
 			$validbg = ($line['valid_bg'] == 1) ? 'on' : 'off';
 			$title = ($line['pionier'] == 1) ? 'Pionier' : $line['title'];
@@ -53,15 +53,13 @@
 			$fofo = $db->prepare('SELECT COUNT(*) AS msg FROM forum_post WHERE user_id = ?');
 			$fofo->execute(array($line['id'])); $fofo = $fofo->fetch();
 			$pnj = ($line['pnj'] == 1) ? '(PNJ)' : '';
-			if ($linerank == 10) { $imgrank = "crea"; } elseif ($linerank == 9) { $imgrank = "titan"; } else { $imgrank = $linerank; }
 			$imgrank = ($line['ban'] == 1) ? 'ban' : $line['rank'];
 			$imgrank = ($line['removed'] == 1) ? 'del' : $line['rank']; 
-			$filename = 'pics/avatar/miniskin' .$line['id']. '.png';
-			$skin = (file_exists($filename)) ? $line['id'] : 'no';
+			$filename = 'pics/avatar/miniskin_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
 				<td>
-					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?php echo $skin;?>.png" alt="" /> <a href="index?p=perso&perso=<?= $line['id']?>"><?= $line['name']?></a>
+					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?php echo $img;?>.png" alt="" /> <a href="index?p=perso&perso=<?= $line['id']?>"><?= $line['name']?></a>
 				</td>
 				<td>
 					<?php echo $title; ?> <?php echo $pnj;?>
