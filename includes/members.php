@@ -28,6 +28,7 @@
 				case 4: $linename = "Encadrants"; break; case 3 : $linename = "Joueurs Investis"; break; case 2 : $linename = "Joueurs"; break;
 				case 1: $linename = "Nouveaux"; break;
 			}
+			if ($linerank == 10) { $imgrank = "Crea"; } elseif ($linerank == 9) { $imgrank = "Titan"; } else { $imgrank = $linerank; }
 			switch ($line['magie_rank'])
 			{
 				case 0: $level = "Profane"; break; case 1:$level = "Adepte"; break; case 2: $level = "Apprenti Magicien"; break;
@@ -45,7 +46,7 @@
 			</tr>
 			<tr>
 				<td>
-					<img src="pics/rank<?php echo $linerank; ?>.png" alt="" width="27" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
+					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="27" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
 				</td>
 				<td>
 					<?php echo $title; ?>
@@ -61,7 +62,6 @@
 				</td>
 			</tr>
 			<?php
-			echo '<p>Tableau du rang '. $linerank .' ('. $linename .').</p>';
 			$linerank--;
 		}
 	?>
