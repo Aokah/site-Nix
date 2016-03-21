@@ -8,24 +8,21 @@
 	if (isset($_GET['search']))
 	{
 		$search = intval($_GET['search']);
-		$page = $db->prepare('SELECT * FROM members WHERE name = ? AND rank >= ? ORDER BY rank DESC, name ASC');
-		$page->execute(array($ranklimit, $search));
 	}
 	else
 	{
 		$page = $db->prepare('SELECT * FROM members WHERE rank >= ? ORDER BY rank DESC, name ASC');
 		$page->execute(array($ranklimit));
 	}
-	
-	if ($line = $page->fetch())
-	{
 	?>
-		<table>
-			<tbody>
-		<?php
-		$linerank = $ranklimit;
-		while ($linerank >= 1)
-		{	
+	<table>
+		<tbody>
+	<?php
+	$linerank = $ranklimit;
+	while ($linerank >= 1)
+	{	
+		if ($line = $page->fetch())
+		{
 			switch ($linerank)
 			{
 				case 10 : $linename = "Consciences"; break; case 9 : $linename = "Titans"; break; case 8: $linename = "Dieux"; break;
@@ -69,10 +66,11 @@
 			echo '<p>Tableau du rang '. $linerank .' ('. $linename .').</p>';
 			$linerank--;
 		}
-		?>
-			</tbody>
-		</table>
-	<?php
 	}
+	?>
+		</tbody>
+	</table>
+<?php
+
 	else { echo '<p>Une erreur s\'est produite.</p>'; }
 } ?>
