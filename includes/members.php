@@ -59,7 +59,7 @@
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
 				<td>
-					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
+					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <a href="index?p=perso&perso=<?= $line['id']?>"><?= $line['name']?></a>
 				</td>
 				<td>
 					<?php echo $title; ?> <?php echo $pnj;?>
@@ -68,7 +68,7 @@
 					<img src="pics/valid_bg_<?php echo $validbg;?>.gif" alt="" title="<?php echo $bgmsg; ?>" width="30" />
 				</td>
 				<td style="text-align:center;">
-					<img src="pics/magie/Magie_<?= $line['specialisation']?>.png" width="30" alt="" class="magie_type" title="<?= $line['specialisation']?>"/> / <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" width="30" alt="" title="<?= $line['spe_2']?>" class="magie_type" />
+					<img src="pics/magie/Magie_<?= $line['specialisation']?>.png" width="30" alt="" class="magie_type" title="Affinité Naturelle : <?= $line['specialisation']?>"/> / <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" width="30" alt="" title="Affinité Secondaire : <?= $line['spe_2']?>" class="magie_type" />
 				</td>
 				<td style="text-align:center;">
 					<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" title="Niveau <?php echo $level ;?>" />
