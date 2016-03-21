@@ -64,7 +64,6 @@
 			echo '<p>Tableau du rang '. $linerank .' ('. $linename .').</p>';
 			$linerank--;
 		}
-	}
 	?>
 		</tbody>
 	</table>
