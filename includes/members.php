@@ -66,11 +66,10 @@
 			echo '<p>Tableau du rang '. $linerank .' ('. $linename .').</p>';
 			$linerank--;
 		}
+		else { echo '<p>Une erreur s\'est produite.</p>'; }
 	}
 	?>
 		</tbody>
 	</table>
 <?php
-
-	else { echo '<p>Une erreur s\'est produite.</p>'; }
 } ?>
