@@ -62,7 +62,7 @@
 					<img src="pics/magie/Magie_<?= $line['specialisation']?>.png" alt="" class="magie" title="<?= $line['specialisation']?>"/> / <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" alt="" title="<?= $line['spe_2']?>" class="magie" />
 				</td>
 				<td>
-					<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" title="Niveau <?pgp echo $level ;?>" />
+					<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" title="Niveau <?php echo $level ;?>" />
 				</td>
 			</tr>
 			<?php
