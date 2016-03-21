@@ -8,7 +8,7 @@
 	?>
 	<h2>Les Membres</h2>
 	<h3 style="color:red;">Maintenance en cours. . .</h3>
-	<table>
+	<table cellspacing="0" cellpadding="0" width="100%">
 		<tbody>
 	<?php
 	$linerank = $ranklimit;
