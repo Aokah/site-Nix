@@ -32,12 +32,6 @@
 			
 			$page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC');
 			$page->execute(array($linerank));
-			
-			$bgmsg = ($line['valid_bg'] == 1) ? 'BackGround RolePlay validé par le Staff' : 'BackGround en cours d\'écriture...';
-			$validbg = ($line['valid_bg'] == 1) ? 'on' : 'off';
-			$title = ($line['pionier'] == 1) ? 'Pionier' : $line['title'];
-			$title = ($line['ban'] == 1) ? 'Banni' : $line['title'];
-			$title = ($line['removed'] == 1) ? 'Oublié' : $line['title'];
 			?>
 			<tr>
 				<th><?php echo $linename; ?></th>
@@ -46,7 +40,13 @@
 				<th>Spé'</th>
 				<th>Niv'</th>
 			</tr>
-			<?php while ($line = $page->fetch()) { ?>
+			<?php while ($line = $page->fetch()) { 
+			
+			$bgmsg = ($line['valid_bg'] == 1) ? 'BackGround RolePlay validé par le Staff' : 'BackGround en cours d\'écriture...';
+			$validbg = ($line['valid_bg'] == 1) ? 'on' : 'off';
+			$title = ($line['pionier'] == 1) ? 'Pionier' : $line['title'];
+			$title = ($line['ban'] == 1) ? 'Banni' : $line['title'];
+			$title = ($line['removed'] == 1) ? 'Oublié' : $line['title'];?>
 			<tr>
 				<td>
 					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
