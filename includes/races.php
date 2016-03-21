@@ -17,11 +17,11 @@
 	
 	<h4 style="clear: both;">Les Stromnoles</h4>
 	<p><a href="pics/base_Stromnole.png" style="float: left;" target=_blank /><img src="pics/skin_stromnole.gif" alt="Skin du Stromnole" title="Clique pour obtenir le skin" /></a></p>
-	<p class="tab">Une contrée mystérieuse et inhabitée s'est reveillé. Il s'agit du Volcan Stromnoli longtemps endormi, qui laissa il y a cent ans de cela, une grosse éruption, agrandissant ses contours de par le magma, et créant même des petites îles. Mais ce qui est le plus remarquable c'est surtout les Stronnoles. Des créatures humanoïdes rouges, semblant résister à la lave et à la chaleur. Elles ont fait surfaces après l'éruption du Stromnoli, beaucoup étudient cette race jusque là inconnues. Il faudra faire des recherches pour en savoir plus sur cette race extrêmement discrète.</p>
+	<p class="tab">Ces monstres de puissances dont personne ne peut avec certitude dater leur première apparition, résistant à toute chaleur, pouvant même nager dans la lave, beaucoup d'avantages physique, mais une faiblesse énorme et évidente : l'eau et le froid. Veillez à toujours avoir une source de chaluer avec vous et d'éviter les trop gros gels.</p>
 	
 	<h4 style="clear: both;">Les Orques</h4>
 	<p><a href="pics/base_Orque.png" style="float: left;" target=_blank /><img src="pics/skin_orque.gif" alt="Skin de l'Orque" title="Clique pour obtenir le skin" /></a></p>
-	<p class="tab">Les Orques vivent reclus dans Orsiclame, une région fermés et dictatoriale, et ne veulent pas conquérir le monde. Ils protègent quelque chose qu'ils gardent jalousement, mais il reste encore à découvrir quoi car ces guerriers redoutables ne laisseront personne entrer.</p>
+	<p class="tab">Créatures bestiales et sauvages, les Orques restent par toout temps des chasseurs et des bêtes dominantes, habitués aux climats doux ou tropicaux, ces monstres de muscles ont délaissé presque totalement la Magie pour se concentrer sur la chasse, un Orque Mage est quelque chose d'extrêmement rare et d'extrêmement mal vu par ses confrères.</p>
 	
 	<h4 style="clear: both;">Les Nains</h4>
 	<p><a href="pics/base_Nain.png" style="float: left;" target=_blank /><img src="pics/skin_nain.gif" alt="Skin du Nain" title="Clique pour obtenir le skin" /></a></p>
@@ -29,10 +29,9 @@
 	
 	<h4 style="clear: both;">Les Erneliens</h4>
 	<p><a href="pics/base_Ernelien.png" style="float: left;" target=_blank /><img src="pics/skin_ernelien.gif" alt="Skin de l'Ernelien" title="Clique pour obtenir le skin" /></a></p>
-	<p class="tab">Peu de choses sont connus des humains sur cette race bien étrange, mais pourtant l'esclavagisme est omniprésent, même en Nix. Les Erneliens sont une étranges communautés, Ils sont vert et ont une peau rigide, qui est semblable à des os, ils ont des os qui sortent de leurs coudes, de leurs genoux, ils ont des longues griffes, des dents acérés, et même des cornes, mais malheureusement, leurs corps est trop fragiles pour se battre, ils ne supportent pas les trops grosses température, ni les trop basses, ils ne peuvent supporter les endroits secs, et ont en plus un besoin d'humidité pour respirer et pour que la peau ne dessèche pas.</p>
+	<p class="tab">Créature reptilienne, les Erneliens ont reçu depuis l'aube de leur peuple une affinité nette avec la magie, peuple discret et sage, ces êtres ont su s'adapter aux différentes conditions cilimatiques, privilégiant toutefois les régions humides et fraiches afin que leurs écailles ne se fragilisent pas, la chaleur les rends cassante, ils possèdent également une ossature légèrement plus épaisse mais étrangement, plus fragile, à vous de découvrir pourquoi.</p>
 
 	<h4 style="clear: both;">Les Zaknafeins</h4>
-	<p>Très semblables aux humains, les Zaknafeins sont des bipèdes humanoïdes avec une peau pâle et une sensibilité à la lumière bien supérieure aux Humains, ce qui rend leur évolution compliquée en lieu ensoleillé,
-	personne n'est encore à ce jour capable de dire d'où une race telle que la leur trouve son origine.
-	<br /><span class="error">Il est pour le moment impossible de sélectionner cette race, sa déscription est là afin d'informer les joueurs, elle sera peut-être débloquée plus tard.</span></p>
+	<p>Êtres humanoïdes hypersensibles aux rayons UV, les Zaknafein ont su rester dans les diverses histoires commes des personnes de haute responsabilité depuis la nuit des temps, toujours à chercher un moyen d'éviter les conflits et d'un sens de la diplomatie pointu, jouer ce personnage reviendra à jouer un personnage calme et réfléchis.
+	<br /><span style="color:red;">Pmour obtenir cette race, il vous faudra adresser un MP à Nikho avec vos motivations afin d'ionterpréter cette races au psyché complexe et montrer l'étendu de votre vocabulaire qui, pour cette race, est cruciale.</span></p>
 	<?php } ?>
