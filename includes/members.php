@@ -32,6 +32,12 @@
 			
 			$page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC');
 			$page->execute(array($linerank));
+			
+			$bgmsg = ($line['valid_bg'] == 1) ? 'BackGround RolePlay validé par le Staff' : 'BackGround en cours d\'écriture...';
+			$validbg = ($line['valid_bg'] == 1) ? 'on' : 'off';
+			$title = ($line['pionier'] == 1) ? 'Pionier' : $line['title'];
+			$title = ($line['ban'] == 1) ? 'Banni' : $line['title'];
+			$title = ($line['removed'] == 1) ? 'Oublié' : $line['title'];
 			?>
 			<tr>
 				<th><?php echo $linename; ?></th>
@@ -49,7 +55,7 @@
 					<?php echo $title; ?>
 				</td>
 				<td>
-					BG
+					<img src="pics/valid_bg_<?php echo $validbg;?>.gif" alt="" title="<?php echo $bgmsg; ?>" width="30" />
 				</td>
 				<td>
 					<img src="pics/magie/Magie_<?= $line['specialisation']?>.png" width="30" alt="" class="magie_type" title="<?= $line['specialisation']?>"/> / <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" width="30" alt="" title="<?= $line['spe_2']?>" class="magie_type" />
