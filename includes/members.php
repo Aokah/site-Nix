@@ -33,7 +33,7 @@
 			$page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC');
 			$page->execute(array($linerank));
 			?>
-			<tr>
+			<tr class="member_top">
 				<th><?php echo $linename; ?></th>
 				<th>Titre</th>
 				<th>BG</th>
@@ -54,7 +54,7 @@
 			$fofo = $db->prepare('SELECT COUNT(*) AS msg FROM forum_post WHERE user_id = ?');
 			$fofo->execute(array($line['id'])); $fofo = $fofo->fetch();
 			?>
-			<tr>
+			<tr class="memberbg_<?php echo $linerank;?>">
 				<td>
 					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
 				</td>
