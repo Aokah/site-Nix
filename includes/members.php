@@ -29,6 +29,9 @@
 				case 6: $level = "Sage"; break; case 7: $level = "Divin"; break; case 8: $level = "Titanèsque"; break;
 				case 9: $level = "Suprême"; break;
 			}
+			
+			$page = $db->prepare('SELECT * FROM members WHERE rank == ? ORDER BY name ASC');
+			$page->execute(array($linerank));
 			?>
 			<tr>
 				<th><?php echo $linename; ?></th>
@@ -37,6 +40,7 @@
 				<th>Spé'</th>
 				<th>Niv'</th>
 			</tr>
+			<?php while ($line = $page->fetch()) { ?>
 			<tr>
 				<td>
 					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="27" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
@@ -55,6 +59,7 @@
 				</td>
 			</tr>
 			<?php
+			}
 			$linerank--;
 		}
 	?>
