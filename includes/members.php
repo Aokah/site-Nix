@@ -55,7 +55,7 @@
 			$fofo->execute(array($line['id'])); $fofo = $fofo->fetch();
 			$pnj = ($line['pnj'] == 1) ? '(PNJ)' : '';
 			?>
-			<tr class="memberbg_<?php echo $linerank;?>">
+			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
 				<td>
 					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
 				</td>
