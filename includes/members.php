@@ -43,7 +43,7 @@
 			<?php while ($line = $page->fetch()) { ?>
 			<tr>
 				<td>
-					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="27" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
+					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?= $line['id']?>.png" alt="" /> <?= $line['name']?>
 				</td>
 				<td>
 					<?php echo $title; ?>
@@ -52,7 +52,7 @@
 					BG
 				</td>
 				<td>
-					<img src="pics/magie/Magie_<?= $line['specialisation']?>.png" alt="" class="magie" title="<?= $line['specialisation']?>"/> / <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" alt="" title="<?= $line['spe_2']?>" class="magie" />
+					<img src="pics/magie/Magie_<?= $line['specialisation']?>.png" width="30" alt="" class="magie_type" title="<?= $line['specialisation']?>"/> / <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" width="30" alt="" title="<?= $line['spe_2']?>" class="magie_type" />
 				</td>
 				<td>
 					<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" title="Niveau <?php echo $level ;?>" />
