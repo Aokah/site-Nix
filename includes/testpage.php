@@ -23,9 +23,9 @@ global $_POST, $db, $_SESSION;
         elseif ($select['magie_rank'] == 6) { $limit = 500; } else { $limit = 0; }
         
         $dif = $select['E_magique'] + 30;
-        if ($dif < $limit) { echo 'ajout'; } else { echo 'pas d\'ajout';}
+        if ($dif < $limit) { echo 'ajout'; $ajout = $dif; echo $dif,'<br />';} else { echo 'pas d\'ajout';}
         
-        echo 'id = ', $id, '<br />PMs :' , $select['E_magique'], '<br />PVs :', $select['E_vitale'], '<br />level :' , $select['magie_rank'], '<br />';
+        
       }
     $id --;
   }
