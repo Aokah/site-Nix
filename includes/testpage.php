@@ -8,8 +8,6 @@ global $_POST, $db, $_SESSION;
   
   $id = $idmax;
   
-  $test = 5 - 10;
-  echo $test, '<br />';
   while ($id > 0)
   {
     echo $id,'<br />';
@@ -27,7 +25,10 @@ global $_POST, $db, $_SESSION;
         $add = $db->prepare('UPDATE members SET E_magique = ? WHERE id = ?');
         $add->execute(array($dif, $id));
         
-        
+        $diff = $select['E_vitale'] + 10;
+        if ($diff < 200) { $addvie = $diff; } else { $addvie = 0; }
+        $vie = $db->prepare('UPDATE members SET E_vitale = ? WHERE id = ?');
+        $vie->execute(array($diff, $id));
       }
     $id --;
   }
