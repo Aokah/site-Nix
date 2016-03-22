@@ -7,8 +7,8 @@
 	
 	$op = $db->query('SELECT COUNT(*) AS op FROM members WHERE rank = 7'); $op = $op->fetch();
 	$mj = $db->query('SELECT COUNT(*) AS mj FROM members WHERE rank = 6'); $mj = $mj->fetch();
-	$modo = $db->query('SELECT COUNT(*) AS dieu FROM members WHERE rank = 5'); $modo = $modo->fetch();
-	$enca = $db->query('SELECT COUNT(*) AS op FROM members WHERE rank = 4'); $enca = $enca->fetch();
+	$modo = $db->query('SELECT COUNT(*) AS modo FROM members WHERE rank = 5'); $modo = $modo->fetch();
+	$enca = $db->query('SELECT COUNT(*) AS enca FROM members WHERE rank = 4'); $enca = $enca->fetch();
 	$jplus = $db->query('SELECT COUNT(*) AS jplus FROM members WHERE rank = 3'); $jplus = $jplus->fetch();
 	$joueur = $db->query('SELECT COUNT(*) AS joueur FROM members WHERE rank = 2'); $joueur = $joueur->fetch();
 	$new = $db->query('SELECT COUNT(*) AS nex FROM members WHERE rank = 1'); $new = $new->fetch();
