@@ -59,9 +59,9 @@
 				}
 			$bgmsg = ($line['valid_bg'] == 1) ? 'BackGround RolePlay validé par le Staff' : 'BackGround en cours d\'écriture...';
 			$validbg = ($line['valid_bg'] == 1) ? 'on' : 'off';
-			$title = ($line['pionier'] == 1) ? 'Pionier' : $line['title'];
-			$title = ($line['ban'] == 1) ? 'Banni' : $line['title'];
-			$title = ($line['removed'] == 1) ? 'Oublié' : $line['title'];
+			if ($line['pionier'] == 1) { $title = "Pionier"; }
+			if ($line['ban'] == 1) { $title = "Banni"; }
+			if ($line['removed'] == 1 ) {$title = "Oublié" ;}
 			$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:yellow">(Dignitaire)</span>' : '';
 			$incan = $db->prepare('SELECT COUNT(*) AS sorts FROM incan_get WHERE user_id = ?');
 			$incan->execute(array($line['id'])); $incan = $incan->fetch();
