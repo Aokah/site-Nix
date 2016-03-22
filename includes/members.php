@@ -100,7 +100,7 @@
 				</td>
 			<?php if ($_SESSION['rank'] >= 5) { ?>
 				<td>
-					<img src="pics/vanish_<?php echo $vanish; ?>.gif" width="30" alt="" title="Joueur <?php $vanishtitle; ?>" />
+					<img src="pics/vanish<?php echo $vanish; ?>.gif" width="30" alt="" title="Joueur <?php $vanishtitle; ?>" />
 				</td>
 			<?php } ?>
 			</tr>
