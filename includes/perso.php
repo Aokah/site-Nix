@@ -843,10 +843,10 @@
 					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
-								<td>
+								<td style="text-align:center;">
 									<img src="pics/magie/EM_<? echo $tmagie ?>.png" width="95%" title="<?php echo $pmcount; ?>" alt="" />
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<img src="pics/magie/EV_<? echo $tvie ?>.png" width="95%" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
@@ -1624,10 +1624,10 @@
 					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
-								<td>
+								<td style="text-align:center;">
 									<img src="pics/magie/EM_<? echo $tmagie ?>.png" width="95%" title="<?php echo $pmcount; ?>" alt="" />
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<img src="pics/magie/EV_<? echo $tvie ?>.png" width="95%" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
