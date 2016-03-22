@@ -23,12 +23,12 @@ global $_POST, $db, $_SESSION;
         $dif = $select['E_magique'] + 30;
         if ($dif < $limit) { $ajout = $dif; } else { $ajout = 0;}
         $add = $db->prepare('UPDATE members SET E_magique = ? WHERE id = ?');
-        $add->execute(array($dif, $id));
+        $add->execute(array($ajout, $id));
         
         $diff = $select['E_vitale'] + 10;
         if ($diff < 200) { $addvie = $diff; } else { $addvie = 0; }
         $vie = $db->prepare('UPDATE members SET E_vitale = ? WHERE id = ?');
-        $vie->execute(array($diff, $id));
+        $vie->execute(array($addvie, $id));
       }
     $id --;
   }
