@@ -10,7 +10,7 @@ global $_POST, $db, $_SESSION;
   
   while ($id > 0)
   {
-    echo $id,'<br />';
+    
     $select = $db->prepare('SELECT * FROM members WHERE id = ?');
     $select->execute(array($id));
     
