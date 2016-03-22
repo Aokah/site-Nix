@@ -5,17 +5,24 @@
 	if ($_SESSION['rank'] >= 7) { $ranklimit = 10; } elseif ($_SESSION['rank'] == 6) { $ranklimit = 9;}
 	elseif ($_SESSIOON['rank'] == 5) { $ranklimit = 8; } else { $ranklimit = 7; }
 	
-	$op = $db->exec('SELECT COUNT(*) AS op FROM members WHERE rank = 7'); $lineop = $op->fetch();
-//	$mj = $db->exec('SELECT COUNT(*) AS mj FROM members WHERE rank = 6'); $mj = $mj->fetch();
-//	$modo = $db->exec('SELECT COUNT(*) AS dieu FROM members WHERE rank = 5'); $modo = $modo->fetch();
-//	$enca = $db->exec('SELECT COUNT(*) AS op FROM members WHERE rank = 4'); $enca = $enca->fetch();
-//	$jplus = $db->exec('SELECT COUNT(*) AS mj FROM members WHERE rank = 3'); $jplus = $jplus->fetch();
-//	$joueur = $db->exec('SELECT COUNT(*) AS dieu FROM members WHERE rank = 2'); $joueur = $joueur->fetch();
-//	$new = $db->exec('SELECT COUNT(*) AS op FROM members WHERE rank = 1'); $new = $new->fetch();
+	$op = $db->query('SELECT COUNT(*) AS op FROM members WHERE rank = 7'); $op = $op->fetch();
+	$mj = $db->query('SELECT COUNT(*) AS mj FROM members WHERE rank = 6'); $mj = $mj->fetch();
+	$modo = $db->query('SELECT COUNT(*) AS dieu FROM members WHERE rank = 5'); $modo = $modo->fetch();
+	$enca = $db->query('SELECT COUNT(*) AS op FROM members WHERE rank = 4'); $enca = $enca->fetch();
+	$jplus = $db->query('SELECT COUNT(*) AS jplus FROM members WHERE rank = 3'); $jplus = $jplus->fetch();
+	$joueur = $db->query('SELECT COUNT(*) AS joueur FROM members WHERE rank = 2'); $joueur = $joueur->fetch();
+	$new = $db->query('SELECT COUNT(*) AS nex FROM members WHERE rank = 1'); $new = $new->fetch();
+	$total = $db->query('SELECT COUNT(*) AS total FROM members WHERE rank > 0'); $total = $total->fetch();
+	$opplural = ($op['op'] == 1) ? '' : 's'; $mjplural = ($mj['mj'] == 1) ? '' : 's'; $modoplural = ($modo['modo'] == 1) ? '' : 's';
+	$encaplural = ($enca['enca'] == 1) ? '' : 's'; $jplusplural = ($jplus['jplus'] == 1) ? '' : 's';
+	$joueurplural = ($joueur['joueur'] == 1) ? '' : 's'; $newplural = ($new['new'] == 1) ? 'Nouvel inscrit' : 'Nouveaux inscrits';
 	
 	?>
 	<h2>Les Membres</h2>
 	<h3 style="color:red;">Maintenance en cours. . .</h3>
+	<p>Voici les <?= $total['total']?> membres inscrits sur Nix ! (comptant <?=$op['op']?> Opérateur<?php echo $opplural; ?>, 
+	<?= $mj['mj']?> Maître<?php echo $mjplural;?> du Jeu, <?= $modo['modo']?> Modérateur<?php echo $modoplural;?>, <?=$enca['enca']?> Encadrant<?php echo $encaplural; ?>, 
+	<?= $jplus['jplus']?> Joueur<?php echo $jplusplural;?> Investi<?php echo $jplusplural;?>, <?=$joueur['joueur']?> Joueur<?php echo $joueurplural; ?> et <?= $new['new']?> <?php echo $newplural; ?>)</p>
 	<table cellspacing="0" cellpadding="0" width="100%">
 		<tbody>
 	<?php
