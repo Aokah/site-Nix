@@ -10,7 +10,7 @@ global $_POST, $db, $_SESSION;
   $id = $idmax;
   while ($id > 0)
   {
-    echo $id'<br />';
+    echo $id,'<br />';
     
     $id --;
   }
