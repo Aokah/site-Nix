@@ -839,10 +839,10 @@
 						<tbody>
 							<tr>
 								<td>
-									<img src="includes/img/magie/EM_<? echo $tmagie ?>.png" title="<?= $line['E_magique']?> PM restants !" alt="" />
+									<img src="pics/magie/EM_<? echo $tmagie ?>.png" title="<?= $line['E_magique']?> PM restants !" alt="" />
 								</td>
 								<td>
-									<img src="includes/img/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="" />
+									<img src="pics/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
 							<?php if ($_SESSION['rank'] >= 5) { ?>
@@ -1615,10 +1615,10 @@
 						<tbody>
 							<tr>
 								<td>
-									<img src="includes/img/magie/EM_<? echo $tmagie ?>.png" title="<?= $line['E_magique']?> PM restants !" alt="" />
+									<img src="pics/magie/EM_<? echo $tmagie ?>.png" title="<?= $line['E_magique']?> PM restants !" alt="" />
 								</td>
 								<td>
-									<img src="includes/img/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="" />
+									<img src="pics/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
 						</tbody>
