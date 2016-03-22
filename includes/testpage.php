@@ -11,7 +11,13 @@ global $_POST, $db, $_SESSION;
   while ($id > 0)
   {
     echo $id,'<br />';
+    $select = $db->prepare('SELECT * FROM members WHERE id = ?');
+    $select->execute(array($id));
     
+      if ($select = $select->fetch())
+      {
+        echo 'PMs :' , $select['E_magique'], '<br />PVs :', $select['E_vitale'], '<br />level :' , $select['magie_rank'];
+      }
     $id --;
   }
   
