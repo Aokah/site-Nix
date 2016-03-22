@@ -23,7 +23,9 @@ global $_POST, $db, $_SESSION;
         elseif ($select['magie_rank'] == 6) { $limit = 500; } else { $limit = 0; }
         
         $dif = $select['E_magique'] + 30;
-        if ($dif < $limit) { echo 'ajout'; $ajout = $dif; echo $dif;} else { echo 'pas d\'ajout';}
+        if ($dif < $limit) { $ajout = $dif; } else { $ajout = 0;}
+        $add = $db->prepare('UPDATE members SET E_magique = ? WHERE id = ?');
+        $add->execute(array($dif, $id));
         
         
       }
