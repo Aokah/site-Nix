@@ -840,10 +840,10 @@
 						<tbody>
 							<tr>
 								<td>
-									<img src="pics/magie/EM_<? echo $tmagie ?>.png" title="<?php echo $pmcount; ?>" alt="" />
+									<img src="pics/magie/EM_<? echo $tmagie ?>.png" width="95%" title="<?php echo $pmcount; ?>" alt="" />
 								</td>
 								<td>
-									<img src="pics/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="" />
+									<img src="pics/magie/EV_<? echo $tvie ?>.png" width="95%" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
 							<?php if ($_SESSION['rank'] >= 5) { ?>
@@ -1617,10 +1617,10 @@
 						<tbody>
 							<tr>
 								<td>
-									<img src="pics/magie/EM_<? echo $tmagie ?>.png" title="<?php echo $pmcount; ?>" alt="" />
+									<img src="pics/magie/EM_<? echo $tmagie ?>.png" width="95%" title="<?php echo $pmcount; ?>" alt="" />
 								</td>
 								<td>
-									<img src="pics/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="" />
+									<img src="pics/magie/EV_<? echo $tvie ?>.png" width="95%" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
 						</tbody>
