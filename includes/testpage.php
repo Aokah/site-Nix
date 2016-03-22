@@ -23,7 +23,7 @@ global $_POST, $db, $_SESSION;
         elseif ($select['magie_rank'] == 6) { $limit = 500; } else { $limit = 0; }
         
         $dif = $select['E_magique'] + 30;
-        if ($dif < $limit) { echo 'ajout'; $ajout = $dif; echo $dif,'<br />';} else { echo 'pas d\'ajout';}
+        if ($dif < $limit) { echo 'ajout'; $ajout = $dif; echo $dif;} else { echo 'pas d\'ajout';}
         
         
       }
