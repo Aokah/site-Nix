@@ -62,7 +62,7 @@
 			$title = $line['title'];
 			//if ($line['pionier'] == 1) { $title = "Pionier"; }
 			//if ($line['ban'] == 1) { $title = "Banni"; }
-			//if ($line['removed'] == 1 ) {$title = "Oublié" ;}
+			if ($line['removed'] == 1 ) {$title = "Oublié" ;}
 			$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:yellow">(Dignitaire)</span>' : '';
 			$incan = $db->prepare('SELECT COUNT(*) AS sorts FROM incan_get WHERE user_id = ?');
 			$incan->execute(array($line['id'])); $incan = $incan->fetch();
