@@ -99,7 +99,7 @@
 					<?= $fofo['msg']?>
 				</td>
 			<?php if ($_SESSION['rank'] >= 5) { ?>
-				<td>
+				<td style="text-align:center;">
 					<img src="pics/vanish<?php echo $vanish; ?>.gif" width="30" alt="" title="Joueur <?php $vanishtitle; ?>" />
 				</td>
 			<?php } ?>
