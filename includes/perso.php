@@ -653,6 +653,7 @@
 					if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}
 					if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}
 					if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
+				$pmcount = ($line['magie_rank'] > 7) ? 'PMs Illimité !' : ''.$line['E_magique'].' PMs restants !' ;
 	?>
 	<h2 class="name<?= $line['rank']?><?php echo $tech; echo $pionier;?>"><?php echo $title;?> <?= $line['name']?></h2>
 	
@@ -839,7 +840,7 @@
 						<tbody>
 							<tr>
 								<td>
-									<img src="pics/magie/EM_<? echo $tmagie ?>.png" title="<?= $line['E_magique']?> PM restants !" alt="" />
+									<img src="pics/magie/EM_<? echo $tmagie ?>.png" title="<?php echo $pmcount; ?>" alt="" />
 								</td>
 								<td>
 									<img src="pics/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="" />
@@ -1488,6 +1489,7 @@
 					if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}
 					if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}
 					if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
+				$pmcount = ($line['magie_rank'] > 7) ? 'PMs Illimité !' : ''.$line['E_magique'].' PMs restants !' ;
 	?>	
 	
 	
@@ -1615,7 +1617,7 @@
 						<tbody>
 							<tr>
 								<td>
-									<img src="pics/magie/EM_<? echo $tmagie ?>.png" title="<?= $line['E_magique']?> PM restants !" alt="" />
+									<img src="pics/magie/EM_<? echo $tmagie ?>.png" title="<?php echo $pmcount; ?>" alt="" />
 								</td>
 								<td>
 									<img src="pics/magie/EV_<? echo $tvie ?>.png" title="<?= $line['E_vitale']?> PV restants !" alt="" />
