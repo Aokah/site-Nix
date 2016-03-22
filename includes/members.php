@@ -59,6 +59,7 @@
 				}
 			$bgmsg = ($line['valid_bg'] == 1) ? 'BackGround RolePlay validé par le Staff' : 'BackGround en cours d\'écriture...';
 			$validbg = ($line['valid_bg'] == 1) ? 'on' : 'off';
+			$title = $line['title'];
 			if ($line['pionier'] == 1) { $title = "Pionier"; }
 			if ($line['ban'] == 1) { $title = "Banni"; }
 			if ($line['removed'] == 1 ) {$title = "Oublié" ;}
