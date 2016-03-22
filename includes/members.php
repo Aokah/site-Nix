@@ -36,8 +36,8 @@
 				case 4: $linename = "Encadrants"; break; case 3 : $linename = "Joueurs Investis"; break; case 2 : $linename = "Joueurs"; break;
 				case 1: $linename = "Nouveaux"; break;
 			}
-			
-			$page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC');
+			if ($_SESSION['rank'] > 5) { $page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC'); }
+			else { $page = $db->prepare('SELECT * FROM members WHERE rank = ? AND pnj = 0 ORDER BY name ASC');	}
 			$page->execute(array($linerank));
 			?>
 			<tr class="member_top">
