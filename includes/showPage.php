@@ -129,7 +129,6 @@
 												case 'candid': 				{ 	include('includes/candid.php'); 				candid(); 				break; }
 												case 'server': 				{ 	include('includes/server.php'); 				server(); 				break; }
 												case 'magie_admin': 			{ 	include('includes/magie_admin.php'); 			magie_admin(); 			break; }
-												case 'viewmember': 			{ 	include('includes/viewmember.php'); 			viewmember(); 			break; }
 												case 'testpage': 			{ 	include('includes/testpage.php'); 				testpage(); 			break; }
 												case 'testpage_3': 			{ 	include('includes/testpage_3.php'); 			testpage_3(); 			break; }
 												case 'testpage_2': 			{ 	include('includes/testpage_2.php');				testpage_2(); 			break; }
