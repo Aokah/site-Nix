@@ -37,7 +37,7 @@
 				case 1: $linename = "Nouveaux"; break;
 			}
 			if ($_SESSION['rank'] > 5) { $page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC'); }
-			else { $page = $db->prepare('SELECT * FROM members WHERE rank = ? AND pnj = 0 ORDER BY name ASC');	}
+			else { $page = $db->prepare('SELECT * FROM members WHERE rank = ? AND pnj = 0 AND invisible = 0 ORDER BY name ASC');	}
 			$page->execute(array($linerank));
 			?>
 			<tr class="member_top">
@@ -48,6 +48,7 @@
 				<th>Niv'</th>
 				<th>Sorts</th>
 				<th>Msg</th>
+			<?php if ($_SESSION['rank'] >= 5) { ?> <th>Inv'</th> <?php } ?>
 			</tr>
 			<?php while ($line = $page->fetch()) { 
 				switch ($line['magie_rank'])
@@ -59,6 +60,7 @@
 				}
 			$bgmsg = ($line['valid_bg'] == 1) ? 'BackGround RolePlay validé par le Staff' : 'BackGround en cours d\'écriture...';
 			$validbg = ($line['valid_bg'] == 1) ? 'on' : 'off';
+			$vanish = ($line['invisible'] == 1) ? 'on' : 'off'; $vanishtitle = ($line['invisible'] == 1) ? 'Invisible' : 'Visible';
 			$title = $line['title'];
 			if ($line['pionier'] == 1) { $title = "Pionier"; }
 			if ($line['ban'] == 1) { $title = "Banni"; }
@@ -96,6 +98,11 @@
 				<td style="text-align:center;">
 					<?= $fofo['msg']?>
 				</td>
+			<?php if ($_SESSION['rank'] >= 5) { ?>
+				<td>
+					<img src="pics/vanish_<?php echo $vanish; ?>.gif" width="30" alt="" title="Joueur <?php $vanishtitle; ?>" />
+				</td>
+			<?php } ?>
 			</tr>
 			<?php
 			}
