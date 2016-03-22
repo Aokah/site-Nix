@@ -606,8 +606,12 @@
 		if ($line['technician'] == 0 AND $line['removed'] == 0 AND $line['ban'] == 0 AND $line['rank'] < 9) { $grade = $line['rank']; }
 		if ($line['rank'] == 9) { $grade = "titan";} if ($line['rank'] == 10) { $grade = "crea"; }
 		if ($line['technician'] == 1) { $tech = "-T"; $techmode = "Retirer"; $grade = "tech"; } else { $techmode = "Attribuer";}  if ($line['pionier'] == 1) { $pionier = '-P'; }
-		if ($line['ban'] == 1) { $grade = "ban"; $title = "Banni"; } if ($line['removed'] == 1) { $grade = "del"; $title = "Oublié"; }
+		if ($line['ban'] == 1) { $grade = "ban"; } if ($line['removed'] == 1) { $grade = "del";}
+		$title = $line['title'];
 		if ($line['pionier'] == 1) { $title = "Pionier"; }
+		if ($line['ban'] == 1) { $title = "Banni"; }
+		if ($line['removed'] == 1 ) {$title = "Oublié" ;}
+		
 		$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:red">(Dignitaire)</span>' : '';
 		
 		//Affichage des PMs
@@ -1444,8 +1448,12 @@
 		$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:red">(Dignitaire)</span>' : '';
 		$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
 		if ($line['technician'] == 1) { $grade = "tech"; }
-		if ($line['ban'] == 1) { $grade = "ban"; $title = "Banni"; } if ($line['removed'] == 1) { $grade = "del"; $title = "Oublié"; }
+		if ($line['ban'] == 1) { $grade = "ban"; } if ($line['removed'] == 1) { $grade = "del"; }
+		$title = $line['title'];
 		if ($line['pionier'] == 1) { $title = "Pionier"; }
+		if ($line['ban'] == 1) { $title = "Banni"; }
+		if ($line['removed'] == 1 ) {$title = "Oublié" ;}
+		
 		//Affichage des PMs
 		if ($line['magie_rank'] == 0) {	if ($line['E_magique'] == 0  AND $line['E_magique'] <= 4)  { $tmagie = 0 ; } if ($line['E_magique'] >=5 AND $line['E_magique'] <= 10) { $tmagie = 10 ;}	if ($line['E_magique'] >=10 AND $line['E_magique'] <= 14) { $tmagie = 20 ;}
 						if ($line['E_magique'] >=15 AND $line['E_magique'] <= 19) { $tmagie = 30 ; } if ($line['E_magique'] >=20 AND $line['E_magique'] <= 24) { $tmagie = 40 ; } if ($line['E_magique'] >=25 AND $line['E_magique'] <= 29) { $tmagie = 50 ; }
