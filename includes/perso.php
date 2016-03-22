@@ -608,7 +608,7 @@
 		if ($line['technician'] == 1) { $tech = "-T"; $techmode = "Retirer"; $grade = "tech"; } else { $techmode = "Attribuer";}  if ($line['pionier'] == 1) { $pionier = '-P'; }
 		if ($line['ban'] == 1) { $grade = "ban";} if ($line['removed'] == 1) { $grade = "del";}
 		if ($line['pionier'] == 1) { $title = "Pionier"; } else { $title = $line['title']; }
-		$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:yellow">(Dignitaire)</span>' : '';
+		$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:red">(Dignitaire)</span>' : '';
 	?>
 	<h2 class="name<?= $line['rank']?><?php echo $tech; echo $pionier;?>"><?php echo $title;?> <?= $line['name']?></h2>
 	
@@ -1396,7 +1396,7 @@
 			case 9: $magie = "Pouvoir Suprême"; break;
 		}
 		$vanish = ($line['invisible'] == 1) ? 'Activée' : 'Désactivée';
-		$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:yellow">(Dignitaire)</span>' : '';
+		$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:red">(Dignitaire)</span>' : '';
 		$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
 		if ($line['technician'] == 1) { $grade = "tech"; }
 		if ($line['ban'] == 1) { $grade = "ban";} if ($line['removed'] == 1) { $grade = "del";}
