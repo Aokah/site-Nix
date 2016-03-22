@@ -62,6 +62,7 @@
 			$title = ($line['pionier'] == 1) ? 'Pionier' : $line['title'];
 			$title = ($line['ban'] == 1) ? 'Banni' : $line['title'];
 			$title = ($line['removed'] == 1) ? 'Oublié' : $line['title'];
+			$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:yellow">(Dignitaire)</span>' : '';
 			$incan = $db->prepare('SELECT COUNT(*) AS sorts FROM incan_get WHERE user_id = ?');
 			$incan->execute(array($line['id'])); $incan = $incan->fetch();
 			$fofo = $db->prepare('SELECT COUNT(*) AS msg FROM forum_post WHERE user_id = ?');
@@ -77,7 +78,7 @@
 					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?php echo $img;?>.png" alt="" width="30" /> <a href="index?p=perso&perso=<?= $line['id']?>"><?= $line['name']?></a>
 				</td>
 				<td>
-					<?php echo $title; ?> <?php echo $pnj;?>
+					<?php echo $title; ?> <?php echo $pnj;?> <?php echo $dignitaire; ?>
 				</td>
 				<td style="text-align:center;">
 					<img src="pics/valid_bg_<?php echo $validbg;?>.gif" alt="" title="<?php echo $bgmsg; ?>" width="30" />
