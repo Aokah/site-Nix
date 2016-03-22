@@ -22,8 +22,8 @@ global $_POST, $db, $_SESSION;
         elseif ($select['magie_rank'] == 3) { $limit = 200; } elseif ($select['magie_rank'] == 4) { $limit = 300; } elseif ($select['magie_rank'] == 5) { $limit = 400; }
         elseif ($select['magie_rank'] == 6) { $limit = 500; } else { $limit = 0; }
         
-        $dif = $limit - $select['E_magique'];
-        if ($dif < 0) { echo 'négatif'; } else { echo 'positif';}
+        $dif = $limit - 30;
+        if ($dif < $limit) { echo 'ajout'; } else { echo 'pas d\'ajout';}
         
         echo 'id = ', $id, '<br />PMs :' , $select['E_magique'], '<br />PVs :', $select['E_vitale'], '<br />level :' , $select['magie_rank'], '<br />';
       }
