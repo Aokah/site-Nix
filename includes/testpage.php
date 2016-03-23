@@ -18,7 +18,7 @@ global $_POST, $db, $_SESSION;
       {
         if ($select['magie_rank'] == 0) { $limit = 50; } elseif ($select['magie_rank'] == 1) { $limit = 100; } elseif ($select['magie_rank'] == 2) { $limit = 150; }
         elseif ($select['magie_rank'] == 3) { $limit = 200; } elseif ($select['magie_rank'] == 4) { $limit = 300; } elseif ($select['magie_rank'] == 5) { $limit = 400; }
-        elseif ($select['magie_rank'] == 6) { $limit = 500; } else { $limit = 0; }
+        elseif ($select['magie_rank'] == 6) { $limit = 500; } 
         
         echo $limit, '  ', $select['magie_rank'], '<br />';
         if ($select['E_magique'] < $limit) { $add = 30; }
