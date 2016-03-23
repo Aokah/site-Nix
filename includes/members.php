@@ -80,7 +80,7 @@
 						if ($line['E_magique'] >= 300 AND $line['E_magique'] <= 349) { $tmagie = 60 ; } if ($line['E_magique'] >= 350 AND $line['E_magique'] <= 399) { $tmagie = 70 ; } if ($line['E_magique'] >= 400 AND $line['E_magique'] <= 449) { $tmagie = 80 ; }
 						if ($line['E_magique'] >= 450 AND $line['E_magique'] <= 499) { $tmagie = 90 ; } if ($line['E_magique'] == 500) { $tmagie = 100 ; } if ($line['E_magique'] > 500) { $tmagie = "over" ; }	}
 					if ($line['magie_rank'] >= 7) { $tmagie = 'inf';}
-					if ($line['E_vitale'] == 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}
+					if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}
 					if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}
 					if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}
 					if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}
