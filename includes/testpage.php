@@ -20,11 +20,12 @@ global $_POST, $db, $_SESSION;
         elseif ($select['magie_rank'] == 3) { $limit = 200; } elseif ($select['magie_rank'] == 4) { $limit = 300; } elseif ($select['magie_rank'] == 5) { $limit = 400; }
         elseif ($select['magie_rank'] == 6) { $limit = 500; } 
         
+        $ajout = $select['E_magique'] + 30;
         
-        if (($select['E_magique'] + 30) < $limit) { $add = 30; }
-        elseif (($select['E_magique'] + 30) > $limit)
+        if ($ajout < $limit) { $add = 30; }
+        elseif ($ajout > $limit)
         {
-          $add = ($select['E_magique'] + 30) - $limit;
+          $add = $ajout - $limit;
         }
         else
         { $add = 0; }
@@ -35,6 +36,7 @@ global $_POST, $db, $_SESSION;
               <td>Nom : <?= $select['name']?></td>
               <td>Magie : <?= $select['E_magique']?></td>
               <td>Limite : <?= $limit?></td>
+              <td>Ajout = <?=$ajout?></td>
               <td>$add = <?=$add?></td>
             </tr>
           </tbody>
