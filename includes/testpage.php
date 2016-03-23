@@ -8,7 +8,7 @@ global $_POST, $db, $_SESSION;
   
   $id = $idmax;
   
-  while ($id > 0)
+  while ($id == 204)
   {
     
     $select = $db->prepare('SELECT * FROM members WHERE id = ?');
