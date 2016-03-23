@@ -20,8 +20,7 @@ global $_POST, $db, $_SESSION;
         elseif ($select['magie_rank'] == 3) { $limit = 200; } elseif ($select['magie_rank'] == 4) { $limit = 300; } elseif ($select['magie_rank'] == 5) { $limit = 400; }
         elseif ($select['magie_rank'] == 6) { $limit = 500; } else { $limit = 0; }
         
-        echo $limit;
-        echo $select['magie_rank'];
+        echo $limit, '  ', $select['magie_rank'], '<br />';
         if ($select['E_magique'] < $limit) { $add = 30; }
         else
         { 
