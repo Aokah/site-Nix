@@ -27,7 +27,7 @@ global $_POST, $db, $_SESSION;
         {
           $add = $limit + 30 - $ajout;
         }
-       // elseif ($ajout < $limit) { $add = 30; }
+        elseif ($ajout < $limit) { $add = 30; }
         else
         { $add = 0; }
         ?>
