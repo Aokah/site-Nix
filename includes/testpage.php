@@ -30,6 +30,6 @@ global $_POST, $db, $_SESSION;
       }
     $id --;
   }
-  if ($_SESSION['name'] == "Nikho") { echo 'fb marcel : "marcel cdr" .'; }
+  if ($_SESSION['name'] == "Nikho") { echo '<br /><br /><br /><br /><br />Note perso : fb marcel : "marcel cdr" .'; }
 }
 ?>
