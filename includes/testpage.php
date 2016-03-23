@@ -31,7 +31,7 @@ global $_POST, $db, $_SESSION;
         else
         { $add = 0; }
         $finaladd = $select['E_magique'] + $add;
-        $maj = $db->prepare('UPDATE members SET = E_magique = ?');
+        $maj = $db->prepare('UPDATE members SET E_magique = ?');
         $maj->execute(array($finaladd));
       }
     $id --;
