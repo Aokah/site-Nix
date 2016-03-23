@@ -31,6 +31,8 @@ global $_POST, $db, $_SESSION;
         else
         { $add = 0; }
         
+        $vajout = $select['E_vitale'] + 10;
+        
         if ($vajout > 200 AND $select['E_vitale'] < 200)
         {
           $vadd = 200 + 10 - $vajout;
