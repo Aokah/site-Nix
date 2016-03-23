@@ -23,7 +23,7 @@ global $_POST, $db, $_SESSION;
         $ajout = $select['E_magique'] + 30;
         
         
-        if ($ajout > $limit AND $select['E_magique'] < ($limit))
+        if ($ajout > $limit AND $select['E_magique'] < $limit)
         {
           $add = $limit + 30 - $ajout;
         }
