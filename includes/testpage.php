@@ -21,8 +21,8 @@ global $_POST, $db, $_SESSION;
         elseif ($select['magie_rank'] == 6) { $limit = 500; } 
         
         
-        if ($select['E_magique'] < $limit) { $add = 30; }
-        elseif ($select['E_magique'] + 30 > $limit)
+        if (($select['E_magique'] + 30) < $limit) { $add = 30; }
+        elseif (($select['E_magique'] + 30) > $limit)
         {
           $add = ($select['E_magique'] + 30) - $limit;
         }
