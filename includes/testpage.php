@@ -3,7 +3,7 @@
 
 global $_POST, $db, $_SESSION;
 
-  $max = $db->query('SELECT COUNT(*) AS idmax FROM members'); $max = $max->fetch();
+  $max = $db->query('SELECT COUNT(*) AS idmax FROM members WHERE id != 0'); $max = $max->fetch();
   $idmax = $max['idmax'] ;
   
   $id = $idmax;
