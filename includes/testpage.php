@@ -22,10 +22,12 @@ global $_POST, $db, $_SESSION;
         
         
         if ($select['E_magique'] < $limit) { $add = 30; }
-        else
-        { 
-          $diff = $limit - 30; $add = $diff;
+        elseif ($select['E_magique'] + 30 > $limit)
+        {
+          $add = ($select['E_magique'] + 30) - $limit;
         }
+        else
+        { $add = 0; }
         ?>
         <table>
           <tbody>
@@ -33,6 +35,7 @@ global $_POST, $db, $_SESSION;
               <td>Nom : <?= $select['name']?></td>
               <td>Magie : <?= $select['E_magique']?></td>
               <td>Limite : <?= $limit?></td>
+              <td>$add = <?=$add?></td>
             </tr>
           </tbody>
         </table>
