@@ -30,19 +30,9 @@ global $_POST, $db, $_SESSION;
         elseif ($ajout < $limit) { $add = 30; }
         else
         { $add = 0; }
-        ?>
-        <table>
-          <tbody>
-            <tr>
-              <td>Nom : <?= $select['name']?></td>
-              <td>Magie : <?= $select['E_magique']?></td>
-              <td>Limite : <?= $limit?></td>
-              <td>Ajout = <?=$ajout?></td>
-              <td>$add = <?=$add?></td>
-            </tr>
-          </tbody>
-        </table>
-        <?php
+        $finaladd = $select['E_magique'] + $add;
+        $maj = $db->prepare('UPDATE members SET = E_magique = ?');
+        $maj->execute(array($finaladd));
       }
     $id --;
   }
