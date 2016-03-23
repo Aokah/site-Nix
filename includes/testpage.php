@@ -8,7 +8,7 @@ global $_POST, $db, $_SESSION;
   
   $id = $idmax;
   
-  while ($id == 204)
+  while ($id > 0)
   {
     
     $select = $db->prepare('SELECT * FROM members WHERE id = ?');
@@ -20,8 +20,8 @@ global $_POST, $db, $_SESSION;
         elseif ($select['magie_rank'] == 3) { $limit = 200; } elseif ($select['magie_rank'] == 4) { $limit = 300; } elseif ($select['magie_rank'] == 5) { $limit = 400; }
         elseif ($select['magie_rank'] == 6) { $limit = 500; } else { $limit = 0; }
         
-        echo $limit;?>
-        <?= $select['magie_rank'];?> <?
+        echo $limit;
+        echo $select['magie_rank'];
         if ($select['E_magique'] < $limit) { $add = 30; }
         else
         { 
@@ -32,6 +32,5 @@ global $_POST, $db, $_SESSION;
       }
     $id --;
   }
-  if ($_SESSION['name'] == "Nikho") { echo '<br /><br /><br /><br /><br />Note perso : fb marcel : "marcel cdr" .'; }
 }
 ?>
