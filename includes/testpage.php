@@ -25,7 +25,8 @@ global $_POST, $db, $_SESSION;
         { 
           $diff = $limit - 30; $add = $diff;
         }
-        echo $diff;
+        echo $line['E_magique'];
+        
       }
     $id --;
   }
