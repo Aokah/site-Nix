@@ -26,8 +26,17 @@ global $_POST, $db, $_SESSION;
         { 
           $diff = $limit - 30; $add = $diff;
         }
-        echo $select['E_magique'];
-        
+        ?>
+        <table>
+          <tbody>
+            <tr>
+              <td>Nom : <?= $select['name']?></td>
+              <td>Magie : <?= $select['E_magique']?></td>
+              <td>Limite : <?= $limit?></td>
+            </tr>
+          </tbody>
+        </table>
+        <?php
       }
     $id --;
   }
