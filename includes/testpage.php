@@ -30,21 +30,16 @@ global $_POST, $db, $_SESSION;
         elseif ($ajout <= $limit) { $add = 30; }
         else
         { $add = 0; }
-        $finaladd = $select['E_magique'] + $add;
-        $maj = $db->prepare('UPDATE members SET E_magique = E_magique + ? WHERE id = ?');
-        $maj->execute(array($add, $id));
-       ?>
-       <table>
-         <tbody>
-           <tr>
-             <td><?=$select['name']?></td>
-             <td><?=$select['E_magique']?></td>
-             <td><?=$limit?></td>
-             <td><?=$add?></td>
-           </tr>
-         </tbody>
-       </table>
-       <?
+        
+        if ($vajout > 200 AND $select['E_vitale'] < 200)
+        {
+          $vadd = 200 + 10 - $vajout;
+        }
+        elseif ($vajout <= 200) { $vadd = 10; }
+        else
+        { $vadd = 0; }
+        $maj = $db->prepare('UPDATE members SET E_magique = E_magique + ?, E_vitale = E_vitale + ? WHERE id = ?');
+        $maj->execute(array($add, $vadd, $id));
       }
     $id --;
   }
