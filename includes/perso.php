@@ -615,7 +615,7 @@
 		$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:red">(Dignitaire)</span>' : '';
 		
 		//Affichage des PMs
-		if ($line['magie_rank'] == 0) {	if ($line['E_magique'] == 0  AND $line['E_magique'] <= 4)  { $tmagie = 0 ; } if ($line['E_magique'] >=5 AND $line['E_magique'] <= 10) { $tmagie = 10 ;}	if ($line['E_magique'] >=10 AND $line['E_magique'] <= 14) { $tmagie = 20 ;}
+		if ($line['magie_rank'] == 0) {	if ($line['E_magique'] >= 0  AND $line['E_magique'] <= 4)  { $tmagie = 0 ; } if ($line['E_magique'] >=5 AND $line['E_magique'] <= 10) { $tmagie = 10 ;}	if ($line['E_magique'] >=10 AND $line['E_magique'] <= 14) { $tmagie = 20 ;}
 						if ($line['E_magique'] >=15 AND $line['E_magique'] <= 19) { $tmagie = 30 ; } if ($line['E_magique'] >=20 AND $line['E_magique'] <= 24) { $tmagie = 40 ; } if ($line['E_magique'] >=25 AND $line['E_magique'] <= 29) { $tmagie = 50 ; }
 						if ($line['E_magique'] >=30 AND $line['E_magique'] <= 34) { $tmagie = 60 ; } if ($line['E_magique'] >=35 AND $line['E_magique'] <= 39) { $tmagie = 70 ; } if ($line['E_magique'] >=40 AND $line['E_magique'] <= 44) { $tmagie = 80 ; }
 						if ($line['E_magique'] >=45 AND $line['E_magique'] <= 49) { $tmagie = 90 ; } if ($line['E_magique'] == 50) { $tmagie = 100 ; }if ($line['E_magique'] > 50)  { $tmagie = "over" ; }	}
@@ -646,7 +646,7 @@
 					if ($line['magie_rank'] >= 7) { $tmagie = 'inf';}
 					
 				//Affichage des PV
-					if ($line['E_vitale'] == 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}
+					if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}
 					if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}
 					if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}
 					if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}
@@ -1457,7 +1457,7 @@
 		if ($line['removed'] == 1 ) {$title = "Oublié" ;}
 		
 		//Affichage des PMs
-		if ($line['magie_rank'] == 0) {	if ($line['E_magique'] == 0  AND $line['E_magique'] <= 4)  { $tmagie = 0 ; } if ($line['E_magique'] >=5 AND $line['E_magique'] <= 10) { $tmagie = 10 ;}	if ($line['E_magique'] >=10 AND $line['E_magique'] <= 14) { $tmagie = 20 ;}
+		if ($line['magie_rank'] == 0) {	if ($line['E_magique'] >= 0  AND $line['E_magique'] <= 4)  { $tmagie = 0 ; } if ($line['E_magique'] >=5 AND $line['E_magique'] <= 10) { $tmagie = 10 ;}	if ($line['E_magique'] >=10 AND $line['E_magique'] <= 14) { $tmagie = 20 ;}
 						if ($line['E_magique'] >=15 AND $line['E_magique'] <= 19) { $tmagie = 30 ; } if ($line['E_magique'] >=20 AND $line['E_magique'] <= 24) { $tmagie = 40 ; } if ($line['E_magique'] >=25 AND $line['E_magique'] <= 29) { $tmagie = 50 ; }
 						if ($line['E_magique'] >=30 AND $line['E_magique'] <= 34) { $tmagie = 60 ; } if ($line['E_magique'] >=35 AND $line['E_magique'] <= 39) { $tmagie = 70 ; } if ($line['E_magique'] >=40 AND $line['E_magique'] <= 44) { $tmagie = 80 ; }
 						if ($line['E_magique'] >=45 AND $line['E_magique'] <= 49) { $tmagie = 90 ; } if ($line['E_magique'] == 50) { $tmagie = 100 ; }if ($line['E_magique'] > 50)  { $tmagie = "over" ; }	}
@@ -1488,7 +1488,7 @@
 					if ($line['magie_rank'] >= 7) { $tmagie = 'inf';}
 					
 				//Affichage des PV
-					if ($line['E_vitale'] == 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}
+					if ($line['E_vitale'] >= 0  AND $line['E_vitale'] <= 19) 	{	$tvie = 0 ;	}
 					if ($line['E_vitale'] >= 20 AND $line['E_vitale'] <= 39) 	{	$tvie = 10 ;	}
 					if ($line['E_vitale'] >= 40 AND $line['E_vitale'] <= 59) 	{	$tvie = 20 ;	}
 					if ($line['E_vitale'] >= 60 AND $line['E_vitale'] <= 79) 	{	$tvie = 30 ;	}
