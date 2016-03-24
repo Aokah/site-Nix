@@ -49,6 +49,7 @@
 				<th>Sorts</th>
 				<th>Msg</th>
 			<?php if ($_SESSION['rank'] >= 5) { ?> <th>Inv'</th> <?php } ?>
+				<th>Energie Magique/Vitale</th>
 			</tr>
 			<?php while ($line = $page->fetch()) { 
 					if ($line['magie_rank'] == 0) {	if ($line['E_magique'] >= 0  AND $line['E_magique'] <= 4)  { $tmagie = 0 ; } if ($line['E_magique'] >=5 AND $line['E_magique'] <= 10) { $tmagie = 10 ;}	if ($line['E_magique'] >=10 AND $line['E_magique'] <= 14) { $tmagie = 20 ;}
