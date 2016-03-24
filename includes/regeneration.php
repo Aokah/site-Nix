@@ -1,5 +1,4 @@
-<?php function regeneration()
-{
+<?php
 global $_POST, $db, $_SESSION;
   $max = $db->query('SELECT COUNT(*) AS idmax FROM members WHERE id != 0'); $max = $max->fetch();
   $idmax = $max['idmax'] ;
@@ -42,6 +41,5 @@ global $_POST, $db, $_SESSION;
         $maj->execute(array($add, $vadd, $id));
       }
     $id --;
-  }
   }
   ?>
