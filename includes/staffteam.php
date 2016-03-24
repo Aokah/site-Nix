@@ -38,7 +38,7 @@
 	<tr class="memberbg_7">
 	<td><img src="pics/staff_team/Nikho_OP_1.png" alt="Opérateur Nikho" /></td>
 	<td><span style="color:red">Nikho</span><br/>18 ans <br />Normandie, France<br />"Le Boulet"</td>
-	<td>"Il n'existe aucun phénomène dont on ne peut trouver une explication ! L'investissement paye toujours."</td>
+	<td>"Si l'echec permet d'apprendre, alors j'ai dû apprendre plus de chose que je ne le pensais."</td>
 	</tr>
 	
 	<th class="member_top">Maîtres du Jeu</th>
