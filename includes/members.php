@@ -11,7 +11,7 @@
 	$enca = $db->query('SELECT COUNT(*) AS enca FROM members WHERE rank = 4 AND pnj = 0'); $enca = $enca->fetch();
 	$jplus = $db->query('SELECT COUNT(*) AS jplus FROM members WHERE rank = 3 AND pnj = 0'); $jplus = $jplus->fetch();
 	$joueur = $db->query('SELECT COUNT(*) AS joueur FROM members WHERE rank = 2 AND pnj = 0'); $joueur = $joueur->fetch();
-	$new = $db->query('SELECT COUNT(*) AS nex FROM members WHERE rank = 1 AND pnj = 0'); $new = $new->fetch();
+	$new = $db->query('SELECT COUNT(*) AS new FROM members WHERE rank = 1 AND pnj = 0'); $new = $new->fetch();
 	$total = $db->query('SELECT COUNT(*) AS total FROM members WHERE rank > 0 AND pnj = 0'); $total = $total->fetch();
 	$opplural = ($op['op'] == 1) ? '' : 's'; $mjplural = ($mj['mj'] == 1) ? '' : 's'; $modoplural = ($modo['modo'] == 1) ? '' : 's';
 	$encaplural = ($enca['enca'] == 1) ? '' : 's'; $jplusplural = ($jplus['jplus'] == 1) ? '' : 's';
