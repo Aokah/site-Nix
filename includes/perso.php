@@ -549,7 +549,7 @@
 			elseif($_GET['action'] == 'vanishon')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				$update = $db->prepare('UPDATE members SET invisible = 0 WHERE id = ?');
+				$update = $db->prepare('UPDATE members SET invisible = 1 WHERE id = ?');
 				$update->execute(array($perso));
 				echo '<p>Personnage masqué du listing.</p>';
 				?>
@@ -881,8 +881,8 @@
 									Invisibilité :
 								</td>
 								<td>
-									<?php echo $vanish; ?> <?php if ($line['invisible'] == 1) { ?><a href="index?p=perso&action=vanishoff" title="Désactiver l'invisibilité du compte" style="color:red;">[OFF]</a><?php } else {
-										?><a href="index?p=perso&action=vanishon" title="Activer l'invisibilité du compte" style="color:green;">[ON]</a><?php } ?>
+									<?php echo $vanish; ?> <?php if ($line['invisible'] == 1) { ?><a href="index?p=perso&perso=<?php echo $perso; ?>&action=vanishoff" title="Désactiver l'invisibilité du compte" style="color:red;">[OFF]</a><?php } else {
+										?><a href="index?p=pers&perso=<?php echo $perso; ?>&action=vanishon" title="Activer l'invisibilité du compte" style="color:green;">[ON]</a><?php } ?>
 								</td>
 							</tr>
 							<tr>
