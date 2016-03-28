@@ -839,8 +839,8 @@
 								<td>
 									Race : <?= $line['race']?>
 								</td>
-								<td style="border: 0px grey solid; background-color: grey; color: grey;">
-									<p> </p>
+								<td colspan="2">
+									Qualité de jeu : <a href="index?p=perso&viewavis=<?php echo $perso;?>">[\\\\]</a>
 								</td>
 							</tr>
 							<tr>
