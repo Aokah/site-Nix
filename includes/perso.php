@@ -663,6 +663,16 @@
 					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
 					<?php
 				}
+				else
+				{
+					$update = $db->prepare("UPDATE hrpavis SET sender_rank = ?, avis = 1 WHERE target_id= ? AND sender_id = ?");
+					$update->execute(array($_SESSION['rank'], $perso, $_SESSION['id']));
+					echo 'Avis HRP positif pris en compte !';
+					?>
+					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+					<?php
+				}
 			}
 			elseif ($_GET['action'] == "avisko")
 			{
