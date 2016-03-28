@@ -92,7 +92,7 @@
 		        <a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage dont les avis sont notifiés ci-dessus.
 		      </p>
 		      <p>
-		        <a href="index?p=perso&perso">Cliquez ici</a> pour retourner à votre fiche personnage.
+		        <a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.
 		      </p>
 		    <?php
 	}
