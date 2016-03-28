@@ -29,48 +29,71 @@
 		    ORDER BY h.id ASC');
 		    $avis->execute(array($perso));
 		    
-		    ?>
-		      <table align="center">
-		        <tbody>
-		          <tr>
-		            <th>Nom</th>
-		            <th>Titre</th>
-		            <th>Avis</th>
-		          </tr>
-		        <?php while ($line = $avis->fetch())
-		        {
-		         $value = ($line['sender_rank'] > 4) ? '2' : '1' ;
-		         $method = ($line['avis'] == 1) ? '+' : '-'; 
-		         ?>
-		          <tr>
-		            <td>
-		              <?= $line['name']?>
-		            </td>
-		            <td>
-		              <?= $line['title']?>
-		            </td>
-		            <td>
-		              <?php echo $method,$value ?>
-		            </td>
-		          </tr>
-		        <?php } 
-		         $select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
-		         $select->execute(array($perso)); $line = $select->fetch();
-		         $select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
-		         $select1->execute(array($perso)); $line1 = $select1->fetch();
-		         $select2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
-		         $select2->execute(array($perso)); $line2 = $select2->fetch();
-		         $select3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
-		         $select3->execute(array($perso)); $line3 = $select3->fetch();
-		         $countj = $line['plus'] - $line2['moins'];
-		         $plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
-		         $counts = $plus - $moins; $count = $countj + $counts;
-		         ?>
-		        <tr>
-		          <th>Total :</th><td><?php echo $count;?></td>
-		        </tr>
-		        </tbody>
-		      </table>
+		    ?><table cellspacing="0" cellpadding="0" width="100%"  align="center">
+			<tbody>
+				<tr>
+					<td width="50px">
+						<img alt=" " src="/pics/ico/magiepapertop.png">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="640px" background="/pics/ico/magiepapercenter.png">
+							<tbody>
+								<tr>
+									<th>Nom</th>
+									<th>Titre</th>
+									<th>Avis</th>
+								</tr>
+							<?php while ($line = $avis->fetch())
+							{
+							$value = ($line['sender_rank'] > 4) ? '2' : '1' ;
+							$method = ($line['avis'] == 1) ? '+' : '-'; 
+							?>
+								<tr>
+									<td>
+										<?= $line['name']?>
+									</td>
+									<td>
+										<?= $line['title']?>
+									</td>
+									<td>
+										<?php echo $method,$value ?>
+									</td>
+								</tr>
+							<?php }
+							$select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
+							$select->execute(array($perso)); $line = $select->fetch();
+							$select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
+							$select1->execute(array($perso)); $line1 = $select1->fetch();
+							$select2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
+							$select2->execute(array($perso)); $line2 = $select2->fetch();
+							$select3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
+							$select3->execute(array($perso)); $line3 = $select3->fetch();
+							$countj = $line['plus'] - $line2['moins'];
+							$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
+							$counts = $plus - $moins; $count = $countj + $counts;
+							?>
+								<tr>
+									<th>Total :</th><td><?php echo $count;?></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td width="50px">
+						<img alt="" src="/pics/ico/magiepapebottom.png">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		      <p>
+		        <a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage dont les avis sont notifiés ci-dessus.
+		      </p>
+		      <p>
+		        <a href="index?p=perso&perso">Cliquez ici</a> pour retourner à votre fiche personnage.
+		      </p>
 		    <?php
 	}
 	elseif (isset($_GET['perso']))
