@@ -21,7 +21,7 @@
             <th>Titre</th>
             <th>Avis</th>
           </tr>
-        <?php if ($avis = $avis->fetch()) {
+        <?php while ($avis = $avis->fetch()) {
          $value = ($avis['sender_rank'] > 4) ? '2' : '1' ;
          $method = ($avis['avis'] == 1) ? '+' : '-'; 
          $select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
@@ -55,7 +55,6 @@
         </tbody>
       </table>
     <?php
-    echo $counts, $countj,'<br />', $line['plus'], $line1['moins'];
     }
   else
   { echo 't\'as oublié de mettre une valeur, c\'est une page test hein !'; }
