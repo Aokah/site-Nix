@@ -655,7 +655,7 @@
 				$select->execute(array($_SESSION['id'])); $line = $select->fetch();
 				if ($line['avis'] == 0);
 				{
-					$update = $db->prepare('INSERT INTO hrpavis VALUES('' ,? ,? , 1, ?) ');
+					$update = $db->prepare("INSERT INTO hrpavis VALUES('' ,? ,? , 1, ?) ");
 					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
 					echo 'Avis HRP positif pris en compte !';
 					?>
@@ -674,7 +674,7 @@
 				$select->execute(array($_SESSION['id'])); $line = $select->fetch();
 				if ($line['avis'] == 0);
 				{
-					$update = $db->prepare('INSERT INTO hrpavis VALUES('' ,? ,? , 0, ?) ');
+					$update = $db->prepare("INSERT INTO hrpavis VALUES('' ,? ,? , 0, ?) ");
 					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
 					echo 'Avis HRP négatif pris en compte !';
 					?>
