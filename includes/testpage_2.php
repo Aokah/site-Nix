@@ -10,7 +10,7 @@
     RIGHT JOIN members m
     ON m.id = h.sender_id
     WHERE target_id = ?
-    ORDER BY h.id DESC');
+    ORDER BY h.id ASC');
     $avis->execute(array($perso));
     
     ?>
