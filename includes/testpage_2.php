@@ -21,9 +21,23 @@
             <th>Titre</th>
             <th>Avis</th>
           </tr>
-        <?php while ($avis = $avis->fetch()) {
-         $value = ($avis['sender_rank'] > 4) ? '2' : '1' ;
-         $method = ($avis['avis'] == 1) ? '+' : '-'; 
+        <?php while ($line = $avis->fetch())
+        {
+         $value = ($line['sender_rank'] > 4) ? '2' : '1' ;
+         $method = ($line['avis'] == 1) ? '+' : '-'; 
+         ?>
+          <tr>
+            <td>
+              <?= $line['name']?>
+            </td>
+            <td>
+              <?= $line['title']?>
+            </td>
+            <td>
+              <?php echo $method,$value ?>
+            </td>
+          </tr>
+        <?php } 
          $select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
          $select->execute(array($perso)); $line = $select->fetch();
          $select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
@@ -35,20 +49,7 @@
          $countj = $line['plus'] - $line2['moins'];
          $plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
          $counts = $plus - $moins; $count = $countj + $counts;
-         
          ?>
-          <tr>
-            <td>
-              <?= $avis['name']?>
-            </td>
-            <td>
-              <?= $avis['title']?>
-            </td>
-            <td>
-              <?php echo $method,$value ?>
-            </td>
-          </tr>
-        <?php } ?>
         <tr>
           <th>Total :</th><td><?php echo $count;?></td>
         </tr>
