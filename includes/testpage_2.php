@@ -14,7 +14,7 @@
     $avis->execute(array($perso));
     
     ?>
-      <table>
+      <table style="align:center;">
         <tbody>
           <tr>
             <th>Nom</th>
