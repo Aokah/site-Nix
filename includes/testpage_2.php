@@ -22,7 +22,7 @@
             <th>Avis</th>
           </tr>
         <?php if ($avis = $avis->fetch()) {
-         $value = ($avis['sender_rank'] < 4) ? '2' : '1' ;
+         $value = ($avis['sender_rank'] > 4) ? '2' : '1' ;
          $method = ($avis['avis'] == 1) ? '+' : '-'; 
          $select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1');
          $select->execute(array($perso));
