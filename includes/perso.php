@@ -651,9 +651,9 @@
 			}
 			elseif ($_GET['action'] == "avisok")
 			{
-				$select = $db->prepare('SELECT COUNT(*) AS avis FROM hrpavis WHERE sender_id = ?');
-				$select->execute(array($_SESSION['id'])); $line = $select->fetch();
-				if ($line['avis'] == 0);
+				$select = $db->prepare('SELECT * FROM hrpavis WHERE sender_id = ? AND target_id = ?');
+				$select->execute(array($_SESSION['id'], $perso));
+				if ($line = $select->fetch());
 				{
 					$update = $db->prepare("INSERT INTO hrpavis VALUES('', ?, ?, 1, ?)");
 					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
