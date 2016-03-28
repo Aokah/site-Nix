@@ -1,6 +1,6 @@
 <?php function testpage_2 ()
 {
-  global: $_POST, $_GET, $_SESSION, $db;
+  global $_POST, $_GET, $_SESSION, $db;
   
   if(isset($_GET['perso']))
     {
