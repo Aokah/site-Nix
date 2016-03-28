@@ -52,7 +52,7 @@
 							?>
 								<tr>
 									<td>
-										<a href="index?p=perso&perso=<?=$line['m_id']?>"><?= $line['name']?></a>
+										<a href="index?p=perso&viewavis=<?=$line['m_id']?>"><?= $line['name']?></a>
 									</td>
 									<td>
 										<?= $line['title']?>
