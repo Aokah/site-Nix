@@ -938,7 +938,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table width="640px" align="center" background="/pics/ico/magiepapercenter.png">
+									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
@@ -977,7 +977,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table align="center" width="640px" background="/pics/ico/magiepapercenter.png">
+									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
@@ -1012,7 +1012,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table align="center" width="640px" background="/pics/ico/notespersocenter.png">
+									<table width="640px" background="/pics/ico/notespersocenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
@@ -1702,7 +1702,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table align="center" width="640px" background="/pics/ico/magiepapercenter.png">
+									<table width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
@@ -1739,7 +1739,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table align="center" width="640px" background="/pics/ico/magiepapercenter.png">
+									<table  width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
@@ -1777,7 +1777,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table align="center" width="640px" background="/pics/ico/notespersocenter.png">
+									<table width="640px" background="/pics/ico/notespersocenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
