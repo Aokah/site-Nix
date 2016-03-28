@@ -1,9 +1,11 @@
 <?php function testpage_2 ()
 {
+  global: $_POST, $_GET, $_SESSION, $db;
+  
   if(isset($_GET['perso']))
     {
     $perso = intval($_GET['perso']); echo $perso;
-    $avis = $db->query('SELECT h.id, h.sender_id, h.sender_rank, h.avis, h.target_id, m.id AS m_id, m.title, m.name
+    $avis = $db->prepare('SELECT h.id, h.sender_id, h.sender_rank, h.avis, h.target_id, m.id AS m_id, m.title, m.name
     FROM hrpavis h
     WHERE target_id = ?
     ORDER BY h.id DESC');
