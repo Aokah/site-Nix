@@ -21,7 +21,7 @@
 	if (isset($_GET['viewavis']))
 	{
 		$perso = intval($_GET['viewavis']);
-		    $avis = $db->prepare('SELECT h.id, h.sender_id, h.sender_rank, h.avis, h.target_id, m.id , m.title, m.name
+		    $avis = $db->prepare('SELECT h.id, h.sender_id, h.sender_rank, h.avis, h.target_id, m.id m_id, m.title, m.name
 		    FROM hrpavis h
 		    RIGHT JOIN members m
 		    ON m.id = h.sender_id
@@ -52,7 +52,7 @@
 							?>
 								<tr>
 									<td>
-										<a href="index?p=perso&perso=<?=$line['m.id']?>"><?= $line['name']?></a>
+										<a href="index?p=perso&perso=<?=$line['m_id']?>"><?= $line['name']?></a>
 									</td>
 									<td>
 										<?= $line['title']?>
