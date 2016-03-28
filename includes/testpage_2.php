@@ -8,6 +8,7 @@
     WHERE target_id = ?
     ORDER BY h.id DESC');
     $avis->execute(array($perso));
+    $avis = $avis->fetch();
     }
   else
   { echo 't\'as oublié de mettre une valeur, c\'est une page test hein !'; }
