@@ -649,6 +649,44 @@
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
+			elseif ($_GET['action'] == "avisok")
+			{
+				$select = $db->prepare('SELECT COUNT(*) AS avis FROM hrpavis WHERE sender_id = ?');
+				$select->execute(array($_SESSION['id'])); $line = $select->fetch();
+				if ($line['avis'] == 0);
+				{
+					$update = $db->prepare('INSERT INTO hrpavis VALUES('' ,? ,? , 1, ?) ');
+					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
+					echo 'Avis HRP positif pris en compte !';
+					?>
+					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+					<?php
+				}
+				else
+				{
+					
+				}
+			}
+			elseif ($_GET['action'] == "avisko")
+			{
+				$select = $db->prepare('SELECT COUNT(*) AS avis FROM hrpavis WHERE sender_id = ?');
+				$select->execute(array($_SESSION['id'])); $line = $select->fetch();
+				if ($line['avis'] == 0);
+				{
+					$update = $db->prepare('INSERT INTO hrpavis VALUES('' ,? ,? , 0, ?) ');
+					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
+					echo 'Avis HRP négatif pris en compte !';
+					?>
+					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+					<?php
+				}
+				else
+				{
+					
+				}
+			}
 			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>';}
 			}
 			else { echo '<p>Une erreur s\'est produite.</p>';}
