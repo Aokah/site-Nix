@@ -661,11 +661,11 @@
 	?>
 	<h2 class="name<?= $line['rank']?><?php echo $tech; echo $pionier;?>"><?php echo $title;?> <?= $line['name']?></h2>
 	
-	<table cellspacing="5" cellpadding="5">
+	<table cellspacing="5" cellpadding="5"  align="center">
 		<tbody>
 			<tr>
 				<td valign="top" width="50%">
-					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
+					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%" align="center">
 						<tbody>
 							<tr>
 								<td style="border-radius: 10px;" rowspan="4" width="200px">
@@ -732,7 +732,7 @@
 				</td>
 				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; } ?>
 				<td valign="top" width="50%" rowspan="<?php echo $span; ?>">
-					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
+					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%"  align="center">
 						<tbody>
 							<tr>
 								<td width="33%" style="border: 0px grey solid; background-color: grey; color: grey;">
@@ -840,7 +840,7 @@
 			</tr>
 			<tr>
 				<td>
-					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
+					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%" align="center">
 						<tbody>
 							<tr>
 								<td style="text-align:center;">
@@ -866,7 +866,7 @@
 			<?php if ($_SESSION['rank'] >= 5) { ?>
 			<tr>
 				<td>
-					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
+					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%" align="center">
 						<tbody>
 							<tr>
 								<td width="50%">
@@ -929,7 +929,7 @@
 			<?php } ?>
 			<tr>
 				<td valign="top" rowspan="1">
-					<table cellspacing="0" cellpadding="0" width="100%">
+					<table cellspacing="0" cellpadding="0" width="100%" align="center">
 						<tbody>
 							<tr>
 								<td width="50px">
@@ -938,7 +938,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table width="640px" background="/pics/ico/magiepapercenter.png">
+									<table width="640px" align="center" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
@@ -968,7 +968,7 @@
 					</table>
 				</td>
 				<td valign="top">
-					<table cellspacing="0" cellpadding="0" width="100%" >
+					<table cellspacing="0" cellpadding="0" width="100%"  align="center">
 						<tbody>
 							<tr>
 								<td width="50px">
@@ -977,7 +977,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table width="640px" background="/pics/ico/magiepapercenter.png">
+									<table align="center" width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
@@ -1003,7 +1003,7 @@
 					<p> </p>
 				</td>
 				<td valign="top">
-					<table cellspacing="0" cellpadding="0" width="100%" >
+					<table cellspacing="0" cellpadding="0" width="100%" align="center">
 						<tbody>
 							<tr>
 								<td width="50px">
@@ -1012,7 +1012,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table width="640px" background="/pics/ico/notespersocenter.png">
+									<table align="center" width="640px" background="/pics/ico/notespersocenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
@@ -1308,7 +1308,7 @@
 				{
 			?>
 				<p>Cliquez sur l'une des images disponibles pour afficher la description dela race.</p>
-					<table width="100%">
+					<table width="100%" align="center">
 						<tbody>
 							<tr>
 								<th>Elfe</th>
@@ -1369,7 +1369,7 @@
 				if ($line = $perso->fetch()) {
 			?>
 			<form action="index?p=perso&edit=save" method="POST">
-				<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
+				<table align="center" cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 					<tbody>
 						<tr>
 							<td width="33%" style="border: 0px grey solid; background-color: grey; color: grey;">
@@ -1503,11 +1503,11 @@
 	?>	
 	
 	
-	<table cellspacing="5" cellpadding="5">
+	<table cellspacing="5" cellpadding="5" align="center">
 		<tbody>
 			<tr>
 				<td valign="top" width="50%">
-					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
+					<table align="center" cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
 								<td style="border-radius: 10px;" rowspan="4" width="200px">
@@ -1535,7 +1535,7 @@
 				</td>
 				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; } ?>
 				<td valign="top" width="50%" rowspan="<?php echo $span; ?>">
-					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
+					<table align="center" cellspacing="5" cellpading="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
 								<td width="33%" style="border: 0px grey solid; background-color: grey; color: grey;">
@@ -1623,7 +1623,7 @@
 			</tr>
 			<tr>
 				<td>
-					<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
+					<table align="center" cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
 								<td style="text-align:center;">
@@ -1640,7 +1640,7 @@
 			<?php if ($_SESSION['rank'] >= 5) { ?>
 			<tr>
 				<td>
-					<table cellspacing="5" cellpading="5" class="pnjtable" width="100%">
+					<table align="center" cellspacing="5" cellpading="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
 								<td width="50%">
@@ -1693,7 +1693,7 @@
 			<?php } ?>
 			<tr>
 				<td valign="top" rowspan="1">
-					<table cellspacing="0" cellpadding="0" width="100%">
+					<table align="center" cellspacing="0" cellpadding="0" width="100%">
 						<tbody>
 							<tr>
 								<td width="50px">
@@ -1702,7 +1702,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table width="640px" background="/pics/ico/magiepapercenter.png">
+									<table align="center" width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
@@ -1730,7 +1730,7 @@
 					</table>
 				</td>
 				<td valign="top">
-					<table cellspacing="0" cellpadding="0" width="100%" >
+					<table align="center" cellspacing="0" cellpadding="0" width="100%" >
 						<tbody>
 							<tr>
 								<td width="50px">
@@ -1739,7 +1739,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table width="640px" background="/pics/ico/magiepapercenter.png">
+									<table align="center" width="640px" background="/pics/ico/magiepapercenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
@@ -1768,7 +1768,7 @@
 					<p> </p>
 				</td>
 				<td valign="top">
-					<table cellspacing="0" cellpadding="0" width="100%" >
+					<table align="center" cellspacing="0" cellpadding="0" width="100%" >
 						<tbody>
 							<tr>
 								<td width="50px">
@@ -1777,7 +1777,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table width="640px" background="/pics/ico/notespersocenter.png">
+									<table align="center" width="640px" background="/pics/ico/notespersocenter.png">
 										<tr>
 											<td>
 												<p style="padding-left:10%; padding-right:10%;">
@@ -1834,7 +1834,7 @@
 					{
 					?>
 					<h4><?php echo $titlerace; ?></h4>
-					<table cellspacing="5">
+					<table  align="center" cellspacing="5">
 						<tbody>
 							<tr>
 								<td>
