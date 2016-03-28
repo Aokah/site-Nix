@@ -38,7 +38,7 @@
 				</tr>
 				<tr>
 					<td>
-						<table width="640px" background="/pics/ico/magiepapercenter.png" style="padding:5%;">
+						<table width="640px" background="/pics/ico/magiepapercenter.png" style="padding:5%; text-align:center;">
 							<tbody>
 								<tr>
 									<th>Nom</th>
