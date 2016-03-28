@@ -35,7 +35,7 @@
          $countj = $line['plus'] - $line1['moins'];
          $plus = $line2['plusstaff'] * 2; $moins = $line['moinsstaff'] * 2;
          $counts = $plus - $moins; $count = $countj + $counts;
-         echo $counts, $countj;
+         
          ?>
           <tr>
             <td>
@@ -55,6 +55,7 @@
         </tbody>
       </table>
     <?php
+    echo $counts, $countj;
     }
   else
   { echo 't\'as oublié de mettre une valeur, c\'est une page test hein !'; }
