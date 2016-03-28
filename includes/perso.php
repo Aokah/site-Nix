@@ -663,10 +663,6 @@
 					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
 					<?php
 				}
-				else
-				{
-					
-				}
 			}
 			elseif ($_GET['action'] == "avisko")
 			{
@@ -681,10 +677,6 @@
 					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
 					<?php
-				}
-				else
-				{
-					
 				}
 			}
 			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>';}
