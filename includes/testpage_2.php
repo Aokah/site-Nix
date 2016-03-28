@@ -35,6 +35,7 @@
          $countj = $line['plus'] - $line1['moins'];
          $plus = $line2['plusstaff'] * 2; $moins = $line['moinsstaff'] * 2;
          $counts = $plus - $moins; $count = $countj + $counts;
+         echo $counts, $countj;
          ?>
           <tr>
             <td>
