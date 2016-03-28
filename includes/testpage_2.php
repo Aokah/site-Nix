@@ -14,7 +14,7 @@
     $avis->execute(array($perso));
     
     ?>
-      <table style="align:center;">
+      <table align="center">
         <tbody>
           <tr>
             <th>Nom</th>
@@ -55,6 +55,12 @@
         </tr>
         </tbody>
       </table>
+      <p>
+        <a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage dont les avis sont notifiés ci-dessus.
+      </p>
+      <p>
+        <a href="index?p=perso&perso">Cliquez ici</a> pour retourner à votre fiche personnage.
+      </p>
     <?php
     }
   else
