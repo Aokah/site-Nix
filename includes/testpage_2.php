@@ -12,7 +12,37 @@
     WHERE target_id = ?
     ORDER BY h.id DESC');
     $avis->execute(array($perso));
-    $avis = $avis->fetch();
+    
+    ?>
+      <table>
+        <tbody>
+          <tr>
+            <th>Nom</th>
+            <th>Titre</th>
+            <th>Avis</th>
+          </tr>
+        <?php if ($avis = $avis->fetch()) {
+         $value = ($avis['sender_rank'] < 4) ? '2' : '1' ;
+         $method = ($avis['avis'] == 1) ? '+' : '-'; 
+         $select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1');
+         $select->execute(array($perso);
+         $select1 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0');
+         $select1->execute(array($perso);?>
+          <tr>
+            <td>
+              <?= $avis['name']?>
+            </td>
+            <td>
+              <?= $avis['title']?>
+            </td>
+            <td>
+              <?php echo $method,$value ?>
+            </td>
+          </tr>
+        <?php } ?>
+        </tbody>
+      </table>
+    <?php
     }
   else
   { echo 't\'as oublié de mettre une valeur, c\'est une page test hein !'; }
