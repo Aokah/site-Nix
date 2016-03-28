@@ -55,7 +55,7 @@
         </tbody>
       </table>
     <?php
-    echo $counts, $countj;
+    echo $counts, $countj,'<br />', $line['plus'], $line1['moins'];
     }
   else
   { echo 't\'as oublié de mettre une valeur, c\'est une page test hein !'; }
