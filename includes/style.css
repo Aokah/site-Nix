@@ -334,6 +334,22 @@ textarea {
 
 /* Utilitaires */
 
+.ok
+{
+	color:green;
+}
+.ok:hover
+{
+	color: white;
+}
+.ko
+{
+	color:red;
+}
+.ko:hover
+{
+	color: white;
+}
 .validbg
 {
    float: right;
