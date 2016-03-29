@@ -877,7 +877,7 @@
 					$countj = $line['plus'] - $line2['moins'];
 					$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
 					$counts = $plus - $moins; $hrpavis = $countj + $counts;
-					if ($count >= 10) { $coloravis = 10;} elseif ($count >= 20) { $coloravis = 20;} elseif ($count >= 30) { $coloravis = 30;} elseif ($count < 0) { $coloravis = "negative"; } else { $coloravis = 0; }
+					if ($hrpavis >= 10) { $coloravis = 10;} elseif ($hrpavis >= 20) { $coloravis = 20;} elseif ($hrpavis >= 30) { $coloravis = 30;} elseif ($hrpavis < 0) { $coloravis = "negative"; } else { $coloravis = 0; }
 				?>
 				<td valign="top" width="50%" rowspan="<?php echo $span; ?>">
 					<table width="640px" cellspacing="5" cellpading="5" class="pnjtable" align="center">
@@ -1662,7 +1662,8 @@
 					$countj = $line['plus'] - $line2['moins'];
 					$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
 					$counts = $plus - $moins; $hrpavis = $countj + $counts;
-	?>	
+					if ($hrpavis >= 10) { $coloravis = 10;} elseif ($hrpavis >= 20) { $coloravis = 20;} elseif ($hrpavis >= 30) { $coloravis = 30;} elseif ($hrpavis < 0) { $coloravis = "negative"; } else { $coloravis = 0; }
+					?>	
 	
 	
 	<table cellspacing="5" cellpadding="5" align="center">
@@ -1695,7 +1696,8 @@
 						</tbody>
 					</table>
 				</td>
-				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; } ?>
+				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; }
+				?>
 				<td valign="top" width="50%" rowspan="<?php echo $span; ?>">
 					<table align="center" width="640px" cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
