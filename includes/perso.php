@@ -41,8 +41,8 @@
 						<table width="640px" background="/pics/ico/magiepapercenter.png" style="padding:5%; text-align:center;">
 							<tbody>
 								<tr>
-									<th>Nom</th>
 									<th>Titre</th>
+									<th>Nom</th>
 									<th>Avis</th>
 								</tr>
 							<?php while ($line = $avis->fetch())
@@ -52,10 +52,10 @@
 							?>
 								<tr>
 									<td>
-										<a href="index?p=perso&viewavis=<?=$line['m_id']?>"><?= $line['name']?></a>
+										<?= $line['title']?>
 									</td>
 									<td>
-										<?= $line['title']?>
+										<a href="index?p=perso&viewavis=<?=$line['m_id']?>"><?= $line['name']?></a>
 									</td>
 									<td>
 										<?php echo $method,$value ?>
@@ -864,7 +864,19 @@
 						</tbody>
 					</table>
 				</td>
-				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; } ?>
+				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; }
+					$select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
+					$select->execute(array($perso)); $line = $select->fetch();
+					$select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
+					$select1->execute(array($perso)); $line1 = $select1->fetch();
+					$select2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
+					$select2->execute(array($perso)); $line2 = $select2->fetch();
+					$select3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
+					$select3->execute(array($perso)); $line3 = $select3->fetch();
+					$countj = $line['plus'] - $line2['moins'];
+					$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
+					$counts = $plus - $moins; $hrpavis = $countj + $counts;
+				?>
 				<td valign="top" width="50%" rowspan="<?php echo $span; ?>">
 					<table width="640px" cellspacing="5" cellpading="5" class="pnjtable" align="center">
 						<tbody>
@@ -896,7 +908,9 @@
 									Race : <?= $line['race']?>
 								</td>
 								<td colspan="2">
-									Qualité de jeu : <a href="index?p=perso&viewavis=<?php echo $perso;?>">[\\\\]</a>
+									Qualité de jeu : <a href="index?p=perso&viewavis=<?php echo $perso;?>">[<?php echo $hrpavis;?>]</a> <?php 
+									if ($_SESSION['rank'] > 2) { ?><a href="index?p=perso&perso=<?php echo $perso,?>&action=avisok" style="color:green;">[+1]</a> <a href="index?p=perso&perso=<?php echo $perso,?>&action=avisko" style="color:green;">[-1]</a> 
+									<?php } ?>
 								</td>
 							</tr>
 							<tr>
@@ -1634,6 +1648,18 @@
 					if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}
 					if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 				$pmcount = ($line['magie_rank'] > 7) ? 'PMs Illimité !' : ''.$line['E_magique'].' PMs restants !' ;
+				
+					$select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
+					$select->execute(array($perso)); $line = $select->fetch();
+					$select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
+					$select1->execute(array($perso)); $line1 = $select1->fetch();
+					$select2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
+					$select2->execute(array($perso)); $line2 = $select2->fetch();
+					$select3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
+					$select3->execute(array($perso)); $line3 = $select3->fetch();
+					$countj = $line['plus'] - $line2['moins'];
+					$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
+					$counts = $plus - $moins; $hrpavis = $countj + $counts;
 	?>	
 	
 	
@@ -1699,7 +1725,7 @@
 									Race : <?= $line['race']?>
 								</td>
 								<td colspan="2">
-									Qualité de jeu : <a href="index?p=perso&viewavis=<?= $_SESSION['id'] ?>">[\\\\]</a>
+									Qualité de jeu : <a href="index?p=perso&viewavis=<?= $_SESSION['id'] ?>">[<?php echo $hrpavis;?>]</a>
 								</td>
 							</tr>
 							<tr>
