@@ -654,7 +654,7 @@
 				if($_SESSION['rank'] >= 3) {
 				$select = $db->prepare('SELECT * FROM hrpavis WHERE sender_id = ? AND target_id = ?');
 				$select->execute(array($_SESSION['id'], $perso));
-				if ($line = $select->fetch());
+				if ($line = $select->fetch())
 				{
 					$update = $db->prepare("INSERT INTO hrpavis VALUES('', ?, ?, 1, ?)");
 					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
@@ -682,7 +682,7 @@
 				if($_SESSION['rank'] >= 3) {
 				$select = $db->prepare('SELECT * FROM hrpavis WHERE sender_id = ? AND target_id = ?');
 				$select->execute(array($_SESSION['id'], $perso));
-				if ($line = $select->fetch());
+				if ($line = $select->fetch())
 				{
 					$update = $db->prepare("INSERT INTO hrpavis VALUES('', ?, ?, 0, ?)");
 					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
