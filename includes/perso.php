@@ -656,8 +656,9 @@
 				$select->execute(array($_SESSION['id'], $perso));
 				if ($line = $select->fetch())
 				{
-					$update = $db->prepare("INSERT INTO hrpavis VALUES('', ?, ?, 1, ?)");
-					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
+					
+					$update = $db->prepare("UPDATE hrpavis SET sender_rank = ?, avis = 1 WHERE target_id= ? AND sender_id = ?");
+					$update->execute(array($_SESSION['rank'], $perso, $_SESSION['id']));
 					echo 'Avis HRP positif pris en compte !';
 					?>
 					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
@@ -666,8 +667,8 @@
 				}
 				else
 				{
-					$update = $db->prepare("UPDATE hrpavis SET sender_rank = ?, avis = 1 WHERE target_id= ? AND sender_id = ?");
-					$update->execute(array($_SESSION['rank'], $perso, $_SESSION['id']));
+					$update = $db->prepare("INSERT INTO hrpavis VALUES('', ?, ?, 1, ?)");
+					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
 					echo 'Avis HRP positif pris en compte !';
 					?>
 					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
@@ -684,9 +685,9 @@
 				$select->execute(array($_SESSION['id'], $perso));
 				if ($line = $select->fetch())
 				{
-					$update = $db->prepare("INSERT INTO hrpavis VALUES('', ?, ?, 0, ?)");
-					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
-					echo 'Avis HRP positif pris en compte !';
+					$update = $db->prepare("UPDATE hrpavis SET sender_rank = ?, avis = 0 WHERE target_id= ? AND sender_id = ?");
+					$update->execute(array($_SESSION['rank'], $perso, $_SESSION['id']));
+					echo 'Avis HRP négatif pris en compte !';
 					?>
 					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
@@ -694,9 +695,9 @@
 				}
 				else
 				{
-					$update = $db->prepare("UPDATE hrpavis SET sender_rank = ?, avis = 0 WHERE target_id= ? AND sender_id = ?");
-					$update->execute(array($_SESSION['rank'], $perso, $_SESSION['id']));
-					echo 'Avis HRP négatif pris en compte !';
+					$update = $db->prepare("INSERT INTO hrpavis VALUES('', ?, ?, 0, ?)");
+					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
+					echo 'Avis HRP positif pris en compte !';
 					?>
 					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
