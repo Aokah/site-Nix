@@ -909,7 +909,7 @@
 								</td>
 								<td colspan="2">
 									Qualité de jeu : <a href="index?p=perso&viewavis=<?php echo $perso;?>">[<?php echo $hrpavis;?>]</a> <?php 
-									if ($_SESSION['rank'] > 2) { ?><a href="index?p=perso&perso=<?php echo $perso;?>&action=avisok" style="color:green;">[+1]</a> <a href="index?p=perso&perso=<?php echo $perso;?>&action=avisko" style="color:green;">[-1]</a> 
+									if ($_SESSION['rank'] > 2) { ?><a href="index?p=perso&perso=<?php echo $perso;?>&action=avisok" class="ok">[+1]</a> <a href="index?p=perso&perso=<?php echo $perso;?>&action=avisko" class="ko">[-1]</a> 
 									<?php } ?>
 								</td>
 							</tr>
