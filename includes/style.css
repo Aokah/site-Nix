@@ -340,7 +340,7 @@ textarea {
 }
 .ok:hover
 {
-	color: white;
+	color: yellow;
 }
 .ko
 {
@@ -348,7 +348,7 @@ textarea {
 }
 .ko:hover
 {
-	color: white;
+	color: yellow;
 }
 .validbg
 {
