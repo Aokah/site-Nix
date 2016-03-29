@@ -1651,18 +1651,7 @@
 					if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
 				$pmcount = ($line['magie_rank'] > 7) ? 'PMs Illimité !' : ''.$line['E_magique'].' PMs restants !' ;
 				
-					$select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
-					$select->execute(array($_SESSION['id'])); $line0 = $select->fetch();
-					$select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
-					$select1->execute(array($_SESSION['id'])); $line1 = $select1->fetch();
-					$select2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
-					$select2->execute(array($_SESSION['id'])); $line2 = $select2->fetch();
-					$select3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
-					$select3->execute(array($_SESSION['id'])); $line3 = $select3->fetch();
-					$countj = $line0['plus'] - $line2['moins'];
-					$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
-					$counts = $plus - $moins; $hrpavis = $countj + $counts;
-					if ($hrpavis >= 10) { $coloravis = 10;} elseif ($hrpavis >= 20) { $coloravis = 20;} elseif ($hrpavis >= 30) { $coloravis = 30;} elseif ($hrpavis < 0) { $coloravis = "negative"; } else { $coloravis = 0; }
+					
 					?>	
 	
 	
@@ -1696,7 +1685,19 @@
 						</tbody>
 					</table>
 				</td>
-				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; }
+				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3";
+				$select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
+					$select->execute(array($_SESSION['id'])); $line0 = $select->fetch();
+					$select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
+					$select1->execute(array($_SESSION['id'])); $line1 = $select1->fetch();
+					$select2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
+					$select2->execute(array($_SESSION['id'])); $line2 = $select2->fetch();
+					$select3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
+					$select3->execute(array($_SESSION['id'])); $line3 = $select3->fetch();
+					$countj = $line0['plus'] - $line2['moins'];
+					$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
+					$counts = $plus - $moins; $hrpavis = $countj + $counts;
+					if ($hrpavis >= 10) { $coloravis = 10;} elseif ($hrpavis >= 20) { $coloravis = 20;} elseif ($hrpavis >= 30) { $coloravis = 30;} elseif ($hrpavis < 0) { $coloravis = "negative"; } else { $coloravis = 0; }}
 				?>
 				<td valign="top" width="50%" rowspan="<?php echo $span; ?>">
 					<table align="center" width="640px" cellspacing="5" cellpading="5" class="pnjtable">
