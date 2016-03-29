@@ -106,7 +106,7 @@
 					$countj = $line0['plus'] - $line2['moins'];
 					$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
 					$counts = $plus - $moins; $hrpavis = $countj + $counts;
-					if ($count >= 10) { $coloravis = 10;} elseif ($count >= 20) { $coloravis = 20;} elseif ($count >= 30) { $coloravis = 30;} elseif ($count < 0) { $coloravis = "negative"; } else { $coloravis = 0; }
+					if ($hrpavis >= 10) { $coloravis = 10;} elseif ($hrpavis >= 20) { $coloravis = 20;} elseif ($hrpavis >= 30) { $coloravis = 30;} elseif ($hrpavis < 0) { $coloravis = "negative"; } else { $coloravis = 0; }
 					
 				switch ($line['magie_rank'])
 				{
