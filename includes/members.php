@@ -155,7 +155,7 @@
 					<?= $fofo['msg']?>
 				</td>
 				<td>
-					<span class="avis<?= $coloravis?>"><?= $count?></span>
+					<span class="avis<?= $coloravis?>">[<?= $count?><?= $line['id']?>]</span>
 				</td>
 			<?php if ($_SESSION['rank'] >= 5) { ?>
 				<td style="text-align:center;">
