@@ -651,7 +651,7 @@
 			}
 			elseif ($_GET['action'] == "avisok")
 			{
-				if($_SESSION['rank'] >= 5) {
+				if($_SESSION['rank'] >= 3) {
 				$select = $db->prepare('SELECT * FROM hrpavis WHERE sender_id = ? AND target_id = ?');
 				$select->execute(array($_SESSION['id'], $perso));
 				if ($line = $select->fetch());
@@ -679,18 +679,31 @@
 			}
 			elseif ($_GET['action'] == "avisko")
 			{
-				$select = $db->prepare('SELECT COUNT(*) AS avis FROM hrpavis WHERE sender_id = ?');
-				$select->execute(array($_SESSION['id'])); $line = $select->fetch();
-				if ($line['avis'] == 0);
+				if($_SESSION['rank'] >= 3) {
+				$select = $db->prepare('SELECT * FROM hrpavis WHERE sender_id = ? AND target_id = ?');
+				$select->execute(array($_SESSION['id'], $perso));
+				if ($line = $select->fetch());
 				{
 					$update = $db->prepare("INSERT INTO hrpavis VALUES('', ?, ?, 0, ?)");
 					$update->execute(array($_SESSION['id'], $_SESSION['rank'], $perso));
+					echo 'Avis HRP positif pris en compte !';
+					?>
+					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+					<?php
+				}
+				else
+				{
+					$update = $db->prepare("UPDATE hrpavis SET sender_rank = ?, avis = 0 WHERE target_id= ? AND sender_id = ?");
+					$update->execute(array($_SESSION['rank'], $perso, $_SESSION['id']));
 					echo 'Avis HRP négatif pris en compte !';
 					?>
 					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
 					<?php
 				}
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
 			else { echo '<p>Hop hop hop ! Où tu va ? :D</p>';}
 			}
