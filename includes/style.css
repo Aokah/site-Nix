@@ -334,6 +334,31 @@ textarea {
 
 /* Utilitaires */
 
+.avis0
+{
+	color: black;
+}
+.avisnegative
+{
+	color: red;
+}
+.avis10
+{
+	color:#006400;
+}
+.avis20
+{
+	color:#7FFF00;
+}
+.avis30
+{
+	color: #FFD700;
+}
+.avisnegative:houver, .avis0:hover, .avis10:hover, .avis20:hover, .avis30:hover
+{
+	color:#808080;
+}
+
 .ok
 {
 	color:green;
