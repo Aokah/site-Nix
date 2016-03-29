@@ -783,7 +783,7 @@
 		<tbody>
 			<tr>
 				<td valign="top" width="50%">
-					<table cellspacing="5" cellpadding="5" class="pnjtable" align="center">
+					<table width="640px" cellspacing="5" cellpadding="5" class="pnjtable" align="center">
 						<tbody>
 							<tr>
 								<td style="border-radius: 10px;" rowspan="4" width="200px">
@@ -850,7 +850,7 @@
 				</td>
 				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; } ?>
 				<td valign="top" width="50%" rowspan="<?php echo $span; ?>">
-					<table cellspacing="5" cellpading="5" class="pnjtable" align="center">
+					<table width="640px" cellspacing="5" cellpading="5" class="pnjtable" align="center">
 						<tbody>
 							<tr>
 								<td width="33%" style="border: 0px grey solid; background-color: grey; color: grey;">
@@ -958,7 +958,7 @@
 			</tr>
 			<tr>
 				<td>
-					<table cellspacing="5" cellpadding="5" class="pnjtable" align="center">
+					<table width="640px" cellspacing="5" cellpadding="5" class="pnjtable" align="center">
 						<tbody>
 							<tr>
 								<td style="text-align:center;">
@@ -984,7 +984,7 @@
 			<?php if ($_SESSION['rank'] >= 5) { ?>
 			<tr>
 				<td>
-					<table cellspacing="5" cellpading="5" class="pnjtable" align="center">
+					<table width="640px" cellspacing="5" cellpading="5" class="pnjtable" align="center">
 						<tbody>
 							<tr>
 								<td width="50%">
@@ -1625,7 +1625,7 @@
 		<tbody>
 			<tr>
 				<td valign="top" width="50%">
-					<table align="center" cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
+					<table align="center" width="640px" cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 						<tbody>
 							<tr>
 								<td style="border-radius: 10px;" rowspan="4" width="200px">
@@ -1653,7 +1653,7 @@
 				</td>
 				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; } ?>
 				<td valign="top" width="50%" rowspan="<?php echo $span; ?>">
-					<table align="center" cellspacing="5" cellpading="5" class="pnjtable">
+					<table align="center" width="640px" cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
 								<td width="33%" style="border: 0px grey solid; background-color: grey; color: grey;">
@@ -1741,7 +1741,7 @@
 			</tr>
 			<tr>
 				<td>
-					<table align="center" cellspacing="5" cellpadding="5" class="pnjtable" >
+					<table align="center" width="640px" cellspacing="5" cellpadding="5" class="pnjtable" >
 						<tbody>
 							<tr>
 								<td style="text-align:center;">
@@ -1758,7 +1758,7 @@
 			<?php if ($_SESSION['rank'] >= 5) { ?>
 			<tr>
 				<td>
-					<table align="center" cellspacing="5" cellpading="5" class="pnjtable">
+					<table align="center" width="640px" cellspacing="5" cellpading="5" class="pnjtable">
 						<tbody>
 							<tr>
 								<td width="50%">
