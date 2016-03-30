@@ -21,6 +21,7 @@
 		{
 			$insert = $db->prepare('INSERT INTO news (date_post, author, message) VALUES (NOW(), ?, ?)');
 			$insert->execute(array($_SESSION['id'], htmlspecialchars($_POST['news'])));
+			shirka_say($_POST['news']);
 		}
 		else if (isset($_POST['shirka']) && $_SESSION['rank'] >= rank_add_news)
 		{
@@ -29,7 +30,7 @@
 		?>
 		<h3>Actualité de Nix</h3>
 
-		<section id="news_list">
+		<section class="forum_category">
 			<ul>
 		<?php
 
@@ -51,7 +52,8 @@
 		</section>
 		
 		<?php if ($_SESSION['rank'] >= rank_add_news) {?>
-		<section class="add_news">
+		<section>
+			<p style="color:red;">Mise à jour des annonces : Shirka énonce désormais ce qui est écrit dans le champs permettant d'ajouterr des annonce en en-tête du site !</p>
 			<h4>Nouvelle :</h4>
 
 			<form method="POST" action="index.php?p=news">
