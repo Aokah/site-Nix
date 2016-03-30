@@ -53,7 +53,7 @@
 		
 		<?php if ($_SESSION['rank'] >= rank_add_news) {?>
 		<section>
-			<p style="color:red;">Mise à jour des annonces : Shirka énonce désormais ce qui est écrit dans le champs permettant d'ajouterr des annonce en en-tête du site !</p>
+			<p style="color:red;">Mise à jour des annonces : Shirka énonce désormais ce qui est écrit dans le champs permettant d'ajouter des annonce en en-tête du site !</p>
 			<h4>Nouvelle :</h4> 
 
 			<form method="POST" action="index.php?p=news">
