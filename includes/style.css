@@ -354,7 +354,7 @@ textarea {
 {
 	color: #FFD700;
 }
-.avisnegative:houver, .avis0:hover, .avis10:hover, .avis20:hover, .avis30:hover
+a .avisnegative:houver, a .avis0:hover,a  .avis10:hover, a .avis20:hover, a .avis30:hover
 {
 	color:#808080;
 }
