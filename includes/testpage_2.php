@@ -2,68 +2,8 @@
 {
   global $_POST, $_GET, $_SESSION, $db;
   
-  if(isset($_GET['perso']))
-    {
-    $perso = intval($_GET['perso']);
-    $avis = $db->prepare('SELECT h.id, h.sender_id, h.sender_rank, h.avis, h.target_id, m.id , m.title, m.name
-    FROM hrpavis h
-    RIGHT JOIN members m
-    ON m.id = h.sender_id
-    WHERE target_id = ?
-    ORDER BY h.id ASC');
-    $avis->execute(array($perso));
-    
-    ?>
-      <table align="center">
-        <tbody>
-          <tr>
-            <th>Nom</th>
-            <th>Titre</th>
-            <th>Avis</th>
-          </tr>
-        <?php while ($line = $avis->fetch())
-        {
-         $value = ($line['sender_rank'] > 4) ? '2' : '1' ;
-         $method = ($line['avis'] == 1) ? '+' : '-'; 
-         ?>
-          <tr>
-            <td>
-              <?= $line['name']?>
-            </td>
-            <td>
-              <?= $line['title']?>
-            </td>
-            <td>
-              <?php echo $method,$value ?>
-            </td>
-          </tr>
-        <?php } 
-         $select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
-         $select->execute(array($perso)); $line = $select->fetch();
-         $select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
-         $select1->execute(array($perso)); $line1 = $select1->fetch();
-         $select2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
-         $select2->execute(array($perso)); $line2 = $select2->fetch();
-         $select3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
-         $select3->execute(array($perso)); $line3 = $select3->fetch();
-         $countj = $line['plus'] - $line2['moins'];
-         $plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
-         $counts = $plus - $moins; $count = $countj + $counts;
-         ?>
-        <tr>
-          <th>Total :</th><td><?php echo $count;?></td>
-        </tr>
-        </tbody>
-      </table>
-      <p>
-        <a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage dont les avis sont notifiés ci-dessus.
-      </p>
-      <p>
-        <a href="index?p=perso&perso">Cliquez ici</a> pour retourner à votre fiche personnage.
-      </p>
-    <?php
-    }
-  else
-  { echo 't\'as oublié de mettre une valeur, c\'est une page test hein !'; }
+?>
+  <h3>Page Test pour les Incantations</h3>
+<?php
 }
 ?>
