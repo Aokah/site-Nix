@@ -18,11 +18,14 @@
     <h3>Liste des sorts d'un joueur</h3>
   <?php
   }
-  elseif(isset($_GET['action']) AND $_GET['action'] == "unvalided")
+  elseif(isset($_GET['action']))
   {
+    if ($_GET['action'] == "unvalided")
+    {
   ?>
   <h3>Liste des sorts non validés</h3>
   <?php
+    } else { echo 'Action invalide (Bien tenté !)'; }
   }
   else
   {
