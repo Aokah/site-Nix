@@ -12,15 +12,15 @@
     <h3>Vision du sort à l'unité (Modo +)</h3>
     <?php
   }
-  elseif (isset($_GET['p']))
+  elseif (isset($_GET['u']))
   {
   ?> 
     <h3>Liste des sorts d'un joueur</h3>
   <?php
   }
-  elseif(isset($_GET['action']))
+  elseif(isset($_GET['a']))
   {
-    if ($_GET['action'] == "unvalided")
+    if ($_GET['a'] == "unvalided")
     {
   ?>
   <h3>Liste des sorts non validés</h3>
