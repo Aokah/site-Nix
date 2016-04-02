@@ -10,25 +10,28 @@
   {
     if ($_GET['i'] == "valid")
     {
+      if(isset($_GET['n']))
+      {
+        $perso = intval($_GET['n']);
+        
       if ($_SESSION['rank'] > 4)
         {
-      $incan = $db->query('SELECT ig.id, ig.user_id, ig.incan_id, ig.valid,
-      m.id AS m_id, m.rank, m.pionier, m.technician, m.ban, m.removed, m.name AS nom,
-      il.id AS il_id, il.name AS sort, il.desc, il.level, il.cost, il.command, il.type
-      FROM incan_get ig
-      RIGHT JOIN members m ON m.id = ig.user_id
-      LEFT JOIN incan_list il ON il.id = ig.incan_id
-      WHERE ig.valid = 0
-      ORDER BY nom ASC , il.level DESC , il.type ASC , il.name');
-      $line = $incan->fetch();
-        }
-        else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
     ?>
     <h3>Liste des sorts Validés</h3>
     <?php 
     $irank = 8;
     while ($irank > 0)
     {
+      $incan = $db->prepare('SELECT ig.id, ig.user_id, ig.incan_id, ig.valid,
+      m.id AS m_id, m.rank, m.pionier, m.technician, m.ban, m.removed, m.name AS nom,
+      il.id AS il_id, il.name AS sort, il.desc, il.level, il.cost, il.command, il.type
+      FROM incan_get ig
+      RIGHT JOIN members m ON m.id = ig.user_id
+      LEFT JOIN incan_list il ON il.id = ig.incan_id
+      WHERE ig.valid = 0 AND il.level = ? AND nom = ?
+      ORDER BY nom ASC , il.level DESC , il.type ASC , il.name');
+      $incan->execute(array($irank,$perso));
+      $line = $incan->fetch();
     ?>
     <table cellspacing="0" cellpadding="0" align="center">
       <tbody>
@@ -75,6 +78,9 @@
     <?php
     $irank-- ;
     }
+        }
+        else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
+      }
     }
     elseif ($_GET['i'] ==  "unvalid")
     {
