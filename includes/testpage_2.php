@@ -36,7 +36,7 @@
       $select = $db->prepare('SELECT COUNT(*) AS verif FROM incan_get
       RIGHT JOIN incan_list ON incan_list.id = incan_get.incan_id
       WHERE incan_get.user_id = ? AND incan_list.level = ?');
-      $select->execute(array($_SESSION['id'], $irank;)); $count = $select->fetch();
+      $select->execute(array($_SESSION['id'], $irank)); $count = $select->fetch();
       echo $irank, $count['verif'];
     ?>
     <table cellspacing="0" cellpadding="0" align="center">
