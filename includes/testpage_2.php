@@ -23,7 +23,7 @@
       RIGHT JOIN members m ON m.id = ig.user_id
       LEFT JOIN incan_list il ON il.id = ig.incan_id
       WHERE ig.valid = 0
-      ORDER BY m.name ASC AND il.level DESC AND il.type ASC AND il.name');
+      ORDER BY nom ASC , il.level DESC , il.type ASC , il.name');
       $line = $incan->fetch();
     }
     else { echo 'N\'oublies pas de mettre une action valable :)'; }
