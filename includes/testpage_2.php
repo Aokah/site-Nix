@@ -35,7 +35,7 @@
       
       $name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
       $name->execute(array($perso)); $name = $name->fetch();
-      $id = $name['id']
+      $id = $name['id'];
       $select = $db->prepare('SELECT COUNT(*) AS verif FROM incan_get
       RIGHT JOIN incan_list ON incan_list.id = incan_get.incan_id
       WHERE incan_get.user_id = ? AND incan_list.level = ?');
