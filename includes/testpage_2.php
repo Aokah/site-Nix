@@ -25,6 +25,48 @@
         else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
     ?>
     <h3>Liste des sorts Validés</h3>
+    <table cellspacing="0" cellpadding="0" align="center">
+      <tbody>
+        <tr>
+          <td>
+            <img src="pics/ico/magiepapertop.png" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table width="640px" background="/pics/ico/magiepapercenter.png" align="center">
+              <tbody>
+                <tr>
+                  <td style="textalign:center;">
+                    Formule
+                  </td>
+                </tr>
+                <tr>
+                   <td style="textalign:center;">
+                     Element / Niveau
+                  </td>
+                </tr>
+                <tr>
+                  <td style="textalign:center;">
+                    Desc
+                  </td>
+                </tr>
+                <tr>
+                  <td style="textalign:center;">
+                    coùt
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="/pics/ico/magiepapebottom.png" alt="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
     <?php
     }
     elseif ($_GET['i'] ==  "unvalid")
