@@ -25,6 +25,11 @@
         else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
     ?>
     <h3>Liste des sorts Validés</h3>
+    <?php 
+    $irank = 8;
+    while ($irank > 0)
+    {
+    ?>
     <table cellspacing="0" cellpadding="0" align="center">
       <tbody>
         <tr>
@@ -68,6 +73,8 @@
       </tbody>
     </table>
     <?php
+    $irank-- ;
+    }
     }
     elseif ($_GET['i'] ==  "unvalid")
     {
