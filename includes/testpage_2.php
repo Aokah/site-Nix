@@ -33,11 +33,16 @@
       $incan->execute(array($irank,$perso));
       $line = $incan->fetch();
       
+      $name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
+      $name->execute(array($perso)); $name = $name->fetch();
+      $id = $name['id']
       $select = $db->prepare('SELECT COUNT(*) AS verif FROM incan_get
       RIGHT JOIN incan_list ON incan_list.id = incan_get.incan_id
       WHERE incan_get.user_id = ? AND incan_list.level = ?');
-      $select->execute(array($_SESSION['id'], $irank)); $count = $select->fetch();
+      $select->execute(array($id, $irank)); $count = $select->fetch();
       echo $irank, $count['verif'];
+      if ($count['verif'] != 0)
+      {
     ?>
     <table cellspacing="0" cellpadding="0" align="center">
       <tbody>
@@ -83,6 +88,7 @@
     </table>
     <?php
     $irank-- ;
+    }
     }
         }
         else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
