@@ -12,7 +12,7 @@
     {
       if(isset($_GET['n']))
       {
-        $perso = intval($_GET['n']);
+        $perso = htmlspecialchars($_GET['n']);
         
       if ($_SESSION['rank'] > 4)
         {
@@ -32,6 +32,12 @@
       ORDER BY nom ASC , il.level DESC , il.type ASC , il.name');
       $incan->execute(array($irank,$perso));
       $line = $incan->fetch();
+      
+      $select = $db->prepare('SELECT COUNT(*) AS verif FROM incan_get
+      RIGHT JOIN incan_list ON incan_list.id = incan_get.incan_id
+      WHERE incan_get.user_id = ? AND incan_list.level = ?');
+      $select->execute(array($_SESSION['id'], $irank;)); $count = $select->fetch();
+      echo $irank, $count['verif'];
     ?>
     <table cellspacing="0" cellpadding="0" align="center">
       <tbody>
