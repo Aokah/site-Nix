@@ -26,7 +26,7 @@
       ORDER BY m.name ASC, il.level DESC, il.type ASC, il.name');
       $line = $incan->fetch();
     }
-    else echo 'N\'oublies pas de mettre une action valable :)'; }
+    else { echo 'N\'oublies pas de mettre une action valable :)'; }
   }
   elseif (isset($_GET['u']))
   {
