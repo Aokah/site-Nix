@@ -42,7 +42,7 @@
                   </td>
                 </tr>
                 <tr>
-                   <td style="tex-talign:center;">
+                   <td style="text-align:center;">
                      Element / Niveau
                   </td>
                 </tr>
