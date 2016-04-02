@@ -37,22 +37,22 @@
             <table width="640px" background="/pics/ico/magiepapercenter.png" align="center">
               <tbody>
                 <tr>
-                  <td style="textalign:center;">
+                  <td style="text-align:center;">
                     Formule
                   </td>
                 </tr>
                 <tr>
-                   <td style="textalign:center;">
+                   <td style="tex-talign:center;">
                      Element / Niveau
                   </td>
                 </tr>
                 <tr>
-                  <td style="textalign:center;">
+                  <td style="text-align:center;">
                     Desc
                   </td>
                 </tr>
                 <tr>
-                  <td style="textalign:center;">
+                  <td style="text-align:center;">
                     coùt
                   </td>
                 </tr>
