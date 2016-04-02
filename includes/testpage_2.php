@@ -18,7 +18,7 @@
     {
       $incan = $db->query('SELECT ig.id, ig.user_id, ig.incan_id, ig.valid,
       m.id AS m_id, m.rank, m.pionier, m.technician, m.ban, m.removed, m.name AS nom
-      il.id AS il_id, il.name AS sort, il.desc, il.level, il.cost, il.command, il.type
+      il.id  il_id, il.name  sort, il.desc, il.level, il.cost, il.command, il.type
       FROM incan_get ig
       RIGHT JOIN members m ON m.id = ig.user_id
       LEFT JOIN incan_list il ON il.id = ig.incan_id
