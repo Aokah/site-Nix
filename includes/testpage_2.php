@@ -10,9 +10,9 @@
   {
     if ($_GET['i'] == "valid")
     {
-      if(isset($_GET['n']))
+      if(isset($_GET['search']))
       {
-        $perso = htmlspecialchars($_GET['n']);
+        $perso = htmlspecialchars($_GET['search']);
         
       if ($_SESSION['rank'] > 4)
         {
