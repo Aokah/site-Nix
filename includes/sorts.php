@@ -45,7 +45,7 @@
       FROM incan_get ig
       RIGHT JOIN members m ON m.id = ig.user_id
       LEFT JOIN incan_list il ON il.id = ig.incan_id
-      WHERE ig.valid = 0 AND il.level = ? AND nom = ?
+      WHERE ig.valid = 1 AND il.level = ? AND nom = ?
       ORDER BY nom ASC , il.level DESC , il.type ASC , il.name');
       $incan->execute(array($irank,$perso));
       $nom = $incan->fetch();
@@ -55,7 +55,7 @@
       $id = $name['id'];
       $select = $db->prepare('SELECT COUNT(*) AS verif FROM incan_get
       RIGHT JOIN incan_list ON incan_list.id = incan_get.incan_id
-      WHERE incan_get.user_id = ? AND incan_list.level = ? AND incan_get.valid = 0');
+      WHERE incan_get.user_id = ? AND incan_list.level = ? AND incan_get.valid = 1');
       $select->execute(array($id, $irank)); $count = $select->fetch();
       if ($count['verif'] != 0)
       {
@@ -63,7 +63,7 @@
         il.id AS il_id, il.name, il.desc, il.type, il.cost, il.command, il.level
         FROM incan_get ig
         RIGHT JOIN incan_list il ON il.id = ig.incan_id
-        WHERE ig.user_id = ? AND il.level = ? AND ig.valid = 0
+        WHERE ig.user_id = ? AND il.level = ? AND ig.valid = 1
         ORDER BY level DESC, type ASC, name ASC');
         $incan->execute(array($id, $irank));
     ?>
@@ -178,7 +178,7 @@
       FROM incan_get ig
       RIGHT JOIN members m ON m.id = ig.user_id
       LEFT JOIN incan_list il ON il.id = ig.incan_id
-      WHERE ig.valid = 1 AND il.level = ? AND nom = ?
+      WHERE ig.valid = 0 AND il.level = ? AND nom = ?
       ORDER BY nom ASC , il.level DESC , il.type ASC , il.name');
       $incan->execute(array($irank,$perso));
       $nom = $incan->fetch();
@@ -188,7 +188,7 @@
       $id = $name['id'];
       $select = $db->prepare('SELECT COUNT(*) AS verif FROM incan_get
       RIGHT JOIN incan_list ON incan_list.id = incan_get.incan_id
-      WHERE incan_get.user_id = ? AND incan_get.valid = 1  AND incan_list.level = ?');
+      WHERE incan_get.user_id = ? AND incan_get.valid = 0  AND incan_list.level = ?');
       $select->execute(array($id, $irank)); $count = $select->fetch();
       if ($count['verif'] != 0)
       {
@@ -196,7 +196,7 @@
         il.id AS il_id, il.name, il.desc, il.type, il.cost, il.command, il.level
         FROM incan_get ig
         RIGHT JOIN incan_list il ON il.id = ig.incan_id
-        WHERE ig.user_id = ? AND il.level = ? AND ig.valid = 1
+        WHERE ig.user_id = ? AND il.level = ? AND ig.valid = 0
         ORDER BY level DESC, type ASC, name ASC');
         $incan->execute(array($id, $irank));
     ?>
