@@ -402,6 +402,13 @@ a .avisnegative:houver, a .avis0:hover,a  .avis10:hover, a .avis20:hover, a .avi
 	cursor: pointer;
 }
 
+.nameRose {
+	font-weight: bold;
+	font-size: 1.1em;
+	color: pink;
+	text-shadow: 2px 2px 2px #000000;
+}
+
 .name0 {
 	font-weight: bold;
 	font-size: 1.1em;
