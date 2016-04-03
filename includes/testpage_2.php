@@ -50,9 +50,9 @@
         il.id AS il_id, il.name, il.desc, il.type, il.cost, il.command
         FROM incan_get ig
         RIGHT JOIN incan_list il ON il.id = ig.incan_id
-        WHERE ig.user_id = ?
+        WHERE ig.user_id = ? AND il.level = ?
         ORDER BY level DESC, type ASC, name ASC');
-        $incan->execute(array($id));
+        $incan->execute(array($id, $irank));
     ?>
     
     <table cellspacing="0" cellpadding="0" align="center">
@@ -101,7 +101,7 @@
                   </td>
                 </tr>
                 <tr>
-                  style="text-align:center;"
+                  <td style="text-align:center;">
                     <a href="index?p=sorts&lunch=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Lancer le sort !]</a>
                   </td>
                 </tr>
