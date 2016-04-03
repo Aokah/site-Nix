@@ -78,11 +78,11 @@
 								case 2:  $level = "E"; break; case 1:  $level = "F"; break;
               }
               ?>
-            <table width="640px" background="/pics/ico/magiepapercenter.png" align="center">
+            <table width="640px" background="/pics/ico/magiepapercenter.png" align="center" style="padding-bottom:10%; padding-left:6%; padding-right:6%;">
               <tbody>
                 <tr>
                   <td style="text-align:center;">
-                    <?= $line['name']?>
+                    <p class="name1"><?= $line['name']?></p>
                   </td>
                 </tr>
                 <tr>
@@ -101,8 +101,8 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                    <a href="index?p=sorts&action=lunch&for=<?=$id?>" class="name5">[Lancer le sort !]</a>
+                  style="text-align:center;"
+                    <a href="index?p=sorts&lunch=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Lancer le sort !]</a>
                   </td>
                 </tr>
               </tbody>
