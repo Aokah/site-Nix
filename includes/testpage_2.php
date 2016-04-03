@@ -46,7 +46,7 @@
       $select->execute(array($id, $irank)); $count = $select->fetch();
       if ($count['verif'] != 0)
       {
-        $incan = $db->prepare('SELECT ig.id ig.user_id, ig.incan_id, ig.valid,
+        $incan = $db->prepare('SELECT ig.id, ig.user_id, ig.incan_id, ig.valid,
         il.id AS il_id, il.name, il.desc, il.type, il.cost, il.command
         FROM incan_get ig
         RIGHT JOIN incan_list il ON il.id = ig.incan_id
