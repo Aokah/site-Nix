@@ -409,6 +409,7 @@
     </table>
     <?php
     }
+    }
     $irank-- ;
     }
    	} else {
