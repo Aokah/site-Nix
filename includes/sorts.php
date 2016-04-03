@@ -40,7 +40,7 @@
       $id = $name['id'];
       
    	$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ? AND valid = 1');
-   	$verif->execute(array($perso)); $verif = $verif->fetch();
+   	$verif->execute(array($id)); $verif = $verif->fetch();
    	if ($verif['count'] != 0)
    	{
     $irank = 8;
@@ -190,7 +190,7 @@
       $id = $name['id'];
       
    	$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ? AND valid = 0');
-   	$verif->execute(array($perso)); $verif = $verif->fetch();
+   	$verif->execute(array($id)); $verif = $verif->fetch();
    	if ($verif['count'] != 0)
    	{
     $irank = 8;
