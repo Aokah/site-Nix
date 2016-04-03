@@ -47,7 +47,7 @@
       if ($count['verif'] != 0)
       {
         $incan = $db->prepare('SELECT ig.id, ig.user_id, ig.incan_id, ig.valid,
-        il.id AS il_id, il.name, il.desc, il.type, il.cost, il.command
+        il.id AS il_id, il.name, il.desc, il.type, il.cost, il.command, il.level
         FROM incan_get ig
         RIGHT JOIN incan_list il ON il.id = ig.incan_id
         WHERE ig.user_id = ? AND il.level = ?
@@ -97,7 +97,7 @@
                 </tr>
                 <tr>
                   <td style="text-align:center;">
-                    <?= $line['cost']?>
+                    <?= $line['cost']?> Points.
                   </td>
                 </tr>
                 <tr>
