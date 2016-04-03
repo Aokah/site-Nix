@@ -178,7 +178,7 @@
   					}
   				elseif (isset($_POST['envoi']))
   					{
-  						$add = $db->prepare("INSERT INTO pnj_list VALUES(' ',?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?");
+  						$add = $db->prepare("INSERT INTO pnj_list VALUES(' ',?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
   						$add->execute(array($role, $prenom, $nom, $origine, $race, $taille, $poids, $sd, $element, $qualite,
   						$defaut, $event, $caractere, $equipement, $bg));
   						?>
