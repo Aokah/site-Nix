@@ -1,4 +1,4 @@
-<?php function testpage_2 ()
+<?php function sorts ()
 {
   global $_POST, $_GET, $_SESSION, $db;
   
@@ -18,7 +18,15 @@
         {
     ?>
     <h3>Liste des sorts Validés</h3>
-    <?php 
+     Recherche des sorts de <?= $perso?>
+     <form action="index?sorts&i=valid" method="GET">
+     	<p>Recherche par personnage :
+	     	<input id="searchfield" value="" name="search">
+	     	<input type="submit" value="Rechercher">
+     	</p>
+     </form>
+     <?php 
+   
     $irank = 8;
     while ($irank > 0)
     {
@@ -32,11 +40,7 @@
       ORDER BY nom ASC , il.level DESC , il.type ASC , il.name');
       $incan->execute(array($irank,$perso));
       $nom = $incan->fetch();
-      $tech = ($nom['technician']) ? '-T' : ''; $pionier = ($nom['pionier']) ? '-P' : '';
-      if ($nom['ban'] == 1) { $title = "Banni";} elseif ($nom['removed'] == 1) { $title = "Oublié";} else { $title = $nom['title'];}
-      ?>
-      <h4 class="name<?=$nom['rank'], $tech, $pionier?>"><?=$title ?> <?=$nom['nom']?></h4>
-      <?php
+      
       $name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
       $name->execute(array($perso)); $name = $name->fetch();
       $id = $name['id'];
