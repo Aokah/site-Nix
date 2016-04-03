@@ -413,6 +413,29 @@
     $irank-- ;
     } 	
    	} 
+   	else {
+   		?>
+   		<table cellspacing="0" cellpadding="0" align="center">
+      <tbody>
+        <tr>
+          <td>
+            <img src="pics/ico/magiepapertop.png" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td background="pics/ico/magiepapercenter.png">
+          	<p style="text-align:center;">Vous ne possédez aucun sort !</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="/pics/ico/magiepapebottom.png" alt="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   		<?php
+   	}
   }
 }
 ?>
