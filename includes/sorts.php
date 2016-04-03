@@ -30,7 +30,7 @@
 	</p>
      </form>
      <p>
-     	<a href="index?p=sort&i=unvalid&search=<?= $perso?>">
+     	<a href="index?p=sorts&i=unvalid&search=<?= $perso?>">
      		[Voir les sorts invalidés du personnage.]
      	</a>
      </p>
@@ -163,7 +163,7 @@
 	</p>
      </form>
      <p>
-     	<a href="index?p=sort&i=valid&search=<?= $perso?>">
+     	<a href="index?p=sorts&i=valid&search=<?= $perso?>">
      		[Voir les sorts validés du personnage.]
      	</a>
      </p>
