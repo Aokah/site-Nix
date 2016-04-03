@@ -20,13 +20,14 @@
     <h3>Liste des sorts Validés</h3>
     <?php if (!empty($_GET['search'])) { ?>
      Recherche des sorts de <?= $perso,'.'; } else { echo '<span style="color:red;">Tu es sûr que n\'as pas oublié de noter un nom quelque part ? Réessaie.</span';} ?>
-     <form action="index.php" method="GET">
+     <form action="index.php?p=pnj_list&a=edit" method="POST">
+	<p>
      	Recherche par personnage :
      		<input type="hidden" value="sorts" name="p" />
      		<input type="hidden" value="valid" name="i" />
 	     	<input name="search" />
-	     	<input type="submit" name="search" value="Rechercher" />
-     
+	     	<input type="submit" name="search" value="Rechercher" />	
+	</p>
      </form>
      <?php 
    
