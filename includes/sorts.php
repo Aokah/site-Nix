@@ -18,7 +18,7 @@
         {
     ?>
     <h3>Liste des sorts Validés</h3>
-    <?php if (empty($_GET['search'])) {
+    <?php if (empty($_GET['search'])) { ?>
      Recherche des sorts de <?= $perso } else { echo '<span class="name7">Tu es sûr que n\'as pas oublié de noter u nom quelque part ? Réessaie.</span';} ?>
      <form action="index.php" method="GET">
      	<p>Recherche par personnage :
