@@ -274,6 +274,7 @@
         else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
       }
   }
+  }
   else
   {
   ?>
