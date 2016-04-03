@@ -424,7 +424,8 @@
         </tr>
         <tr>
           <td background="pics/ico/magiepapercenter.png">
-          	<p style="text-align:center;">Vous ne possédez aucun sort !</p>
+          	<p style="text-align:center;">Vous ne possédez aucun sort ! TEST CHANGEMENT MOTHER FUCKER !
+          	</p>
           </td>
         </tr>
         <tr>
