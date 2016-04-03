@@ -10,7 +10,7 @@
   {
     if ($_GET['i'] == "valid")
     {
-      if(isset($_GET['search']))
+      if(isset($_POST['Rechercher'] && isset($_GET['search']))
       {
         $perso = htmlspecialchars($_GET['search']);
         
@@ -19,7 +19,7 @@
     ?>
     <h3>Liste des sorts Validés</h3>
     <?php if (!empty($_GET['search'])) { ?>
-     Recherche des sorts de <?= $perso,'.'; } else { echo '<span class="name6">Tu es sûr que n\'as pas oublié de noter un nom quelque part ? Réessaie.</span';} ?>
+     Recherche des sorts de <?= $perso,'.'; } else { echo '<span style="color:red;">Tu es sûr que n\'as pas oublié de noter un nom quelque part ? Réessaie.</span';} ?>
      <form action="index.php" method="GET">
      	<p>Recherche par personnage :
      		<input type="hidden" value="sorts" name="p" />
