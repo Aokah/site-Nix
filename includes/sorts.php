@@ -19,7 +19,7 @@
     ?>
     <h3>Liste des sorts Validés</h3>
      Recherche des sorts de <?= $perso?>
-     <form action="index?sorts&i=valid" method="GET">
+     <form action="index?p=sorts&i=valid" method="GET">
      	<p>Recherche par personnage :
 	     	<input id="searchfield" value="" name="search">
 	     	<input type="submit" value="Rechercher">
