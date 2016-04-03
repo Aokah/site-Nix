@@ -110,7 +110,7 @@
                 </tr>
                 <tr>
                   <td style="text-align:center;">
-                    <a href="index?p=sorts&lunch=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Lancer le sort !]</a>
+                    <a href="index?p=sorts&launch=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Lancer le sort !]</a>
                   </td>
                 </tr>
               </tbody>
@@ -313,6 +313,19 @@
         else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
       }
   }
+  }
+  elseif (isset($_GET['launch']))
+  {
+  	$sort = intval($_GET['launch']);
+  	if (isset($_GET['for']))
+  	{
+  		$to = intval($_GET['to']);
+  	}
+  	else
+  	{
+  		echo '<p>Uhm.... Tu es sûr que tu n\'as pas oublié de préciser qui lançait le sort ?</p>'; }
+  	}
+  	
   }
   else
   {
