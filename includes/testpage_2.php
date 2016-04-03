@@ -31,7 +31,7 @@
       WHERE ig.valid = 0 AND il.level = ? AND nom = ?
       ORDER BY nom ASC , il.level DESC , il.type ASC , il.name');
       $incan->execute(array($irank,$perso));
-      $nom = $incan->fetch());
+      $nom = $incan->fetch();
       $tech = ($nom['technician']) ? '-T' : ''; $pionier = ($nom['pionier']) ? '-P' : '';
       if ($nom['ban'] == 1) { $title = "Banni";} elseif ($nom['removed'] == 1) { $title = "Oublié";} else { $title = $nom['title'];}
       ?>
