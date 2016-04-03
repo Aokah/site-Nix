@@ -35,24 +35,18 @@
      	</a>
      </p>
      <?php 
-   
+     $name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
+      $name->execute(array($perso)); $name = $name->fetch();
+      $id = $name['id'];
+      
+   	$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ? AND valid = 1');
+   	$verif->execute(array($perso)); $verif = $verif->fetch();
+   	if ($verif['count'] != 0)
+   	{
     $irank = 8;
     while ($irank > 0)
     {
-      $incan = $db->prepare('SELECT ig.id, ig.user_id, ig.incan_id, ig.valid,
-      m.id AS m_id, m.rank, m.pionier, m.technician, m.ban, m.removed, m.name AS nom, m.title,
-      il.id AS il_id, il.name AS sort, il.desc, il.level, il.cost, il.command, il.type
-      FROM incan_get ig
-      RIGHT JOIN members m ON m.id = ig.user_id
-      LEFT JOIN incan_list il ON il.id = ig.incan_id
-      WHERE ig.valid = 1 AND il.level = ? AND nom = ?
-      ORDER BY nom ASC , il.level DESC , il.type ASC , il.name');
-      $incan->execute(array($irank,$perso));
-      $nom = $incan->fetch();
       
-      $name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
-      $name->execute(array($perso)); $name = $name->fetch();
-      $id = $name['id'];
       $select = $db->prepare('SELECT COUNT(*) AS verif FROM incan_get
       RIGHT JOIN incan_list ON incan_list.id = incan_get.incan_id
       WHERE incan_get.user_id = ? AND incan_list.level = ? AND incan_get.valid = 1');
@@ -136,6 +130,29 @@
     }
     $irank-- ;
     }
+   	} else {
+   		?>
+   		<table cellspacing="0" cellpadding="0" align="center">
+      <tbody>
+        <tr>
+          <td>
+            <img src="pics/ico/magiepapertop.png" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+          	<p>Ce personnage ne possède aucun sort !</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="/pics/ico/magiepapebottom.png" alt="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   		<?php
+   	}
     
         }
         else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
@@ -157,7 +174,7 @@
 	<p>
      	Recherche par personnage :
      		<input type="hidden" value="sorts" name="p" />
-     		<input type="hidden" value="valid" name="i" />
+     		<input type="hidden" value="unvalid" name="i" />
 	     	<input name="search" />
 	     	<input type="submit" value="Rechercher" />	
 	</p>
@@ -168,7 +185,14 @@
      	</a>
      </p>
      <?php 
-   	$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ?')
+     $name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
+      $name->execute(array($perso)); $name = $name->fetch();
+      $id = $name['id'];
+      
+   	$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ? AND valid = 0');
+   	$verif->execute(array($perso)); $verif = $verif->fetch();
+   	if ($verif['count'] != 0)
+   	{
     $irank = 8;
     while ($irank > 0)
     {
@@ -259,6 +283,29 @@
     }
     $irank-- ;
     }
+   	} else {
+   		?>
+   		<table cellspacing="0" cellpadding="0" align="center">
+      <tbody>
+        <tr>
+          <td>
+            <img src="pics/ico/magiepapertop.png" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+          	<p>Ce personnage ne possède aucun sort !</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="/pics/ico/magiepapebottom.png" alt="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   		<?php
+   	}
     
         }
         else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
