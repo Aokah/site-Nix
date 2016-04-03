@@ -141,7 +141,7 @@
         </tr>
         <tr>
           <td background="pics/ico/magiepapercenter.png">
-          	<p style="padding-bottom:10%; padding-left:6%; padding-right:6%;">Ce personnage ne possède aucun sort !</p>
+          	<p style="text-align:center;">Ce personnage ne possède aucun sort !</p>
           </td>
         </tr>
         <tr>
@@ -294,7 +294,7 @@
         </tr>
         <tr>
           <td background="pics/ico/magiepapercenter.png">
-          	<p style="padding-bottom:10%; padding-left:6%; padding-right:6%;">Ce personnage ne possède aucun sort !</p>
+          	<p style="text-align:center;">Ce personnage ne possède aucun sort !</p>
           </td>
         </tr>
         <tr>
