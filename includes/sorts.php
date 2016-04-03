@@ -142,7 +142,7 @@
         </tr>
         <tr>
           <td background="pics/ico/magiepapercenter.png">
-          	<p style="text-align:center;">Ce personnage ne possède aucun sort !</p>
+          	<p style="text-align:center;">Ce personnage ne possède aucun sort validé !</p>
           </td>
         </tr>
         <tr>
@@ -296,7 +296,7 @@
         </tr>
         <tr>
           <td background="pics/ico/magiepapercenter.png">
-          	<p style="text-align:center;">Ce personnage ne possède aucun sort !</p>
+          	<p style="text-align:center;">Ce personnage ne possède aucun sort invalidé !</p>
           </td>
         </tr>
         <tr>
