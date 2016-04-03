@@ -159,6 +159,7 @@
         else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
       }
     }
+  }
     elseif ($_GET['i'] ==  "unvalid")
     {
       if(isset($_GET['search']))
@@ -313,7 +314,6 @@
         else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
       }
   }
-  }
   elseif (isset($_GET['launch']))
   {
   	$sort = intval($_GET['launch']);
@@ -323,9 +323,9 @@
   	}
   	else
   	{
-  		echo '<p>Uhm.... Tu es sûr que tu n\'as pas oublié de préciser qui lançait le sort ?</p>'; }
+  		echo '<p>Uhm.... Tu es sûr que tu n\'as pas oublié de préciser qui lançait le sort ?</p>';
+  		
   	}
-  	
   }
   else
   {
