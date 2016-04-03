@@ -150,7 +150,7 @@
       if ($_SESSION['rank'] > 4)
         {
     ?>
-    <h3>Liste des sorts Validés</h3>
+    <h3>Liste des sorts Invalidés</h3>
     <?php if (!empty($_GET['search'])) { ?>
      Recherche des sorts invalidés de <?= $perso,'.'; } else { echo '<span style="color:red;">Tu es sûr que tu n\'as pas oublié de noter un nom quelque part ? Réessaie.</span>';} ?>
      <form action="index.php" method="GET">
@@ -168,20 +168,10 @@
      	</a>
      </p>
      <?php 
-   
+   	$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ?')
     $irank = 8;
     while ($irank > 0)
     {
-      $incan = $db->prepare('SELECT ig.id, ig.user_id, ig.incan_id, ig.valid,
-      m.id AS m_id, m.rank, m.pionier, m.technician, m.ban, m.removed, m.name AS nom, m.title,
-      il.id AS il_id, il.name AS sort, il.desc, il.level, il.cost, il.command, il.type
-      FROM incan_get ig
-      RIGHT JOIN members m ON m.id = ig.user_id
-      LEFT JOIN incan_list il ON il.id = ig.incan_id
-      WHERE ig.valid = 0 AND il.level = ? AND nom = ?
-      ORDER BY nom ASC , il.level DESC , il.type ASC , il.name');
-      $incan->execute(array($irank,$perso));
-      $nom = $incan->fetch();
       
       $name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
       $name->execute(array($perso)); $name = $name->fetch();
