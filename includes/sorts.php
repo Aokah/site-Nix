@@ -248,7 +248,7 @@
                 </tr>
                 <tr>
                   <td style="text-align:center;">
-                    <a href="index?p=sorts&lunch=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Lancer le sort !]</a>
+                    <a href="index?p=sorts&valid=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Valider le sort !]</a>
                   </td>
                 </tr>
               </tbody>
