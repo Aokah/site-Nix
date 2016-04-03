@@ -10,7 +10,7 @@
   {
     if ($_GET['i'] == "valid")
     {
-      if(isset($_POST['Rechercher'] && isset($_GET['search']))
+      if(isset($_GET['search']))
       {
         $perso = htmlspecialchars($_GET['search']);
         
