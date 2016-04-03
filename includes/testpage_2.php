@@ -51,7 +51,7 @@
         FROM incan_get ig
         RIGHT JOIN incan_list il ON il.id = ig.incan_id
         WHERE ig.user_id = ?
-        ORDER BY level DESC, typel ASC, name ASC');
+        ORDER BY level DESC, type ASC, name ASC');
         $incan->execute(array($id));
     ?>
     
