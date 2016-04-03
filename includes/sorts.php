@@ -37,9 +37,9 @@
      <?php 
      $name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
       $name->execute(array($perso)); 
-      $id = $name['id'];
       if ($name = $name->fetch())
       {
+      	 $id = $name['id'];
    	$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ? AND valid = 1');
    	$verif->execute(array($id)); $verif = $verif->fetch();
    	if ($verif['count'] != 0)
@@ -188,10 +188,9 @@
      <?php 
      $name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
       $name->execute(array($perso));
-      $id = $name['id'];
       if ($name = $name->fetch())
       {
-      
+      $id = $name['id'];
    	$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ? AND valid = 0');
    	$verif->execute(array($id)); $verif = $verif->fetch();
    	if ($verif['count'] != 0)
