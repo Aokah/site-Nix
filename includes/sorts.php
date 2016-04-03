@@ -389,7 +389,7 @@
                 </tr>
                 <tr>
                   <td style="text-align:center;">
-                   <?php if $line['valid'] == 1 { ?> <p class="name5">Sort validé</p><?php } 
+                   <?php if ($line['valid'] == 1) { ?> <p class="name5">Sort validé</p><?php } 
                    else { ?><p class="name7">Sort non validé</p>
                   </td>
                 </tr>
