@@ -25,7 +25,7 @@
      		<input type="hidden" value="sorts" name="p" />
      		<input type="hidden" value="valid" name="i" />
 	     	<input id="searchfield" value="" name="search" />
-	     	<input type="submit" value="Rechercher" />
+	     	<input type="submit" name="search" value="Rechercher" />
      	</p>
      </form>
      <?php 
