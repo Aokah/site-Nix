@@ -12,7 +12,7 @@
     {
       if(isset($_GET['n']))
       {
-        $perso = htmlspecialchars($_GET['n']);
+        $perso = $_GET['n'];
         
       if ($_SESSION['rank'] > 4)
         {
