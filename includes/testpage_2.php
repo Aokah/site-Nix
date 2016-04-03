@@ -41,8 +41,7 @@
       WHERE incan_get.user_id = ? AND incan_list.level = ?');
       $select->execute(array($id, $irank)); $count = $select->fetch();
       echo $irank, $count['verif'];
-      if ($count['verif'] != 0)
-      {
+      
     ?>
     <table cellspacing="0" cellpadding="0" align="center">
       <tbody>
@@ -88,7 +87,6 @@
     </table>
     <?php
     $irank-- ;
-    }
     }
     
         }
