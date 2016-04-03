@@ -36,9 +36,10 @@
      </p>
      <?php 
      $name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
-      $name->execute(array($perso)); $name = $name->fetch();
+      $name->execute(array($perso)); 
       $id = $name['id'];
-      
+      if ($name = $name->fetch())
+      {
    	$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ? AND valid = 1');
    	$verif->execute(array($id)); $verif = $verif->fetch();
    	if ($verif['count'] != 0)
@@ -153,7 +154,7 @@
     </table>
    		<?php
    	}
-    
+        } else { echo '<p style="text-align:center;">Désolé, mais ce personnage n\'existe pas !</p>'; }
         }
         else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
       }
@@ -186,8 +187,10 @@
      </p>
      <?php 
      $name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
-      $name->execute(array($perso)); $name = $name->fetch();
+      $name->execute(array($perso));
       $id = $name['id'];
+      if ($name = $name->fetch())
+      {
       
    	$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ? AND valid = 0');
    	$verif->execute(array($id)); $verif = $verif->fetch();
@@ -306,7 +309,7 @@
     </table>
    		<?php
    	}
-    
+      } else { echo '<p style="text-align:center;">Désolé, mais ce personnage n\'existe pas !</p>'; }
         }
         else { echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)'; }
       }
