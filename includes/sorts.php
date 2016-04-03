@@ -411,7 +411,8 @@
     }
     }
     $irank-- ;
-    } 	} else {
+    } 	
+   	} else {
    		?>
    		<table cellspacing="0" cellpadding="0" align="center">
       <tbody>
