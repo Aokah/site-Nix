@@ -19,10 +19,12 @@
     ?>
     <h3>Liste des sorts Validés</h3>
      Recherche des sorts de <?= $perso?>
-     <form action="index?p=sorts&i=valid" method="GET">
+     <form action="index.php" method="GET">
      	<p>Recherche par personnage :
-	     	<input id="searchfield" value="" name="search">
-	     	<input type="submit" value="Rechercher">
+     		<input type="hidden" value="sorts" name="p" />
+     		<input type="hidden" value="valid" name="i" />
+	     	<input id="searchfield" value="" name="search" />
+	     	<input type="submit" value="Rechercher" />
      	</p>
      </form>
      <?php 
