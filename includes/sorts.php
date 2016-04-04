@@ -351,6 +351,9 @@
 	{
 	?>
 		<h3>Mes sorts</h3>
+		<p>
+			Teswt
+		</p>
 		<?php
 		$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ?');
 		$verif->execute(array($_SESSION['id'])); $verif = $verif->fetch();
