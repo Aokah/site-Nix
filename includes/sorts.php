@@ -167,6 +167,17 @@
 			}
 			else
 			{
+			?>
+				<form action="index.php" method="GET">
+					<p>
+						Recherche par personnage :
+						<input type="hidden" value="sorts" name="p" />
+						<input type="hidden" value="valid" name="i" />
+						<input name="search" />
+						<input type="submit" value="Rechercher" />	
+					</p>
+				</form>
+			<?php
 				$irank = 8;
 				while ($irank > 0)
 				{
