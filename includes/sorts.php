@@ -622,7 +622,23 @@
 	{
 	?>
 		<h2>Mes sorts</h2>
+		<p>Ici estsont réperetoriés l'intégralité des sorts appris par votre personnage.</p>
 		<?php
+		if ($_SESSION['rank'] > 4)
+		{
+		?>
+			<p>
+				<a href="index?p=sort&i=valid">
+					[Lister les sorts validés connus des joueurs.]
+				</a>
+			</p>
+			<p>
+				<a href="index?p=sort&i=unvalid">
+					[Lister les sorts non validés connus des joueurs.]
+				</a>
+			</p>
+		<?php
+		}
 		$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ?');
 		$verif->execute(array($_SESSION['id'])); $verif = $verif->fetch();
 		if ($verif['count'] != 0)
