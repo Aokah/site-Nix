@@ -32,6 +32,11 @@
 									[Voir les sorts invalidés du personnage.]
 								</a>
 							</p>
+							<p>
+								<a href="index?p=sorts&i=valid">
+									[Retourner à l'affichage global.]
+								</a>
+							</p>
 						<?php 
 						$name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
 						$name->execute(array($perso)); 
@@ -309,6 +314,11 @@
 					<a href="index?p=sorts&i=valid&search=<?= $perso?>">
 						[Voir les sorts validés du personnage.]
 					</a>
+					<p>
+						<a href="index?p=sorts&i=unvalid">
+							[Retourner à l'affichage global.]
+						</a>
+					</p>
 				</p>
 				<?php 
 				$name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
