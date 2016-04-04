@@ -2,12 +2,10 @@
 {
   global $_POST, $_GET, $_SESSION, $db;
   
-?>
-  <h2>Page Test pour les Incantations</h2>
   
-	<?php
 	if (isset($_GET['i']))
 	{
+		echo '<h2>Incantations</h2>';
 		if ($_GET['i'] == "valid")
 		{
 			if(isset($_GET['search']))
@@ -171,6 +169,7 @@
 	}
 	elseif ($_GET['i'] ==  "unvalid")
 	{
+		echo '<h2>Incantations</h2>';
 		if(isset($_GET['search']))
 		{
 			$perso = htmlspecialchars($_GET['search']);
@@ -337,6 +336,7 @@
 	}
 	elseif (isset($_GET['launch']))
 	{
+		echo '<h2>Incantations</h2>';
 		$sort = intval($_GET['launch']);
 		if (isset($_GET['for']))
 		{
@@ -350,10 +350,7 @@
 	else
 	{
 	?>
-		<h3>Mes sorts</h3>
-		<p>
-			Teswt
-		</p>
+		<h2>Mes sorts</h2>
 		<?php
 		$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ?');
 		$verif->execute(array($_SESSION['id'])); $verif = $verif->fetch();
