@@ -472,8 +472,8 @@
 					</p>
 				</form>
 				<p>
-					<a href="index?p=sorts&i=unvalid">
-						[Voir la liste des sorts non validés.]
+					<a href="index?p=sorts&i=valid">
+						[Voir la liste des sorts validés.]
 					</a>
 				</p>
 			<?php
