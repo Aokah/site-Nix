@@ -8,6 +8,7 @@
 		echo '<h2>Incantations</h2>';
 		if ($_GET['i'] == "valid")
 		{
+			echo '<h3>Liste des sorts Validés</h3>';
 			if(isset($_GET['search']))
 			{
 				$perso = htmlspecialchars($_GET['search']);
@@ -15,7 +16,6 @@
 					if ($_SESSION['rank'] > 4)
 					{
 					?>
-						<h3>Liste des sorts Validés</h3>
 						<?php if (!empty($_GET['search'])) { ?>
 							Recherche des sorts validés de <?= $perso,'.'; } else { echo '<span style="color:red;">Tu es sûr que tu n\'as pas oublié de noter un nom quelque part ? Réessaie.</span>';} ?>
 							<form action="index.php" method="GET">
