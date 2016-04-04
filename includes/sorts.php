@@ -37,6 +37,11 @@
 									[Retourner à l'affichage global.]
 								</a>
 							</p>
+							<p>
+								<a href="index?p=sorts">
+									[Retourner à la page des sorts personnels.]
+								</a>
+							</p>
 						<?php 
 						$name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
 						$name->execute(array($perso)); 
@@ -187,6 +192,11 @@
 						[Voir la liste des sorts non validés.]
 					</a>
 				</p>
+				<p>
+					<a href="index?p=sorts">
+						[Retourner à la page des sorts personnels.]
+					</a>
+				</p>
 			<?php
 				$irank = 8;
 				while ($irank > 0)
@@ -319,11 +329,16 @@
 					<a href="index?p=sorts&i=valid&search=<?= $perso?>">
 						[Voir les sorts validés du personnage.]
 					</a>
-					<p>
-						<a href="index?p=sorts&i=unvalid">
-							[Retourner à l'affichage global.]
-						</a>
-					</p>
+				</p>
+				<p>
+					<a href="index?p=sorts&i=unvalid">
+						[Retourner à l'affichage global.]
+					</a>
+				</p>
+				<p>
+					<a href="index?p=sorts">
+						[Retourner à la page des sorts personnels.]
+					</a>
 				</p>
 				<?php 
 				$name = $db->prepare('SELECT id, name FROM members WHERE name = ?');
@@ -476,6 +491,11 @@
 					[Voir la liste des sorts validés.]
 				</a>
 			</p>
+			<p>
+				<a href="index?p=sorts">
+					[Retourner à la page des sorts personnels.]
+				</a>
+				</p>
 			<?php
 			$verif = $db->query('SELECT COUNT(*) AS count FROM incan_get WHERE valid = 0'); $verif = $verif->fetch();
 			if ($verif['count'] != 0)
