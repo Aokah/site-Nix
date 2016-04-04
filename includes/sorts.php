@@ -182,6 +182,11 @@
 						<input type="submit" value="Rechercher" />	
 					</p>
 				</form>
+				<p>
+					<a href="index?p=sorts&i=unvalid">
+						[Voir la liste des sorts non validés.]
+					</a>
+				</p>
 			<?php
 				$irank = 8;
 				while ($irank > 0)
