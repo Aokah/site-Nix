@@ -353,7 +353,7 @@
 		<h2>Mes sorts</h2>
 		<?php
 		$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ?');
-		$verif->execute(array($_SESSION['id'])); $verif = $verif->fetch(); echo $verif['count'];
+		$verif->execute(array($_SESSION['id'])); $verif = $verif->fetch();
 		if ($verif['count'] != 0)
 		{
 			$irank = 8;
@@ -362,7 +362,7 @@
 				$select = $db->prepare('SELECT COUNT(*) AS verif FROM incan_get
 				RIGHT JOIN incan_list ON incan_list.id = incan_get.incan_id
 				WHERE incan_get.user_id = ? AND incan_list.level = ?');
-				$select->execute(array($id, $irank)); $count = $select->fetch();
+				$select->execute(array($_SESSION['id'], $irank)); $count = $select->fetch();
 				if ($count['verif'] != 0)
 				{
 					$incan = $db->prepare('SELECT ig.id, ig.user_id, ig.incan_id, ig.valid,
@@ -371,7 +371,7 @@
 					RIGHT JOIN incan_list il ON il.id = ig.incan_id
 					WHERE ig.user_id = ? AND il.level = ?
 					ORDER BY level DESC, type ASC, name ASC');
-					$incan->execute(array($id, $irank));
+					$incan->execute(array($_SESSION['id'], $irank));
 					?>
 					<table cellspacing="0" cellpadding="0" align="center">
 						<tbody>
