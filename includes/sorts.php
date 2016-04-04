@@ -466,7 +466,7 @@
 				<p>
 					Recherche par personnage :
 					<input type="hidden" value="sorts" name="p" />
-					<input type="hidden" value="valid" name="i" />
+					<input type="hidden" value="unvalid" name="i" />
 					<input name="search" />
 					<input type="submit" value="Rechercher" />	
 				</p>
