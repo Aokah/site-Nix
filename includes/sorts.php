@@ -178,10 +178,10 @@
 					{
 						$incan = $db->prepare('SELECT ig.id, ig.user_id, ig.incan_id, ig.valid,
 						il.id AS il_id, il.name, il.desc, il.type, il.cost, il.command, il.level,
-						m.id AS m_id, m.rank, m.title, m.ban, m.removed, m.pionier, m.technician
+						m.id AS m_id, m.name AS nom, m.rank, m.title, m.ban, m.removed, m.pionier, m.technician
 						FROM incan_get ig
 						RIGHT JOIN incan_list il ON il.id = ig.incan_id
-						LEFT JOIN members m ON m._id = ig.user_id
+						LEFT JOIN members m ON m.id = ig.user_id
 						WHERE il.level = ? AND ig.valid = 1
 						ORDER BY level DESC, type ASC, name ASC');
 						$incan->execute(array($irank));
@@ -216,7 +216,7 @@
 												<tr>
 													<td style="text-align:center;">
 														<p class"name<?= $line['rank'], $tech, $pionier?>">
-															<?= $title, $line['name']?>
+															<?= $title, $line['nom']?>
 														</p>
 													</td>
 												</tr>
