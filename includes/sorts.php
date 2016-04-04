@@ -459,6 +459,122 @@
 			echo 'Vous n\'avez pas le niveau pour voir ette partie de la page (bien tenté !)';
 			}
 		}
+		else
+		{
+		?>
+				<form action="index.php" method="GET">
+					<p>
+						Recherche par personnage :
+						<input type="hidden" value="sorts" name="p" />
+						<input type="hidden" value="valid" name="i" />
+						<input name="search" />
+						<input type="submit" value="Rechercher" />	
+					</p>
+				</form>
+				<p>
+					<a href="index?p=sorts&i=unvalid">
+						[Voir la liste des sorts non validés.]
+					</a>
+				</p>
+			<?php
+				$irank = 8;
+				while ($irank > 0)
+				{
+					$select = $db->prepare('SELECT COUNT(*) AS verif FROM incan_get
+					RIGHT JOIN incan_list ON incan_list.id = incan_get.incan_id
+					WHERE incan_list.level = ? AND incan_get.valid = 1');
+					$select->execute(array($irank)); $count = $select->fetch();
+					if ($count['verif'] != 0)
+					{
+						$incan = $db->prepare('SELECT ig.id, ig.user_id, ig.incan_id, ig.valid,
+						il.id AS il_id, il.name, il.desc, il.type, il.cost, il.command, il.level,
+						m.id AS m_id, m.name AS nom, m.rank, m.title, m.ban, m.removed, m.pionier, m.technician
+						FROM incan_get ig
+						RIGHT JOIN incan_list il ON il.id = ig.incan_id
+						LEFT JOIN members m ON m.id = ig.user_id
+						WHERE il.level = ? AND ig.valid = 0
+						ORDER BY level DESC,nom ASC, type ASC, name ASC');
+						$incan->execute(array($irank));
+						?>
+    						<table cellspacing="0" cellpadding="0" align="center" style="margin-bottom:4%;">
+							<tbody>
+								<tr>
+									<td>
+										<img src="pics/ico/magiepapertop.png" alt="" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+									<?php while ($line = $incan->fetch())
+									{
+										switch ($line['type'])
+										{
+											case 13: $type	= "Terre" ; break; case 12: $type = "Psy" ; break; case 11: $type = "Ombre" ; break; case 10:  $type = "Nature" ; break; case 9:  $type = "Métal" ; break;
+											case 8: $type = "Lumière" ; break; case 7: $type = "Glace" ; break; case 6: $type = "Feu" ; break; case 5: $type = "Energie" ; break;
+											case 4: $type = "Eau" ; break; case 3: $type = "Chaos" ; break; case 2: $type = "Arcane" ; break; case 1: $type = "Air" ; break; case 0: $type = "Inconnue" ; break; 
+										}
+										switch ($line['level'])
+										{
+											case 8: $level = "X"; break;	case 7:  $level = "S"; break; case 6:  $level = "A"; break; case 5:  $level = "B"; break; case 4:  $level = "C"; break; case 3:  $level = "D"; break; 
+											case 2:  $level = "E"; break; case 1:  $level = "F"; break;
+										}
+										if ($line['technician'] == 1) { $tech = '-T'; } elseif ($line['pionier'] == 1) { $title = "Pionier"; $pionier = "-P"; }
+										elseif ($line['ban'] == 1) { $title = "Banni";} elseif ($line['removed'] == 1) { $title = "Oublié";} else { $title = $line['title']; }
+										?>
+										<table width="640px" background="/pics/ico/magiepapercenter.png" align="center" style="padding-bottom:10%; padding-left:6%; padding-right:6%;">
+											<tbody>
+												<tr>
+													<td style="text-align:center;">
+														<p class="name<?= $line['rank'], $tech, $pionier?>">
+															<?= $title,' ', $line['nom']?>
+														</p>
+													</td>
+												</tr>
+												<tr>
+													<td style="text-align:center;">
+														<p class="name1"><?= $line['name']?></p>
+													</td>
+												</tr>
+												<tr>
+													<td style="text-align:center;">
+														<img src="pics/magie/Magie_<?= $type?>.png" alt="" width="60" class="magie_type" /> <img src="pics/magie/Magie_<?= $level?>.png" alt="" width="60" class="magie" />
+													</td>
+												</tr>
+												<tr>
+													<td style="text-align:center;">
+														<?= $line['desc']?>
+													</td>
+												</tr>
+												<tr>
+													<td style="text-align:center;">
+														<?= $line['cost']?> Points.
+													</td>
+												</tr>
+												<tr>
+													<td style="text-align:center;">
+														<? if ($line['valid'] == 1) { ?><a href="index?p=sorts&launch=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Lancer le sort !]</a><?php } else
+														{ ?><a href="index?p=sorts&valid=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Valider le sort !]</a><?php } ?>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									<?php
+									}
+									?>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img src="/pics/ico/magiepapebottom.png" alt="">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					<?php
+					}
+				$irank--;	
+				}
+		}
 	}
 	elseif (isset($_GET['launch']))
 	{
