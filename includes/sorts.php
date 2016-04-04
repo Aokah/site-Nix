@@ -445,6 +445,7 @@
 							</tr>
 						</tbody>
 					</table>
+				<?php
 				}
 			$irank-- ;
 			}  
