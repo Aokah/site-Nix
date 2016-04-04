@@ -215,7 +215,7 @@
 											<tbody>
 												<tr>
 													<td style="text-align:center;">
-														<p class"name<?= $line['rank'], $tech, $pionier?>">
+														<p class="name<?= $line['rank'], $tech, $pionier?>">
 															<?= $title, $line['nom']?>
 														</p>
 													</td>
