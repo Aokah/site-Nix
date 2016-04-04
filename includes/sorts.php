@@ -353,7 +353,7 @@
 		<h2>Mes sorts</h2>
 		<?php
 		$verif = $db->prepare('SELECT COUNT(*) AS count FROM incan_get WHERE user_id = ?');
-		$verif->execute(array($_SESSION['id'])); $verif = $verif->fetch();
+		$verif->execute(array($_SESSION['id'])); $verif = $verif->fetch(); echo $verif['count'];
 		if ($verif['count'] != 0)
 		{
 			$irank = 8;
@@ -462,7 +462,7 @@
 					</tr>
 					<tr>
 						<td background="pics/ico/magiepapercenter.png">
-							<p style="text-align:center;">Vous ne possédez aucun sort ! TEST CHANGEMENT MOTHER FUCKER !
+							<p style="text-align:center;">Vous ne possédez aucun sort !
 							</p>
 						</td>
 					</tr>
