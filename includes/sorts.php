@@ -183,7 +183,7 @@
 						RIGHT JOIN incan_list il ON il.id = ig.incan_id
 						LEFT JOIN members m ON m.id = ig.user_id
 						WHERE il.level = ? AND ig.valid = 1
-						ORDER BY level DESC, type ASC, name ASC');
+						ORDER BY level DESC,nom ASC, type ASC, name ASC');
 						$incan->execute(array($irank));
 						?>
     						<table cellspacing="0" cellpadding="0" align="center">
@@ -242,7 +242,8 @@
 												</tr>
 												<tr>
 													<td style="text-align:center;">
-														<a href="index?p=sorts&launch=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Lancer le sort !]</a>
+														<? if ($line['valid'] == 1) { ?><a href="index?p=sorts&launch=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Lancer le sort !]</a><?php } else
+														{ ?><a href="index?p=sorts&valid=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Valider le sort !]</a><?php } ?>
 													</td>
 												</tr>
 											</tbody>
