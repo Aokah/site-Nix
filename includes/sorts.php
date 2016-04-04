@@ -8,7 +8,7 @@
 		echo '<h2>Incantations</h2>';
 		if ($_GET['i'] == "valid")
 		{
-			echo '<h3>Liste des sorts Validés</h3>';
+			echo '<h3>Liste des sorts Validés</h3>', '<p>Liste des incantations validée.<p> ';
 			if(isset($_GET['search']))
 			{
 				$perso = htmlspecialchars($_GET['search']);
@@ -290,7 +290,7 @@
 	}
 	elseif ($_GET['i'] ==  "unvalid")
 	{
-		echo '<h2>Incantations</h2>';
+		echo '<h2>Incantations</h2>', '<p>Liste des incantations en attente de validation RP.<p> ';
 		if(isset($_GET['search']))
 		{
 			$perso = htmlspecialchars($_GET['search']);
