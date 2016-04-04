@@ -462,27 +462,30 @@
 		else
 		{
 		?>
-				<form action="index.php" method="GET">
-					<p>
-						Recherche par personnage :
-						<input type="hidden" value="sorts" name="p" />
-						<input type="hidden" value="valid" name="i" />
-						<input name="search" />
-						<input type="submit" value="Rechercher" />	
-					</p>
-				</form>
+			<form action="index.php" method="GET">
 				<p>
-					<a href="index?p=sorts&i=valid">
-						[Voir la liste des sorts validés.]
-					</a>
+					Recherche par personnage :
+					<input type="hidden" value="sorts" name="p" />
+					<input type="hidden" value="valid" name="i" />
+					<input name="search" />
+					<input type="submit" value="Rechercher" />	
 				</p>
+			</form>
+			<p>
+				<a href="index?p=sorts&i=valid">
+					[Voir la liste des sorts validés.]
+				</a>
+			</p>
 			<?php
+			$verif = $db->query('SELECT COUNT(*) AS count FROM incan_get WHERE valid = 0'); $verif = $verif->fetch();
+			if ($verif['count'] != 0)
+			{
 				$irank = 8;
 				while ($irank > 0)
 				{
 					$select = $db->prepare('SELECT COUNT(*) AS verif FROM incan_get
 					RIGHT JOIN incan_list ON incan_list.id = incan_get.incan_id
-					WHERE incan_list.level = ? AND incan_get.valid = 1');
+					WHERE incan_list.level = ? AND incan_get.valid = 0');
 					$select->execute(array($irank)); $count = $select->fetch();
 					if ($count['verif'] != 0)
 					{
@@ -574,6 +577,32 @@
 					}
 				$irank--;	
 				}
+			}
+			else
+			{
+				?>
+				<table cellspacing="0" cellpadding="0" align="center">
+					<tbody>
+						<tr>
+							<td>
+								<img src="pics/ico/magiepapertop.png" alt="" />
+							</td>
+						</tr>
+						<tr>
+							<td background="pics/ico/magiepapercenter.png">
+								<p style="text-align:center;">Aucun sort n'est en attente de validation ! (Revenez plus tard :) )
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<	img src="/pics/ico/magiepapebottom.png" alt="">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<?php	
+			}
 		}
 	}
 	elseif (isset($_GET['launch']))
