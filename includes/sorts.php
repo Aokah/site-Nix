@@ -628,12 +628,12 @@
 		{
 		?>
 			<p>
-				<a href="index?p=sort&i=valid">
+				<a href="index?p=sorts&i=valid">
 					[Lister les sorts validés connus des joueurs.]
 				</a>
 			</p>
 			<p>
-				<a href="index?p=sort&i=unvalid">
+				<a href="index?p=sorts&i=unvalid">
 					[Lister les sorts non validés connus des joueurs.]
 				</a>
 			</p>
