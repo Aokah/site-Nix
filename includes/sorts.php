@@ -61,7 +61,7 @@
 										$incan->execute(array($id, $irank));
 										?>
     
-										<table cellspacing="0" cellpadding="0" align="center">
+										<table cellspacing="0" cellpadding="0" align="center" style="margin-bottom:4%;">
 											<tbody>
 												<tr>
 													<td>
@@ -186,7 +186,7 @@
 						ORDER BY level DESC,nom ASC, type ASC, name ASC');
 						$incan->execute(array($irank));
 						?>
-    						<table cellspacing="0" cellpadding="0" align="center">
+    						<table cellspacing="0" cellpadding="0" align="center" style="margin-bottom:4%;">
 							<tbody>
 								<tr>
 									<td>
@@ -329,7 +329,7 @@
 								ORDER BY level DESC, type ASC, name ASC');
 								$incan->execute(array($id, $irank));
 								?>
-								<table cellspacing="0" cellpadding="0" align="center">
+								<table cellspacing="0" cellpadding="0" align="center" style="margin-bottom:4%;">
 									<tbody>
 										<tr>
 											<td>
@@ -473,7 +473,7 @@
 					ORDER BY level DESC, type ASC, name ASC');
 					$incan->execute(array($_SESSION['id'], $irank));
 					?>
-					<table cellspacing="0" cellpadding="0" align="center">
+					<table cellspacing="0" cellpadding="0" align="center" style="margin-bottom:4%;">
 						<tbody>
 							<tr>
 								<td>
