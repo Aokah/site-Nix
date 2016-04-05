@@ -1,7 +1,7 @@
 <?php function testpage_2()
 {	
 global $db;
-	$sort = 79;
+	$sort = 5;
 	$user = 204;
 	
 	$select = $db->prepare('SELECT * FROM members WHERE id = ?');
