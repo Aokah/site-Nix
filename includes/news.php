@@ -91,7 +91,7 @@
 		</section>
 		<section>
 			<h3>De nouveaux venus !</h3>
-			<p>Nouveaux inscrits sur Nix, souhaitez leur la bienvenue ça fait toujours plaisir !</p>
+			<p>Nouveaux inscrits sur Nix, souhaitez leur la bienvenue, ça fait toujours plaisir !</p>
 			<p>
 			<?php
 			$new = $db->query('SELECT * FROM members WHERE rank < 8 AND ADDDATE(last_action, INTERVAL 1 WEEK) > NOW()');
