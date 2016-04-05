@@ -644,6 +644,7 @@
 		if (isset($_GET['for']) && isset($_GET['valid']))
 		{
 			$for = intval($_GET['for']);
+			$valid = intval($_GET['valid']);
 			echo $valid, ' ', $for;
 		}
 		else
