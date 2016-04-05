@@ -14,7 +14,6 @@ global $db;
 	$pm = $select['E_magique'];
 	$pv = $select['E_vitale'];
 	$cost = $incan['cost'];
-	$cost = 40;
 	$points = $pm + $pv;
 	
 	echo $pm, ' ', $pv, ' ', $cost, ' ', $points;
