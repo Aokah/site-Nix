@@ -70,7 +70,7 @@
 		</section>
 		
 		<section><?php
-		$nouveaux = $db->query('SELECT * FROM `members` WHERE ADDDATE(registration_date, INTERVAL 01-01 YEAR_MONTH) >= NOW()');
+		$nouveaux = $db->query('SELECT * FROM members WHERE ADDDATE(registration_date, INTERVAL 01-01 YEAR_MONTH) >= NOW() AND ADDDATE(registration_date, INTERVAL 1 YEAR) =< NOW()');
 		?>
 		<h3>Déjà un an parmi nous !</h3>
 		<p>
