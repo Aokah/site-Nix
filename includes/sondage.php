@@ -383,7 +383,7 @@
 				?>
 				<tr>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $verr, $line['titre']?> </a> <?php if ($line['verr'] == 0) { ?><a href="index?p=sondage&lock=<?= $line['s_id']?>">[Verr]</a><?php } else { ?><a href="index?p=sondage&unlock=<?= $line['s_id']?>">[Déverr]</a>
+					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $verr, $line['titre']?> </a> <?php if ($line['verr'] == 0) { ?><a href="index?p=sondage&lock=<?= $line['s_id']?>">[Verr]</a><?php } else { ?><a href="index?p=sondage&unlock=<?= $line['s_id']?>">[Déverr]</a><?php } ?>
 					</td>
 					<td>
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line['m.id']?>.png" alt="" />
