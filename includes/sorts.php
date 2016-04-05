@@ -786,10 +786,6 @@
 					echo '<p style="color:red;">Navré, mais ce sort n\'existe pas.</p>';
 				}
 			}
-			else
-			{
-				echo '<p style="color:red;">Navré, mais votre champs de saisie est vide, veuillez ressayer.</p>';
-			}
 		}
 		
 		if ($_SESSION['rank'] > 4)
