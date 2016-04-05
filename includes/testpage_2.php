@@ -1,7 +1,7 @@
 <?php function testpage_2()
 {	
 global $db;
-	$sort = 5;
+	$sort = 4;
 	$user = 204;
 	
 	$select = $db->prepare('SELECT * FROM members WHERE id = ?');
@@ -25,7 +25,7 @@ global $db;
 	}
 	else
 	{
-		echo 'Le personnage n\'a aps assez de points magique et / ou vitaux pour lancer ce sort !';
+		echo 'Le personnage n\'a pas assez de points magique et / ou vitaux pour lancer ce sort !';
 	}
 	
 }
