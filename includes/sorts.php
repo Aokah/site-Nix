@@ -628,70 +628,121 @@
 	elseif (isset($_GET['launch']))
 	{
 		echo '<h2>Incantations</h2>';
-		$sort = intval($_GET['launch']);
-		if (isset($_GET['for']))
+		if ($_SESSION['rank'] > 4)
 		{
-			$user = intval($_GET['for']);
 			$sort = intval($_GET['launch']);
-			
-			$verif = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ? AND valid = 1');
-			$verif->execute(array($user, $sort));
-			$verif2 = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ?');
-			$verif2->execute(array($user, $sort));
-			if ($verif2->fetch())
+			if (isset($_GET['for']))
 			{
-				if ($verif-> fetch())
+				$user = intval($_GET['for']);
+				$sort = intval($_GET['launch']);
+				
+				$verif = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ? AND valid = 1');
+				$verif->execute(array($user, $sort));
+				$verif2 = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ?');
+				$verif2->execute(array($user, $sort));
+				if ($verif2->fetch())
 				{
-					echo 'page de lancement du sort';
+					if ($verif-> fetch())
+					{
+						$select = $db->prepare('SELECT * FROM members WHERE id = ?');
+						$select->execute(array($user));
+						$select = $select->fetch();
+						$incan = $db->prepare('SELECT * FROM incan_list WHERE id = ?');
+						$incan->execute(array($sort));
+						$incan = $incan->fetch();
+						
+						$pm = $select['E_magique'];
+						$pv = $select['E_vitale'];
+						$cost = $incan['cost'];
+						$points = $pm + $pv;
+						
+						echo $pm, ' ', $pv, ' ', $cost, ' ', $points;
+						
+						
+						if ($points > $cost)
+						{
+							if ($pm > $cost)
+							{
+								$result = $pm - $cost;
+								$update = $db->prepare('UPDATE members SET E_magique = ? WHERE id = ?');
+								$update->execute(array($result, $user));
+								echo '<p>Le sort a bien étélancé pour un retrait de ', $cost, ' Points Magiques !';
+							}
+							else
+							{
+								$cost = $cost - $pm;
+								$result = $pv - $cost;
+								
+								$update = $db->prepare('UPDATE members SET E_magique = 0, E_vitale = ? WHERE id = ?');
+								$update->execute(array($result, $user));
+								echo '<p>Le sort a bien étélancé pour un retrait de ', $pm, ' Points Magiques et de ', $cost, ' Points Vitaux !';
+							}
+						}
+						else
+						{
+							echo 'Le personnage n\'a pas assez de points magique et / ou vitaux pour lancer ce sort !';
+						}
+					}
+					else
+					{
+						echo 'Navré mais ce personnage n\'a pas encore validé ce sort !';
+					}
 				}
 				else
 				{
-					echo 'Navré mais ce personnage n\'a pas encore validé ce sort !';
+					echo 'Navré, mais ce personnage ne connait pas ce sort !';
 				}
 			}
 			else
 			{
-				echo 'Navré, mais ce personnage ne connait pas ce sort !';
+				echo '<p>Uhm.... Tu es sûr que tu n\'as pas oublié de préciser qui lançait le sort ?</p>';
 			}
 		}
 		else
 		{
-			echo '<p>Uhm.... Tu es sûr que tu n\'as pas oublié de préciser qui lançait le sort ?</p>';
+			echo 'Hmm... N\'essaies-tu pas de visionner une partie de page qui n\'est pas de ton niveau ? :)';
 		}
 	}
 	elseif (isset($_GET['valid']))
 	{
 		echo '<h2>Incantations</h2>';
-		if (isset($_GET['for']) && isset($_GET['valid']))
+		if ($_SESSION['rank'] > 4)
 		{
-			$user = intval($_GET['for']);
-			$sort = intval($_GET['valid']);
-			
-			$verif = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ? AND valid = 1');
-			$verif->execute(array($user, $sort));
-			$verif2 = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ?');
-			$verif2->execute(array($user, $sort));
-			if ($verif2->fetch())
+			if (isset($_GET['for']) && isset($_GET['valid']))
 			{
-				if ($verif-> fetch())
+				$user = intval($_GET['for']);
+				$sort = intval($_GET['valid']);
+				
+				$verif = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ? AND valid = 1');
+				$verif->execute(array($user, $sort));
+				$verif2 = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ?');
+				$verif2->execute(array($user, $sort));
+				if ($verif2->fetch())
 				{
-					echo 'Navré, mais ce personnage a déjà validé ce sort.';
+					if ($verif-> fetch())
+					{
+						echo 'Navré, mais ce personnage a déjà validé ce sort.';
+					}
+					else
+					{
+						$update = $db->prepare('UPDATE incan_get SET valid = 1 WHERE user_id = ? AND incan_id = ?');
+						$update->execute(array($user, $sort));
+						echo 'Le sort a bien été validé !';
+					}
 				}
 				else
 				{
-					$update = $db->prepare('UPDATE incan_get SET valid = 1 WHERE user_id = ? AND incan_id = ?');
-					$update->execute(array($user, $sort));
-					echo 'Le sort a bien été validé !';
+					echo 'Navré, mais ce personnage ne connait pas ce sort !';
 				}
 			}
 			else
 			{
-				echo 'Navré, mais ce personnage ne connait pas ce sort !';
+				echo '<p>Uhm.... Tu es sûr que tu n\'as pas oublié de préciser à qui valider le sort ?</p>';
 			}
 		}
 		else
 		{
-			echo '<p>Uhm.... Tu es sûr que tu n\'as pas oublié de préciser à qui valider le sort ?</p>';
+			echo 'Hmm... N\'essaies-tu pas de visionner une partie de page qui n\'est pas de ton niveau ? :)';
 		}
 	}
 	else
@@ -699,7 +750,45 @@
 	?>
 		<h2>Mes sorts</h2>
 		<p>Ici estsont réperetoriés l'intégralité des sorts appris par votre personnage.</p>
-		<?php
+		<p>
+			<form action="index?p=sorts" method="POST">
+				<label for="enter">Entrez ici la nouvelle incantation :</label>
+				<input type="text" name="sort" id="enter" />
+				<input type="submit" name="confirm" value="Ajouter" />
+			</form>
+		</p>
+		<?php if (isset($_POST['confirm']) AND !empty($_POST['enter']))
+		{
+			$sort = htmlentities($_POST['enter']);
+			$verif = $db->prepare('SELECT id, name FROM incan_list WHERE name = ?');
+			$verif->execute(array($sort));
+			if ($line = $verif->fetch())
+			{
+				$line['id'] = $id;
+				$verif = $db->prepare('SELECT * incan_get WHERE incan_id = ? AND user_id = ?');
+				$verif->execute(array($id, $_SESSION['id']));
+				
+				if ($verif->fetch())
+				{
+					echo '<p style="color:red;">Désolé, mais vous connaissez déjà ce sort.</p>';
+				}
+				else
+				{
+					$update = $bd->prepare("INSERT INTO incan_get VALUES('', ?, ?, '0' ");
+					$update->execute(array($_SESSION['id'], $id));
+					echo '<p style="color:red;>Félicitations ! Vous avez appris un nouveau sort !</p>';
+				}
+			}
+			else
+			{
+				echo '<p style="color:red;">Navré, mais ce sort n\'existe pas.</p>';
+			}
+		}
+		elseif (isset($_POST['confirm']) AND empty($_POST['enter']))
+		{
+			echo '<p style="color:red;">Désolé, mais vous votre champs de saisie est vide, réessayez.</p>';	
+		}
+		
 		if ($_SESSION['rank'] > 4)
 		{
 		?>
