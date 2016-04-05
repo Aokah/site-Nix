@@ -118,8 +118,8 @@
 <?php if ($_SESSION['connected']) { ?>
 	<div class="navtitle">Magie</div>
 		<ul class="nav">
-			<a class="link" href="index.php?p=incantations" >
-				<li class="navbg" <?php echo ($page == 'incantations') ? 'class="cur_page"' : '';?>><img src="/pics/ico/book.gif" alt="" />Mes sorts</li>
+			<a class="link" href="index.php?p=sorts" >
+				<li class="navbg" <?php echo ($page == 'sorts') ? 'class="cur_page"' : '';?>><img src="/pics/ico/book.gif" alt="" />Mes sorts</li>
 			</a>
 		</ul>
 <?php } ?>
