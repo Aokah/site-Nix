@@ -32,7 +32,11 @@ global $db;
 		else
 		{
 			$cost = $cost - $pm;
-			echo $cost;
+			$result = $pv - $cost;
+			
+			$update = $db->prepare('UPDATE members SET E_magique = 0, E_vitale = ? WHERE id = ?');
+			$update->execute(array($result, $user));
+			echo '<p>Le sort a bien étélancé pour un retrait de ', $pm, ' Points Magiques et de ', $cost, ' Points Vitaux !';
 		}
 	}
 	else
