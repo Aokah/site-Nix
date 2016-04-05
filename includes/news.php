@@ -75,10 +75,10 @@
 		<h3>Déjà un an parmi nous !</h3>
 		<p>
 		<?php
-		while ($regitered = $regitered->fetch())
+		while ($line = $regitered->fetch())
 		{
 		?>
-		 <img src="pics/rank<?= $regitered['rank']?>.png" alt="" width="27" class="magie" /> <span class="name<?= $regitered['rank']?>"><?= $regitered['name']?></span> 
+		 <img src="pics/rank<?= $line['rank']?>.png" alt="" width="27" class="magie" /> <span valign="center" class="name<?= $line['rank']?>"><?= $line['name']?></span> 
 		<?php
 		}
 		?>
