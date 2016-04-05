@@ -766,7 +766,7 @@
 				$verif->execute(array($sort));
 				if ($line = $verif->fetch())
 				{
-					$line['id'] = $id;
+					$id = $line['id'];
 					$verif = $db->prepare('SELECT * incan_get WHERE incan_id = ? AND user_id = ?');
 					$verif->execute(array($id, $_SESSION['id']));
 					
