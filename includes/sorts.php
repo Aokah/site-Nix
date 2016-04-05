@@ -1,7 +1,9 @@
 <?php function sorts ()
 {
   global $_POST, $_GET, $_SESSION, $db;
-  
+
+if ($_SESSION['connected'])
+{
   
 	if (isset($_GET['i']))
 	{
@@ -942,5 +944,10 @@
 			<?php
 		}
 	}
+}
+else
+{
+	echo 'Vous devez être connecté pour accéder à cette page.';
+}
 }
 ?>
