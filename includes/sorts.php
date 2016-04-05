@@ -757,7 +757,7 @@
 				<input type="submit" name="confirm" value="Ajouter" />
 			</form>
 		</p>
-		<?php if (isset($_POST['confirm']) AND !empty($_POST['enter']))
+		<?php if (isset($_POST['confirm']))
 		{
 			$sort = htmlentities($_POST['enter']);
 			$verif = $db->prepare('SELECT id, name FROM incan_list WHERE name = ?');
@@ -783,10 +783,6 @@
 			{
 				echo '<p style="color:red;">Navré, mais ce sort n\'existe pas.</p>';
 			}
-		}
-		elseif (isset($_POST['confirm']) AND empty($_POST['enter']))
-		{
-			echo '<p style="color:red;">Désolé, mais vous votre champs de saisie est vide, réessayez.</p>';	
 		}
 		
 		if ($_SESSION['rank'] > 4)
