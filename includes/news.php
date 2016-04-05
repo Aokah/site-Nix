@@ -78,7 +78,7 @@
 		while ($regitered = $regitered->fetch())
 		{
 		?>
-		 <img src="pics/rank<?=$regitered['rank']?>.png" alt="" width="27" class="magie" /> <span class="name<?=$registered['rank']?>"><?= $registered['name']?></span> 
+		 <img src="pics/rank<?= $regitered['rank']?>.png" alt="" width="27" class="magie" /> <span class="name<?= $regitered['rank']?>"><?= $regitered['name']?></span> 
 		<?php
 		}
 		?>
