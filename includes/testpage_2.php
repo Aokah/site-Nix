@@ -21,7 +21,14 @@ global $db;
 	
 	if ($points > $cost)
 	{
-		echo 'Ce sort peut-être lancé';
+		if ($pm > $cost)
+		{
+			echo 'Le personnage a assez de Pm seuls pour lancer le sort';
+		}
+		elseif ($pm < $cost AND $points > $cost)
+		{
+			echo 'Le personnage n\'a pas assez de PMs mais peut lancfer le sort en se réservant sur ses PMs ET PVs';
+		}
 	}
 	else
 	{
