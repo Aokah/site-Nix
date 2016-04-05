@@ -811,7 +811,7 @@
 		$verif->execute(array($_SESSION['id'])); $verif = $verif->fetch();
 		if ($verif['count'] != 0)
 		{
-			$verif = $db->query('SELECT COUNT(ig.incan_id, il.id, il.level) AS verif FROM incan_get ig
+			$verif = $db->query('SELECT COUNT(*) AS verif FROM incan_get ig
 			RIGHT JOIN ican_list il ON ig.incan_id = il.id
 			WHERE il.level > 6'); $verif = $verif->fetch();
 			if ($verif['verif'] != 0)
