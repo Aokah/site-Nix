@@ -255,24 +255,72 @@
 		<h3>Création d'un sondage</h3>
 	<?php
 		if (isset($_POST['valid'])) {
-			$name = htmlentities($_POST['name']);
-			$level = htmlentities($_POST['level']);
-			$text = htmlentities($_POST['text']);
-			$verif = $db->prepare('SELECT * FROM sondage WHERE title = ?');
-			$verif->execute(array($name));
-			
-			if ($verif->fetch())
-			{ echo '<p>Navré, mais ce sondage existe déjà.</p>'; }
+			if (!empty($_POST['name']) AND !empty($_POST['text']))
+			{
+				$name = htmlentities($_POST['name']);
+				$level = htmlentities($_POST['level']);
+				$text = htmlentities($_POST['text']);
+				$verif = $db->prepare('SELECT * FROM sondage WHERE title = ?');
+				$verif->execute(array($name));
+				
+				if ($verif->fetch())
+				{ echo '<p>Navré, mais ce sondage existe déjà.</p>'; }
+				else
+				{
+				$ajout = $db->prepare("INSERT INTO sondage VALUES('',?, ?, ?,?,NOW(), 0)");
+				$ajout->execute(array($_SESSION['id'], $level, $name, $text));
+				?>
+				<p>Sondage créé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
+				<?php
+				}
+			}
 			else
 			{
-			$ajout = $db->prepare("INSERT INTO sondage VALUES('',?, ?, ?,?,NOW(), 0)");
-			$ajout->execute(array($_SESSION['id'], $level, $name, $text));
-			?>
-			<p>Sondage créé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
-			<?php
+				?>
+				<p>Certains champs n\'ont pas été remplis, vérifiez ici :</p>
+				<table>
+					<tbody>
+						<tr>
+							<th>
+								Nom :
+							</th>
+							<th>
+								Sondage :
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<?= $_POST['name']?>
+							</td>
+							<td>
+								<?= $_POST['text']?>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>Veuillez réessayer.</p>
+				<?php
 			}
 		}	
 	
+	}
+	elseif (isset($_GET['lock']))
+	{
+		$sondage = intval($_GET['lock']);
+		$update = $db->prepare('UPDATE sondage SET verr = 1 WHERE id = ?');
+		$update->execute(array($sondage));
+		?>
+		<p>Sondage vérouillé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
+		<?php
+	}
+	elseif (isset($_GET['unlock']))
+	{
+		$sondage = intval($_GET['unlock']);
+		$update = $db->prepare('UPDATE sondage SET verr = 0 WHERE id = ?');
+		$update->execute(array($sondage));
+		?>
+		<p>Sondage déverouillé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
+		<?php
 	}
 	else
 	{
@@ -335,11 +383,11 @@
 				?>
 				<tr>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $verr, $line['titre']?> </a>
+					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $verr, $line['titre']?> </a> <?php if ($line['verr'] == 0) { ?><a href="index?p=sondage&lock=<?= $line['s_id']?>">[Verr]</a><?php } else { ?><a href="index?p=sondage&unlock=<?= $line['s_id']?>">[Déverr]</a>
 					</td>
 					<td>
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line['m.id']?>.png" alt="" />
-					<a class="name<?= $line['rank']?>" href="index?p=perso&perso=<?= $line['m.id']?>"> <?= $line['title'], $line['name']?></a>
+					<a class="name<?= $line['rank']?>" href="index?p=perso&perso=<?= $line['m.id']?>"> <?= $line['title'],' ', $line['name']?></a>
 					<br>
 					<?php echo $date; ?>
 					</td>
@@ -452,7 +500,7 @@
 					</td>
 					<td>
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line3['m.id']?>.png" alt="" />
-					<a class="name<?= $line3['rank']?>" href="index?p=perso&perso=<?= $line3['m.id']?>"> <?= $line3['title']?> <?= $line3['name']?></a>					<br>
+					<a class="name<?= $line3['rank']?>" href="index?p=perso&perso=<?= $line3['m.id']?>"> <?= $line3['title']?> <?= $line3['name']?></a><br>
 					<?php echo $date; ?>
 					</td>
 				</tr>
