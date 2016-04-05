@@ -71,7 +71,7 @@
 		
 		<section><?php
 		$nouveaux = $db->query('SELECT * FROM members 
-		WHERE ADDDATE(registration_date, INTERVAL"01-01" YEAR_MONTH) > NOW() AND ADDDATE(last_action, INTERVAL 1 YEAR) < NOW()');
+		WHERE ADDDATE(registration_date, INTERVAL"01-01" YEAR_MONTH) > NOW() AND ADDDATE(registration_date, INTERVAL 1 YEAR) < NOW()');
 		?>
 		<h3>Déjà un an parmi nous !</h3>
 		<p>
@@ -79,7 +79,7 @@
 		while ($nouveaux = $regitered->fetch())
 		{
 		?>
-		 <img src="pics/rank<?=$regitered['rank']?>.png" alt="" width="27" class="magie"/> <span class="name<?=$registered['rank']?>"><?= $registered['name']?></span> 
+		 <img src="pics/rank<?=$regitered['rank']?>.png" alt="" width="27" class="magie" /> <span class="name<?=$registered['rank']?>"><?= $registered['name']?></span> 
 		<?php
 		}
 		?>
