@@ -23,9 +23,12 @@ global $db;
 	{
 		if ($pm > $cost)
 		{
-			echo 'Le personnage a assez de Pm seuls pour lancer le sort';
+			$result = $pm - $cost;
+			$update = $db->prepare('UPDATE members SET E_magique = ? WHERE id = ?');
+			$update->execute(array($result));
+			echo '<p>Le sort a bien étélancé pour un retrait de ', $cost, ' Points Magiques !';
 		}
-		elseif ($pm < $cost AND $points > $cost)
+		else
 		{
 			echo 'Le personnage n\'a pas assez de PMs mais peut lancfer le sort en se réservant sur ses PMs ET PVs';
 		}
