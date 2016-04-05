@@ -10,8 +10,6 @@
 	
 	<p>Tâches à effectuer :</p>
 	<ul style="color:red;">
-		<li>Recréer le CSS du site et si possible l'améliorer au mieux</li>
-		<li>Réécrire la page des Incontations.</li>
 		<li>Réécrire la page des Candidatures</li>
 		<li>Réadapter la Page d'Acceuil aux évènements passés IG</li>
 		<li>Reconstruire la Structure de la ChatBox</li>
@@ -42,6 +40,8 @@
 		<li>Mettre à jour les permissions de la Page Personnage</li>
 		<li>Mettre à jour les permissions des Pages d'Administration</li>
 		<li>Mettre à jour les permissions des Pages de Modération</li>
+		<li>Réécrire la page des Incontations.</li>
+		<li>Recréer le CSS du site et si possible l'améliorer au mieux</li>
 	</ul>
 <?php
 
