@@ -753,7 +753,7 @@
 		<p>
 			<form action="index?p=sorts" method="POST">
 				<label for="enter">Entrez ici la nouvelle incantation :</label>
-				<input type="text" name="sort" id="enter" />
+				<input type="text" name="enter" id="enter" />
 				<input type="submit" name="confirm" value="Ajouter" />
 			</form>
 		</p>
@@ -785,6 +785,10 @@
 				{
 					echo '<p style="color:red;">Navré, mais ce sort n\'existe pas.</p>';
 				}
+			}
+			else
+			{
+				echo '<p style="color:red;">Navré, mais votre champs de saisie est vide, veuillez ressayer.</p>';
 			}
 		}
 		
