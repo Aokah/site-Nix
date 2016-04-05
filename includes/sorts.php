@@ -629,9 +629,9 @@
 	{
 		echo '<h2>Incantations</h2>';
 		$sort = intval($_GET['launch']);
-		if (isset($_GET['for']))
+		if (isset($_GET['to']))
 		{
-			$for = intval($_GET['for']);
+			$to = intval($_GET['to']);
 		}
 		else
 		{
@@ -641,10 +641,10 @@
 	elseif (isset($_GET['valid']))
 	{
 		echo '<h2>Incantations</h2>';
-		if (isset($_GET['to']) && isset($_GET['valid']))
+		if (isset($_GET['for']) && isset($_GET['valid']))
 		{
-			$to = intval($_GET['to']);
-			echo $valid, ' ', $to;
+			$for = intval($_GET['for']);
+			echo $valid, ' ', $for;
 		}
 		else
 		{
