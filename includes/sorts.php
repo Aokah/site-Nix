@@ -631,7 +631,28 @@
 		$sort = intval($_GET['launch']);
 		if (isset($_GET['to']))
 		{
-			$to = intval($_GET['to']);
+			$user = intval($_GET['to']);
+			$sort = intval($_GET['launch']);
+			
+			$verif = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ? AND valid = 1');
+			$verif->execute(array($user, $sort));
+			$verif2 = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ?');
+			$verif2->execute(array($user, $sort));
+			if ($verif2->fetch())
+			{
+				if ($verif-> fetch())
+				{
+					echo 'page de lancement du sort';
+				}
+				else
+				{
+					echo 'Navré mais ce personnage n\'a pas encore validé ce sort !';
+				}
+			}
+			else
+			{
+				echo 'Navré, mais ce personnage ne connait pas ce sort !';
+			}
 		}
 		else
 		{
@@ -645,7 +666,6 @@
 		{
 			$user = intval($_GET['for']);
 			$sort = intval($_GET['valid']);
-			echo $sort, ' ', $user;
 			
 			$verif = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ? AND valid = 1');
 			$verif->execute(array($user, $sort));
