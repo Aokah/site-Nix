@@ -819,7 +819,7 @@
 			$verif->execute(array($_SESSION['id']));
 			if ($verif->fetch())
 			{
-				echo '<p class="name7" style="font-size: p1.5;">ATTENTION : Vous possédez des sorts de hauts niveaux resultant d\'event ou de recherchers extrêmement poussée et ne doivent pas être échangées commede vulgaires poisson !</p>';
+				echo '<p class="name7" style="font-size: 140%;">ATTENTION : Vous possédez des sorts de hauts niveaux resultants d\'events ou de recherches extrêmement poussée et ne doivent pas être échangées comme de vulgaires poissons !</p>';
 			}
 			$irank = 8;
 			while ($irank > 0)
