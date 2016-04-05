@@ -10,12 +10,16 @@
 <?php if (isset($_GET['s']))
 	{
 		$sondage = intval($_GET['s']);
-	$verif = $db->prepare('SELECT s.id, s.sondage_id AS sondage, s.sender_id, s.vote, m.id AS m_id
+	$verif = $db->prepare('SELECT s.id, s.sondage_id AS sondage, s.sender_id, s.vote, s.verr, m.id AS m_id
 				FROM sondage_votes s
 				RIGHT JOIN members m ON m.id = s.sender_id
 				WHERE s.sondage_id = ? AND s.sender_id = ?');
 	$verif->execute(array($sondage, $_SESSION['id']));
+	$verr = $db->prepare('SELECT * FROM sondage WHERE id = ? AND verr = 0');
+	$verr-execute(array($sondage));
 	if (isset($_GET['v']) && $_GET['v'] == 'pour')
+	{
+	if ($verr->fetch())
 	{
 		if ($verif->fetch())
 		{
@@ -36,7 +40,14 @@
 			<?php }
 		}
 	}
+	else
+	{
+		echo '<p>Navré, mais ce sondage est fermé aux nouveaux votes.</p>';
+	}
+	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'blanc')
+	{
+	if ($verr->fetch())
 	{
 		if ($verif->fetch())
 		{
@@ -57,7 +68,14 @@
 			<?php }	
 		}
 	}
+	else
+	{
+		echo '<p>Navré, mais ce sondage est fermé aux nouveaux votes.</p>';
+	}
+	}
 	elseif (isset($_GET['v']) && $_GET['v'] == 'contre')
+	{
+	if ($verr->fetch())
 	{
 		if ($verif->fetch())
 		{
@@ -80,7 +98,12 @@
 	}
 	else
 	{
-		$answer = $db->prepare('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		echo '<p>Navré, mais ce sondage est fermé aux nouveaux votes.</p>';
+	}
+	}
+	else
+	{
+		$answer = $db->prepare('SELECT s.id AS s_id,s.verr, s.sender_id AS sender,s.verr, s.text, s.rank AS level, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.id = ? ');
@@ -91,8 +114,9 @@
 			if ($_SESSION['rank'] >= $line['level'])
 			{
 				$text = preg_replace('#\n#', '<br />', $line['text']);
+				$verr = ($line['verr'] == 1) ? '[Verouillé] ' : '';
 	?>
-	<h3><?= $line['titre']?></h3>
+	<h3><?= $verr, $line['titre']?></h3>
 	<p><a href="index.php?p=sondage">Retourner à la liste des sondages.</a></p>
 	<center>
 		<table width="100%" cellspacing="0" cellpadding="0">
@@ -116,6 +140,7 @@
 										<?php echo $text ?>
 									</td>
 								</tr>
+								<?php if ($line['verr'] == 0) { ?>
 								<tr>
 									<td style="text-align:center;">
 										<a href="index.php?p=sondage&s=<?php echo $sondage; ?>&v=pour">
@@ -133,6 +158,7 @@
 										</a>
 									</td>
 								</tr>
+								<?php } ?>
 							</tbody>
 						</table>
 					</td>
@@ -239,7 +265,7 @@
 			{ echo '<p>Navré, mais ce sondage existe déjà.</p>'; }
 			else
 			{
-			$ajout = $db->prepare("INSERT INTO sondage VALUES('',?, ?, ?,?,NOW())");
+			$ajout = $db->prepare("INSERT INTO sondage VALUES('',?, ?, ?,?,NOW(), 0)");
 			$ajout->execute(array($_SESSION['id'], $level, $name, $text));
 			?>
 			<p>Sondage créé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
@@ -290,7 +316,7 @@
 		<p class="name2">Votes Publics</p>
 		
 		<?php
-		$answer = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer = $db->query('SELECT s.id AS s_id, s.verr, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank <= 4
@@ -304,15 +330,16 @@
 				</tr>
 				<?php while ($line = $answer->fetch())
 				{	
+					$verr = ($line['verr'] == 1) ? '[Verouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_post']);
 				?>
 				<tr>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $line['titre']?> </a>
+					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $verr, $line['titre']?> </a>
 					</td>
 					<td>
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line['m.id']?>.png" alt="" />
-					<a class="name<?= $line['rank']?>" href="index?p=perso&perso=<?= $line['m.id']?>"> <?= $line['title']?> <?= $line['name']?></a>
+					<a class="name<?= $line['rank']?>" href="index?p=perso&perso=<?= $line['m.id']?>"> <?= $line['title'], $line['name']?></a>
 					<br>
 					<?php echo $date; ?>
 					</td>
@@ -326,7 +353,7 @@
 		<p class="name5">Votes Modérateurs</p>
 		
 		<?php
-		$answer1 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer1 = $db->query('SELECT s.id AS s_id, s.verr, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 5
@@ -340,11 +367,12 @@
 				</tr>
 				<?php while ($line1 = $answer1->fetch())
 				{	
+					$verr = ($line['verr'] == 1) ? '[Verouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line1['date_post']);
 				?>
 				<tr>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line1['s_id'] ?>"> <?= $line1['titre']?></a>
+					<a href="index?p=sondage&s=<?= $line1['s_id'] ?>"> <?= $verr,  $line1['titre']?></a>
 					</td>
 					<td>
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line1['m.id']?>.png" alt="" />
@@ -363,7 +391,7 @@
 		<p class="name6">Votes Maitres du Jeu</p>
 		
 		<?php
-		$answer2 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer2 = $db->query('SELECT s.id AS s_id, s.verr, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 6
@@ -377,11 +405,12 @@
 				</tr>
 				<?php while ($line2 = $answer2->fetch())
 				{	
+					$verr = ($line['verr'] == 1) ? '[Verouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line2['date_post']);
 				?>
 				<tr>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line2['s_id'] ?>"> <?= $line2['titre']?></a>
+					<a href="index?p=sondage&s=<?= $line2['s_id'] ?>"> <?= $verr,  $line2['titre']?></a>
 					</td>
 					<td>
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line2['m.id']?>.png" alt="" />
@@ -400,7 +429,7 @@
 		<p class="name7">Votes Opérateurs</p>
 		
 		<?php
-		$answer3 = $db->query('SELECT s.id AS s_id, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer3 = $db->query('SELECT s.id AS s_id, s.verr, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 7
@@ -414,11 +443,12 @@
 				</tr>
 				<?php while ($line3 = $answer3->fetch())
 				{	
+					$verr = ($line['verr'] == 1) ? '[Verouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line3['date_post']);
 				?>
 				<tr>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line3['s_id'] ?>"> <?= $line3['titre']?></a>
+					<a href="index?p=sondage&s=<?= $line3['s_id'] ?>"> <?= $verr,  $line3['titre']?></a>
 					</td>
 					<td>
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line3['m.id']?>.png" alt="" />
