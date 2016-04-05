@@ -415,7 +415,7 @@
 				</tr>
 				<?php while ($line1 = $answer1->fetch())
 				{	
-					$verr = ($line['verr'] == 1) ? '[Verouillé] ' : '';
+					$verr = ($line1['verr'] == 1) ? '[Verouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line1['date_post']);
 				?>
 				<tr>
@@ -453,7 +453,7 @@
 				</tr>
 				<?php while ($line2 = $answer2->fetch())
 				{	
-					$verr = ($line['verr'] == 1) ? '[Verouillé] ' : '';
+					$verr = ($line2['verr'] == 1) ? '[Verouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line2['date_post']);
 				?>
 				<tr>
@@ -491,7 +491,7 @@
 				</tr>
 				<?php while ($line3 = $answer3->fetch())
 				{	
-					$verr = ($line['verr'] == 1) ? '[Verouillé] ' : '';
+					$verr = ($line3['verr'] == 1) ? '[Verouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line3['date_post']);
 				?>
 				<tr>
