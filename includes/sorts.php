@@ -811,6 +811,13 @@
 		$verif->execute(array($_SESSION['id'])); $verif = $verif->fetch();
 		if ($verif['count'] != 0)
 		{
+			$verif = $db->query('SELECT COUNT(ig.incan_id, il.id, il.level) AS verif FROM incan_get ig
+			RIGHT JOIN ican_list il ON ig.incan_id = il.id
+			WHERE il.level > 6'); $verif = $verif->fetch();
+			if ($verif['verif'] != 0)
+			{
+				echo '<p class="name7" style="font-size: p1.5;">ATTENTION : Vous possédez des sorts de hauts niveaux resultant d\'event ou de recherchers extrêmement poussée et ne doivent pas être échangées commede vulgaires poisson !</p>';
+			}
 			$irank = 8;
 			while ($irank > 0)
 			{
