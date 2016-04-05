@@ -759,29 +759,36 @@
 		</p>
 		<?php if (isset($_POST['confirm']))
 		{
-			$sort = htmlentities($_POST['enter']);
-			$verif = $db->prepare('SELECT id, name FROM incan_list WHERE name = ?');
-			$verif->execute(array($sort));
-			if ($line = $verif->fetch())
+			if (!empty($_POST['enter']))
 			{
-				$line['id'] = $id;
-				$verif = $db->prepare('SELECT * incan_get WHERE incan_id = ? AND user_id = ?');
-				$verif->execute(array($id, $_SESSION['id']));
-				
-				if ($verif->fetch())
+				$sort = htmlentities($_POST['enter']);
+				$verif = $db->prepare('SELECT id, name FROM incan_list WHERE name = ?');
+				$verif->execute(array($sort));
+				if ($line = $verif->fetch())
 				{
-					echo '<p style="color:red;">Désolé, mais vous connaissez déjà ce sort.</p>';
+					$line['id'] = $id;
+					$verif = $db->prepare('SELECT * incan_get WHERE incan_id = ? AND user_id = ?');
+					$verif->execute(array($id, $_SESSION['id']));
+					
+					if ($verif->fetch())
+					{
+						echo '<p style="color:red;">Désolé, mais vous connaissez déjà ce sort.</p>';
+					}
+					else
+					{
+						$update = $bd->prepare("INSERT INTO incan_get VALUES('', ?, ?, '0' ");
+						$update->execute(array($_SESSION['id'], $id));
+						echo '<p style="color:red;>Félicitations ! Vous avez appris un nouveau sort !</p>';
+					}
 				}
 				else
 				{
-					$update = $bd->prepare("INSERT INTO incan_get VALUES('', ?, ?, '0' ");
-					$update->execute(array($_SESSION['id'], $id));
-					echo '<p style="color:red;>Félicitations ! Vous avez appris un nouveau sort !</p>';
+					echo '<p style="color:red;">Navré, mais ce sort n\'existe pas.</p>';
 				}
 			}
 			else
 			{
-				echo '<p style="color:red;">Navré, mais ce sort n\'existe pas.</p>';
+				echo '<p style="color:red;">Navré, mais votre champs de saisie est vide, veuillez ressayer.</p>';
 			}
 		}
 		
