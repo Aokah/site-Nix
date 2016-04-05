@@ -94,7 +94,7 @@
 			<p>Nouveaux inscrits sur Nix, souhaitez leur la bienvenue, ça fait toujours plaisir !</p>
 			<p>
 			<?php
-			$new = $db->query('SELECT * FROM members WHERE ADDDATE(`registration_date`, INTERVAL 1 WEEK)> NOW()');
+			$new = $db->query('SELECT * FROM members WHERE ADDDATE(registration_date, INTERVAL 1 WEEK)> NOW()');
 			?>
 			<?php
 			while ($line = $new->fetch())
