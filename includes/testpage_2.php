@@ -31,7 +31,8 @@ global $db;
 		}
 		else
 		{
-			echo 'Le personnage n\'a pas assez de PMs mais peut lancfer le sort en se réservant sur ses PMs ET PVs';
+			$cost = $cost - $pm;
+			echo $cost;
 		}
 	}
 	else
