@@ -767,7 +767,7 @@
 				if ($line = $verif->fetch())
 				{
 					$id = $line['id'];
-					$verif = $db->prepare('SELECT * incan_get WHERE incan_id = ? AND user_id = ?');
+					$verif = $db->prepare('SELECT * FROM incan_get WHERE incan_id = ? AND user_id = ?');
 					$verif->execute(array($id, $_SESSION['id']));
 					
 					if ($verif->fetch())
