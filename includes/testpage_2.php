@@ -14,10 +14,12 @@ global $db;
 	$pm = $select['E_magique'];
 	$pv = $select['E_vitale'];
 	$cost = $incan['cost'];
+	$points = $pm + $pv;
 	
-	echo $pm, ' ', $pv, ' ', $cost;
+	echo $pm, ' ', $pv, ' ', $cost, ' ', $points;
 	
-	if ($pm + $pv > $cost)
+	
+	if ($points > $cost)
 	{
 		echo 'Ce sort peut-être lancé';
 	}
