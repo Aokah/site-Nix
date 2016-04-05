@@ -643,9 +643,31 @@
 		echo '<h2>Incantations</h2>';
 		if (isset($_GET['for']) && isset($_GET['valid']))
 		{
-			$for = intval($_GET['for']);
-			$valid = intval($_GET['valid']);
-			echo $valid, ' ', $for;
+			$user = intval($_GET['for']);
+			$sort = intval($_GET['valid']);
+			echo $sort, ' ', $user;
+			
+			$verif = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ? AND valid = 1');
+			$verif->execute(array($sort, $user));
+			$verif2 = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ?');
+			$verif2->execute(array($sort, $user));
+			if ($verif2->fetch())
+			{
+				if ($verif-> fetch())
+				{
+					echo 'Navré, mais ce personnage a déjà validé ce sort.';
+				}
+				else
+				{
+					$update = $db->prepare('UPDATE incan_get SET valid = 1 WHERE user_id = ? AND incan_id = ?');
+					$update->execute(array($user, $sort));
+					echo 'Le sort a bien été validé !';
+				}
+			}
+			else
+			{
+				echo 'Navré, mais ce personnage ne connait pas ce sort !';
+			}
 		}
 		else
 		{
