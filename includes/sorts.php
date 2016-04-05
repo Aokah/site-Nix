@@ -776,7 +776,7 @@
 					}
 					else
 					{
-						$update = $bd->prepare("INSERT INTO incan_get VALUES('', ?, ?, '0' ");
+						$update = $db->prepare("INSERT INTO incan_get VALUES('', ?, ?, '0' ");
 						$update->execute(array($_SESSION['id'], $id));
 						echo '<p style="color:red;>Félicitations ! Vous avez appris un nouveau sort !</p>';
 					}
