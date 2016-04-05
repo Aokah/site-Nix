@@ -280,7 +280,7 @@
 			else
 			{
 				?>
-				<p>Certains champs n\'ont pas été remplis, vérifiez ici :</p>
+				<p>Certains champs n'ont pas été remplis, vérifiez ici :</p>
 				<table>
 					<tbody>
 						<tr>
