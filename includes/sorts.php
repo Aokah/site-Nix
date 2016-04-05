@@ -273,7 +273,7 @@
 												</tr>
 												<tr>
 													<td style="text-align:center;">
-														<? if ($line['valid'] == 1) { ?><a href="index?p=sorts&launch=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Lancer le sort !]</a><?php } else
+														<? if ($line['valid'] == 1) { ?><a href="index?p=sorts&launch=<?=$line['incan_id']?>&for=<?=$line['m.id']?>" class="name5">[Lancer le sort !]</a><?php } else
 														{ ?><a href="index?p=sorts&valid=<?=$line['incan_id']?>&for=<?=$line['m.id']?>" class="name5">[Valider le sort !]</a><?php } ?>
 													</td>
 												</tr>
@@ -574,7 +574,7 @@
 													</tr>
 													<tr>
 														<td style="text-align:center;">
-															<? if ($line['valid'] == 1) { ?><a href="index?p=sorts&launch=<?=$line['incan_id']?>&for=<?=$id?>" class="name5">[Lancer le sort !]</a><?php } else
+															<? if ($line['valid'] == 1) { ?><a href="index?p=sorts&launch=<?=$line['incan_id']?>&for=<?=$line['m.id']?>" class="name5">[Lancer le sort !]</a><?php } else
 															{ ?><a href="index?p=sorts&valid=<?=$line['incan_id']?>&for=<?=$line['m_id']?>" class="name5">[Valider le sort !]</a><?php } ?>
 														</td>
 													</tr>
