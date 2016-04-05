@@ -77,8 +77,9 @@
 		<?php
 		while ($line = $regitered->fetch())
 		{
+			if ($line['rank'] == 10) { $rank = "crea"; } elseif ($line['rank'] == 9) { $rank = "titan"; } else { $rank = $line['rank']; }
 		?>
-		 <img src="pics/rank<?= $line['rank']?>.png" alt="" width="27" class="magie" /> <span valign="center" class="name<?= $line['rank']?>"><?= $line['name']?></span> 
+		 <img src="pics/rank<?= $rank?>.png" alt="" width="27" class="magie" /> <a href="index?p=perso&perso=<?= $line['id']?>" valign="center" class="name<?= $line['rank']?>"><?= $line['name']?></a> 
 		<?php
 		}
 		?>
