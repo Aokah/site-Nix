@@ -25,7 +25,7 @@ global $db;
 		{
 			$result = $pm - $cost;
 			$update = $db->prepare('UPDATE members SET E_magique = ? WHERE id = ?');
-			$update->execute(array($result));
+			$update->execute(array($result, $user));
 			echo '<p>Le sort a bien étélancé pour un retrait de ', $cost, ' Points Magiques !';
 		}
 		else
