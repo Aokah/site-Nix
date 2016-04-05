@@ -629,9 +629,9 @@
 	{
 		echo '<h2>Incantations</h2>';
 		$sort = intval($_GET['launch']);
-		if (isset($_GET['to']))
+		if (isset($_GET['for']))
 		{
-			$user = intval($_GET['to']);
+			$user = intval($_GET['for']);
 			$sort = intval($_GET['launch']);
 			
 			$verif = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ? AND valid = 1');
