@@ -16,7 +16,7 @@
 				WHERE s.sondage_id = ? AND s.sender_id = ?');
 	$verif->execute(array($sondage, $_SESSION['id']));
 	$verr = $db->prepare('SELECT * FROM sondage WHERE id = ? AND verr = 0');
-	$verr-execute(array($sondage));
+	$verr->execute(array($sondage));
 	if (isset($_GET['v']) && $_GET['v'] == 'pour')
 	{
 	if ($verr->fetch())
