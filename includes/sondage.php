@@ -383,7 +383,7 @@
 				?>
 				<tr>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $verr, $line['titre']?> </a> <?php if ($line['verr'] == 0) { ?><a style="color:red;" href="index?p=sondage&lock=<?= $line['s_id']?>">[Verr]</a><?php } else { ?><a style="color:green;" href="index?p=sondage&unlock=<?= $line['s_id']?>">[Déverr]</a><?php } ?>
+					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $verr, $line['titre']?> </a> <?php if ($line['verr'] == 0) { ?><a class="name7" href="index?p=sondage&lock=<?= $line['s_id']?>">[Verr]</a><?php } else { ?><a class="name5" href="index?p=sondage&unlock=<?= $line['s_id']?>">[Déverr]</a><?php } ?>
 					</td>
 					<td>
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line['m.id']?>.png" alt="" />
@@ -420,7 +420,7 @@
 				?>
 				<tr>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line1['s_id'] ?>"> <?= $verr,  $line1['titre']?></a> <?php if ($line['verr'] == 0) { ?><a style="color:red;" href="index?p=sondage&lock=<?= $line['s_id']?>">[Verr]</a><?php } else { ?><a style="color:green;" href="index?p=sondage&unlock=<?= $line['s_id']?>">[Déverr]</a><?php } ?>
+					<a href="index?p=sondage&s=<?= $line1['s_id'] ?>"> <?= $verr,  $line1['titre']?></a> <?php if ($line1['verr'] == 0) { ?><a class="name7" href="index?p=sondage&lock=<?= $line1['s_id']?>">[Verr]</a><?php } else { ?><a class="name5" href="index?p=sondage&unlock=<?= $line1['s_id']?>">[Déverr]</a><?php } ?>
 					</td>
 					<td>
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line1['m.id']?>.png" alt="" />
@@ -458,7 +458,7 @@
 				?>
 				<tr>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line2['s_id'] ?>"> <?= $verr,  $line2['titre']?></a> <?php if ($line['verr'] == 0) { ?><a style="color:red;" href="index?p=sondage&lock=<?= $line['s_id']?>">[Verr]</a><?php } else { ?><a style="color:green;" href="index?p=sondage&unlock=<?= $line['s_id']?>">[Déverr]</a><?php } ?>
+					<a href="index?p=sondage&s=<?= $line2['s_id'] ?>"> <?= $verr,  $line2['titre']?></a> <?php if ($line2['verr'] == 0) { ?><a class="name7" href="index?p=sondage&lock=<?= $line2['s_id']?>">[Verr]</a><?php } else { ?><a class="name5" href="index?p=sondage&unlock=<?= $line2['s_id']?>">[Déverr]</a><?php } ?>
 					</td>
 					<td>
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line2['m.id']?>.png" alt="" />
@@ -496,7 +496,7 @@
 				?>
 				<tr>
 					<td class="read">
-					<a href="index?p=sondage&s=<?= $line3['s_id'] ?>"> <?= $verr,  $line3['titre']?></a> <?php if ($line['verr'] == 0) { ?><a style="color:red;" href="index?p=sondage&lock=<?= $line['s_id']?>">[Verr]</a><?php } else { ?><a style="color:green;" href="index?p=sondage&unlock=<?= $line['s_id']?>">[Déverr]</a><?php } ?>
+					<a href="index?p=sondage&s=<?= $line3['s_id'] ?>"> <?= $verr,  $line3['titre']?></a> <?php if ($line3['verr'] == 0) { ?><a class="name7" href="index?p=sondage&lock=<?= $line3['s_id']?>">[Verr]</a><?php } else { ?><a class="name5" href="index?p=sondage&unlock=<?= $line3['s_id']?>">[Déverr]</a><?php } ?>
 					</td>
 					<td>
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line3['m.id']?>.png" alt="" />
