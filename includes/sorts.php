@@ -631,11 +631,24 @@
 		$sort = intval($_GET['launch']);
 		if (isset($_GET['for']))
 		{
-			$to = intval($_GET['to']);
+			$for = intval($_GET['for']);
 		}
 		else
 		{
 			echo '<p>Uhm.... Tu es sûr que tu n\'as pas oublié de préciser qui lançait le sort ?</p>';
+		}
+	}
+	elseif (isset($_GET['valid']))
+	{
+		echo '<h2>Incantations</h2>';
+		if (isset($_GET['to']) && isset($_GET['valid']))
+		{
+			$to = intval($_GET['to']);
+			echo $valid, ' ', $to;
+		}
+		else
+		{
+			echo '<p>Uhm.... Tu es sûr que tu n\'as pas oublié de préciser à qui valider le sort ?</p>';
 		}
 	}
 	else
