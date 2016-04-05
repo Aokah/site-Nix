@@ -119,7 +119,7 @@
 	<h3><?= $verr, $line['titre']?></h3>
 	<p><a href="index.php?p=sondage">Retourner à la liste des sondages.</a></p>
 	<?php if ($line['verr'] == 1) { ?>
-	<p style="colo:red;">Ce sondage est vérouillé et n'accepte plus de nouveaux votes.</p>
+	<p style="color:red;">Ce sondage est vérouillé et n'accepte plus de nouveaux votes.</p>
 	<?php } ?>
 	<center>
 		<table width="100%" cellspacing="0" cellpadding="0">
