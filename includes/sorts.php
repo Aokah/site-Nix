@@ -816,7 +816,7 @@
 			RIGHT JOIN incan_list il ON incan_id = il.id
 			LEFT JOIN members m ON user_id = m.id
 			WHERE user_id = ? AND il.level < 6');
-			if ($verif->fetch();)
+			if ($verif->fetch())
 			{
 				echo '<p class="name7" style="font-size: p1.5;">ATTENTION : Vous possédez des sorts de hauts niveaux resultant d\'event ou de recherchers extrêmement poussée et ne doivent pas être échangées commede vulgaires poisson !</p>';
 			}
