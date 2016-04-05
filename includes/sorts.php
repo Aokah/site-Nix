@@ -648,9 +648,9 @@
 			echo $sort, ' ', $user;
 			
 			$verif = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ? AND valid = 1');
-			$verif->execute(array($sort, $user));
+			$verif->execute(array($user, $sort));
 			$verif2 = $db->prepare('SELECT * FROM incan_get WHERE user_id = ? AND incan_id = ?');
-			$verif2->execute(array($sort, $user));
+			$verif2->execute(array($user, $sort));
 			if ($verif2->fetch())
 			{
 				if ($verif-> fetch())
