@@ -17,5 +17,14 @@ global $db;
 	
 	echo $pm, ' ', $pv, ' ', $cost;
 	
+	if ($pm + $pv > $cost)
+	{
+		echo 'Ce sort peut-être lancé';
+	}
+	else
+	{
+		echo 'Le personnage n\'a aps assez de points magique et / ou vitaux pour lancer ce sort !';
+	}
+	
 }
 ?>
