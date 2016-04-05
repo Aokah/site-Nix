@@ -89,6 +89,23 @@
 		?>
 		</p>
 		</section>
+		<section>
+			<h3>De nouveaux venus !</h3>
+			<p>Nouveaux inscrits sur Nix, souhaitez leur la bienvenue ça fait toujours plaisir !</p>
+			<p>
+			<?php
+			$new = $db->query('SELECT * FROM members WHERE rank < 8 AND WHERE ADDDATE(last_action, INTERVAL 1 WEEK) > NOW()');
+			?>
+			<?php
+			while ($line = $new->fetch())
+			{
+				if ($line['rank'] == 10) { $rank = "crea"; } elseif ($line['rank'] == 9) { $rank = "titan"; } else { $rank = $line['rank']; }
+			?>
+			 <img src="pics/rank<?= $rank?>.png" alt="" width="27" class="magie" /> <a href="index?p=perso&perso=<?= $line['id']?>" valign="center" class="name<?= $line['rank']?>"><?= $line['name']?></a> 
+			<?php
+			}
+		?></p>
+		</section>
 	<?php
 	}
 			
