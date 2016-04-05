@@ -778,7 +778,7 @@
 					{
 						$update = $db->prepare("INSERT INTO incan_get VALUES('', ?, ?, '0') ");
 						$update->execute(array($_SESSION['id'], $id));
-						echo '<p style="color:red;>Félicitations ! Vous avez appris un nouveau sort !</p>';
+						echo '<p style="color:red";>Félicitations ! Vous avez appris un nouveau sort !</p>';
 					}
 				}
 				else
@@ -845,6 +845,7 @@
 									case 8: $type = "Lumière" ; break; case 7: $type = "Glace" ; break; case 6: $type = "Feu" ; break; case 5: $type = "Energie" ; break;
 									case 4: $type = "Eau" ; break; case 3: $type = "Chaos" ; break; case 2: $type = "Arcane" ; break; case 1: $type = "Air" ; break; case 0: $type = "Inconnue" ; break; 
 									}
+									$type = ($line['valid'] == 1) ? $type : 'Inconnue';
 									switch ($line['level'])
 									{
 									case 8: $level = "X"; break; case 7:  $level = "S"; break; case 6:  $level = "A"; break; case 5:  $level = "B"; break; case 4:  $level = "C"; break; case 3:  $level = "D"; break; 
