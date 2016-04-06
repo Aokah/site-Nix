@@ -17,7 +17,7 @@
 		if (isset($_POST['action']) && $_POST['action'] == 'send')
 		{
 			if (isset($_POST['subject']) && $_POST['subject'] != '' && isset($_POST['to']) && $_POST['to'] != '' &&
-			    isset($_POST['msg']) && $_POST['msg'] != '')
+			    isset($_POST['pm']) && $_POST['pm'] != '')
 			{
 				$toName = htmlspecialchars($_POST['to']);
 				$subject = htmlspecialchars($_POST['subject']);
@@ -225,8 +225,8 @@
 				</table>
 				</div>
 
-				<label for="msg">Message :</label><br />
-				<textarea name="msg" id="msg"><?php if (isset($msgHead)) { echo $msgHead; ?>
+				<label for="pm">Message :</label><br />
+				<textarea name="pm" id="pm"><?php if (isset($msgHead)) { echo $msgHead; ?>
 
 				
 <?php } ?><?php echo(isset($msg))?$msg:'';?>
@@ -279,8 +279,8 @@
 					</table>
 					</div>
 
-					<label for="msg">Message :</label><br />
-					<textarea name="msg" id="msg"></textarea><br />
+					<label for="pm">Message :</label><br />
+					<textarea name="pm" id="pm"></textarea><br />
 
 					<input type="hidden" name="subject" value="<?= $newSubject?>">
 					<input type="hidden" name="to" value="<?= $line['author']?>">
