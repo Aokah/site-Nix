@@ -15,7 +15,7 @@ echo '<h2>Questionnaire</h2>';
       if ($_POST['event'] == "expe") { $count ++; }
       if ($_POST['steal'] == "allok") { $count ++; }
       if ($_POST['cave'] == "adapt") { $count ++; }
-      if ($_POST['size'] == "adapt") { $count ++; }
+      if ($_POST['size'] == "adapte") { $count ++; }
       echo '<p>';
       if ($count >= 8)
       {
@@ -91,7 +91,7 @@ echo '<h2>Questionnaire</h2>';
    <p>
       Ma Cave doit être . . .<br />
       <input type="radio" name="cave" value="batcave" id="batcave" /> <label for="batcave">Un véritable sous-terrain de superheros, je dois y avoir tout ce dont j'ai besoin pour sauver la veuve et l'orphelin !</label><br />
-      <input type="radio" name="cave" value="adapt" id="adapt" /> <label for="adapt">Adaptée à la maison, sans hotel sous-terrain ou "batcave".</label><br />
+      <input type="radio" name="cave" value="adapted" id="adapted" /> <label for="adapted">Adaptée à la maison, sans hotel sous-terrain ou "batcave".</label><br />
       <input type="radio" name="cave" value="naheul" id="naheul" /> <label for="naheul">Dignes des plus grands maîtres du donjon ! Des pièges partouts et des explosifs de secours ! Vous ne volerez pas mon or ! !</label><br />
       <input type="radio" name="cave" value="lol" id="lol" /> <label for="lol">J'optimise la plae avec tout un tas de systèmes étranges ddont seul moi connais le secret.</label>
    </p>
@@ -99,7 +99,7 @@ echo '<h2>Questionnaire</h2>';
       La taille d'une maison doit être . . .<br />
       <input type="radio" name="size" value="skip" id="petitetpuissant" />Compact et utile ! Comme on les aime.<label for="petitetpuissant"></label><br />
       <input type="radio" name="size" value="villa" id="villa" /> <label for="villa">Une villa du futur de ses morts !</label><br />
-      <input type="radio" name="size" value="adapt" id="adapt" /> <label for="adapt">Adaptée à sa fonctionnalitée, ne pas construire une forteresse pour 4 personnes seulement. Et respecter la cohérence du milieu.</label><br />
+      <input type="radio" name="size" value="adapte" id="adapte" /> <label for="adapt">Adaptée à sa fonctionnalitée, ne pas construire une forteresse pour 4 personnes seulement. Et respecter la cohérence du milieu.</label><br />
       <input type="radio" name="size" value="lol" id="lol" /> <label for="lol"></label>
    </p>
    <p>
