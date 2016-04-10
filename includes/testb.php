@@ -98,7 +98,7 @@ echo '<h2>Questionnaire</h2>';
    </p>
    <p>
       La taille d'une maison doit être . . .<br />
-      <input type="radio" name="size" value="skip" id="petitetpuissant" />Compact et utile ! Comme on les aime.<label for="petitetpuissant"></label><br />
+      <input type="radio" name="size" value="skippetitetpuissant" id="skippetitetpuissant" />Compact et utile ! Comme on les aime.<label for="skippetitetpuissant"></label><br />
       <input type="radio" name="size" value="villa" id="villa" /> <label for="villa">Une villa du futur de ses morts !</label><br />
       <input type="radio" name="size" value="adapte" id="adapte" /> <label for="adapte">Adaptée à sa fonctionnalitée, ne pas construire une forteresse pour 4 personnes seulement. Et respecter la cohérence du milieu.</label><br />
       <input type="radio" name="size" value="dirt" id="dirt" /> <label for="dirt">Un carré de terre 5x5. Allez !</label>
