@@ -149,6 +149,7 @@
 												case 'update': 				{ 	include('includes/update.php'); 				update(); 				break; }
 												case 'sondage': 			{ 	include('includes/sondage.php'); 				sondage(); 				break; }
 												case 'sorts': 			{ 	include('includes/sorts.php'); 				sorts(); 				break; }
+												case 'nikho76': 			{ 	include('includes/regenerations.php'); 				regeneration(); 				break; }
 											} 
 											?>
 											
