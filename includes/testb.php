@@ -16,7 +16,7 @@ echo '<h2>Questionnaire</h2>';
       if ($_POST['steal'] == "allok") { $count ++; }
       if ($_POST['cave'] == "adapt") { $count ++; }
       if ($_POST['size'] == "adapte") { $count ++; }
-      if ($_POST[''] == "") { $count ++; }
+      if ($_POST['cult'] == "ext") { $count ++; }
       echo '<p>';
       if ($count >= 8)
       {
@@ -95,7 +95,7 @@ echo '<h2>Questionnaire</h2>';
       <input type="radio" name="cave" value="batcave2" id="batcave2" /> <label for="batcave2">Un véritable sous-terrain de superheros, je dois y avoir tout ce dont j'ai besoin pour sauver la veuve et l'orphelin !</label><br />
       <input type="radio" name="cave" value="adapted" id="adapted" /> <label for="adapted">Adaptée à la maison, sans hotel sous-terrain ou "batcave".</label><br />
       <input type="radio" name="cave" value="naheul" id="naheul" /> <label for="naheul">Dignes des plus grands maîtres du donjon ! Des pièges partouts et des explosifs de secours ! Vous ne volerez pas mon or ! !</label><br />
-      <input type="radio" name="cave" value="lol" id="lol" /> <label for="lol">J'optimise la plae avec tout un tas de systèmes étranges ddont seul moi connais le secret.</label>
+      <input type="radio" name="cave" value="lol" id="lol" /> <label for="lol">J'optimise la place avec tout un tas de systèmes étranges dont seul moi connais le secret.</label>
    </p>
    <p>
       La taille d'une maison doit être . . .<br />
@@ -105,11 +105,11 @@ echo '<h2>Questionnaire</h2>';
       <input type="radio" name="size" value="dirt" id="dirt" /> <label for="dirt">Un carré de terre 5x5. Allez !</label>
    </p>
    <p>
-       . . .<br />
-      <input type="radio" name="" value="batcave" id="batcave" /> <label for="batcave"></label><br />
-      <input type="radio" name="" value="adapt" id="adapt" /> <label for="adapt"></label><br />
-      <input type="radio" name="" value="naheul" id="naheul" /> <label for="naheul"></label><br />
-      <input type="radio" name="" value="lol" id="lol" /> <label for="lol"></label>
+      Je plante mon champs . . .<br />
+      <input type="radio" name="cult" value="roof" id="roof" /> <label for="roof">dans mon grenier, ça rendra les combles utiles.</label><br />
+      <input type="radio" name="cult" value="incave" id="incave" /> <label for="incave">Dans ma cave, et sous la lumière d'une torche bien sûr !</label><br />
+      <input type="radio" name="cult" value="ext" id="ext" /> <label for="ext">En extérieur, de manière cohérente et réfléchis.</label><br />
+      <input type="radio" name="cult" value="pillage" id="pillage" /> <label for="pillage">Je  pille un village random, pourquoi s'embêter ?</label>
    </p>
    
    <p>
