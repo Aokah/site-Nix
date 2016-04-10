@@ -104,14 +104,18 @@
 										<p>La restauration des flux vitaux est relativement longue, la prudence sera de mise à l'avenir aux yeux du personnage.</p>
 										</div>
 										<?  }
-										if ($hrpavis >= 10 OR $select['rank'] > 1)
+										if ($hrpavis >= 10 OR $select['rank'] > 1 )
+										if ($select['buildok'] == 0)
+										{
 										{?>
 										<div class="alert">
 										<h3>Test de construction</h3>
-										<p></p>
-										<p></p>
+										<p>Vous pouvez maintenant remplir le questionnaire qui vous permettra de demander à un Membre du Staff le mode survie.</p>
+										<p>
+											<a href="index?p=testb">Cliquez ici</a> pour vous rendre à la page du questionnaire.
+										</p>
 										</div>
-										<?php } ?>
+										<?php } }?>
 										
 										<div id="main">
 											<?php
