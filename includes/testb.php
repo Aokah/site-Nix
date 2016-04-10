@@ -3,12 +3,12 @@
 global $db;
 if ($_SESSION['connected'])
 {
-   $id = $_SESSION['id'];
+	$id = $_SESSION['id'];
 	$select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
 	$select->execute(array($id)); $line0 = $select->fetch();
 	$select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
-   $select1->execute(array($id)); $line1 = $select1->fetch();
-   $select2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
+	$select1->execute(array($id)); $line1 = $select1->fetch();
+	$select2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
 	$select2->execute(array($id)); $line2 = $select2->fetch();
 	$select3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
 	$select3->execute(array($id)); $line3 = $select3->fetch();
