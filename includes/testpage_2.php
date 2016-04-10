@@ -15,6 +15,7 @@ echo '<h2>Questionnaire</h2>';
       if ($_POST['event'] == "expe") { $count ++; }
       if ($_POST['steal'] == "allok") { $count ++; }
       if ($_POST['cave'] == "adapt") { $count ++; }
+      if ($_POST['size'] == "adapt") { $count ++; }
       echo '<p>';
       if ($count >= 8)
       {
@@ -95,11 +96,11 @@ echo '<h2>Questionnaire</h2>';
       <input type="radio" name="cave" value="lol" id="lol" /> <label for="lol">J'optimise la plae avec tout un tas de systèmes étranges ddont seul moi connais le secret.</label>
    </p>
    <p>
-       . . .<br />
-      <input type="radio" name="" value="batcave" id="batcave" /> <label for="batcave"></label><br />
-      <input type="radio" name="" value="adapt" id="adapt" /> <label for="adapt"></label><br />
-      <input type="radio" name="" value="naheul" id="naheul" /> <label for="naheul"></label><br />
-      <input type="radio" name="" value="lol" id="lol" /> <label for="lol"></label>
+      La taille d'une maison doit être . . .<br />
+      <input type="radio" name="size" value="skip" id="petitetpuissant" />Compact et utile ! Comme on les aime.<label for="petitetpuissant"></label><br />
+      <input type="radio" name="size" value="villa" id="villa" /> <label for="villa">Une villa du futur de ses morts !</label><br />
+      <input type="radio" name="size" value="adapt" id="adapt" /> <label for="adapt">Adaptée à sa fonctionnalitée, ne pas construire une forteresse pour 4 personnes seulement. Et respecter la cohérence du milieu.</label><br />
+      <input type="radio" name="size" value="lol" id="lol" /> <label for="lol"></label>
    </p>
    <p>
        . . .<br />
