@@ -12,23 +12,23 @@ echo '<h2>Questionnaire</h2>';
       if ($_POST['mine'] == "plusieurs") { $count ++; }
       if ($_POST['elevage'] == "create") { $count ++; }
       if ($_POST['cutting'] == "pousse") { $count ++; }
-      echo $count;
-      if ($count == 8)
+      echo '<p>';
+      if ($count >= 8)
       {
-         
-      }
-      elseif ($count == 9)
-      {
-         
-      }
-      elseif ($count == 10)
-      {
-         
+      ?>
+      Félicitations ! Vous avez atteint le score de <?= echo $count?>/10 , <?php
+      if ($count == 10) { ?>ce qui est parfait,<?php } else
+      { ?>ce qui est pas mal,<?php } ?> vous pouvez maintenant demander le mode survie à un Staffeux !
+      <?php
       }
       else
       {
-         
+      ?>
+      Navré, mais vous avez atteint le score de <?= echo $count?>/10 , ce qui n'est pas suffisant pour valider votre test de construction. 
+      <a href="index?p=testpage_2">Réessayez.</a>
+      <?php
       }
+      echo '</p>';
    }
    else
    {
