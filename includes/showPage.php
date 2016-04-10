@@ -104,6 +104,7 @@
 											{
 												case '' : 				{	include('includes/home.php'); 					home(); 				break; }
 												case 'login': 				{	include('includes/login.php'); 					login(); 				break; }
+												case 'testb': 				{	include('includes/testb.php'); 					testb(); 				break; }
 												case 'glennforum':			{	include('includes/glennforum.php');				glennforum(); 			break; }
 												case 'glenngroups':			{	include('includes/glenngroups.php');			glenngroups(); 			break; }
 												case 'register':			{	include('includes/register.php'); 				register(); 			break; }
