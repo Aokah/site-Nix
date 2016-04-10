@@ -92,7 +92,7 @@
 					if ($line['E_vitale'] >= 160 AND $line['E_vitale'] <= 179) 	{	$tvie = 80 ;	}
 					if ($line['E_vitale'] >= 180 AND $line['E_vitale'] <= 199) 	{	$tvie = 90 ;	}
 					if ($line['E_vitale'] == 200) 	{	$tvie = 100 ;	}
-					$pmcount = ($line['magie_rank'] > 7) ? 'PMs Illimité !' : ''.$line['E_magique'].' PMs restants !' ;
+					$pmcount = ($line['magie_rank'] > 6) ? 'PMs Illimité !' : ''.$line['E_magique'].' PMs restants !' ;
 					$id = $line['id'];
 					$select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
 					$select->execute(array($id)); $line0 = $select->fetch();
