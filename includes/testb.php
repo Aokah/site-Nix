@@ -47,7 +47,7 @@ echo '<h2>Questionnaire</h2>';
       {
       ?>
       Navré, mais vous avez atteint le score de <?= $count?>/10 , ce qui n'est pas suffisant pour valider votre test de construction. 
-      <a href="index?p=testpage_2">Réessayez.</a>
+      <a href="index?p=testb">Réessayez.</a>
       <?php
       }
       echo '</p>';
@@ -56,7 +56,7 @@ echo '<h2>Questionnaire</h2>';
    {
 ?>
 <p>Afin de vous permettre de participer à l'évolution du serveur par la construction, il est important pour nous que vous ayez bien saisi les principes de base de la construction dans le cadre d'un jeu de rôle communautaire.</p>
-<form method="POST" action="index?p=testpage_2">
+<form method="POST" action="index?p=testb">
    <p>
       Je suis autorisé à construire . . .<br />
       <img src="pics/testb_1.png" alt="" class="guild" /><br />
