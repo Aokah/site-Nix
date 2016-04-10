@@ -91,7 +91,7 @@ echo '<h2>Questionnaire</h2>';
    </p>
    <p>
       Ma Cave doit être . . .<br />
-      <input type="radio" name="cave" value="batcave" id="batcave" /> <label for="batcave">Un véritable sous-terrain de superheros, je dois y avoir tout ce dont j'ai besoin pour sauver la veuve et l'orphelin !</label><br />
+      <input type="radio" name="cave" value="batcave2" id="batcave2" /> <label for="batcave2">Un véritable sous-terrain de superheros, je dois y avoir tout ce dont j'ai besoin pour sauver la veuve et l'orphelin !</label><br />
       <input type="radio" name="cave" value="adapted" id="adapted" /> <label for="adapted">Adaptée à la maison, sans hotel sous-terrain ou "batcave".</label><br />
       <input type="radio" name="cave" value="naheul" id="naheul" /> <label for="naheul">Dignes des plus grands maîtres du donjon ! Des pièges partouts et des explosifs de secours ! Vous ne volerez pas mon or ! !</label><br />
       <input type="radio" name="cave" value="lol" id="lol" /> <label for="lol">J'optimise la plae avec tout un tas de systèmes étranges ddont seul moi connais le secret.</label>
