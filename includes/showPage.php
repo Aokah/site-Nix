@@ -75,14 +75,14 @@
 										$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
 										$counts = $plus - $moins; $hrpavis = $countj + $counts;
 										$select4 = $db->prepare('SELECT * FROM members WHERE id = ?');
-										$select4->execute(array($id)); $select = $select->fetch();
+										$select4->execute(array($id)); $select = $select4->fetch();
 										if ($select['E_magique'] <= 30 AND $select['E_magique'] > 0){ ?>
 										<div class="alert">
 										<h3>Fatigue grandissante du personnage</h3>
 										<p>Du fait de la perte de presque la totalité de ses Points de Magie (PM), votrepersonnage souffre d'une fatigue assez prenoncée, il devient moins endurant, irritable, et il est compliqué pour lui de rester concentré sur des tâches complexes.
 										</p><p>La restauration des flux magique de votre personnage sera naturelle. Aussi bien faites attention la prochaine fois que vous abusez des sorts.</p>
 										</div>
-										<? } if ($select['E_magique'] <= 0) {?>
+										<? } if ($select['E_magique'] == 0) {?>
 										<div class="alert">
 										<h3>Perte des ressources magiques</h3>
 										<p>Après la perte de la totalité de vos Points de Magie (PM) votre persnne se voit très régulièrement épuisé, si de nouveaux sorts sont tentés, le coût de ces derniers impactera
@@ -97,7 +97,7 @@
 										la concentration aigües.</p>
 										<p>La restauration des flux vitaux est relativement longue, la prudence sera de mise à l'avenir aux yeux du personnage.</p>
 										</div>
-										<? } if ($select['E_vitale'] <= 0) { ?> <div class="alert">
+										<? } if ($select['E_vitale'] == 0) { ?> <div class="alert">
 										<h3>Perte total des repères</h3>
 										<p>Suite à la perte totale des Points Magiques puis Vitaux (PM) (PV) votre personnage perd totalement la raison, il sera incapable d'aligner trois phrases cohérentes et impossible d'effectuer le moindre sort.<br />
 										Il peut arriver que le récent perdu ne sache plus faire la différence entre allié et ennemi.</p>
