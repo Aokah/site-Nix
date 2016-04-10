@@ -12,6 +12,7 @@ echo '<h2>Questionnaire</h2>';
       if ($_POST['mine'] == "plusieurs") { $count ++; }
       if ($_POST['elevage'] == "create") { $count ++; }
       if ($_POST['cutting'] == "pousse") { $count ++; }
+      if ($_POST['event'] == "expe") { $count ++; }
       echo '<p>';
       if ($count >= 8)
       {
@@ -69,6 +70,13 @@ echo '<h2>Questionnaire</h2>';
       <input type="radio" name="cutting" value="besoin" id="besoin" /> <label for="besoin">Pile le bois dont j'ai besoin et je laisse le reste au suivant.</label><br />
       <input type="radio" name="cutting" value="urbain" id="urbain" /> <label for="urbain">Je décime la forêt, on pourra parler urbanisme en plus.</label><br />
       <input type="radio" name="cutting" value="osef" id="osef" /> <label for="osef">Je coupe l'arbe, point, un de plus ou de moins.</label>
+   </p>
+   <p>
+      Je découvre un lieu étrange . . .<br />
+      <input type="radio" name="event" value="expe" id="expe" /> <label for="expe">J'observe les environs et propose une expédition en groupe pour le découvrir !</label><br />
+      <input type="radio" name="event" value="secret" id="secret" /> <label for="secret">Je casse tous les murs pour voir s'il n'y a pas de salles secrètes !</label><br />
+      <input type="radio" name="event" value="xray" id="xray" /> <label for="xray">J'use d'X-Ray, on sait jamais.</label><br />
+      <input type="radio" name="event" value="rush" id="rush" /> <label for="rush">Je rush l'endroit, donjon ou temple, et je garde ces secrets pour moi.</label>
    </p>
    
    <p>
