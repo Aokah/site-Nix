@@ -75,7 +75,7 @@
 										$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
 										$counts = $plus - $moins; $hrpavis = $countj + $counts;
 										$select4 = $db->prepare('SELECT * FROM members WHERE id = ?');
-										$select4->pexecute(array($id)); $select = $select->fetch();
+										$select4->execute(array($id)); $select = $select->fetch();
 										if ($select['E_magique'] <= 30 AND $select['E_magique'] > 0){ ?>
 										<div class="alert">
 										<h3>Fatigue grandissante du personnage</h3>
