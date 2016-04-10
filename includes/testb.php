@@ -19,10 +19,10 @@ if ($_SESSION['connected'])
 	$select4->execute(array($id)); 
    if ($_SESSION['rank'] > 1 OR $hrpavis >= 10)
    {
-   	if ($select->fetch())
-   	{
+   
 echo '<h2>Questionnaire</h2>';
-
+	if ($select->fetch())
+   	{
    if (isset($_POST['confirm']))
    {
       $count = 0;
