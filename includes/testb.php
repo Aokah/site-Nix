@@ -42,6 +42,7 @@ echo '<h2>Questionnaire</h2>';
 <form method="POST" action="index?p=testpage_2">
    <p>
       Je suis autorisé à construire . . .<br />
+      <img src="pics/testb_1.png" alt="" class="guild" />
       <input type="radio" name="buildat" value="partout" id="partout" /> <label for="partout">N'importe où, tant que ça ne se voit pas.</label><br />
       <input type="radio" name="buildat" value="nullepart" id="nullepart" /> <label for="nullepart">Nulle part, le Staff construit tout !</label><br />
       <input type="radio" name="buildat" value="avue" id="avue" /> <label for="avue">Bien à la vue de tous ! Ce serait dommage de ne pas montrer mon talent ! !</label><br />
