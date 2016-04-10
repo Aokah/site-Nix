@@ -13,6 +13,8 @@ echo '<h2>Questionnaire</h2>';
       if ($_POST['elevage'] == "create") { $count ++; }
       if ($_POST['cutting'] == "pousse") { $count ++; }
       if ($_POST['event'] == "expe") { $count ++; }
+      if ($_POST['steal'] == "allok") { $count ++; }
+      if ($_POST['cave'] == "adapt") { $count ++; }
       echo '<p>';
       if ($count >= 8)
       {
@@ -77,6 +79,34 @@ echo '<h2>Questionnaire</h2>';
       <input type="radio" name="event" value="secret" id="secret" /> <label for="secret">Je casse tous les murs pour voir s'il n'y a pas de salles secrètes !</label><br />
       <input type="radio" name="event" value="xray" id="xray" /> <label for="xray">J'use d'X-Ray, on sait jamais.</label><br />
       <input type="radio" name="event" value="rush" id="rush" /> <label for="rush">Je rush l'endroit, donjon ou temple, et je garde ces secrets pour moi.</label>
+   </p>
+   <p>
+      Je vol un tiers . . .<br />
+      <input type="radio" name="steal" value="tout" id="tout" /> <label for="tout">Je prends tout ce que mon inentaire peut supporter !</label><br />
+      <input type="radio" name="steal" value="supervision" id="supervision" /> <label for="supervision">Avec accord du propriétaire et/ou du MJ.</label><br />
+      <input type="radio" name="steal" value="allok" id="allok" /> <label for="allok">Avec supervision d'un Membre du Staff quoi qu'il arrive.</label><br />
+      <input type="radio" name="steal" value="discret" id="discret" /> <label for="discret">Je vole le minimum histoire de ne pas me faire prendre.</label>
+   </p>
+   <p>
+      Ma Cave doit être . . .<br />
+      <input type="radio" name="cave" value="batcave" id="batcave" /> <label for="batcave">Un véritable sous-terrain de superheros, je dois y avoir tout ce dont j'ai besoin pour sauver la veuve et l'orphelin !</label><br />
+      <input type="radio" name="cave" value="adapt" id="adapt" /> <label for="adapt">Adaptée à la maison, sans hotel sous-terrain ou "batcave".</label><br />
+      <input type="radio" name="cave" value="naheul" id="naheul" /> <label for="naheul">Dignes des plus grands maîtres du donjon ! Des pièges partouts et des explosifs de secours ! Vous ne volerez pas mon or ! !</label><br />
+      <input type="radio" name="cave" value="lol" id="lol" /> <label for="lol">J'optimise la plae avec tout un tas de systèmes étranges ddont seul moi connais le secret.</label>
+   </p>
+   <p>
+       . . .<br />
+      <input type="radio" name="" value="batcave" id="batcave" /> <label for="batcave"></label><br />
+      <input type="radio" name="" value="adapt" id="adapt" /> <label for="adapt"></label><br />
+      <input type="radio" name="" value="naheul" id="naheul" /> <label for="naheul"></label><br />
+      <input type="radio" name="" value="lol" id="lol" /> <label for="lol"></label>
+   </p>
+   <p>
+       . . .<br />
+      <input type="radio" name="" value="batcave" id="batcave" /> <label for="batcave"></label><br />
+      <input type="radio" name="" value="adapt" id="adapt" /> <label for="adapt"></label><br />
+      <input type="radio" name="" value="naheul" id="naheul" /> <label for="naheul"></label><br />
+      <input type="radio" name="" value="lol" id="lol" /> <label for="lol"></label>
    </p>
    
    <p>
