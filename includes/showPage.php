@@ -103,7 +103,15 @@
 										Il peut arriver que le récent perdu ne sache plus faire la différence entre allié et ennemi.</p>
 										<p>La restauration des flux vitaux est relativement longue, la prudence sera de mise à l'avenir aux yeux du personnage.</p>
 										</div>
-										<?  }?>
+										<?  }
+										if ($hrpavis >= 10)
+										{?>
+										<div class="alert">
+										<h3>Test de construction</h3>
+										<p></p>
+										<p></p>
+										</div>
+										<?php } ?>
 										
 										<div id="main">
 											<?php
