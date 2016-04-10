@@ -102,7 +102,7 @@ echo '<h2>Questionnaire</h2>';
    </p>
    <p>
       Je vol un tiers . . .<br />
-      <input type="radio" name="steal" value="tout" id="tout" /> <label for="tout">Je prends tout ce que mon inentaire peut supporter !</label><br />
+      <input type="radio" name="steal" value="tout" id="tout" /> <label for="tout">Je prends tout ce que mon inventaire peut supporter !</label><br />
       <input type="radio" name="steal" value="supervision" id="supervision" /> <label for="supervision">Avec accord du propriétaire et/ou du MJ.</label><br />
       <input type="radio" name="steal" value="allok" id="allok" /> <label for="allok">Avec supervision d'un Membre du Staff quoi qu'il arrive.</label><br />
       <input type="radio" name="steal" value="discret" id="discret" /> <label for="discret">Je vole le minimum histoire de ne pas me faire prendre.</label>
