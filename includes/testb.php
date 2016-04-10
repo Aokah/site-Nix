@@ -21,7 +21,7 @@ echo '<h2>Questionnaire</h2>';
 
    if (isset($_POST['confirm']))
    {
-      $count == 0;
+      $count = 0;
       if ($_POST['buildat'] == "accord") { $count ++; }
       if ($_POST['breakwhen'] == "qandcok") { $count ++; }
       if ($_POST['mine'] == "plusieurs") { $count ++; }
