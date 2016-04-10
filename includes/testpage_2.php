@@ -12,6 +12,7 @@ echo '<h2>Questionnaire</h2>';
       if ($_POST['mine'] == "plusieurs") { $count ++; }
       if ($_POST['elevage'] == "create") { $count ++; }
       if ($_POST['cutting'] == "pousse") { $count ++; }
+      echo $count;
       if ($count == 8)
       {
          
