@@ -1,8 +1,36 @@
 <?php function testpage_2()
 {	
 global $db;
+
+echo '<h2>Questionnaire</h2>';
+
+   if (isset($_POST['confirm']))
+   {
+      $count == 0;
+      if ($_POST['buildat'] == "accord") { $count ++; }
+      if ($_POST['breakwhen'] == "qandcok") { $count ++; }
+      if ($_POST['mine'] == "plusieurs") { $count ++; }
+      if ($_POST['elevage'] == "create") { $count ++; }
+      if ($_POST['cutting'] == "pousse") { $count ++; }
+      if ($count == 8)
+      {
+         
+      }
+      elseif ($count == 9)
+      {
+         
+      }
+      elseif ($count == 10)
+      {
+         
+      }
+      else
+      {
+         
+      }
+   }
+   else
 ?>
-<h2>Questionnaire</h2>
 <p>Afin de vous permettre de participer à l'évolution du serveur par la construction, il est important pour nous que vous ayez bien saisi les principes de base de la construction dans le cadre d'un jeu de rôle communautaire.</p>
 <form method="POST" action="#">
    <p>
@@ -39,6 +67,10 @@ global $db;
       <input type="radio" name="cutting" value="besoin" id="besoin" /> <label for="besoin">Pile le bois dont j'ai besoin et je laisse le reste au suivant.</label><br />
       <input type="radio" name="cutting" value="urbain" id="urbain" /> <label for="urbain">Je décime la forêt, on pourra parler urbanisme en plus.</label><br />
       <input type="radio" name="cutting" value="osef" id="osef" /> <label for="osef">Je coupe l'arbe, point, un de plus ou de moins.</label>
+   </p>
+   
+   <p>
+      <input type="submit" name="confirm" value="Terminer" />
    </p>
 </form>
 
