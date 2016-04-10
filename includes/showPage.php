@@ -104,7 +104,7 @@
 										<p>La restauration des flux vitaux est relativement longue, la prudence sera de mise à l'avenir aux yeux du personnage.</p>
 										</div>
 										<?  }
-										if ($hrpavis >= 10)
+										if ($hrpavis >= 10 OR $select['rank'] > 1)
 										{?>
 										<div class="alert">
 										<h3>Test de construction</h3>
