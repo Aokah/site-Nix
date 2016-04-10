@@ -125,7 +125,7 @@ echo '<h2>Questionnaire</h2>';
       Je plante mon champs . . .<br />
       <input type="radio" name="cult" value="roof" id="roof" /> <label for="roof">dans mon grenier, ça rendra les combles utiles.</label><br />
       <input type="radio" name="cult" value="incave" id="incave" /> <label for="incave">Dans ma cave, et sous la lumière d'une torche bien sûr !</label><br />
-      <input type="radio" name="cult" value="ext" id="ext" /> <label for="ext">En extérieur, de manière cohérente et réfléchis.</label><br />
+      <input type="radio" name="cult" value="ext" id="ext" /> <label for="ext">En extérieur, de manière cohérente et réfléchie.</label><br />
       <input type="radio" name="cult" value="pillage" id="pillage" /> <label for="pillage">Je  pille un village random, pourquoi s'embêter ?</label>
    </p>
    
