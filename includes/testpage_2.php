@@ -30,6 +30,7 @@ echo '<h2>Questionnaire</h2>';
       }
    }
    else
+   {
 ?>
 <p>Afin de vous permettre de participer à l'évolution du serveur par la construction, il est important pour nous que vous ayez bien saisi les principes de base de la construction dans le cadre d'un jeu de rôle communautaire.</p>
 <form method="POST" action="index?p=testpage_2">
@@ -75,5 +76,6 @@ echo '<h2>Questionnaire</h2>';
 </form>
 
 <?php
+}
 }
 ?>
