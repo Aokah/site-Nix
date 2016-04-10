@@ -1,7 +1,22 @@
 <?php function testb()
 {	
 global $db;
-
+if ($_SESSION['connected'])
+{
+   $id = $_SESSION['id'];
+	$select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
+	$select->execute(array($id)); $line0 = $select->fetch();
+	$select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
+   $select1->execute(array($id)); $line1 = $select1->fetch();
+   $select2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
+	$select2->execute(array($id)); $line2 = $select2->fetch();
+	$select3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
+	$select3->execute(array($id)); $line3 = $select3->fetch();
+	$countj = $line0['plus'] - $line2['moins'];
+	$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
+	$counts = $plus - $moins; $hrpavis = $countj + $counts;
+   if ($_SESSION['rank'] > 1 OR $hrpavis >= 10)
+   {
 echo '<h2>Questionnaire</h2>';
 
    if (isset($_POST['confirm']))
@@ -20,6 +35,8 @@ echo '<h2>Questionnaire</h2>';
       echo '<p>';
       if ($count >= 8)
       {
+         $update = $db->prepare('UPDATE members SET buildok = 1 WHERE id = ?');
+         $update->execute(array($_SESSION['id']));
       ?>
       Félicitations ! Vous avez atteint le score de <?= $count?>/10 , <?php
       if ($count == 10) { ?>ce qui est parfait,<?php } else
@@ -118,6 +135,16 @@ echo '<h2>Questionnaire</h2>';
 </form>
 
 <?php
+}
+}
+else
+{
+   echo '<p>Vous n\'avez pas le grade ou les permissions suffisantes pour accéder à cette page.</p>';
+}
+}
+else
+{
+   echo '<p>Veuillez vous connecter pour accéder à cette page.</p>';
 }
 }
 ?>
