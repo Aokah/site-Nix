@@ -105,7 +105,7 @@
 										</div>
 										<?  }
 										if ($hrpavis >= 10 OR $select['rank'] > 1 )
-										if ($select['buildok'] == 0)
+										if ($select['buildok'] == 0 AND $page != "testb")
 										{
 										{?>
 										<div class="alert">
