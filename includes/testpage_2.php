@@ -16,7 +16,7 @@ echo '<h2>Questionnaire</h2>';
       if ($count >= 8)
       {
       ?>
-      Félicitations ! Vous avez atteint le score de <?= echo $count?>/10 , <?php
+      Félicitations ! Vous avez atteint le score de <?= $count?>/10 , <?php
       if ($count == 10) { ?>ce qui est parfait,<?php } else
       { ?>ce qui est pas mal,<?php } ?> vous pouvez maintenant demander le mode survie à un Staffeux !
       <?php
@@ -24,7 +24,7 @@ echo '<h2>Questionnaire</h2>';
       else
       {
       ?>
-      Navré, mais vous avez atteint le score de <?= echo $count?>/10 , ce qui n'est pas suffisant pour valider votre test de construction. 
+      Navré, mais vous avez atteint le score de <?= $count?>/10 , ce qui n'est pas suffisant pour valider votre test de construction. 
       <a href="index?p=testpage_2">Réessayez.</a>
       <?php
       }
