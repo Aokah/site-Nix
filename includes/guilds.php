@@ -301,7 +301,7 @@ echo "<h2>Groupes et Guildes</h2>";
   ORDER BY gn.name ASC');
   $select2_->execute(array($_SESSION['id']));
   } else { $select2_  = $db->query('SELECT * FROM group_name WHERE vanish = 1 ORDER BY name ASC'); }
-  while ($line_ = $select_->fetch())
+  while ($line_ = $select2_->fetch())
   {
     $verif_ = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND group_id = ?');
     $verif_->execute(array($_SESSION['id'],$line_['id']));
