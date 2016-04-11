@@ -308,7 +308,7 @@ echo "<h2>Groupes et Guildes</h2>";
     $sel_ = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
     FROM group_members gm
     RIGHT JOIN members m ON gm.user_id = m.id
-    WHERE gm.group_id = ? user_id = ?
+    WHERE gm.group_id = ? AND user_id = ?
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
     $sel_->execute(array($line_['id'], $_SESSION['id']));
     $prefixe_ = ($line_['guild'] == 1) ? 'Guilde :: ' : 'Groupe :: ';
