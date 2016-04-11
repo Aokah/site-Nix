@@ -73,7 +73,7 @@
 		}
 	?>
 	<section><?php
-		$regitered = $db->query('SELECT * FROM members WHERE rank < 8 AND ADDDATE(registration_date, INTERVAL"01-01" YEAR_MONTH) > NOW() AND ADDDATE(registration_date, INTERVAL "1" YEAR) < NOW()');
+		$regitered = $db->query('SELECT * FROM members WHERE removed = 0 AND ban = 0 AND rank < 8 AND ADDDATE(registration_date, INTERVAL"01-01" YEAR_MONTH) > NOW() AND ADDDATE(registration_date, INTERVAL "1" YEAR) < NOW()');
 		?>
 		<h3>Déjà un an parmi nous !</h3>
 		<p>Déjà un an qu'il se sont inscrits chez nous !</p>
@@ -94,7 +94,7 @@
 			<p>Nouveaux inscrits sur Nix, souhaitez leur la bienvenue, ça fait toujours plaisir !</p>
 			<p>
 			<?php
-			$new = $db->query('SELECT * FROM members WHERE ADDDATE(registration_date, INTERVAL 1 WEEK)> NOW()');
+			$new = $db->query('SELECT * FROM members WHERE removed = 0 AND ban = 0 AND ADDDATE(registration_date, INTERVAL 1 WEEK)> NOW()');
 			?>
 			<?php
 			while ($line = $new->fetch())
