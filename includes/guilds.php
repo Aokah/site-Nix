@@ -41,6 +41,7 @@ echo "<h2>Groupes et Guildes</h2>";
               {
                   $update = $db->prepare("INSERT INTO group_members VALUES ('',? , ?, '0')");
                 $update->execute(array($group, $user));
+                echo '<p>Le personnage a bien été ajouté.</p> <p><a href="index?p=guilds">Cliquez ici</a> pour continuer.</p>';
               }
               else
               {
