@@ -71,7 +71,7 @@
 		<FONT color='#6699FF'><p><img width="25" src="http://www.rpnix.com/pics/rank2.png"> Vagabond Arti</p></FONT>
 		<FONT color='#0078AA'><p><img width="25" src="http://www.rpnix.com/pics/rank3.png"> Idépendantiste Bakasura<p></FONT>
 		<FONT color='#336400'><p><img width="25" src="http://www.rpnix.com/pics/rank5.png"> Conseiller Mysterios</p></FONT>
-		<FONT color='#6699FF'><p><img width="25" src="http://www.rpnix.com/pics/rank1.png"> Noble Lystre</p></FONT>
+		<FONT color='#6699FF'><p><img width="25" src="http://www.rpnix.com/pics/rank2.png"> Noble Lystre</p></FONT>
 		<FONT color='#0078AA'><p><img width="25" src="http://www.rpnix.com/pics/rank3.png"> Noble Lelouch</p></FONT>
 		<FONT color='#0078AA'><p><img width="25" src="http://www.rpnix.com/pics/rank3.png"> Indépendantiste Sephyo</p></FONT></b>
 		
