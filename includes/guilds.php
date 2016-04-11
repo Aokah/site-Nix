@@ -20,6 +20,12 @@ global $_POST,$_GET, $db;
   ?>
   <h3><?=$prefixe, $line['name']?></h3>
   <img src="pics/guild_<?= $line['id']?>.png" alt="" class="guild" />
+  <form action="index.php" method="GET">
+    <input type="hidden" name="p" value="guilds" />
+    <input type="text" name="add" />
+    <input type="hidden" name="for" value="<?= $line['id']?>" />
+    <input type="submit" name="end" value="Confirmer" />
+  </form>
   <ul>
     <?php
     while ($line2 = $sel->fetch())
