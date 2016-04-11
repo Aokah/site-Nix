@@ -86,6 +86,7 @@ echo '<h2>Questionnaire</h2>';
    </p>
    <p>
       L'élevage :<br />
+      <img src="pics/testb_3.png" alt="" class="guild" /><br />
       <input type="radio" name="elevage" value="batcave" id="batcave" /> <label for="batcave">Dans ma batcave en secret, bien sûr.</label><br />
       <input type="radio" name="elevage" value="create" id="create" /> <label for="create">Je regarde s'il n'y a pas une infrastructure d'elevage, sinon je me renseigne pour en créer une via le RP.</label><br />
       <input type="radio" name="elevage" value="spam" id="spam" /> <label for="spam">Je surpeuple une zone et y revient régulièrement.</label><br />
@@ -93,6 +94,7 @@ echo '<h2>Questionnaire</h2>';
    </p>
    <p>
       Je coupe les Arbres . . .<br />
+      <img src="pics/testb_4.png" alt="" class="guild" /><br />
       <input type="radio" name="cutting" value="pousse" id="pousse" /> <label for="pousse">Proprement et intégralement, puis je replante une pousse.</label><br />
       <input type="radio" name="cutting" value="besoin" id="besoin" /> <label for="besoin">Pile le bois dont j'ai besoin et je laisse le reste au suivant.</label><br />
       <input type="radio" name="cutting" value="urbain" id="urbain" /> <label for="urbain">Je décime la forêt, on pourra parler urbanisme en plus.</label><br />
