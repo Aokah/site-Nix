@@ -18,7 +18,7 @@ global $_POST,$_GET, $db;
     $sel->execute(array($line['id']));
   ?>
   <h3><?= $line['name']?></h3>
-  <img src="pics/guild_<?= $line['id']?>.png" atl="" class="guild" />
+  <img src="pics/guild_<?= $line['id']?>.png" alt="" class="guild" />
   <ul>
     <?php
     while ($line2 = $sel->fetch())
