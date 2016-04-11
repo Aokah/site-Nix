@@ -251,6 +251,7 @@ echo "<h2>Groupes et Guildes</h2>";
     $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3');
     $verif->execute(array($_SESSION['id']));
   if ($_SESSION['rank'] > 5 OR $verif->fetch())
+  {
   ?>
   <form action="index.php" method="GET">
     <input type="hidden" name="p" value="guilds" />
@@ -267,7 +268,7 @@ echo "<h2>Groupes et Guildes</h2>";
     </select>
     <input type="submit" value="Confirmer" />
   </form>
-  <?php
+  <?php }
   while ($line = $select->fetch())
   {
     $sel = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
@@ -314,6 +315,7 @@ echo "<h2>Groupes et Guildes</h2>";
   $verif_ = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3');
   $verif_->execute(array($_SESSION['id']));
   if ($_SESSION['rank'] > 5 OR $verif_->fetch())
+  {
   ?>
   <form action="index.php" method="GET">
     <input type="hidden" name="p" value="guilds" />
@@ -331,6 +333,7 @@ echo "<h2>Groupes et Guildes</h2>";
     <input type="submit" value="Confirmer" />
   </form>
   <?php
+  }
   while ($line_ = $select_->fetch())
   {
     $sel_ = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
