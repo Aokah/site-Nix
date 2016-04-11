@@ -14,7 +14,7 @@ echo "<h2>Groupes et Guildes</h2>";
     RIGHT JOIN members m ON gm.user_id = m.id
     WHERE gm.group_id = ? AND user_id = ?
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
-    $supersel->execute(array($group)); $line = $supersel->fetch();
+    $supersel->execute(array($group,$user)); $line = $supersel->fetch();
     $verif0 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
     $verif0->execute(array($_SESSION['id'], $line['user_rank']));
     
@@ -69,7 +69,7 @@ echo "<h2>Groupes et Guildes</h2>";
     RIGHT JOIN members m ON gm.user_id = m.id
     WHERE gm.group_id = ? AND user_id = ?
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
-    $supersel->execute(array($group)); $line = $supersel->fetch();
+    $supersel->execute(array($group,$user)); $line = $supersel->fetch();
     $verif0 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
     $verif0->execute(array($_SESSION['id'], $line['user_rank']));
     
