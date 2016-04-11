@@ -21,12 +21,12 @@ global $_POST,$_GET, $db;
   <img src="pics/guild_<?= $line['id']?>.png" atl="" class="guild" />
   <ul>
     <?php
-    while ($sel = $sel->fetch())
+    while ($line2 = $sel->fetch())
     {
-      if ($sel['rank'] == 9) { $rank = "titan"; } elseif ($sel['rank'] == 10) { $rank = "crea";} else { $rank = $sel['rank'];}
+      if ($line2['rank'] == 9) { $rank = "titan"; } elseif ($line2['rank'] == 10) { $rank = "crea";} else { $rank = $line2['rank'];}
       ?>
       <li>
-        <img src="pics/rank<?= $rank?>.png" alt="" class="magie_type" width="25" /> <?= $sel['title'], ' ', $sel['name']?>
+        <img src="pics/rank<?= $rank?>.png" alt="" class="magie_type" width="25" /> <?= $line2['title'], ' ', $line2['name']?>
       </li>
       <?php
     }
