@@ -84,7 +84,7 @@ echo "<h2>Groupes et Guildes</h2>";
                 if ($verif->fetch())
                 {
                     $verif = $db->prepare('SELECT * FROM groupe_members WHERE user_id = ? AND group_id = ?');
-                    $verif->executed(array($user, $group));
+                    $verif->execute(array($user, $group));
                     if ($verif->fetch())
                     {
                         $update = $db->prepare('DELETE FROM group_members WHERE user_id = ? AND group_id = ?');
