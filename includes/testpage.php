@@ -24,9 +24,14 @@ global $_POST,$_GET, $db;
     while ($line2 = $sel->fetch())
     {
       if ($line2['rank'] == 9) { $rank = "titan"; } elseif ($line2['rank'] == 10) { $rank = "crea";} else { $rank = $line2['rank'];}
+      $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
+      $verif->execute(array($_SESSION['id'], $line2['user_rank']));
       ?>
       <li>
-        [G<?= $line2['user_rank']?>] <img src="pics/rank<?= $rank?>.png" alt="" class="magie_type" width="25" /> <?= $line2['title'], ' ', $line2['name']?> [X] [+] [-]
+        [G<?= $line2['user_rank']?>] <img src="pics/rank<?= $rank?>.png" alt="" class="magie_type" width="25" /> <?= $line2['title'], ' ', $line2['name']?> <?php
+        if ($_SESSION['rank'] > 5 OR $verif->fetch()) {
+          ?>[X] [+] [-]<?
+        }?>
       </li>
       <?php
     }
