@@ -2,9 +2,26 @@
 {
 global $_POST,$_GET, $db;
 
-
+echo "<h2>Groupes et Guildes</h2>";
+    if (isset($_GET['add']))
+    {
+      
+    }
+    elseif (isset($_GET['del']))
+    {
+      
+    }
+    elseif (isset($_GET['up']))
+    {
+      
+    }
+    elseif(isset($_GEt['down']))
+    {
+      
+    }
+    else
+    {
 ?>
-  <h2>Groupes et Guildes</h2>
   <p>Ici seront regroupées les informations basiques concernant les guildes et les groupes du site</p>
   <?php
   $select = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 0 ORDER BY guild DESC, name ASC');
@@ -68,5 +85,6 @@ global $_POST,$_GET, $db;
   }
   ?>
 <?php
+}
 }
 ?>
