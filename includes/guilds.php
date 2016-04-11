@@ -143,7 +143,8 @@ echo "<h2>Groupes et Guildes</h2>";
                         $verif->execute(array($user, $group)); $verif = $verif->fetch();
                         if ($verif['user_rank'] < 5)
                         {
-                        
+                        $update = $db->prepare('UPDATE group_members SET user_rank = user_rank + 1 WHERE user_id = ? AND group_id = ?');
+                        $update->execute(array($user, $group));
                         echo '<p>Le membre a bien été promu !</p> <p><a href="index?p=guilds">Cliquez ici</a> pour continuer.</p>';
                         }
                         else
@@ -203,7 +204,8 @@ echo "<h2>Groupes et Guildes</h2>";
                         $verif->execute(array($user, $group)); $verif = $verif->fetch();
                         if ($verif['user_rank'] > 0)
                         {
-                        
+                        $update = $db->prepare('UPDATE group_members SET user_rank = user_rank - 1 WHERE user_id = ? AND group_id = ?');
+                        $update->execute(array($user, $group));
                         echo '<p>Le membre a bien été dégradé !</p> <p><a href="index?p=guilds">Cliquez ici</a> pour continuer.</p>';
                         }
                         else
