@@ -300,10 +300,10 @@ echo "<h2>Groupes et Guildes</h2>";
   ORDER BY gn.name ASC');
   $select2_->execute(array($_SESSION['id']));
   } else { $select2_  = $db->query('SELECT * FROM group_name WHERE vanish = 1 ORDER BY name ASC'); }
-  $verif_ = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3');
-  $verif_->execute(array($_SESSION['id']));
   while ($line_ = $select_->fetch())
   {
+    $verif_ = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND group_id = ?');
+    $verif_->execute(array($_SESSION['id'],$line_['id']));
     $sel_ = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
     FROM group_members gm
     RIGHT JOIN members m ON gm.user_id = m.id
@@ -313,6 +313,8 @@ echo "<h2>Groupes et Guildes</h2>";
     $prefixe_ = ($line_['guild'] == 1) ? 'Guilde :: ' : 'Groupe :: ';
   ?>
   <h3><?=$prefixe_, $line_['name']?> (groupe secret)</h3>
+  <?php if ($_SESSION['rank'] > 5 OR $verif_->fetch())
+  { ?>
   <img src="pics/guild_<?= $line_['id']?>.png" alt="" class="guild" />
   <form action="index.php" method="GET">
     <input type="hidden" name="p" value="guilds" />
@@ -322,6 +324,7 @@ echo "<h2>Groupes et Guildes</h2>";
   </form>
   <ul>
     <?php
+  }
     while ($line2_ = $sel_->fetch())
     {
       if ($line2_['rank'] == 9) { $rank_ = "titan"; } elseif ($line_2['rank'] == 10) { $rank_ = "crea";} else { $rank_ = $line2_['rank'];}
