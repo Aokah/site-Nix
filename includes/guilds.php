@@ -174,7 +174,7 @@ echo "<h2>Groupes et Guildes</h2>";
     elseif(isset($_GET['down']))
     {
       $group = intval($_GET['from']);
-        $user = intval($_GET['up']);
+        $user = intval($_GET['down']);
         
     $supersel = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
     FROM group_members gm
