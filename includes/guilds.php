@@ -297,7 +297,7 @@ FROM group_members gm
 RIGHT JOIN group_name gn ON gn.id = gm.group_id
 WHERE vanish = 1 AND user_id = ?
 ORDER BY gn.guild DESC, gn.name ASC');
-$select2_->execute(array($_SESSION['id']))
+$select2_->execute(array($_SESSION['id']));
   while ($line_ = $select2_->fetch())
   {
     $verif_ = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND group_id = ?');
