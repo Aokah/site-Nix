@@ -1053,6 +1053,14 @@
 							</tr>
 							<tr>
 								<td>
+									Test de Construction :
+								</td>
+								<td>
+									<?php if ($line['buildok'] == 1) { echo 'Validé'; } else { echo 'Non validé';} ?>
+								</td>
+							</tr>
+							<tr>
+								<td>
 									Note du Staff :
 								</td>
 							</tr>
@@ -1837,6 +1845,14 @@
 								</td>
 								<td>
 									<?= $line['email']?>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Test de Construction :
+								</td>
+								<td>
+									<?php if ($line['buildok'] == 1) { echo 'Validé'; } else { echo 'Non validé';} ?>
 								</td>
 							</tr>
 							<tr>
