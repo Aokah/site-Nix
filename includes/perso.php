@@ -988,7 +988,7 @@
 					</table>
 				</td>
 			</tr>
-			<tr>
+			<tr valign="top">
 				<td>
 					<table width="640px" cellspacing="5" cellpadding="5" class="pnjtable" align="center">
 						<tbody>
@@ -1795,7 +1795,7 @@
 					</table>
 				</td>
 			</tr>
-			<tr>
+			<tr valign="top">
 				<td>
 					<table align="center" width="640px" cellspacing="5" cellpadding="5" class="pnjtable" >
 						<tbody>
