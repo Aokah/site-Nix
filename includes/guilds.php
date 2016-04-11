@@ -256,12 +256,15 @@ echo "<h2>Groupes et Guildes</h2>";
   <h3><?=$prefixe, $line['name']?></h3>
   <p><?= $line['description']?></p>
   <img src="pics/guild_<?= $line['id']?>.png" alt="" class="guild" />
+  <?php if ($_SESSION['rank'] > 5 OR $verif->fetch())
+  { ?>
   <form action="index.php" method="GET">
     <input type="hidden" name="p" value="guilds" />
     Ajout d'un nouveau membre : <input type="text" name="add" />
     <input type="hidden" name="for" value="<?= $line['id']?>" />
     <input type="submit" value="Confirmer" />
   </form>
+  <?php } ?>
   <ul>
     <?php
     while ($line2 = $sel->fetch())
