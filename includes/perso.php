@@ -1706,7 +1706,7 @@
 					$countj = $line0['plus'] - $line2['moins'];
 					$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
 					$counts = $plus - $moins; $hrpavis = $countj + $counts;
-					if ($hrpavis >= 10) { $coloravis = 10;} elseif ($hrpavis >= 20) { $coloravis = 20;} elseif ($hrpavis >= 30) { $coloravis = 30;} elseif ($hrpavis < 0) { $coloravis = "negative"; } else { $coloravis = 0; }}
+					if ($hrpavis >= 10) { $coloravis = 10;} elseif ($hrpavis >= 20) { $coloravis = 20;} elseif ($hrpavis >= 30) { $coloravis = 30;} elseif ($hrpavis < 0) { $coloravis = "negative"; } else { $coloravis = 0; }
 				?>
 				<td valign="top" width="50%" rowspan="<?php echo $span; ?>">
 					<table align="center" width="640px" cellspacing="5" cellpading="5" class="pnjtable">
