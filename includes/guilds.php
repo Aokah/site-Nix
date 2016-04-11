@@ -284,13 +284,13 @@ echo "<h2>Groupes et Guildes</h2>";
   <?php
   }
   
-$select2 = $db->prepare('SELECT gn.id, gn.name, gn.vanish, gn.guild, gm.id,gm.user_id, gm.group_id, gm.user_rank
+$select = $db->prepare('SELECT gn.id, gn.name, gn.vanish, gn.guild, gm.id,gm.user_id, gm.group_id, gm.user_rank
 FROM group_members gm
 RIGHT JOIN group_name gn ON gn.id = gm.group_id
 WHERE vanish = 1 AND user_id = ?
 ORDER BY gn.guild DESC, gn.name ASC');
-$select2->execute(array($_SESSION['id']));
-  while ($line = $select2->fetch())
+$select->execute(array($_SESSION['id']));
+  while ($line = $select->fetch())
   {
     $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND group_id = ?');
     $verif->execute(array($_SESSION['id'],$line['id']));
