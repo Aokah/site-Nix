@@ -302,7 +302,7 @@ $select2->execute(array($_SESSION['id']));
     $sel->execute(array($line['id']));
     $prefixe = ($line['guild'] == 1) ? 'Guilde :: ' : 'Groupe :: ';
   ?>
-  <h3><?=$prefixe_, $line['name']?> (groupe secret)</h3>
+  <h3><?=$prefixe, $line['name']?> (groupe secret)</h3>
   <?php if ($_SESSION['rank'] > 5 OR $verif->fetch())
   { ?>
   <img src="pics/guild_<?= $line['id']?>.png" alt="" class="guild" />
