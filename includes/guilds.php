@@ -8,8 +8,23 @@ global $_POST,$_GET, $db;
   <p>Ici seront regroupées les informations basiques concernant les guildes et les groupes du site</p>
   <?php
   $select = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 0 ORDER BY guild DESC, name ASC');
+  $select2 = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 0 ORDER BY guild DESC, name ASC');
   ?>
-  
+  <form action="index.php" method="GET">
+    <input type="hidden" name="p" value="guilds" />
+    Ajout d'un nouveau membre : <input type="text" name="add" />
+    <select>
+      <?php
+      while ($option = $select2->fetch())
+      {
+        ?>
+        <option value="<?= $option['id']?>"><?= $option['name']?></option>
+        <?php
+      }
+      ?>
+    </select>
+    <input type="submit" name="end" value="Confirmer" />
+  </form>
   <?php
   while ($line = $select->fetch())
   {
