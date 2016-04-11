@@ -64,7 +64,7 @@
 		<p></p>
 		
 		<h4><span class="tab"><FONT size="5">Groupe : Les Révolutionnaires :</FONT></span></h4>
-		Groupe émergeant, ils travaillent à la modernisation de notre quotidien.		
+		<p>Groupe émergeant, ils travaillent à la modernisation de notre quotidien.</p>
 		<img src="http://www.rpnix.com/pics/revolu.png" id=guildeban>
 		<b><FONT color='#336400'><p><img width="25" src="http://www.rpnix.com/pics/rank5.png"> Noble Herborus</p></FONT>
 		<FONT color='#0078AA'><p><img width="25" src="http://www.rpnix.com/pics/rank3.png"> Citoyen Zimon</p></FONT>
