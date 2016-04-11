@@ -68,7 +68,7 @@
 										$sel1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
 										$sel1->execute(array($id)); $sel1 = $sel1->fetch();
 										$sel2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
-										$sel2->execute(array($id)); $sel2 = $sel12->fetch();
+										$sel2->execute(array($id)); $sel2 = $sel2->fetch();
 										$sel3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
 										$sel3->execute(array($id)); $sel3 = $sel3->fetch();
 										$countj = $sel1['plus'] - $sel2['moins'];
