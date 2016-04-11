@@ -14,7 +14,7 @@ global $_POST,$_GET, $db;
   RIGHT JOIN group_members gm ON group_id = gn.id
   WHERE user_id = ? AND user_rank > 3');
   $select2->execute(array($_SESSION['id']));
-  } else $select2 = $select; }
+  } else { $select2 = $select; }
   if ($_SESSION['rank'])
   ?>
   <form action="index.php" method="GET">
