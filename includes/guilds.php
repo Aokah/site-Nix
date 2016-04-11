@@ -295,7 +295,7 @@ echo "<h2>Groupes et Guildes</h2>";
   $select_ = $db->prepare('SELECT gn.id, gn.name, gn.vanish, gn.guild, gm.user_id, gm.group_id FROM group_name
   RIGHT JOIN group_members gm ON group_id = gn.id
   WHERE gn.vanish = 1 AND user_id = ? ORDER BY guild DESC, name ASC');
-  $select->execture(array($_SESSION['id']));
+  $select->execute(array($_SESSION['id']));
   } else {
       $select_ = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 1 ORDER BY guild DESC, name ASC');
   }
