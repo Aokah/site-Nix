@@ -352,7 +352,7 @@ $select->execute(array($_SESSION['id']));
     RIGHT JOIN members m ON gm.user_id = m.id
     WHERE gm.group_id = ?
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
-    $sel->execute(array($line['id'])); echo $line['id'];
+    $sel->execute(array($line['id']));
     $prefixe = ($line['guild'] == 1) ? 'Guilde :: ' : 'Groupe :: ';
   ?>
   <h3><?=$prefixe, $line['name']?></h3>
@@ -364,7 +364,7 @@ $select->execute(array($_SESSION['id']));
     <input type="submit" value="Confirmer" />
   </form>
   <ul>
-    <?php
+    <?php $test = $sel->fetch(); echo $test['name'];
     while ($line2 = $sel->fetch())
     {
       if ($line2['rank'] == 9) { $rank = "titan"; } elseif ($line2['rank'] == 10) { $rank = "crea";} else { $rank = $line2['rank'];}
