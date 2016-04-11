@@ -34,7 +34,7 @@ echo "<h2>Groupes et Guildes</h2>";
           }
           else
         {
-              $verif = $db->prepare('SELECT * FROM group_name WHERE id = ?')
+              $verif = $db->prepare('SELECT * FROM group_name WHERE id = ?');
               $verif->execute(array($group));
               
               if ($verif->fetch())
