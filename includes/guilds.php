@@ -22,7 +22,7 @@ global $_POST,$_GET, $db;
   <img src="pics/guild_<?= $line['id']?>.png" alt="" class="guild" />
   <form action="index.php" method="GET">
     <input type="hidden" name="p" value="guilds" />
-    <input type="text" name="add" />
+    Ajout d'un nouveau membre : <input type="text" name="add" />
     <input type="hidden" name="for" value="<?= $line['id']?>" />
     <input type="submit" name="end" value="Confirmer" />
   </form>
