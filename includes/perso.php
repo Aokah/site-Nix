@@ -1702,6 +1702,7 @@
 					$select2->execute(array($_SESSION['id'])); $line2 = $select2->fetch();
 					$select3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
 					$select3->execute(array($_SESSION['id'])); $line3 = $select3->fetch();
+					$hrpavis = 0;
 					$countj = $line0['plus'] - $line2['moins'];
 					$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
 					$counts = $plus - $moins; $hrpavis = $countj + $counts;
