@@ -1,4 +1,4 @@
-<?php function testpage ()
+<?php function guilds ()
 {
 
 global $_POST,$_GET, $db;
