@@ -292,13 +292,13 @@ echo "<h2>Groupes et Guildes</h2>";
   <?php
   }
   
-    $select_ = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 1 ORDER BY guild DESC, name ASC');
+    $select_ = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 1 ORDER BY  name ASC');
   if ($_SESSION['id'] < 6) {
-  $select2_ = $db->prepare('SELECT gn.name, gn.id, gm.user_id, gm.group_id, gm. user_id, gn.vanish
+  $select2_ = $db->prepare('SELECT gn.name, gn.id, gn.guild, gm.user_id, gm.group_id, gm. user_id, gn.vanish
   FROM group_name gn 
   RIGHT JOIN group_members gm ON group_id = gn.id
-  WHERE user_id = ? AND user_rank > 3 AND vanish = 1
-  ORDER BY gn.name ASC');
+  WHERE user_id = ? AND vanish = 1
+  ORDER BY guild DESC, gn.name ASC');
   $select2_->execute(array($_SESSION['id']));
   } else { $select2_  = $db->query('SELECT * FROM group_name WHERE vanish = 1 ORDER BY name ASC'); }
   while ($line_ = $select2_->fetch())
