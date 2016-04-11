@@ -283,13 +283,15 @@ echo "<h2>Groupes et Guildes</h2>";
   </ul>
   <?php
   }
-  
+  if ($_SESSION['rank'] > 5){
+      $select = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 1 ORDER BY guild DESC, name ASC');
+  } else {
 $select = $db->prepare('SELECT gn.id, gn.name, gn.vanish, gn.guild, gm.id AS g_id ,gm.user_id, gm.group_id, gm.user_rank
 FROM group_members gm
 RIGHT JOIN group_name gn ON gn.id = gm.group_id
 WHERE vanish = 1 AND user_id = ?
 ORDER BY gn.guild DESC, gn.name ASC');
-$select->execute(array($_SESSION['id']));
+$select->execute(array($_SESSION['id'])); }
   while ($line = $select->fetch())
   {
     $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND group_id = ?');
