@@ -61,7 +61,22 @@ echo "<h2>Groupes et Guildes</h2>";
     }
     elseif (isset($_GET['del']))
     {
-      
+        $group = intval($_GET['from']);
+        $user = intval($_GET['del']);
+        
+    $supersel = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
+    FROM group_members gm
+    RIGHT JOIN members m ON gm.user_id = m.id
+    WHERE gm.group_id = ?
+    ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
+    $supersel->execute(array($group)); $line = $supersel->fetch();
+    $verif0 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
+    $verif0->execute(array($_SESSION['id'], $line['user_rank']));
+    
+        if ($_SESSION['rank'] > 5 OR $verif0->fetch())
+        {
+            
+        }
     }
     elseif (isset($_GET['up']))
     {
