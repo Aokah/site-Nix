@@ -3,9 +3,61 @@
 global $_POST,$_GET, $db;
 
 echo "<h2>Groupes et Guildes</h2>";
+    
     if (isset($_GET['add']))
     {
+        $group = intval($_GET['for']);
+        $name = htmlspecialchars($_GET['add']);
+        
+    $supersel = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
+    FROM group_members gm
+    RIGHT JOIN members m ON gm.user_id = m.id
+    WHERE gm.group_id = ?
+    ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
+    $supersel->execute(array($group)); $line = $supersel->fetch();
+    $verif0 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
+    $verif0->execute(array($_SESSION['id'], $line['user_rank']));
+    
+        if ($_SESSION['rank'] > 5 OR $verif0->fetch())
+        {
+      $verif = $db->prepare('SELECT name, id FROM members WHERE name = ?');
+      $verif->execute(array($name));
       
+      if ($verif = $verif->fetch())
+      {
+          $user = $verif['id'];
+          $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ?');
+          $verif->execute(array($user));
+          if ($verif = $verif->fetch())
+          {
+              echo '<p>Navré, mais ce personnage est déjà présent dans ce groupe.</p> <p><a href="index?p=guilds">Retourner à la page normale.</a></p>';
+          }
+          else
+        {
+              $verif = $db->prepare('SELECT * FROM group_name WHERE id = ?')
+              $verif->execute(array($group));
+              
+              if ($verif->fetch())
+              {
+                  echo '<p>Navré, mais ce groupe n\'existe pas.</p> <p><a href="index?p=guilds">Retourner à la page normale.</a></p>';
+              }
+              else
+              {
+                $update = $db->prepare("INSERT INTO group_members VALUES ('',? , ?, '0')");
+                $update->execute(array($group, $user));
+              }
+        }
+          }
+      }
+      else
+      {
+          echo '<p>Navré, mais vous n \'avez pas les permissions suffisantes pour effectuer cette requête.</p>';
+      }
+    }
+      else
+      {
+          echo  '<p>Navré, mais ce personnage n\'existe pas.</p> <p><a href="index?p=guilds">Retourner à la page normale.</a></p>';
+      }
     }
     elseif (isset($_GET['del']))
     {
@@ -15,7 +67,7 @@ echo "<h2>Groupes et Guildes</h2>";
     {
       
     }
-    elseif(isset($_GEt['down']))
+    elseif(isset($_GET['down']))
     {
       
     }
@@ -38,7 +90,7 @@ echo "<h2>Groupes et Guildes</h2>";
   <form action="index.php" method="GET">
     <input type="hidden" name="p" value="guilds" />
     Ajout d'un nouveau membre : <input type="text" name="add" />
-    <select>
+    <select name="for">
       <?php
       while ($option = $select2->fetch())
       {
