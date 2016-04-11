@@ -30,7 +30,7 @@ global $_POST,$_GET, $db;
       <li>
         [G<?= $line2['user_rank']?>] <img src="pics/rank<?= $rank?>.png" alt="" class="magie_type" width="25" /> <?= $line2['title'], ' ', $line2['name']?> <?php
         if ($_SESSION['rank'] > 5 OR $verif->fetch()) {
-          ?>[X] [+] [-]<?
+          ?><a href="index?p=guilds&del=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name7">[X]</a> <a href="index?p=guilds&up=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name5">[+]</a> <a href="index?p=guilds&down=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name6">[-]</a><?
         }?>
       </li>
       <?php
