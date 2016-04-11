@@ -124,8 +124,10 @@ echo "<h2>Groupes et Guildes</h2>";
     $supersel->execute(array($group)); $line = $supersel->fetch();
     $verif0 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
     $verif0->execute(array($_SESSION['id'], $line['user_rank']));
+    $verif2 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND group_id = ?');
+    $verif2->execute(array($_SESSION['id'], $group)); $line3 = $verif2->fetch();
     
-        if ($_SESSION['rank'] > 5 OR $verif0->fetch())
+        if ($_SESSION['rank'] > 5 OR $verif0->fetch() AND $line3 > ($line['user_rank']+1))
         {
             $verif =  $db->prepare('SELECT id FROM members WHERE id = ?');
             $verif->execute(array($user));
@@ -186,7 +188,7 @@ echo "<h2>Groupes et Guildes</h2>";
     $verif0 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
     $verif0->execute(array($_SESSION['id'], $line['user_rank']));
     
-        if ($_SESSION['rank'] > 5 OR $verif0->fetch())
+        if ($_SESSION['rank'] > 5 OR $verif0->fetch() )
         {
             $verif =  $db->prepare('SELECT id FROM members WHERE id = ?');
             $verif->execute(array($user));
@@ -284,11 +286,13 @@ echo "<h2>Groupes et Guildes</h2>";
       if ($line2['rank'] == 9) { $rank = "titan"; } elseif ($line2['rank'] == 10) { $rank = "crea";} else { $rank = $line2['rank'];}
       $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
       $verif->execute(array($_SESSION['id'], $line2['user_rank']));
+      $verif2 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND group_id = ?');
+      $verif2->execute(array($_SESSION['id'], $line['id'])); $line3 = $verif2->fetch();
       ?>
       <li>
         [G<?= $line2['user_rank']?>] <img src="pics/rank<?= $rank?>.png" alt="" class="magie_type" width="25" /> <?= $line2['title'], ' ', $line2['name']?> <?php
         if ($_SESSION['rank'] > 5 OR $verif->fetch()) {
-          ?><a href="index?p=guilds&del=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name7">[X]</a><?php if ($line2['user_rank'] >= 0 AND $line2['user_rank'] < 5) { ?> <a href="index?p=guilds&up=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name5">[+]</a><?php } echo ' '; if ($line2['user_rank'] > 0) { ?><a href="index?p=guilds&down=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name6">[-]</a><? }
+          ?><a href="index?p=guilds&del=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name7">[X]</a><?php if ($line2['user_rank'] >= 0 AND $line2['user_rank'] < 5 OR $line3 > ($line2['user_rank']+1)) { ?> <a href="index?p=guilds&up=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name5">[+]</a><?php } echo ' '; if ($line2['user_rank'] > 0) { ?><a href="index?p=guilds&down=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name6">[-]</a><? }
         }?>
       </li>
       <?php
