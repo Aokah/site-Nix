@@ -127,7 +127,7 @@ echo "<h2>Groupes et Guildes</h2>";
     $verif2 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND group_id = ?');
     $verif2->execute(array($_SESSION['id'], $group)); $line3 = $verif2->fetch();
     
-        if ($_SESSION['rank'] > 5 OR $verif0->fetch() AND $line3 > ($line['user_rank']+1))
+        if ($_SESSION['rank'] > 5 OR $verif0->fetch() AND $line3['user_rank'] > $line['user_rank']+1)
         {
             $verif =  $db->prepare('SELECT id FROM members WHERE id = ?');
             $verif->execute(array($user));
