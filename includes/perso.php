@@ -1693,7 +1693,7 @@
 						</tbody>
 					</table>
 				</td>
-				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3";
+				<?php if ($_SESSION['rank'] < 6 ) { $span = "2"; } else { $span = "3"; }
 				$select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
 					$select->execute(array($_SESSION['id'])); $line0 = $select->fetch();
 					$select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
