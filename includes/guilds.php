@@ -83,7 +83,7 @@ echo "<h2>Groupes et Guildes</h2>";
                 $verif->execute(array($group));
                 if ($verif->fetch())
                 {
-                    $verif = $db->prepare('SELECT * FROM groupe_members WHERE user_id = ? AND group_id = ?');
+                    $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND group_id = ?');
                     $verif->execute(array($user, $group));
                     if ($verif->fetch())
                     {
