@@ -311,7 +311,7 @@ echo "<h2>Groupes et Guildes</h2>";
   ORDER BY gn.name ASC');
   $select2_->execute(array($_SESSION['id']));
   } else { $select2_  = $db->query('SELECT * FROM group_name WHERE vanish = 1 ORDER BY name ASC'); }
-  if ($_SESSION['rank'])
+  if ($_SESSION['rank'] > 5 OR $verif_->fetch())
   ?>
   <form action="index.php" method="GET">
     <input type="hidden" name="p" value="guilds" />
