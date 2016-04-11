@@ -62,6 +62,8 @@
 										
 										
 										<? 
+									if ($_SESSION['connected'])
+									{
 										$id = $_SESSION['id'];
 										$sel = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
 										$sel->execute(array($id)); $sel = $sel->fetch();
@@ -115,7 +117,8 @@
 											<a href="index?p=testb">Cliquez ici</a> pour vous rendre à la page du questionnaire.
 										</p>
 										</div>
-										<?php } }?>
+										<?php } }
+									}?>
 										
 										<div id="main">
 											<?php
