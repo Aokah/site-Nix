@@ -63,26 +63,26 @@
 										
 										<? 
 										$id = $_SESSION['id'];
-										$select = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
-										$select->execute(array($id)); $line0 = $select->fetch();
-										$select1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
-										$select1->execute(array($id)); $line1 = $select1->fetch();
-										$select2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
-										$select2->execute(array($id)); $line2 = $select2->fetch();
-										$select3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
-										$select3->execute(array($id)); $line3 = $select3->fetch();
-										$countj = $line0['plus'] - $line2['moins'];
-										$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
+										$sel = $db->prepare('SELECT COUNT(*) AS plus FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank <= 4');
+										$sel->execute(array($id)); $sel = $sel->fetch();
+										$sel1 = $db->prepare('SELECT COUNT(*) AS plusstaff FROM hrpavis WHERE target_id = ? AND avis = 1 AND sender_rank > 4');
+										$sel1->execute(array($id)); $sel1 = $sel1->fetch();
+										$sel2 = $db->prepare('SELECT COUNT(*) AS moins FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank <= 4');
+										$sel2->execute(array($id)); $sel2 = $sel12->fetch();
+										$sel3 = $db->prepare('SELECT COUNT(*) AS moinsstaff FROM hrpavis WHERE target_id = ? AND avis = 0 AND sender_rank > 4');
+										$sel3->execute(array($id)); $sel3 = $sel3->fetch();
+										$countj = $sel1['plus'] - $sel2['moins'];
+										$plus = $sel1['plusstaff'] * 2; $moins = $sel3['moinsstaff'] * 2;
 										$counts = $plus - $moins; $hrpavis = $countj + $counts;
-										$select4 = $db->prepare('SELECT * FROM members WHERE id = ?');
-										$select4->execute(array($id)); $select = $select4->fetch();
-										if ($select['E_magique'] <= 30 AND $select['E_magique'] > 0){ ?>
+										$sel4 = $db->prepare('SELECT * FROM members WHERE id = ?');
+										$sel4->execute(array($id)); $sel4 = $sel4->fetch();
+										if ($sel4['E_magique'] <= 30 AND $sel4['E_magique'] > 0){ ?>
 										<div class="alert">
 										<h3>Fatigue grandissante du personnage</h3>
 										<p>Du fait de la perte de presque la totalité de ses Points de Magie (PM), votrepersonnage souffre d'une fatigue assez prenoncée, il devient moins endurant, irritable, et il est compliqué pour lui de rester concentré sur des tâches complexes.
 										</p><p>La restauration des flux magique de votre personnage sera naturelle. Aussi bien faites attention la prochaine fois que vous abusez des sorts.</p>
 										</div>
-										<? } if ($select['E_magique'] == 0) {?>
+										<? } if ($sel4['E_magique'] == 0) {?>
 										<div class="alert">
 										<h3>Perte des ressources magiques</h3>
 										<p>Après la perte de la totalité de vos Points de Magie (PM) votre persnne se voit très régulièrement épuisé, si de nouveaux sorts sont tentés, le coût de ces derniers impactera
@@ -90,22 +90,22 @@
 										Il n'est jamais bon de voir cette jauge atteindre zéro.</p>
 										<p>La restauration des flux magique de votre personnage sera naturelle. Aussi bien faites attention la prochaine fois que vous abusez des sorts.</p>
 										</div>
-										<? } if ($select['E_vitale'] <= 50 AND $select['E_vitale'] > 0) {?>
+										<? } if ($sel4['E_vitale'] <= 50 AND $sel4['E_vitale'] > 0) {?>
 										<div class="alert">
 										<h3>Points Vitaux faibles</h3>
 										<p>Après la perte de plus de 75% de ses Points Vitaux (PV), votre personnage perd peu à peu pied dans la réalité, il somnole de manière chronique, et est victime de troubles de
 										la concentration aigües.</p>
 										<p>La restauration des flux vitaux est relativement longue, la prudence sera de mise à l'avenir aux yeux du personnage.</p>
 										</div>
-										<? } if ($select['E_vitale'] == 0) { ?> <div class="alert">
+										<? } if ($sel4['E_vitale'] == 0) { ?> <div class="alert">
 										<h3>Perte total des repères</h3>
 										<p>Suite à la perte totale des Points Magiques puis Vitaux (PM) (PV) votre personnage perd totalement la raison, il sera incapable d'aligner trois phrases cohérentes et impossible d'effectuer le moindre sort.<br />
 										Il peut arriver que le récent perdu ne sache plus faire la différence entre allié et ennemi.</p>
 										<p>La restauration des flux vitaux est relativement longue, la prudence sera de mise à l'avenir aux yeux du personnage.</p>
 										</div>
 										<?  }
-										if ($hrpavis >= 10 OR $select['rank'] > 1 )
-										if ($select['buildok'] == 0 AND $page != "testb")
+										if ($hrpavis >= 10 OR $sel4['rank'] > 1 )
+										if ($sel4['buildok'] == 0 AND $page != "testb")
 										{
 										{?>
 										<div class="alert">
