@@ -302,15 +302,15 @@ echo "<h2>Groupes et Guildes</h2>";
   </ul>
   <?php
   }
-  $select = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 1 ORDER BY guild DESC, name ASC');
+  $select_ = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 1 ORDER BY guild DESC, name ASC');
   if ($_SESSION['id'] < 5) {
-  $select2 = $db->prepare('SELECT gn.name, gn.id, gm.user_id, gm.group_id, gm. user_id, gn.vanish
+  $select2_ = $db->prepare('SELECT gn.name, gn.id, gm.user_id, gm.group_id, gm. user_id, gn.vanish
   FROM group_name gn 
   RIGHT JOIN group_members gm ON group_id = gn.id
   WHERE user_id = ? AND user_rank > 3 AND vanish = 1
   ORDER BY gn.name ASC');
-  $select2->execute(array($_SESSION['id']));
-  } else { $select2  = $db->query('SELECT * FROM group_name WHERE vanish = 1 ORDER BY name ASC'); }
+  $select2_->execute(array($_SESSION['id']));
+  } else { $select2_  = $db->query('SELECT * FROM group_name WHERE vanish = 1 ORDER BY name ASC'); }
   if ($_SESSION['rank'])
   ?>
   <form action="index.php" method="GET">
@@ -318,10 +318,10 @@ echo "<h2>Groupes et Guildes</h2>";
     Ajout d'un nouveau membre : <input type="text" name="add" />
     <select name="for">
       <?php
-      while ($option = $select2->fetch())
+      while ($option_ = $select2_->fetch())
       {
         ?>
-        <option value="<?= $option['id']?>"><?= $option['name']?></option>
+        <option value="<?= $option_['id']?>"><?= $option_['name']?></option>
         <?php
       }
       ?>
@@ -329,32 +329,32 @@ echo "<h2>Groupes et Guildes</h2>";
     <input type="submit" value="Confirmer" />
   </form>
   <?php
-  while ($line = $select->fetch())
+  while ($line_ = $select_->fetch())
   {
-    $sel = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
+    $sel_ = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
     FROM group_members gm
     RIGHT JOIN members m ON gm.user_id = m.id
     WHERE gm.group_id = ?
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
-    $sel->execute(array($line['id']));
-    $prefixe = ($line['guild'] == 1) ? 'Guilde :: ' : 'Groupe :: ';
+    $sel_->execute(array($line_['id']));
+    $prefixe_ = ($line_['guild'] == 1) ? 'Guilde :: ' : 'Groupe :: ';
   ?>
-  <h3><?=$prefixe, $line['name']?> (groupe secret)</h3>
-  <img src="pics/guild_<?= $line['id']?>.png" alt="" class="guild" />
+  <h3><?=$prefixe_, $line_['name']?> (groupe secret)</h3>
+  <img src="pics/guild_<?= $line_['id']?>.png" alt="" class="guild" />
   <ul>
     <?php
-    while ($line2 = $sel->fetch())
+    while ($line2_ = $sel_->fetch())
     {
-      if ($line2['rank'] == 9) { $rank = "titan"; } elseif ($line2['rank'] == 10) { $rank = "crea";} else { $rank = $line2['rank'];}
-      $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
-      $verif->execute(array($_SESSION['id'], $line2['user_rank']));
-      $verif2 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND group_id = ?');
-      $verif2->execute(array($_SESSION['id'], $line['id'])); $line3 = $verif2->fetch();
+      if ($line2_['rank'] == 9) { $rank_ = "titan"; } elseif ($line_2['rank'] == 10) { $rank_ = "crea";} else { $rank_ = $line2_['rank'];}
+      $verif_ = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
+      $verif_->execute(array($_SESSION['id'], $line2_['user_rank']));
+      $verif2_ = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND group_id = ?');
+      $verif2_->execute(array($_SESSION['id'], $line_['id'])); $line3_ = $verif2_->fetch();
       ?>
       <li>
-        [G<?= $line2['user_rank']?>] <img src="pics/rank<?= $rank?>.png" alt="" class="magie_type" width="25" /> <?= $line2['title'], ' ', $line2['name']?> <?php
-        if ($_SESSION['rank'] > 5 OR $verif->fetch()) {
-          ?><a href="index?p=guilds&del=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name7">[X]</a><?php if ($line2['user_rank'] >= 0 AND $line2['user_rank'] < 5 AND $line3['user_rank'] > $line2['user_rank']+1) { ?> <a href="index?p=guilds&up=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name5">[+]</a><?php } echo ' '; if ($line2['user_rank'] > 0) { ?><a href="index?p=guilds&down=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name6">[-]</a><? }
+        [G<?= $line2_['user_rank']?>] <img src="pics/rank<?= $rank_?>.png" alt="" class="magie_type" width="25" /> <?= $line2_['title'], ' ', $line2_['name']?> <?php
+        if ($_SESSION['rank'] > 5 OR $verif_->fetch()) {
+          ?><a href="index?p=guilds&del=<?= $line2_['user_id']?>&from=<?= $line_['id']?>" class="name7">[X]</a><?php if ($line2_['user_rank'] >= 0 AND $line2_['user_rank'] < 5 AND $line3_['user_rank'] > $line2_['user_rank']+1) { ?> <a href="index?p=guilds&up=<?= $line2_['user_id']?>&from=<?= $line_['id']?>" class="name5">[+]</a><?php } echo ' '; if ($line2_['user_rank'] > 0) { ?><a href="index?p=guilds&down=<?= $line2_['user_id']?>&from=<?= $line_['id']?>" class="name6">[-]</a><? }
         }?>
       </li>
       <?php
