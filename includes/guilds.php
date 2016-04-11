@@ -16,8 +16,9 @@ global $_POST,$_GET, $db;
     WHERE gm.group_id = ?
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
     $sel->execute(array($line['id']));
+    $prefixe = ($line['guild'] == 1) ? 'Guilde :: ' : 'Groupe :: ';
   ?>
-  <h3><?= $line['name']?></h3>
+  <h3><?=$prefixe, $line['name']?></h3>
   <img src="pics/guild_<?= $line['id']?>.png" alt="" class="guild" />
   <ul>
     <?php
