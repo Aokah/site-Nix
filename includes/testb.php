@@ -15,13 +15,13 @@ if ($_SESSION['connected'])
 	$countj = $line0['plus'] - $line2['moins'];
 	$plus = $line1['plusstaff'] * 2; $moins = $line3['moinsstaff'] * 2;
 	$counts = $plus - $moins; $hrpavis = $countj + $counts;
-	$select4 = $db->prepare('SELECT buildok FROM members WHERE buildok= 0 AND id = ?');
+	$select4 = $db->prepare('SELECT buildok FROM members WHERE buildok = 0 AND id = ?');
 	$select4->execute(array($id)); 
    if ($_SESSION['rank'] > 1 OR $hrpavis >= 10)
    {
    
 echo '<h2>Questionnaire</h2>';
-	if ($select->fetch())
+	if ($select4->fetch())
    	{
    if (isset($_POST['confirm']))
    {
