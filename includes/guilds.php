@@ -75,7 +75,40 @@ echo "<h2>Groupes et Guildes</h2>";
     
         if ($_SESSION['rank'] > 5 OR $verif0->fetch())
         {
-            
+            $verif =  $db->prepare('SELECT id FROM members WHERE id = ?');
+            $verif->execute(array($user));
+            if ($verif->fetch())
+            {
+                $verif = $db->prepare('SELECT id FROM group_name WHERE id = ?');
+                $verif->execute(array($group));
+                if ($verif->fetch())
+                {
+                    $verif = $db->prepare('SELECT * FROM groupe_members WHERE user_id = ? AND group_id = ?');
+                    $verif->executed(array($user, $group));
+                    if ($verif->fetch())
+                    {
+                        $update = $db->prepare('DELETE FROM group_members WHERE user_id = ? AND group_id = ?');
+                        $update->execute(array($user, $group));
+                        echo '<p>Le membre a bien été supprimé du groupe</p> <p><a href="index?p=guilds">Cliquez ici</a> pour continuer.</p>';
+                    }
+                    else
+                    {
+                        echo '<p>Navré, mais ce personnage n\'est pas dans ce groupe.</p><p><a href="index?p=guilds">Retourner à la page normale.</a></p>';
+                    }
+                }
+                else
+                {
+                    echo '<p>Navré, mais ce groupe n\'existe pas.</p><p><a href="index?p=guilds">Retourner à la page normale.</a></p>';
+                }
+            }
+            else
+            {
+                echo '<p>Navré mais ce personnage n\'existe pas.</p><p><a href="index?p=guilds">Retourner à la page normale.</a></p>';
+            }
+        }
+        else
+        {
+            echo '<p>Navré, mais vous n \'avez pas les permissions suffisantes pour effectuer cette requête.</p>';
         }
     }
     elseif (isset($_GET['up']))
