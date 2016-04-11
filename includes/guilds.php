@@ -48,15 +48,14 @@ echo "<h2>Groupes et Guildes</h2>";
               }
         }
           }
-      }
-      else
-      {
-          echo '<p>Navré, mais vous n \'avez pas les permissions suffisantes pour effectuer cette requête.</p>';
-      }
-    }
       else
       {
           echo  '<p>Navré, mais ce personnage n\'existe pas.</p> <p><a href="index?p=guilds">Retourner à la page normale.</a></p>';
+      }
+        }
+      else
+      {
+          echo '<p>Navré, mais vous n \'avez pas les permissions suffisantes pour effectuer cette requête.</p>';
       }
     }
     elseif (isset($_GET['del']))
