@@ -363,7 +363,7 @@ echo "<h2>Groupes et Guildes</h2>";
   </ul>
   <?php
   }
-<?php
+
 }
 }
 ?>
