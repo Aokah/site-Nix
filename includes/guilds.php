@@ -1,13 +1,30 @@
 <?php function guilds ()
 {
-
 global $_POST,$_GET, $db;
+
+
 ?>
   <h2>Groupes et Guildes</h2>
   <p>Ici seront regroupées les informations basiques concernant les guildes et les groupes du site</p>
   <?php
   $select = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 0 ORDER BY guild DESC, name ASC');
-  
+  ?>
+  <form action="index.php" method="GET">
+    <input type="hidden" name="p" value="guilds" />
+    Ajout d'un nouveau membre : <input type="text" name="add" />
+    <select>
+      <?php
+      while ($option = $select->fetch())
+      {
+        ?>
+        <option value="<?= $option['id']?>"><?= $option['name']?></option>
+        <?php
+      }
+      ?>
+    </select>
+    <input type="submit" name="end" value="Confirmer" />
+  </form>
+  <?php
   while ($line = $select->fetch())
   {
     $sel = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
@@ -20,12 +37,6 @@ global $_POST,$_GET, $db;
   ?>
   <h3><?=$prefixe, $line['name']?></h3>
   <img src="pics/guild_<?= $line['id']?>.png" alt="" class="guild" />
-  <form action="index.php" method="GET">
-    <input type="hidden" name="p" value="guilds" />
-    Ajout d'un nouveau membre : <input type="text" name="add" />
-    <input type="hidden" name="for" value="<?= $line['id']?>" />
-    <input type="submit" name="end" value="Confirmer" />
-  </form>
   <ul>
     <?php
     while ($line2 = $sel->fetch())
