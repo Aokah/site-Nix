@@ -240,14 +240,6 @@ echo "<h2>Groupes et Guildes</h2>";
   <p>Ici seront regroupées les informations basiques concernant les guildes et les groupes du site</p>
   <?php
   $select = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 0 ORDER BY guild DESC, name ASC');
-  if ($_SESSION['id'] < 6) {
-  $select2 = $db->prepare('SELECT gn.name, gn.id, gm.user_id, gm.group_id, gm. user_id, gn.vanish
-  FROM group_name gn 
-  RIGHT JOIN group_members gm ON group_id = gn.id
-  WHERE user_id = ? AND user_rank > 3 AND vanish = 0
-  ORDER BY gn.name ASC');
-  $select2->execute(array($_SESSION['id']));
-  } else { $select2  = $db->query('SELECT * FROM group_name WHERE vanish = 0 ORDER BY name ASC'); }
     $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3');
     $verif->execute(array($_SESSION['id']));
     
