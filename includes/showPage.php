@@ -106,7 +106,7 @@
 										<p>La restauration des flux vitaux est relativement longue, la prudence sera de mise à l'avenir aux yeux du personnage.</p>
 										</div>
 										<?  }
-										if ($hrpavis >= 10 OR $sel4['rank'] > 1 )
+										if ($hrpavis >= 10 OR $sel4['rank'] > 2 )
 										if ($sel4['buildok'] == 0 AND $page != "testb")
 										{
 										{?>
