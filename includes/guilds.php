@@ -187,7 +187,7 @@ echo "<h2>Groupes et Guildes</h2>";
     $supersel->execute(array($group)); $line = $supersel->fetch();
     $verif0 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
     $verif0->execute(array($_SESSION['id'], $line['user_rank']));
-    
+    echo $line['user_rank'], ' '; $test = $verif0->fetch(); echo $test['user_rank'];
         if ($_SESSION['rank'] > 5 OR $verif0->fetch() )
         {
             $verif =  $db->prepare('SELECT id FROM members WHERE id = ?');
