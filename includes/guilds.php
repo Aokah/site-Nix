@@ -299,7 +299,7 @@ $select->execute(array($_SESSION['id']));
     RIGHT JOIN members m ON gm.user_id = m.id
     WHERE gm.group_id = ?
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
-    $sel->execute(array($line['gn.id'])); echo $line['id'],'b a', $line['gn.id'];
+    $sel->execute(array($line['id']));
     $prefixe = ($line['guild'] == 1) ? 'Guilde :: ' : 'Groupe :: ';
   ?>
   <h3><?=$prefixe, $line['name']?> (groupe secret)</h3>
