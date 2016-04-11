@@ -33,18 +33,18 @@ echo "<h2>Groupes et Guildes</h2>";
               echo '<p>Navré, mais ce personnage est déjà présent dans ce groupe.</p> <p><a href="index?p=guilds">Retourner à la page normale.</a></p>';
           }
           else
-        {
+            {
               $verif = $db->prepare('SELECT * FROM group_name WHERE id = ?');
               $verif->execute(array($group));
               
               if ($verif->fetch())
               {
-                  echo '<p>Navré, mais ce groupe n\'existe pas.</p> <p><a href="index?p=guilds">Retourner à la page normale.</a></p>';
+                  $update = $db->prepare("INSERT INTO group_members VALUES ('',? , ?, '0')");
+                $update->execute(array($group, $user));
               }
               else
               {
-                $update = $db->prepare("INSERT INTO group_members VALUES ('',? , ?, '0')");
-                $update->execute(array($group, $user));
+                echo '<p>Navré, mais ce groupe n\'existe pas.</p> <p><a href="index?p=guilds">Retourner à la page normale.</a></p>';
               }
         }
           }
@@ -99,7 +99,7 @@ echo "<h2>Groupes et Guildes</h2>";
       }
       ?>
     </select>
-    <input type="submit" name="end" value="Confirmer" />
+    <input type="submit" value="Confirmer" />
   </form>
   <?php
   while ($line = $select->fetch())
