@@ -17,6 +17,7 @@ global $_POST,$_GET, $db;
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
     $sel->execute(array($line['id']));
   ?>
+  <h3><?= $line['name']?></h3>
   <img src="pics/guild_<?= $line['id']?>.png" atl="" class="guild" />
   <ul>
     <?php
