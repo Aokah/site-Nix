@@ -340,7 +340,7 @@ $select->execute(array($_SESSION['id'])); }
   ?>
   <p>
       <b>
-          Vous souhaitez créer un groupe ? Qu'il soit publique ou privé, adressez un Message Privé à Nikho ou Eftarthadeth en expliquant dans les détails les objectifs du dit-groupe ainsi que ses membres, il devrait comporter au moins 5 personnes dont un Joueur Investi.
+          Vous souhaitez créer un groupe ? Qu'il soit publique ou privé, adressez un Message Privé à Nikho ou Eftarthadeth en expliquant dans les détails les objectifs du dit-groupe ainsi que ses membres, il devrait comporter au moins 5 personnes dont un Joueur Investi ou au-delà.
       </b>
   </p>
   
