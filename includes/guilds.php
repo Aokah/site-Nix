@@ -302,12 +302,12 @@ $select2_->execute(array($_SESSION['id']));
   {
     $verif_ = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND group_id = ?');
     $verif_->execute(array($_SESSION['id'],$line_['id']));
-        $sel_ = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
+     $sel_ = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
     FROM group_members gm
     RIGHT JOIN members m ON gm.user_id = m.id
     WHERE gm.group_id = ?
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
-    $sel_->execute(array($line['id']));
+    $sel_->execute(array($line_['id']));
     $prefixe_ = ($line_['guild'] == 1) ? 'Guilde :: ' : 'Groupe :: ';
   ?>
   <h3><?=$prefixe_, $line_['name']?> (groupe secret)</h3>
