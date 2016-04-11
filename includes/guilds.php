@@ -284,7 +284,7 @@ echo "<h2>Groupes et Guildes</h2>";
   <?php
   }
   
-$select = $db->prepare('SELECT gn.id, gn.name, gn.vanish, gn.guild, gm.id,gm.user_id, gm.group_id, gm.user_rank
+$select = $db->prepare('SELECT gn.id, gn.name, gn.vanish, gn.guild, gm.id AS g_id ,gm.user_id, gm.group_id, gm.user_rank
 FROM group_members gm
 RIGHT JOIN group_name gn ON gn.id = gm.group_id
 WHERE vanish = 1 AND user_id = ?
