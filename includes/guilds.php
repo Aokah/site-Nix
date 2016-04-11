@@ -8,7 +8,14 @@ global $_POST,$_GET, $db;
   <p>Ici seront regroupées les informations basiques concernant les guildes et les groupes du site</p>
   <?php
   $select = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 0 ORDER BY guild DESC, name ASC');
-  $select2 = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 0 ORDER BY guild DESC, name ASC');
+  if ($_SESSION['id'] < 5) {
+  $select2 = $db->prepare('SELECT gn.name, gn.id, gm.user_id, gm.group_id, gm. user_id
+  FROM group_name gn 
+  RIGHT JOIN group_members gm ON group_id = gn.id
+  WHERE user_id = ? AND user_rank > 3');
+  $select2->execute(array($_SESSION['id']));
+  } else $select2 = $select; }
+  if ($_SESSION['rank'])
   ?>
   <form action="index.php" method="GET">
     <input type="hidden" name="p" value="guilds" />
