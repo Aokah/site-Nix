@@ -16,7 +16,7 @@ echo "<h2>Groupes et Guildes</h2>";
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
     $supersel->execute(array($group)); $line = $supersel->fetch();
     $verif0 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3');
-    $verif0->execute(array($_SESSION['id'], $line['user_rank']));
+    $verif0->execute(array($_SESSION['id']));
     
         if ($_SESSION['rank'] > 5 OR $verif0->fetch())
         {
