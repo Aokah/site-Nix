@@ -336,10 +336,10 @@ $select->execute(array($_SESSION['id']));
   <?php
   }
   
-  $select = $db->prepare('SELECT gn.id, gn.name, gn.vanish, gn.guild, gm.id,gm.user_id, gm.group_id, gm.user_rank
+  $select = $db->prepare('SELECT gn.id, gn.name, gn.vanish, gn.guild, gm.id AS g_id ,gm.user_id, gm.group_id, gm.user_rank
 FROM group_members gm
 RIGHT JOIN group_name gn ON gn.id = gm.group_id
-WHERE vanish = 1 AND user_id = ?
+WHERE gn.vanish = 1 AND gm.user_id = ?
 ORDER BY gn.guild DESC, gn.name ASC');
 $select->execute(array($_SESSION['id']));
     $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3');
@@ -347,7 +347,7 @@ $select->execute(array($_SESSION['id']));
     
   while ($line = $select->fetch())
   {
-    $sel = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
+    $sel = $db->prepare('SELECT gm.id AS g_id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
     FROM group_members gm
     RIGHT JOIN members m ON gm.user_id = m.id
     WHERE gm.group_id = ?
