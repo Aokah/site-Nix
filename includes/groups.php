@@ -38,7 +38,7 @@
 		<h4><span class="tab"><FONT size="5">Bastion : Vährm :</FONT></span></h4>
 		<p><img src="http://www.rpnix.com/pics/bastion3.png" id=guildeban></p>
 		<b><FONT color='#000099'><p><img width="25" src="http://www.rpnix.com/pics/rank4.png"> Jarl Lüdoh<p></FONT>
-		<FONT color='#336400'><p><img width="25" src="http://www.rpnix.com/pics/ran5.png"> Colonel Vahlm</p></FONT>
+		<FONT color='#336400'><p><img width="25" src="http://www.rpnix.com/pics/rank5.png"> Colonel Vahlm</p></FONT>
 		<FONT color='#6699FF'><p><img width="25" src="http://www.rpnix.com/pics/rank3.png"> Sergent Diablox</p></FONT>
 		<FONT color='#6699FF'><p><img width="25" src="http://www.rpnix.com/pics/rank2.png"> Sergent Ciryel</p></FONT>
 		<FONT color='#000099'><p><img width="25" src="http://www.rpnix.com/pics/rank4.png"> Exilé Tanauch</p></FONT>
