@@ -336,7 +336,12 @@ $select->execute(array($_SESSION['id']));
   <?php
   }
   
-  $select = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 1 ORDER BY guild DESC, name ASC');
+  $select = $db->prepare('SELECT gn.id, gn.name, gn.vanish, gn.guild, gm.id,gm.user_id, gm.group_id, gm.user_rank
+FROM group_members gm
+RIGHT JOIN group_name gn ON gn.id = gm.group_id
+WHERE vanish = 1 AND user_id = ?
+ORDER BY gn.guild DESC, gn.name ASC');
+$select->execute(array($_SESSION['id']));
     $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3');
     $verif->execute(array($_SESSION['id']));
     
