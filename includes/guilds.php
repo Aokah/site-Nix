@@ -240,7 +240,7 @@ echo "<h2>Groupes et Guildes</h2>";
   <p>Ici seront regroupées les informations basiques concernant les guildes et les groupes du site</p>
   <?php
   $select = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 0 ORDER BY guild DESC, name ASC');
-  if ($_SESSION['id'] < 5) {
+  if ($_SESSION['id'] < 6) {
   $select2 = $db->prepare('SELECT gn.name, gn.id, gm.user_id, gm.group_id, gm. user_id, gn.vanish
   FROM group_name gn 
   RIGHT JOIN group_members gm ON group_id = gn.id
@@ -291,15 +291,9 @@ echo "<h2>Groupes et Guildes</h2>";
   </ul>
   <?php
   }
-  if ($_SESSION['rank'] < 6) {
-  $select_ = $db->prepare('SELECT gn.id, gn.name, gn.vanish, gn.guild, gm.user_id, gm.group_id FROM group_name
-  RIGHT JOIN group_members gm ON group_id = gn.id
-  WHERE gn.vanish = 1 AND user_id = ? ORDER BY guild DESC, name ASC');
-  $select->execute(array($_SESSION['id']));
-  } else {
-      $select_ = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 1 ORDER BY guild DESC, name ASC');
-  }
-  if ($_SESSION['id'] < 5) {
+  
+    $select_ = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE vanish = 1 ORDER BY guild DESC, name ASC');
+  if ($_SESSION['id'] < 6) {
   $select2_ = $db->prepare('SELECT gn.name, gn.id, gm.user_id, gm.group_id, gm. user_id, gn.vanish
   FROM group_name gn 
   RIGHT JOIN group_members gm ON group_id = gn.id
@@ -314,9 +308,9 @@ echo "<h2>Groupes et Guildes</h2>";
     $sel_ = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
     FROM group_members gm
     RIGHT JOIN members m ON gm.user_id = m.id
-    WHERE gm.group_id = ?
+    WHERE gm.group_id = ? user_id = ?
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
-    $sel_->execute(array($line_['id']));
+    $sel_->execute(array($line_['id'], $_SESSION['id']));
     $prefixe_ = ($line_['guild'] == 1) ? 'Guilde :: ' : 'Groupe :: ';
   ?>
   <h3><?=$prefixe_, $line_['name']?> (groupe secret)</h3>
