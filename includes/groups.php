@@ -83,7 +83,7 @@
 		<FONT color='#6699FF'><p><img width="25" src="http://www.rpnix.com/pics/rank2.png"> Corrompue Ange<p></FONT>
 		<FONT color='#6699FF'><p><img width="25" src="http://www.rpnix.com/pics/rank2.png"> Citoyen Weddou<p></FONT>
 		<FONT color="#6699FF"><p><img width="25" src="http://www.rpnix.com/pics/rank2.png"> Vagabond Ehlyn<p></FONT>
-		
+		</b>
 		
 		<p></p>
 		<p></p>
