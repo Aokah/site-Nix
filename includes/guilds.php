@@ -13,9 +13,9 @@ global $_POST,$_GET, $db;
   FROM group_name gn 
   RIGHT JOIN group_members gm ON group_id = gn.id
   WHERE user_id = ? AND user_rank > 3
-  ORDER BY guild DESC, name ASC');
+  ORDER BY name ASC');
   $select2->execute(array($_SESSION['id']));
-  } else { $select2  = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE ORDER BY guild DESC, name ASC'); }
+  } else { $select2  = $db->query('SELECT id, name, vanish, guild FROM group_name WHERE ORDER BY name ASC'); }
   if ($_SESSION['rank'])
   ?>
   <form action="index.php" method="GET">
