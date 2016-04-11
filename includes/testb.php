@@ -78,6 +78,7 @@ echo '<h2>Questionnaire</h2>';
    </p>
    <p>
       Je mine. . .<br />
+      <img src="pics/testb_2.png" alt="" class="guild" /><br />
       <input type="radio" name="mine" value="opti" id="opti" /> <label for="opti">Optimisées, linéaire, et richesse sont mes mots d'ordre, et la couche 11 mon salut !</label><br />
       <input type="radio" name="mine" value="carriere" id="carriere" /> <label for="carriere">D'un puit, faisons une carrière ! Avec des pelleteuse même !</label><br />
       <input type="radio" name="mine" value="plusieurs" id="plusieurs" /> <label for="plusieurs">De manière logique et si possible à plusieurs pour créer du RP.</label><br />
