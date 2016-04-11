@@ -15,7 +15,7 @@ global $_POST,$_GET, $db;
   WHERE user_id = ? AND user_rank > 3
   ORDER BY gn.name ASC');
   $select2->execute(array($_SESSION['id']));
-  } else { $select2  = $db->query('SELECT * FROM group_name WHERE ORDER BY name ASC'); }
+  } else { $select2  = $db->query('SELECT * FROM group_name ORDER BY name ASC'); }
   if ($_SESSION['rank'])
   ?>
   <form action="index.php" method="GET">
