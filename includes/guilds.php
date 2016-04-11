@@ -2,7 +2,7 @@
 {
 global $_POST,$_GET, $db;
 
-echo "<h2>Groupes et Guildes</h2>";
+echo "<h2>Groupes et Guildes pouet</h2>";
     
     if (isset($_GET['add']))
     {
