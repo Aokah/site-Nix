@@ -250,25 +250,7 @@ echo "<h2>Groupes et Guildes</h2>";
   } else { $select2  = $db->query('SELECT * FROM group_name WHERE vanish = 0 ORDER BY name ASC'); }
     $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3');
     $verif->execute(array($_SESSION['id']));
-  if ($_SESSION['rank'] > 5 OR $verif->fetch())
-  {
-  ?>
-  <form action="index.php" method="GET">
-    <input type="hidden" name="p" value="guilds" />
-    Ajout d'un nouveau membre : <input type="text" name="add" />
-    <select name="for">
-      <?php
-      while ($option = $select2->fetch())
-      {
-        ?>
-        <option value="<?= $option['id']?>"><?= $option['name']?></option>
-        <?php
-      }
-      ?>
-    </select>
-    <input type="submit" value="Confirmer" />
-  </form>
-  <?php }
+    
   while ($line = $select->fetch())
   {
     $sel = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
@@ -281,6 +263,12 @@ echo "<h2>Groupes et Guildes</h2>";
   ?>
   <h3><?=$prefixe, $line['name']?></h3>
   <img src="pics/guild_<?= $line['id']?>.png" alt="" class="guild" />
+  <form action="index.php" method="GET">
+    <input type="hidden" name="p" value="guilds" />
+    Ajout d'un nouveau membre : <input type="text" name="add" />
+    <input type="hidden" name="for" value="<?= $line['id']?>" />
+    <input type="submit" value="Confirmer" />
+  </form>
   <ul>
     <?php
     while ($line2 = $sel->fetch())
@@ -314,26 +302,6 @@ echo "<h2>Groupes et Guildes</h2>";
   } else { $select2_  = $db->query('SELECT * FROM group_name WHERE vanish = 1 ORDER BY name ASC'); }
   $verif_ = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3');
   $verif_->execute(array($_SESSION['id']));
-  if ($_SESSION['rank'] > 5 OR $verif_->fetch())
-  {
-  ?>
-  <form action="index.php" method="GET">
-    <input type="hidden" name="p" value="guilds" />
-    Ajout d'un nouveau membre : <input type="text" name="add" />
-    <select name="for">
-      <?php
-      while ($option_ = $select2_->fetch())
-      {
-        ?>
-        <option value="<?= $option_['id']?>"><?= $option_['name']?></option>
-        <?php
-      }
-      ?>
-    </select>
-    <input type="submit" value="Confirmer" />
-  </form>
-  <?php
-  }
   while ($line_ = $select_->fetch())
   {
     $sel_ = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
@@ -346,6 +314,12 @@ echo "<h2>Groupes et Guildes</h2>";
   ?>
   <h3><?=$prefixe_, $line_['name']?> (groupe secret)</h3>
   <img src="pics/guild_<?= $line_['id']?>.png" alt="" class="guild" />
+  <form action="index.php" method="GET">
+    <input type="hidden" name="p" value="guilds" />
+    Ajout d'un nouveau membre : <input type="text" name="add" />
+    <input type="hidden" name="for" value="<?= $line_['id']?>" />
+    <input type="submit" value="Confirmer" />
+  </form>
   <ul>
     <?php
     while ($line2_ = $sel_->fetch())
