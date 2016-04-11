@@ -83,7 +83,7 @@
 		{
 			if ($line['rank'] == 10) { $rank = "crea"; } elseif ($line['rank'] == 9) { $rank = "titan"; } else { $rank = $line['rank']; }
 		?>
-		 <img src="pics/rank<?= $rank?>.png" alt="" width="27" class="magie" /><a href="index?p=perso&perso=<?= $line['id']?>" valign="center" class="name<?= $line['rank']?>"><?= $line['name']?></a> 
+		 <img src="pics/rank<?= $rank?>.png" alt="" width="27" class="magie" /> <a href="index?p=perso&perso=<?= $line['id']?>" valign="center" class="name<?= $line['rank']?>"><?= $line['name']?></a> 
 		<?php
 		}
 		?>
@@ -101,7 +101,7 @@
 			{
 				if ($line['rank'] == 10) { $rank = "crea"; } elseif ($line['rank'] == 9) { $rank = "titan"; } else { $rank = $line['rank']; }
 			?>
-			 <img src="pics/rank<?= $rank?>.png" alt="" width="27" class="magie" /><a href="index?p=perso&perso=<?= $line['id']?>" valign="center" class="name<?= $line['rank']?>"><?= $line['name']?></a> 
+			 <img src="pics/rank<?= $rank?>.png" alt="" width="27" class="magie" /> <a href="index?p=perso&perso=<?= $line['id']?>" valign="center" class="name<?= $line['rank']?>"><?= $line['name']?></a> 
 			<?php
 			}
 		?></p>
