@@ -333,7 +333,7 @@ $select->execute(array($_SESSION['id'])); }
       <li>
         [G<?= $line2['user_rank']?>] <img src="pics/rank<?= $rank?>.png" alt="" class="magie_type" width="25" /> <?= $line2['title'], ' ', $line2['name']?> <?php
         if ($_SESSION['rank'] > 5 OR $verif->fetch()) {
-          ?>a href="index?p=guilds&del=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name7">[X]</a><?php if ($line2['user_rank'] >= 0 AND $line2['user_rank'] < 5 AND $line3['user_rank'] > $line2['user_rank']+1 OR $line2['user_rank'] >= 0 AND $line2['user_rank'] < 5 AND $_SESSION['rank'] > 5) { ?> <a href="index?p=guilds&up=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name5">[+]</a><?php } echo ' '; if ($line2['user_rank'] > 0 AND $line3['user_rank'] > $line2['user_rank'] OR $line2['user_rank'] > 0 AND $_SESSION['rank'] > 5) { ?><a href="index?p=guilds&down=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name6">[-]</a><? }
+          ?><a href="index?p=guilds&del=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name7">[X]</a><?php if ($line2['user_rank'] >= 0 AND $line2['user_rank'] < 5 AND $line3['user_rank'] > $line2['user_rank']+1 OR $line2['user_rank'] >= 0 AND $line2['user_rank'] < 5 AND $_SESSION['rank'] > 5) { ?> <a href="index?p=guilds&up=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name5">[+]</a><?php } echo ' '; if ($line2['user_rank'] > 0 AND $line3['user_rank'] > $line2['user_rank'] OR $line2['user_rank'] > 0 AND $_SESSION['rank'] > 5) { ?><a href="index?p=guilds&down=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name6">[-]</a><? }
         }?>
       </li>
       <?php
