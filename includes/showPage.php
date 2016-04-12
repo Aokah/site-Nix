@@ -106,10 +106,10 @@
 										<p>La restauration des flux vitaux est relativement longue, la prudence sera de mise à l'avenir aux yeux du personnage.</p>
 										</div>
 										<?  }
-										if ($hrpavis >= 10 OR $sel4['rank'] > 2 )
+										if ($hrpavis >= 10 OR $sel4['rank'] > 2 ) {
 										if ($sel4['buildok'] == 0 AND $page != "testb")
 										{
-										{?>
+										?>
 										<div class="alert">
 										<h3>Test de construction</h3>
 										<p>Vous pouvez maintenant remplir le questionnaire qui vous permettra de demander à un Membre du Staff le mode survie.</p>
@@ -118,6 +118,16 @@
 										</p>
 										</div>
 										<?php } }
+										if ($sel4['race'] == "Inconnue")
+										{
+										?>
+										<div class="alert">
+										<h3>Choix de race.</h3>
+										<p>Vous n'avez pas encore choisi la race de votre personnage, il est nécessaire que vous la définissiez au plus vite afin de vous garantir les avantages
+										des races en question ainsi que les Membres du Staff puisent vous encadrer correctement.</p>
+										</div>
+										<?php
+										}
 									}?>
 										
 										<div id="main">
