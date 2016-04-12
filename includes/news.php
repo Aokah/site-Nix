@@ -76,7 +76,7 @@
 		$regitered = $db->query('SELECT * FROM members WHERE pnj = 0 AND removed = 0 AND ban = 0 AND rank < 8 AND ADDDATE(registration_date, INTERVAL"01-01" YEAR_MONTH) > NOW() AND ADDDATE(registration_date, INTERVAL "1" YEAR) < NOW()');
 		?>
 		<h3>Déjà un an parmi nous !</h3>
-		<p>Déjà un an qu'il se sont inscrits chez nous !</p>
+		<p>Déjà un an qu'ils se sont inscrits chez nous !</p>
 		<p>
 		<?php
 		while ($line = $regitered->fetch())
