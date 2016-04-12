@@ -241,7 +241,7 @@ if ($_SESSION['connected'])
 											case 8: $level = "X"; break;	case 7:  $level = "S"; break; case 6:  $level = "A"; break; case 5:  $level = "B"; break; case 4:  $level = "C"; break; case 3:  $level = "D"; break; 
 											case 2:  $level = "E"; break; case 1:  $level = "F"; break;
 										}
-										$title = $line['title']; $tech = '', $pionier= '';
+										$title = $line['title']; $tech = ''; $pionier= '';
 											if ($line['technician'] == 1) { $tech = '-T'; } if ($line['pionier'] == 1) { $title = "Pionier"; $pionier = "-P"; }
 											if ($line['ban'] == 1) { $title = "Banni";} if ($line['removed'] == 1) { $title = "Oublié";}
 										?>
@@ -543,7 +543,7 @@ if ($_SESSION['connected'])
 												case 8: $level = "X"; break;	case 7:  $level = "S"; break; case 6:  $level = "A"; break; case 5:  $level = "B"; break; case 4:  $level = "C"; break; case 3:  $level = "D"; break; 
 												case 2:  $level = "E"; break; case 1:  $level = "F"; break;
 											}
-											$title = $line['title']; $tech = '', $pionier= '';
+											$title = $line['title']; $tech = ''; $pionier= '';
 											if ($line['technician'] == 1) { $tech = '-T'; } if ($line['pionier'] == 1) { $title = "Pionier"; $pionier = "-P"; }
 											if ($line['ban'] == 1) { $title = "Banni";} if ($line['removed'] == 1) { $title = "Oublié";}
 											?>
