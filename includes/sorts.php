@@ -241,8 +241,9 @@ if ($_SESSION['connected'])
 											case 8: $level = "X"; break;	case 7:  $level = "S"; break; case 6:  $level = "A"; break; case 5:  $level = "B"; break; case 4:  $level = "C"; break; case 3:  $level = "D"; break; 
 											case 2:  $level = "E"; break; case 1:  $level = "F"; break;
 										}
-										if ($line['technician'] == 1) { $tech = '-T'; } elseif ($line['pionier'] == 1) { $title = "Pionier"; $pionier = "-P"; }
-										elseif ($line['ban'] == 1) { $title = "Banni";} elseif ($line['removed'] == 1) { $title = "Oublié";} else { $title = $line['title']; }
+										$title = $line['title'];
+											if ($line['technician'] == 1) { $tech = '-T'; } if ($line['pionier'] == 1) { $title = "Pionier"; $pionier = "-P"; }
+											if ($line['ban'] == 1) { $title = "Banni";} if ($line['removed'] == 1) { $title = "Oublié";}
 										?>
 										<table width="640px" background="/pics/ico/magiepapercenter.png" align="center" style="padding-bottom:10%; padding-left:6%; padding-right:6%;">
 											<tbody>
@@ -542,8 +543,9 @@ if ($_SESSION['connected'])
 												case 8: $level = "X"; break;	case 7:  $level = "S"; break; case 6:  $level = "A"; break; case 5:  $level = "B"; break; case 4:  $level = "C"; break; case 3:  $level = "D"; break; 
 												case 2:  $level = "E"; break; case 1:  $level = "F"; break;
 											}
-											if ($line['technician'] == 1) { $tech = '-T'; } elseif ($line['pionier'] == 1) { $title = "Pionier"; $pionier = "-P"; }
-											elseif ($line['ban'] == 1) { $title = "Banni";} elseif ($line['removed'] == 1) { $title = "Oublié";} else { $title = $line['title']; }
+											$title = $line['title'];
+											if ($line['technician'] == 1) { $tech = '-T'; } if ($line['pionier'] == 1) { $title = "Pionier"; $pionier = "-P"; }
+											if ($line['ban'] == 1) { $title = "Banni";} if ($line['removed'] == 1) { $title = "Oublié";}
 											?>
 											<table width="640px" background="/pics/ico/magiepapercenter.png" align="center" style="padding-bottom:10%; padding-left:6%; padding-right:6%;">
 												<tbody>
