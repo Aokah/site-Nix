@@ -118,7 +118,7 @@
 										</p>
 										</div>
 										<?php } }
-										if ($sel4['race'] == "Inconnue")
+										if ($sel4['race'] == "Inconnue" AND $line['rank'] > 1)
 										{
 										?>
 										<div class="alert">
