@@ -240,8 +240,6 @@ echo "<h2>Groupes et Guildes</h2>";
   <p>Ici seront regroupées les informations basiques concernant les guildes et les groupes du site</p>
   <?php
   $select = $db->query('SELECT id, name, vanish, description, guild FROM group_name WHERE vanish = 0 ORDER BY guild DESC, name ASC');
-    $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ? AND group_id = ?');
-      $verif->execute(array($_SESSION['id'], $line2['user_rank'],$line['id']));
     
   while ($line = $select->fetch())
   {
@@ -252,6 +250,8 @@ echo "<h2>Groupes et Guildes</h2>";
     ORDER BY gm.user_rank DESC, m.rank DESC, m.name ASC');
     $sel->execute(array($line['id']));
     $prefixe = ($line['guild'] == 1) ? 'Guilde :: ' : 'Groupe :: ';
+    $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND group_id = ?');
+      $verif->execute(array($_SESSION['id'],$line['id']));
   ?>
   <h3><?=$prefixe, $line['name']?></h3>
   <p><?= $line['description']?></p>
@@ -298,8 +298,8 @@ ORDER BY gn.guild DESC, gn.name ASC');
 $select->execute(array($_SESSION['id'])); }
   while ($line = $select->fetch())
   {
-   $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ? AND group_id = ?');
-      $verif->execute(array($_SESSION['id'], $line2['user_rank'],$line['id']));
+   $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND group_id = ?');
+      $verif->execute(array($_SESSION['id'],$line['id']));
      $sel = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
     FROM group_members gm
     RIGHT JOIN members m ON gm.user_id = m.id
