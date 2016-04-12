@@ -817,7 +817,7 @@ if ($_SESSION['connected'])
 			FROM incan_get ig
 			RIGHT JOIN incan_list il ON incan_id = il.id
 			LEFT JOIN members m ON user_id = m.id
-			WHERE user_id = ? AND il.level < 6');
+			WHERE user_id = ? AND il.level > 6');
 			$verif->execute(array($_SESSION['id']));
 			if ($verif->fetch())
 			{
