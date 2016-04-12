@@ -125,7 +125,7 @@
 										<h3>Choix de race.</h3>
 										<p>Vous n'avez pas encore choisi la race de votre personnage, il est nécessaire que vous la définissiez au plus vite afin de vous garantir les avantages
 										des races en question ainsi que les Membres du Staff puisent vous encadrer correctement.</p>
-										<p>Pour choisir votre race, rendez-vous sur <a href="index?p=perso">cette page</a> pour définir votre race.</p>
+										<p>Pour choisir votre race, rendez-vous sur <a href="index?p=perso">cette page</a>.</p>
 										</div>
 										<?php
 										}
