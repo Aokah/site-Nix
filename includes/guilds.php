@@ -240,8 +240,8 @@ echo "<h2>Groupes et Guildes</h2>";
   <p>Ici seront regroupées les informations basiques concernant les guildes et les groupes du site</p>
   <?php
   $select = $db->query('SELECT id, name, vanish, description, guild FROM group_name WHERE vanish = 0 ORDER BY guild DESC, name ASC');
-    $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3');
-    $verif->execute(array($_SESSION['id']));
+    $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ? AND group_id = ?');
+      $verif->execute(array($_SESSION['id'], $line2['user_rank'],$line['id']));
     
   while ($line = $select->fetch())
   {
@@ -298,8 +298,8 @@ ORDER BY gn.guild DESC, gn.name ASC');
 $select->execute(array($_SESSION['id'])); }
   while ($line = $select->fetch())
   {
-    $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND group_id = ?');
-    $verif->execute(array($_SESSION['id'],$line['id']));
+   $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ? AND group_id = ?');
+      $verif->execute(array($_SESSION['id'], $line2['user_rank'],$line['id']));
      $sel = $db->prepare('SELECT gm.id, gm.user_id, gm.group_id, gm.user_rank, m.id, m.name, m.rank, m.title
     FROM group_members gm
     RIGHT JOIN members m ON gm.user_id = m.id
@@ -325,8 +325,8 @@ $select->execute(array($_SESSION['id'])); }
     while ($line2 = $sel->fetch())
     {
       if ($line2['rank'] == 9) { $rank = "titan"; } elseif ($line2['rank'] == 10) { $rank = "crea";} else { $rank = $line2['rank'];}
-      $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ?');
-      $verif->execute(array($_SESSION['id'], $line2['user_rank']));
+      $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND user_rank > 3 AND user_rank > ? AND group_id = ?');
+      $verif->execute(array($_SESSION['id'], $line2['user_rank'],$line['id']));
       $verif2 = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND group_id = ?');
       $verif2->execute(array($_SESSION['id'], $line['id'])); $line3 = $verif2->fetch();
       ?>
