@@ -3,8 +3,8 @@
 global $_POST,$_GET, $db;
 
 echo "<h2>Groupes et Guildes</h2>";
-    
-    if (isset($_GET['add']))
+
+    if (isset($_GET['add']) AND $_SESSION['connected'])
     {
         $group = intval($_GET['for']);
         $name = htmlspecialchars($_GET['add']);
@@ -59,7 +59,7 @@ echo "<h2>Groupes et Guildes</h2>";
           echo '<p>Navré, mais vous n \'avez pas les permissions suffisantes pour effectuer cette requête.</p>';
       }
     }
-    elseif (isset($_GET['del']))
+    elseif (isset($_GET['del']) AND $_SESSION['connected'])
     {
         $group = intval($_GET['from']);
         $user = intval($_GET['del']);
@@ -111,7 +111,7 @@ echo "<h2>Groupes et Guildes</h2>";
             echo '<p>Navré, mais vous n \'avez pas les permissions suffisantes pour effectuer cette requête.</p>';
         }
     }
-    elseif (isset($_GET['up']))
+    elseif (isset($_GET['up']) AND $_SESSION['connected'])
     {
         $group = intval($_GET['from']);
         $user = intval($_GET['up']);
@@ -174,7 +174,7 @@ echo "<h2>Groupes et Guildes</h2>";
             echo '<p>Navré, mais vous n \'avez pas les permissions suffisantes pour effectuer cette requête.</p>';
         }
     }
-    elseif(isset($_GET['down']))
+    elseif(isset($_GET['down']) AND $_SESSION['connected'])
     {
       $group = intval($_GET['from']);
         $user = intval($_GET['down']);
@@ -256,7 +256,8 @@ echo "<h2>Groupes et Guildes</h2>";
   <h3><?=$prefixe, $line['name']?></h3>
   <p><?= $line['description']?></p>
   <img src="pics/guild_<?= $line['id']?>.png" alt="" class="guild" />
-  <?php if ($_SESSION['rank'] > 5 OR $verif->fetch())
+  <?php if ($_SESSION['connected']) {
+      if ($_SESSION['rank'] > 5 OR $verif->fetch())
   { ?>
   <form action="index.php" method="GET">
     <input type="hidden" name="p" value="guilds" />
@@ -264,7 +265,8 @@ echo "<h2>Groupes et Guildes</h2>";
     <input type="hidden" name="for" value="<?= $line['id']?>" />
     <input type="submit" value="Confirmer" />
   </form>
-  <?php } ?>
+  <?php }
+  }?>
   <ul>
     <?php
     while ($line2 = $sel->fetch())
@@ -277,8 +279,10 @@ echo "<h2>Groupes et Guildes</h2>";
       ?>
       <li>
         [G<?= $line2['user_rank']?>] <img src="pics/rank<?= $rank?>.png" alt="" class="magie_type" width="25" /> <?= $line2['title'], ' ', $line2['name']?> <?php
-        if ($_SESSION['rank'] > 5 OR $verif->fetch()) {
+        if ($_SESSION['connected']) {
+            if ($_SESSION['rank'] > 5 OR $verif->fetch()) {
           ?><a href="index?p=guilds&del=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name7">[X]</a><?php if ($line2['user_rank'] >= 0 AND $line2['user_rank'] < 5 AND $line3['user_rank'] > $line2['user_rank']+1 OR $line2['user_rank'] >= 0 AND $line2['user_rank'] < 5 AND $_SESSION['rank'] > 5) { ?> <a href="index?p=guilds&up=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name5">[+]</a><?php } echo ' '; if ($line2['user_rank'] > 0 AND $line3['user_rank'] > $line2['user_rank'] OR $line2['user_rank'] > 0 AND $_SESSION['rank'] > 5) { ?><a href="index?p=guilds&down=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name6">[-]</a><? }
+        }
         }?>
       </li>
       <?php
@@ -310,9 +314,10 @@ $select->execute(array($_SESSION['id'])); }
   ?>
   <h3><?=$prefixe, $line['name']?> (groupe secret)</h3>
   <p><?= $line['description']?></p>
-  <?php if ($_SESSION['rank'] > 5 OR $verif->fetch())
-  { ?>
   <img src="pics/guild_<?= $line['id']?>.png" alt="" class="guild" />
+  <?php if ($_SESSION['connected']) {
+  if ($_SESSION['rank'] > 5 OR $verif->fetch())
+  { ?>
   <form action="index.php" method="GET">
     <input type="hidden" name="p" value="guilds" />
     Ajout d'un nouveau membre : <input type="text" name="add" />
@@ -321,7 +326,7 @@ $select->execute(array($_SESSION['id'])); }
   </form>
   <ul>
     <?php
-  }
+  } }
     while ($line2 = $sel->fetch())
     {
       if ($line2['rank'] == 9) { $rank = "titan"; } elseif ($line2['rank'] == 10) { $rank = "crea";} else { $rank = $line2['rank'];}
@@ -332,8 +337,10 @@ $select->execute(array($_SESSION['id'])); }
       ?>
       <li>
         [G<?= $line2['user_rank']?>] <img src="pics/rank<?= $rank?>.png" alt="" class="magie_type" width="25" /> <?= $line2['title'], ' ', $line2['name']?> <?php
-        if ($_SESSION['rank'] > 5 OR $verif->fetch()) {
+        if if ($_SESSION['connected']) {
+        ($_SESSION['rank'] > 5 OR $verif->fetch()) {
           ?><a href="index?p=guilds&del=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name7">[X]</a><?php if ($line2['user_rank'] >= 0 AND $line2['user_rank'] < 5 AND $line3['user_rank'] > $line2['user_rank']+1 OR $line2['user_rank'] >= 0 AND $line2['user_rank'] < 5 AND $_SESSION['rank'] > 5) { ?> <a href="index?p=guilds&up=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name5">[+]</a><?php } echo ' '; if ($line2['user_rank'] > 0 AND $line3['user_rank'] > $line2['user_rank'] OR $line2['user_rank'] > 0 AND $_SESSION['rank'] > 5) { ?><a href="index?p=guilds&down=<?= $line2['user_id']?>&from=<?= $line['id']?>" class="name6">[-]</a><? }
+        }
         }?>
       </li>
       <?php
