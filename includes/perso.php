@@ -479,7 +479,11 @@
 				if ($_SESSION['rank'] >= 5) {
 					if (isset($_POST['send']))
 					{
+						$avert = htmlentities($_POST['avert']);
+						$update = $db->prepare("INSERT INTO avert VALUES ('',?,?,NOW(),?)");
+						$update->execute(array($_SESSION['id'], $perso, $avert));
 						?>
+						<p>Avertissement enregistré avec succès.</p>
 						<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 						<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
 						<?php
@@ -490,7 +494,17 @@
 						<h3>Avertissement pour <span class="name<?= $line['rank']?>"><?= $line['title'], ' ',$line['name'];?></span></h3>
 						<table align="center">
 							<tbody>
-								
+								<th>
+									<p>
+										Entrez ici la raison de votre avertissement
+									</p>
+								</th>
+								<tr>
+									<form action="index?p=perso&perso=<?=$perso?>" method="POST">
+										<textarea name="avert">Raisons de l'avertissement . . .</textarea>
+										<input type="submit" name="send" />
+									</form>
+								</tr>
 							</tbody>
 						</table>
 						<?php
