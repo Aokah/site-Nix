@@ -12,11 +12,11 @@
       ?>
       <table class="guild" style="border: 5px #000077 solid; background-color: #9999FF">
         <tbody>
-          <th rowspan="2">
+          <th colspan="2">
               <?php echo $name; ?>
            </th>
           <tr>
-            <td>
+            <td colspan="2">
                 <img src="pics/sg_<?= $_GET['char']?>.png" alt="" width="250px" class="guild" />
             </td>
           </tr>
