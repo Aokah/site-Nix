@@ -28,7 +28,22 @@
 		if ($line = $answer->fetch())
 		{
 			if (password_verify($_POST['pwd'], $line['password']))
-			{	if ($_SESSION['pionier'] == 1) { $pionier = "-P";} else { $pionier = '';} if ($_SESSION['technician'] == 1) { $tech = "-T";} else { $tech = '';}
+			{
+				if ($line['ban'] == 1)
+				{
+					include('includes/ban_page.php'); ban_page();
+				}
+				elseif ($line['removed'] == 1)
+				{
+					include('includes/del_page.php'); del_page();
+				}
+				elseif ($line['end'] == 1)
+				{
+					include('includes/end_page.php'); end_page();
+				}
+				else
+				{
+				if ($_SESSION['pionier'] == 1) { $pionier = "-P";} else { $pionier = '';} if ($_SESSION['technician'] == 1) { $tech = "-T";} else { $tech = '';}
 				$dispForm = false;
 
 				$_SESSION['connected'] = true;
@@ -48,6 +63,7 @@
 					<p><div class="login">Bien le bonjour <em class="name<?= $_SESSION['rank']?><? echo $tech?><? echo $pionier?>"><?= $_SESSION['title']?> <?= $_SESSION['name'] ?>.</em></div></p>
 					<img src="/pics/login_<? echo $imgrank ?>.png" alt="" class="guild" style="text-align: center;" />
 				<?php
+				}
 			}
 			else
 			{
