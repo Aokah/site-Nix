@@ -5,6 +5,8 @@
     echo '<h2>Hrobrine Sky & Ground</h2>';
     if (isset($_GET['char']))
     {
+      $css_td = "background-color: #CCCCFF";
+      $css_th = "background-color: #AAAAFF";
       if ($_GET['char'] == "NathHerak")
       {
         $name = "Nath Herak";
@@ -12,7 +14,7 @@
         $meeting = "Inconnue";
       }
       ?>
-      <table align="center" class="guild" style="border: 5px #000077 solid; background-color: #9999FF">
+      <table align="center" style="border: 5px #000077 solid; background-color: #9999FF" class="guild">
         <tbody>
           <th colspan="2">
               <?php echo $name; ?>
@@ -23,18 +25,18 @@
             </td>
           </tr>
           <tr>
-              <th>
+              <th style="<?php echo $css_th;?>">
                 Fonction :
               </th>
-              <td>
+              <td style="<?php echo $css_td;?>">
                 <?php echo $role; ?>
               </td>
           </tr>
           <tr>
-            <th>
+            <th style="<?php echo $css_th;?>">
               Rencontre à :
             </th>
-            <td>
+            <td style="<?php echo $css_td;?>">
               <?php $meeting; ?>
             </td>
           </tr>
