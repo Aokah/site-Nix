@@ -59,26 +59,26 @@
         <tbody>
           <tr>
             <td colspan="4">
-              <img src="pics/sg_<?php echo $_GET['char'];?>_battle.gif" alt="" />
+              <img src="pics/sg_<?php echo $_GET['char'];?>_battle.gif" alt="" width="200px" />
             </td>
           </tr>
           <tr>
             <td colspan="4">
-              <img src="pics/sg_<?php echo $_GET['char'];?>_avatar.png" alt="" />
+              <img src="pics/sg_<?php echo $_GET['char'];?>_avatar.png" alt="" width="200px" />
             </td>
           </tr>
           <tr>
             <td>
-              <img src="pics/sg_<?php echo $_GET['char'];?>_move_front.gif" alt="" /> 
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_front.gif" alt=""  width="100px" /> 
             </td>
             <td>
-              <img src="pics/sg_<?php echo $_GET['char'];?>_move_left.gif" alt="" /> 
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_left.gif" alt="" width="100px"  /> 
             </td>
             <td>
-              <img src="pics/sg_<?php echo $_GET['char'];?>_move_right.gif" alt="" /> 
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_right.gif" alt="" width="100px"  /> 
             </td>
             <td>
-              <img src="pics/sg_<?php echo $_GET['char'];?>_move_off.gif" alt="" /> 
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_off.gif" alt="" width="100px"  /> 
             </td>
           </tr>
         </tbody>
