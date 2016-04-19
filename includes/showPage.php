@@ -133,7 +133,7 @@
 										
 										<div id="main">
 											<?php
-											if ($_SESSION['connected'] && $_SESSION['ban'] == 1) {
+											if ($_SESSION['connected'] && $page != 'login' && $_SESSION['ban'] == 1) {
 												include('includes/ban_page.php'); ban_page(); ?>
 											<?php
 											}
