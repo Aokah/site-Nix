@@ -480,7 +480,7 @@
 					if (isset($_POST['send']))
 					{
 						$avert = htmlentities($_POST['avert']);
-						$pm = "Vous avez reçu un avertiossement de la part de ", $_SESSION['title'], ' ', $_SESSION['name'], ".<br />Pour en savoir plus, rendez-vous sur votre page personnage. Les avertissements sont là pour vous rappeller à l\'ordre, prennez-les en compte pour l\'avenir.<br /><br />Shirka"
+						$pm = "Vous avez reçu un avertissement de la part de ". $_SESSION['title']. ' '. $_SESSION['name']. ".<br />Pour en savoir plus, rendez-vous sur votre page personnage. Les avertissements sont là pour vous rappeller à l\'ordre, prennez-les en compte pour l\'avenir.<br /><br />Shirka";
 						//$update = $db->prepare("INSERT INTO avert VALUES ('',?,?,NOW(),?)");
 						//$update->execute(array($_SESSION['id'], $perso, $avert));
 						//$message = $db->prepare("INSERT INTO private_messageVALUES ('','Avertissement',?,NOW(),92,?,1)");
