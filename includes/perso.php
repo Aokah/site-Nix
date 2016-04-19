@@ -480,8 +480,12 @@
 					if (isset($_POST['send']))
 					{
 						$avert = htmlentities($_POST['avert']);
-						$update = $db->prepare("INSERT INTO avert VALUES ('',?,?,NOW(),?)");
-						$update->execute(array($_SESSION['id'], $perso, $avert));
+						$pm = "Vous avez reçu un avertiossement de la part de ", $_SESSION['title'], ' ', $_SESSION['name'], ".<br />Pour en savoir plus, rendez-vous sur votre page personnage. Les avertissements sont là pour vous rappeller à l\'ordre, prennez-les en compte pour l\'avenir.<br /><br />Shirka"
+						//$update = $db->prepare("INSERT INTO avert VALUES ('',?,?,NOW(),?)");
+						//$update->execute(array($_SESSION['id'], $perso, $avert));
+						//$message = $db->prepare("INSERT INTO private_messageVALUES ('','Avertissement',?,NOW(),92,?,1)");
+						//$message->execute(array($pm, $perso));
+						echo $pm;
 						?>
 						<p>Avertissement enregistré avec succès.</p>
 						<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
@@ -492,6 +496,7 @@
 					{
 						?>
 						<h3>Avertissement pour <span class="name<?= $line['rank']?>"><?= $line['title'], ' ',$line['name'];?></span></h3>
+						<form action="index?p=perso&perso=<?=$perso?>&action=avert" method="POST">
 						<table align="center">
 							<tbody>
 								<th>
@@ -500,13 +505,12 @@
 									</p>
 								</th>
 								<tr>
-									<form action="index?p=perso&perso=<?=$perso?>" method="POST">
-										<textarea name="avert">Raisons de l'avertissement . . .</textarea>
-										<input type="submit" name="send" />
-									</form>
+									<textarea name="avert">Raisons de l'avertissement . . .</textarea>
+									<input type="submit" name="send" />
 								</tr>
 							</tbody>
 						</table>
+						</form>
 						<?php
 					}
 				}
