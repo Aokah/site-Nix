@@ -14,7 +14,7 @@
         $meeting = "Inconnue";
       }
       ?>
-      <table align="center" style="border: 5px #000077 solid; background-color: #9999FF" class="guild">
+      <table align="center" style="border: 5px #000077 solid; background-color: #9999FF; text-align:center;" class="guild">
         <tbody>
           <th colspan="2">
               <?php echo $name; ?>
