@@ -1,4 +1,4 @@
-<?php function private()
+<?php function privated()
 {
 
 }
