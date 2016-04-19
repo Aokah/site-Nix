@@ -139,6 +139,7 @@
 											}
 											else
 											{
+												include('includes/ban_page.php'); ban_page();
 
 											switch ($page)
 											{
