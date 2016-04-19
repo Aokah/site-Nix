@@ -191,7 +191,7 @@
 												case 'sondage': 			{ 	include('includes/sondage.php'); 				sondage(); 				break; }
 												case 'sorts': 			{ 	include('includes/sorts.php'); 				sorts(); 				break; }
 												case 'nikho76': 			{ 	include('includes/regeneration.php'); 				regeneration(); 				break; }
-												case 'herobrinesg': 			{ 	include('includes/private.php'); 				private(); 				break; }
+												case 'herobrinesg': 			{ 	include('includes/private.php'); 				privated(); 				break; }
 											} 
 											}
 											?>
