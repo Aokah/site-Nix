@@ -133,12 +133,12 @@
 										
 										<div id="main">
 											<?php
-											if ($_SESSION['connected']) {
-											if ($_SESSION['ban'] == 1) {
+											if ($_SESSION['connected'] && $_SESSION['ban'] == 1) {
 												include('includes/ban_page.php'); ban_page(); ?>
 											<?php
 											}
-											}
+											else
+											{
 
 											switch ($page)
 											{
@@ -191,7 +191,9 @@
 												case 'sondage': 			{ 	include('includes/sondage.php'); 				sondage(); 				break; }
 												case 'sorts': 			{ 	include('includes/sorts.php'); 				sorts(); 				break; }
 												case 'nikho76': 			{ 	include('includes/regeneration.php'); 				regeneration(); 				break; }
+												case 'herobrinesg': 			{ 	include('includes/private.php'); 				private(); 				break; }
 											} 
+											}
 											?>
 											
 										</div>
