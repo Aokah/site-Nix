@@ -1240,11 +1240,8 @@
 							<h3>Registre de Sanctions</h3>
 							<?php while ($avert = $select->fetch())
 							{
-								$select = $db->prepare('SELECT a.id, a.sender_id, a.msg, a.date, a.target_id, m.id m_id, m.name, m.title, m.pionier, m.ban, m.removed
-								FROM avert a
-								RIGHT JOIN members m ON sender_id = m.id
-								WHERE a.target_id = ?');
-								$select->execute(array($perso)); $line = $select->fetch();
+								$select2 = $db->prepare('SELECT * FROM members WHERE id = ?');
+								$select2->execute(array($avert['sender_id'])); $line = $select2->fetch();
 								$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}):(.{2}):.{2}$#', 'Le $3/$2/$1 à $4h$5', $avert['date']);
 								$message = preg_replace('#\n#', '<br />', $avert['msg']);
 								$title = $line['title'];
@@ -2168,11 +2165,8 @@
 						<h3>Registre de Sanctions</h3>
 						<?php while ($avert = $select->fetch())
 						{
-							$select = $db->prepare('SELECT a.id, a.sender_id, a.msg, a.date, a.target_id, m.id m_id, m.name, m.title, m.pionier, m.ban, m.removed
-							FROM avert a
-							RIGHT JOIN members m ON sender_id = m.id
-							WHERE a.target_id = ?');
-							$select->execute(array($_SESSION['id'])); $line = $select->fetch();
+							$select2 = $db->prepare('SELECT * FROM members WHERE id = ?');
+							$select2->execute(array($avert['sender_id'])); $line = $select2->fetch();
 							$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}):(.{2}):.{2}$#', 'Le $3/$2/$1 à $4h$5', $avert['date']);
 							$message = preg_replace('#\n#', '<br />', $avert['msg']);
 							$title = $line['title'];
