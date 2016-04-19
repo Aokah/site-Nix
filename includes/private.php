@@ -5,6 +5,9 @@
     echo '<h2>Hrobrine Sky & Ground</h2>';
     if (isset($_GET['char']))
     {
+      ?>
+      <a href="index?p=herobrinesg">Retourner à la liste des personnages</a>
+      <?php
       $css_td = "background-color: #CCCCFF";
       $css_th = "background-color: #AAAAFF";
       if ($_GET['char'] == "NathHerak")
@@ -12,7 +15,7 @@
         $name = "Nath Herak";
         $role = "Maître de Dojo";
         $meeting = "Inconnue";
-        $type = "Sol / Ténèbres"
+        $type = "Sol / Ténèbres";
       }
       ?>
       <table align="center" style="border: 5px #000077 solid; background-color: #9999FF; text-align:center;" class="guild">
