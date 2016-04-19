@@ -48,6 +48,7 @@
     {
     ?>
       <h3>Choisissez un personnage</h3>
+      <a href="index?p=herobrinesg&char=NathHerak">Maître de Dojo Nath Herak</a>
       <?php
     }
   }
