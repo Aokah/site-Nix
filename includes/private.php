@@ -10,7 +10,7 @@
         $name = "Nath Herak";
       }
       ?>
-      <table class="guild" style="border: 5px dark_blue solid;">
+      <table class="guild" style="border: 5px #000077 solid; background-color: #9999FF">
         <tbody>
           <tr>
             <th rowspan="2">
