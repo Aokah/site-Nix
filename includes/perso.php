@@ -477,11 +477,24 @@
 			elseif($_GET['action'] == 'avert')
 			{
 				if ($_SESSION['rank'] >= 5) {
-				echo '<p>Fonction en cours de développment.</p>';
-				?>
-				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
-				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
-				<?php
+					if (isset($_POST['send']))
+					{
+						?>
+						<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+						<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+						<?php
+					}
+					else
+					{
+						?>
+						<h3>Avertissement pour <span class="name<?= $line['rank']?>"><?= $line['title'], ' ',$line['name'];?></span></h3>
+						<table align="center">
+							<tbody>
+								
+							</tbody>
+						</table>
+						<?php
+					}
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
