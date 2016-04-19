@@ -2113,6 +2113,8 @@
 						<h3>Registre de Sanctions</h3>
 						<?php while ($avert = $select->fetch())
 						{
+							$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}):(.{2}):.{2}$#', 'Le $3/$2/$1 à $4h$5', $avert['date']);
+							$message = preg_replace('#\n#', '<br />', $avert['msg']);
 							$title = $avert['title'];
 							if ($avert['ban'] == 1) { $title = "Banni"; } if ($avert['removed'] == 1) { $title = "Oublié"; } if ($avert['pionier'] == 1) { $title = "Pionier";}
 						?>
@@ -2129,7 +2131,7 @@
 								<tr>
 									<td>
 										<p>
-											<?=$avert['msg']?>
+											<?=$message?>
 										</p>
 									</td>
 								</tr>
