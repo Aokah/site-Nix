@@ -1223,7 +1223,62 @@
 					</table>
 				</td>
 			</tr>
-			<?php } ?>
+				<?php
+				$verif = $db->prepare('SELECT * FROM avert WHERE target_id = ?');
+				$verif->execute(array($perso));
+				
+				$select = $db->prepare('SELECT a.id, a.sender_id, a.msg, a.date, a.target_id, m.id m_id, m.name, m.title, m.pionier, m.ban, m.removed
+				FROM avert a
+				RIGHT JOIN members m ON target_id = m.id
+				WHERE a.target_id = ?');
+				$select->execute(array($perso));
+				if ($verif->fetch())
+				{
+				?>
+					<tr>
+						<td>
+							<h3>Registre de Sanctions</h3>
+							<?php while ($avert = $select->fetch())
+							{
+								$select = $db->prepare('SELECT a.id, a.sender_id, a.msg, a.date, a.target_id, m.id m_id, m.name, m.title, m.pionier, m.ban, m.removed
+								FROM avert a
+								RIGHT JOIN members m ON sender_id = m.id
+								WHERE a.target_id = ?');
+								$select->execute(array($perso)); $line = $select->fetch();
+								$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}):(.{2}):.{2}$#', 'Le $3/$2/$1 à $4h$5', $avert['date']);
+								$message = preg_replace('#\n#', '<br />', $avert['msg']);
+								$title = $line['title'];
+								if ($line['ban'] == 1) { $title = "Banni"; } if ($line['removed'] == 1) { $title = "Oublié"; } if ($line['pionier'] == 1) { $title = "Pionier";}
+							?>
+							<table width="200%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
+								<tbody>
+									<tr style="background-color:#BBBBBB;">
+										<th>
+											Avertissement de <?=$title, ' ', $line['name']?>
+										</th>
+									</tr>
+									<tr>
+										<td>
+											<?=$date ?>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>
+												<?=$message?>
+											</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<?php
+							}
+							?>
+						</td>
+					</tr>
+				<?php
+				}
+			} ?>
 		</tbody>
 	</table>
 	<?php
