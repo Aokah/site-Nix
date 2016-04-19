@@ -2048,7 +2048,7 @@
 					{
 					?>
 					<h4><?php echo $titlerace; ?></h4>
-					<table align="center" cellspacing="5">
+					<table cellspacing="5">
 						<tbody>
 							<tr>
 								<td>
@@ -2102,8 +2102,8 @@
 			
 			$select = $db->prepare('SELECT a.id, a.sender_id, a.msg, a.date, a.target_id, m.id m_id, m.name, m.title, m.pionier, m.ban, m.removed
 			FROM avert a
-			RIGHT JOIN members m ON sender_id = m.id AND target_id = m.id
-			WHERE target_id = ?');
+			RIGHT JOIN members m ON target_id = m.id
+			WHERE a.target_id = ?');
 			$select->execute(array($_SESSION['id']));
 			if ($verif->fetch())
 			{
