@@ -481,7 +481,8 @@
 					{
 						$avert = htmlentities($_POST['avert']);
 						$pm = "Vous avez reçu un avertissement de la part de ". $_SESSION['title']. ' '. $_SESSION['name']. 
-						".<br />Pour en savoir plus, rendez-vous sur votre page personnage. Les avertissements sont là pour vous rappeller à l'ordre, prennez-les en compte pour l'avenir.<br /><br />Shirka";
+						".<br />Pour en savoir plus, rendez-vous sur votre page personnage. Les avertissements sont là pour vous rappeller à l&apos;ordre, prennez-les en compte pour l&apos;avenir.<br /<<br />Shirka";
+						
 						$update = $db->prepare("INSERT INTO avert VALUES ('',?,?,NOW(),?)");
 						$update->execute(array($_SESSION['id'], $perso, $avert));
 						$message = $db->prepare("INSERT INTO private_messageVALUES ('','Avertissement',?,NOW(),92,?,1)");
@@ -2095,6 +2096,53 @@
 					<p><a href="index?p=perso&edit=infos">Cliquez ici</a> pour éditer les informations personnelles de votre personnage.</p>
 				</td>
 			</tr>
+			<?php
+			$verif = $db->prepare('SELECT * FROM avert WHERE target_id = ?');
+			$verif->execute(array($_SESSION['id']));
+			
+			$select = $db->prepare('SELECT a.id, a.sender_id, a.msg, a.date, a.target_id, m.id m_id, m.name, m.title, m.pionier, m.ban, m.removed
+			FROM avert a
+			RIGHT JOIN members m ON sender_id = m.id AND target_id = m.id
+			WHERE target_id = ?');
+			$select->execute(array($_SESSION['id']));
+			if ($verif->fetch())
+			{
+			?>
+				<tr>
+					<td>
+						<h3>Registre de Sanctions</h3>
+						<?php while ($avert = $select->fetch())
+						{
+							$title = $avert['title'];
+							if ($avert['ban'] == 1) { $title = "Banni"; } if ($avert['removed'] == 1) { $title = "Oublié"; } if ($avert['pionier'] == 1) { $title = "Pionier";}
+						?>
+						<table>
+							<tbody>
+								<th>
+									Avertissement de <?=$title, ' ', $avert['name']?>
+								</th>
+								<tr>
+									<td>
+										Le <?=$date ?>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>
+											<?=$avert['msg']?>
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<?php
+						}
+						?>
+					</td>
+				</tr>
+			<?php
+			}
+			?>
 		</tbody>
 	</table>
 	<?php
