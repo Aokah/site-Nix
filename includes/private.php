@@ -10,7 +10,7 @@
         $name = "Nath Herak";
       }
       ?>
-      <table class="magie_type">
+      <table class="guild" style="border: 5px dark_blue solid;">
         <tbody>
           <tr>
             <th rowspan="2">
