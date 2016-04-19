@@ -12,6 +12,7 @@
         $name = "Nath Herak";
         $role = "Maître de Dojo";
         $meeting = "Inconnue";
+        $type = "Sol / Ténèbres"
       }
       ?>
       <table align="center" style="border: 5px #000077 solid; background-color: #9999FF; text-align:center;" class="guild">
@@ -37,7 +38,15 @@
               Rencontre à :
             </th>
             <td style="<?php echo $css_td;?>">
-              <?php $meeting; ?>
+              <?php echo $meeting; ?>
+            </td>
+          </tr>
+          <tr>
+            <th style="<?php echo $css_th;?>">
+              Type de rituels :
+            </th>
+            <td style="<?php echo $css_td;?>">
+              <?php echo $type; ?>
             </td>
           </tr>
         </tbody>
