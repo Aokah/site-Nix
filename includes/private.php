@@ -59,12 +59,12 @@
         <tbody>
           <tr>
             <td colspan="4">
-              <img src="pics/sg_NathHerak_battle.gif" alt="" />
+              <img src="pics/sg_<?php echo $_GET['char'];?>_battle.gif" alt="" />
             </td>
           </tr>
           <tr>
             <td colspan="4">
-              <img src="pics/sg_NathHerak_avatar.png" alt="" />
+              <img src="pics/sg_<?php echo $_GET['char'];?>_avatar.png" alt="" />
             </td>
           </tr>
           <tr>
