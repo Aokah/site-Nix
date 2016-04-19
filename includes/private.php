@@ -12,16 +12,12 @@
       ?>
       <table class="guild" style="border: 5px #000077 solid; background-color: #9999FF">
         <tbody>
-          <tr>
-            <th rowspan="2">
+          <th rowspan="2">
               <?php echo $name; ?>
-            </th>
-          </tr>
+           </th>
           <tr>
             <td>
-              <th>
-                <img src="pics/sg_<?= $_GET['char']?>.png" alt="" width="300px" class="guild" />
-              </th>
+                <img src="pics/sg_<?= $_GET['char']?>.png" alt="" width="250px" class="guild" />
             </td>
           </tr>
         </tbody>
