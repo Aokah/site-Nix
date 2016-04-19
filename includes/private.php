@@ -54,6 +54,35 @@
           </tr>
         </tbody>
       </table>
+      <p>Sprites</p>
+      <table align="center" style="border: 5px #000077 solid; background-color: #9999FF; text-align:center;" class="guild">
+        <tbody>
+          <tr>
+            <td colspan="4">
+              <img src="pics/sg_NathHerak_battle.gif" alt="" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <img src="pics/sg_NathHerak_avatar.png" alt="" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_front.gif" alt="" /> 
+            </td>
+            <td>
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_left.gif" alt="" /> 
+            </td>
+            <td>
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_right.gif" alt="" /> 
+            </td>
+            <td>
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_off.gif" alt="" /> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <?php
     }
     else
