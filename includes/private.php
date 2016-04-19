@@ -69,16 +69,16 @@
           </tr>
           <tr>
             <td>
-              <img src="pics/sg_<?php echo $_GET['char'];?>_move_front.gif" alt=""  width="100px" /> 
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_front.gif" alt=""  width="50px" /> 
             </td>
             <td>
-              <img src="pics/sg_<?php echo $_GET['char'];?>_move_left.gif" alt="" width="100px"  /> 
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_left.gif" alt="" width="50px"  /> 
             </td>
             <td>
-              <img src="pics/sg_<?php echo $_GET['char'];?>_move_right.gif" alt="" width="100px"  /> 
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_right.gif" alt="" width="50px"  /> 
             </td>
             <td>
-              <img src="pics/sg_<?php echo $_GET['char'];?>_move_off.gif" alt="" width="100px"  /> 
+              <img src="pics/sg_<?php echo $_GET['char'];?>_move_off.gif" alt="" width="50px"  /> 
             </td>
           </tr>
         </tbody>
