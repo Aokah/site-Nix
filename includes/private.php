@@ -3,7 +3,7 @@
   if ($_SESSION['name'] == "Nikho")
   {
     echo '<h2>Hrobrine Sky & Ground</h2>';
-    if (isset($_GET['char']))
+    if (isset($_GET['char']) && !empty($_GET['char']))
     {
       ?>
       <a href="index?p=herobrinesg">Retourner à la liste des personnages</a>
@@ -16,6 +16,27 @@
         $role = "Maître de Dojo";
         $meeting = "Inconnue";
         $type = "Sol / Ténèbres";
+      }
+      elseif ($_GET['char'] == "Kisure")
+      {
+        $name = "Kisure";
+        $role = "Champion Régionnal";
+        $meeting = "Ligue Régionnale";
+        $type = "Dragon / Combat";
+      }
+      elseif ($_GET['char'] == "Neylann")
+      {
+        $name = "Neylann";
+        $role = "Maître d'Arène";
+        $meeting = "Katraz";
+        $type = "Spectre / Ténèbres";
+      }
+      elseif ($_GET['char'] == "Evo")
+      {
+        $name = "Evo";
+        $role = "Admin Team Segghe";
+        $meeting = "Inconnue";
+        $type = "Glace / Ténèbres";
       }
       ?>
       <table align="center" style="border: 5px #000077 solid; background-color: #9999FF; text-align:center;" class="guild">
