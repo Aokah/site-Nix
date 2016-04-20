@@ -38,6 +38,20 @@
         $meeting = "Inconnue";
         $type = "Glace / Ténèbres";
       }
+      elseif ($_GET['char'] == "Ryder")
+      {
+        $name = "Ryder";
+        $role = "Héros";
+        $meeting = "Andalaue";
+        $type = "Plante";
+      }
+      elseif ($_GET['char'] == "Dennethor")
+      {
+        $name = "Dennethor";
+        $role = "Elite de Quatre";
+        $meeting = "Ligue Régionnale";
+        $type = "Combat";
+      }
       ?>
       <table align="center" style="border: 5px #000077 solid; background-color: #9999FF; text-align:center;" class="guild">
         <tbody>
@@ -110,7 +124,26 @@
     {
     ?>
       <h3>Choisissez un personnage</h3>
-      <a href="index?p=herobrinesg&char=NathHerak">Maître de Dojo Nath Herak</a>
+      <ul>
+        <li>
+          <a href="index?p=herobrinesg&char=Dennethor">Elite de Quatre Dennethor</a>
+        </li>
+        <li>
+          <a href="index?p=herobrinesg&char=Evo">Team Seggh Admin Evo</a>
+        </li>
+        <li>
+          <a href="index?p=herobrinesg&char=Kisure">Champion de Sangha Kisure</a>
+        </li>
+        <li>
+          <a href="index?p=herobrinesg&char=NathHerak">Maître de Dojo Nath Herak</a>
+        </li>
+        <li>
+          <a href="index?p=herobrinesg&char=Neylann">Maître dArène Neylann</a>
+        </li>
+        <li>
+          <a href="index?p=herobrinesg&char=Ryder">Héros Ryder</a>
+        </li>
+      </ul>
       <?php
     }
   }
