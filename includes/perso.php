@@ -177,7 +177,7 @@
 									case 5 : $spe_1 = "Energie"; break; case 6 : $spe_1 = "Feu"; break; case 7 : $spe_1 = "Glace"; break;
 									case 8 : $spe_1 = "Inconnue"; break; case 9 : $spe_1 = "Lumière"; break; case 10 : $spe_1 = "Métal"; break;
 									case 11 : $spe_1 = "Nature"; break; case 12 : $spe_1 = "Ombre"; break; case 13 : $spe_1 = "Psy"; break;
-									case 14 : $spe_1 = "Spécial"; break; case 15 : $spe_1 = "Terre"; break;
+									case 14 : $spe_1 = "Spéciale"; break; case 15 : $spe_1 = "Terre"; break;
 								}
 								switch ($_POST['spe_2']) {
 									case 0: $spe_2 = $line['spe_2']; break; case 1 : $spe_2 = "Air"; break;
@@ -185,7 +185,7 @@
 									case 5 : $spe_2 = "Energie"; break; case 6 : $spe_2 = "Feu"; break; case 7 : $spe_2 = "Glace"; break;
 									case 8 : $spe_2 = "Inconnue"; break; case 9 : $spe_2 = "Lumière"; break; case 10 : $spe_2 = "Métal"; break;
 									case 11 : $spe_2 = "Nature"; break; case 12 : $spe_2 = "Ombre"; break; case 13 : $spe_2 = "Psy"; break;
-									case 14 : $spe_2 = "Spécial"; break; case 15 : $spe_2 = "Terre"; break;
+									case 14 : $spe_2 = "Spéciale"; break; case 15 : $spe_2 = "Terre"; break;
 								}
 								$update = $db->prepare('UPDATE members SET E_Magique = ?, E_Vitale = ?, specialisation = ?, spe_2 = ? WHERE id = ?');
 								$update->execute(array($_POST['e-magie'], $_POST['e-vie'], $spe_1, $spe_2, $perso));
