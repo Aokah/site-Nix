@@ -124,22 +124,32 @@
     {
     ?>
       <h3>Choisissez un personnage</h3>
+      <p>Ligue Régionnale</p>
       <ul>
         <li>
           <a href="index?p=herobrinesg&char=Dennethor">Elite de Quatre Dennethor</a>
         </li>
         <li>
-          <a href="index?p=herobrinesg&char=Evo">Team Seggh Admin Evo</a>
-        </li>
-        <li>
           <a href="index?p=herobrinesg&char=Kisure">Champion de Sangha Kisure</a>
-        </li>
-        <li>
-          <a href="index?p=herobrinesg&char=NathHerak">Maître de Dojo Nath Herak</a>
         </li>
         <li>
           <a href="index?p=herobrinesg&char=Neylann">Maître dArène Neylann</a>
         </li>
+      </ul>
+      <p>Team Segghe</p>
+      <ul>
+        <li>
+          <a href="index?p=herobrinesg&char=Evo">Team Seggh Admin Evo</a>
+        </li>
+      </ul>
+      <p>PNJs</p>
+      <ul>
+        <li>
+          <a href="index?p=herobrinesg&char=NathHerak">Maître de Dojo Nath Herak</a>
+        </li>
+      </ul>
+      <p>Héros</p>
+      <ul>
         <li>
           <a href="index?p=herobrinesg&char=Ryder">Héros Ryder</a>
         </li>
