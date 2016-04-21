@@ -1,7 +1,7 @@
 <?php function privated()
 {
-  if ($_SESSION['name'] == "Nikho" OR $_SESSION['name'] == "Morrighan" OR $_SESSION['name'] == "Shawn" OR $_SESSION['name'] == "Nyshiki")
-  {
+ // if ($_SESSION['name'] == "Nikho" OR $_SESSION['name'] == "Morrighan" OR $_SESSION['name'] == "Shawn" OR $_SESSION['name'] == "Nyshiki")
+  //{
     echo '<h2>Hrobrine Sky & Ground</h2>';
     if (isset($_GET['char']))
     {
@@ -157,11 +157,11 @@
       </ul>
       <?php
     }
-  }
-  else
-  {
-    echo 'Page inexistante';
+ // }
+ //else
+ // {
+  //  echo 'Page inexistante';
   
-  }
+  //}
 }
 ?>
