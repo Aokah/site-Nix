@@ -122,7 +122,7 @@
     }
     else
     {
-      $valid = "<img src='pics/ico/tick.png' alt='' width='20%' />";
+      $valid = "<img src='pics/ico/tick.png' alt='' width='2%' />";
     ?>
       <h3>Choisissez un personnage</h3>
       <p>Ligue Régionnale</p>
