@@ -134,7 +134,7 @@
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
 				<td>
-					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?php echo $img;?>.png" alt="" width="30" /> <a href="index?p=perso&perso=<?= $line['id']?>"><?= $line['name']?></a>
+					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?php echo $img;?>.png" alt="" width="30" /> <a title="<?= $line['Minecraft_Account']?>" href="index?p=perso&perso=<?= $line['id']?>"><?= $line['name']?></a>
 				</td>
 				<td>
 					<?php echo $title; ?> <?php echo $pnj;?> <?php echo $dignitaire; ?>
