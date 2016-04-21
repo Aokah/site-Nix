@@ -3,7 +3,7 @@
   if ($_SESSION['name'] == "Nikho" OR $_SESSION['name'] == "Morrighan" OR $_SESSION['name'] == "Shawn" OR $_SESSION['name'] == "Nyshiki")
   {
     echo '<h2>Hrobrine Sky & Ground</h2>';
-    if (isset($_GET['char']) && !empty($_GET['char']))
+    if (isset($_GET['char']))
     {
       ?>
       <a href="index?p=herobrinesg">Retourner à la liste des personnages</a>
@@ -122,6 +122,7 @@
     }
     else
     {
+      $valid = "<img src='pics/ico/tick.png' alt='' width='20%' />";
     ?>
       <h3>Choisissez un personnage</h3>
       <p>Ligue Régionnale</p>
@@ -130,7 +131,7 @@
           <a href="index?p=herobrinesg&char=Dennethor">Elite de Quatre Dennethor</a>
         </li>
         <li>
-          <a href="index?p=herobrinesg&char=Kisure">Champion de Sangha Kisure</a>
+         <?=$valid?>  <a href="index?p=herobrinesg&char=Kisure">Champion de Sangha Kisure</a>
         </li>
         <li>
           <a href="index?p=herobrinesg&char=Neylann">Maître dArène Neylann</a>
@@ -145,7 +146,7 @@
       <p>PNJs</p>
       <ul>
         <li>
-          <a href="index?p=herobrinesg&char=NathHerak">Maître de Dojo Nath Herak</a>
+        <?=$valid?>  <a href="index?p=herobrinesg&char=NathHerak">Maître de Dojo Nath Herak</a>
         </li>
       </ul>
       <p>Héros</p>
