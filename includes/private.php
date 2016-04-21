@@ -1,6 +1,6 @@
 <?php function privated()
 {
-  if ($_SESSION['name'] == "Nikho" OR $_SESSION['name'] == "Morrighan" OR $_SESSION['name'] == "Shawn")
+  if ($_SESSION['name'] == "Nikho" OR $_SESSION['name'] == "Morrighan" OR $_SESSION['name'] == "Shawn" OR $_SESSION['name'] == "Nyshiki")
   {
     echo '<h2>Hrobrine Sky & Ground</h2>';
     if (isset($_GET['char']) && !empty($_GET['char']))
