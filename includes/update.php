@@ -32,7 +32,7 @@
 		<li>Ajout de la Page Update</li>
 		<li>Mise à jour de la Page Staff Team</li>
 		<li>Ajout de la page des Sondages</li>
-		<li>Ajout de la fonction de bannissement <span style="color:red;">(A améliorer)</span></li>
+		<li>Ajout de la fonction de bannissement</li>
 		<li>Insertion de la ChatBox sous les pages<span style="color:red;">(A améliorer)</span></li>
 		<li>Réécriture de la page personnage</li>
 		<li>Réécriture des fonctions des pages personnage</li>
