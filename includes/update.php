@@ -13,7 +13,7 @@
 		<li>Réécrire la page des Candidatures</li>
 		<li>Réadapter la Page d'Acceuil aux évènements passés IG</li>
 		<li>Reconstruire la Structure de la ChatBox</li>
-		<li>Ajout de la Page Infos Bêta</li>
+		<li>Réécrire la page des PMs</li>
 		
 	</ul>
 	
