@@ -2149,6 +2149,28 @@
 				</td>
 			</tr>
 			<?php
+				$verif = $db->prepare('SELECT * FROM trophee WHERE user_id = ?');
+				$verif->execute(array($_SESSION['id]']));
+				if ($verif->fetch())
+				{
+				?>
+			<tr>
+				<td>
+					<h3>Mes Trophées</h3>
+				<?php
+				$select = $db->prepare('SELECT * FROM trophee WHERE user_id = ?');
+				$select->execute(array($_SESSION['id']));
+				while ($line = $select->fetch())
+				{
+				?>
+				<img src="pics/trophee/trophee_<?= $line['trophee_id']?>.png" alt="" width="25%" />
+				<?php
+				}
+				?>
+				</td>
+			</tr>
+			<?php
+				}
 			$verif = $db->prepare('SELECT * FROM avert WHERE target_id = ?');
 			$verif->execute(array($_SESSION['id']));
 			
