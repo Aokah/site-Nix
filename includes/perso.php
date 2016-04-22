@@ -1233,14 +1233,14 @@
 				?>
 			<tr>
 				<td>
-					<h3>Mes Trophées</h3>
+					<h3>Trophées</h3>
 				<?php
 				$select = $db->prepare('SELECT * FROM trophee WHERE user_id = ?');
 				$select->execute(array($perso));
 				while ($trophee = $select->fetch())
 				{
 				?>
-				<img src="pics/trophee/trophee_<?= $trophee['trophee_id']?>.png" alt="" width="40%" />
+				<img src="pics/trophee/trophee_<?= $trophee['trophee_id']?>.png" alt="" width="60%" />
 				<?php
 				}
 				?>
