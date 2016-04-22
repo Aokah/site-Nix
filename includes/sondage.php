@@ -313,7 +313,7 @@
 		$update = $db->prepare('UPDATE sondage SET verr = 1 WHERE id = ?');
 		$update->execute(array($sondage));
 		?>
-		<p>Sondage vérouillé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
+		<p>Sondage vérrouillé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
 		<?php
 	}
 	elseif (isset($_GET['unlock']))
@@ -322,7 +322,7 @@
 		$update = $db->prepare('UPDATE sondage SET verr = 0 WHERE id = ?');
 		$update->execute(array($sondage));
 		?>
-		<p>Sondage déverouillé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
+		<p>Sondage déverrouillé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
 		<?php
 	}
 	else
@@ -381,7 +381,7 @@
 				</tr>
 				<?php while ($line = $answer->fetch())
 				{	
-					$verr = ($line['verr'] == 1) ? '[Verouillé] ' : '';
+					$verr = ($line['verr'] == 1) ? '[Verrouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_post']);
 				?>
 				<tr>
@@ -418,7 +418,7 @@
 				</tr>
 				<?php while ($line1 = $answer1->fetch())
 				{	
-					$verr = ($line1['verr'] == 1) ? '[Verouillé] ' : '';
+					$verr = ($line1['verr'] == 1) ? '[Verrouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line1['date_post']);
 				?>
 				<tr>
@@ -456,7 +456,7 @@
 				</tr>
 				<?php while ($line2 = $answer2->fetch())
 				{	
-					$verr = ($line2['verr'] == 1) ? '[Verouillé] ' : '';
+					$verr = ($line2['verr'] == 1) ? '[Verrouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line2['date_post']);
 				?>
 				<tr>
@@ -494,7 +494,7 @@
 				</tr>
 				<?php while ($line3 = $answer3->fetch())
 				{	
-					$verr = ($line3['verr'] == 1) ? '[Verouillé] ' : '';
+					$verr = ($line3['verr'] == 1) ? '[Verrouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line3['date_post']);
 				?>
 				<tr>
