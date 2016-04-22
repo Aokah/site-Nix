@@ -1224,7 +1224,7 @@
 				</td>
 			</tr>
 			<?php
-			if ($_SESSION['rank'] == 6)
+			if ($_SESSION['rank'] == 7)
 			{
 				$verif = $db->prepare('SELECT * FROM trophee WHERE user_id = ?');
 				$verif->execute(array($perso));
