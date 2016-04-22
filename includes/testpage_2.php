@@ -1,4 +1,5 @@
 <?php function testpage_2 ()
+global $_SESSION, $db;
 {
   $select = $db->prepare('SELECT * FROM trophee_get WHERE user_id = ?');
   $select->execute(array($_SESSION['id']));
