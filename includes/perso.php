@@ -1223,7 +1223,32 @@
 					</table>
 				</td>
 			</tr>
+			<?php
+			if ($_SESSION['rank'] == 6)
+			{
+				$verif = $db->prepare('SELECT * FROM trophee WHERE user_id = ?');
+				$verif->execute(array($perso));
+				if ($line_ = $verif->fetch())
+				{
+				?>
+			<tr>
+				<td>
+					<h3>Mes Trophées</h3>
 				<?php
+				$select = $db->prepare('SELECT * FROM trophee WHERE user_id = ?');
+				$select->execute(array($perso));
+				while ($trophee = $select->fetch())
+				{
+				?>
+				<img src="pics/trophee/trophee_<?= $trophee['trophee_id']?>.png" alt="" width="40%" />
+				<?php
+				}
+				?>
+				</td>
+			</tr>
+			<?php
+				}
+			}
 				$verif = $db->prepare('SELECT * FROM avert WHERE target_id = ?');
 				$verif->execute(array($perso));
 				
