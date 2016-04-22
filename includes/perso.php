@@ -2149,10 +2149,10 @@
 				</td>
 			</tr>
 			<?php
-				$verif = $db->prepare('SELECT * FROM trophee WHERE user_id = ?');
-				$verif->execute(array($_SESSION['id]']));
-				if ($verif->fetch())
-				{
+			//	$verif = $db->prepare('SELECT * FROM trophee WHERE user_id = ?');
+			//	$verif->execute(array($_SESSION['id]']));
+			//	if ($verif->fetch())
+				//{
 				?>
 			<tr>
 				<td>
@@ -2170,7 +2170,7 @@
 				</td>
 			</tr>
 			<?php
-				}
+			//	}
 			$verif = $db->prepare('SELECT * FROM avert WHERE target_id = ?');
 			$verif->execute(array($_SESSION['id']));
 			
