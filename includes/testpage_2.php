@@ -3,7 +3,7 @@
 global $_SESSION, $db;
   $select = $db->prepare('SELECT * FROM trophee_get WHERE user_id = ?');
   $select->execute(array($_SESSION['id']));
-  echo $_SESSION['id']
+  echo $_SESSION['id'];
   while ($line = $select->fetch())
   { echo $line['trophee_id'];
     $select2 = $db->prepare('SELECT * FROM trophee_list WHERE id = ?');
