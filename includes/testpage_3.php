@@ -13,6 +13,14 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 	margin-top: 0;
 	padding: 0;
 }
+.menu2
+{
+	background-color: #a0a0ee;
+	line-height: 20px;
+	margin-bottom: 16px;
+	margin-top: 0;
+	padding: 0;
+}
 </style>
 <div>
   <table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%">
