@@ -2,7 +2,7 @@
 {
 ?>
 <style>
- ul ul {display: none; position: absolute;top: -1 li -10px; left: -10px; margin: 0px; padding: 0px;}
+ ul ul {display: none; position: absolute;top: -1 li; left: -10px; margin: 0px; padding: 0px;}
 li {list-style-type: none; position: relative;}
 li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 .menu1
@@ -56,10 +56,12 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       				<td>
 			        	<ul class="menu1">
 						<li>
-							Menu
+							Acceuil
 							<ul class="menu2">
 								<li>
-									Extras
+									<a href="index.php">
+										Acceuil
+									</a>
 								</li>
 							</ul>
 						</li>
