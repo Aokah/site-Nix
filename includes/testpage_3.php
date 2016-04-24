@@ -17,7 +17,6 @@ ul ul
   	list-style-type: none; 
   	position: relative; 
   	width: 140px; 
-  	background-color: #E0E0E0; 
   	padding: 2px; 
   	margin: 0px
   	
