@@ -16,7 +16,7 @@
 	}
 	.menudd:hover
 	{
-		display: block;
+		display: inline-block;
 	}
 </style>
 <div>
