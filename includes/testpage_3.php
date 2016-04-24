@@ -63,12 +63,63 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 										Acceuil
 									</li>
 								</a>
+								<a href="index?p=rules">
+									<li>
+										Règles
+									</li>
+								</a>
+								<a href="index?p=server">
+									<li>
+										Le Serveur
+									</li>
+								</a>
+								<a href="index?p=candid">
+									<li>
+										Candidature
+									</li>
+								</a>
 							</ul>
 						</li>
 					</ul>
 			        </td>
 			        <td>
-			        	menu B
+			        	<ul class="menu1">
+						<li>
+							Communauté
+							<ul class="menu2">
+								<a href="index?p=news">
+									<li>
+										Actualités
+									</li>
+								</a>
+								<a href="index?p=members">
+									<li>
+										Membres
+									</li>
+								</a>
+								<a href="index?p=forum">
+									<li>
+										Forums
+									</li>
+								</a>
+								<a href="index?p=chatbox">
+									<li>
+										Dialogue en Direct
+									</li>
+								</a>
+								<a href="index?p=update">
+									<li>
+										Info Maintenance
+									</li>
+								</a>
+								<a href="index?p=sondage">
+									<li>
+										Sondages
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
 			        </td>
 			        <td>
 			        	menu C
