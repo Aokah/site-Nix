@@ -21,7 +21,7 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 	margin-top: 0;
 	margin-bottom: 0px;
 	padding: 0;
-	width: 100%;
+	width: 120%;
 	padding: 10px;
 	z-index: 3;
 }
