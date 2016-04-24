@@ -9,7 +9,6 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 {
 	background-color: #8080ee;
 	line-height: 20px;
-	margin-bottom: 16px;
 	margin-top: 0;
 	padding: 10px;
 }
@@ -17,7 +16,6 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 {
 	background-color: #a0a0ee;
 	line-height: 20px;
-	margin-bottom: 16px;
 	margin-top: 0;
 	padding: 0;
 	width: 100%;
