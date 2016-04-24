@@ -2,7 +2,7 @@
 {
 ?>
 <style>
-ul ul
+ul ul .menud
 	{
 		display: none; 
 		position: absolute;
@@ -55,8 +55,8 @@ ul ul
       	<table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%">
       		<tbody>
       			<tr>
-      				<td class="menud">
-			        	<ul class="niveau1">
+      				<td>
+			        	<ul class="menud">
 						<li>
 							Menu
 								<ul class="niveau2">
