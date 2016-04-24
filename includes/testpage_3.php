@@ -31,7 +31,7 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
     <tbody>
       <tr>
       	<td>
-      		<table cellspacing="0" cellpadding="0">
+      		<table cellspacing="0" cellpadding="0" style="background-color: white;">
       			<tbody>
       				<td width="20%">
 					<a href="index.php"><img src="pics/logo1.gif" alt="" /></a>
@@ -265,11 +265,12 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       		<tbody>
       			<tr>
 				<td width="270">
-					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
-      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
-      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
-      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
-      					
+					<div style="background-color: white;">
+						Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+	      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+	      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+	      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+					</div>
       				</td>
 				 <td>
 					   <div id="main" width="*">
