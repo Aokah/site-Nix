@@ -6,7 +6,7 @@ ul ul
 	{
 		display: none; 
 		position: absolute;
-		top: -10%; 
+		top: -1li ; 
 		margin:0px;
 		padding: 0px;
 		border: 1px solid grey;
