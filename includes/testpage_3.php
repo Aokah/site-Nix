@@ -2,20 +2,24 @@
 {
 ?>
 <div>
-  <table cellspacing="0" cellpadding="0" style="background-color:whte;">
-    <tr>
-      <td>
-        En-tête
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Contenu
-      </td>
-    </tr>
-    <tr>
-      Pied de page
-    </tr>
+  <table cellspacing="0" cellpadding="0" style="background-color:white;">
+    <tbody>
+      <tr>
+        <td>
+          En-tête
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Contenu
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Pied de page
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
 <?php 
