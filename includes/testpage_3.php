@@ -27,7 +27,7 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 }
 </style>
 <div>
-  <table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%">
+  <table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%" background="pics/Nix.jpg">
     <tbody>
       <tr>
       	<td>
