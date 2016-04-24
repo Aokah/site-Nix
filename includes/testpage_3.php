@@ -2,7 +2,7 @@
 {
 ?>
 <div>
-  <table cellspacing="0" cellpadding="0" style="background-color:white;">
+  <table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%">
     <tbody>
       <tr>
         <td>
