@@ -2,7 +2,7 @@
 {
 ?>
 <style>
-ul ul
+.menud ul ul
 	{
 		display: none; 
 		position: absolute;
@@ -20,7 +20,7 @@ ul ul
   	margin: 0px
   	
   }
-  li:hover ul.niveau2, li li:hover ul.niveau3 
+  li:hover ul.deroulant
   {
   	display: block
   	
@@ -60,7 +60,7 @@ ul ul
 						<li>
 							Menu
 								<ul>
-									<li>
+									<li class="deroulant">
 										Extras
 									</li>
 								</ul>
