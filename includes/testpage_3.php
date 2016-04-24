@@ -20,6 +20,7 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 	margin-bottom: 16px;
 	margin-top: 0;
 	padding: 0;
+	width: 1 .menu1;
 }
 </style>
 <div>
