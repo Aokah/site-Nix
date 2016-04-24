@@ -169,6 +169,88 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 						</li>
 					</ul>
 			        </td>
+			        <td>
+			        	<ul class="menu1">
+						<li>
+							Administration
+							<ul class="menu2">
+								<a href="index?p=chat_ig" class="link">
+									<li>
+										Chat In Game
+									</li>
+								</a>
+								<a href="index?p=chatboxmj" class="link">
+									<li>
+										Chat Box MJ
+									</li>
+								</a>
+								<a href="index?p=serv_admin" class="link">
+									<li>
+										Administration Serveur
+									</li>
+								</a>
+								<a href="index?p=chrono" class="link">
+									<li>
+										Chronologie
+									</li>
+								</a>
+								<a href="index?p=rulesmj" class="link">
+									<li>
+										Règlement MJ
+									</li>
+								</a>
+								<a href="index?p=pnj_list" class="link">
+									<li>
+										Liste des PNJs
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>
+					<ul class="menu1">
+						<li>
+							Magie
+							<ul class="menu2">
+								<a href="index?p=sorts" class="link">
+									<li>
+										Mes sorts
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
+			        </td>
+			       	<td>
+					<ul class="menu1">
+						<li>
+							Mon Compte
+							<ul class="menu2">
+								<a href="index?p=perso" class="link">
+									<li>
+										Mon Personnage
+									</li>
+								</a>
+								<a href="index?p=pm" class="link">
+									<li>
+										Messages Privés
+									</li>
+								</a>
+								<a href="index?p=account" class="link">
+									<li>
+										Mon Compte
+									</li>
+								</a>
+								<a href="index?p=login&action=disconnection" class="link">
+									<li>
+										Se Déconnecter
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
+			        </td>
       			</tr>
       		</tbody>
       	</table>
