@@ -56,10 +56,10 @@ ul .menud
       		<tbody>
       			<tr>
       				<td>
-			        	<ul class="menud">
+			        	<ul>
 						<li>
 							Menu
-								<ul class="niveau2">
+								<ul class="menud">
 									<li>
 										Extras
 									</li>
