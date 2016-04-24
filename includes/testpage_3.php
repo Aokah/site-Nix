@@ -122,10 +122,52 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 					</ul>
 			        </td>
 			        <td>
-			        	menu C
+			        	<ul class="menu1">
+						<li>
+							Contenu
+							<ul class="menu2">
+								<a href="index?p=races" class="link">
+									<li>
+										Les Races
+									</li>
+								</a>
+								<a href="index?p=guilds" class="link">
+									<li>
+										Les Groupes
+									</li>
+								</a>
+								<a href="index?p=staffteam" class="link">
+									<li>
+										L'Equipe Admin'
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
 			        </td>
 			        <td>
-			        	menu D
+			        	<ul class="menu1">
+						<li>
+							Modération
+							<ul class="menu2">
+								<a href="index?p=whitelist" class="link">
+									<li>
+										La Whitelist
+									</li>
+								</a>
+								<a href="index?p=staffcontent" class="link">
+									<li>
+										Le BackGround
+									</li>
+								</a>
+								<a href="index?p=magie_admin" class="link">
+									<li>
+										Administration Magique
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
 			        </td>
       			</tr>
       		</tbody>
