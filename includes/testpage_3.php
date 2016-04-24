@@ -53,7 +53,7 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       </tr>
       <tr>
       	<td>
-      		<table cellspacing="0" cellpadding="0" style="background-color:white; text-align:center;" width="100%">
+      		<table cellspacing="0" cellpadding="0" style="text-align:center;" width="100%">
       		<tbody>
       			<tr>
       				<td>
