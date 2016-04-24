@@ -16,13 +16,22 @@
 	<td width="10%">
 		<img src="http://herobrine.fr/blapproved.php?bid=3" title="Approved by BL">
 	</td>
-	<td width="10%x">
+	<td width="10%">
 		<a href="https://minecraft.net/" target=_blank><img src="http://herobrine.fr/pics/mc1.png" alt="" /></a>
 	</td>
       </tr>
       <tr>
         <td>
-          Menus
+        	Menu A
+        </td>
+        <td>
+        	menu B
+        </td>
+        <td>
+        	menu C
+        </td>
+        <td>
+        	menu D
         </td>
       </tr>
       <tr>
