@@ -11,6 +11,11 @@
       </tr>
       <tr>
         <td>
+          Menus
+        </td>
+      </tr>
+      <tr>
+        <td>
           Contenu
         </td>
       </tr>
