@@ -57,7 +57,7 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       		<tbody>
       			<tr>
       				<td rowspan="3">
-      					<?php includ ('includes/loggedIn.php'); loggedIn(); ?>
+      					<?php include ('includes/loggedIn.php'); loggedIn(); ?>
       				</td>
       				<td>
 			        	<ul class="menu1">
