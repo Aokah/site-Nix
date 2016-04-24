@@ -2,7 +2,7 @@
 {
 ?>
 <style>
-ul li ul
+ul ul
 	{
 		display: none; 
 		position: absolute;
