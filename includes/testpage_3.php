@@ -5,8 +5,8 @@
 ul ul
 	{
 		display: none; 
-		position: absolute; 
-		left: 144px; top: -1px; 
+		position: absolute;
+		top: -10%; 
 		margin:0px;
 		padding: 0px;
 		border: 1px solid grey;
@@ -15,8 +15,7 @@ ul ul
   li 
   {
   	list-style-type: none; 
-  	position: relative; 
-  	width: 140px; 
+  	position: relative;
   	padding: 2px; 
   	margin: 0px
   	
