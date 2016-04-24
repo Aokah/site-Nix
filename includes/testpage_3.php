@@ -52,13 +52,17 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       	</td>
       </tr>
       <tr>
+      	<td rowspan="2">
+      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+      					
+      				</td>
       	<td>
       		<table cellspacing="0" cellpadding="0" style="background-color:white; text-align:center;" width="100%">
       		<tbody>
       			<tr>
-      				<td rowspan="3">
-      					<?php include ('includes/loggedIn.php'); loggedIn(); ?>
-      				</td>
       				<td>
 			        	<ul class="menu1">
 						<li>
