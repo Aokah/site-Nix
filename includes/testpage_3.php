@@ -2,7 +2,7 @@
 {
 ?>
 <style>
- ul ul {display: none; position: absolute;top: -1 li; left: -40px; margin: 0px; padding: 0px;}
+ ul ul {display: none; position: absolute;top: -1 li; left: -20px; margin: 0px; padding: 0px;}
 li {list-style-type: none; position: relative;}
 li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 .menu1
