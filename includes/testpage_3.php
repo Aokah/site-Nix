@@ -265,7 +265,7 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       <tr>
         <td>
           <div id="main">
-          	Contenu VLVVLZFOZEFJZREGNZGNZROGHEHHUQRYH55QYHJRRYJTJRJSR
+          	<?php include('includes/home.php'); home();  ?>
           </div>
         </td>
       </tr>
