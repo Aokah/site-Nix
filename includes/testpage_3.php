@@ -2,29 +2,9 @@
 {
 ?>
 <style>
- ul ul
-	{
-		display: none; 
-		position: absolute;
-		top: -1li ; 
-		margin:0px;
-		padding: 0px;
-		border: 1px solid grey;
-		
-	}
-  li 
-  {
-  	list-style-type: none; 
-  	position: relative;
-  	padding: 2px; 
-  	margin: 0px
-  	
-  }
-  li:hover ul.deroulant
-  {
-  	display: block
-  	
-  }
+ ul ul {display: none; position: absolute;top: -1 li; margin: 0px; padding: 0px;}
+li {list-style-type: none; position: relative;}
+li:hover ul.niveau2, li li:hover ul.niveau3 {display: block}
 </style>
 <div>
   <table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%">
@@ -55,15 +35,16 @@
       	<table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%">
       		<tbody>
       			<tr>
-      				<td class="menud">
-			        	<ul>
+      				<td>
+			        	<ul class="niveau1">
 						<li>
 							Menu
-								<ul>
-									<li class="deroulant">
-										Extras
-									</li>
-								</ul>
+							<ul class="niveau2">
+								<li>
+									Extras
+								
+								</li>
+							</ul>
 						</li>
 					</ul>
 			        </td>
