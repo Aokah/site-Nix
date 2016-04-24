@@ -2,22 +2,42 @@
 {
 ?>
 <style>
-	.menud 
+ul ul
 	{
-		background-color: blue;
+		display: none; 
+		position: absolute; 
+		left: 144px; top: -1px; 
+		margin:0px;
+		padding: 0px;
+		border: 1px solid grey;
+		
 	}
-	.menud:hover
-	{
-		background-color: aqua;
-	}
-	.menudd
-	{
-		display: none;
-	}
-	.menudd:hover
-	{
-		display: inline-block;
-	}
+  li 
+  {
+  	list-style-type: none; 
+  	position: relative; 
+  	width: 140px; 
+  	background-color: #E0E0E0; 
+  	padding: 2px; 
+  	margin: 0px
+  	
+  }
+  li:hover
+  {
+  	background-color: #FFFF70;
+  	
+  }
+  li:hover ul.niveau2, li li:hover ul.niveau3 
+  {
+  	display: block
+  	
+  }
+  li.plus
+  {
+  	background-position:right;
+  	background-repeat: no-repeat; border-bottom: 1px solid grey;
+  	
+  }
 </style>
 <div>
   <table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%">
@@ -49,11 +69,24 @@
       		<tbody>
       			<tr>
       				<td class="menud">
-			        	<ul>
-			        		<li>Menu A1</li>
-			        		<li class="menudd">Menu A2</li>
-			        		<li class="menudd">Menu A3</li>
-			        	</ul>
+			        	<ul class="niveau1">
+						<li>
+							Menu
+								<ul class="niveau2">
+									<li>
+										Extras
+											<ul class="niveau3">
+												<li>Demander la note</li>
+												<li>Draguer la serveuse</li>
+											</ul>
+									</li>
+									<li>Entrée</li>
+									<li>Plat</li>
+									<li>Dessert</li>
+									<li>Café</li>
+								</ul>
+						</li>
+					</ul>
 			        </td>
 			        <td>
 			        	menu B
