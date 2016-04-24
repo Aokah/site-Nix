@@ -264,8 +264,8 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       		<table cellspacin="20" cellpadding="20">
       		<tbody>
       			<tr>
-				<td width="270">
-					<div style="background-color: white;" valign="top">
+				<td width="270" valign="top">
+					<div style="background-color: white;">
 						Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
 	      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
 	      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
