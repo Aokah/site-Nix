@@ -58,22 +58,22 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 						<li>
 							Acceuil
 							<ul class="menu2">
-								<a href="index.php">
+								<a href="index.php" class="link">
 									<li>
 										Acceuil
 									</li>
 								</a>
-								<a href="index?p=rules">
+								<a href="index?p=rules" class="link">
 									<li>
 										Règles
 									</li>
 								</a>
-								<a href="index?p=server">
+								<a href="index?p=server" class="link">
 									<li>
 										Le Serveur
 									</li>
 								</a>
-								<a href="index?p=candid">
+								<a href="index?p=candid" class="link">
 									<li>
 										Candidature
 									</li>
@@ -87,32 +87,32 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 						<li>
 							Communauté
 							<ul class="menu2">
-								<a href="index?p=news">
+								<a href="index?p=news" class="link">
 									<li>
 										Actualités
 									</li>
 								</a>
-								<a href="index?p=members">
+								<a href="index?p=members" class="link">
 									<li>
 										Membres
 									</li>
 								</a>
-								<a href="index?p=forum">
+								<a href="index?p=forum" class="link">
 									<li>
 										Forums
 									</li>
 								</a>
-								<a href="index?p=chatbox">
+								<a href="index?p=chatbox" class="link">
 									<li>
 										Dialogue en Direct
 									</li>
 								</a>
-								<a href="index?p=update">
+								<a href="index?p=update" class="link">
 									<li>
 										Info Maintenance
 									</li>
 								</a>
-								<a href="index?p=sondage">
+								<a href="index?p=sondage" class="link">
 									<li>
 										Sondages
 									</li>
