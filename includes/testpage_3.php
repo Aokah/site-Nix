@@ -50,7 +50,8 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       	</td>
       </tr>
       <tr>
-      	<table cellspacing="0" cellpadding="0" style="background-color:white; text-align:center;" width="100%">
+      	<td>
+      		<table cellspacing="0" cellpadding="0" style="background-color:white; text-align:center;" width="100%">
       		<tbody>
       			<tr>
       				<td rowspan="2">
@@ -256,7 +257,8 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 			        </td>
       			</tr>
       		</tbody>
-      	</table>
+      	</table>	
+      	</td>
       </tr>
       <tr>
         <td>
