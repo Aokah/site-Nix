@@ -58,11 +58,11 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
 						<li>
 							Acceuil
 							<ul class="menu2">
-								<li>
-									<a href="index.php">
+								<a href="index.php">
+									<li>
 										Acceuil
-									</a>
-								</li>
+									</li>
+								</a>
 							</ul>
 						</li>
 					</ul>
