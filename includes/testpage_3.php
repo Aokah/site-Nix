@@ -4,7 +4,15 @@
 <style>
  ul ul {display: none; position: absolute;top: -1 li; margin: 0px; padding: 0px;}
 li {list-style-type: none; position: relative;}
-li:hover ul.niveau2, li li:hover ul.niveau3 {display: block}
+li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
+.menu1
+{
+	background-color: #8080ee;
+	line-height: 20px;
+	margin-bottom: 16px;
+	margin-top: 0;
+	padding: 0;
+}
 </style>
 <div>
   <table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%">
@@ -36,13 +44,12 @@ li:hover ul.niveau2, li li:hover ul.niveau3 {display: block}
       		<tbody>
       			<tr>
       				<td>
-			        	<ul class="niveau1">
+			        	<ul class="menu1">
 						<li>
 							Menu
-							<ul class="niveau2">
+							<ul class="menu2">
 								<li>
 									Extras
-								
 								</li>
 							</ul>
 						</li>
