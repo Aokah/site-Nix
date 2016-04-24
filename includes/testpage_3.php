@@ -269,7 +269,9 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       </tr>
       <tr>
         <td>
-          Pied de page
+        	<div id="footer">
+			<p>Nix est un site communautaire à destination des joueurs de Minecraft. Le contenu de ce site internet est une fiction - 2015</p>
+		</div>
         </td>
       </tr>
     </tbody>
