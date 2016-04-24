@@ -260,7 +260,8 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       	</td>
       </tr>
       <tr>
-      	<table cellspacin="20" cellpadding="20">
+      	<td>
+      		<table cellspacin="20" cellpadding="20">
       		<tbody>
       			<tr>
 				<td width="270">
@@ -278,6 +279,7 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       			</tr>
       		</tbody>
       	</table>
+      	</td>
       </tr>
       <tr>
         <td>
