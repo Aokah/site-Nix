@@ -1,6 +1,24 @@
 <?php function testpage_3 ()
 {
 ?>
+<style>
+	.menud 
+	{
+		background-color: blue;
+	}
+	.menud:hover
+	{
+		background-color: aqua;
+	}
+	.menudd
+	{
+		display: none;
+	}
+	.menudd:hover
+	{
+		display: block;
+	}
+</style>
 <div>
   <table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%">
     <tbody>
@@ -30,8 +48,12 @@
       	<table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%">
       		<tbody>
       			<tr>
-      				<td>
-			        	Menu A
+      				<td class="menud">
+			        	<ul>
+			        		<li>Menu A1</li>
+			        		<li class="menudd">Menu A2</li>
+			        		<li class="menudd">Menu A3</li>
+			        	</ul>
 			        </td>
 			        <td>
 			        	menu B
