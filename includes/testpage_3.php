@@ -2,7 +2,7 @@
 {
 ?>
 <style>
-.menud ul ul
+ ul ul
 	{
 		display: none; 
 		position: absolute;
