@@ -22,20 +22,9 @@ ul ul
   	margin: 0px
   	
   }
-  li:hover
-  {
-  	background-color: #FFFF70;
-  	
-  }
   li:hover ul.niveau2, li li:hover ul.niveau3 
   {
   	display: block
-  	
-  }
-  li.plus
-  {
-  	background-position:right;
-  	background-repeat: no-repeat; border-bottom: 1px solid grey;
   	
   }
 </style>
@@ -75,15 +64,7 @@ ul ul
 								<ul class="niveau2">
 									<li>
 										Extras
-											<ul class="niveau3">
-												<li>Demander la note</li>
-												<li>Draguer la serveuse</li>
-											</ul>
 									</li>
-									<li>Entrée</li>
-									<li>Plat</li>
-									<li>Dessert</li>
-									<li>Café</li>
 								</ul>
 						</li>
 					</ul>
