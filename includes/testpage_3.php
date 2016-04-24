@@ -52,13 +52,6 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       	</td>
       </tr>
       <tr>
-      	<td rowspan="2" width="270">
-      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
-      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
-      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
-      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
-      					
-      				</td>
       	<td>
       		<table cellspacing="0" cellpadding="0" style="background-color:white; text-align:center;" width="100%">
       		<tbody>
@@ -267,8 +260,15 @@ li:hover ul.menu2, li li:hover ul.niveau3 {display: block}
       	</td>
       </tr>
       <tr>
+      	<td width="270">
+      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+      					
+      				</td>
         <td>
-          <div id="main">
+          <div id="main" width="*">
           	<?php include('includes/home.php'); home();  ?>
           </div>
         </td>
