@@ -87,7 +87,7 @@ ul ul {
 	left: -10px;
 	margin: 0px;
 	padding: 0px;
-	background-image: url("/pics/ico/menu_ico_left") left, url("/pics/ico/menu_ico_right") right;
+	background-image: url("/pics/ico/menu_ico_left.png") left, url("/pics/ico/menu_ico_right.png") right;
 }
 
 li {
