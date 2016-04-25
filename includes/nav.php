@@ -2,7 +2,6 @@
 {
 	define('rank_cbm', 6);
 	define('rank_admin',6);
-	//define('6', 3);
 
 	global $db, $_SESSION, $_GET;
 
@@ -14,116 +13,7 @@
 	
 	
 ?>
-	<div class="navtitle">Acceuil</div>
-		<ul class="nav">
-			<a class="link" href="index.php" >
-				<li class="navbg" <?php echo (!$page) ? 'class="cur_page"' : '';?>><img src="/pics/ico/home.gif" alt="" />Accueil</li>
-			</a>
-			<a class="link" href="index.php?p=rules" >
-				<li class="navbg" <?php echo ($page == 'rules') ? 'class="cur_page"' : '';?>><img src="/pics/ico/rules.gif" alt="" />Les Règles</li>
-			</a>
-			<a class="link" href="index.php?p=server" >
-				<li class="navbg" <?php echo ($page == 'server') ? 'class="cur_page"' : '';?>><img src="/pics/ico/server.gif" alt="" />Le Serveur</li>
-			</a>
-			<a class="link" href="index.php?p=candid" >
-				<li class="navbg" <?php echo ($page == 'candid') ? 'class="cur_page"' : '';?>>
-					<img src="includes/img/candid.gif" alt="" />Votre Candidature 
-						<?if ($_SESSION["rank"] >= 6) { if ($line['count'] >= 1) {?>
-							<span style="color: red">[<?= $line['count']?>]</span>
-						<? } } ?>
-				</li>
-			</a>
-		</ul>
-		
-		
-	<div class="navtitle">Informations</div>
-		<ul class="nav">
-			<a class="link" href="index.php?p=news" >
-				<li class="navbg" <?php echo ($page == 'news') ? 'class="cur_page"' : '';?>><img src="/pics/ico/news.gif" alt="" />L'Actualité</li>
-			</a>
-			<a class="link" href="index.php?p=members" >
-				<li class="navbg" <?php echo ($page == 'members') ? 'class="cur_page"' : '';?>><img src="/pics/ico/members.gif" alt="" />Les Membres</li>
-			</a>
-			<a class="link" href="index.php?p=forum" >
-				<li class="navbg" <?php echo ($page == 'forum') ? 'class="cur_page"' : '';?>><img src="/pics/ico/forum.gif" alt="" />Les Forums</li>
-			</a>
-			<a class="link" href="index.php?p=chatbox" >
-				<li class="navbg" <?php echo ($page == 'chatbox') ? 'class="cur_page"' : '';?>><img src="/pics/ico/chat.gif" alt="" />Dialogue en direct</li>
-			</a>
-			<a class="link" href="index.php?p=update" >
-				<li class="navbg" <?php echo ($page == 'update') ? 'class="cur_page"' : '';?>><img src="/pics/ico/alert.gif" alt="" />Maintenance</li>
-			</a>
-			<?php if ($_SESSION['connected']) { ?>
-			<a class="link" href="index.php?p=sondage" >
-				<li class="navbg" <?php echo ($page == 'sondage') ? 'class="cur_page"' : '';?>><img src="/pics/ico/interro.gif" alt="" />Sondages</li>
-			</a>
-			<?php } ?>
-		</ul>
-		
-	<div class="navtitle">Contenu</div>
-		<ul class="nav">
-			<a class="link" href="index.php?p=races" >
-				<li class="navbg" <?php echo ($page == 'races') ? 'class="cur_page"' : '';?>><img src="/pics/ico/race.gif" alt="" />Les Races</li>
-			</a>
-			<a class="link" href="index.php?p=guilds" >
-				<li class="navbg" <?php echo ($page == 'groups') ? 'class="cur_page"' : '';?>><img src="/pics/ico/group.gif" alt="" />Les Groupes</li>
-			</a>
-			<a class="link" href="index.php?p=staffteam" >
-				<li class="navbg" <?php echo ($page == 'staffteam') ? 'class="cur_page"' : '';?>><img src="/pics/ico/staffteam.gif" alt="" />L'Equipe Admin'</li>
-			</a>
-		</ul>
-		
-<?php if ($_SESSION["rank"] >= 5) { ?>
-	<div class="navtitle">Modération</div>
-		<ul class="nav">
-			<a class="link" href="index.php?p=whitelist" >
-				<li class="navbg" <?php echo ($page == 'whitelist') ? 'class="cur_page"' : '';?>><img src="/pics/ico/wl.gif" alt="" />La Whitelist</li>
-			</a>
-			<a class="link" href="index.php?p=staffcontent" >
-				<li class="navbg" <?php echo ($page == 'background') ? 'class="cur_page"' : '';?>><img src="/pics/ico/bg.gif" alt="" />BackGround</li>
-			</a>
-			<a class="link" href="index.php?p=magie_admin" >
-				<li class="navbg" <?php echo ($page == 'magie_admin') ? 'class="cur_page"' : '';?>><img src="/pics/ico/blabla.gif" alt="" />Magie Admin'</li>
-			</a>
-		</ul>
-<?php } ?>
-	
-<?php if ($_SESSION["rank"] >= rank_admin) { ?>
-	<div class="navtitle">Administration</div>
-		<ul class="nav">
-			<a class="link" href="index.php?p=chat_ig" >
-				<li class="navbg" <?php echo ($page == 'chat_ig') ? 'class="cur_page"' : '';?>><img src="/pics/ico/chat_ig.gif" alt="" />Chat In Game</li>
-			</a>
-			<a class="link" href="index.php?p=chatboxmj" >
-				<li class="navbg" <?php echo ($page == 'chatboxmj') ? 'class="cur_page"' : '';?>><img src="/pics/ico/chat.gif" alt="" />ChatBox MJ</li>
-			</a>
-			<a class="link" href="index.php?p=serv_admin" >
-				<li class="navbg" <?php echo ($page == 'serv_admin') ? 'class="cur_page"' : '';?>><img src="/pics/ico/server_admin.gif" alt="" />Administration Serveur'</li>
-			</a>
-			<a class="link" href="http://62.210.232.129:1414" target="_blank" >
-				<li class="navbg" <?php echo ($page == 'dynmap') ? 'class="cur_page"' : '';?>><img src="/pics/ico/map.gif" alt="" />La DynMap'</li>
-			</a>
-			<a class="link" href="index.php?p=chrono" >
-				<li class="navbg" <?php echo ($page == 'chrono') ? 'class="cur_page"' : '';?>><img src="/pics/ico/chrono.gif" alt="" />Chronologie'</li>
-			</a>
-			<a class="link" href="index.php?p=rulesmj" >
-				<li class="navbg" <?php echo ($page == 'rulesmj') ? 'class="cur_page"' : '';?>><img src="/pics/ico/rules.gif" alt="" />Réglement MJ</li>
-			</a>
-			<a class="link" href="index.php?p=pnj_list" >
-				<li class="navbg" <?php echo ($page == 'pnj_list') ? 'class="cur_page"' : '';?>><img src="/pics/ico/page.gif" alt="" />Liste des PNJs'</li>
-			</a>
-		</ul>
-<?php } ?>
-	
-<?php if ($_SESSION['connected']) { ?>
-	<div class="navtitle">Magie</div>
-		<ul class="nav">
-			<a class="link" href="index.php?p=sorts" >
-				<li class="navbg" <?php echo ($page == 'sorts') ? 'class="cur_page"' : '';?>><img src="/pics/ico/book.gif" alt="" />Mes sorts</li>
-			</a>
-		</ul>
-<?php } ?>
-	
+<!--	
 <?php if (!$_SESSION['connected']) { ?>
 	<div class="navtitle">Enregistrement</div>
 		<ul class="nav">
@@ -205,7 +95,236 @@
 		&bull; Glenn<br />
 		&bull; Lune<br />
 		&bull; Shaolern<br />
-		&bull; Zelenan</p>
+		&bull; Zelenan</p> -->
+	
+	<table cellspacing="0" cellpadding="0" style="text-align:center;" width="100%">
+      		<tbody>
+      			<tr>
+      				<td>
+			        	<ul class="menu1">
+						<li>
+							Acceuil
+							<ul class="menu2">
+								<a href="index.php" class="link">
+									<li>
+										Acceuil
+									</li>
+								</a>
+								<a href="index?p=rules" class="link">
+									<li>
+										Règles
+									</li>
+								</a>
+								<a href="index?p=server" class="link">
+									<li>
+										Le Serveur
+									</li>
+								</a>
+								<a href="index?p=candid" class="link">
+									<li>
+										Candidature
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
+			        </td>
+			        <td>
+			        	<ul class="menu1">
+						<li>
+							Communauté
+							<ul class="menu2">
+								<a href="index?p=news" class="link">
+									<li>
+										Actualités
+									</li>
+								</a>
+								<a href="index?p=members" class="link">
+									<li>
+										Membres
+									</li>
+								</a>
+								<a href="index?p=forum" class="link">
+									<li>
+										Forums
+									</li>
+								</a>
+								<a href="index?p=chatbox" class="link">
+									<li>
+										Dialogue en Direct
+									</li>
+								</a>
+								<a href="index?p=update" class="link">
+									<li>
+										Info Maintenance
+									</li>
+								</a>
+								<?php if ($_SESSION['connected'])
+								{
+								?>
+								<a href="index?p=sondage" class="link">
+									<li>
+										Sondages
+									</li>
+								</a>
+								<?php
+								}
+								?>
+							</ul>
+						</li>
+					</ul>
+			        </td>
+			        <td>
+			        	<ul class="menu1">
+						<li>
+							Contenu
+							<ul class="menu2">
+								<a href="index?p=races" class="link">
+									<li>
+										Les Races
+									</li>
+								</a>
+								<a href="index?p=guilds" class="link">
+									<li>
+										Les Groupes
+									</li>
+								</a>
+								<a href="index?p=staffteam" class="link">
+									<li>
+										L'Equipe Admin'
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
+			        </td>
+			         <?php if ($_SESSION['rank'] > 4)
+			         {
+			         ?>
+			        <td>
+			        	<ul class="menu1">
+						<li>
+							Modération
+							<ul class="menu2">
+								<a href="index?p=whitelist" class="link">
+									<li>
+										La Whitelist
+									</li>
+								</a>
+								<a href="index?p=staffcontent" class="link">
+									<li>
+										Le BackGround
+									</li>
+								</a>
+								<a href="index?p=magie_admin" class="link">
+									<li>
+										Administration Magique
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
+			        </td>
+			        <?php
+				}
+				?>
+			        <?php if ($_SESSION['rank'] > 5)
+			        {
+			        ?>
+			        <td>
+			        	<ul class="menu1">
+						<li>
+							Administration
+							<ul class="menu2">
+								<a href="index?p=chat_ig" class="link">
+									<li>
+										Chat In Game
+									</li>
+								</a>
+								<a href="index?p=chatboxmj" class="link">
+									<li>
+										Chat Box MJ
+									</li>
+								</a>
+								<a href="index?p=serv_admin" class="link">
+									<li>
+										Administration Serveur
+									</li>
+								</a>
+								<a href="index?p=chrono" class="link">
+									<li>
+										Chronologie
+									</li>
+								</a>
+								<a href="index?p=rulesmj" class="link">
+									<li>
+										Règlement MJ
+									</li>
+								</a>
+								<a href="index?p=pnj_list" class="link">
+									<li>
+										Liste des PNJs
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<?php
+			        }
+			        ?>
+			        <?php if($_SESSION['connected'])
+			        {
+			        ?>
+				<td>
+					<ul class="menu1">
+						<li>
+							Magie
+							<ul class="menu2">
+								<a href="index?p=sorts" class="link">
+									<li>
+										Mes sorts
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
+			        </td>
+			       	<td>
+					<ul class="menu1">
+						<li>
+							Mon Compte
+							<ul class="menu2">
+								<a href="index?p=perso" class="link">
+									<li>
+										Mon Personnage
+									</li>
+								</a>
+								<a href="index?p=pm" class="link">
+									<li>
+										Messages Privés
+									</li>
+								</a>
+								<a href="index?p=account" class="link">
+									<li>
+										Mon Compte
+									</li>
+								</a>
+								<a href="index?p=login&action=disconnection" class="link">
+									<li>
+										Se Déconnecter
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
+			        </td>
+			        <?php
+			        }
+			        ?>
+      			</tr>
+      		</tbody>
+      	</table>
 	
 <?php 
 }
