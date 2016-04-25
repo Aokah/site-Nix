@@ -49,7 +49,7 @@
 		&bull; Lune<br />
 		&bull; Shaolern<br />
 		&bull; Zelenan</p>
-	
+	<?php
 	include ('includes/loggedIn.php');	loggedIn();
 }
 ?>
