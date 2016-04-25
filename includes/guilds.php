@@ -26,8 +26,8 @@ echo "<h2>Groupes et Guildes</h2>";
       if ($verif = $verif->fetch())
       {
           $user = $verif['id'];
-          $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ?');
-          $verif->execute(array($user));
+          $verif = $db->prepare('SELECT * FROM group_members WHERE user_id = ? AND group_id = ?');
+          $verif->execute(array($user, $group));
           if ($verif = $verif->fetch())
           {
               echo '<p>Navré, mais ce personnage est déjà présent dans ce groupe.</p> <p><a href="index?p=guilds">Retourner à la page normale.</a></p>';
