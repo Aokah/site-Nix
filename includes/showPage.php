@@ -46,7 +46,7 @@
 									<td width="270" valign="top">
 										<?php
 											//include('includes/nav.php'); 		nav();
-											include('includes/loggedIn.php'); 	loggedIn();
+											//include('includes/loggedIn.php'); 	loggedIn();
 										?>
 									</td>
 									<td width="*" valign="top">
@@ -256,10 +256,7 @@
       			<tr>
 				<td width="270" valign="top">
 					<div style="background-color: white;">
-						Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
-	      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
-	      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
-	      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+						<?php include('includes/loggedIn.php'); 	loggedIn(); ?>
 					</div>
       				</td>
 				 <td>
