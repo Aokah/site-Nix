@@ -89,6 +89,8 @@
 								</a>
 								<a href="index?p=candid" class="link">
 									<li>
+										<?if ($_SESSION["rank"] >= 5 AND $line['count'] >= 1) {?>
+										<span style="color: red">[<?= $line['count']?>]</span><? } ?>
 										Candidature
 									</li>
 								</a>
