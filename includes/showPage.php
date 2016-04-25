@@ -220,7 +220,7 @@
 		</div>
 	
 	<div>
-  <table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%" background="pics/Nix.jpg">
+  <table cellspacing="0" cellpadding="0" width="100%" background="pics/Nix.jpg">
     <tbody>
       <tr>
       	<td>
@@ -259,8 +259,8 @@
 						<?php include('includes/loggedIn.php'); 	loggedIn(); ?>
 					</div>
       				</td>
-				 <td>
-					   <div id="main" width="*">
+				 <td valign="top">
+					   <div id="main" width="100%">
 				          	Contenu
 				          </div>
 				  </td>
