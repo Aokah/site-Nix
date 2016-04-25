@@ -113,6 +113,8 @@ li:hover ul.menu2 {
 	z-index: 3;
 	width: 100%;
 	padding-left: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 /* elements nav */
 
