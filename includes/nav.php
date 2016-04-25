@@ -23,11 +23,14 @@
 						<li>
 							Acceuil
 							<ul class="menu2">
-								<a href="index.php" class="link">
-									<li>
-										Acceuil
-									</li>
-								</a>
+								<li class="link">
+									<a href="index.php" class="link">
+										<li>
+											Acceuil
+										</li>
+									</a>	
+								</li>
+								
 								<a href="index?p=rules" class="link">
 									<li>
 										Règles
