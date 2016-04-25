@@ -11,12 +11,14 @@
 	$line = $answer->fetch();
 	$answer->closeCursor();
 	
+	if ($_SESSION['rank'] < 5) { $width = 20; } elseif ($_SESSION['rank'] == 5) { $width = 16; } elseif ($_SESSION['rank'] > 5) { $width = 14; }
+	else { $width = 25;}
 	
 ?>
 	<table cellspacing="0" cellpadding="0" style="text-align:center;" width="100%">
       		<tbody>
       			<tr>
-      				<td>
+      				<td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
 							Acceuil
@@ -47,7 +49,7 @@
 						</li>
 					</ul>
 			        </td>
-			        <td>
+			        <td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
 							Communauté
@@ -92,7 +94,7 @@
 						</li>
 					</ul>
 			        </td>
-			        <td>
+			        <td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
 							Contenu
@@ -119,7 +121,7 @@
 			         <?php if ($_SESSION['rank'] > 4)
 			         {
 			         ?>
-			        <td>
+			        <td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
 							Modération
@@ -149,7 +151,7 @@
 			        <?php if ($_SESSION['rank'] > 5)
 			        {
 			        ?>
-			        <td>
+			        <td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
 							Administration
@@ -194,7 +196,7 @@
 			        <?php if($_SESSION['connected'])
 			        {
 			        ?>
-				<td>
+				<td width="<?= $width,'%'?>">
 					<ul class="menu1">
 						<li>
 							Magie
@@ -208,7 +210,7 @@
 						</li>
 					</ul>
 			        </td>
-			       	<td>
+			       	<td width="<?= $width,'%'?>">
 					<ul class="menu1">
 						<li>
 							Mon Compte
@@ -244,7 +246,7 @@
 			        else
 			        {
 			        ?>
-			        <td>
+			        <td width="<?= $width,'%'?>">
 					<ul class="menu1">
 						<li>
 							Enregistrement
