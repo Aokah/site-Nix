@@ -93,7 +93,7 @@ li {
 	position: relative;
 }
 
-li:hover ul.menu2, li li:hover ul.niveau3 {
+li:hover ul.menu2 {
 	display: block;
 	
 }
