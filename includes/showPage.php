@@ -255,12 +255,12 @@
       		<tbody>
       			<tr>
 				<td width="270" valign="top">
-					<div style="background-color: white;">
+					<div>
 						<?php include('includes/loggedIn.php'); 	loggedIn(); ?>
 					</div>
       				</td>
-				 <td valign="top">
-					   <div id="main" width="100%">
+				 <td valign="top" width="100%">
+					   <div id="main">
 				          	Contenu
 				          </div>
 				  </td>
