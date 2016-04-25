@@ -218,7 +218,70 @@
 				</tbody>
 			</table>
 		</div>
-		
+	
+	<div>
+  <table cellspacing="0" cellpadding="0" style="background-color:white;" width="100%" background="pics/Nix.jpg">
+    <tbody>
+      <tr>
+      	<td>
+      		<table cellspacing="0" cellpadding="0" style="background-color: white;">
+      			<tbody>
+      				<td width="20%">
+					<a href="index.php"><img src="pics/logo1.gif" alt="" /></a>
+				</td>
+				<td style="text-align: right;" width="600%">
+					<p>
+						News
+					</p>
+				</td>
+				<td width="10%">
+					<img src="http://herobrine.fr/blapproved.php?bid=3" title="Approved by BL">
+				</td>
+				<td width="10%">
+					<a href="https://minecraft.net/" target=_blank><img src="http://herobrine.fr/pics/mc1.png" alt="" /></a>
+				</td>
+      			</tbody>
+      		</table>
+      	</td>
+      </tr>
+      <tr>
+      	<td>
+      		Nav	
+      	</td>
+      </tr>
+      <tr>
+      	<td>
+      		<table cellspacin="20" cellpadding="20">
+      		<tbody>
+      			<tr>
+				<td width="270" valign="top">
+					<div style="background-color: white;">
+						Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+	      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+	      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+	      					Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />Beaucoup de noms<br />
+					</div>
+      				</td>
+				 <td>
+					   <div id="main" width="*">
+				          	Contenu
+				          </div>
+				  </td>
+      			</tr>
+      		</tbody>
+      	</table>
+      	</td>
+      </tr>
+      <tr>
+        <td>
+        	<div id="footer">
+			<p>Nix est un site communautaire à destination des joueurs de Minecraft. Le contenu de ce site internet est une fiction - 2015</p>
+		</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>	
 	<script>
 		var button = document.getElementById('button_menu');
 		var header = document.getElementById('header');
