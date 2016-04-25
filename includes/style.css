@@ -100,13 +100,13 @@ li:hover ul.menu2 {
 }
 .menu1
 {
-	background-color: #8080ee;
 	line-height: 20px;
 	margin-top: 0;
 	margin-bottom: 0px;
 	padding: 10px;
 	z-index: 2;
 	background: url("/pics/ico/menu_ico_left.png") left no-repeat, url("/pics/ico/menu_ico_right.png") right no-repeat;
+	background-color: #8080ee;
 }
 .menu2
 {
