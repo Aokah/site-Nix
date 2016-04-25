@@ -104,12 +104,14 @@ li:hover ul.menu2 {
 	background: url("/pics/ico/menu_ico_left.png") left no-repeat, url("/pics/ico/menu_ico_right.png") right no-repeat;
 	background-color: #8080ee;
 	border: 5px solid #bfbff6;
+	padding-left: 0;
 }
 .menu2
 {
 	background-color: #a0a0ee;
 	z-index: 3;
 	width: 100%;
+	padding-left: 0;
 }
 /* elements nav */
 
