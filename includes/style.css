@@ -157,7 +157,7 @@ ul.nav {
 a.link {
     text-decoration: none;
 	color: #000000;
-	padding: 10px;
+	margin: 10px;
 }
 
 li.navbg {
