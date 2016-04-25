@@ -158,10 +158,6 @@ a.link:hover
 {
 	color: #ffffff;
 }
-.link
-{
-	border: 5px solid #8080ee;
-}
 
 li.navbg {
     background-image: url("/pics/menuOFF.png");
