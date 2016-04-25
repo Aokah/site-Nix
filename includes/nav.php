@@ -321,6 +321,30 @@
 			        </td>
 			        <?php
 			        }
+			        else
+			        {
+			        ?>
+			        <td>
+					<ul class="menu1">
+						<li>
+							Enregistrement
+							<ul class="menu2">
+								<a href="index?p=register" class="link">
+									<li>
+										S'inscrire
+									</li>
+								</a>
+								<a href="index?p=login" class="link">
+									<li>
+										Se connecter
+									</li>
+								</a>
+							</ul>
+						</li>
+					</ul>
+			        </td>
+			        <?php
+			        }
 			        ?>
       			</tr>
       		</tbody>
