@@ -45,7 +45,7 @@
 								<tr>
 									<td width="270" valign="top">
 										<?php
-											include('includes/nav.php'); 		nav();
+											//include('includes/nav.php'); 		nav();
 											include('includes/loggedIn.php'); 	loggedIn();
 										?>
 									</td>
@@ -246,7 +246,7 @@
       </tr>
       <tr>
       	<td>
-      		Nav	
+      		<?php include ('includes/nav.php'); nav(); ?>
       	</td>
       </tr>
       <tr>
