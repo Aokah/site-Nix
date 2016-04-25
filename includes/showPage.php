@@ -63,11 +63,7 @@
 						include('includes/a_alerts.php');	a_alerts();
 					?>
 					<div id="main">
-						<?php
-						if ($page != 'login')
-						{
-							$cbok == true;
-						}
+					<?php
 				        	switch ($page)
 											{
 												case '' : 				{	include('includes/home.php'); 					home(); 				break; }
@@ -123,14 +119,9 @@
 											} 
 											?>
 					</div>
-					<?php  if ($cbok == true)
-					{ ?>
-						<div id="main" style="margin-top:20px;">
-							<?php include('includes/chatbox/chatboxPagemini.php'); chatboxminiPage(); ?>
-						</div>	
-					<?php
-					}
-					?>
+					<div id="main" style="margin-top:20px;">
+						<?php include('includes/chatbox/chatboxPagemini.php'); chatboxminiPage(); ?>
+					</div>
 				  </td>
       			</tr>
       		</tbody>
