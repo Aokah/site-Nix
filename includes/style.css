@@ -154,10 +154,16 @@ ul.nav {
 	color: #EEEEEE;
 }
 
-a.link {
+a.link
+{
     text-decoration: none;
 	color: #000000;
 	margin: 10px;
+}
+a.link:hover
+{
+	color: #999999;
+	background-color: #7070cc ;
 }
 
 li.navbg {
