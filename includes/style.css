@@ -87,8 +87,7 @@ ul ul {
 	left: -10px;
 	margin: 0px;
 	padding: 0px;
-	border-left: 15px solid #FFCCCC;
-	border-right: 15px solid #FFCCCC;
+	background-image: url("/pics/ico/menu_ico_left") left, url("/pics/ico/menu_ico_right") right;
 }
 
 li {
