@@ -24,7 +24,7 @@
 				</td>
 				<td style="text-align: right;" width="600%">
 					<p>
-						News
+						<?php include('includes/news.php'); news('disp'); echo ' ';?>
 					</p>
 				</td>
 				<td width="10%">
