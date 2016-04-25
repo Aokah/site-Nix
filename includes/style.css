@@ -105,6 +105,8 @@ li:hover ul.menu2 {
 	background-color: #8080ee;
 	border: 5px solid #bfbff6;
 	padding-left: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .menu2
 {
