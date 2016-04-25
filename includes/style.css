@@ -87,6 +87,8 @@ ul ul {
 	left: -10px;
 	margin: 0px;
 	padding: 0px;
+	border-left: 15px solid #FFCCCC;
+	border-right: 15px solid #FFCCCC;
 }
 
 li {
