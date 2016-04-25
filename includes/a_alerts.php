@@ -1,6 +1,6 @@
 <?php function a_alerts()
 {
-	global $_SESSION; $db, $_GET;
+	global $_SESSION, $db, $_GET;
 	if ($_SESSION['connected'])
 		{
 			$id = $_SESSION['id'];
