@@ -14,39 +14,6 @@
 	
 ?>
 <!--	
-<?php if (!$_SESSION['connected']) { ?>
-	<div class="navtitle">Enregistrement</div>
-		<ul class="nav">
-			<a class="link" href="index.php?p=register" >
-				<li class="navbg" <?php echo ($page == 'register') ? 'class="cur_page"' : '';?>><img src="/pics/icoregister.gif" alt="" />Inscription</li>
-			</a>
-			<a class="link" href="index.php?p=login" >
-				<li class="navbg" <?php echo ($page == 'login') ? 'class="cur_page"' : '';?>><img src="/pics/ico/connection.gif" alt="" />Connexion</li>
-			</a>
-		</ul>
-<?php }?>
-<?php if ($_SESSION['connected']) { if ($_SESSION['pionier'] == 1) { $pionier = "-P";} else { $pionier = '';} if ($_SESSION['technician'] == 1) { $tech = "-T";} else { $tech = '';} ?>
-		<div class="navtitle">Compte</div>
-		<ul class="nav">
-			<li class="navbg2" style="padding: 16px;"><span class="name<?= $_SESSION['rank']?><?echo $tech?><?echo $pionier?>"><? if ($_SESSION['pionier'] == 1) { echo "Pionier";} else { echo $_SESSION['title'] ;}?> <?= $_SESSION['name' ]?></span></li>
-			<a class="link" href="index.php?p=perso" >
-				<li class="navbg" <?php echo ($page == 'perso') ? 'class="cur_page"' : '';?>><img src="/pics/ico/page.gif" alt="" />Personnage</li>
-			</a>
-			<a class="link" href="index.php?p=pm" >
-				<li class="navbg" <?php echo ($page == 'pm') ? 'class="cur_page"' : '';?>><img src="/pics/ico/pm.gif" alt="" />Messages Privés
-					<? if ($_SESSION['alertNewMsgs']) { ?>
-						<span style="color:red">[<?= $_SESSION['alertNewMsgs']?>] </span>
-					<? } ?>
-				</li>
-			</a>
-			<a class="link" href="index.php?p=account" >
-				<li class="navbg" <?php echo ($page == 'account') ? 'class="cur_page"' : '';?>><img src="/pics/ico/option.gif" alt="" />Mon Compte</li>
-			</a>
-			<a class="link" href="index.php?p=login&amp;action=disconnection" >
-				<li class="navbg" ><img src="includes/img/porte.gif" alt="" />Déconnexion</li>
-			</a>
-		</ul>
-<?php } ?>
 	
 <?php if ($_SESSION["rank"] >= 3) { 
 			
@@ -302,6 +269,8 @@
 								</a>
 								<a href="index?p=pm" class="link">
 									<li>
+										<?php if ($_SESSION['alertNewMsgs']) { ?><span style="color:red">[<?= $_SESSION['alertNewMsgs']?>] </span><?php
+										} ?>
 										Messages Privés
 									</li>
 								</a>
