@@ -10,15 +10,13 @@
 	$answer = $db->query("SELECT COUNT(*) AS count FROM candid WHERE verify = 0");
 	$line = $answer->fetch();
 	$answer->closeCursor();
-	if ($_SESSION['rank'] > 5) {  } elseif ($_SESSION['rank'] == 5) { $width == 14;} elseif ($_SESSION['rank'] < 5) { $width = 19;}
-	else { $width = 23; }
 	
 	
 ?>
 	<table cellspacing="0" cellpadding="0" style="text-align:center;" width="100%">
       		<tbody>
       			<tr>
-      				<td width="<?php echo $width,'%'?>">
+      				<td>
 			        	<ul class="menu1">
 						<li>
 							Acceuil
@@ -49,7 +47,7 @@
 						</li>
 					</ul>
 			        </td>
-			        <td width="<?php echo $width,'%'?>">
+			        <td>
 			        	<ul class="menu1">
 						<li>
 							Communauté
@@ -94,7 +92,7 @@
 						</li>
 					</ul>
 			        </td>
-			        <td width="<?php echo $width,'%'?>">
+			        <td>
 			        	<ul class="menu1">
 						<li>
 							Contenu
@@ -121,7 +119,7 @@
 			         <?php if ($_SESSION['rank'] > 4)
 			         {
 			         ?>
-			        <td width="<?php echo $width,'%'?>">
+			        <td>
 			        	<ul class="menu1">
 						<li>
 							Modération
@@ -151,7 +149,7 @@
 			        <?php if ($_SESSION['rank'] > 5)
 			        {
 			        ?>
-			        <td width="<?php echo $width,'%'?>">
+			        <td>
 			        	<ul class="menu1">
 						<li>
 							Administration
@@ -196,7 +194,7 @@
 			        <?php if($_SESSION['connected'])
 			        {
 			        ?>
-				<td width="<?php echo $width,'%'?>">
+				<td>
 					<ul class="menu1">
 						<li>
 							Magie
@@ -210,7 +208,7 @@
 						</li>
 					</ul>
 			        </td>
-			       	<td width="<?php echo $width,'%'?>">
+			       	<td>
 					<ul class="menu1">
 						<li>
 							Mon Compte
@@ -246,7 +244,7 @@
 			        else
 			        {
 			        ?>
-			        <td width="<?php echo $width,'%'?>">
+			        <td>
 					<ul class="menu1">
 						<li>
 							Enregistrement
