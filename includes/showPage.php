@@ -64,7 +64,7 @@
 					?>
 					<div id="main">
 						<?php
-						if ($page != 'login' OR $page != "chatbox" OR $page !="chatboxmj" OR $page != 'chat_ig' OR $page != "register")
+						if ($page != 'login')
 						{
 							$cbok == true;
 						}
