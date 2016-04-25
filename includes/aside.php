@@ -1,5 +1,6 @@
 <?php function aside()
 {
+	global $db, $_POST, $_GET, $_SESSION;
 	if ($_SESSION["rank"] >= 3) { 
 			
 	$answer = $db->query('SELECT COUNT(*) AS ngrada FROM hist_grada');
