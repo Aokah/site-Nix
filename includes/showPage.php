@@ -12,7 +12,7 @@
 	
 	?>
 	
-	<div>
+<div>
   <table cellspacing="0" cellpadding="0" width="100%" background="pics/Nix.jpg">
     <tbody>
       <tr>
@@ -61,7 +61,7 @@
 					<?php 
 						include('includes/alert.php'); 		alert();
 						include('includes/a_alerts.php');	a_alerts();
-						?>
+					?>
 					<div id="main">
 						<?php
 						if ($page != 'login' OR $page != "chatbox" OR $page !="chatboxmj" OR $page != 'chat_ig' OR $page != "register")
@@ -138,8 +138,8 @@
       	</td>
       </tr>
       <tr>
-        <td>
-        	<div id="footer">
+        <td id="footer">
+        	<div>
 			<p>Nix est un site communautaire à destination des joueurs de Minecraft. Le contenu de ce site internet est une fiction - 2015</p>
 		</div>
         </td>
