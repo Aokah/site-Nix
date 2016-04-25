@@ -10,8 +10,8 @@
 	$answer = $db->query("SELECT COUNT(*) AS count FROM candid WHERE verify = 0");
 	$line = $answer->fetch();
 	$answer->closeCursor();
-	if ($_SESSION['rank'] > 5) { $width = 13; } elseif ($_SESSION['rank'] == 5) { $width == 15;} elseif ($_SESSION['rank'] < 5) { $width = 20;}
-	else { $width = 25; }
+	if ($_SESSION['rank'] > 5) { $width = 12; } elseif ($_SESSION['rank'] == 5) { $width == 14;} elseif ($_SESSION['rank'] < 5) { $width = 19;}
+	else { $width = 23; }
 	
 	
 ?>
