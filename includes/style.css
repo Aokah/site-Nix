@@ -80,7 +80,7 @@ strong
     width: auto;
 }
 
-ul ul {
+ul div.menu2 {
 	display: none;
 	position: absolute;
 	top: -1 li;
@@ -93,7 +93,7 @@ li {
 	position: relative;
 }
 
-li:hover ul.menu2 {
+li:hover div.menu2 {
 	display: block;
 	
 }
