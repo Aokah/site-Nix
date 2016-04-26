@@ -27,11 +27,11 @@
 										Acceuil
 									</th>
 									<tr>
-										<a href="index.php" class="link">
-											<td>
+										<td>
+											<a href="index.php" class="link">
 												Acceuil	
-											</td>	
-										</a>
+											</a>
+										</td>
 									</tr>
 								</tbody>
 							</table>
