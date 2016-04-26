@@ -91,7 +91,7 @@
 			$verif = $db->query('SELECT COUNT(*) AS candids FROM candid WHERE verify = 0');
 			if ($line = $verif->fetch())
 			{
-				$candid = ($line['candids'] == 1) ? '' : 's';
+				$candid = ($line['candids'] <= 1) ? '' : 's';
 				?>
 				<div class="bigalert">
 					<h3>Candidatures en attente . . .</h3>
