@@ -152,15 +152,15 @@ ul.nav {
 
 a.link div
 {
-	text-decoration: none;
 	color: #000000;
 	padding: 10px;
 	background: url("/pics/ico/menu_dev_left.png") left no-repeat, url("/pics/ico/menu_dev_right.png") right no-repeat;
 	background-color: #8080ee;
 }
-a.link:hover
+a.link div:hover
 {
 	color: #ffffff;
+	background-color: #7070dd;
 }
 
 li.navbg {
