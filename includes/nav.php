@@ -24,7 +24,7 @@
 							Acceuil
 							<div class="menu2">
 								<a href="index.php" class="link">
-									<div class="link">
+									<div>
 										Acceuil
 									</div>
 								</a>
@@ -35,13 +35,13 @@
 								</a>
 								
 								<a href="index?p=server" class="link">
-									<div class="link">
+									<div>
 										Le Serveur
 									</div>
 								</a>
 								
 								<a href="index?p=candid" class="link">
-									<div class="link">
+									<div>
 										<?if ($_SESSION["rank"] >= 5 AND $line['count'] >= 1) {?>
 										<span style="color: red">[<?= $line['count']?>]</span><? } ?>
 										Candidature
@@ -55,32 +55,37 @@
 			        	<ul class="menu1">
 						<li>
 							Communauté
-							<ul class="menu2">
-								<a href="index?p=news" class="link">
-									<li>
+							<div class="menu2">
+								<a href="index?p=news">
+									<div class="link">
 										Actualités
-									</li>
+									</div>
 								</a>
-								<a href="index?p=members" class="link">
-									<li>
+								
+								<a href="index?p=members">
+									<div class="link">
 										Membres
-									</li>
+									</div>
 								</a>
-								<a href="index?p=forum" class="link">
-									<li>
+								
+								<a href="index?p=forum">
+									<div class="link">
 										Forums
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=chatbox" class="link">
-									<li>
+									<div class="link">
 										Dialogue en Direct
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=update" class="link">
-									<li>
-										Info Maintenance
-									</li>
+									<div class="link">
+										Maintenance
+									</div>
 								</a>
+							</div>
 								<?php if ($_SESSION['connected'])
 								{
 								?>
@@ -92,7 +97,6 @@
 								<?php
 								}
 								?>
-							</ul>
 						</li>
 					</ul>
 			        </td>
