@@ -109,7 +109,6 @@ li:hover div.menu2 {
 }
 .menu2
 {
-	background-color: #a0a0ee;
 	z-index: 3;
 	width: 100%;
 	padding-left: 0;
@@ -156,7 +155,8 @@ a.link div
 	text-decoration: none;
 	color: #000000;
 	padding: 10px;
-	border: 5px solid black;
+	background: url("/pics/ico/menu_dev_left.png") left no-repeat, url("/pics/ico/menu_dev_right.png") right no-repeat;
+	background-color: #8080ee;
 }
 a.link:hover
 {
