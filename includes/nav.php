@@ -20,8 +20,8 @@
       			<tr>
       				<td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
-			        		<div style="position: absolute; left:10px;">
-			        			<img src="pics/ico/alert.png" alt="" />
+			        		<div style="position: absolute; left: -50px; top: 60px ; z-index: 0;">
+			        			<img alt="" src="pics/ico/alert.png" width="14%">
 			        		</div>
 						<li>
 							Acceuil
