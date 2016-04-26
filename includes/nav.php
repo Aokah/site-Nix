@@ -21,27 +21,13 @@
       				<td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
-							<ul>
-								<li>
-									<table cellspacing="0" cellpadding="0" class="menu2">
-										<tbody>
-											<tr>
-												<th>
-													Acceuil
-												</th>
-												
-											</tr>
-											<tr>
-												<td>
-														Acceuil	
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</li>
-							</ul>
-							
-							<!--
+							Acceuil
+							<ul class="menu2">
+								<a href="index.php" class="link">
+									<li>
+										Acceuil
+									</li>
+								</a>
 								<a href="index?p=rules" class="link">
 									<li>
 										Règles
@@ -59,7 +45,7 @@
 										Candidature
 									</li>
 								</a>
-							</ul> -->
+							</ul>
 						</li>
 					</ul>
 			        </td>
