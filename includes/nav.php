@@ -56,47 +56,48 @@
 						<li>
 							Communauté
 							<div class="menu2">
-								<a href="index?p=news">
-									<div class="link">
+								<a href="index?p=news" class="link">
+									<div>
 										Actualités
 									</div>
 								</a>
 								
-								<a href="index?p=members">
-									<div class="link">
+								<a href="index?p=members" class="link">
+									<div>
 										Membres
 									</div>
 								</a>
 								
-								<a href="index?p=forum">
-									<div class="link">
+								<a href="index?p=forum" class="link">
+									<div>
 										Forums
 									</div>
 								</a>
 								
 								<a href="index?p=chatbox" class="link">
-									<div class="link">
+									<div>
 										Dialogue en Direct
 									</div>
 								</a>
 								
 								<a href="index?p=update" class="link">
-									<div class="link">
+									<div>
 										Maintenance
 									</div>
 								</a>
-							</div>
 								<?php if ($_SESSION['connected'])
 								{
 								?>
 								<a href="index?p=sondage" class="link">
-									<li>
+									<div>
 										Sondages
-									</li>
+									</div>
 								</a>
 								<?php
 								}
 								?>
+							</div>
+							
 						</li>
 					</ul>
 			        </td>
