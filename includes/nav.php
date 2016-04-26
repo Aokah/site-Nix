@@ -20,7 +20,7 @@
       			<tr>
       				<td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
-			        		<div style="position: absolute; left: -50px; top: 60px ; z-index: 0;">
+			        		<div style="position: absolute; left: -60px; top: 60px ; z-index: 0;">
 			        			<img alt="" src="pics/ico/alert.png" width="14%">
 			        		</div>
 						<li>
@@ -236,6 +236,9 @@
 			        </td>
 			       	<td width="<?= $width,'%'?>">
 					<ul class="menu1">
+						<div style="position: absolute; left: -60px; top: 60px ; z-index: 0;">
+			        			<img alt="" src="pics/ico/alert.png" width="14%">
+			        		</div>
 						<li>
 							Mon Compte
 							<div class="menu2">
