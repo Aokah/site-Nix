@@ -22,34 +22,32 @@
 			        	<ul class="menu1">
 						<li>
 							Acceuil
-							
 							<div class="menu2">
-								Menu B
-							</div>
-							<ul >
 								<a href="index.php" class="link">
-									<li>
+									<div class="link">
 										Acceuil
-									</li>
+									</div>
 								</a>
 								<a href="index?p=rules" class="link">
-									<li>
+									<div class="link">
 										Règles
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=server" class="link">
-									<li>
+									<div class="link">
 										Le Serveur
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=candid" class="link">
-									<li>
+									<div class="link">
 										<?if ($_SESSION["rank"] >= 5 AND $line['count'] >= 1) {?>
 										<span style="color: red">[<?= $line['count']?>]</span><? } ?>
 										Candidature
-									</li>
+									</div>
 								</a>
-							</ul>
+							</div>
 						</li>
 					</ul>
 			        </td>
