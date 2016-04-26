@@ -97,7 +97,6 @@
 								}
 								?>
 							</div>
-							
 						</li>
 					</ul>
 			        </td>
@@ -105,23 +104,31 @@
 			        	<ul class="menu1">
 						<li>
 							Contenu
-							<ul class="menu2">
+							<div class="menu2">
 								<a href="index?p=races" class="link">
-									<li>
-										Les Races
-									</li>
+									<div>
+										Races
+									</div>
 								</a>
+								
 								<a href="index?p=guilds" class="link">
-									<li>
+									<div>
 										Les Groupes
-									</li>
+									</div>
 								</a>
+								
+								<a href="index?p=chatbox" class="link">
+									<div>
+										Dialogue en Direct
+									</div>
+								</a>
+								
 								<a href="index?p=staffteam" class="link">
-									<li>
+									<div>
 										L'Equipe Admin'
-									</li>
+									</div>
 								</a>
-							</ul>
+							</div>
 						</li>
 					</ul>
 			        </td>
