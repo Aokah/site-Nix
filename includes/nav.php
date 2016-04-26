@@ -247,8 +247,7 @@
 					<ul class="menu1">
 						<li>
 							Mon Compte
-							<ul class="menu2">
-								<div class="menu2">
+							<div class="menu2">
 								<a href="index?p=perso" class="link">
 									<div>
 										Mon Personnage
@@ -273,6 +272,7 @@
 										Deconnexion
 									</div>
 								</a>
+							</div>
 						</li>
 					</ul>
 			        </td>
