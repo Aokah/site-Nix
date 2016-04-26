@@ -20,9 +20,6 @@
       			<tr>
       				<td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
-			        		<div style="position: absolute; left: -60px; top: 60px ; z-index: 0;">
-			        			<img alt="" src="pics/ico/alert.png" width="14%">
-			        		</div>
 						<li>
 							Acceuil
 							<div class="menu2">
@@ -238,7 +235,6 @@
 					<ul class="menu1">
 						<li>
 							Mon Compte
-							<img alt="" src="pics/ico/alert.png" width="14%" style="position: relative; left: -60px; top: 60px ; z-index: 0;">
 							<div class="menu2">
 								<a href="index?p=perso" class="link">
 									<div>
