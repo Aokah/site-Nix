@@ -22,6 +22,12 @@
 			        	<ul class="menu1">
 						<li>
 							Acceuil
+							<div>
+								Menu A
+							</div>
+							<div>
+								Menu B
+							</div>
 							<ul class="menu2">
 								<a href="index.php" class="link">
 									<li>
