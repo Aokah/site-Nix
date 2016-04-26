@@ -32,11 +32,9 @@
 												
 											</tr>
 											<tr>
-												<a href="index.php" class="link">
-													<td>
+												<td>
 														Acceuil	
-													</td>
-												</a>
+												</td>
 											</tr>
 										</tbody>
 									</table>
