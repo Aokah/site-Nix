@@ -21,20 +21,28 @@
       				<td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
-							<table cellspacing="0" cellpadding="0" class="menu2">
-								<tbody>
-									<th>
-										Acceuil
-									</th>
-									<tr>
-										<td>
-											<a href="index.php" class="link">
-												Acceuil	
-											</a>
-										</td>
-									</tr>
-								</tbody>
-							</table>
+							<ul>
+								<li>
+									<table cellspacing="0" cellpadding="0" class="menu2">
+										<tbody>
+											<tr>
+												<th>
+													Acceuil
+												</th>
+												
+											</tr>
+											<tr>
+												<td>
+													<a href="index.php" class="link">
+														Acceuil	
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</li>
+							</ul>
+							
 							<!--
 								<a href="index?p=rules" class="link">
 									<li>
