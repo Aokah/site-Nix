@@ -86,6 +86,21 @@
 			</div>
 		<?php
 		}
+		if ($_SESSION['rank'] > 4)
+		{
+			$verif = $db->query('SELECT COUNT(*) AS candids FROM candid WHERE verify = 0');
+			if ($line = $verif->fetch())
+			{
+				$candid = ($line['candids'] == 1) ? '' : 's';
+				?>
+				<div class="bigalert">
+					<h3>Candidatures en attente . . .</h3>
+					<p>Vous avez actuellement <?php echo $line['candids'], ' candidature', $candid;?> en attente de vérification.
+					<a href="index?p=candid">Cliquez ici</a> pour accéder à la page des Candidatures.</p>
+				</div>
+				<?php
+			}
+		}
 	}
 }
 ?>
