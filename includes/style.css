@@ -109,14 +109,13 @@ li:hover div.menu2 {
 }
 .menu2
 {
+	background: url("/pics/ico/menu_dev_bottom.png") no-repeat scroll bottom;
 	z-index: 3;
 	width: 100%;
 	padding-left: 0;
 	padding-top: 15px;
-	padding-bottom: 15px;
 	margin: 0;
 	padding-bottom:17px;
-	background: url("/pics/ico/menu_dev_bottom.png") no-repeat scroll bottom;
 }
 /* elements nav */
 
