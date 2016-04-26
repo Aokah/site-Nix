@@ -139,23 +139,31 @@
 			        	<ul class="menu1">
 						<li>
 							Modération
-							<ul class="menu2">
+							<div class="menu2">
 								<a href="index?p=whitelist" class="link">
-									<li>
-										La Whitelist
-									</li>
+									<div>
+										Whitelist
+									</div>
 								</a>
+								
 								<a href="index?p=staffcontent" class="link">
-									<li>
+									<div>
 										Le BackGround
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=magie_admin" class="link">
-									<li>
-										Administration Magique
-									</li>
+									<div>
+										Dialogue en Direct
+									</div>
 								</a>
-							</ul>
+								
+								<a href="index?p=staffteam" class="link">
+									<div>
+										Administration Magique
+									</div>
+								</a>
+							</div>
 						</li>
 					</ul>
 			        </td>
@@ -169,38 +177,49 @@
 			        	<ul class="menu1">
 						<li>
 							Administration
-							<ul class="menu2">
+							<div class="menu2">
 								<a href="index?p=chat_ig" class="link">
-									<li>
+									<div>
 										Chat In Game
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=chatboxmj" class="link">
-									<li>
-										Chat Box MJ
-									</li>
+									<div>
+										ChatBox MJ
+									</div>
 								</a>
+								
+								<a href="index?p=magie_admin" class="link">
+									<div>
+										Administration Magique
+									</div>
+								</a>
+								
 								<a href="index?p=serv_admin" class="link">
-									<li>
+									<div>
 										Administration Serveur
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=chrono" class="link">
-									<li>
+									<div>
 										Chronologie
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=rulesmj" class="link">
-									<li>
+									<div>
 										Règlement MJ
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=pnj_list" class="link">
-									<li>
+									<div>
 										Liste des PNJs
-									</li>
+									</div>
 								</a>
-							</ul>
+							</div>
 						</li>
 					</ul>
 				</td>
@@ -214,13 +233,13 @@
 					<ul class="menu1">
 						<li>
 							Magie
-							<ul class="menu2">
+							<div class="menu2">
 								<a href="index?p=sorts" class="link">
-									<li>
-										Mes sorts
-									</li>
+									<div>
+										Mes Sorts
+									</div>
 								</a>
-							</ul>
+							</div>
 						</li>
 					</ul>
 			        </td>
@@ -229,29 +248,31 @@
 						<li>
 							Mon Compte
 							<ul class="menu2">
+								<div class="menu2">
 								<a href="index?p=perso" class="link">
-									<li>
+									<div>
 										Mon Personnage
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=pm" class="link">
-									<li>
+									<div>
 										<?php if ($_SESSION['alertNewMsgs']) { ?><span style="color:red">[<?= $_SESSION['alertNewMsgs']?>] </span><?php
-										} ?>
-										Messages Privés
-									</li>
+										} ?> Message Privés
+									</div>
 								</a>
+								
 								<a href="index?p=account" class="link">
-									<li>
+									<div>
 										Mon Compte
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=login&action=disconnection" class="link">
-									<li>
-										Se Déconnecter
-									</li>
+									<div>
+										Deconnexion
+									</div>
 								</a>
-							</ul>
 						</li>
 					</ul>
 			        </td>
@@ -264,18 +285,19 @@
 					<ul class="menu1">
 						<li>
 							Enregistrement
-							<ul class="menu2">
+							<div class="menu2">
 								<a href="index?p=register" class="link">
-									<li>
+									<div>
 										S'inscrire
-									</li>
+									</div>
 								</a>
+								
 								<a href="index?p=login" class="link">
-									<li>
+									<div>
 										Se connecter
-									</li>
+									</div>
 								</a>
-							</ul>
+							</div>
 						</li>
 					</ul>
 			        </td>
