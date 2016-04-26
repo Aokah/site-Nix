@@ -154,12 +154,6 @@
 								
 								<a href="index?p=magie_admin" class="link">
 									<div>
-										Dialogue en Direct
-									</div>
-								</a>
-								
-								<a href="index?p=magie_admin" class="link">
-									<div>
 										Administration Magique
 									</div>
 								</a>
