@@ -89,7 +89,7 @@
 		if ($_SESSION['rank'] > 4)
 		{
 			$verif = $db->query('SELECT COUNT(*) AS candids FROM candid WHERE verify = 0');
-			if ($line = $verif->fetch())
+			if ($line = $verif->fetch() AND $line['candids'] > 0)
 			{
 				$candid = ($line['candids'] <= 1) ? '' : 's';
 				?>
