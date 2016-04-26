@@ -22,9 +22,12 @@
 			        	<ul class="menu1">
 						<li>
 							Acceuil
+							<a href="#">
 							<div>
 								Menu A
-							</div>
+							</div>	
+							</a>
+							
 							<div>
 								Menu B
 							</div>
