@@ -21,7 +21,7 @@
       				<td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
-							Acceuil
+							Acceuil <?if ($_SESSION["rank"] >= 5 AND $line['count'] >= 1) { echo '<span style="color:red;">[!]</span>'; }?>
 							<div class="menu2">
 								<a href="index.php" class="link">
 									<div>
@@ -234,7 +234,7 @@
 			       	<td width="<?= $width,'%'?>">
 					<ul class="menu1">
 						<li>
-							Mon Compte
+							Mon Compte <?php if ($_SESSION['alertNewMsgs']) { echo '<span style="color:red;">[!]</span>';}?>
 							<div class="menu2">
 								<a href="index?p=perso" class="link">
 									<div>
