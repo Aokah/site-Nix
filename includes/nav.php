@@ -25,7 +25,7 @@
 							<div class="menu2">
 								<a href="index.php" class="link">
 									<div>
-										Acceuil
+										Page d'Acceuil
 									</div>
 								</a>
 								<a href="index?p=rules" class="link">
