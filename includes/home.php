@@ -28,47 +28,47 @@
 			<td>
 				<img src="pics/rank0.png" alt="" width="80" />
 			</td>
-			<td background="pics/ico/arrow.png">
+			<td background="pics/ico/arrow.png" width="80">
 				<p> </p>
 			</td>
 			<td>
-				Grade 1
+				<img src="pics/rank1.png" alt="" width="80" />
+			</td>
+			<td background="pics/ico/arrow.png" width="80">
+				<p> </p>
 			</td>
 			<td>
-				Flèche
+				<img src="pics/rank2.png" alt="" width="80" />
+			</td>
+			<td background="pics/ico/arrow.png" width="80">
+				<p> </p>
 			</td>
 			<td>
-				Grade 2
+				<img src="pics/rank3.png" alt="" width="80" />
+			</td>
+			<td background="pics/ico/arrow.png" width="80">
+				<p> </p>
 			</td>
 			<td>
-				Flèche
+				<img src="pics/rank4.png" alt="" width="80" />
+			</td>
+			<td background="pics/ico/arrow.png" width="80">
+				<p> </p>
 			</td>
 			<td>
-				Grade 3
+				<img src="pics/rank5.png" alt="" width="80" />
+			</td>
+			<td background="pics/ico/arrow.png" width="80">
+				<p> </p>
 			</td>
 			<td>
-				Flèche
+				<img src="pics/rank6.png" alt="" width="80" />
+			</td>
+			<td background="pics/ico/arrow.png" width="80">
+				<p> </p>
 			</td>
 			<td>
-				Grade 4
-			</td>
-			<td>
-				Flèche
-			</td>
-			<td>
-				Grade 5
-			</td>
-			<td>
-				Flèche
-			</td>
-			<td>
-				Grade 6
-			</td>
-			<td>
-				Flèche
-			</td>
-			<td>
-				Grade 7
+				<img src="pics/rank7.png" alt="" width="80" />
 			</td>
 		</tr>
 	</table>
