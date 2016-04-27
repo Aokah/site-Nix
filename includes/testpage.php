@@ -10,7 +10,7 @@
     $verif->execute(array($_SESSION['id'])); $verif = $verif->fetch();
     if ($_SESSION['rank'] > 4)
     {
-      $select = $db->query('SELECT COUNT(*) AS count FROM candid WHERE veriffy = 0');
+      $select = $db->query('SELECT COUNT(*) AS count FROM candid WHERE verify = 0');
       $select = $select->fecth();
     ?>
     <h2>Lecture des candidatures</h2>
