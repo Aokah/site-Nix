@@ -15,9 +15,9 @@
 	Votre personnage pourra ainsi évolué dans ce monde et peut être marqué l'histoire de Nix. Allant du simple débutant parmi tant d'autres au plus puissant des Sages de l'histoire.  Cependant Nix ne vous proposes pas que de la magie. 
 	En effet certaine personnes ne sont pas très enjoué par celle-ci et favoriserons donc la technologie !<br />
 	Rejoignez cette grande aventure au plus vite !</p>
-	
-	<img src="pics/imghome.png" alt=" " align="center" width="100%"/>
-	
+	<div style="text-align:center;">
+		<img src="pics/imghome.png" alt=" " width="70%"/>
+	</div>
 	<h3>Comment puis-je progresser sur ce serveur ?</h3>
 	RPNix.com vous propose deux schémas de progresser bien distincts :<br />
 	D'une part la progression RP, notée par le grade de votre personnage au sein de son institution visible sur la page qui regroupe les différentes institutions et d'autre part la progression dit "HRP" du joueur à travers les grades du site qui lu permettront 
