@@ -43,7 +43,7 @@
 		<li>Réécrire la page des Incontations.</li>
 		<li>Recréer le CSS du site et si possible l'améliorer au mieux</li>
 		<li>Réécriture de la page des Guildes</li>
-		<li>Rendre le NAV propre à Nix</li>
+		<li>Rendre le NAV propre à Nix et y incorporer des menus déroulants</li>
 	</ul>
 <?php
 
