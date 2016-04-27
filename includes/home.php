@@ -27,49 +27,49 @@
 		<tbody>
 			<tr>
 				<td>
-					<img src="pics/rank0.png" alt="" width="80" />
+					<img src="pics/rank0.png" alt=""  width="6%"  />
 				</td>
-				<td background="pics/ico/arrow.png" width="78">
+				<td background="pics/ico/arrow.png"  width="6%" >
 					<p> </p>
 				</td>
 				<td>
-					<img src="pics/rank1.png" alt="" width="80" />
+					<img src="pics/rank1.png" alt=""  width="6%" />
 				</td>
-				<td background="pics/ico/arrow.png" width="78">
+				<td background="pics/ico/arrow.png"  width="6%" >
 					<p> </p>
 				</td>
 				<td>
-					<img src="pics/rank2.png" alt="" width="80" />
+					<img src="pics/rank2.png" alt=""  width="6%"  />
 				</td>
-				<td background="pics/ico/arrow.png" width="78">
+				<td background="pics/ico/arrow.png"  width="6%" >
 					<p> </p>
 				</td>
 				<td>
-					<img src="pics/rank3.png" alt="" width="80" />
+					<img src="pics/rank3.png" alt=""  width="6%" />
 				</td>
-				<td background="pics/ico/arrow.png" width="78">
+				<td background="pics/ico/arrow.png"  width="6%" >
 					<p> </p>
 				</td>
 				<td>
-					<img src="pics/rank4.png" alt="" width="80" />
+					<img src="pics/rank4.png" alt=""  width="6%"  />
 				</td>
-				<td background="pics/ico/arrow.png" width="78">
+				<td background="pics/ico/arrow.png"  width="6%" >
 					<p> </p>
 				</td>
 				<td>
-					<img src="pics/rank5.png" alt="" width="80" />
+					<img src="pics/rank5.png" alt=""  width="6%"  />
 				</td>
-				<td background="pics/ico/arrow.png" width="78">
+				<td background="pics/ico/arrow.png" width="6%" >
 					<p> </p>
 				</td>
 				<td>
-					<img src="pics/rank6.png" alt="" width="80" />
+					<img src="pics/rank6.png" alt=""  width="6%"  />
 				</td>
-				<td background="pics/ico/arrow.png" width="78">
+				<td background="pics/ico/arrow.png"  width="6%" >
 					<p> </p>
 				</td>
 				<td>
-					<img src="pics/rank7.png" alt="" width="80" />
+					<img src="pics/rank7.png" alt="" width="6%" />
 				</td>
 			</tr>
 		</tbody>
