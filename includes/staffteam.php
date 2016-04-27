@@ -67,6 +67,11 @@
 	<td></td>
 	</tr>
 	<tr class="memberbg_5">
+		<td><img src="pics/staff_team/Dragoniya_Enca_1.png" alt="Encadrante Dragoniya" /></td>
+		<td><span style="color:blue;">Dragoniya</span><br />Normande, France<br />"Môman"</td>
+		<td>"Ce qui importe n'est pas l'emballage qu'est le corps, mais l'âme qui est l'essence de l'être !"</td>
+	</tr>
+	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Kindra_Modo_1.png" alt="Modérateur Kindra" /></td>
 	<td><span style="color:green">Kindra</span><br />15 ans<br />Lyon, France<br />"El loco"</td>
 	<td>"Si c'est toi qui paye, sa roule pour moi !"</td>
@@ -87,12 +92,6 @@
 		<td><img src="pics/staff_team/Chugo_Enca_1.png" alt="Encadrant Chugo" /></td>
 		<td><span style="color:blue;">Chugo</span><br />25 ans<br />France</td>
 		<td>"Je préfére rire de tout que pleurer  pour un rien. Aprés tout, tout arrive a temps a qui sait attendre."</td>
-	</tr>
-	
-	<tr class="memberbg_4">
-		<td><img src="pics/staff_team/Dragoniya_Enca_1.png" alt="Encadrante Dragoniya" /></td>
-		<td><span style="color:blue;">Dragoniya</span><br />Normande, France<br />"Môman"</td>
-		<td>"Ce qui importe n'est pas l'emballage qu'est le corps, mais l'âme qui est l'essence de l'être !"</td>
 	</tr>
 	
 	<th class="member_top">Anciens Opérateurs</th>
