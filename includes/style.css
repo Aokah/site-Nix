@@ -154,8 +154,8 @@ a.link div
 {
 	color: #000000;
 	padding: 10px;
-	background: url("/pics/ico/menu_dev_left.png") repeat-y scroll left center, #8080ee url("/pics/ico/menu_dev_right.png") repeat-y scroll right center;
 	background-color: #8080ee;
+	background: url("/pics/ico/menu_dev_left.png") repeat-y scroll left center, #8080ee url("/pics/ico/menu_dev_right.png") repeat-y scroll right center;
 }
 a.link div:hover
 {
