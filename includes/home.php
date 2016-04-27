@@ -14,7 +14,7 @@
 	Ainsi se rendre compte que la région de Nix est très peu commune, Elle semble abriter la dernière communauté magique qui veille encore sur ce Monde. RPNix.com est un meta-jeu, vous proposant différentes choses. 
 	Votre personnage pourra ainsi évolué dans ce monde et peut être marqué l'histoire de Nix. Allant du simple débutant parmi tant d'autres au plus puissant des Sages de l'histoire.  Cependant Nix ne vous proposes pas que de la magie. 
 	En effet certaine personnes ne sont pas très enjoué par celle-ci et favoriserons donc la technologie !<br />
-	Rejoignez cette grande aventure au plus vite !/p>
+	Rejoignez cette grande aventure au plus vite !</p>
 	
 	<img src="pics/imghome.png" alt=" "/>
 	
