@@ -11,7 +11,7 @@
     if ($_SESSION['rank'] > 4)
     {
       $select = $db->query('SELECT COUNT(*) AS count FROM candid WHERE verify = 0');
-      $select = $select->fecth();
+      $select = $select->fetch();
     ?>
     <h2>Lecture des candidatures</h2>
     <p>Ici sont répertoriées les différentes candidatures d'entrée à Nix n'étant pas encore validée.</p>
