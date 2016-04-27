@@ -26,7 +26,7 @@
 	<table>
 		<tr>
 			<td>
-				<img src="pics/rank_0.png" alt="" width="80" />
+				<img src="pics/rank0.png" alt="" width="80" />
 			</td>
 			<td background="pics/ico/arrow.png">
 				<p> </p>
