@@ -75,7 +75,6 @@
 		</tbody>
 		
 	</table>
-	<img src="pics/grades.png" alt=" " title="Grades HRP"/>
 	<h3>Votre personnage, votre histoire !</h3>
 	<p>Chaque personnage possède une personnalité et un passé qui lui est propre, il ne tient qu'à vous d'apporter votre pierre à l'édifice historique de notre serveur.<br />
 	Seul l'avenir sait si vous deviendrez un grand Mage, un Chevalier de renommé, un Diplomate de génie ou un Membre investi dans sa communauté !</p>
