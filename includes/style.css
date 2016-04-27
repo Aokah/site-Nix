@@ -100,7 +100,7 @@ li:hover div.menu2 {
 .menu1
 {
 	z-index: 2;
-	background: url("/pics/ico/menu_ico_left.png") left no-repeat, url("/pics/ico/menu_ico_right.png") right no-repeat;
+	background: url("/pics/ico/menu_ico_left.png") left scroll no-repeat, url("/pics/ico/menu_ico_right.png") right scroll no-repeat;
 	background-color: #8080ee;
 	border: 5px solid #bfbff6;
 	padding-left: 0;
