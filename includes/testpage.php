@@ -10,9 +10,23 @@
     $verif->execute(array($_SESSION['id'])); $verif = $verif->fetch();
     if ($_SESSION['rank'] > 4)
     {
+      $select = $db->query('SELECT COUNT(*) AS count FROM candid WHERE veriffy = 0');
+      $select = $select->fecth();
     ?>
-    <p>Affichage MJ</p>
+    <h2>Lecture des candidatures</h2>
+    <p>Ici sont répertoriées les différentes candidatures d'entrée à Nix n'étant pas encore validée.</p>
+    <? if ($select['count'] > 0)
+    {
+    ?>
+    <p>Il y a actuellement <?=$count, ' candidature', $plural; ?> en attente de lecture.</p>
     <?
+    }
+    else
+    {
+    ?>
+    <p> Il n'y a actuellement aucune candidature en attente de lecture :).</p>
+    <?php
+    }
     }
     elseif ($verif['accepted'] == 0)
     {
