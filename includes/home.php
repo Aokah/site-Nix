@@ -23,7 +23,55 @@
 	D'une part la progression RP, notée par le grade de votre personnage au sein de son institution visible sur la page qui regroupe les différentes institutions et d'autre part la progression dit "HRP" du joueur à travers les grades du site qui lu permettront 
 	à terme d'encadrer les autres voire même d'ajouter du contenu auprès des autres Maîtres du Jeu !
 </p>
-	
+	<table>
+		<tr>
+			<td>
+				<img src="pics/rank_0.png" alt="" width="50" />
+			</td>
+			<td background="pics/ico/arrow.png">
+				<p> </p>
+			</td>
+			<td>
+				Grade 1
+			</td>
+			<td>
+				Flèche
+			</td>
+			<td>
+				Grade 2
+			</td>
+			<td>
+				Flèche
+			</td>
+			<td>
+				Grade 3
+			</td>
+			<td>
+				Flèche
+			</td>
+			<td>
+				Grade 4
+			</td>
+			<td>
+				Flèche
+			</td>
+			<td>
+				Grade 5
+			</td>
+			<td>
+				Flèche
+			</td>
+			<td>
+				Grade 6
+			</td>
+			<td>
+				Flèche
+			</td>
+			<td>
+				Grade 7
+			</td>
+		</tr>
+	</table>
 	<img src="pics/grades.png" alt=" " title="Grades HRP"/>
 	<h3>Votre personnage, votre histoire !</h3>
 	<p>Chaque personnage possède une personnalité et un passé qui lui est propre, il ne tient qu'à vous d'apporter votre pierre à l'édifice historique de notre serveur.<br />
