@@ -23,7 +23,7 @@
 	D'une part la progression RP, notée par le grade de votre personnage au sein de son institution visible sur la page qui regroupe les différentes institutions et d'autre part la progression dit "HRP" du joueur à travers les grades du site qui lu permettront 
 	à terme d'encadrer les autres voire même d'ajouter du contenu auprès des autres Maîtres du Jeu !
 </p>
-	<table width="100%">
+	<table width="100%" style="text-align:center;">
 		<tbody>
 			<tr>
 				<td>
