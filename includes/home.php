@@ -23,54 +23,57 @@
 	D'une part la progression RP, notée par le grade de votre personnage au sein de son institution visible sur la page qui regroupe les différentes institutions et d'autre part la progression dit "HRP" du joueur à travers les grades du site qui lu permettront 
 	à terme d'encadrer les autres voire même d'ajouter du contenu auprès des autres Maîtres du Jeu !
 </p>
-	<table>
-		<tr>
-			<td>
-				<img src="pics/rank0.png" alt="" width="80" />
-			</td>
-			<td background="pics/ico/arrow.png" width="78">
-				<p> </p>
-			</td>
-			<td>
-				<img src="pics/rank1.png" alt="" width="80" />
-			</td>
-			<td background="pics/ico/arrow.png" width="78">
-				<p> </p>
-			</td>
-			<td>
-				<img src="pics/rank2.png" alt="" width="80" />
-			</td>
-			<td background="pics/ico/arrow.png" width="78">
-				<p> </p>
-			</td>
-			<td>
-				<img src="pics/rank3.png" alt="" width="80" />
-			</td>
-			<td background="pics/ico/arrow.png" width="78">
-				<p> </p>
-			</td>
-			<td>
-				<img src="pics/rank4.png" alt="" width="80" />
-			</td>
-			<td background="pics/ico/arrow.png" width="78">
-				<p> </p>
-			</td>
-			<td>
-				<img src="pics/rank5.png" alt="" width="80" />
-			</td>
-			<td background="pics/ico/arrow.png" width="78">
-				<p> </p>
-			</td>
-			<td>
-				<img src="pics/rank6.png" alt="" width="80" />
-			</td>
-			<td background="pics/ico/arrow.png" width="78">
-				<p> </p>
-			</td>
-			<td>
-				<img src="pics/rank7.png" alt="" width="80" />
-			</td>
-		</tr>
+	<table width="100%">
+		<tbody>
+			<tr>
+				<td>
+					<img src="pics/rank0.png" alt="" width="80" />
+				</td>
+				<td background="pics/ico/arrow.png" width="78">
+					<p> </p>
+				</td>
+				<td>
+					<img src="pics/rank1.png" alt="" width="80" />
+				</td>
+				<td background="pics/ico/arrow.png" width="78">
+					<p> </p>
+				</td>
+				<td>
+					<img src="pics/rank2.png" alt="" width="80" />
+				</td>
+				<td background="pics/ico/arrow.png" width="78">
+					<p> </p>
+				</td>
+				<td>
+					<img src="pics/rank3.png" alt="" width="80" />
+				</td>
+				<td background="pics/ico/arrow.png" width="78">
+					<p> </p>
+				</td>
+				<td>
+					<img src="pics/rank4.png" alt="" width="80" />
+				</td>
+				<td background="pics/ico/arrow.png" width="78">
+					<p> </p>
+				</td>
+				<td>
+					<img src="pics/rank5.png" alt="" width="80" />
+				</td>
+				<td background="pics/ico/arrow.png" width="78">
+					<p> </p>
+				</td>
+				<td>
+					<img src="pics/rank6.png" alt="" width="80" />
+				</td>
+				<td background="pics/ico/arrow.png" width="78">
+					<p> </p>
+				</td>
+				<td>
+					<img src="pics/rank7.png" alt="" width="80" />
+				</td>
+			</tr>
+		</tbody>
+		
 	</table>
 	<img src="pics/grades.png" alt=" " title="Grades HRP"/>
 	<h3>Votre personnage, votre histoire !</h3>
