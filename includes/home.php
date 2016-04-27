@@ -16,7 +16,7 @@
 	En effet certaine personnes ne sont pas très enjoué par celle-ci et favoriserons donc la technologie !<br />
 	Rejoignez cette grande aventure au plus vite !</p>
 	
-	<img src="pics/imghome.png" alt=" "/>
+	<img src="pics/imghome.png" alt=" " align="center" width="100%"/>
 	
 	<h3>Comment puis-je progresser sur ce serveur ?</h3>
 	RPNix.com vous propose deux schémas de progresser bien distincts :<br />
