@@ -388,7 +388,7 @@
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_post']);
 				$verify = $db->prepare('SELECT unread FROM sondage_unread WHERE unread = 1 AND sondage_id = ?');
 				$verify->execute(array($line['id']));
-				$read = ($verif->fetch()) ? 'unread' : 'read';
+				$read = ($verify->fetch()) ? 'unread' : 'read';
 				?>
 				<tr>
 					<td class="<?= $read?>">
