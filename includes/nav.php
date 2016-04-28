@@ -14,7 +14,7 @@
 	if ($_SESSION['rank'] < 5) { $width = 20; } elseif ($_SESSION['rank'] == 5) { $width = 16; } elseif ($_SESSION['rank'] > 5) { $width = 14; }
 	else { $width = 25;}
 	
-	$verif = $db->prepare('SELECT COUNT(*) AS sondage FROM sondages_unread RIGHT JOIN sondage ON sondage.id = sondage_unread.sondage_id WHERE unread = 1 AND rank => ?');
+	$verif = $db->prepare('SELECT COUNT(*) AS sondage FROM sondages_unread RIGHT JOIN sondage ON sondage.id = sondage_unread.sondage_id WHERE unread = 1 AND rank >= ?');
 	$verif->execute(array($_SESSION['rank']));
 	$count = $verif->fetch();
 	
