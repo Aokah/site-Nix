@@ -386,9 +386,12 @@
 				{	
 					$verr = ($line['verr'] == 1) ? '[Verrouillé] ' : '';
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_post']);
+				$verify = $db->prepare('SELECT unread FROM sondage_unread WHERE unread = 1 AND sondage_id = ?');
+				$verify->execute(array($line['id']));
+				$read = ($verif->fetch()) ? 'unread' : 'read';
 				?>
 				<tr>
-					<td class="read">
+					<td class="<?= $read?>">
 					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $verr, $line['titre']?> </a> <?php if ($_SESSION['rank'] > 4) { if ($line['verr'] == 0) { ?><a class="name7" href="index?p=sondage&lock=<?= $line['s_id']?>">[Verr]</a><?php } else { ?><a class="name5" href="index?p=sondage&unlock=<?= $line['s_id']?>">[Déverr]</a><?php } }?>
 					</td>
 					<td>
@@ -483,7 +486,7 @@
 		<p class="name7">Votes Opérateurs</p>
 		
 		<?php
-		$answer3 = $db->query('SELECT s.id AS s_id, s.verr, s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
+		$answer3 = $db->query('SELECT s.id AS s_id, s.verr,  s.sender_id AS sender, s.text, s.rank AS level, s.date_post, s.title AS titre, m.id AS id, m.name, m.title AS title, m.rank AS rank, m.technician, m.pionier
 		FROM sondage s
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.rank = 7
