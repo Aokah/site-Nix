@@ -108,13 +108,14 @@
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.id = ? ');
 		$answer->execute(array($sondage));
-		$read = $db->prepare('UPDATE sondage_unread SET unread = 0 WHERE sondage_id = ? AND user_id = ?');
-		$read->execute(array($sondage, $_SESSION["id"]));
 		
 		if ($line = $answer->fetch())
 		{
 			if ($_SESSION['rank'] >= $line['level'])
 			{
+				$read = $db->prepare('UPDATE sondage_unread SET unread = 0 WHERE sondage_id = ? AND user_id = ?');
+				$read->execute(array($sondage, $_SESSION["id"]));
+				
 				$text = preg_replace('#\n#', '<br />', $line['text']);
 				$verr = ($line['verr'] == 1) ? '[Verouillé] ' : '';
 	?>
@@ -272,7 +273,7 @@
 				{ echo '<p>Navré, mais ce sondage existe déjà.</p>'; }
 				else
 				{
-				$ajout = $db->prepare("INSERT INTO sondage VALUES('',?, ?, ?,?,NOW(), 0)");
+				$ajout = $db->prepare("INSERT INTO sondage VALUES('',?, ?, ?,?,NOW(), 0,1)");
 				$ajout->execute(array($_SESSION['id'], $level, $name, $text));
 				?>
 				<p>Sondage créé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
