@@ -275,6 +275,13 @@
 				{
 				$ajout = $db->prepare("INSERT INTO sondage VALUES('',?, ?, ?,?,NOW(), 0,1)");
 				$ajout->execute(array($_SESSION['id'], $level, $name, $text));
+				$presel = $db->query('SELECT id FROM members');
+				$select = $db->query('SELECT id FROM sondage WHERE post_date= NOW()'); $sondage = $select->fetch();
+				while ($line = $presel->fetch()
+				{
+					$create = $db->prepare("INSERT INTO sondage_unread VALUES('',?,?,1");
+					$create->execute(array($sondage['id'],$line['id']));
+				}
 				?>
 				<p>Sondage créé. <a href="index?p=sondage">Cliquez ici</a> pour retourner à la liste des sondages.</p>
 				<?php
