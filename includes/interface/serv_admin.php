@@ -1,6 +1,6 @@
 <?php function serv_admin ()
 {
-	global $_SESSION;
+	global $_SESSION, $db;
 	
 	if ($_SESSION['rank'] >= 3)
 	{
@@ -30,7 +30,10 @@
 				$playersNames = "";
 				for ($i = 0; $i < $playersCount; $i++)
 				{
-					$playersNames .= "<span class=\"name\">".$players[0]["success"][$i]."</span>, ";
+					$select = $db->prepare('SELECT rank WHERE Minecraft_Account = ?');
+					$select->execute(array($players[0]["success"][$i]));
+					$line = $select->fetch(); $rank = $line['rank'];
+					$playersNames .= "<span class=\"name". $rank."\">".$players[0]["success"][$i]."</span>, ";
 				}
 				$playersNames = substr($playersNames, 0, -2);
 			}
