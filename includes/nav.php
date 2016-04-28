@@ -21,15 +21,13 @@
 		$scount = 0;
 		while ($sel = $presel->fetch())
 		{
-			echo '$sel';
-			$select = $db->prepare('SELECT * FROM sondage_unread WHERE unread = 0 AND sondage_id = ? AND user_id = ?');
+			$select = $db->prepare('SELECT * FROM sondage_unread WHERE unread = 1 AND sondage_id = ? AND user_id = ?');
 			$select->execute(array($sel['id'], $_SESSION['id']));
 			if ($select->fetch())
 			{
 				$scount ++;
 			}
 		}
-		echo $scount;
 	}
 	
 ?>
