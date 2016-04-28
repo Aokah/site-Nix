@@ -14,9 +14,21 @@
 	if ($_SESSION['rank'] < 5) { $width = 20; } elseif ($_SESSION['rank'] == 5) { $width = 16; } elseif ($_SESSION['rank'] > 5) { $width = 14; }
 	else { $width = 25;}
 	
-	$verif = $db->prepare('SELECT COUNT(*) AS sondage FROM sondage_unread RIGHT JOIN sondage ON sondage.id = sondage_unread.sondage_id WHERE unread = 1 AND rank >= ?');
-	$verif->execute(array($_SESSION['rank']));
-	$count = $verif->fetch();
+	if ($_SESSION['connected'])
+	{
+		$presel = $db->prepare('SELECT * FROM sondage WHERE rank <= ? AND verr = 0');
+		$presel->execute(array($_SESSION['rank']));
+		$count = 0;
+		while ($sel = $presel->fetch())
+		{
+			$select = $db->prepare('SELECT * sondage_unread WHERE unread = 0 AND sondage _id = ? ANd user_id = ?');
+			$select->execute(array($sel['id'], $_SESSION['id']));
+			if ($select->fetch())
+			{
+				$count ++;
+			}
+		}
+	}
 	
 ?>
 	<table cellspacing="0" cellpadding="0" style="text-align:center;" width="100%">
