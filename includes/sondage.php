@@ -388,10 +388,10 @@
 				$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_post']);
 				$verify = $db->prepare('SELECT unread FROM sondage_unread WHERE unread = 1 AND sondage_id = ? AND user_id = ?');
 				$verify->execute(array($line['id'], $_SESSION['id']));
-				$read = ($verify->fetch()) ? 'unread' : 'read';
+				$read = ($verify->fetch()) ? 'read' : 'unread';
 				?>
-				<tr>
-					<td class="<?= $read?>">
+				<tr class="<?= $read?>">
+					<td>
 					<a href="index?p=sondage&s=<?= $line['s_id'] ?>"> <?= $verr, $line['titre']?> </a> <?php if ($_SESSION['rank'] > 4) { if ($line['verr'] == 0) { ?><a class="name7" href="index?p=sondage&lock=<?= $line['s_id']?>">[Verr]</a><?php } else { ?><a class="name5" href="index?p=sondage&unlock=<?= $line['s_id']?>">[Déverr]</a><?php } }?>
 					</td>
 					<td>
