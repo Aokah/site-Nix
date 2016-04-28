@@ -18,14 +18,14 @@
 	{
 		$presel = $db->prepare('SELECT * FROM sondage WHERE rank <= ? AND verr = 0');
 		$presel->execute(array($_SESSION['rank']));
-		$count = 0;
+		$scount = 0;
 		while ($sel = $presel->fetch())
 		{
 			$select = $db->prepare('SELECT * FROM sondage_unread WHERE unread = 0 AND sondage_id = ? AND user_id = ?');
 			$select->execute(array($sel['id'], $_SESSION['id']));
 			if ($select->fetch())
 			{
-				$count ++;
+				$scount ++;
 			}
 		}
 	}
@@ -70,7 +70,7 @@
 			        <td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
-							Communauté <? if ($count['sondage'] > 0) { echo '<span style="color:red;">[!]</span>'; } ?>
+							Communauté <? if ($scount > 0) { echo '<span style="color:red;">[!]</span>'; } ?>
 							<div class="menu2">
 								<a href="index?p=news" class="link">
 									<div>
@@ -107,8 +107,8 @@
 								<a href="index?p=sondage" class="link">
 									<div>
 										<?php
-										if ($count['sondage'] > 0)
-										{ echo '<span style="color:red;">[', $count['sondage'],']</span>'; }
+										if ($scount > 0)
+										{ echo '<span style="color:red;">[', $scount,']</span>'; }
 										?>
 										Sondages
 									</div>
