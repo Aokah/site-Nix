@@ -33,7 +33,7 @@
 					$select = $db->prepare('SELECT * FROM members WHERE Minecraft_Account = ?');
 					$select->execute(array($players[0]["success"][$i]));
 					$line = $select->fetch(); $rank = $line['rank'];
-					$playersNames .= "<span class=\"name". $rank."\">".$players[0]["success"][$i]."</span>, ";
+					$playersNames .= "<span class=\"name". $rank."\">"$line['name']. " (" .$players[0]["success"][$i].")</span>, ";
 				}
 				$playersNames = substr($playersNames, 0, -2);
 			}
