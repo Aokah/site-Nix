@@ -28,6 +28,7 @@
 				$scount ++;
 			}
 		}
+		echo $scount;
 	}
 	
 ?>
