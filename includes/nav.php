@@ -14,6 +14,10 @@
 	if ($_SESSION['rank'] < 5) { $width = 20; } elseif ($_SESSION['rank'] == 5) { $width = 16; } elseif ($_SESSION['rank'] > 5) { $width = 14; }
 	else { $width = 25;}
 	
+	$verif = $db->prepare('SELECT COUNT(*) AS sondage FROM sondages_unread RIGHT JOIN sondage ON sondage.id = sondage_unread.sondage_id WHERE unread = 1 AND rank => ?');
+	$verif->execute(array($_SESSION['rank']));
+	$count = $verif->fetch();
+	
 ?>
 	<table cellspacing="0" cellpadding="0" style="text-align:center;" width="100%">
       		<tbody>
@@ -54,7 +58,7 @@
 			        <td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
-							Communauté
+							Communauté <? if ($count['sondage'] > 0) { echo '<span style="color:red;">[!]</span>'; } ?>
 							<div class="menu2">
 								<a href="index?p=news" class="link">
 									<div>
@@ -90,6 +94,10 @@
 								?>
 								<a href="index?p=sondage" class="link">
 									<div>
+										<?php
+										if ($count['sondage'] > 0)
+										{ echo '<span style="color:red;">[', $count['sondage'],']</span>'; }
+										?>
 										Sondages
 									</div>
 								</a>
