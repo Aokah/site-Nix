@@ -30,7 +30,7 @@
 				$playersNames = "";
 				for ($i = 0; $i < $playersCount; $i++)
 				{
-					$select = $db->prepare('SELECT * WHERE Minecraft_Account = ?');
+					$select = $db->prepare('SELECT * FROM members WHERE Minecraft_Account = ?');
 					$select->execute(array($players[0]["success"][$i]));
 					$line = $select->fetch(); $rank = $line['rank'];
 					$playersNames .= "<span class=\"name". $rank."\">".$players[0]["success"][$i]."</span>, ";
