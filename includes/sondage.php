@@ -108,6 +108,8 @@
 		RIGHT JOIN members m ON m.id = s.sender_id
 		WHERE s.id = ? ');
 		$answer->execute(array($sondage));
+		$read = $db->prepare('UPDATE sondage_unread SET unread = 0 WHERE sondage_id = ? AND user_id = ?');
+		$read->execute(array($sondage, $_SESSION["id"]));
 		
 		if ($line = $answer->fetch())
 		{
