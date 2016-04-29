@@ -276,7 +276,7 @@
 				$ajout = $db->prepare("INSERT INTO sondage VALUES('',?, ?, ?,?,NOW(), 0)");
 				$ajout->execute(array($_SESSION['id'], $level, $name, $text));
 				$presel = $db->query('SELECT id FROM members');
-				$select = $db->query('SELECT * FROM sondage WHERE post_date= NOW()'); $sondage = $select->fetch();
+				$select = $db->query('SELECT * FROM sondage WHERE date_post= NOW()'); $sondage = $select->fetch();
 				while ($line = $presel->fetch())
 				{
 					$create = $db->prepare("INSERT INTO sondage_unread VALUES('',?,?,1)");
