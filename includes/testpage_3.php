@@ -14,7 +14,7 @@
 		{
 			if ($_GET['test'])
 			{
-				$api->call("SendTelltoPlayer", array("test", "4e696b686f"));
+				
 			}
 		}
 		else
