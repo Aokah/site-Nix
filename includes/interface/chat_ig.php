@@ -20,7 +20,7 @@
 			$nom = $_SESSION['name'];
 			$name = '[' . $nom . '] : ';
 			$txt = $_POST['msg'];
-			$msg = $name, $txt;
+			$msg = $name $txt;
 			echo $msg;
 			//$api->call('chat.broadcast', array($_POST['msg']));
 		}
