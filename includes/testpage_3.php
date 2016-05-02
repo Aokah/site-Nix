@@ -11,7 +11,7 @@
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 		
 		$PlayerNames = $api->call("getPlayerNames");
-		if ($PlayerNames['sucess'])
+		if ($PlayerNames)
 		{
 			$mc = ($PlayerNames['success']);
 			
