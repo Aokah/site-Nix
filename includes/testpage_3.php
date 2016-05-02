@@ -14,7 +14,7 @@
 		{
 			if ($_GET['test'])
 			{
-				$api->call("sendCommand", array("nick 4e696b686f &4Nikho"));
+				$api->call("sendCommand", array("nicknamer:nick 4e696b686f &4Nikho"));
 			}
 		}
 		else
