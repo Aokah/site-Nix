@@ -19,8 +19,7 @@
 		{
 			$name = '[' . $_SESSION['name'] . '] : ';
 			$msg = ''. $name .'' . $_POST['msg'] . '';
-			echo $msg;
-			//$api->call('chat.broadcast', array($msg));
+			$api->call('chat.broadcast', array($msg));
 		}
 		
 		$chat_ig = $api->call('streams.chat.latest', array(100));
