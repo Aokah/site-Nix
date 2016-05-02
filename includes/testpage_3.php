@@ -10,18 +10,28 @@
 		$salt = 'salt';
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 		
-		$PlayerNames = $api->call("getPlayerNames");
-		if ($PlayerNames)
+		if (isset($_GET['action']))
 		{
-			$mc = ($PlayerNames['success']);
-			
+			if ($_GET['test'])
+			{
+				$api->call("sendCommand", array("nick 4e696b686f &4Nikho"));
+			}
 		}
 		else
 		{
-			echo '<p>Aucun joueur n\'est connecté.</p>';
+			$PlayerNames = $api->call("getPlayerNames");
+			if ($PlayerNames)
+			{
+				$mc = ($PlayerNames['success']);
+				
+			}
+			else
+			{
+				echo '<p>Aucun joueur n\'est connecté.</p>';
+			}
+			echo '<a href="index?p=testpage_3&action=test">Test /nick</a>';	
 		}
-	//	echo "<a"
-		//$api->call("sendCommand", array("say test en JSONAPI"));
+		
 
 }
 ?>
