@@ -14,11 +14,14 @@
 		if ($PlayerNames['sucess'])
 		{
 			$mc = ($PlayerNames['success']);
+			
 		}
 		else
 		{
-			echo 'Aucun joueur n\'est connecté';
+			echo '<p>Aucun joueur n\'est connecté.</p>';
 		}
+	//	echo "<a"
+		//$api->call("sendCommand", array("say test en JSONAPI"));
 
 }
 ?>
