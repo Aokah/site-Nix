@@ -17,9 +17,12 @@
 		
 		if ($_SESSION["rank"] >= rank_send_msg && isset($_POST["action"]) && $_POST["action"] == "send" && isset($_POST['msg']) && strlen($_POST["msg"]) <= 255)
 		{
-			$nom = $_SESSION['id'];
+			$nom = $_SESSION['name'];
 			$name = '[' . $nom . '] : ';
-			$api->call('chat.broadcast', array($name,$_POST['msg']));
+			$txt = $_POST['msg'];
+			$msg = $name, $txt;
+			echo $msg;
+			$api->call('chat.broadcast', array($_POST['msg']));
 		}
 		
 		$chat_ig = $api->call('streams.chat.latest', array(100));
