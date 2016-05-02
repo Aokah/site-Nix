@@ -11,7 +11,14 @@
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 		
 		$PlayerNames = $api->call("getPlayerNames");
-		print  ($PlayerNames['success']); echo "<br>";
+		if ($PlayerNames['sucess'])
+		{
+			$mc = ($PlayerNames['success']);
+		}
+		else
+		{
+			echo 'Aucun joueur n\'est connecté';
+		}
 
 }
 ?>
