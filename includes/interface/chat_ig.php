@@ -22,7 +22,7 @@
 			$txt = $_POST['msg'];
 			$msg = $name, $txt;
 			echo $msg;
-			$api->call('chat.broadcast', array($_POST['msg']));
+			//$api->call('chat.broadcast', array($_POST['msg']));
 		}
 		
 		$chat_ig = $api->call('streams.chat.latest', array(100));
