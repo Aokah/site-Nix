@@ -14,7 +14,7 @@
 		{
 			if ($_GET['test'])
 			{
-				$api->call("SendCommand", array("minecraft:tell 4e696b686f Test"));
+				$api->call("SendTelltoPlayer", array("test", "4e696b686f"));
 			}
 		}
 		else
