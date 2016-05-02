@@ -17,7 +17,7 @@
 		
 		if ($_SESSION["rank"] >= rank_send_msg && isset($_POST["action"]) && $_POST["action"] == "send" && isset($_POST['msg']) && strlen($_POST["msg"]) <= 255)
 		{
-			$name = "[". $_SESSIOHN['name']."]";
+			$name = "[". $_SESSIOHN['name']."] : ";
 			$api->call('chat.broadcast', array($name,$_POST['msg']));
 		}
 		
