@@ -40,7 +40,8 @@
 	<?= $mj['mj']?> Maître<?php echo $mjplural;?> du Jeu, <?= $modo['modo']?> Modérateur<?php echo $modoplural;?>, <?=$enca['enca']?> Encadrant<?php echo $encaplural; ?>, 
 	<?= $jplus['jplus']?> Joueur<?php echo $jplusplural;?> Investi<?php echo $jplusplural;?>, <?=$joueur['joueur']?> Joueur<?php echo $joueurplural; ?> et <?= $new['new']?> <?php echo $newplural; ?>)</p>
 	<?php if ($_SESSION['name'] == "Nikho") { ?>
-		<p> Activité totale : <?= $m_active, ' / ', $m_all?> soit <?= $m_pourcent?>% ( <?= $act_op['act_op'], ' / ', $op_all['op_all']?> & <?= $act_mj['act_mj'], ' / ', $mj_all['mj_all']?> )</p>
+		<p> Activité totale : <?= $m_active, ' / ', $m_all?> soit <?= $m_pourcent?>% ( <?= $act_op['act_op'], ' / ', $op_all['op_all']?> & <?= $act_mj['act_mj'], ' / ', $mj_all['mj_all']?> & <?= $act_modo['act_modo'], ' / ', $modo_all['modo_all']?> & <?= $act_enca['act_enca'], ' / ', $enca_all['enca_all']
+		?> & <?= $act_jplus['act_jplus'], ' / ', $jplus_all['jplus_all']?> & <?= $act_new['act_new'], ' / ', $new_all['new_all']?>)</p>
 	<?php } ?>
 	<table cellspacing="0" cellpadding="0" width="100%">
 		<tbody>
