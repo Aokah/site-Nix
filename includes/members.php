@@ -189,7 +189,7 @@
 				</td>
 			<?php if ($_SESSION['rank'] >= 5) { ?>
 				<td style="text-align:center;">
-					<img src="pics/vanish<?php echo $vanish; ?>.gif" width="30" alt="" title="Joueur <?php $vanishtitle; ?>" />
+					<img src="pics/vanish<?php echo $vanish; ?>.gif" width="30" alt="" title="Joueur <?php echo $vanishtitle; ?>" />
 				</td>
 			<?php } ?>
 				<td style="text-align:center;">
