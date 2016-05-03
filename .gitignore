@@ -1,6 +1,7 @@
 #Exclude directories
 tests/**
 resourcepack/**
+not_indexed/**
 
 #Exclude files wich end by a ~ (gedit) and a .swp (vim)
 *[~]
