@@ -157,11 +157,11 @@
 				<td style="text-align:center;">
 					<?= $fofo['msg']?>
 				</td>
-				<td>
+				<td style="text-align:center;">
 					<span class="avis<?= $coloravis?>">[<?= $hrpavis?>]</span>
 				</td>
-				<td>
-					<img src="pics/ico/activity_<?php if ($active->fetch()) { echo 'on.PNG'; }else { echo "off.png"; } ?>" alt="" title="<?php if ($active->fetch()) { echo 'Activité Récente'; }else { echo "Aucune activité depuis 3 semaines"; } ?>" width="50px" />
+				<td style="text-align:center;">
+					<img src="pics/ico/activity_<?php if ($active->fetch()) { echo 'on.PNG'; }else { echo "off.png"; } ?>" alt="" title="<?php if ($active->fetch()) { echo 'Activité Récente'; }else { echo "Aucune activité depuis 3 semaines"; } ?>" width="30px" />
 				</td>
 			<?php if ($_SESSION['rank'] >= 5) { ?>
 				<td style="text-align:center;">
