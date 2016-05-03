@@ -134,7 +134,7 @@
 			$filename = 'pics/avatar/miniskin_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
 			$active = $db->prepare('SELECT * FROM members WHERE id = ? AND ADDDATE(last_action, INTERVAL 2 WEEK)> NOW()');
 			$active->execute(array($line['id']));
-			if ($active->fetch()) { $act = 'on.PNG'; $title = "Activité Récente"; }else { $act = "off.png"; $title = "Aucune activité depuis 3 semaines" ;}
+			if ($active->fetch()) { $act = 'on.PNG'; $act_title = "Activité Récente"; }else { $act = "off.png"; $act_title = "Aucune activité depuis 3 semaines" ;}
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
 				<td>
@@ -162,7 +162,7 @@
 					<span class="avis<?= $coloravis?>">[<?= $hrpavis?>]</span>
 				</td>
 				<td style="text-align:center;">
-					<img src="pics/ico/activity_<?= $act?>" alt="" title="<?php echo $title;?>" width="30px" />
+					<img src="pics/ico/activity_<?= $act?>" alt="" title="<?php echo $act_title;?>" width="30px" />
 				</td>
 			<?php if ($_SESSION['rank'] >= 5) { ?>
 				<td style="text-align:center;">
