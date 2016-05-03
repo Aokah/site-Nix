@@ -40,7 +40,7 @@
 	<?= $mj['mj']?> Maître<?php echo $mjplural;?> du Jeu, <?= $modo['modo']?> Modérateur<?php echo $modoplural;?>, <?=$enca['enca']?> Encadrant<?php echo $encaplural; ?>, 
 	<?= $jplus['jplus']?> Joueur<?php echo $jplusplural;?> Investi<?php echo $jplusplural;?>, <?=$joueur['joueur']?> Joueur<?php echo $joueurplural; ?> et <?= $new['new']?> <?php echo $newplural; ?>)</p>
 	<?php if ($_SESSION['rank'] == 4) { ?>
-		<p>Ce site compte près de <?= $m_active, ' membres actifs sur ', $m_all?> soit <?= $m_pourcent?>% des membres inscrits <br />( <span class="name7"><?= 
+		<p>Ce site compte près de <?= $m_active, ' membres actifs sur ', $m_all?> soit <span class="name1" style="color:white;"><?= $m_pourcent?>%</span> des membres inscrits <br />( <span class="name7"><?= 
 		$act_op['act_op'], ' / ', $op_all['op_all']?> Opérateurs</span> <span class="name6"><?= $act_mj['act_mj'], ' / ', $mj_all['mj_all']?> Maîtres du Jeu</span> <span class="name5"><?= 
 		$act_modo['act_modo'], ' / ', $modo_all['modo_all']?> Modérateurs</span> <span class="name4"><?= $act_enca['act_enca'], ' / ', $enca_all['enca_all']?> Encadrants</span> <span class="name3"><?= 
 		$act_jplus['act_jplus'], ' / ', $jplus_all['jplus_all']?> Joueurs Investis</span> <span class="name2"><?= $act_new['act_new'], ' / ', $new_all['new_all']?> Joueurs</span> )</p>
