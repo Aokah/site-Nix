@@ -3,11 +3,11 @@
 global $_SESSION, $db;
   if (password_verify('Dragonball76',$_SESSION['name']);
   {
-    MDP correct
+    echo 'MDP correct';
   }
   else
   {
-    Mauvais MDP
+    echo 'Mauvais MDP';
   }
 }
 ?>
