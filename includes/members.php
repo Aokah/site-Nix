@@ -35,8 +35,8 @@
 				case 4: $linename = "Encadrants"; break; case 3 : $linename = "Joueurs Investis"; break; case 2 : $linename = "Joueurs"; break;
 				case 1: $linename = "Nouveaux"; break;
 			}
-			if ($_SESSION['rank'] > 5) { $page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC'); }
-			else { $page = $db->prepare('SELECT * FROM members WHERE rank = ? AND pnj = 0 AND invisible = 0 ORDER BY name ASC');	}
+			if ($_SESSION['rank'] >= 5) { $page = $db->prepare('SELECT * FROM members WHERE rank = ? ORDER BY name ASC'); }
+			else { $page = $db->prepare('SELECT * FROM members WHERE rank = ? AND pnj = 0 AND invisible = 0 AND removed = 0 AND ban = 0 ORDER BY name ASC');	}
 			$page->execute(array($linerank));
 			?>
 			<tr class="member_top">
@@ -48,6 +48,7 @@
 				<th>Sorts</th>
 				<th>Msg</th>
 				<th>HRP</th>
+				<th>Activité</th>
 			<?php if ($_SESSION['rank'] >= 5) { ?> <th>Inv'</th> <?php } ?>
 				<th>Energie Magique/Vitale</th>
 			</tr>
@@ -131,6 +132,8 @@
 			if ($line['ban'] == 1) { $imgrank = 'ban' ; }
 			if ($line['removed'] == 1) { $imgrank = 'del' ; } 
 			$filename = 'pics/avatar/miniskin_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
+			$active = $db->prepare('SELECT * FROM members WHERE id = ? AND ADDDATE(last_action, INTERVAL 2 WEEK)> NOW()');
+			$active->execute(array($line['id']));
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
 				<td>
@@ -156,6 +159,9 @@
 				</td>
 				<td>
 					<span class="avis<?= $coloravis?>">[<?= $hrpavis?>]</span>
+				</td>
+				<td>
+					Actif ? <?php if ($active->fetch()) { echo 'Oui'; }else { echo "Non"; } ?>
 				</td>
 			<?php if ($_SESSION['rank'] >= 5) { ?>
 				<td style="text-align:center;">
