@@ -27,9 +27,9 @@
 	$act_modo = $db->query('SELECT COUNT(*) AS act_modo FROM members WHERE removed = 0 AND ban = 0 AND rank = 5 AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()'); $act_modo = $act_modo->fetch();
 	$modo_all = $db->query('SELECT COUNT(*) AS modo_all FROM members WHERE removed = 0 AND ban = 0 AND rank = 5'); $modo_all = $modo_all->fetch();
 	$act_mj = $db->query('SELECT COUNT(*) AS act_mj FROM members WHERE removed = 0 AND ban = 0 AND rank = 6 AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()'); $act_mj = $act_mj->fetch();
-	$mj_all = $db->query('SELECT COUNT(*) AS mj_all FROM members WHERE removed = 0 AND ban = 0 AND rank = 7'); $mj_all = $mj_all->fetch();
-	$act_op = $db->query('SELECT COUNT(*) AS act_op FROM members WHERE removed = 0 AND ban = 0 AND rank = 4 AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()'); $act_op = $act_op->fetch();
-	$op_all = $db->query('SELECT COUNT(*) AS op_all FROM members WHERE removed = 0 AND ban = 0 AND rank = 4'); $op_all = $op_all->fetch();
+	$mj_all = $db->query('SELECT COUNT(*) AS mj_all FROM members WHERE removed = 0 AND ban = 0 AND rank = 6'); $mj_all = $mj_all->fetch();
+	$act_op = $db->query('SELECT COUNT(*) AS act_op FROM members WHERE removed = 0 AND ban = 0 AND rank = 7 AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()'); $act_op = $act_op->fetch();
+	$op_all = $db->query('SELECT COUNT(*) AS op_all FROM members WHERE removed = 0 AND ban = 0 AND rank = 7'); $op_all = $op_all->fetch();
 	
 	
 	?>
