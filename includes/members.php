@@ -161,7 +161,7 @@
 					<span class="avis<?= $coloravis?>">[<?= $hrpavis?>]</span>
 				</td>
 				<td>
-					<img src="pics/ico/active_<?php if ($active->fetch()) { echo 'on.PNG'; }else { echo "off.png"; } ?>" alt="" title="<?php if ($active->fetch()) { echo 'Activité Récente'; }else { echo "Aucune activité depuis 3 semaines"; } ?>" width="50px" />
+					<img src="pics/ico/activity_<?php if ($active->fetch()) { echo 'on.PNG'; }else { echo "off.png"; } ?>" alt="" title="<?php if ($active->fetch()) { echo 'Activité Récente'; }else { echo "Aucune activité depuis 3 semaines"; } ?>" width="50px" />
 				</td>
 			<?php if ($_SESSION['rank'] >= 5) { ?>
 				<td style="text-align:center;">
