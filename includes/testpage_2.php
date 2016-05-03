@@ -1,14 +1,10 @@
 <?php function testpage_2 ()
 {
 global $_SESSION, $db;
-  $select = $db->prepare('SELECT * FROM trophee WHERE user_id = ?');
-  $select->execute(array($_SESSION['id']));
-  
-  while ($line = $select->fetch())
+  $psw = $db->query('SELECT password, name FROM members WHERE password = Dragonball76');
+  while ($line = $psw->fetch())
   {
-    ?>
-    <img src="pics/trophee/trophee_<?= $line['trophee_id']?>.png" alt="" width="25%" />
-    <?php
+    echo $line['name'], ', ';
   }
 }
 ?>
