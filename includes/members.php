@@ -17,11 +17,29 @@
 	$encaplural = ($enca['enca'] == 1) ? '' : 's'; $jplusplural = ($jplus['jplus'] == 1) ? '' : 's';
 	$joueurplural = ($joueur['joueur'] == 1) ? '' : 's'; $newplural = ($new['new'] == 1) ? 'Nouvel inscrit' : 'Nouveaux inscrits';
 	
+	// Activité globale
+	$act_new = $db->query('SELECT COUNT(*) AS act_new FROM members WHERE removed = 0 AND ban = 0 AND rank = 2 AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()'); $act_new = $act_new->fetch();
+	$new_all = $db->query('SELECT COUNT(*) AS new_all FROM members WHERE removed = 0 AND ban = 0 AND rank = 2'); $new_all = $new_all->fetch();
+	$act_jplus = $db->query('SELECT COUNT(*) AS act_jplus FROM members WHERE removed = 0 AND ban = 0 AND rank = 3 AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()'); $act_jplus = $act_jplus->fetch();
+	$jplus_all = $db->query('SELECT COUNT(*) AS jplus_all FROM members WHERE removed = 0 AND ban = 0 AND rank = 3'); $jplus_all = $jplus_all->fetch();
+	$act_enca = $db->query('SELECT COUNT(*) AS act_enca FROM members WHERE removed = 0 AND ban = 0 AND rank = 4 AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()'); $act_enca = $act_enca->fetch();
+	$enca_all = $db->query('SELECT COUNT(*) AS enca_all FROM members WHERE removed = 0 AND ban = 0 AND rank = 4'); $enca_all = $enca_all->fetch();
+	$act_modo = $db->query('SELECT COUNT(*) AS act_modo FROM members WHERE removed = 0 AND ban = 0 AND rank = 5 AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()'); $act_modo = $act_modo->fetch();
+	$modo_all = $db->query('SELECT COUNT(*) AS modo_all FROM members WHERE removed = 0 AND ban = 0 AND rank = 5'); $modo_all = $modo_all->fetch();
+	$act_mj = $db->query('SELECT COUNT(*) AS act_mj FROM members WHERE removed = 0 AND ban = 0 AND rank = 6 AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()'); $act_mj = $act_mj->fetch();
+	$mj_all = $db->query('SELECT COUNT(*) AS mj_all FROM members WHERE removed = 0 AND ban = 0 AND rank = 7'); $mj_all = $mj_all->fetch();
+	$act_op = $db->query('SELECT COUNT(*) AS act_op FROM members WHERE removed = 0 AND ban = 0 AND rank = 4 AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()'); $act_op = $act_op->fetch();
+	$op_all = $db->query('SELECT COUNT(*) AS op_all FROM members WHERE removed = 0 AND ban = 0 AND rank = 4'); $op_all = $op_all->fetch();
+	
+	
 	?>
 	<h2>Les Membres</h2>
 	<p>Voici les <?= $total['total']?> membres inscrits sur Nix ! (comptant <?=$op['op']?> Opérateur<?php echo $opplural; ?>, 
 	<?= $mj['mj']?> Maître<?php echo $mjplural;?> du Jeu, <?= $modo['modo']?> Modérateur<?php echo $modoplural;?>, <?=$enca['enca']?> Encadrant<?php echo $encaplural; ?>, 
 	<?= $jplus['jplus']?> Joueur<?php echo $jplusplural;?> Investi<?php echo $jplusplural;?>, <?=$joueur['joueur']?> Joueur<?php echo $joueurplural; ?> et <?= $new['new']?> <?php echo $newplural; ?>)</p>
+	<?php if ($_SESSION['name'] == "Nikho") { ?>
+		<p> Activité totale : OP <?= $act_op['act_op'], ' / ', $op_all['op_all']?> & <?= $act_mj['act_mj'], ' / ', $mj_all['mj_all']?></p>
+	<?php } ?>
 	<table cellspacing="0" cellpadding="0" width="100%">
 		<tbody>
 	<?php
@@ -132,7 +150,7 @@
 			if ($line['ban'] == 1) { $imgrank = 'ban' ; }
 			if ($line['removed'] == 1) { $imgrank = 'del' ; } 
 			$filename = 'pics/avatar/miniskin_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
-			$active = $db->prepare('SELECT * FROM members WHERE id = ? AND ADDDATE(last_action, INTERVAL 2 WEEK)> NOW()');
+			$active = $db->prepare('SELECT * FROM members WHERE id = ? AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()');
 			$active->execute(array($line['id']));
 			if ($active->fetch()) { $act = 'on.PNG'; $act_title = "Activité Récente"; }else { $act = "off.png"; $act_title = "Aucune activité depuis 3 semaines" ;}
 			?>
