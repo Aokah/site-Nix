@@ -30,7 +30,9 @@
 	$mj_all = $db->query('SELECT COUNT(*) AS mj_all FROM members WHERE invisible = 0 AND pnj = 0 AND removed = 0 AND ban = 0 AND rank = 6'); $mj_all = $mj_all->fetch();
 	$act_op = $db->query('SELECT COUNT(*) AS act_op FROM members WHERE invisible = 0 AND pnj = 0 AND removed = 0 AND ban = 0 AND rank = 7 AND ADDDATE(last_action, INTERVAL 3 WEEK)> NOW()'); $act_op = $act_op->fetch();
 	$op_all = $db->query('SELECT COUNT(*) AS op_all FROM members WHERE invisible = 0 AND pnj = 0 AND removed = 0 AND ban = 0 AND rank = 7'); $op_all = $op_all->fetch();
-	
+	$m_active = $act_op['act_op'] + $act_mj['act_mj'] + $act_modo['act_modo'] + $act_enca['act_enca'] + $act_jplus['act_jplus'] + $act_new['act_new'];
+	$m_all = $op_all['op_all'] + $mj_all['mj_all'] + $modo_all['modo_all'] + $enca_all['enca_all'] + $jplus_all['jplus_all'] + $new_all['new_all'] ;
+	$m_pourcent = ( $m_active/ $m_all) * 100;
 	
 	?>
 	<h2>Les Membres</h2>
@@ -38,7 +40,7 @@
 	<?= $mj['mj']?> Maître<?php echo $mjplural;?> du Jeu, <?= $modo['modo']?> Modérateur<?php echo $modoplural;?>, <?=$enca['enca']?> Encadrant<?php echo $encaplural; ?>, 
 	<?= $jplus['jplus']?> Joueur<?php echo $jplusplural;?> Investi<?php echo $jplusplural;?>, <?=$joueur['joueur']?> Joueur<?php echo $joueurplural; ?> et <?= $new['new']?> <?php echo $newplural; ?>)</p>
 	<?php if ($_SESSION['name'] == "Nikho") { ?>
-		<p> Activité totale : OP <?= $act_op['act_op'], ' / ', $op_all['op_all']?> & <?= $act_mj['act_mj'], ' / ', $mj_all['mj_all']?></p>
+		<p> Activité totale : <?= $m_active, ' / ', $m_all?> soit <?= $m_pourcent?> ( <?= $act_op['act_op'], ' / ', $op_all['op_all']?> & <?= $act_mj['act_mj'], ' / ', $mj_all['mj_all']?> )</p>
 	<?php } ?>
 	<table cellspacing="0" cellpadding="0" width="100%">
 		<tbody>
