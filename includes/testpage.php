@@ -36,14 +36,14 @@
         {
         $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
         ?>
-        <tr class="memberbg_2" valign="center">
-          <td>
+        <tr class="memberbg_2" valign="center" style="text-align:center;">
+          <td width="15%">
             <?= $line['name']?>
           </td>
-          <td>
+          <td width="15%">
             <?= $date ?>
           </td>
-          <td>
+          <td width="15%">
             <?= $line['pseudo_mc']?>
           </td>
           <td>
