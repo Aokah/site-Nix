@@ -24,7 +24,7 @@
     ?>
     <p>Il y a actuellement <?=$select['count'], ' candidature', $plural; ?> en attente de lecture.</p>
 
-    <table cellspacing="0" cellpadding="0" width="100%">
+    <table cellspacing="0" cellpadding="5px" width="100%">
       <tbody>
         <tr class="member_top">
           <th>Joueur</th>
