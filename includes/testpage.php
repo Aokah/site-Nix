@@ -36,7 +36,7 @@
         {
         $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
         ?>
-        <tr class="memberbg_2" valign="center" style="text-align:center;">
+        <tr class="memberbg_2" valign="center" style="text-align:center; border-bottom: 4px solid black;">
           <td width="15%">
             <?= $line['name']?>
           </td>
@@ -50,7 +50,7 @@
             <?= $line['candid']?>
           </td>
         </tr>
-        <tr class="memberbg_2" valign="center" style="text-align:center;">
+        <tr class="memberbg_2" valign="center" style="text-align:center; border-bottom: 4px solid black;">
           <td colspan="3">
             <a href="index?p=candid&valid=<?= $line['sender_id']?>">
               [Valider la Candidature]
