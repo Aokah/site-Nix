@@ -17,7 +17,7 @@
     <p>Ici sont répertoriées les différentes candidatures d'entrée à Nix n'étant pas encore validée.</p>
     <? if ($select['count'] > 0)
     {
-      $select = $db->query('SELECT c.id AS c_id, c.sender_id, c.pseudo_mc, c.candid, c.date_send, c.verify, m.id, m.title, m.name
+      $sel = $db->query('SELECT c.id AS c_id, c.sender_id, c.pseudo_mc, c.candid, c.date_send, c.verify, m.id, m.title, m.name
       FROM candid c
       RIGHT JOIN members m ON m.id = c.sender_id
       WHERE verify = 0 ORDER BY date_send DESC');
@@ -30,7 +30,7 @@
         <th>Date d'envoi</th>
         <th>Pseudo MC</th>
         <th>Candidature</th>
-        <? while ($line = $select->fetch())
+        <? while ($line = $sel->fetch())
         {
         $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
         ?>
