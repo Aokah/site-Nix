@@ -5,7 +5,7 @@
   {
     ?>
     <p>Page ne cours de maintenance.
-    Pour effectuer votre candidature manuellement, rendez-vous <a href="index?p=forum&forum=?">ici</a> !</p>
+    Pour effectuer votre candidature manuellement, rendez-vous <a href="index?p=forum&forum=412">ici</a> !</p>
     <?php
     $verif = $db->prepare('SELECT * FROM members WHERE id = ?');
     $verif->execute(array($_SESSION['id'])); $verif = $verif->fetch();
