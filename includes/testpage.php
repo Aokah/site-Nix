@@ -24,17 +24,19 @@
     ?>
     <p>Il y a actuellement <?=$select['count'], ' candidature', $plural; ?> en attente de lecture.</p>
     
-    <table cellspacing="0" cellpadding="0">
+    <table cellspacing="0" cellpadding="0" width="100%">
       <tbody>
-        <th>Joueur</th>
-        <th>Date d'envoi</th>
-        <th>Pseudo MC</th>
-        <th>Candidature</th>
+        <tr class="member_top">
+          <th>Joueur</th>
+          <th>Date d'envoi</th>
+          <th>Pseudo MC</th>
+          <th>Candidature</th>
+        </tr>
         <? while ($line = $sel->fetch())
         {
         $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
         ?>
-        <tr>
+        <tr class="memberbg_2" valign="center">
           <td>
             <?= $line['name']?>
           </td>
@@ -45,7 +47,7 @@
             <?= $line['pseudo_mc']?>
           </td>
           <td>
-            <?= $line['candidature']?>
+            <?= $line['candid']?>
           </td>
         </tr>
         <?php
