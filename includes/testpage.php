@@ -23,8 +23,7 @@
       WHERE verify = 0 ORDER BY date_send DESC');
     ?>
     <p>Il y a actuellement <?=$select['count'], ' candidature', $plural; ?> en attente de lecture.</p>
-    <form method="GET" action="index.php">
-      <input type="hidden" name="p" value="candid" />
+
     <table cellspacing="0" cellpadding="0" width="100%">
       <tbody>
         <tr class="member_top">
@@ -51,9 +50,16 @@
             <?= $line['candid']?>
           </td>
         </tr>
-        <tr>
-          <td colspan="3" style="text-align:right;">
-            <input type="submit" name="Valider" value="<?= $line['sender_id']?>" />
+        <tr class="memberbg_2" valign="center" style="text-align:center;">
+          <td colspan="2">
+            <a href="index?p=candid&valid=<?= $line['sender_id']?>">
+              [Valider la Candidature]
+            </a>
+          </td>
+          <td colspan="2">
+            <a href="index?p=candid&unvalid=<?= $line['sender_id']?>">
+              [Refuser la Candidature]
+            </a>
           </td>
         </tr>
         <?php
