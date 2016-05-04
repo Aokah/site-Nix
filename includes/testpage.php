@@ -18,7 +18,7 @@
     <? if ($select['count'] > 0)
     {
     ?>
-    <p>Il y a actuellement <?=$count, ' candidature', $plural; ?> en attente de lecture.</p>
+    <p>Il y a actuellement <?=$select['count'], ' candidature', $plural; ?> en attente de lecture.</p>
     <?
     }
     else
