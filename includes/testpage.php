@@ -51,12 +51,12 @@
           </td>
         </tr>
         <tr class="memberbg_2" valign="center" style="text-align:center;">
-          <td colspan="2">
+          <td colspan="3">
             <a href="index?p=candid&valid=<?= $line['sender_id']?>">
               [Valider la Candidature]
             </a>
           </td>
-          <td colspan="2">
+          <td>
             <a href="index?p=candid&unvalid=<?= $line['sender_id']?>">
               [Refuser la Candidature]
             </a>
