@@ -14,7 +14,9 @@
 		{
 			if ($_GET['test'])
 			{
-				$api->call("plugins.name.commands", array("NickNamer"));
+				$plugin = $api->call("plugins.name.commands", array("NickNamer"));
+				
+				 echo $plugin[0]['success'][$i];
 			}
 		}
 		else
