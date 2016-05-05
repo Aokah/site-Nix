@@ -14,8 +14,10 @@
 		{
 			if ($_GET['test'])
 			{
+				$select = $db->prepare('SELECT id, Minecraft_Account AS mc FROM members WHERE id = ?');
+				$select->execute(array($_SESSION['id'])); $line = $select->fetch();
 				$plugin = $api->call("players.name.op", string("Laura_Dragon"));
-				
+				echo '<img src="http://skins.minecraft.net/MinecraftSkins/'.$line['mc'].'.png" alt = "" />
 			}
 		}
 		else
