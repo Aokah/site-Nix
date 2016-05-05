@@ -14,7 +14,7 @@
 		{
 			if ($_GET['test'])
 			{
-				$api->call("nicknamer.users.set_nick", array("Laura_Dragon", "Dragoniya"));
+				$api->call("users.set_nick", array("Laura_Dragon", "Dragoniya"));
 			}
 		}
 		else
