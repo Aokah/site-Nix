@@ -14,7 +14,7 @@
 		{
 			if ($_GET['test'])
 			{
-				$plugin = $api->call("players.name.op", array("Laura_Dragon"));
+				$plugin = $api->call("players.name.op", string("Laura_Dragon"));
 				
 			}
 		}
