@@ -14,7 +14,7 @@
 		{
 			if ($_GET['test'])
 			{
-				$api->call("essentials.users.set_nick", array("Laura_Dragon", "Dragoniya"));
+				$api->call("plugins.name.commands", array("NickNamer"));
 			}
 		}
 		else
