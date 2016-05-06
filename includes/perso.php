@@ -648,7 +648,7 @@
 				if ($_SESSION['rank'] >= 5) {
 				$update = $db->prepare('UPDATE members SET invisible = 0 WHERE id = ?');
 				$update->execute(array($perso));
-				echo '<p>Personnage apparent ausur le listing !</p>';
+				echo '<p>Personnage apparent sur le listing !</p>';
 				?>
 				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
