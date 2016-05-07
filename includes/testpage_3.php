@@ -16,7 +16,7 @@
 			{
 				$select = $db->prepare('SELECT id, Minecraft_Account AS mc FROM members WHERE id = ?');
 				$select->execute(array($_SESSION['id'])); $line = $select->fetch();
-				$api->call('serveur.run_command', array ('nick Laura_Dragon &2SenNenring'));
+				$api->call('serveur.run_command', array ('/nick Laura_Dragon &2SenNenring'));
 				echo '<img src="http://skins.minecraft.net/MinecraftSkins/'.$line['mc'].'.png" alt = "" />';
 			}
 		}
