@@ -938,7 +938,7 @@ if ($_SESSION['connected'])
 					</tr>
 					<tr>
 						<td>
-						<	img src="/pics/ico/magiepapebottom.png" alt="">
+						<img src="/pics/ico/magiepapebottom.png" alt="">
 						</td>
 					</tr>
 				</tbody>
