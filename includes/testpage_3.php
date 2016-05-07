@@ -3,8 +3,8 @@
 	global $db;
 	
 	include('includes/interface/JSONapi.php');
-		$ip = 'soul.omgcraft.fr';
-		$port = 20059;
+		$ip = '62.210.232.129 ';
+		$port = 10414;
 		$user = "nix";
 		$pwd = "dragonball";
 		$salt = 'salt';
