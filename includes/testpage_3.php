@@ -5,8 +5,8 @@
 	include('includes/interface/JSONapi.php');
 		$ip = '62.210.232.129 ';
 		$port = 10414;
-		$user = "nix";
-		$pwd = "dragonball";
+		$user = renan.a@homtail.fr;
+		$pwd = muse.nirvana;
 		$salt = 'salt';
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 		
