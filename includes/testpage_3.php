@@ -3,10 +3,10 @@
 	global $db;
 	
 	include('includes/interface/JSONapi.php');
-		$ip = '62.210.232.129 ';
+		$ip = 62.210.232.129;
 		$port = 10414;
-		$user = renan.a@homtail.fr;
-		$pwd = muse.nirvana;
+		$user = 'renan.a@homtail.fr';
+		$pwd = 'muse.nirvana';
 		$salt = 'salt';
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 		
