@@ -18,6 +18,7 @@
         FROM candid c
         RIGHT JOIN members m ON m.id = c.sender_id
         WHERE c_id = ?');
+        $sel->execute(array($candid));
         if ($line = $sel->fetch())
         {
           if ($line['verify'] == 0)
@@ -61,7 +62,7 @@
         }
         else
         {
-          echo '<p>Navré mais ce membre n\'a aucne candidature à son nom.</p>';
+          echo '<p>Navré mais cette candidature n\'existe pas ou a déjà été vérifiée.</p>';
         }
       }
       elseif (isset($_GET['unvalid']))
