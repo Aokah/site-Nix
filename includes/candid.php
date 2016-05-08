@@ -23,42 +23,49 @@
         {
           if ($line['verify'] == 0)
           {
-            $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
-          ?>
-            <h3>Validation de Candidature</h3>
-            <form action="index?p=candid&valid=<?= $candid?>" method="POST">
-              <p>
-                <textarea width="100%" name="reason">Noter ici votre commentaire . . .</textarea>
-              </p>
-            </form>
-            
-            <p>Pour rappel, voici la candidature déposée par <?= $line['name']?>.</p>
-            
-            <table cellspacing="0" cellpadding="5px" width="100%">
-            <tbody>
-              <tr class="member_top">
-                <th>Joueur</th>
-                <th>Date d'envoi</th>
-                <th>Pseudo MC</th>
-                <th>Candidature</th>
-              </tr>
-              <tr class="memberbg_2" valign="center" style="text-align:center;;">
-                <td width="15%">
-                  <?= $line['name']?>
-                </td>
-                <td width="15%">
-                  <?= $date ?>
-                </td>
-                <td width="15%">
-                  <?= $line['pseudo_mc']?>
-                </td>
-                <td>
-                  <?= $line['candid']?>
-                </td>
-            </tbody>
-          </table>
-          
+            if (isset($_POST['valid']))
+            {
+              
+            }
+            else
+            {
+              $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
+            ?>
+              <h3>Validation de Candidature</h3>
+              <form action="index?p=candid&valid=<?= $candid?>" method="POST">
+                <p>
+                  <textarea width="100%" name="reason">Noter ici votre commentaire . . .</textarea>
+                  <input type="submit" name="valid" value="Envoyer" />
+                </p>
+              </form>
+              
+              <p>Pour rappel, voici la candidature déposée par <?= $line['name']?>.</p>
+              
+              <table cellspacing="0" cellpadding="5px" width="100%">
+              <tbody>
+                <tr class="member_top">
+                  <th>Joueur</th>
+                  <th>Date d'envoi</th>
+                  <th>Pseudo MC</th>
+                  <th>Candidature</th>
+                </tr>
+                <tr class="memberbg_2" valign="center" style="text-align:center;;">
+                  <td width="15%">
+                    <?= $line['name']?>
+                  </td>
+                  <td width="15%">
+                    <?= $date ?>
+                  </td>
+                  <td width="15%">
+                    <?= $line['pseudo_mc']?>
+                  </td>
+                  <td>
+                    <?= $line['candid']?>
+                  </td>
+              </tbody>
+            </table>
           <?php
+            }
           }
           else
           {
