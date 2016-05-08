@@ -17,7 +17,7 @@
         $sel = $db->prepare('SELECT c.id AS c_id, c.sender_id, c.pseudo_mc, c.candid, c.date_send, c.verify, m.id, m.title, m.name
         FROM candid c
         RIGHT JOIN members m ON m.id = c.sender_id
-        WHERE c_id = ?');
+        WHERE c.id = ?');
         $sel->execute(array($candid));
         if ($line = $sel->fetch())
         {
