@@ -34,7 +34,7 @@
                 $update->execute(array($reason, $_SESSION['id'],$candid));
                 echo '<p>La candidature a bien été validée !</p>';
                 $msg = "Candidature validée pour ". $line['name'] ." !";
-                $cb = $db->prepare("INSERT INTO chatbox VALUES('',NOW(),92,0,'',?");
+                $cb = $db->prepare("INSERT INTO chatbox VALUES('',NOW(),92,0,'',?)");
                 $cb->execute(array($msg));
                 $select = $db->prepare('SELECT * FROM members WHERE id = ?'); $select->execute(array($_SESSION['id'])); $session = $select->fetch();
                 $title = $session['title']; if ($session['pionier'] == 1) { $title = "Pionier"; }
