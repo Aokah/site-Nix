@@ -29,9 +29,35 @@
               $verif->execute(array($candid));
               if ($verif->fetch())
               {
+                $reason = htmlspecialchars($_POST['reason']);
                 $update = $db->prepare('UPDATE candid SET verify = 1, reason = ?, valider_id = ?, date_verify = NOW() WHERE id = ?');
                 $update->execute(array($reason, $_SESSION['id'],$candid));
                 echo '<p>La candidature a bien été validée !</p>';
+                $msg = "Candidature validée pour ". $line['name'] ." !";
+                $cb = $db->prepare("INSERT INTO chatbox VALUES('',NOW(),92,0,'',?");
+                $cb->execute(array($msg));
+                $select = $db->prepare('SELECT * FROM members WHERE id = ?'); $select->execute(array($_SESSION['id'])); $session = $select->fetch();
+                $title = $session['title']; if ($session['pionier'] == 1) { $title = "Pionier"; }
+                if (empty($_POST['reason']) OR $reason = ' ')
+                {
+                $pm = "Votre candidature candidature vient d'être acceptée par" . $title . " " . $_SESSIONH['name'] .
+                '. <br />Vous pouvez désormais accéder au serveur avec l\'ip ci-dessous !<br />62.210.232.129:10414 <br /><br />Au plaisir de vous revoir en jeu !<br /><br />Shirka';
+                }
+                else
+                {
+                  $pm = "Votre candidature candidature vient d'être acceptée par" . $title . " " . $_SESSIONH['name'] . ' avec  le commentaire ci-joint :<br />'
+                  . $reason . 
+                ' <br />Vous pouvez désormais accéder au serveur avec l\'ip ci-dessous !<br />62.210.232.129:10414 <br /><br />Au plaisir de vous revoir en jeu !<br /><br />Shirka';
+                }
+                $insert = $db->prepare("INSERT INTO private_messages VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1)");
+                $insert->execute(array($pm, $line['sender_id']));
+                $verify = $db->prepare('SELECT id, rank FROM members WHERE id= ? ANd rank = 1');
+                $verify->execute(array($line['sender_id']));
+                if ($verify->fetch())
+                {
+                  $upgrade = $db->prepare('UPDATE members SET rank = 2 WHERE id = ?');
+                  $upgrade->execute(array($line['sender_id']));
+                }
               }
               else
               {
@@ -48,7 +74,7 @@
               <h3>Validation de Candidature</h3>
               <form action="index?p=candid&valid=<?= $candid?>" method="POST">
                 <p>
-                  <textarea width="100%" name="reason">Noter ici votre commentaire . . .</textarea><br />
+                  <textarea width="100%" name="reason"  placeholder="Noter ici votre commentaire . . ."></textarea><br />
                   <input type="submit" name="valid" value="Envoyer" />
                 </p>
               </form>
