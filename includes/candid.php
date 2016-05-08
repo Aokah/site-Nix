@@ -25,7 +25,21 @@
           {
             if (isset($_POST['valid']))
             {
-              
+              $verif = $db->prepare('SELECT id, verify FROM candid WHERE id = ? AND verify = 0');
+              $verif->execute(array($candid));
+              if ($verif->fetch())
+              {
+                $update = $db->prepare('UPDATE candid SET verify = 1, reason = ?, valider_id = ?, date_verify = NOW() WHERE id = ?');
+                $update->execute(array($reason, $_SESSION['id'],$candid));
+                echo '<p>La candidature a bien été validée !</p>';
+              }
+              else
+              {
+              ?>
+              <img src="pics/tf7.png" width="100%" alt="" /><br />
+              <p>Navré, mais uun autre MJ a été plus rapide que vous !</p>
+              <?php
+              }
             }
             else
             {
@@ -34,7 +48,7 @@
               <h3>Validation de Candidature</h3>
               <form action="index?p=candid&valid=<?= $candid?>" method="POST">
                 <p>
-                  <textarea width="100%" name="reason">Noter ici votre commentaire . . .</textarea>
+                  <textarea width="100%" name="reason">Noter ici votre commentaire . . .</textarea><br />
                   <input type="submit" name="valid" value="Envoyer" />
                 </p>
               </form>
