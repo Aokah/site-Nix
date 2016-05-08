@@ -26,6 +26,11 @@
             $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
           ?>
             <h3>Validation de Candidature</h3>
+            <form action="index?p=candid&valid=<?= $candid?>" method="POST">
+              <p>
+                <textarea width="100%" name="reason">Noter ici votre commentaire . . .</textarea>
+              </p>
+            </form>
             
             <p>Pour rappel, voici la candidature déposée par <?= $line['name']?>.</p>
             
