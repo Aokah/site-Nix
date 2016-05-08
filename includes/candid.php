@@ -49,7 +49,7 @@
                   . $reason . 
                 ' <br />Vous pouvez désormais accéder au serveur avec l\'ip ci-dessous !<br />62.210.232.129:10414 <br /><br />Au plaisir de vous revoir en jeu !<br /><br />Shirka';
                 }
-                $insert = $db->prepare("INSERT INTO private_messages VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1)");
+                $insert = $db->prepare("INSERT INTO private_message VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1)");
                 $insert->execute(array($pm, $line['sender_id']));
                 $verify = $db->prepare('SELECT id, rank FROM members WHERE id= ? ANd rank = 1');
                 $verify->execute(array($line['sender_id']));
