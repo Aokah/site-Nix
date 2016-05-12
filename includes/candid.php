@@ -139,7 +139,7 @@
                 $update = $db->prepare('UPDATE candid SET verify = 1, reason = ?, valider_id = ?, accepted = 0, date_verify = NOW() WHERE id = ?');
                 $update->execute(array($reason, $_SESSION['id'],$candid));
                 echo '<p>La candidature a bien été refusée !</p>';
-                $msg = "Candidature validée pour ". $line['name'] ." !";
+                $msg = "Candidature non retenue, rendez-vous en page Messages Privés pour en savoir plus.";
                 $cb = $db->prepare("INSERT INTO chatbox VALUES('',NOW(),92,?,'',?)");
                 $cb->execute(array($line['sender_id'], $msg));
                 $select = $db->prepare('SELECT * FROM members WHERE id = ?'); $select->execute(array($_SESSION['id'])); $session = $select->fetch();
