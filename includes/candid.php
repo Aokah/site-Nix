@@ -38,7 +38,7 @@
                 //$cb->execute(array($msg));
                 $select = $db->prepare('SELECT * FROM members WHERE id = ?'); $select->execute(array($_SESSION['id'])); $session = $select->fetch();
                 $title = $session['title']; if ($session['pionier'] == 1) { $title = "Pionier"; }
-                if (empty($reason))
+                if (isset($reason))
                 {
                   echo 'test';
                 $pm = "Votre candidature candidature vient d'être acceptée par " . $title . " " . $_SESSION['name'] .
@@ -46,7 +46,7 @@
                 }
                 else
                 {
-                  $pm = "Votre candidature candidature vient d'être acceptée par " . $title . " " . $_SESSIONH['name'] . ' avec  le commentaire ci-joint :<br />'
+                  $pm = "Votre candidature candidature vient d'être acceptée par " . $title . " " . $_SESSION['name'] . ' avec  le commentaire ci-joint :<br />'
                   . $reason . 
                 ' <br />Vous pouvez désormais accéder au serveur avec l\'ip ci-dessous !<br />62.210.232.129:10414 <br /><br />Au plaisir de vous revoir en jeu !<br /><br />Shirka';
                 }
