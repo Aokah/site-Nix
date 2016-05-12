@@ -157,12 +157,12 @@
                 $verify->execute(array($line['sender_id']));
                 if ($verify->fetch())
                 {
-                  $upgrade = $db->prepare('UPDATE members SET rank = 2, accepted = 0 WHERE id = ?');
+                  $upgrade = $db->prepare('UPDATE members SET rank = 2, accepted = 1 WHERE id = ?');
                   $upgrade->execute(array($line['sender_id']));
                 }
                 else
                 {
-                  $upgrade = $db->prepare('UPDATE members SET accepted = 0 WHERE id = ?');
+                  $upgrade = $db->prepare('UPDATE members SET accepted = 1 WHERE id = ?');
                   $upgrade->execute(array($line['sender_id']));
                 }
               }
