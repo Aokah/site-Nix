@@ -316,7 +316,7 @@
          {
            $cleft = $count--;
            $plural = ($cleft == 1)? '' : 's';
-           echo '<p>Il y a actuellement ' . $c_left .' candidature'. $plural.' en attente de lecture auprès de la votre. Patientez quelques temps, un membre du Staff ne devrait pas tarder à la lire.</p>'
+           echo '<p>Il y a actuellement ' . $c_left .' candidature'. $plural.' en attente de lecture auprès de la votre. Patientez quelques temps, un membre du Staff ne devrait pas tarder à la lire.</p>';
          }
         }
       }
