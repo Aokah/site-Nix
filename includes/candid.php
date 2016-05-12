@@ -3,10 +3,6 @@
   global $_POST, $db, $_GET;
   if ($_SESSION['connected'])
   {
-    ?>
-    <p>Page ne cours de maintenance.
-    Pour effectuer votre candidature manuellement, rendez-vous <a href="index?p=forum&forum=412">ici</a> !</p>
-    <?php
     $verif = $db->prepare('SELECT * FROM members WHERE id = ?');
     $verif->execute(array($_SESSION['id'])); $verif = $verif->fetch();
     if ($_SESSION['rank'] > 4)
@@ -177,7 +173,7 @@
             {
               $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
             ?>
-              <h3>Validation de Candidature</h3>
+              <h3>Refus de Candidature</h3>
               <form action="index?p=candid&unvalid=<?= $candid?>" method="POST">
                 <p>
                   <textarea width="100%" name="reason"  placeholder="Noter ici votre commentaire . . ."></textarea><br />
@@ -296,7 +292,34 @@
     }
     else
     {
-      echo '<p>Vous avez déjà passé votre candidature.</p>';
+      //Vision Joueur
+      ?>
+      <h2>Votre candidature</h2>
+      <?php
+      $verif = $db->prepare('SELECT * FROM candid WHERE accepted = 0, sender_id = ?');
+      $verif->execute(array($_SESSION['id']));
+      if ($verif->fetch())
+      {
+        $verif = $db->query('SELECT COUNT(*) AS count FROM candid WHERE verify = 0');
+        if ($count = $verif->fetch())
+        {
+         $count = $count['count'];
+         if ($count == 1)
+         {
+           echo '<p>Votre candidature est pour le moment la seule en attente et devrait être examinée rapidement, revenez d\'ici quelques instants</p>';
+         }
+         else
+         {
+           $cleft = $count--;
+           $plural = ($cleft == 1)? '' : 's';
+           echo '<p>Il y a actuellement ' . $c_left .' candidature'. $plural.' en attente de lecture auprès de la votre. Patientez quelques temps, un membre du Staff ne devrait pas tarder à la lire.</p>'
+         }
+        }
+      }
+      else
+      {
+        //Candidature à faire
+      }
     }
   }
   else
