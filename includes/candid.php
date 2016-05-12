@@ -30,7 +30,7 @@
               if ($verif->fetch())
               {
                 $reason = htmlspecialchars($_POST['reason']);
-                $update = $db->prepare('UPDATE candid SET verify = 1, reason = ?, valider_id = ?, date_verify = NOW() WHERE id = ?');
+                $update = $db->prepare('UPDATE candid SET verify = 1, reason = ?, valider_id = ?, accepted = 1, date_verify = NOW() WHERE id = ?');
                 $update->execute(array($reason, $_SESSION['id'],$candid));
                 echo '<p>La candidature a bien été validée !</p>';
                 $msg = "Candidature validée pour ". $line['name'] ." !";
