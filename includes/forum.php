@@ -3,7 +3,7 @@
 	global $db, $_SESSION, $_GET, $_POST;
 
 	//Ajout d'un message
-	define('rank_add_post', 2);
+	define('rank_add_post', 1);
 	//Ajout d'un message avec balises
 	define('rank_add_post_enriched', 2);
 	//Suppression d'un message
