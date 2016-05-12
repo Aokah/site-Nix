@@ -326,7 +326,7 @@
         {
           $mc = htmlspecialchars($POST['mc']);
           $candid = htmlentities($_POST['candid']);
-          $verif = $db->prepare('SELECT Minecraft_Account from members WHERE Minecraft_Account = ?');
+          $verif = $db->prepare('SELECT * FROM members WHERE Minecraft_Account = ?');
           $verif->execute(array($mc));
           if ($verif->fetch())
           {
