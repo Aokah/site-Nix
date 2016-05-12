@@ -119,7 +119,109 @@
       }
       elseif (isset($_GET['unvalid']))
       {
-        
+        $candid = intval($_GET['unvalid']);
+        $sel = $db->prepare('SELECT c.id AS c_id, c.sender_id, c.pseudo_mc, c.candid, c.date_send, c.verify, m.id, m.title, m.name
+        FROM candid c
+        RIGHT JOIN members m ON m.id = c.sender_id
+        WHERE c.id = ?');
+        $sel->execute(array($candid));
+        if ($line = $sel->fetch())
+        {
+          if ($line['verify'] == 0)
+          {
+            if (isset($_POST['unvalid']))
+            {
+              $verif = $db->prepare('SELECT id, verify FROM candid WHERE id = ? AND verify = 0');
+              $verif->execute(array($candid));
+              if ($verif->fetch())
+              {
+                $reason = htmlspecialchars($_POST['reason']);
+                $update = $db->prepare('UPDATE candid SET verify = 1, reason = ?, valider_id = ?, accepted = 0, date_verify = NOW() WHERE id = ?');
+                $update->execute(array($reason, $_SESSION['id'],$candid));
+                echo '<p>La candidature a bien été refusée !</p>';
+                $msg = "Candidature validée pour ". $line['name'] ." !";
+                $cb = $db->prepare("INSERT INTO chatbox VALUES('',NOW(),92,?,'',?)");
+                $cb->execute(array($line['sender_id'], $msg));
+                $select = $db->prepare('SELECT * FROM members WHERE id = ?'); $select->execute(array($_SESSION['id'])); $session = $select->fetch();
+                $title = $session['title']; if ($session['pionier'] == 1) { $title = "Pionier"; }
+                if (isset($reason))
+                {
+                 $pm = "Votre candidature candidature vient d'être refusée par " . $title . " " . $_SESSION['name'] . ' avec  le commentaire ci-joint :<br />'
+                  . $reason . 
+                ' <br />Relisez-bien tous les onglets d\'information à votre disposition ou veillez à ce que l\'orthographe de votre candidature reste correcte puis réessayez.<br /><br />Shirka';
+                }
+                else
+                {
+                $pm = "Votre candidature candidature vient d'être refusée par " . $title . " " . $_SESSION['name'] .
+                '. <br />Relisez-bien tous les onglets d\'information à votre disposition ou veillez à ce que l\'orthographe de votre candidature reste correcte puis réessayez.<br /><br />Shirka';
+                }
+                $insert = $db->prepare("INSERT INTO private_message VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1)");
+                $insert->execute(array($pm, $line['sender_id']));
+                $verify = $db->prepare('SELECT id, rank FROM members WHERE id= ? ANd rank = 1');
+                $verify->execute(array($line['sender_id']));
+                if ($verify->fetch())
+                {
+                  $upgrade = $db->prepare('UPDATE members SET rank = 2 WHERE id = ?');
+                  $upgrade->execute(array($line['sender_id']));
+                }
+              }
+              else
+              {
+              ?>
+              <img src="pics/tf7.png" width="100%" alt="" /><br />
+              <p>Navré, mais un autre MJ a été plus rapide que vous !</p>
+              <?php
+              }
+            }
+            else
+            {
+              $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
+            ?>
+              <h3>Validation de Candidature</h3>
+              <form action="index?p=candid&unvalid=<?= $candid?>" method="POST">
+                <p>
+                  <textarea width="100%" name="reason"  placeholder="Noter ici votre commentaire . . ."></textarea><br />
+                  <input type="submit" name="unvalid" value="Envoyer" />
+                </p>
+              </form>
+              
+              <p>Pour rappel, voici la candidature déposée par <?= $line['name']?>.</p>
+              
+              <table cellspacing="0" cellpadding="5px" width="100%">
+              <tbody>
+                <tr class="member_top">
+                  <th>Joueur</th>
+                  <th>Date d'envoi</th>
+                  <th>Pseudo MC</th>
+                  <th>Candidature</th>
+                </tr>
+                <tr class="memberbg_2" valign="center" style="text-align:center;;">
+                  <td width="15%">
+                    <?= $line['name']?>
+                  </td>
+                  <td width="15%">
+                    <?= $date ?>
+                  </td>
+                  <td width="15%">
+                    <?= $line['pseudo_mc']?>
+                  </td>
+                  <td>
+                    <?= $line['candid']?>
+                  </td>
+              </tbody>
+            </table>
+          <?php
+            }
+          }
+          else
+          {
+            echo '<p>Navré, mais cette candidature a déjà été vérifiée.';
+          }
+        }
+        else
+        {
+          echo '<p>Navré mais cette candidature n\'existe pas.</p>';
+        }
       }
       else
       {
