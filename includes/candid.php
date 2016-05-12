@@ -157,7 +157,12 @@
                 $verify->execute(array($line['sender_id']));
                 if ($verify->fetch())
                 {
-                  $upgrade = $db->prepare('UPDATE members SET rank = 2 WHERE id = ?');
+                  $upgrade = $db->prepare('UPDATE members SET rank = 2, accepted = 0 WHERE id = ?');
+                  $upgrade->execute(array($line['sender_id']));
+                }
+                else
+                {
+                  $upgrade = $db->prepare('UPDATE members SET accepted = 0 WHERE id = ?');
                   $upgrade->execute(array($line['sender_id']));
                 }
               }
@@ -292,7 +297,6 @@
     }
     else
     {
-      //Vision Joueur
       ?>
       <h2>Votre candidature</h2>
       <?php
@@ -318,7 +322,50 @@
       }
       else
       {
-        //Candidature à faire
+        if (isset($_POST['send']))
+        {
+          $mc = htmlspecialchars($POST['mc']);
+          $candid = htmlentities($_POST['candid']);
+          $verif = $db->prepare('SELECT Minecraft_Account from members WHERE Minecraft_Account = ?');
+          $verif->execute(array($mc));
+          if ($verif->fetch())
+          {
+          ?>
+            <h3>Ecrivez ici votre candidature</h3>
+        <p>Afin de vous garantir une intégration convenable sur le serveur, il est nécessaire pour nous de connaitre votre niveau de jeu et vos motivations de venir jouer parmi nous.</p>
+        <p style="color:red;">Pour rappel : Il est vivement conseillé de ne pas mentionner le fait que vous soyez un quelconque mage de puissante renomée, mieux vaut découvrir le système technique de la magie en RP, ceci vous permettra également de profiter de l'apprentissage sur le vif.</p>
+        <p>
+        <form action="index?p=candid" method="POST">
+          <input type="text" name="mc" value="<?= $mc?>" placeholder="Votre pseudo Minecraft" />
+          <span style="color:red;">NAvré, mais ce compte Minecraft est déjà utilisé.</span>
+          <textarea name="candid" placeholder="&Ecute;crivez votre candidature ici . . ."><?= $candid?></textarea>
+          <input name="send" value="Envoyer" />
+        </form>
+        </p>
+        <?php
+          }
+          else
+          {
+            $insert = $db->prepare("INSERT INTO candid VALUE('',?, ?, ?, NOW(), 0, 0, '', '', 0)");
+            $insert->execute(array($_SESSION['id'], $mc, $candid));
+            echo '<p>Votre candidature a bien été envoyée et est déosrmais en attente de validation !</p>';
+          }
+        }
+        else
+        {
+      ?>
+        <h3>Ecrivez ici votre candidature</h3>
+        <p>Afin de vous garantir une intégration convenable sur le serveur, il est nécessaire pour nous de connaitre votre niveau de jeu et vos motivations de venir jouer parmi nous.</p>
+        <p style="color:red;">Pour rappel : Il est vivement conseillé de ne pas mentionner le fait que vous soyez un quelconque mage de puissante renomée, mieux vaut découvrir le système technique de la magie en RP, ceci vous permettra également de profiter de l'apprentissage sur le vif.</p>
+        <p>
+        <form action="index?p=candid" method="POST">
+          <input type="text" name="mc" placeholder="Votre pseudo Minecraft" />
+          <textarea name="candid" placeholder="&Ecute;crivez votre candidature ici . . ."></textarea>
+          <input name="send" value="Envoyer" />
+        </form>
+        </p>
+        <?php
+        }
       }
     }
   }
