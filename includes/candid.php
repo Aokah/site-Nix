@@ -336,7 +336,7 @@
         <p style="color:red;">Pour rappel : Il est vivement conseillé de ne pas mentionner le fait que vous soyez un quelconque mage de puissante renomée, mieux vaut découvrir le système technique de la magie en RP, ceci vous permettra également de profiter de l'apprentissage sur le vif.</p>
         <p>
        <form action="index?p=candid" method="POST">
-          <input type="text" name="mc" value="<?=$mc?>" placeholder="Votre pseudo Minecraft" />
+          <input type="text" name="mc" value="<?=$mc?>" placeholder="Pseudo Minecraft" />
           <span style="color:red;">Navré, mais ce compte Minecraft est déjà utilisé.</span><br />
           <textarea name="candid" placeholder="Ecrivez votre candidature ici . . ."><?= $candid?></textarea>
           <input type="submit" name="send" value="Envoyer" />
@@ -359,7 +359,7 @@
         <p style="color:red;">Pour rappel : Il est vivement conseillé de ne pas mentionner le fait que vous soyez un quelconque mage de puissante renomée, mieux vaut découvrir le système technique de la magie en RP, ceci vous permettra également de profiter de l'apprentissage sur le vif.</p>
         <p>
         <form action="index?p=candid" method="POST">
-          <input type="text" name="mc" placeholder="Votre pseudo Minecraft" /><br />
+          <input type="text" name="mc" placeholder="Pseudo Minecraft" /><br />
           <textarea name="candid" placeholder="Ecrivez votre candidature ici . . ."></textarea><br />
           <input type="submit" name="send" value="Envoyer" />
         </form>
