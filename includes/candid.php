@@ -335,10 +335,11 @@
         <p>Afin de vous garantir une intégration convenable sur le serveur, il est nécessaire pour nous de connaitre votre niveau de jeu et vos motivations de venir jouer parmi nous.</p>
         <p style="color:red;">Pour rappel : Il est vivement conseillé de ne pas mentionner le fait que vous soyez un quelconque mage de puissante renomée, mieux vaut découvrir le système technique de la magie en RP, ceci vous permettra également de profiter de l'apprentissage sur le vif.</p>
         <p>
-        <form action="index?p=candid" method="POST">
-          <input type="text" name="mc" value="<?= $mc?>" placeholder="Votre pseudo Minecraft" />
+       <form action="index?p=candid" method="POST">
+          <input type="text" name="mc" placeholder="Votre pseudo Minecraft" /><br />
+          
           <span style="color:red;">NAvré, mais ce compte Minecraft est déjà utilisé.</span>
-          <textarea name="candid" placeholder="&Ecute;crivez votre candidature ici . . ."><?= $candid?></textarea>
+          <textarea name="candid" placeholder="Ecrivez votre candidature ici . . ."><?= $candid?></textarea>
           <input name="send" value="Envoyer" />
         </form>
         </p>
@@ -359,9 +360,9 @@
         <p style="color:red;">Pour rappel : Il est vivement conseillé de ne pas mentionner le fait que vous soyez un quelconque mage de puissante renomée, mieux vaut découvrir le système technique de la magie en RP, ceci vous permettra également de profiter de l'apprentissage sur le vif.</p>
         <p>
         <form action="index?p=candid" method="POST">
-          <input type="text" name="mc" placeholder="Votre pseudo Minecraft" />
-          <textarea name="candid" placeholder="&Ecute;crivez votre candidature ici . . ."></textarea>
-          <input name="send" value="Envoyer" />
+          <input type="text" name="mc" placeholder="Votre pseudo Minecraft" /><br />
+          <textarea name="candid" placeholder="Ecrivez votre candidature ici . . ."></textarea><br />
+          <input type="submit" name="send" value="Envoyer" />
         </form>
         </p>
         <?php
