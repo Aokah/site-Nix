@@ -340,7 +340,7 @@
           
           <span style="color:red;">NAvré, mais ce compte Minecraft est déjà utilisé.</span>
           <textarea name="candid" placeholder="Ecrivez votre candidature ici . . ."><?= $candid?></textarea>
-          <input name="send" value="Envoyer" />
+          <input type="submit" name="send" value="Envoyer" />
         </form>
         </p>
         <?php
