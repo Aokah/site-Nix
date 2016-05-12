@@ -324,9 +324,9 @@
       {
         if (isset($_POST['send']))
         {
-          $mc = htmlspecialchars($POST['mc']);
-          $candid = htmlentities($_POST['candid']);
-          $verif = $db->prepare('SELECT * FROM members WHERE Minecraft_Account = ?');
+          $mc =htmlentities($POST['mc']);
+          $candid =htmlentities($_POST['candid']);
+          $verif = $db->prepare('SELECT Minecraft_Account FROM members WHERE Minecraft_Account = ? ');
           $verif->execute(array($mc));
           if ($verif->fetch())
           {
@@ -336,8 +336,8 @@
         <p style="color:red;">Pour rappel : Il est vivement conseillé de ne pas mentionner le fait que vous soyez un quelconque mage de puissante renomée, mieux vaut découvrir le système technique de la magie en RP, ceci vous permettra également de profiter de l'apprentissage sur le vif.</p>
         <p>
        <form action="index?p=candid" method="POST">
-          <input type="text" name="mc" placeholder="Votre pseudo Minecraft" />
-          <span style="color:red;">NAvré, mais ce compte Minecraft est déjà utilisé.</span><br />
+          <input type="text" name="mc" value="<?=$mc?>" placeholder="Votre pseudo Minecraft" />
+          <span style="color:red;">Navré, mais ce compte Minecraft est déjà utilisé.</span><br />
           <textarea name="candid" placeholder="Ecrivez votre candidature ici . . ."><?= $candid?></textarea>
           <input type="submit" name="send" value="Envoyer" />
         </form>
