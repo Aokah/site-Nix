@@ -30,27 +30,28 @@
               if ($verif->fetch())
               {
                 $reason = htmlspecialchars($_POST['reason']);
-                $update = $db->prepare('UPDATE candid SET verify = 1, reason = ?, valider_id = ?, accepted = 1, date_verify = NOW() WHERE id = ?');
-                $update->execute(array($reason, $_SESSION['id'],$candid));
+                //$update = $db->prepare('UPDATE candid SET verify = 1, reason = ?, valider_id = ?, accepted = 1, date_verify = NOW() WHERE id = ?');
+                //$update->execute(array($reason, $_SESSION['id'],$candid));
                 echo '<p>La candidature a bien été validée !</p>';
                 $msg = "Candidature validée pour ". $line['name'] ." !";
-                $cb = $db->prepare("INSERT INTO chatbox VALUES('',NOW(),92,0,'',?)");
-                $cb->execute(array($msg));
+                //$cb = $db->prepare("INSERT INTO chatbox VALUES('',NOW(),92,0,'',?)");
+                //$cb->execute(array($msg));
                 $select = $db->prepare('SELECT * FROM members WHERE id = ?'); $select->execute(array($_SESSION['id'])); $session = $select->fetch();
                 $title = $session['title']; if ($session['pionier'] == 1) { $title = "Pionier"; }
-                if ($reason = '' OR $reason = ' ')
+                if (empty($reason))
                 {
-                $pm = "Votre candidature candidature vient d'être acceptée par" . $title . " " . $_SESSION['name'] .
+                  echo 'test';
+                $pm = "Votre candidature candidature vient d'être acceptée par " . $title . " " . $_SESSION['name'] .
                 '. <br />Vous pouvez désormais accéder au serveur avec l\'ip ci-dessous !<br />62.210.232.129:10414 <br /><br />Au plaisir de vous revoir en jeu !<br /><br />Shirka';
                 }
                 else
                 {
-                  $pm = "Votre candidature candidature vient d'être acceptée par" . $title . " " . $_SESSIONH['name'] . ' avec  le commentaire ci-joint :<br />'
+                  $pm = "Votre candidature candidature vient d'être acceptée par " . $title . " " . $_SESSIONH['name'] . ' avec  le commentaire ci-joint :<br />'
                   . $reason . 
                 ' <br />Vous pouvez désormais accéder au serveur avec l\'ip ci-dessous !<br />62.210.232.129:10414 <br /><br />Au plaisir de vous revoir en jeu !<br /><br />Shirka';
                 }
-                $insert = $db->prepare("INSERT INTO private_message VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1)");
-                $insert->execute(array($pm, $line['sender_id']));
+                //$insert = $db->prepare("INSERT INTO private_message VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1)");
+                //$insert->execute(array($pm, $line['sender_id']));
                 $verify = $db->prepare('SELECT id, rank FROM members WHERE id= ? ANd rank = 1');
                 $verify->execute(array($line['sender_id']));
                 if ($verify->fetch())
@@ -63,7 +64,7 @@
               {
               ?>
               <img src="pics/tf7.png" width="100%" alt="" /><br />
-              <p>Navré, mais uun autre MJ a été plus rapide que vous !</p>
+              <p>Navré, mais un autre MJ a été plus rapide que vous !</p>
               <?php
               }
             }
