@@ -10,7 +10,6 @@
 	
 	<p>Tâches à effectuer :</p>
 	<ul style="color:red;">
-		<li>Réécrire la page des Candidatures</li>
 		<li>Réadapter la Page d'Acceuil aux évènements passés IG</li>
 		<li>Reconstruire la Structure de la ChatBox</li>
 		<li>Réécrire la page des PMs</li>
@@ -44,6 +43,7 @@
 		<li>Recréer le CSS du site et si possible l'améliorer au mieux</li>
 		<li>Réécriture de la page des Guildes</li>
 		<li>Rendre le NAV propre à Nix et y incorporer des menus déroulants</li>
+		<li>Réécrire la page des Candidatures</li>
 	</ul>
 <?php
 
