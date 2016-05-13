@@ -75,9 +75,10 @@
         {
           if ($line['level'] <= $_SESSION['rank'])
           {
+            $content = preg_replace('#\n#', '<br />', $line['content']);
         ?>
         <h3><?= $line['title']?></h3>
-        <p><?= $line['content']?></p>
+        <p><?= $content?></p>
         <?php
           }
           else
