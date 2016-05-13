@@ -26,7 +26,7 @@
         ?>
               <tr>
                 <td><img src="pics/ico/bg_type_<?= $type?>&sub=<?= $line['id']?>" alt="" /></td>
-                <td><a href="index?p=background&type=<?= $line['id']?>"><?= $line['subject']?></a></td>
+                <td><a href="index?p=background&type=<?= $type?>&sub=<?= $line['id']?>"><?= $line['subject']?></a></td>
                 <td><?= $level?></td>
               </tr>
         <?php
