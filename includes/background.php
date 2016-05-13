@@ -1,5 +1,6 @@
 <?php function background()
 {
+  global $_GET, $_POST, $db, $_SESSION;
   if ($_SESSION['connected'])
   {
     if ($_SESSION['rank'] > 4)
@@ -26,7 +27,7 @@
       }
       else
       {
-       $select = $db->query('SELECT * FROM bg_type WHERE level = ? ORDER BY type ASC'); $select->execute(array($_SESSION['rank']));
+       $select = $db->prepare('SELECT * FROM bg_type WHERE level >= ? ORDER BY type ASC'); $select->execute(array($_SESSION['rank']));
        ?>
           <table cellspacing="5" cellpadding="10">
             <tbody>
