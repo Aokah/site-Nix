@@ -55,7 +55,9 @@
 										Le Serveur
 									</div>
 								</a>
-								
+								<? if ($_SESSION['rank'] < 5 AND $sel4['accepted'] == 0 OR $_SESSION['rank'] > 4)
+								{
+								?>
 								<a href="index?p=candid" class="link">
 									<div>
 										<?if ($_SESSION["rank"] >= 5 AND $line['count'] >= 1) {?>
@@ -63,6 +65,7 @@
 										Candidature
 									</div>
 								</a>
+								<?php } ?>
 							</div>
 						</li>
 					</ul>
