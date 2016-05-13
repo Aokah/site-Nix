@@ -71,6 +71,7 @@
             else
             {
               $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
+              $candid = preg_replace('#\n#', '<br />', $line['candid']);
             ?>
               <h3>Validation de Candidature</h3>
               <form action="index?p=candid&valid=<?= $candid?>" method="POST">
@@ -101,7 +102,7 @@
                     <?= $line['pseudo_mc']?>
                   </td>
                   <td>
-                    <?= $line['candid']?>
+                    <?= $candid?>
                   </td>
               </tbody>
             </table>
@@ -171,6 +172,7 @@
             else
             {
               $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
+              $candid = preg_replace('#\n#', '<br />', $line['candid']);
             ?>
               <h3>Refus de Candidature</h3>
               <form action="index?p=candid&unvalid=<?= $candid?>" method="POST">
@@ -201,7 +203,7 @@
                     <?= $line['pseudo_mc']?>
                   </td>
                   <td>
-                    <?= $line['candid']?>
+                    <?=$candid?>
                   </td>
               </tbody>
             </table>
@@ -245,6 +247,7 @@
           <? while ($line = $sel->fetch())
           {
           $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
+          $candid = preg_replace('#\n#', '<br />', $line['candid']);
           ?>
           <tr class="memberbg_2" valign="center" style="text-align:center;;">
             <td width="15%">
@@ -257,7 +260,7 @@
               <?= $line['pseudo_mc']?>
             </td>
             <td>
-              <?= $line['candid']?>
+              <?= $candid?>
             </td>
           </tr>
           <tr class="memberbg_2" valign="center" style="text-align:center;">
