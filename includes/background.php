@@ -41,7 +41,6 @@
         if (isset($_GET['sub']))
         {
           $sub = intval($_GET['sub']);
-          $verify
           if (isset($_GET['id']))
           {
             // Détails du BG
