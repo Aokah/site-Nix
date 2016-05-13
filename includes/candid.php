@@ -326,9 +326,9 @@
         {
           $mc =htmlentities($POST['mc']);
           $candid =htmlentities($_POST['candid']);
-          $verif = $db->prepare('SELECT Minecraft_Account FROM members WHERE Minecraft_Account = ? ');
-          $verif->execute(array($mc));
-          if ($verif->fetch())
+          $verif = $db->prepare('SELECT COUNT(*) AS mcc FROM members WHERE Minecraft_Account = ? ');
+          $verif->execute(array($mc)); $line = $verif->fetch();
+          if ($line['mc'] > 0)
           {
           ?>
             <h3>Ecrivez ici votre candidature</h3>
@@ -348,7 +348,7 @@
           {
             $insert = $db->prepare("INSERT INTO candid VALUE('',?, ?, ?, NOW(), 0, 0, '', '', 0)");
             $insert->execute(array($_SESSION['id'], $mc, $candid));
-            echo '<p>Votre candidature a bien été envoyée et est déosrmais en attente de validation !</p>';
+            echo '<p>Votre candidature a bien été envoyée et est déosormais en attente de validation !</p>';
           }
         }
         else
