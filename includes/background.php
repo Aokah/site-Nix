@@ -48,10 +48,12 @@
                 <td><a href="index?p=background&type=<?= $line['id']?>"><?= $line['type']?></a></td>
                 <td><?= $level?></td>
               </tr>
-            </tbody>
-          </table>
           <?php
         }
+        ?>
+            </tbody>
+          </table>
+        <?php
       }
     }
     else
