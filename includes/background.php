@@ -78,7 +78,7 @@
             $content = preg_replace('#\n#', '<br />', $line['content']);
         ?>
         <h3 style="text-align:center; background-color:#333333;border: 3px white double; color:white"><?= $line['title']?></h3>
-        <p style="text-align:center; background-color:#999999;border: 3px black double; color:white"><?= $content?></p>
+        <p style="text-align:center; background-color:#555555;border: 3px black double; color:white"><?= $content?></p>
         <?php
           }
           else
