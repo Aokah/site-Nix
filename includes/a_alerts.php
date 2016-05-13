@@ -101,6 +101,26 @@
 				<?php
 			}
 		}
+		$verif_c = $db->prepare('SELECT COUNT(*) AS count FROM candid WHERE sender_id = ? AND verify = 0'); $verif_c->execute(array($_SESSION['id']));
+		$line_c = $verifc->fetch();
+		if ($sel4['accepted'] == 0 AND $line_c['count'] > 0 AND $page != 'candid')
+		{
+		?>
+			<div class="alert">
+				<h2>Votre Candidature</h2>
+				<p>Votre candidature n'a pas encore été examinée ou est en cours de lecture, veuillez patienter . . .</p>
+			</div>
+		<?php
+		}
+		elseif ($sel4['accepted'] == 0 AND $line_c['count'] == 0 $page != 'candid')
+		{
+		?>
+			<div class="alert">
+				<h2>Votre Candidature</h2>
+				<p>Il est temps de rentrer dans le vif du sujet, et d'écrire votre candidature d'entrée sur le serveur, pour se faire, <a href="index?p=candid">cliquez ici</a>.</p>
+			</div>
+		<?php
+		}
 	}
 }
 ?>
