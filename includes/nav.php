@@ -28,6 +28,7 @@
 				$scount ++;
 			}
 		}
+		$select = $db->prepare('SELECT * FROM members WHERE id = ?'); $select->execute(array($_SESSION['id'])); $select = $select->fetch();
 	}
 	
 ?>
@@ -55,7 +56,7 @@
 										Le Serveur
 									</div>
 								</a>
-								<? if ($_SESSION['rank'] < 5 AND $sel4['accepted'] == 0 OR $_SESSION['rank'] > 4)
+								<? if ($_SESSION['rank'] < 5 AND $select['accepted'] == 0 OR $_SESSION['rank'] > 4)
 								{
 								?>
 								<a href="index?p=candid" class="link">
