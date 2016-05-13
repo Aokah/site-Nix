@@ -102,7 +102,7 @@
 			}
 		}
 		$verif_c = $db->prepare('SELECT COUNT(*) AS count FROM candid WHERE sender_id = ? AND verify = 0'); $verif_c->execute(array($_SESSION['id']));
-		$line_c = $verifc->fetch();
+		$line_c = $verif_c->fetch();
 		if ($sel4['accepted'] == 0 AND $line_c['count'] > 0 AND $page != 'candid')
 		{
 		?>
