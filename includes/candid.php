@@ -310,7 +310,7 @@
          $count = $count['count'];
          if ($count == 1)
          {
-           echo '<p>Votre candidature est pour le moment la seule en attente et devrait être examinée rapidement, revenez d\'ici quelques instants</p>';
+           echo '<p>Votre candidature est pour le moment la seule en attente et devrait être examinée rapidement, revenez d\'ici quelques instants.</p>';
          }
          else
          {
@@ -348,7 +348,7 @@
           {
             $insert = $db->prepare("INSERT INTO candid VALUE('',?, ?, ?, NOW(), 0, 0, '', '', 0)");
             $insert->execute(array($_SESSION['id'], $mc, $candid));
-            echo '<p>Votre candidature a bien été envoyée et est déosormais en attente de validation !</p>';
+            echo '<p>Votre candidature a bien été envoyée et est désormais en attente de validation !</p>';
           }
         }
         else
