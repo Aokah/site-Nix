@@ -26,7 +26,7 @@
       }
       else
       {
-       $select = $db->prepare('SELECT * FROM bg_type WHERE level >= ?'); $select->execute(array($_SESSION['rank']));
+       $select = $db->prepare('SELECT * FROM bg_type WHERE level => ? OREDER BY type ASC'); $select->execute(array($_SESSION['rank']));
        ?>
           <table cellspacing="5" cellpadding="10">
             <tbody>
