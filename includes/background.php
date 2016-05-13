@@ -7,7 +7,34 @@
     {
       if (isset($_GET['type']))
       {
-        // Affichage des sujets
+        $type = intval($_GET['type']);
+        $select = $db->prepare('SELECT * FROM bg_sub WHERE type_id = ? AND level <= ?'); $select->execute(array($type, $_SESSION['rank']));
+        ?>
+        <table cellspacing="5" cellpadding="10">
+            <tbody>
+              <tr>
+                <th colspan="2">Types de sujets</th>
+                <th>Niveau de visionnage</th>
+              </tr>
+        <?php
+        while ($line = $select->fetch())
+        {
+          switch ($line['level']) 
+          {
+            case 5: $level = "Modérateur"; break; case 6: $level = "Maître du Jeu"; break; case 7: $level = "Opérateur"; break;
+          }
+        ?>
+              <tr>
+                <td><img src="pics/ico/bg_type_<?= $type?>&sub=<?= $line['id']?>" alt="" /></td>
+                <td><a href="index?p=background&type=<?= $line['id']?>"><?= $line['type']?></a></td>
+                <td><?= $level?></td>
+              </tr>
+        <?php
+        }
+        ?>
+            </tbody>
+          </table>
+        <?php
         if (isset($_GET['sub']))
         {
           //Affichage des  éléments
