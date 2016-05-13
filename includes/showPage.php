@@ -95,7 +95,7 @@
 							case 'testpage_3': 			{ 	include('includes/testpage_3.php'); 			testpage_3(); 			break; }
 							case 'testpage_2': 			{ 	include('includes/testpage_2.php');				testpage_2(); 			break; }
 							case 'staffteam': 			{ 	include('includes/staffteam.php'); 				staffteam(); 			break; }
-							case 'staffcontent': 			{ 	include('includes/staffcontent.php'); 			staffcontent(); 		break; }
+							case 'background': 			{ 	include('includes/background.php'); 			background(); 		break; }
 							case 'rulesmj': 			{ 	include('includes/rulesmj.php'); 				rulesmj(); 				break; }
 						//Erreur 404 
 							case '404': 				{ 					?><p>Page inexistante.</p><?php 						break; }
