@@ -47,7 +47,7 @@
                 <th>Niveau de visionnage</th>
               </tr>
         <?php
-        $select = $db->prepare('SELECT * FROM bg_sub WHERE sub_id = ? AND level <= ?'); $select->execute(array($sub, $_SESSION['rank']));
+        $select = $db->prepare('SELECT * FROM bg_id WHERE sub_id = ? AND level <= ?'); $select->execute(array($sub, $_SESSION['rank']));
         while ($line = $select->fetch())
         {
           switch ($line['level']) 
@@ -57,7 +57,7 @@
         ?>
               <tr>
                 <td><img src="pics/ico/bg_id_<?= $line['id']?>" alt="" /></td>
-                <td><a href="index?p=background&id=<?= $line['id']?>"><?= $line['subject']?></a></td>
+                <td><a href="index?p=background&id=<?= $line['id']?>"><?= $line['title']?></a></td>
                 <td><?= $level?></td>
               </tr>
         <?php
