@@ -51,8 +51,13 @@
                 $verify->execute(array($line['sender_id']));
                 if ($verify->fetch())
                 {
-                  $upgrade = $db->prepare('UPDATE members SET rank = 2 WHERE id = ?');
-                  $upgrade->execute(array($line['sender_id']));
+                  $upgrade = $db->prepare('UPDATE members SET rank = 2, accepted = 1 WHERE id = ?');
+                  $upgrade->execute(array($sender));
+                }
+                else
+                {
+                  $upgrade = $db->prepare('UPDATE members SET accepted = 1 WHERE id = ?');
+                  $upgrade->execute(array($sender));
                 }
               }
               else
@@ -137,7 +142,7 @@
                 $update->execute(array($reason, $_SESSION['id'],$candid));
                 echo '<p>La candidature a bien été refusée !</p>';
                 $msg = "Candidature non retenue, rendez-vous en page Messages Privés pour en savoir plus.";
-                $cb = $db->prepare("INSERT INTO chatbox VALUES('',NOW(),92,?,'',?)");
+               $cb = $db->prepare("INSERT INTO chatbox VALUES('',NOW(),92,?,'',?)");
                 $cb->execute(array($sender, $msg));
                 $select = $db->prepare('SELECT * FROM members WHERE id = ?'); $select->execute(array($_SESSION['id'])); $session = $select->fetch();
                 $title = $session['title']; if ($session['pionier'] == 1) { $title = "Pionier"; }
@@ -154,18 +159,6 @@
                 }
                 $insert = $db->prepare("INSERT INTO private_message VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1)");
                 $insert->execute(array($pm, $sender));
-                $verify = $db->prepare('SELECT id, rank FROM members WHERE id= ? ANd rank = 1');
-                $verify->execute(array($sender));
-                if ($verify->fetch())
-                {
-                  $upgrade = $db->prepare('UPDATE members SET rank = 2, accepted = 1 WHERE id = ?');
-                  $upgrade->execute(array($sender));
-                }
-                else
-                {
-                  $upgrade = $db->prepare('UPDATE members SET accepted = 1 WHERE id = ?');
-                  $upgrade->execute(array($sender));
-                }
               }
               else
               {
