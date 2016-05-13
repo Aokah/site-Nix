@@ -8,6 +8,8 @@
       if (isset($_GET['type']))
       {
         $type = intval($_GET['type']);
+        if (!isset($_GET['sub']))
+        {
         ?>
         <table cellspacing="5" cellpadding="10">
             <tbody>
@@ -35,9 +37,11 @@
             </tbody>
           </table>
         <?php
+        }
         if (isset($_GET['sub']))
         {
-          //Affichage des  éléments
+          $sub = intval($_GET['sub']);
+          $verify
           if (isset($_GET['id']))
           {
             // Détails du BG
