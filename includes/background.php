@@ -8,8 +8,6 @@
       if (isset($_GET['type']))
       {
         $type = intval($_GET['type']);
-        if (!isset($_GET['sub']))
-        {
         ?>
         <table cellspacing="5" cellpadding="10">
             <tbody>
@@ -27,8 +25,8 @@
           }
         ?>
               <tr>
-                <td><img src="pics/ico/bg_type_<?= $type?>&sub=<?= $line['id']?>" alt="" /></td>
-                <td><a href="index?p=background&type=<?= $type?>&sub=<?= $line['id']?>"><?= $line['subject']?></a></td>
+                <td><img src="pics/ico/bg_sub_<?= $line['id']?>" alt="" /></td>
+                <td><a href="index?p=background&sub=<?= $line['id']?>"><?= $line['subject']?></a></td>
                 <td><?= $level?></td>
               </tr>
         <?php
@@ -37,23 +35,15 @@
             </tbody>
           </table>
         <?php
-        }
-        if (isset($_GET['sub']))
-        {
+      }
+      elseif (isset($_GET['sub']))
+      {
           $sub = intval($_GET['sub']);
-          if (isset($_GET['id']))
-          {
-            // Détails du BG
-          }
-          else
-          {
-            // BGs
-          }
-        }
-        else
-        {
-          //Liste des sous-type
-        }
+          $verify = $db->prepare('SELECT * FROM bg_sub WHERE id = ?'); $verify->execute(array($sub));
+      }
+      elseif
+      {
+        
       }
       else
       {
