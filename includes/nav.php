@@ -38,11 +38,11 @@
       				<td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
-							Acceuil <?if ($_SESSION["rank"] >= 5 AND $line['count'] >= 1) { echo '<span style="color:red;">[!]</span>'; }?>
+							Accueil <?if ($_SESSION["rank"] >= 5 AND $line['count'] >= 1) { echo '<span style="color:red;">[!]</span>'; }?>
 							<div class="menu2">
 								<a href="index.php" class="link">
 									<div>
-										Page d'Acceuil
+										Page d'Accueil
 									</div>
 								</a>
 								<a href="index?p=rules" class="link">
