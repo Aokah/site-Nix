@@ -112,7 +112,7 @@
 			</div>
 		<?php
 		}
-		elseif ($sel4['accepted'] == 0 AND $line_c['count'] == 0 $page != 'candid')
+		elseif ($sel4['accepted'] == 0 AND $line_c['count'] == 0 AND $page != 'candid')
 		{
 		?>
 			<div class="alert">
