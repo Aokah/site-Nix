@@ -348,6 +348,7 @@
           {
             $insert = $db->prepare("INSERT INTO candid VALUE('',?, ?, ?, NOW(), 0, 0, '', '', 0)");
             $insert->execute(array($_SESSION['id'], $mc, $candid));
+            $update = $db->prepare('UPDATE members SET Minecraft_Account = ?'); $update->execute(array($mc));
             echo '<p>Votre candidature a bien été envoyée et est désormais en attente de validation !</p>';
           }
         }
