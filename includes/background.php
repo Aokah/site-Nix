@@ -70,7 +70,7 @@
       elseif (isset($_GET['id']))
       {
         $id = intval($_GET['id']);
-        $select = $db->prepare('SELECT * FROM bg_id WHERE id = ?'); $selec->execute(array($id));
+        $select = $db->prepare('SELECT * FROM bg_id WHERE id = ?'); $select->execute(array($id));
         if ($line = $select->fetch())
         {
           if ($line['level'] <= $_SESSION['rank'])
