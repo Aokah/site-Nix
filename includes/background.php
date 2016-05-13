@@ -44,7 +44,7 @@
           }
           ?>
               <tr>
-                <td><img src="pics/ico/bg_type_<? $line['id']?>" alt="" /></td>
+                <td><img src="pics/ico/bg_type_<?= $line['id']?>" alt="" /></td>
                 <td><a href="index?p=background&type=<?= $line['id']?>"><?= $line['type']?></a></td>
                 <td><?= $level?></td>
               </tr>
