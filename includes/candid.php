@@ -297,6 +297,9 @@
     }
     else
     {
+      $verif = $db->prepare('SELECT id, accepted FROM members WHERE id = ?'); $verif->execute(array($_SESSION['id'])); $line_ = $verif->fetch();
+      if ($line_['accepted'] == 0)
+      {
       ?>
       <h2>Votre candidature</h2>
       <?php
@@ -367,6 +370,11 @@
         </p>
         <?php
         }
+      }
+      }
+      else
+      {
+        echo '<p>Vous avez déjà passé votre candidature. Inutile donc de revenir sur cette page.</p>';
       }
     }
   }
