@@ -1,4 +1,4 @@
-<?php function testpage()
+<?php function background()
 {
   if ($_SESSION['connected'])
   {
