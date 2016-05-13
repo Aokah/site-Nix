@@ -8,7 +8,6 @@
       if (isset($_GET['type']))
       {
         $type = intval($_GET['type']);
-        $select = $db->prepare('SELECT * FROM bg_sub WHERE type_id = ? AND level <= ?'); $select->execute(array($type, $_SESSION['rank']));
         ?>
         <table cellspacing="5" cellpadding="10">
             <tbody>
@@ -17,6 +16,7 @@
                 <th>Niveau de visionnage</th>
               </tr>
         <?php
+        $select = $db->prepare('SELECT * FROM bg_sub WHERE type_id = ? AND level <= ?'); $select->execute(array($type, $_SESSION['rank']));
         while ($line = $select->fetch())
         {
           switch ($line['level']) 
