@@ -30,7 +30,7 @@
               <tr>
                 <td class="bgtd"><img src="pics/ico/bg_sub_<?= $line['id']?>" alt="" /></td>
                 <td class="bgtd"><a href="index?p=background&sub=<?= $line['id']?>"><div width="100%" style="padding:6%;"><?= $line['subject']?></a></div></td>
-                <td class="bgtd"><?= $level?></td>
+                <td class="bgtd" style="padding:3%"><?= $level?></td>
               </tr>
         <?php
         }
@@ -65,7 +65,7 @@
               <tr>
                 <td class="bgtd"><img src="pics/ico/bg_id_<?= $line['id']?>" alt="" /></td>
                 <td class="bgtd"><a href="index?p=background&id=<?= $line['id']?>"><div width="100%" style="padding:6%;"><?= $line['title']?></a></div></td>
-                <td class="bgtd"><?= $level?></td>
+                <td class="bgtd" style="padding:3%"><?= $level?></td>
               </tr>
         <?php
         }
@@ -122,7 +122,7 @@
               <tr>
                 <td class="bgtd"><img src="pics/ico/bg_type_<?= $line['id']?>" alt="" /></td>
                 <td class="bgtd"><a href="index?p=background&type=<?= $line['id']?>"><div width="100%" style="padding:6%;"><?= $line['type']?></div></a></td>
-                <td class="bgtd"><?= $level?></td>
+                <td class="bgtd" style="padding:3%"><?= $level?></td>
               </tr>
           <?php
         }
