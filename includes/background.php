@@ -28,9 +28,9 @@
           }
         ?>
               <tr>
-                <td class="bgtd" style="padding:6%"><img src="pics/ico/bg_sub_<?= $line['id']?>" alt="" /></td>
+                <td class="bgtd"><img src="pics/ico/bg_sub_<?= $line['id']?>" alt="" /></td>
                 <td class="bgtd"><a href="index?p=background&sub=<?= $line['id']?>"><?= $line['subject']?></a></td>
-                <td class="bgtd" style="padding:6%"><?= $level?></td>
+                <td class="bgtd"><?= $level?></td>
               </tr>
         <?php
         }
@@ -63,9 +63,9 @@
           }
         ?>
               <tr>
-                <td class="bgtd" style="padding:6%"><img src="pics/ico/bg_id_<?= $line['id']?>" alt="" /></td>
+                <td class="bgtd"><img src="pics/ico/bg_id_<?= $line['id']?>" alt="" /></td>
                 <td class="bgtd"><a href="index?p=background&id=<?= $line['id']?>"><?= $line['title']?></a></td>
-                <td class="bgtd" style="padding:6%"><?= $level?></td>
+                <td class="bgtd"><?= $level?></td>
               </tr>
         <?php
         }
@@ -120,9 +120,9 @@
           }
           ?>
               <tr>
-                <td class="bgtd" style="padding:6%"><img src="pics/ico/bg_type_<?= $line['id']?>" alt="" /></td>
+                <td class="bgtd"><img src="pics/ico/bg_type_<?= $line['id']?>" alt="" /></td>
                 <td class="bgtd"><a href="index?p=background&type=<?= $line['id']?>"><div width="100%" style="padding:6%;"><?= $line['type']?></div></a></td>
-                <td class="bgtd" style="padding:6%"><?= $level?></td>
+                <td class="bgtd"><?= $level?></td>
               </tr>
           <?php
         }
