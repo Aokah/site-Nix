@@ -15,7 +15,7 @@
         <table cellspacing="5" cellpadding="10" align="center" width="50%">
             <tbody>
               <tr>
-                <th colspan="2" style="border: black solid 2px;background-color: #9899aa;">Types de sujets</th>
+                <th colspan="2" style="border: black solid 2px;background-color: #9899aa;padding:3%;">Types de sujets</th>
                 <th style="border: black solid 2px;background-color: #9899aa;">Niveau de visionnage</th>
               </tr>
         <?php
@@ -107,9 +107,9 @@
        ?>
           <table cellspacing="5" cellpadding="10" align="center" width="50%">
             <tbody>
-              <tr>
-                <th colspan="2" style="border: black solid 2px;background-color: #9899aa;">Sujets Généraux</th>
-                <th style="border: black solid 2px;background-color: #9899aa;">Niveau de visionnage</th>
+              <tr calss="bg">
+                <th colspan="2">Sujets Généraux</th>
+                <th>Niveau de visionnage</th>
               </tr>
         <?php
         while ($line = $select->fetch())
@@ -119,10 +119,10 @@
             case 5: $level = "Modérateur"; break; case 6: $level = "Maître du Jeu"; break; case 7: $level = "Opérateur"; break;
           }
           ?>
-              <tr>
-                <td style="border: black solid 2px;background-color: #bbbbbb;"><img src="pics/ico/bg_type_<?= $line['id']?>" alt="" /></td>
-                <td style="border: black solid 2px;background-color: #bbbbbb;"><a href="index?p=background&type=<?= $line['id']?>"><div width="100%"><?= $line['type']?></div></a></td>
-                <td style="border: black solid 2px;background-color: #bbbbbb;"><?= $level?></td>
+              <tr class="bg">
+                <td  style="padding:3%"><img src="pics/ico/bg_type_<?= $line['id']?>" alt="" /></td>
+                <td><a href="index?p=background&type=<?= $line['id']?>"><div width="100%" style="padding:3%"><?= $line['type']?></div></a></td>
+                <td  style="padding:3%"><?= $level?></td>
               </tr>
           <?php
         }
