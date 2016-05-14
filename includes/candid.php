@@ -143,7 +143,7 @@
                 echo '<p>La candidature a bien été refusée !</p>';
                 $msg = "Candidature non retenue, rendez-vous en page Messages Privés pour en savoir plus.";
                $cb = $db->prepare("INSERT INTO chatbox VALUES('',NOW(),92,?,'',?)");
-                $cb->execute(array($line['sender_id]'], $msg));
+                $cb->execute(array($line['sender_id'], $msg));
                 $select = $db->prepare('SELECT * FROM members WHERE id = ?'); $select->execute(array($_SESSION['id'])); $session = $select->fetch();
                 $title = $session['title']; if ($session['pionier'] == 1) { $title = "Pionier"; }
                 if (isset($reason))
