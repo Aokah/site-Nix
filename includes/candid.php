@@ -127,7 +127,6 @@
         RIGHT JOIN members m ON m.id = c.sender_id
         WHERE c.id = ?');
         $sel->execute(array($candid));
-        $sender = $line['sender_id'];
         if ($line = $sel->fetch())
         {
           if ($line['verify'] == 0)
@@ -144,7 +143,7 @@
                 echo '<p>La candidature a bien été refusée !</p>';
                 $msg = "Candidature non retenue, rendez-vous en page Messages Privés pour en savoir plus.";
                $cb = $db->prepare("INSERT INTO chatbox VALUES('',NOW(),92,?,'',?)");
-                $cb->execute(array($sender, $msg));
+                $cb->execute(array($line['sender_id]'], $msg));
                 $select = $db->prepare('SELECT * FROM members WHERE id = ?'); $select->execute(array($_SESSION['id'])); $session = $select->fetch();
                 $title = $session['title']; if ($session['pionier'] == 1) { $title = "Pionier"; }
                 if (isset($reason))
@@ -159,7 +158,7 @@
                 '. <br />Relisez-bien tous les onglets d\'information à votre disposition ou veillez à ce que l\'orthographe de votre candidature reste correcte puis réessayez.<br /><br />Shirka';
                 }
                 $insert = $db->prepare("INSERT INTO private_message VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1)");
-                $insert->execute(array($pm, $sender));
+                $insert->execute(array($pm, $line['sender_id']));
               }
               else
               {
