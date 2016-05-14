@@ -74,9 +74,11 @@
 					$img = "rank0.png" ;
 					break;
 				}
+				$title = $line['title'];
 				if ($line["technician"] == 1) { $img = "ranktech.png" ;}
-				if ($line["ban"] == 1) { $img = "rankban.png" ;}
-				if ($line["removed"] == 1) { $img = "rankdel.png" ;}
+				if ($line["ban"] == 1) { $img = "rankban.png" ; $title = "Banni";}
+				if ($line["removed"] == 1) { $img = "rankdel.png" ; $title = "Oublié";}
+				if ($line['pionier'] == 1) { $title = "Pionier"; }
 				
 		switch($line ['invisible'])
 		{
@@ -91,7 +93,7 @@
 
 		
 		?>
-			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>" /><a href="index.php?p=perso&perso=<?= $line['id']?>" title="<? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?> <?= $line['name']?>"> <?= $line['name']?></a> <? echo $vanish ?></li>
+			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>" /><a href="index.php?p=perso&perso=<?= $line['id']?>" title="<?= $title?> <?= $line['name']?>"> <?= $line['name']?></a> <? echo $vanish ?></li>
 		<?php
 	}
 	?>
@@ -152,9 +154,11 @@
 					break;
 				}
 				
+				$title = $line['title'];
 				if ($line["technician"] == 1) { $img = "ranktech.png" ;}
-				if ($line["ban"] == 1) { $img = "rankban.png" ;}
-				if ($line["removed"] == 1) { $img = "rankdel.png" ;}
+				if ($line["ban"] == 1) { $img = "rankban.png" ; $title = "Banni";}
+				if ($line["removed"] == 1) { $img = "rankdel.png" ; $title = "Oublié";}
+				if ($line['pionier'] == 1) { $title = "Pionier"; }
 				
 				switch($line['invisible'])
 		{
@@ -169,7 +173,7 @@
 
 
 		?>
-			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>"/><a href="index.php?p=perso&perso=<?= $line['id']?>" title="<? if ($line['pionier'] == 1) { echo "Pionier";} else { echo $line['title'] ;}?> <?= $line['name']?>"> <?= $line['name']?></a> <? echo $vanish ?> </li>
+			<li class="navbg2" style="list-style-type: none; padding: 10;"><img class="magie_type" width="27" src="pics/<?php echo $img ?>"/><a href="index.php?p=perso&perso=<?= $line['id']?>" title="<?= $title?> <?= $line['name']?>"> <?= $line['name']?></a> <? echo $vanish ?> </li>
 		<?php
 	}
 
