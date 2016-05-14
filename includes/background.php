@@ -121,7 +121,7 @@
           ?>
               <tr>
                 <td style="border: black solid 2px;background-color: #bbbbbb;"><img src="pics/ico/bg_type_<?= $line['id']?>" alt="" /></td>
-                <td style="border: black solid 2px;background-color: #bbbbbb;"><a href="index?p=background&type=<?= $line['id']?>"><?= $line['type']?></a></td>
+                <td style="border: black solid 2px;background-color: #bbbbbb;"><a href="index?p=background&type=<?= $line['id']?>"><div width="100%"><?= $line['type']?></div></a></td>
                 <td style="border: black solid 2px;background-color: #bbbbbb;"><?= $level?></td>
               </tr>
           <?php
