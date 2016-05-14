@@ -29,7 +29,7 @@
         ?>
               <tr>
                 <td class="bgtd"><img src="pics/ico/bg_sub_<?= $line['id']?>" alt="" /></td>
-                <td class="bgtd"><a href="index?p=background&sub=<?= $line['id']?>"><?= $line['subject']?></a></td>
+                <td class="bgtd"><a href="index?p=background&sub=<?= $line['id']?>"><div width="100%" style="padding:6%;"><?= $line['subject']?></a></div></td>
                 <td class="bgtd"><?= $level?></td>
               </tr>
         <?php
@@ -64,7 +64,7 @@
         ?>
               <tr>
                 <td class="bgtd"><img src="pics/ico/bg_id_<?= $line['id']?>" alt="" /></td>
-                <td class="bgtd"><a href="index?p=background&id=<?= $line['id']?>"><?= $line['title']?></a></td>
+                <td class="bgtd"><a href="index?p=background&id=<?= $line['id']?>"><div width="100%" style="padding:6%;"><?= $line['title']?></a></div></td>
                 <td class="bgtd"><?= $level?></td>
               </tr>
         <?php
