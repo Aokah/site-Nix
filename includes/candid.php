@@ -71,7 +71,7 @@
             else
             {
               $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
-              $candid = preg_replace('#\n#', '<br />', $line['candid']);
+              $candid_ = preg_replace('#\n#', '<br />', $line['candid']);
             ?>
               <h3>Validation de Candidature</h3>
               <form action="index?p=candid&valid=<?= $candid?>" method="POST">
@@ -102,7 +102,7 @@
                     <?= $line['pseudo_mc']?>
                   </td>
                   <td>
-                    <?= $candid?>
+                    <?= $candid_?>
                   </td>
               </tbody>
             </table>
@@ -116,7 +116,7 @@
         }
         else
         {
-          echo '<p>Navré mais cette candidature n\'existe pas ou a déjà été vérifiée.</p>';
+          echo '<p>Navré mais cette candidature n\'existe pas.</p>';
         }
       }
       elseif (isset($_GET['unvalid']))
@@ -172,7 +172,7 @@
             else
             {
               $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_send']);
-              $candid = preg_replace('#\n#', '<br />', $line['candid']);
+              $candid_ = preg_replace('#\n#', '<br />', $line['candid']);
             ?>
               <h3>Refus de Candidature</h3>
               <form action="index?p=candid&unvalid=<?= $candid?>" method="POST">
@@ -203,7 +203,7 @@
                     <?= $line['pseudo_mc']?>
                   </td>
                   <td>
-                    <?=$candid?>
+                    <?=$candid_?>
                   </td>
               </tbody>
             </table>
