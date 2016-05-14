@@ -59,6 +59,15 @@
                   $upgrade = $db->prepare('UPDATE members SET accepted = 1 WHERE id = ?');
                   $upgrade->execute(array($line['sender_id']));
                 }
+                $ip = 'soul.omgcraft.fr';
+    						$port = 20059;
+    						$user = "nix";
+    						$pwd = "dragonball";
+    						$salt = 'salt';
+    						$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
+    						
+    						$api->call("players.name.whitelist", array($line["pseudo_mc"]));
+						
               }
               else
               {
