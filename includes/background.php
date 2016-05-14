@@ -12,7 +12,7 @@
           <a href="index?p=background">
             <img onmouseout="this.src='pics/ico/back.png';" onmouseover="this.src='pics/ico/back1.png';" src="pics/ico/back.png" width="60px" title="Revenir à la page précedente" />
           </a>
-        <table cellspacing="5" cellpadding="10" align="center">
+        <table cellspacing="5" cellpadding="10" align="center" width="50%">
             <tbody>
               <tr>
                 <th colspan="2" style="border: black solid 2px;background-color: #9899aa;">Types de sujets</th>
@@ -47,7 +47,7 @@
           <a href="index?p=background&type=<?=$line['type_id']?>">
             <img onmouseout="this.src='pics/ico/back.png';" onmouseover="this.src='pics/ico/back1.png';" src="pics/ico/back.png" width="60px" title="Revenir à la page précedente" />
           </a>
-        <table cellspacing="5" cellpadding="10">
+        <table cellspacing="5" cellpadding="10" align="center" width="50%">
             <tbody>
               <tr>
                 <th colspan="2" style="border: black solid 2px;background-color: #9899aa;">Types de sujets</th>
@@ -105,7 +105,7 @@
       {
        $select = $db->prepare('SELECT * FROM bg_type WHERE level <= ? ORDER BY type ASC'); $select->execute(array($_SESSION['rank']));
        ?>
-          <table cellspacing="5" cellpadding="10">
+          <table cellspacing="5" cellpadding="10" align="center" width="50%">
             <tbody>
               <tr>
                 <th colspan="2" style="border: black solid 2px;background-color: #9899aa;">Sujets Généraux</th>
