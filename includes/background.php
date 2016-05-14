@@ -12,11 +12,11 @@
           <a href="index?p=background">
             <img onmouseout="this.src='pics/ico/back.png';" onmouseover="this.src='pics/ico/back1.png';" src="pics/ico/back.png" width="60px" title="Revenir à la page précedente" />
           </a>
-        <table cellspacing="5" cellpadding="10" align="center" width="50%">
+        <table cellspacing="5" cellpadding="0" align="center" width="50%">
             <tbody>
               <tr>
-                <th colspan="2" style="border: black solid 2px;background-color: #9899aa;padding:3%;">Types de sujets</th>
-                <th style="border: black solid 2px;background-color: #9899aa;">Niveau de visionnage</th>
+                <th class="bgth" colspan="2">Types de sujets</th>
+                <th class="bgth">Niveau de visionnage</th>
               </tr>
         <?php
         $select = $db->prepare('SELECT * FROM bg_sub WHERE type_id = ? AND level <= ?'); $select->execute(array($type, $_SESSION['rank']));
@@ -28,9 +28,9 @@
           }
         ?>
               <tr>
-                <td style="border: black solid 2px;background-color: #bbbbbb;"><img src="pics/ico/bg_sub_<?= $line['id']?>" alt="" /></td>
-                <td style="border: black solid 2px;background-color: #bbbbbb;"><a href="index?p=background&sub=<?= $line['id']?>"><?= $line['subject']?></a></td>
-                <td style="border: black solid 2px;background-color: #bbbbbb;"><?= $level?></td>
+                <td class="bgtd" style="padding:6%"><img src="pics/ico/bg_sub_<?= $line['id']?>" alt="" /></td>
+                <td class="bgtd"><a href="index?p=background&sub=<?= $line['id']?>"><?= $line['subject']?></a></td>
+                <td class="bgtd" style="padding:6%"><?= $level?></td>
               </tr>
         <?php
         }
@@ -47,11 +47,11 @@
           <a href="index?p=background&type=<?=$line['type_id']?>">
             <img onmouseout="this.src='pics/ico/back.png';" onmouseover="this.src='pics/ico/back1.png';" src="pics/ico/back.png" width="60px" title="Revenir à la page précedente" />
           </a>
-        <table cellspacing="5" cellpadding="10" align="center" width="50%">
+        <table cellspacing="5" cellpadding="0" align="center" width="50%">
             <tbody>
               <tr>
-                <th colspan="2" style="border: black solid 2px;background-color: #9899aa;">Types de sujets</th>
-                <th style="border: black solid 2px;background-color: #9899aa;">Niveau de visionnage</th>
+                <th class="bgth" colspan="2" s>Types de sujets</th>
+                <th class="bgth" >Niveau de visionnage</th>
               </tr>
         <?php
         $select = $db->prepare('SELECT * FROM bg_id WHERE sub_id = ? AND level <= ?'); $select->execute(array($sub, $_SESSION['rank']));
@@ -63,9 +63,9 @@
           }
         ?>
               <tr>
-                <td style="border: black solid 2px;background-color: #bbbbbb;"><img src="pics/ico/bg_id_<?= $line['id']?>" alt="" /></td>
-                <td style="border: black solid 2px;background-color: #bbbbbb;"><a href="index?p=background&id=<?= $line['id']?>"><?= $line['title']?></a></td>
-                <td style="border: black solid 2px;background-color: #bbbbbb;"><?= $level?></td>
+                <td class="bgtd" style="padding:6%"><img src="pics/ico/bg_id_<?= $line['id']?>" alt="" /></td>
+                <td class="bgtd"><a href="index?p=background&id=<?= $line['id']?>"><?= $line['title']?></a></td>
+                <td class="bgtd" style="padding:6%"><?= $level?></td>
               </tr>
         <?php
         }
@@ -105,11 +105,11 @@
       {
        $select = $db->prepare('SELECT * FROM bg_type WHERE level <= ? ORDER BY type ASC'); $select->execute(array($_SESSION['rank']));
        ?>
-          <table cellspacing="5" cellpadding="10" align="center" width="50%">
+          <table cellspacing="5" cellpadding="0" align="center" width="50%">
             <tbody>
               <tr>
-                <th  class="bgth" colspan="2">Sujets Généraux</th>
-                <th  class="bgth">Niveau de visionnage</th>
+                <th class="bgth" colspan="2">Sujets Généraux</th>
+                <th class="bgth">Niveau de visionnage</th>
               </tr>
         <?php
         while ($line = $select->fetch())
@@ -120,9 +120,9 @@
           }
           ?>
               <tr>
-                <td  class="bgtd" style="padding:3%"><img src="pics/ico/bg_type_<?= $line['id']?>" alt="" /></td>
-                <td class="bgtd"><a href="index?p=background&type=<?= $line['id']?>"><div width="100%" style="padding:3%"><?= $line['type']?></div></a></td>
-                <td  class="bgtd" style="padding:3%"><?= $level?></td>
+                <td class="bgtd" style="padding:6%"><img src="pics/ico/bg_type_<?= $line['id']?>" alt="" /></td>
+                <td class="bgtd"><a href="index?p=background&type=<?= $line['id']?>"><div width="100%" style="padding:6%;"><?= $line['type']?></div></a></td>
+                <td class="bgtd" style="padding:6%"><?= $level?></td>
               </tr>
           <?php
         }
