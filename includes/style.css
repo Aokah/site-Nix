@@ -305,13 +305,13 @@ li.navbg:hover {
 
 /* Classes relatives à la page BG */
 
-.bg th
+tr.bg th
 {
 	border: black solid 2px;
 	background-color: #9899aa;
 	padding:3%;
 }
-.bg td
+tr.bg td
 {
 	border: black solid 2px;
 	background-color: #bbbbbb;
