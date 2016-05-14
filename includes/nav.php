@@ -170,7 +170,7 @@
 									</div>
 								</a>
 								
-								<a href="index?p=staffcontent" class="link">
+								<a href="index?p=background" class="link">
 									<div>
 										Le BackGround
 									</div>
