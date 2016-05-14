@@ -9,6 +9,9 @@
       {
         $type = intval($_GET['type']);
         ?>
+          <a href="index?p=background">
+            <img src="pics/ico/back.png" alt="" width="60px" />
+          </a>
         <table cellspacing="5" cellpadding="10">
             <tbody>
               <tr>
@@ -39,9 +42,10 @@
       elseif (isset($_GET['sub']))
       {
         $sub = intval($_GET['sub']);
+        $presel = $db->prepare('SELECT type_id, id FROM bg_sub WHERE id = ?'); $presel->execute(array($sub)); $line = $presel->fetch();
         ?>
           <a href="index?p=background&type=<?=$line['type_id']?>">
-            <img src="pics/ico/back.png" alt="" width="30px" />
+            <img src="pics/ico/back.png" alt="" width="60px" />
           </a>
         <table cellspacing="5" cellpadding="10">
             <tbody>
@@ -81,7 +85,7 @@
             $content = preg_replace('#\n#', '<br />', $line['content']);
         ?>
           <a href="index?p=background&sub=<?=$line['sub_id']?>">
-            <img src="pics/ico/back.png" alt="" width="30px" />
+            <img src="pics/ico/back.png" alt="" width="60px" />
           </a>
         <h3 style="text-align:center; background-color:#333333;border: 3px white double; color:white;padding:1%;"><?= $line['title']?></h3>
         <p style="text-align:center; background-color:#555555;border: 3px black double; color:white;padding:1%;"><?= $content?></p>
