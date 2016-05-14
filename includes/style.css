@@ -302,6 +302,21 @@ li.navbg:hover {
 .magie_tab		{	padding-left: 10%; padding-right: 10%; }
 .magie_type		{	border-radius:50%;		}
 
+
+/* Classes relatives à la page BG */
+
+.bg th
+{
+	border: black solid 2px;
+	background-color: #9899aa;
+	padding:3%;
+}
+.bg td
+{
+	border: black solid 2px;
+	background-color: #bbbbbb;
+}
+
 /* Classes sur les forums */
 
 #forum {
