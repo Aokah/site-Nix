@@ -12,11 +12,11 @@
           <a href="index?p=background">
             <img onmouseout="this.src='pics/ico/back.png';" onmouseover="this.src='pics/ico/back1.png';" src="pics/ico/back.png" width="60px" title="Revenir à la page précedente" />
           </a>
-        <table cellspacing="5" cellpadding="10">
+        <table cellspacing="5" cellpadding="10" align="center">
             <tbody>
               <tr>
-                <th colspan="2">Types de sujets</th>
-                <th>Niveau de visionnage</th>
+                <th colspan="2" style="border: black solid 2px;background-color: #9899aa;">Types de sujets</th>
+                <th style="border: black solid 2px;background-color: #9899aa;">Niveau de visionnage</th>
               </tr>
         <?php
         $select = $db->prepare('SELECT * FROM bg_sub WHERE type_id = ? AND level <= ?'); $select->execute(array($type, $_SESSION['rank']));
@@ -28,9 +28,9 @@
           }
         ?>
               <tr>
-                <td><img src="pics/ico/bg_sub_<?= $line['id']?>" alt="" /></td>
-                <td><a href="index?p=background&sub=<?= $line['id']?>"><?= $line['subject']?></a></td>
-                <td><?= $level?></td>
+                <td style="border: black solid 2px;background-color: #bbbbbb;"><img src="pics/ico/bg_sub_<?= $line['id']?>" alt="" /></td>
+                <td style="border: black solid 2px;background-color: #bbbbbb;"><a href="index?p=background&sub=<?= $line['id']?>"><?= $line['subject']?></a></td>
+                <td style="border: black solid 2px;background-color: #bbbbbb;"><?= $level?></td>
               </tr>
         <?php
         }
@@ -50,8 +50,8 @@
         <table cellspacing="5" cellpadding="10">
             <tbody>
               <tr>
-                <th colspan="2">Types de sujets</th>
-                <th>Niveau de visionnage</th>
+                <th colspan="2" style="border: black solid 2px;background-color: #9899aa;">Types de sujets</th>
+                <th style="border: black solid 2px;background-color: #9899aa;">Niveau de visionnage</th>
               </tr>
         <?php
         $select = $db->prepare('SELECT * FROM bg_id WHERE sub_id = ? AND level <= ?'); $select->execute(array($sub, $_SESSION['rank']));
@@ -63,9 +63,9 @@
           }
         ?>
               <tr>
-                <td><img src="pics/ico/bg_id_<?= $line['id']?>" alt="" /></td>
-                <td><a href="index?p=background&id=<?= $line['id']?>"><?= $line['title']?></a></td>
-                <td><?= $level?></td>
+                <td style="border: black solid 2px;background-color: #bbbbbb;"><img src="pics/ico/bg_id_<?= $line['id']?>" alt="" /></td>
+                <td style="border: black solid 2px;background-color: #bbbbbb;"><a href="index?p=background&id=<?= $line['id']?>"><?= $line['title']?></a></td>
+                <td style="border: black solid 2px;background-color: #bbbbbb;"><?= $level?></td>
               </tr>
         <?php
         }
@@ -108,8 +108,8 @@
           <table cellspacing="5" cellpadding="10">
             <tbody>
               <tr>
-                <th colspan="2">Sujets Généraux</th>
-                <th>Niveau de visionnage</th>
+                <th colspan="2" style="border: black solid 2px;background-color: #9899aa;">Sujets Généraux</th>
+                <th style="border: black solid 2px;background-color: #9899aa;">Niveau de visionnage</th>
               </tr>
         <?php
         while ($line = $select->fetch())
@@ -120,9 +120,9 @@
           }
           ?>
               <tr>
-                <td><img src="pics/ico/bg_type_<?= $line['id']?>" alt="" /></td>
-                <td><a href="index?p=background&type=<?= $line['id']?>"><?= $line['type']?></a></td>
-                <td><?= $level?></td>
+                <td style="border: black solid 2px;background-color: #bbbbbb;"><img src="pics/ico/bg_type_<?= $line['id']?>" alt="" /></td>
+                <td style="border: black solid 2px;background-color: #bbbbbb;"><a href="index?p=background&type=<?= $line['id']?>"><?= $line['type']?></a></td>
+                <td style="border: black solid 2px;background-color: #bbbbbb;"><?= $level?></td>
               </tr>
           <?php
         }
