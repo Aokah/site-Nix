@@ -162,7 +162,13 @@
 			        <td width="<?= $width,'%'?>">
 			        	<ul class="menu1">
 						<li>
-							Modération
+							Modération <?php if ($_SESSION['name'] == "Lune" OR $_SESSION['name'] == "Nikho") {
+								$dev = $db->query('SELECT COUNT(*) AS dev FROM dev WHERE isok = 0'); $dec = $dev->fetch(); $dev = $dev['dev'];
+							if ($dev > 0)
+							{
+							echo '<span style="color:red;">[!]</span>';
+							}
+							}?>
 							<div class="menu2">
 								<a href="index?p=whitelist" class="link">
 									<div>
@@ -181,6 +187,19 @@
 										Administration Magique
 									</div>
 								</a>
+								<?php if ($_SESSION['name'] == "Lune" OR $_SESSION['name'] == "Nikho")
+								{
+								?>
+								<a href="index?p=dev" class="link">
+									<div>
+										<?php
+										if ($dev > 0)
+										{ echo '<span style="color:red;">[', $dev,']</span>'; }
+										?>Requêtes de Développement
+									</div>
+								</a>
+								<?php
+								}
 							</div>
 						</li>
 					</ul>
