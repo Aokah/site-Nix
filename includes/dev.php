@@ -29,7 +29,7 @@ global $db, $_GET, $_POST, $_SESSION;
           }
           $details = preg_replace('#\n#', '<br />', $line['details']);
       ?>
-      <form method="POST" action="index?p=dev">
+      <form method="POST" action="index?p=dev&ask=<?=$line['id']?>">
         <input type="hidden" value="<?= $line['id']?>" name="id" />
         <table cellspacing="5" scellpadding="0" align="center" width="50%" style="text-align:center;">
         <tbody>
@@ -77,7 +77,6 @@ global $db, $_GET, $_POST, $_SESSION;
           <tr>
             <th class="bgth">Type de tâche</th>
             <th class="bgth">Requête</th>
-            <th class="bgth">Terminée ?</th>
           </tr>
           <tr>
             <td class="bgtd"><select name="type">
