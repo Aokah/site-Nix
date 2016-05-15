@@ -21,7 +21,7 @@ global $db, $_GET, $_POST, $_SESSION;
       $select = $db->query('SELECT * FROM dev ORDER BY isok ASC, id ASC');
         while ($line = $select->fetch())
         {
-          $ok = ($line['isok'] == 1) ? '<img src="pics/ico/tick.png" alt="" width="100%" />' : '<span class="name7" width="100%">X</span>';
+          $ok = ($line['isok'] == 1) ? '<img src="pics/ico/tick.png" title="Tâche terminée" alt="" width="100%" />' : '<span title="Tâche non encore terminée" class="name7" width="100%">X</span>';
           switch ($line['type'])
           {
             case 1 : $type = "Ajout d'un Sort"; break;
@@ -30,7 +30,7 @@ global $db, $_GET, $_POST, $_SESSION;
         <tr>
           <td class="bgtd"><?= $type?></td>
           <td class="bgtd"><a href="index?p=dev&ask=<?= $line['id']?>"><div style="padding:3%"><?= $line['ask']?></div></a></td>
-          <td class="bgtd"><?= $ok?></td>
+          <td class="bgtd" width="20%"><?= $ok?></td>
         </tr>
         <?php
         }
