@@ -194,7 +194,7 @@
 									<div>
 										<?php
 										if ($dev > 0)
-										{ echo '<span style="color:red;">[', $dev,']</span>'; }
+										{ echo '<span style="color:red;">[', $dev,']</span> '; }
 										?>Requêtes de Développement
 									</div>
 								</a>
