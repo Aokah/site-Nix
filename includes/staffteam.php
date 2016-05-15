@@ -10,11 +10,6 @@
 	<table cellspacing="0" cellpadding="0">
 	<th class="member_top">Opérateurs</th>
 	<tr class="memberbg_7">
-	<td><img src="pics/staff_team/Ange_Modo_1.png" alt="Opératrice Ange" /></td>
-	<td><span style="color:red">Ange</span><br />14 ans<br />France</td>
-	<td>"Rien n'est impossible, quand nous ne sommes pas seul."</td>
-	</tr>
-	<tr class="memberbg_7">
 	<td><img src="pics/staff_team/Eftarthadeth_OP_1.png" alt="Opérateur Eftarthadeth" /></td>
 	<td><span style="color:red">Eftarthadeth</span><br />18 ans<br />Normandie, France</td>
 	<td>"Il n'y a si petit buisson qui ne porte son ombre, ceci est l'adéquation entre la réalité et l'Homme qui la pense."</td>
@@ -73,7 +68,7 @@
 	</tr>
 	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Kindra_Modo_1.png" alt="Modérateur Kindra" /></td>
-	<td><span style="color:green">Kindra</span><br />15 ans<br />Lyon, France<br />"El loco"</td>
+	<td><span style="color:green">Kindra</span><br />16 ans<br />Lyon, France<br />"El loco"</td>
 	<td>"Si c'est toi qui paye, sa roule pour moi !"</td>
 	</tr>
 	<tr class="memberbg_5">
@@ -113,8 +108,13 @@
 	
 	<th class="member_top">Anciens Maîtres du Jeu</th>
 	
+	<tr class="memberbg_7">
+	<td><img src="pics/staff_team/Ange_Modo_1.png" alt="Dignitaire Ange" /></td>
+	<td><span style="color:red">Ange</span><br />14 ans<br />France</td>
+	<td>"Rien n'est impossible, quand nous ne sommes pas seul."</td>
+	</tr>
 	<tr class="memberbg_5">
-	<td><img src="pics/staff_team/Herborus_MJ_1.png" alt="Difnitaire Herborus" /></td>
+	<td><img src="pics/staff_team/Herborus_MJ_1.png" alt="Dignitaire Herborus" /></td>
 	<td><span style="color:red">Herborus</span><br />16 ans<br />Belgique</td>
 	<td>"La construction, c'est ma passion "</td>
 	</tr>
