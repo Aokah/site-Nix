@@ -163,7 +163,7 @@
 			        	<ul class="menu1">
 						<li>
 							Modération <?php if ($_SESSION['name'] == "Lune" OR $_SESSION['name'] == "Nikho") {
-								$dev = $db->query('SELECT COUNT(*) AS dev FROM dev WHERE isok = 0'); $dec = $dev->fetch(); $dev = $dev['dev'];
+								$dev = $db->query('SELECT COUNT(*) AS dev FROM dev WHERE isok = 0'); $dev = $dev->fetch(); $dev = $dev['dev'];
 							if ($dev > 0)
 							{
 							echo '<span style="color:red;">[!]</span>';
