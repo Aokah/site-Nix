@@ -18,7 +18,7 @@ global $db, $_GET, $_POST, $_SESSION;
       else
       {
       $ask = intval($_GET['ask']);
-      $select $db->prepare('SELECT * FROM dev WHERE id = ?'); $select->execute(array($ask));
+      $select = $db->prepare('SELECT * FROM dev WHERE id = ?'); $select->execute(array($ask));
       if ($line = $select->fetch())
       {
         $ok = ($line['isok'] == 1) ? '<img src="pics/ico/tick.png" title="Tâche terminée" alt="" width="25%" />' : '<span title="Tâche non encore terminée" class="name7" width="100%">X</span>';
