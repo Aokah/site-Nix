@@ -10,7 +10,7 @@ global $db, $_GET, $_POST, $_SESSION;
     else
     {
       ?>
-      <table cellspacing="5" scellpadding="0" align="center">
+      <table cellspacing="5" scellpadding="0" align="center" width="50%">
         <tbody>
           <tr>
             <th class="bgth">Type de tâche</th>
