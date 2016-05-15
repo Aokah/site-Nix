@@ -42,7 +42,7 @@ global $db, $_GET, $_POST, $_SESSION;
   }
   else
   {
-    echo 'Page inexistante.'
+    echo 'Page inexistante.';
   }
 }
 ?>
