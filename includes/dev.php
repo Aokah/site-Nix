@@ -91,13 +91,16 @@ global $db, $_GET, $_POST, $_SESSION;
           <tr>
             <td colspan="2" class="bgtd"><textarea width="100%" name="details"></textarea></td>
           </tr>
+          <tr>
+            <td colspan="2"><input type="submit" name="valid" value="Termien" /></td>
+          </tr>
         </tbody>
       </table>
             </form>
           </p>
           <?php
         }
-        elseif ($_GET['action'] == "valid")
+        elseif ($_GET['action'] == "valid" AND isset($_POST['valid']))
         {
           $type = htmlspecialchars($_POST['type']);
           $details = htmlentities($_POST['details']);
