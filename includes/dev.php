@@ -108,11 +108,11 @@ global $db, $_GET, $_POST, $_SESSION;
           if (isset($type) AND isset($details) AND isset($ask))
           {
             $insert = $db->prepare("INSERT INTO dev VALUE('', ?, ?, ?, 0)"); $insert->execute(array($type, $ask,$details));
-            echo '<p>Tâche créée avec succès !</p>';
+            echo '<p>Tâche créée avec succès !</p> <p><a href="index?p=dev">Retour à la page précéente</a></p>';
           }
           else
           {
-            echo '<p>Erreur, il vous manque des informations.</p>';
+            echo '<p>Erreur, il vous manque des informations.</p> <p><a href="index?p=dev">Retour à la page précéente</a></p>';
           }
         }
       }
