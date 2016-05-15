@@ -9,7 +9,6 @@ global $db, $_GET, $_POST, $_SESSION;
     }
     else
     {
-      $select = $db->query('SELECT * FROM dev ORDER BY isok ASC, id ASC');
       ?>
       <table cellspacing="5" scellpadding="0" align="center">
         <tbody>
@@ -19,6 +18,7 @@ global $db, $_GET, $_POST, $_SESSION;
             <th class="bgth">Terminée ?</th>
           </tr>
       <?php
+      $select = $db->query('SELECT * FROM dev ORDER BY isok ASC, id ASC');
         while ($line = $select->fetch())
         {
           $ok = ($line['isok'] == 1) ? '<img src="pics/ico/tick.png" alt="" width="100%" />' : '<span class="name7" width="100%">X</span>';
