@@ -92,7 +92,7 @@ global $db, $_GET, $_POST, $_SESSION;
             <td colspan="2" class="bgtd"><textarea width="100%" name="details"></textarea></td>
           </tr>
           <tr>
-            <td colspan="2"><input type="submit" name="valid" value="Termien" /></td>
+            <td colspan="2"><input type="submit" name="valid" value="Terminer" /></td>
           </tr>
         </tbody>
       </table>
@@ -108,6 +108,7 @@ global $db, $_GET, $_POST, $_SESSION;
           if (isset($type) AND isset($details) AND isset($ask))
           {
             $insert = $db->prepare("INSERT INTO dev VALUE('', ?, ?, ?, 0)"); $insert->execute(array($type, $ask,$details));
+            echo '<p>Tâche créée avec succès !</p>';
           }
           else
           {
