@@ -21,7 +21,7 @@ global $db, $_GET, $_POST, $_SESSION;
       $select = $db->query('SELECT * FROM dev ORDER BY isok ASC, id ASC');
         while ($line = $select->fetch())
         {
-          $ok = ($line['isok'] == 1) ? '<img src="pics/ico/tick.png" title="Tâche terminée" alt="" width="100%" />' : '<span title="Tâche non encore terminée" class="name7" width="100%">X</span>';
+          $ok = ($line['isok'] == 1) ? '<img src="pics/ico/tick.png" title="Tâche terminée" alt="" width="25%" />' : '<span title="Tâche non encore terminée" class="name7" width="100%">X</span>';
           switch ($line['type'])
           {
             case 1 : $type = "Ajout d'un Sort"; break;
