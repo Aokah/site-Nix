@@ -25,7 +25,7 @@ global $db, $_GET, $_POST, $_SESSION;
         $input = ($line['isok'] == 1) ? '<input type="submit" name="unvalid" stle="color:red;" value="Marquer comme tâche en cours" />' : '<input type="submit" name="valid" stle="color:green;" value="Marquer comme terminée" />' ;
           switch ($line['type'])
           {
-            case 1 : $type = "Ajout d'un Sort"; break;
+            case 1 : $type = "Ajout d'une nouveau sort"; break; case 2: $type = "Ajout d'une nouvelle commande"; break;
           }
           $details = preg_replace('#\n#', '<br />', $line['details']);
       ?>
@@ -65,6 +65,60 @@ global $db, $_GET, $_POST, $_SESSION;
     }
     else
     {
+      if (isset($_GET['action']))
+      {
+        if ($_GET['action'] == 'create')
+        {
+          ?>
+          <p>
+            <form method="POST" action="index?p=dev&action=valid">
+              <table cellspacing="5" scellpadding="0" align="center" width="50%" style="text-align:center;">
+        <tbody>
+          <tr>
+            <th class="bgth">Type de tâche</th>
+            <th class="bgth">Requête</th>
+            <th class="bgth">Terminée ?</th>
+          </tr>
+          <tr>
+            <td class="bgtd"><select name="type">
+              <option value="1">Ajout d'un nouveau sort</option>
+              <option value="2">Ajout d'une nouvelle commande</option>
+            </select></td>
+          <td class="bgtd"><input type="text" name="ask" /></td>
+          </tr>
+          <tr>
+            <th colspan="2" class="bgth">Détails</th>
+          </tr>
+          <tr>
+            <td colspan="2" class="bgtd"><textarea width="100%" name="details"></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+            </form>
+          </p>
+          <?php
+        }
+        elseif ($_GET['action'] == "valid")
+        {
+          $type = htmlspecialchars($_POST['type']);
+          $details = htmlentities($_POST['details']);
+          $ask = htmlspecialchars($_POST['ask']);
+          if (isset($type) AND isset($details) AND isset($ask))
+          {
+            $insert = $db->prepare("INSERT INTO dev VALUE('', ?, ?, ?, 0)"); $insert->execute(array($type, $ask,$details));
+          }
+          else
+          {
+            echo '<p>Erreur, il vous manque des informations.</p>';
+          }
+        }
+      }
+      else
+      {
+      if ($_SESSION['name'] == "Nikho")
+      {
+        echo '<p><a href="index?p=dev&action=create">Créer une nouvelle tâche</a></p>';
+      }
       ?>
       <table cellspacing="5" scellpadding="0" align="center" width="50%" style="text-align:center;">
         <tbody>
@@ -80,7 +134,7 @@ global $db, $_GET, $_POST, $_SESSION;
           $ok = ($line['isok'] == 1) ? '<img src="pics/ico/tick.png" title="Tâche terminée" alt="" width="25%" />' : '<span title="Tâche non encore terminée" class="name7" width="100%">X</span>';
           switch ($line['type'])
           {
-            case 1 : $type = "Ajout d'un Sort"; break;
+            case 1 : $type = "Ajout d'une nouveau sort"; break; case 2: $type = "Ajout d'une nouvelle commande"; break;
           }
         ?>
         <tr>
@@ -94,6 +148,7 @@ global $db, $_GET, $_POST, $_SESSION;
         </tbody>
       </table>
       <?php
+      }
     }
   }
   else
