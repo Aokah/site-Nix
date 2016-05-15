@@ -10,7 +10,7 @@ global $db, $_GET, $_POST, $_SESSION;
     else
     {
       ?>
-      <table cellspacing="5" scellpadding="0" align="center" width="50%">
+      <table cellspacing="5" scellpadding="0" align="center" width="50%" style="text-align:center;">
         <tbody>
           <tr>
             <th class="bgth">Type de tâche</th>
@@ -29,7 +29,7 @@ global $db, $_GET, $_POST, $_SESSION;
         ?>
         <tr>
           <td class="bgtd"><?= $type?></td>
-          <td><a href="index?p=dev&ask=<?= $line['id']?>"><div style="padding:3%"><?= $line['ask']?></div></a></td>
+          <td class="bgtd"><a href="index?p=dev&ask=<?= $line['id']?>"><div style="padding:3%"><?= $line['ask']?></div></a></td>
           <td class="bgtd"><?= $ok?></td>
         </tr>
         <?php
