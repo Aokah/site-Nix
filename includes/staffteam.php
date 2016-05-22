@@ -108,7 +108,7 @@
 	
 	<th class="member_top">Anciens Maîtres du Jeu</th>
 	
-	<tr class="memberbg_7">
+	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Ange_Modo_1.png" alt="Dignitaire Ange" /></td>
 	<td><span style="color:red">Ange</span><br />14 ans<br />France</td>
 	<td>"Rien n'est impossible, quand nous ne sommes pas seul."</td>
