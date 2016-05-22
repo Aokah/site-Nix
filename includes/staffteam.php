@@ -49,11 +49,6 @@
 	<td>"Mangez du lard."</td>
 	</tr>
 	<tr class="memberbg_6">
-	<td><img src="pics/staff_team/Grim_MJ_1.png" alt="Maître Grim" /></td>
-	<td><span style="color:red">Grim</span><br />Toulouse, France</td>
-	<td>"Le monstre sous le lit ? c'est moi."</td>
-	</tr>
-	<tr class="memberbg_6">
 	<td><img src="pics/staff_team/Kuda_Modo_1.png" alt="Maitresse Kuda" /></td>
 	<td><span style="color:red">Kuda</span><br />16 ans<br />Neuchâtel, Suisse<br />"Grammar Nazie"</td>
 	<td>"Si ce que tu as à dire n'est pas plus beau que le silence, tait toi."</td>
@@ -61,11 +56,6 @@
 	
 	<th class="member_top">Modérateurs</th>
 	
-	<tr class="memberbg_5">
-	<td><img src="pics/staff_team/Artemis_Modo_1.png" alt="Modérateur Artemis" /></td>
-	<td><span style="color:green">Artemis</span><br />France<br /></td>
-	<td></td>
-	</tr>
 	<tr class="memberbg_5">
 		<td><img src="pics/staff_team/Dragoniya_Enca_1.png" alt="Encadrante Dragoniya" /></td>
 		<td><span style="color:green;">Dragoniya</span><br />Normande, France<br />"Môman"</td>
@@ -89,9 +79,19 @@
 	
 	<th class="member_top">Encadrants</th>
 	<tr class="memberbg_4">
+	<td><img src="pics/staff_team/Artemis_Modo_1.png" alt="Encadrant Artemis" /></td>
+	<td><span style="color:blue">Artemis</span><br />France<br /></td>
+	<td></td>
+	</tr>
+	<tr class="memberbg_4">
 		<td><img src="pics/staff_team/Chugo_Enca_1.png" alt="Encadrant Chugo" /></td>
 		<td><span style="color:blue;">Chugo</span><br />25 ans<br />France</td>
 		<td>"Je préfére rire de tout que pleurer  pour un rien. Aprés tout, tout arrive a temps a qui sait attendre."</td>
+	</tr>
+	<tr class="memberbg_4">
+	<td><img src="pics/staff_team/Grim_MJ_1.png" alt="Encadrant Grim" /></td>
+	<td><span style="color:blue">Grim</span><br />Toulouse, France</td>
+	<td>"Le monstre sous le lit ? c'est moi."</td>
 	</tr>
 	
 	<th class="member_top">Anciens Opérateurs</th>
