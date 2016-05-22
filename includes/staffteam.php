@@ -10,11 +10,6 @@
 	<table cellspacing="0" cellpadding="0">
 	<th class="member_top">Opérateurs</th>
 	<tr class="memberbg_7">
-	<td><img src="pics/staff_team/Balka_MJ_1.png" alt="Opérateur Balka" /></td>
-	<td><span style="color:red">Shawn</span><br />15 ans<br />France<br />"Biscotte"</td>
-	<td>"Finissons comme nous avons commencé , ensemble !"</td>
-	</tr>
-	<tr class="memberbg_7">
 	<td><img src="pics/staff_team/Eftarthadeth_OP_1.png" alt="Opérateur Eftarthadeth" /></td>
 	<td><span style="color:red">Eftarthadeth</span><br />18 ans<br />Normandie, France</td>
 	<td>"Il n'y a si petit buisson qui ne porte son ombre, ceci est l'adéquation entre la réalité et l'Homme qui la pense."</td>
@@ -39,6 +34,11 @@
 	<td><img src="pics/staff_team/Nikho_OP_1.png" alt="Opérateur Nikho" /></td>
 	<td><span style="color:red">Nikho</span><br/>18 ans <br />Normandie, France<br />"Le Boulet"</td>
 	<td>"Si l'echec permet d'apprendre, alors j'ai dû apprendre plus de chose que je ne le pensais."</td>
+	</tr>
+	<tr class="memberbg_7">
+	<td><img src="pics/staff_team/Balka_MJ_1.png" alt="Opérateur Balka" /></td>
+	<td><span style="color:red">Shawn</span><br />15 ans<br />France<br />"Biscotte"</td>
+	<td>"Finissons comme nous avons commencé , ensemble !"</td>
 	</tr>
 	
 	<th class="member_top">Maîtres du Jeu</th>
