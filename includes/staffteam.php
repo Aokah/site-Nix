@@ -68,7 +68,7 @@
 	</tr>
 	<tr class="memberbg_5">
 		<td><img src="pics/staff_team/Dragoniya_Enca_1.png" alt="Encadrante Dragoniya" /></td>
-		<td><span style="color:blue;">Dragoniya</span><br />Normande, France<br />"Môman"</td>
+		<td><span style="color:green;">Dragoniya</span><br />Normande, France<br />"Môman"</td>
 		<td>"Ce qui importe n'est pas l'emballage qu'est le corps, mais l'âme qui est l'essence de l'être !"</td>
 	</tr>
 	<tr class="memberbg_5">
