@@ -10,6 +10,11 @@
 	<table cellspacing="0" cellpadding="0">
 	<th class="member_top">Opérateurs</th>
 	<tr class="memberbg_7">
+	<td><img src="pics/staff_team/Balka_MJ_1.png" alt="Opérateur Balka" /></td>
+	<td><span style="color:red">Shawn</span><br />15 ans<br />France<br />"Biscotte"</td>
+	<td>"Finissons comme nous avons commencé , ensemble !"</td>
+	</tr>
+	<tr class="memberbg_7">
 	<td><img src="pics/staff_team/Eftarthadeth_OP_1.png" alt="Opérateur Eftarthadeth" /></td>
 	<td><span style="color:red">Eftarthadeth</span><br />18 ans<br />Normandie, France</td>
 	<td>"Il n'y a si petit buisson qui ne porte son ombre, ceci est l'adéquation entre la réalité et l'Homme qui la pense."</td>
@@ -94,11 +99,6 @@
 	<td><img src="pics/staff_team/Anateh_MJ_1.png" alt="Dignitaire Anateh" /></td>
 	<td><span style="color:red">Anateh</span><br />14 ans<br />Paris, France<br />"Norowette"</td>
 	<td>"Quand le masque tombe, le démon entre en scène"</td>
-	</tr>
-	<tr class="memberbg_6">
-	<td><img src="pics/staff_team/Balka_MJ_1.png" alt="Opérateur Balka" /></td>
-	<td><span style="color:red">Balka</span><br />15 ans<br />France<br />"Biscotte"</td>
-	<td>"Finissons comme nous avons commencé , ensemble !"</td>
 	</tr>
 	<tr class="memberbg_6">
 	<td><img src="pics/staff_team/Langa_MJ_1.png" alt="Dignitaire Langä" /></td>
