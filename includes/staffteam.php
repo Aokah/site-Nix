@@ -129,11 +129,6 @@
 	<td> </td>
 	</tr>
 	<tr class="memberbg_5">
-	<td><img src="pics/staff_team/Vahlm_MJ_1.png" alt="Dignitaire Alyssa" /></td>
-	<td><span style="color:red">Alyssa</span><br />Suisse</td>
-	<td> </td>
-	</tr>
-	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Shaolern_MJ_1.png" alt="Dignitaire Shaolern" /></td>
 	<td><span style="color:red">Shaolern</span><br />15 ans</td>
 	<td>"Après tout, le monde sur lequel vous évoluez n'est qu'un ramassis d'équations. Donc le réel dieu de ce monde, c'est moi!"</td>
@@ -147,6 +142,11 @@
 	<tr class="memberbg_4">
 	<td><img src="pics/staff_team/Abusos_Modo_1.png" alt="Dignitaire Abusos" /></td>
 	<td><span style="color:green">Abusos</span><Br />France</td>
+	<td> </td>
+	</tr>
+	<tr class="memberbg_4">
+	<td><img src="pics/staff_team/Vahlm_MJ_1.png" alt="Dignitaire Alyssa" /></td>
+	<td><span style="color:green">Alyssa</span><br />Suisse</td>
 	<td> </td>
 	</tr>
 	<tr class="memberbg_4">
