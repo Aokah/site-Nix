@@ -18,7 +18,7 @@
         if ($_GET['element'] == "Air")
         {
           ?>
-          <table cellspacing="0" cellpadding="10" class="" align="center" width="100%">
+          <table cellspacing="0" cellpadding="10" background="#" class="skil_tab" align="center" width="100%">
             <tbody>
               <tr>
                 <th> </th>
@@ -29,7 +29,7 @@
               {
               ?>
               <tr>
-                <td><?= $cost?></td>
+                <td><?= $cost?>X</td>
                 <td><?= $line['name']?></td>
                 <td><?= $line['infos']?></td>
               </tr>
