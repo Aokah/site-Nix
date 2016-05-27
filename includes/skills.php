@@ -118,7 +118,7 @@
                   }
                   else
                   {
-                    $def = "Description Inconnue, obtenez d'autres capacités pour en savoir plus."
+                    $def = "Description Inconnue, obtenez d'autres capacités pour en savoir plus.";
                   }
                 ?>
                 <tr>
