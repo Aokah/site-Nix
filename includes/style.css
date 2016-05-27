@@ -194,6 +194,12 @@ li.navbg:hover {
 	margin-left: 10px;
 }
 
+/* Classes relative aux compétences */
+.skil_tab
+{
+	background-color: rgba(0, 0, 0, 0.5); 
+}
+
 /* Classes relatives aux membres */
 
 #member tr
