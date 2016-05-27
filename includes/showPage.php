@@ -113,6 +113,7 @@
 							case 'nikho76': 			{ 	include('includes/regeneration.php'); 				regeneration(); 				break; }
 							case 'herobrinesg': 			{ 	include('includes/private.php'); 				privated(); 				break; }
 							case 'dev': 				{ 	include('includes/dev.php'); 				dev(); 				break; }
+							case 'skills': 				{ 	include('includes/skills.php'); 				skills(); 				break; }
 						} 
 						?>
 					</div>
