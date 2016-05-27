@@ -949,35 +949,6 @@
 							</tr>
 							<tr>
 								<td colspan="3">
-									Elément primaire : <img src="pics/magie/Magie_<?= $line['specialisation']?>.png" alt="" class="magie" width="25px" /> <?= $line['specialisation']?>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									Elément secondaire : <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" alt="" class="magie" width="25px" /> <?= $line['spe_2']?>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Niveau magique :
-								</td>
-								<td style="text-align:center;" colspan="2">
-									<?php if ($_SESSION['rank'] >= 5) { 
-									if ($line['magie_rank'] >= 0 AND $line['magie_rank'] < 8 ) { ?>
-									 <a href="index?p=perso&perso=<? echo $perso;?>&action=magieup" title="Monter le niveau magique" style="color:green;">
-									 	[UP]
-									 </a>
-									 <?php }
-									 if ($line['magie_rank'] > 1 AND $line['magie_rank'] < 9 ) { ?>
-									  <a href="index?p=perso&perso=<? echo $perso;?>&action=magiedown" title="Descendre le niveau magique" style="color:red;">
-									 	[DOWN]
-									 </a>
-									 <?php } } ?>
-									 <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="3">
 									Qualités : <?= $line['qualites']?>
 								</td>
 							</tr>
@@ -1032,7 +1003,46 @@
 									<img src="pics/magie/EV_<? echo $tvie ?>.png" width="95%" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
-							<?php if ($_SESSION['rank'] >= 5) { ?>
+							<tr>
+								<td colspan="2">
+									Elément primaire : <img src="pics/magie/Magie_<?= $line['specialisation']?>.png" alt="" class="magie" width="25px" /> <?= $line['specialisation']?>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									Elément secondaire : <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" alt="" class="magie" width="25px" /> <?= $line['spe_2']?>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Niveau magique :
+								</td>
+								<td style="text-align:center;" colspan="2">
+									<?php if ($_SESSION['rank'] >= 5) { 
+									if ($line['magie_rank'] >= 0 AND $line['magie_rank'] < 8 ) { ?>
+									 <a href="index?p=perso&perso=<? echo $perso;?>&action=magieup" title="Monter le niveau magique" style="color:green;">
+									 	[UP]
+									 </a>
+									 <?php }
+									 if ($line['magie_rank'] > 1 AND $line['magie_rank'] < 9 ) { ?>
+									  <a href="index?p=perso&perso=<? echo $perso;?>&action=magiedown" title="Descendre le niveau magique" style="color:red;">
+									 	[DOWN]
+									 </a>
+									 <?php } } ?>
+									 <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
+								</td>
+							</tr>
+							<?php if ($_SESSION['rank'] > 4)
+							{
+							?>
+							<tr>
+								<td>
+									Points de Compétence :
+								</td>
+								<td>
+									<?= $line['xp']?>
+								</td>
+							</tr>
 							<tr>
 								<td colspan="2" style="border: 0px grey solid; background-color: grey; color: grey;">
 									<a href="index?p=perso&perso=<?php echo $perso; ?>&modif=magie">
@@ -1853,24 +1863,6 @@
 							</tr>
 							<tr>
 								<td colspan="3">
-									Elément primaire : <img src="pics/magie/Magie_<?= $line['specialisation']?>.png" alt="" class="magie" width="25px" /> <?= $line['specialisation']?>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									Elément secondaire : <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" alt="" class="magie" width="25px" /> <?= $line['spe_2']?>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Niveau magique :
-								</td>
-								<td style="text-align:center;" colspan="2">
-									 <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="3">
 									Qualités : <?= $line['qualites']?>
 								</td>
 							</tr>
@@ -1914,6 +1906,32 @@
 								</td>
 								<td style="text-align:center;">
 									<img src="pics/magie/EV_<? echo $tvie ?>.png" width="95%" title="<?= $line['E_vitale']?> PV restants !" alt="" />
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									Elément primaire : <img src="pics/magie/Magie_<?= $line['specialisation']?>.png" alt="" class="magie" width="25px" /> <?= $line['specialisation']?>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									Elément secondaire : <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" alt="" class="magie" width="25px" /> <?= $line['spe_2']?>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Niveau magique :
+								</td>
+								<td style="text-align:center;" colspan="2">
+									 <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Points de Compétence :
+								</td>
+								<td>
+									<?= $line['xp']?>
 								</td>
 							</tr>
 						</tbody>
