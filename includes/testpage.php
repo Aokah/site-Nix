@@ -18,7 +18,7 @@
         if ($_GET['element'] == "Air")
         {
           ?>
-          <table cellspacing="0" cellpadding="10" class="">
+          <table cellspacing="0" cellpadding="10" class="" align="center" width="100%">
             <tbody>
               <tr>
                 <th> </th>
