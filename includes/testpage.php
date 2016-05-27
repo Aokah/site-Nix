@@ -32,7 +32,7 @@
                 $cost = $cost + $line['cost'];
                 $verif = $db->prepare('SELECT * FROM skil_get WHERE user_id = ? AND skil_id = ?');
                 $verif->execute(array($_SESSION['id'], $line['id']));
-                $get = ($verif-fetch()) ? 'style="color:white;"' : '';
+                $get = ($verif->fetch()) ? 'style="color:white;"' : '';
               ?>
               <tr>
                 <td <?=$get?>><?= $cost?></td>
