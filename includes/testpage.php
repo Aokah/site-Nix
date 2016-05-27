@@ -48,10 +48,10 @@
   				<a href="index.php?p=testpage&element=Glace"><img src="pics/magie/Magie_Glace.png" width="<?= $width7?>" class="magie_type" title="Selectionner la magie de la Glace" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Lumiere"><img src="pics/magie/Magie_Lumiere.png" width="<?= $width8?>" class="magie_type" title="Selectionner la magie de la Lumière" alt="" /></a>
+  				<a href="index.php?p=testpage&element=Lumiere"><img src="pics/magie/Magie_Lumière.png" width="<?= $width8?>" class="magie_type" title="Selectionner la magie de la Lumière" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Metal"><img src="pics/magie/Magie_Metal.png" width="<?= $width9?>" class="magie_type" title="Selectionner la magie du Metal" alt="" /></a>
+  				<a href="index.php?p=testpage&element=Metal"><img src="pics/magie/Magie_Métal.png" width="<?= $width9?>" class="magie_type" title="Selectionner la magie du Metal" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
   				<a href="index.php?p=testpage&element=Nature"><img src="pics/magie/Magie_Nature.png" width="<?= $width10?>" class="magie_type" title="Selectionner la magie de la Nature" alt="" /></a>
