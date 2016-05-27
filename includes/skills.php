@@ -1,4 +1,4 @@
-<?php function testpage()
+<?php function skills()
 {
   global $db, $_SESSION, $_POST, $_GET;
   
@@ -31,47 +31,47 @@
   	  </tr>
   		<tr>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Air"><img src="pics/magie/Magie_Air.png" width="<?= $width1?>" class="magie_type" title="Selectionner la magie de l'Air" alt="" /></a>
+  				<a href="index.php?p=skills&element=Air"><img src="pics/magie/Magie_Air.png" width="<?= $width1?>" class="magie_type" title="Selectionner la magie de l'Air" alt="" /></a>
   			</td>
   			<? if ($select['specialisation'] == "Arcane" OR $select['spe_2'] == "Arcane" OR $_SESSION['rank'] > 5) {?>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Arcane"><img src="pics/magie/Magie_Arcane.png" width="<?= $width2?>" class="magie_type" title="Selectionner l'Essence de l'Arcane" alt="" /></a>
+  				<a href="index.php?p=skills&element=Arcane"><img src="pics/magie/Magie_Arcane.png" width="<?= $width2?>" class="magie_type" title="Selectionner l'Essence de l'Arcane" alt="" /></a>
   			</td>
   			<?php } ?>
   			<? if ($select['specialisation'] == "Chaos" OR $select['spe_2'] == "Chaos" OR $_SESSION['rank'] > 5) {?>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Chaos"><img src="pics/magie/Magie_Chaos.png" width="<?= $width3?>" class="magie_type" title="Selectionner l'Essence du Chaos" alt="" /></a>
+  				<a href="index.php?p=skills&element=Chaos"><img src="pics/magie/Magie_Chaos.png" width="<?= $width3?>" class="magie_type" title="Selectionner l'Essence du Chaos" alt="" /></a>
   			</td>
   			<?php } ?>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Eau"><img src="pics/magie/Magie_Eau.png" width="<?= $width4?>" class="magie_type" title="Selectionner la magie de l'Eau" alt="" /></a>
+  				<a href="index.php?p=skills&element=Eau"><img src="pics/magie/Magie_Eau.png" width="<?= $width4?>" class="magie_type" title="Selectionner la magie de l'Eau" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Energie"><img src="pics/magie/Magie_Energie.png" width="<?= $width5?>" class="magie_type" title="Selectionner la magie de l'Energie" alt="" /></a>
+  				<a href="index.php?p=skills&element=Energie"><img src="pics/magie/Magie_Energie.png" width="<?= $width5?>" class="magie_type" title="Selectionner la magie de l'Energie" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Feu"><img src="pics/magie/Magie_Feu.png" width="<?= $width6?>" class="magie_type" title="Selectionner la magie du Feu" alt="" /></a>
+  				<a href="index.php?p=skills&element=Feu"><img src="pics/magie/Magie_Feu.png" width="<?= $width6?>" class="magie_type" title="Selectionner la magie du Feu" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Glace"><img src="pics/magie/Magie_Glace.png" width="<?= $width7?>" class="magie_type" title="Selectionner la magie de la Glace" alt="" /></a>
+  				<a href="index.php?p=skills&element=Glace"><img src="pics/magie/Magie_Glace.png" width="<?= $width7?>" class="magie_type" title="Selectionner la magie de la Glace" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Lumiere"><img src="pics/magie/Magie_Lumière.png" width="<?= $width8?>" class="magie_type" title="Selectionner la magie de la Lumière" alt="" /></a>
+  				<a href="index.php?p=skills&element=Lumiere"><img src="pics/magie/Magie_Lumière.png" width="<?= $width8?>" class="magie_type" title="Selectionner la magie de la Lumière" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Metal"><img src="pics/magie/Magie_Métal.png" width="<?= $width9?>" class="magie_type" title="Selectionner la magie du Metal" alt="" /></a>
+  				<a href="index.php?p=skills&element=Metal"><img src="pics/magie/Magie_Métal.png" width="<?= $width9?>" class="magie_type" title="Selectionner la magie du Metal" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Nature"><img src="pics/magie/Magie_Nature.png" width="<?= $width10?>" class="magie_type" title="Selectionner la magie de la Nature" alt="" /></a>
+  				<a href="index.php?p=skills&element=Nature"><img src="pics/magie/Magie_Nature.png" width="<?= $width10?>" class="magie_type" title="Selectionner la magie de la Nature" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Ombre"><img src="pics/magie/Magie_Ombre.png" width="<?= $width11?>" class="magie_type" title="Selectionner la magie de l'Ombre" alt="" /></a>
+  				<a href="index.php?p=skills&element=Ombre"><img src="pics/magie/Magie_Ombre.png" width="<?= $width11?>" class="magie_type" title="Selectionner la magie de l'Ombre" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Psy"><img src="pics/magie/Magie_Psy.png" width="<?= $width12?>" class="magie_type" title="Selectionner la magie du Psy" alt="" /></a>
+  				<a href="index.php?p=skills&element=Psy"><img src="pics/magie/Magie_Psy.png" width="<?= $width12?>" class="magie_type" title="Selectionner la magie du Psy" alt="" /></a>
   			</td>
   			<td style="text-align:center;">
-  				<a href="index.php?p=testpage&element=Terre"><img src="pics/magie/Magie_Terre.png" width="<?= $width13?>" class="magie_type" title="Selectionner la magie de la Terre" alt="" /></a>
+  				<a href="index.php?p=skills&element=Terre"><img src="pics/magie/Magie_Terre.png" width="<?= $width13?>" class="magie_type" title="Selectionner la magie de la Terre" alt="" /></a>
   			</td>
   		</tr>
   	</tbody>
