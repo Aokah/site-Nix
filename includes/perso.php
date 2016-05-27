@@ -187,8 +187,8 @@
 									case 11 : $spe_2 = "Nature"; break; case 12 : $spe_2 = "Ombre"; break; case 13 : $spe_2 = "Psy"; break;
 									case 14 : $spe_2 = "Spéciale"; break; case 15 : $spe_2 = "Terre"; break;
 								}
-								$update = $db->prepare('UPDATE members SET E_Magique = ?, E_Vitale = ?, specialisation = ?, spe_2 = ? WHERE id = ?');
-								$update->execute(array($_POST['e-magie'], $_POST['e-vie'], $spe_1, $spe_2, $perso));
+								$update = $db->prepare('UPDATE members SET E_Magique = ?, E_Vitale = ?, specialisation = ?, spe_2 = ?, exp = ? WHERE id = ?');
+								$update->execute(array($_POST['e-magie'], $_POST['e-vie'], $spe_1, $spe_2, $_POST['exp'] ,$perso));
 								echo '<p>Modifications des informations magiques effectuées avec succès</p>';
 								?>
 								<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
@@ -370,6 +370,12 @@
 												<option value="14">Spécial</option>
 												<option value="15">Terre</option>
 											</select>
+									</td>
+									<td>
+										Points de Compétence :
+									</td>
+									<td>
+										<input type="number" name="exp" min="0" step="1" max="999" value="<?= $line['exp']?>"></code>
 									</td>
 								</tr>
 							</tbody>
@@ -1039,7 +1045,7 @@
 								<td>
 									Points de Compétence :
 								</td>
-								<td>
+								<td style="text:align:center;">
 									<?= $line['exp']?>
 								</td>
 							</tr>
@@ -1930,7 +1936,7 @@
 								<td>
 									Points de Compétence :
 								</td>
-								<td>
+								<td style="text:align:center;">
 									<?= $line['exp']?>
 								</td>
 							</tr>
