@@ -271,6 +271,11 @@
 										Mes Sorts
 									</div>
 								</a>
+								<a href="index?p=skills" class="link">
+									<div>
+										Mes Aptitudes
+									</div>
+								</a>
 							</div>
 						</li>
 					</ul>
