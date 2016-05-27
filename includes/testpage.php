@@ -23,11 +23,17 @@
               <tr>
                 <th> </th>
                 <th>Compétence</th>
+                <th>Description</th>
               </tr>
+              <?php while ($line = $select->fetch())
+              {
+              ?>
               <tr>
                 <td><?= $cost?></td>
                 <td><?= $line['name']?></td>
+                <td><?= $line['infos']?></td>
               </tr>
+              <?php } ?>
             </tbody>
           </table>
           <?php
