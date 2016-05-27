@@ -21,6 +21,9 @@
   ?>
   <table cellspacing="0" cellpadding="10" width="100%">
   	<tbody>
+  	  <tr>
+  	    <th style="text-align:center;">Séléction de l'élément</th>
+  	  </tr>
   		<tr>
   			<td style="text-align:center;">
   				<a href="index.php?p=testpage&element=Air"><img src="pics/magie/Magie_Air.png" width="<?= $width1?>" class="magie_type" title="Selectionner la magie de l'Air" alt="" /></a>
