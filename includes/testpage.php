@@ -22,7 +22,7 @@
   <table cellspacing="0" cellpadding="10" width="100%">
   	<tbody>
   	  <tr>
-  	    <th style="text-align:center;">Séléction de l'élément</th>
+  	    <th style="text-align:center;" colspan="13">Séléction de l'élément</th>
   	  </tr>
   		<tr>
   			<td style="text-align:center;">
