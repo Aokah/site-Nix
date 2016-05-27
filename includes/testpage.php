@@ -30,11 +30,14 @@
               <?php while ($line = $select->fetch())
               {
                 $cost = $cost + $line['cost'];
+                $verif = $db->prepare('SELECT * FROM skil_get WHERE user_id = ? AND skil_id = ?');
+                $verif->execute(array($_SESSION['id'], $line['id']));
+                $get = ($verif-fetch()) ? 'style="color:white;"' : '';
               ?>
               <tr>
-                <td><?= $cost?></td>
-                <td><?= $line['name']?></td>
-                <td><?= $line['infos']?></td>
+                <td <?=$get?>><?= $cost?></td>
+                <td <?=$get?>><?= $line['name']?></td>
+                <td <?=$get?>><?= $line['infos']?></td>
               </tr>
               <?php } ?>
             </tbody>
