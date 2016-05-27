@@ -22,8 +22,7 @@
   <p>Cette page vous servira à répartir vos différents points de compétence et de vous informer sur les aptitudes de votre personnage dans le domaine de la Magie.</p>
   <p class="name4">Vous êtes actuellement spécialisés en <span class="name7"><?=$select['specialisation']?></span><?
   if ($select['spe_2'] != "Inconnue") {?>et <span class="name7"><?=$select['spe_2']?></span><?php } ?>. Il est donc vivement conseillé d'attribuer vos points dans <?php
-  if ($select['spe_2'] != "Inconnue") { echo 'ces'; } e
-  lse { echo 'ce'; } ?> domaine<?php
+  if ($select['spe_2'] != "Inconnue") { echo 'ces '; } else { echo 'ce '; } ?> domaine<?php
   if ($select['spe_2'] != "Inconnue") { echo 's'; }?>.</p>
   <table cellspacing="0" cellpadding="10" width="100%">
   	<tbody>
