@@ -1932,6 +1932,9 @@
 									 <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
 								</td>
 							</tr>
+							<?php (if $_SESSION['rank'] > 4)
+							{
+							?>
 							<tr>
 								<td>
 									Points de Compétence :
@@ -1940,6 +1943,9 @@
 									<?= $line['exp']?>
 								</td>
 							</tr>
+							<?php
+							}
+							?>
 						</tbody>
 					</table>
 				</td>
