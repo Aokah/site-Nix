@@ -18,7 +18,7 @@
         if ($_GET['element'] == "Air")
         {
           ?>
-          <table cellspacing="0" cellpadding="10" background="#" class="skil_tab" align="center" width="100%">
+          <table cellspacing="0" cellpadding="10" background="pics/ico/skil_<?= $_GET['element']?>.png" class="skil_tab" align="center" width="100%">
             <tbody>
               <tr>
                 <th> </th>
