@@ -1040,7 +1040,7 @@
 									Points de Compétence :
 								</td>
 								<td>
-									<?= $line['xp']?>
+									<?= $line['exp']?>
 								</td>
 							</tr>
 							<tr>
@@ -1931,7 +1931,7 @@
 									Points de Compétence :
 								</td>
 								<td>
-									<?= $line['xp']?>
+									<?= $line['exp']?>
 								</td>
 							</tr>
 						</tbody>
