@@ -5,8 +5,9 @@
   if ($_SESSION['connected']) {
     if ($_SESSION['rank'] > 4) {
       
-    $select = $db->prepare('SELECT id, specialisation, spe_2 FROM members WHERE id = ?'); $select->execute(array($_SESSION['id']));
+    $select = $db->prepare('SELECT id, specialisation, spe_2, exp FROM members WHERE id = ?'); $select->execute(array($_SESSION['id']));
     $select = $select->fetch();
+    $plural = ($select['exp'] > 1)? 's' : '';
     $width1 = ($_GET['element'] == "Air")? '60' : '40';
     $width2 = ($_GET['element'] == "Arcane")? '60' : '40';
     $width3 = ($_GET['element'] == "Chaos")? '60' : '40';
@@ -31,6 +32,9 @@
     	<tbody>
     	  <tr>
     	    <th style="text-align:center;" colspan="13">Séléction de l'élément</th>
+    	  </tr>
+    	  <tr>
+    	    <td style="text-align:center;" colspan="13">Vous avez actuellement <?= $select['exp']?> Point<?=$plural?> de Compétence.</td>
     	  </tr>
     		<tr>
     			<td style="text-align:center;">
