@@ -111,12 +111,20 @@
                   $cost = $cost + $line['cost'];
                   $verif = $db->prepare('SELECT * FROM skil_get WHERE user_id = ? AND skil_id = ?');
                   $verif->execute(array($_SESSION['id'], $line['id']));
-                  $get = ($verif->fetch()) ? 'style="color:white;"' : '';
+                  if ($verif->fetch())
+                  {
+                    $def = $line['infos'];
+                    $get = 'style="color:white;"';
+                  }
+                  else
+                  {
+                    $def = "Description Inconnue, obtenez d'autres capacités pour en savoir plus."
+                  }
                 ?>
                 <tr>
                   <td <?=$get?>><?= $cost?></td>
                   <td <?=$get?>><?= $line['name']?></td>
-                  <td <?=$get?>><?= $line['infos']?></td>
+                  <td <?=$get?>><?= $def ?></td>
                 </tr>
                 <?php } ?>
               </tbody>
