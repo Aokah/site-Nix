@@ -14,11 +14,11 @@
           case "Métal": $type = 9; break; case "Nature": $type = 10; break; case "Ombre": $type = 11; break; case "Ordre": $type = 12; break;
           case "Psy": $type = 13; break; case "Températures": $type = 14; break; case "Terre": $type = 15; break; case "Void": $type = 16; break;
         }
-        $select = $db->prepare('SELECT * FROM skil_list WHERE type = ?'); $select->execute(array($type));
+        $select = $db->prepare('SELECT * FROM skil_list WHERE type = ? ORDER BY number ASC'); $select->execute(array($type));
         if ($_GET['element'] == "Air")
         {
           ?>
-          <table cellspacing="0" cellpadding="0" class="">
+          <table cellspacing="0" cellpadding="10" class="">
             <tbody>
               <tr>
                 <th> </th>
