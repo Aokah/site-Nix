@@ -16,8 +16,6 @@
           case "Chaleur": $type = 15; break; case "Terre": $type = 16; break; case "Void": $type = 17; break;
         }
         $select = $db->prepare('SELECT * FROM skil_list WHERE type = ? ORDER BY number ASC'); $select->execute(array($type));
-        if ($_GET['element'] == "Air")
-        {
           $cost = 0;
           ?>
           <table cellspacing="0" cellpadding="10" background="pics/ico/skil_<?= $_GET['element']?>.png" class="skil_tab" align="center" width="100%">
@@ -43,7 +41,6 @@
             </tbody>
           </table>
           <?php
-        }
       }
       else
       {
