@@ -35,7 +35,7 @@
     	    <th style="text-align:center;" colspan="13">Séléction de l'élément</th>
     	  </tr>
     	  <tr>
-    	    <td style="text-align:center;" colspan="13">Vous avez actuellement <?= $select['exp']?> point<?=$plural?> de Compétence.</td>
+    	    <td style="text-align:center;" colspan="13">Vous avez actuellement <?= $select['exp']?> Point<?=$plural?> de Compétence.</td>
     	  </tr>
     		<tr>
     			<td style="text-align:center;">
