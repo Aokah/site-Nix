@@ -71,6 +71,7 @@
 				<th>Sorts</th>
 				<th>Msg</th>
 				<th>HRP</th>
+				<?php if ($_SESSION['rank'] >= 5) { ?> <th>PCs</th> <?php } ?>
 				<th>Activité</th>
 			<?php if ($_SESSION['rank'] >= 5) { ?> <th>Inv'</th> <?php } ?>
 				<th>Energie Magique/Vitale</th>
@@ -184,6 +185,13 @@
 				<td style="text-align:center;">
 					<span class="avis<?= $coloravis?>">[<?= $hrpavis?>]</span>
 				</td>
+			<?php if ($_SESSION['rank'] >= 5)
+			{
+			?>
+				<td style="text-align:center;">
+					<?= $line['exp']?>
+				</td>
+			<?php } ?>
 				<td style="text-align:center;">
 					<img src="pics/ico/activity_<?= $act?>" alt="" title="<?php echo $act_title;?>" width="30px" />
 				</td>
