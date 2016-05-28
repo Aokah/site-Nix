@@ -21,6 +21,9 @@
     $count = $db->prepare('SELECT COUNT (g.user_id, g.skil_id, l.id, l.type) AS count
     FROM skil_get g RIGHT JOIN skil_list l ON g.skil_id = l.id
     WHERE l.type = ?'); $count->execute(array($limit));
+    $count = $count->fetch();
+    if ($count['count'] > 0)
+    {
     ?>
     <table cellpadding="15" cellspacing="0" background="pics/ico/skil_<?= $element?>.png" class="skil_tab" align="center" width="100%">
       <tbody>
@@ -44,6 +47,7 @@
       </tbody>
     </table>
     <?php
+    }
     $limit --;
   }
 }
