@@ -14,13 +14,15 @@
         $scount = 1;
         while ($line = $verif->fetch())
         {
-          echo '<p>', $line['skil_id'],'</p>';
           $verify = $db->prepare('SELECT * FROM skil_list WHERE id = ? AND type = ?'); $verify->execute(array($line['skil_id'], $type));
           if ($verify->fetch())
           {
             $scount ++;
           }
         }
+        $select = $db->prepare('SELECT * FROM skil_get WHERE type = ? AND number = ?'); $select->execute(array($type, $scount));
+        if ($select = $select->fetch())
+        {
         ?>
         <table align="center">
           <tbody>
@@ -40,7 +42,11 @@
           </tbody>
         </table>
         <?php
-        echo $scount;
+        }
+        else
+        {
+          echo '<p>Une erreur s\'est produite, peut-être que vous n\'avez pas d\'autres compétences à acquérir dans cet élément.</p>';
+        }
       }
       else
       {
