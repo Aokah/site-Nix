@@ -15,7 +15,7 @@
           $id = intval($_GET['confirm']);
           $vget = $db->prepare('SELECT id FROM skil_get WHERE id = ?'); $vget->execute(array($id));
           // Vérifie si la compétence n'est pas déjà apprise -^
-          //Vérifie s'il n'y a pas d'autres compétences à apprendre avant ->
+          // Vérifie s'il n'y a pas d'autres compétences à apprendre avant ->
           $verify = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verify->execute(array($_SESSION['id']));
           $scount = 1;
           while ($line = $verify->fetch())
@@ -29,6 +29,7 @@
           $select = $db->prepare('SELECT * FROM skil_list WHERE type = ? AND number = ?'); $select->execute(array($type, $scount));
           if ($select = $select->fetch())
           {
+            echo $scount, ' ' , $select['number'];
             if ($select['number'] > $scount)
             {
               echo '<p>Navré mais vous possédez déjà cette compétence.</p>';
