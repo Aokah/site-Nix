@@ -492,7 +492,7 @@
 						$update = $db->prepare("INSERT INTO avert VALUES ('',?,?,NOW(),?)");
 						$update->execute(array($_SESSION['id'], $perso, $avert));
 						$message = $db->prepare("INSERT INTO private_message VALUES ('',?,?,NOW(),92,?,1)");
-						$message->execute(array($pm,'Avertissement', $perso));
+						$message->execute(array('Avertissement', $pm, $perso));
 						?>
 						<p>Avertissement enregistré avec succès.</p>
 						<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
