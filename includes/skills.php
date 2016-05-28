@@ -24,10 +24,14 @@
         if ($select = $select->fetch())
         {
         ?>
-        <table align="center" cellpadding="20">
+        <table align="center" cellpadding="10" cellspacing="0">
           <tbody>
             <tr>
               <td colspan="2" style="text-align:center;">Débloquer cette compétence</td>
+            </tr>
+            <tr>
+              <th style="text-align:center; background-color:black; color:white;">Compétence</td>
+              <th style="text-align:center; background-color:black; color:white;">Description</td>
             </tr>
             <tr>
               <td style="text-align:center; background-color:black; color:white;"><?= $select['name']?></td>
