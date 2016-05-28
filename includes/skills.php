@@ -11,21 +11,35 @@
       if ($_GET['upgrade'] >= 1 AND $_GET['upgrade'] <= 17)
       {
         $verif = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verif->execute(array($_SESSION['id']));
-        $scount = 0;
+        $scount = 1;
         while ($line = $verif->fetch())
         {
           echo '<p>', $line['skil_id'],'</p>';
           $verify = $db->prepare('SELECT * FROM skil_list WHERE id = ? AND type = ?'); $verify->execute(array($line['skil_id'], $type));
           if ($verify->fetch())
           {
-            echo 'oui';
             $scount ++;
           }
-          else
-          {
-            echo 'non';
-          }
         }
+        ?>
+        <table align="center">
+          <tbody>
+            <tr>
+              <td colspan="2" style="text-align:center;">Débloquer cette compétence</td>
+            </tr>
+            <tr>
+              <td style="text-align:center; background-color:black; color:white;"></td>
+              <td style="text-align:center; background-color:black; color:white;"></td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align:center;">Contre <?=$count?> Points de Compétences ?</td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align:center;"><a href="index?p=skills&upgrade=<?= $type?>&caction=confirm">[Confirmer la décision]</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <?php
         echo $scount;
       }
       else
