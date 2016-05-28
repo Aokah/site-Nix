@@ -20,7 +20,7 @@
             $scount ++;
           }
         }
-        $select = $db->prepare('SELECT * FROM skil_get WHERE type = ? AND number = ?'); $select->execute(array($type, $scount));
+        $select = $db->prepare('SELECT * FROM skil_list WHERE type = ? AND number = ?'); $select->execute(array($type, $scount));
         if ($select = $select->fetch())
         {
         ?>
