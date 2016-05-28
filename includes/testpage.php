@@ -25,7 +25,7 @@
     if ($count['count'] > 0)
     {
     ?>
-    <table cellpadding="15" cellspacing="0" background="pics/ico/skil_<?= $element?>.png" class="skil_tab" align="center" width="100%">
+    <table cellpadding="15" cellspacing="0" background="pics/ico/skil_<?= $type?>.png" class="skil_tab" align="center" width="100%">
       <tbody>
        <tr>
         <th style="color:#ffffff;" colspan="2"><?= $type?></th>
