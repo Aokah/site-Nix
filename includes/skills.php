@@ -8,9 +8,10 @@
     if (isset($_GET['upgrade']))
     {
       $type = intval($_GET['upgrade']);
-      if ($_GET['upgrade'] == 1)
+      if ($_GET['upgrade'] >= 1 AND $_GET['upgrade'] <= 17)
       {
         $verif = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verif->execute(array($_SESSION['id']));
+        $scount = 0;
         while ($line = $verif->fetch())
         {
           echo '<p>', $line['skil_id'],'</p>';
@@ -18,12 +19,18 @@
           if ($verify->fetch())
           {
             echo 'oui';
+            $scount ++;
           }
           else
           {
             echo 'non';
           }
         }
+        echo $scount;
+      }
+      else
+      {
+        echo '<p>Qu\'essaies-tu ? De monter tes compétences magiques dans un élément qui n\'esiste pas ?</p>';
       }
     }
     else
