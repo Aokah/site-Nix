@@ -20,7 +20,7 @@
     }
     $count = $db->prepare('SELECT COUNT(*) AS count
     FROM skil_get g RIGHT JOIN skil_list l ON g.skil_id = l.id
-    WHERE l.type = ?'); $count->execute(array($limit));
+    WHERE l.type = ? AND g.user_id = ?'); $count->execute(array($limit, $_SESSION['id']));
     $count = $count->fetch();
     if ($count['count'] > 0)
     {
