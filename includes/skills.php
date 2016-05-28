@@ -32,12 +32,12 @@
             if ($id < $scount)
             {
               echo '<p>Navré mais vous possédez déjà cette compétence.</p>';
-                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
+                '<p><a href="index?p=skills">Retourner à la page des Compétences.</a></p>';
             }
             elseif ($id > $scount)
             {
               echo '<p>Navré mais vous devez apprendre d\'autres compétences avant d\'apprendre celle-ci.</p>';
-                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
+                '<p><a href="index?p=skills">Retourner à la page des Compétences.</a></p>';
             }
             elseif ($id == $scount)
             {
@@ -50,24 +50,24 @@
                 $update = $db->prepare('UPDATE members SET exp = ?'); $update->execute(array($final));
                 $add = $db->prepare("INSERT INTO skil_get VALUES('',?, ?)"); $add->execute(array($_SESSION['id'], $select['id']));
                 echo '<p>Compétence acquise avec succès !</p>',
-                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
+                '<p><a href="index?p=skills">Retourner à la page des Compétences.</a></p>';
               }
               else
               {
                 echo '<p>Navré, mais vous ne possédez pas assez de Points de Compétence.</p>',
-                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
+                '<p><a href="index?p=skills">Retourner à la page des Compétences.</a></p>';
               }
             }
             else
             {
               echo '<p>Une erreur s\'est produite.</p>',
-                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
+                '<p><a href="index?p=skills">Retourner à la page des Compétences.</a></p>';
             }
           }
           else
           {
             echo '<p>Navré mais cette compétence n\'existe pas.</p>',
-                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
+                '<p><a href="index?p=skills">Retourner à la page des Compétences.</a></p>';
           }
         }
         else
@@ -105,6 +105,9 @@
               <tr>
                 <td colspan="2" style="text-align:center;"><a href="index?p=skills&upgrade=<?= $type?>&confirm=<?= $select['id']?>">[Confirmer la décision]</a></td>
               </tr>
+              <tr>
+                <td colspan="2" style="text-align:center;"><a href="index?p=skills">[Retourner à la séléction des éléments]</a></td>
+              </tr>
             </tbody>
           </table>
           <?php
@@ -112,14 +115,14 @@
           else
           {
             echo '<p>Une erreur s\'est produite, peut-être que vous n\'avez pas d\'autres compétences à acquérir dans cet élément.</p>',
-                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
+                '<p><a href="index?p=skills">Retourner à la page des Compétences.</a></p>';
           }
         }
       }
       else
       {
         echo '<p>Qu\'essaies-tu ? De monter tes compétences magiques dans un élément qui n\'esiste pas ?</p>',
-                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
+                '<p><a href="index?p=skills">Retourner à la page des Compétences.</a></p>';
       }
     }
     else
