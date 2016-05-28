@@ -24,7 +24,7 @@
         if ($select = $select->fetch())
         {
         ?>
-        <table align="center">
+        <table align="center" cellpadding="20">
           <tbody>
             <tr>
               <td colspan="2" style="text-align:center;">Débloquer cette compétence</td>
