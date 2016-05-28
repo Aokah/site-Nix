@@ -30,11 +30,11 @@
           if ($select = $select->fetch())
           {
             echo $select['number'], ' ' , $id;
-            if ($id > $scount)
+            if ($id < $scount)
             {
               echo '<p>Navré mais vous possédez déjà cette compétence.</p>';
             }
-            elseif ($id < $scount)
+            elseif ($id > $scount)
             {
               echo '<p>Navré mais vous devez apprendre d\'autres compétences avant d\'apprendre celle-ci.</p>';
             }
