@@ -1262,13 +1262,15 @@
 				?>
 				</td>
 			</tr>
-			<?php if ($_SESSION['rank'] > 5)
+			<?php 
+			$verify = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verify->execute(array($perso));
+			if ($_SESSION['rank'] > 5 AND $verify->fetch())
 			{
 			?>
 			<tr>
 				<td>
 					<h3>Compétences acquises du personnage.</h3>
-					<?php include('includes/skil_perso.php'); skill_perso(); ?>
+					<?php include('includes/skill_perso.php'); skill_perso(); ?>
 				</td>
 			</tr>
 			<?php
