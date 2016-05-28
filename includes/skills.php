@@ -8,6 +8,14 @@
     if (isset($_GET['upgrade']))
     {
       $type = intval($_GET['upgrade']);
+      if ($_GET['upgrade'] == 1)
+      {
+        $verif = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verify->execute(array($_SESSION['id']));
+        while ($line = $verif->fetch())
+        {
+          echo '<p>', $line['skil_id'],'</p>';
+        }
+      }
     }
     else
     {
