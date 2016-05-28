@@ -38,8 +38,8 @@
       {
        ?>
        <tr>
-         <td><?= $line['name']?></td>
-         <td><?= $line['infos'] ?></td>
+         <td style="color:#ffffff;"><?= $line['name']?></td>
+         <td style="color:#ffffff;"><?= $line['infos'] ?></td>
        </tr>
        <?php 
         } ?>
