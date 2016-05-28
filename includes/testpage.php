@@ -1,5 +1,6 @@
 <?php function testpage()
 {
+  global $db;
   $limit = 17;
   while ($limit > 0)
   {
