@@ -141,7 +141,7 @@
                     }
                   ?>
                   <tr>
-                    <td style="text-align:center; <?=$get2?>" <?=$get?>><?= $cost?></td>
+                    <td style="text-align:center; <?=$get2?>"><?= $cost?></td>
                     <td <?=$get?>><?= $line['name']?></td>
                     <td <?=$get?>><?= $def ?></td>
                   </tr>
