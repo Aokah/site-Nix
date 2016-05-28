@@ -28,7 +28,7 @@
     <table cellpadding="15" cellspacing="0" background="pics/ico/skil_<?= $element?>.png" class="skil_tab" align="center" width="100%">
       <tbody>
        <tr>
-        <th style="color:#ffffff;"><?= $type?></th>
+        <th style="color:#ffffff;" colspan="2"><?= $type?></th>
       </tr>
       <tr>
        <th style="color:#ffffff;">Compétence</th>
