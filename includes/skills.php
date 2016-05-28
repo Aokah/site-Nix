@@ -220,9 +220,24 @@
             }
             $select = $db->prepare('SELECT * FROM skil_list WHERE type = ? ORDER BY number ASC'); $select->execute(array($type));
               $cost = 0;
+              $verif = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verif->execute(array($_SESSION['id']));
+              $scount = 1;
+              while ($line = $verif->fetch())
+              {
+                $verify = $db->prepare('SELECT * FROM skil_list WHERE id = ? AND type = ?'); $verify->execute(array($line['skil_id'], $type));
+                if ($verify->fetch())
+                {
+                  $scount ++;
+                }
+              }
               ?>
               <table cellspacing="0" cellpadding="10" background="pics/ico/skil_<?= $_GET['element']?>.png" class="skil_tab" align="center" width="100%">
                 <tbody>
+                  <tr>
+                    <td colspan="3">
+                      <a href="index?p=skills&upgrade=<?= $type?>&confirm=<?= $scount?>" style="color:white;">[Obtenir une nouvelle compétence]</a>
+                    </td>
+                  </tr>
                   <tr>
                     <th> </th>
                     <th style="color:#ffffff;">Compétence</th>
@@ -253,7 +268,8 @@
                     <td <?=$get?>><?= $line['name']?></td>
                     <td <?=$get?>><?= $def ?></td>
                   </tr>
-                  <?php } ?>
+                  <?php 
+                  } ?>
                 </tbody>
               </table>
               <?php
