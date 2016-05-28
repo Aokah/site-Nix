@@ -29,7 +29,7 @@
           $select = $db->prepare('SELECT * FROM skil_list WHERE type = ? AND number = ?'); $select->execute(array($type, $scount));
           if ($select = $select->fetch())
           {
-            echo $scount, ' ' , $select['number'];
+            echo $select['number'];
             if ($select['number'] > $scount)
             {
               echo '<p>Navré mais vous possédez déjà cette compétence.</p>';
