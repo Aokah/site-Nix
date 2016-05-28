@@ -168,7 +168,7 @@
       				<a href="index?p=skills&element=Arcane"><img src="pics/magie/Magie_Arcane.png" width="<?= $width2?>" class="magie_type" title="Selectionner l'Essence de l'Arcane" alt="" /></a>
       			</td>
       			<td style="text-align:center;">
-      				<a href="index?p=skills&element=Chaleur"><img src="pics/magie/Magie_Chaleur.png" width="<?= $width11?>" class="magie_type" title="Selectionner la magie de l'Ombre" alt="" /></a>
+      				<a href="index?p=skills&element=Chaleur"><img src="pics/magie/Magie_Chaleur.png" width="<?= $width11?>" class="magie_type" title="Selectionner la magie de la Chaleur" alt="" /></a>
       			</td>
       			<?php } ?>
       			<? if ($select['specialisation'] == "Chaos" OR $select['spe_2'] == "Chaos" OR $_SESSION['rank'] > 5) {?>
@@ -181,7 +181,7 @@
       			</td>
       			<? if ($select['specialisation'] == "Espace" OR $select['spe_2'] == "Espace" OR $_SESSION['rank'] > 5) {?>
       			<td style="text-align:center;">
-      				<a href="index?p=skills&element=Espace"><img src="pics/magie/Magie_Espace.png" width="<?= $width3?>" class="magie_type" title="Selectionner l'Essence du Chaos" alt="" /></a>
+      				<a href="index?p=skills&element=Espace"><img src="pics/magie/Magie_Espace.png" width="<?= $width3?>" class="magie_type" title="Selectionner l'Essence de l'Espace" alt="" /></a>
       			</td>
       			<?php } ?>
       			<td style="text-align:center;">
@@ -207,7 +207,7 @@
       			</td>
       			<? if ($select['specialisation'] == "Ordre" OR $select['spe_2'] == "Ordre" OR $_SESSION['rank'] > 5) {?>
       			<td style="text-align:center;">
-      				<a href="index?p=skills&element=Ordre"><img src="pics/magie/Magie_Ordre.png" width="<?= $width3?>" class="magie_type" title="Selectionner l'Essence du Chaos" alt="" /></a>
+      				<a href="index?p=skills&element=Ordre"><img src="pics/magie/Magie_Ordre.png" width="<?= $width3?>" class="magie_type" title="Selectionner l'Essence de l'Ordre" alt="" /></a>
       			</td>
       			<?php } ?>
       			<td style="text-align:center;">
@@ -218,7 +218,7 @@
       			</td>
       			<? if ($select['specialisation'] == "Void" OR $select['spe_2'] == "Void" OR $_SESSION['rank'] > 5) {?>
       			<td style="text-align:center;">
-      				<a href="index?p=skills&element=Void"><img src="pics/magie/Magie_Void.png" width="<?= $width3?>" class="magie_type" title="Selectionner l'Essence du Chaos" alt="" /></a>
+      				<a href="index?p=skills&element=Void"><img src="pics/magie/Magie_Void.png" width="<?= $width3?>" class="magie_type" title="Selectionner l'Essence du Void" alt="" /></a>
       			</td>
       			<?php } ?>
       		</tr>
