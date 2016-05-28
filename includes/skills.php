@@ -137,7 +137,7 @@
         }
         else
         {
-          //Selection
+          echo '<p>Veuillez cliquer sur une des icônes pour afficher la liste de copétence en rapport avec l\'élément séléctionné.</p>';
         }
     }
     else
