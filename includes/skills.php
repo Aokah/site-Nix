@@ -30,11 +30,11 @@
               <td colspan="2" style="text-align:center;">Débloquer cette compétence</td>
             </tr>
             <tr>
-              <td style="text-align:center; background-color:black; color:white;"></td>
-              <td style="text-align:center; background-color:black; color:white;"></td>
+              <td style="text-align:center; background-color:black; color:white;"><?= $select['name']?></td>
+              <td style="text-align:center; background-color:black; color:white;"><?=$select['infos']?></td>
             </tr>
             <tr>
-              <td colspan="2" style="text-align:center;">Contre <?=$count?> Points de Compétences ?</td>
+              <td colspan="2" style="text-align:center;">Contre <?=$select['cost']?> Points de Compétences ?</td>
             </tr>
             <tr>
               <td colspan="2" style="text-align:center;"><a href="index?p=skills&upgrade=<?= $type?>&caction=confirm">[Confirmer la décision]</a></td>
