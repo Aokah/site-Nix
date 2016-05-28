@@ -129,6 +129,7 @@
                     {
                       $def = $line['infos'];
                       $get = 'style="color:white;"';
+                      $get2 = '"color:white;"';
                     }
                     elseif ($line['number'] == 1 OR $_SESSION['rank'] > 5)
                     {
@@ -140,7 +141,7 @@
                     }
                   ?>
                   <tr>
-                    <td <?=$get?> style="text-align:center;" <?=$get?>><?= $cost?></td>
+                    <td style="text-align:center; <?=$get2?>" <?=$get?>><?= $cost?></td>
                     <td <?=$get?>><?= $line['name']?></td>
                     <td <?=$get?>><?= $def ?></td>
                   </tr>
