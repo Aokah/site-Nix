@@ -48,7 +48,7 @@
                 //Retrait des PCs
                 $final = $presel['exp'] - $verif['cost'];
                 $update = $db->prepare('UPDATE members SET exp = ?'); $update->execute(array($final));
-                $add = $db->prepare('INSERT INTO skil_get VALUES('',?, ?)'); $add->execute(array($_SESSION['id'], $select['id']));
+                $add = $db->prepare("INSERT INTO skil_get VALUES('',?, ?)"); $add->execute(array($_SESSION['id'], $select['id']));
                 echo '<p>Compétence acquise avec succès !</p>',
                 '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
               }
