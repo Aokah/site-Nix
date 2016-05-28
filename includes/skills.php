@@ -14,6 +14,15 @@
         while ($line = $verif->fetch())
         {
           echo '<p>', $line['skil_id'],'</p>';
+          $verify = $db->prepare('SELECT * FROM skil_list WHERE id = ? AND type = ?'); $verify->execute(array($line['skil_id'], $type));
+          if ($verify->fetch())
+          {
+            echo 'oui';
+          }
+          else
+          {
+            echo 'non';
+          }
         }
       }
     }
