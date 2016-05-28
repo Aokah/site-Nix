@@ -1,6 +1,7 @@
 <?php function skill_perso()
 {
   global $db;
+  $perso = intval($_GET['perso']);
   $limit = 17;
   while ($limit > 0)
   {
