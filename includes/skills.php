@@ -29,15 +29,15 @@
           $select = $db->prepare('SELECT * FROM skil_list WHERE type = ? AND number = ?'); $select->execute(array($type, $scount));
           if ($select = $select->fetch())
           {
-            if ($select['id'] > $id)
+            if ($select['number'] > $scount)
             {
               echo '<p>Navré mais vous possédez déjà cette compétence.</p>';
             }
-            elseif ($select['id'] < $id)
+            elseif ($select['number'] < $scount)
             {
               echo '<p>Navré mais vous devez apprendre d\'autres compétences avant d\'apprendre celle-ci.</p>';
             }
-            elseif ($select['id'] == $id)
+            elseif ($select['number'] == $scount)
             {
               $presel = $db->prepare('SELECT exp, id FROM members WHERE id = ?'); $presel->execute(array($_SESSION['id'])); $presel = $presel->fetch();
               $verif = $db->prepare('SELECT cost, id FROM skil_list WHERE id = ?'); $verif->execute(array($id)); $verif = $verif->fetch();
