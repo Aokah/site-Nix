@@ -18,6 +18,9 @@
       case 12:{  $type = "Ombre"; break;} case 13:{ $type = "Ombre"; break; }case 14: {$type = "Psy"; break;}
       case 15: { $type = "Chaleur"; break;} case 16:{ $type = "Terre"; break;} case 17 : {$type = "Void"; break;}
     }
+    $count = $db->prepare('SELECT COUNT (g.user_id, g.skil_id, l.id, l.type) AS count
+    FROM skil_get g RIGHT JOIN skil_list l ON g.skil_id = l.id
+    WHERE l.type = ?'); $count->execute(array($limit));
     ?>
     <table cellpadding="15" cellspacing="0" background="pics/ico/skil_<?= $element?>.png" class="skil_tab" align="center" width="100%">
       <tbody>
