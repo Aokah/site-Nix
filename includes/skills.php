@@ -235,9 +235,9 @@
                   </tr>
                   <?php while ($line = $select->fetch())
                   {
-                    $cost = $cost + $line['cost'];
+                    $cost = $cost + $line['cost']; 
                     $verif = $db->prepare('SELECT * FROM skil_get WHERE user_id = ? AND skil_id = ?');
-                    $verif->execute(array($_SESSION['id'], $line['id']));
+                    $verif->execute(array($_SESSION['id'], $line['id'])); echo $line['id'];
                     if ($verif->fetch())
                     {
                       $def = $line['infos'];
