@@ -29,14 +29,15 @@
           $select = $db->prepare('SELECT * FROM skil_list WHERE type = ? AND number = ?'); $select->execute(array($type, $scount));
           if ($select = $select->fetch())
           {
-            echo $select['number'], ' ' , $id;
             if ($id < $scount)
             {
               echo '<p>Navré mais vous possédez déjà cette compétence.</p>';
+                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
             }
             elseif ($id > $scount)
             {
               echo '<p>Navré mais vous devez apprendre d\'autres compétences avant d\'apprendre celle-ci.</p>';
+                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
             }
             elseif ($id == $scount)
             {
@@ -44,21 +45,29 @@
               $verif = $db->prepare('SELECT cost, id FROM skil_list WHERE id = ?'); $verif->execute(array($id)); $verif = $verif->fetch();
               if ($presel['exp'] >= $verif['cost'])
               {
-               echo 'ok';
+                //Retrait des PCs
+                $final = $presel['exp'] - $verif['cost'];
+                $update = $db->prepare('UPDATE members SET exp = ?'); $update->execute(array($final));
+                $add = $db->prepare('INSERT INTO skil_get VALUES('',?, ?)'); $add->execute(array($_SESSION['id'], $select['id']));
+                echo '<p>Compétence acquise avec succès !</p>',
+                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
               }
               else
               {
-                echo '<p>Navré, mais vous ne possédez pas assez de Points de Compétence.</p>';
+                echo '<p>Navré, mais vous ne possédez pas assez de Points de Compétence.</p>',
+                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
               }
             }
             else
             {
               echo '<p>Une erreur s\'est produite.</p>';
+                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
             }
           }
           else
           {
             echo '<p>Navré mais cette compétence n\'existe pas.</p>';
+                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
           }
         }
         else
