@@ -130,13 +130,13 @@
                       $def = $line['infos'];
                       $get = 'style="color:white;"';
                     }
+                    elseif ($line['number'] == 1 OR $_SESSION['rank'] > 5)
+                    {
+                      $def = $line['infos'];
+                    }
                     else
                     {
                       $def = "Description Inconnue, obtenez d'autres capacités pour en savoir plus.";
-                    }
-                    if ($line['number'] == 1 OR $_SESSION['rank'] > 5)
-                    {
-                      $def = $line['infos'];
                     }
                   ?>
                   <tr>
