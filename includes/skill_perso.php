@@ -1,4 +1,4 @@
-<?php function testpage()
+<?php function skill_perso()
 {
   global $db;
   $limit = 17;
@@ -9,7 +9,7 @@
     RIGHT JOIN skil_list l ON g.skil_id = l.id
     WHERE user_id= ? AND type = ?
     ORDER BY number ASC');
-    $select->execute(array($_SESSION['id'], $limit));
+    $select->execute(array($perso, $limit));
     switch ($limit)
     {
       case 1 : { $type = "Air"; break;} case 2: {$type = "Arcane"; break; } case 3 : {$type = "Chaos"; break;} case 4: {$type = "Eau"; break;}
@@ -20,7 +20,7 @@
     }
     $count = $db->prepare('SELECT COUNT(*) AS count
     FROM skil_get g RIGHT JOIN skil_list l ON g.skil_id = l.id
-    WHERE l.type = ? AND g.user_id = ?'); $count->execute(array($limit, $_SESSION['id']));
+    WHERE l.type = ? AND g.user_id = ?'); $count->execute(array($limit, $perso));
     $count = $count->fetch();
     if ($count['count'] > 0)
     {
