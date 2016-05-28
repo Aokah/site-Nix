@@ -1268,7 +1268,7 @@
 			{
 			?>
 			<tr>
-				<td>
+				<td colspan="2">
 					<h3>Compétences acquises du personnage.</h3>
 					<?php include('includes/skill_perso.php'); skill_perso(); ?>
 				</td>
