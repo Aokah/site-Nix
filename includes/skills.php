@@ -247,10 +247,14 @@
                     elseif ($line['number'] == 1 OR $_SESSION['rank'] > 5)
                     {
                       $def = $line['infos'];
+                      $get = '';
+                      $get2 = '';
                     }
                     else
                     {
                       $def = "Description Inconnue, obtenez d'autres capacités pour en savoir plus.";
+                      $get = '';
+                      $get2 = '';
                     }
                   ?>
                   <tr>
