@@ -41,7 +41,7 @@
               <td colspan="2" style="text-align:center;">Contre <?=$select['cost']?> Points de Compétences ?</td>
             </tr>
             <tr>
-              <td colspan="2" style="text-align:center;"><a href="index?p=skills&upgrade=<?= $type?>&caction=confirm">[Confirmer la décision]</a></td>
+              <td colspan="2" style="text-align:center;"><a href="index?p=skills&upgrade=<?= $type?>&action=confirm">[Confirmer la décision]</a></td>
             </tr>
           </tbody>
         </table>
