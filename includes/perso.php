@@ -1262,7 +1262,17 @@
 				?>
 				</td>
 			</tr>
+			<?php if ($_SESSION['rank'] > 5)
+			{
+			?>
+			<tr>
+				<td>
+					<h3>Compétences acquises du personnage.</h3>
+					<?php include('includes/skil_perso.php'); skill_perso(); ?>
+				</td>
+			</tr>
 			<?php
+			}
 				}
 			}
 				$verif = $db->prepare('SELECT * FROM avert WHERE target_id = ?');
