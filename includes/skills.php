@@ -60,13 +60,13 @@
             }
             else
             {
-              echo '<p>Une erreur s\'est produite.</p>';
+              echo '<p>Une erreur s\'est produite.</p>',
                 '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
             }
           }
           else
           {
-            echo '<p>Navré mais cette compétence n\'existe pas.</p>';
+            echo '<p>Navré mais cette compétence n\'existe pas.</p>',
                 '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
           }
         }
@@ -111,13 +111,15 @@
           }
           else
           {
-            echo '<p>Une erreur s\'est produite, peut-être que vous n\'avez pas d\'autres compétences à acquérir dans cet élément.</p>';
+            echo '<p>Une erreur s\'est produite, peut-être que vous n\'avez pas d\'autres compétences à acquérir dans cet élément.</p>',
+                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
           }
         }
       }
       else
       {
-        echo '<p>Qu\'essaies-tu ? De monter tes compétences magiques dans un élément qui n\'esiste pas ?</p>';
+        echo '<p>Qu\'essaies-tu ? De monter tes compétences magiques dans un élément qui n\'esiste pas ?</p>',
+                '<p><a href="index?p=skills>Retourner à la page des Compétences.</a></p>';
       }
     }
     else
