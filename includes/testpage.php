@@ -8,6 +8,7 @@
     RIGHT JOIN skil_list l ON g.skil_id = l.id
     WHERE user_id= ? AND type = ?
     ORDER BY number ASC');
+    $select->execute(array($_SESSION['id'], $limit));
     $limit --;
   }
 }
