@@ -10,46 +10,99 @@
       $type = intval($_GET['upgrade']);
       if ($_GET['upgrade'] >= 1 AND $_GET['upgrade'] <= 17)
       {
-        $verif = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verif->execute(array($_SESSION['id']));
-        $scount = 1;
-        while ($line = $verif->fetch())
+        if (isset($_GET['confirm']))
         {
-          $verify = $db->prepare('SELECT * FROM skil_list WHERE id = ? AND type = ?'); $verify->execute(array($line['skil_id'], $type));
-          if ($verify->fetch())
+          $id = intval($_GET['confirm']);
+          $vget = $db->prepare('SELECT id FROM skil_get WHERE id = ?'); $vget->execute(array($id));
+          // Vérifie si la compétence n'est pas déjà apprise -^
+          //Vérifie s'il n'y a pas d'autres compétences à apprendre avant ->
+          $verify = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verify->execute(array($_SESSION['id']));
+          $scount = 1;
+          while ($line = $verify->fetch())
           {
-            $scount ++;
+            $verify_ = $db->prepare('SELECT * FROM skil_list WHERE id = ? AND type = ?'); $verify_->execute(array($line['skil_id'], $type));
+            if ($verify_->fetch())
+            {
+              $scount ++;
+            }
           }
-        }
-        $select = $db->prepare('SELECT * FROM skil_list WHERE type = ? AND number = ?'); $select->execute(array($type, $scount));
-        if ($select = $select->fetch())
-        {
-        ?>
-        <table align="center" cellpadding="10" cellspacing="0">
-          <tbody>
-            <tr>
-              <td colspan="2" style="text-align:center;">Débloquer cette compétence</td>
-            </tr>
-            <tr>
-              <th style="text-align:center; background-color:black; color:white;">Compétence</td>
-              <th style="text-align:center; background-color:black; color:white;">Description</td>
-            </tr>
-            <tr>
-              <td style="text-align:center; background-color:black; color:white;"><?= $select['name']?></td>
-              <td style="text-align:center; background-color:black; color:white;"><?=$select['infos']?></td>
-            </tr>
-            <tr>
-              <td colspan="2" style="text-align:center;">Contre <?=$select['cost']?> Points de Compétences ?</td>
-            </tr>
-            <tr>
-              <td colspan="2" style="text-align:center;"><a href="index?p=skills&upgrade=<?= $type?>&action=confirm">[Confirmer la décision]</a></td>
-            </tr>
-          </tbody>
-        </table>
-        <?php
+          $select = $db->prepare('SELECT * FROM skil_list WHERE type = ? AND number = ?'); $select->execute(array($type, $scount));
+          if ($select = $select->fetch())
+          {
+            if ($select['id'] > $id)
+            {
+              echo '<p>Navré mais vous possédez déjà cette compétence.</p>';
+            }
+            elseif ($select['id'] < $id)
+            {
+              echo '<p>Navré mais vous devez apprendre d\'autres compétences avant d\'apprendre celle-ci.</p>';
+            }
+            elseif ($select['id'] == $id)
+            {
+              $presel = $db->prepare('SELECT exp, id FROM members WHERE id = ?'); $presel->execute(array($_SESSION['id'])); $presel = $presel->fetch();
+              $verif = $db->prepare('SELECT cost, id FROM skil_list WHERE id = ?'); $verif->execute(array($id)); $verif = $verif->fetch();
+              if ($presel['exp'] > $verif['cost'])
+              {
+               echo 'ok';
+              }
+              else
+              {
+                echo '<p>Navré, mais vous ne possédez pas assez de Points de Compétence.</p>';
+              }
+            }
+            else
+            {
+              echo '<p>Une erreur s\'est produite.</p>';
+            }
+          }
+          else
+          {
+            echo '<p>Navré mais cette compétence n\'existe pas.</p>';
+          }
         }
         else
         {
-          echo '<p>Une erreur s\'est produite, peut-être que vous n\'avez pas d\'autres compétences à acquérir dans cet élément.</p>';
+          $verif = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verif->execute(array($_SESSION['id']));
+          $scount = 1;
+          while ($line = $verif->fetch())
+          {
+            $verify = $db->prepare('SELECT * FROM skil_list WHERE id = ? AND type = ?'); $verify->execute(array($line['skil_id'], $type));
+            if ($verify->fetch())
+            {
+              $scount ++;
+            }
+          }
+          $select = $db->prepare('SELECT * FROM skil_list WHERE type = ? AND number = ?'); $select->execute(array($type, $scount));
+          if ($select = $select->fetch())
+          {
+          ?>
+          <table align="center" cellpadding="10" cellspacing="0">
+            <tbody>
+              <tr>
+                <td colspan="2" style="text-align:center;">Débloquer cette compétence</td>
+              </tr>
+              <tr>
+                <th style="text-align:center; background-color:black; color:white;">Compétence</td>
+                <th style="text-align:center; background-color:black; color:white;">Description</td>
+              </tr>
+              <tr>
+                <td style="text-align:center; background-color:black; color:white;"><?= $select['name']?></td>
+                <td style="text-align:center; background-color:black; color:white;"><?=$select['infos']?></td>
+              </tr>
+              <tr>
+                <td colspan="2" style="text-align:center;">Contre <?=$select['cost']?> Points de Compétences ?</td>
+              </tr>
+              <tr>
+                <td colspan="2" style="text-align:center;"><a href="index?p=skills&upgrade=<?= $type?>&confirm=<?= $select['id']?>">[Confirmer la décision]</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <?php
+          }
+          else
+          {
+            echo '<p>Une erreur s\'est produite, peut-être que vous n\'avez pas d\'autres compétences à acquérir dans cet élément.</p>';
+          }
         }
       }
       else
