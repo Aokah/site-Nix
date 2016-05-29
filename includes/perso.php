@@ -1272,7 +1272,10 @@
 				?>
 				</td>
 			</tr>
+			
 			<?php 
+				}
+			}
 			$verify = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verify->execute(array($perso));
 			if ($_SESSION['rank'] > 5 AND $verify->fetch())
 			{
@@ -1284,8 +1287,6 @@
 				</td>
 			</tr>
 			<?php
-			}
-				}
 			}
 				$verif = $db->prepare('SELECT * FROM avert WHERE target_id = ?');
 				$verif->execute(array($perso));
