@@ -305,7 +305,7 @@
 					{
 					switch ($line['magie_rank']) { case 0: $maxmagie = 50; break;	case 1: $maxmagie = 100; break;	case 2: $maxmagie = 150; break;
 					case 3: $maxmagie = 200; break;	case 4: $maxmagie = 300; break;	case 5: $maxmagie = 400; break;	case 6: $maxmagie = 500; break; }
-					if ($line['E_magique'] >= 7) { $overmagie = 'Inutile de modifier l\'énergie d\'un personnage aux poubvoirs illimités !'; }
+					if ($line['E_magique'] >= 7) { $overmagie = 'Inutile de modifier l\'énergie d\'un personnage aux pouvoirs illimités !'; }
 				?>
 					<h3>Modification des informations magiques du personnage</h3>
 					<form action="index?p=perso&perso=<?php echo $perso;?>&modif=save" method="POST">
