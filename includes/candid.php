@@ -334,7 +334,7 @@
       {
         if (isset($_POST['send']))
         {
-          $mc =htmlentities($POST['mc']);
+          $mc = htmlentities($_POST['mc']);
           $candid =htmlentities($_POST['candid']);
           $verif = $db->prepare('SELECT COUNT(*) AS mcc FROM members WHERE Minecraft_Account = ? ');
           $verif->execute(array($mc)); $line = $verif->fetch();
