@@ -753,7 +753,7 @@ if ($_SESSION['connected'])
 	{
 	?>
 		<h2>Mes sorts</h2>
-		<p>Ici estsont réperetoriés l'intégralité des sorts appris par votre personnage.</p>
+		<p>Ici sont réperetoriés l'intégralité des sorts appris par votre personnage.</p>
 		<p>
 			<form action="index?p=sorts" method="POST">
 				<label for="enter">Entrez ici la nouvelle incantation :</label>
