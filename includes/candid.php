@@ -59,7 +59,9 @@
                   $upgrade = $db->prepare('UPDATE members SET accepted = 1 WHERE id = ?');
                   $upgrade->execute(array($line['sender_id']));
                 }
-                $ip = 'soul.omgcraft.fr';
+                
+                				include('includes/interface/JSONapi.php');
+                				$ip = 'soul.omgcraft.fr';
     						$port = 20059;
     						$user = "nix";
     						$pwd = "dragonball";
