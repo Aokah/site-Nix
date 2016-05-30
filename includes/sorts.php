@@ -896,7 +896,7 @@ if ($_SESSION['connected'])
 											</tr>
 											<?php
 											}
-											<?php if ($line['valid'] == 1)
+											if ($line['valid'] == 1)
 											{ ?>
 											<tr>
 												<td style="text-align:center;">
