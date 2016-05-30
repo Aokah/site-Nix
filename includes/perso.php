@@ -219,6 +219,9 @@
 									<td>
 										<label for="nom">Nom :</label> <input type="text" id="nom" name="nom" value="<?= $line['nom']?>" />
 									</td>
+									<?php if ($_SESSION['rank'] > 5)
+									{
+									?>
 									<td>
 										<label>Race :</label>
 											<select name="race" type="text">
@@ -240,6 +243,7 @@
 									<td>
 										<label>Titre :</label> <input type="text" name="titre" value="<?= $line['title']?>" />
 									</td>
+									<?php } ?>
 								</tr>
 								<tr>
 									<td>
@@ -381,12 +385,16 @@
 												<option value="17">Void</option>
 											</select>
 									</td>
+									<?php if ($_SESSION['rank'] > 5)
+									{
+									?>
 									<td>
 										Points de Compétence :
 									</td>
 									<td>
 										<input type="number" name="exp" min="0" step="1" max="999" value="<?= $line['exp']?>"></code>
 									</td>
+									<? } ?>
 								</tr>
 							</tbody>
 						</table>
