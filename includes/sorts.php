@@ -875,19 +875,35 @@ if ($_SESSION['connected'])
 											</tr>
 											<tr>
 												<td style="text-align:center;">
-													<img src="pics/magie/Magie_<?= $type?>.png" alt="" width="60" class="magie_type" /> <img src="pics/magie/Magie_<?= $level?>.png" alt="" width="60" class="magie" />
+														<img src="pics/magie/Magie_<?= $type?>.png" alt="" width="60" class="magie_type" /><?php if ($line['valid'] == 1) { ?> <img src="pics/magie/Magie_<?= $level?>.png" alt="" width="60" class="magie" /> <?php }  ?>
 												</td>
 											</tr>
+											<?php if ($line['valid'] == 1)
+											{ ?>
 											<tr>
 												<td style="text-align:center;">
 													<?= $line['desc']?>
 												</td>
 											</tr>
+											<?php }
+											else
+											{
+											?>
+											<tr>
+												<td style="text-align:center;">
+													Vous ne connaissez pas encore les effets de ce sort.
+												</td>
+											</tr>
+											<?php
+											}
+											<?php if ($line['valid'] == 1)
+											{ ?>
 											<tr>
 												<td style="text-align:center;">
 													<?= $line['cost']?> Points.
 												</td>
 											</tr>
+											<? } ?>
 											<tr>
 												<td style="text-align:center;">
 													<?php if ($line['valid'] == 1)
