@@ -15,7 +15,7 @@
     {
       case 1 : { $type = "Air"; break;} case 2: {$type = "Arcane"; break; } case 3 : {$type = "Chaos"; break;} case 4: {$type = "Eau"; break;}
       case 5: { $type = "Energie"; break;} case 6:{ $type = "Espace"; break;} case 7: {$type = "Feu"; break;} case 8:{ $type = "Glace"; break;}
-      case 9 : { $type = "Lumiere"; break;} case 10:{ $type = "Metal"; break;} case 11:{ $type = "Metal"; break;}
+      case 9 : { $type = "Lumiere"; break;} case 10:{ $type = "Metal"; break;} case 11:{ $type = "Nature"; break;}
       case 12:{  $type = "Ombre"; break;} case 13:{ $type = "Ombre"; break; }case 14: {$type = "Psy"; break;}
       case 15: { $type = "Chaleur"; break;} case 16:{ $type = "Terre"; break;} case 17 : {$type = "Void"; break;}
     }
