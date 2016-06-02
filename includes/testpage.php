@@ -15,13 +15,13 @@
         $feu = 0; $glace = 0; $lumiere = 0; $metal = 0;  $nature = 0;  $ombre = 0;  $ordre = 0;
         $psy = 0; $terre = 0;  $void = 0;
         if ($_POST['Q1'] == "R1") { $ombre++; $void++; } elseif ($_POST['Q1'] == "R2") {$glace++; $eau++; } 
-        elseif ($_POST['Q1'] == "R3") {$feu++; $chaos++; } elseif ($_POST['Q1'] == "R4") { $void++; $psy++; }
-        elseif ($_POST['Q1'] == "R5") { $nature++; } elseif ($_POST['Q1'] == "R6") {$lumiere++; $arcane++; $air++; }
+        elseif ($_POST['Q1'] == "R3") {$feu++; $chaos++; } elseif ($_POST['Q1'] == "R4") { $void++; $psy++; $espace++; }
+        elseif ($_POST['Q1'] == "R5") { $nature++; } elseif ($_POST['Q1'] == "R6") {$lumiere++; $energie++; $arcane++; $air++; }
         elseif ($_POST['Q1'] == "R7") {$chaleur++; $feu++;  } elseif ($_POST['Q1'] == "R8") {$lumiere++; $ordre++;}
-         elseif ($_POST['Q1'] == "R9") {$terre++;}
+        elseif ($_POST['Q1'] == "R9") {$terre++;}
         
       # Ombre = 1  Void = 2  Glace = 1  Eau = 1  Feu = 2  Chaos = 1  Psy = 1  Nature = 1  Air = 1  Arcane = 1  Lumière = 2 
-      # Chaleur = 1  Ordre = 1 Terre = 1
+      # Chaleur = 1  Ordre = 1 Terre = 1  Energie = 1  Espace = 1
       }
       else
       {
@@ -35,7 +35,7 @@
           <input type="radio" name="Q1" value="R2" id="R2" /> <label for="R2" class="name1" style="color:aqua;">Le Bleu</label><br />
           <input type="radio" name="Q1" value="R3" id="R3" /> <label for="R3" class="name1" style="color:red;">Le Rouge</label><br />
           <input type="radio" name="Q1" value="R4" id="R4" /> <label for="R4" class="name1" style="color:purple;">Le Violet</label><br />
-          <input type="radio" name="Q1" value="R5" id="R5" /> <label for="R5" class="name1" style="color:green;">Le Vert</label><br />
+          <input type="radio" name="Q1" value="R5" id="R5" /> <label for="R5" class="name1" style="color:lime;">Le Vert</label><br />
           <input type="radio" name="Q1" value="R6" id="R6" /> <label for="R6" class="name1" style="color:white;">Le Blanc</label><br />
           <input type="radio" name="Q1" value="R7" id="R7" /> <label for="R7" class="name1" style="color:orange;">Le Orange</label><br />
           <input type="radio" name="Q1" value="R8" id="R8" /> <label for="R8" class="name1" style="color:yellow;">Le Jaune</label><br />
