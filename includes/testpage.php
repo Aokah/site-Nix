@@ -20,8 +20,8 @@
         elseif ($_POST['Q1'] == "R7") {$chaleur++; $feu++;  } elseif ($_POST['Q1'] == "R8") {$lumiere++; $ordre++;}
          elseif ($_POST['Q1'] == "R9") {$terre++;}
         
-        Ombre = 1  Void = 2  Glace = 1  Eau = 1  Feu = 2  Chaos = 1  Psy = 1  Nature = 1  Air = 1  Arcane = 1  Lumière = 2 
-        Chaleur = 1  Ordre = 1 Terre = 1
+      # Ombre = 1  Void = 2  Glace = 1  Eau = 1  Feu = 2  Chaos = 1  Psy = 1  Nature = 1  Air = 1  Arcane = 1  Lumière = 2 
+      # Chaleur = 1  Ordre = 1 Terre = 1
       }
       else
       {
