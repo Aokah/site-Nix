@@ -20,7 +20,7 @@
     }
     else
     {
-      echo '<p>NAvré, mais vous avez déjà passé ce test.</p>';
+      echo '<p>Navré, mais vous avez déjà passé ce test.</p>';
     }
   }
   else
