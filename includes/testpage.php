@@ -44,7 +44,7 @@
           
           <p>Quel objet vous correspond le mieux ?</p>
           <input type="radio" name="Q2" value="R1" id="Q2R1" /> <label for="R1" class="name1"><img src="pics/items/Ender_Pearl.png" alt="" width="20px" /> La Perle Noire.</label><br />
-          <input type="radio" name="Q2" value="R2" id="Q2R2" /> <label for="R2" class="name1"><img src="pics/items/Lapis-Lazuli.png" alt="" width="20px" /> Le Lapis Lazuli.</label><br />
+          <input type="radio" name="Q2" value="R2" id="Q2R2" /> <label for="R2" class="name1"><img src="pics/items/Lapis-lazuli.png" alt="" width="20px" /> Le Lapis Lazuli.</label><br />
           <input type="radio" name="Q2" value="R3" id="Q2R3" /> <label for="R3" class="name1"><img src="pics/items/Quartz.png" alt="" width="20px" /> Le Quartz.</label><br />
         </form>
       <?php
