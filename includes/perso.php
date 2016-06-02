@@ -702,6 +702,7 @@
 				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
 				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
 				<?php
+				echo $_SESSION['id'];
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
