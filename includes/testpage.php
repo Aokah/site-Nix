@@ -20,8 +20,11 @@
         elseif ($_POST['Q1'] == "R7") {$chaleur++; } elseif ($_POST['Q1'] == "R8") {$lumiere++; $ordre++;}
         elseif ($_POST['Q1'] == "R9") {$terre++;} elseif ($_POST['Q1'] == "R10") {$metal++; $air++;}
         
-      # Ombre = 1  Void = 1  Glace = 1  Eau = 1  Feu = 1  Chaos = 1  Psy = 1  Nature = 1  Air = 1 Arcane = 1  Lumière = 1 
-      # Chaleur = 1  Ordre = 1 Terre = 1  Energie = 1  Espace = 1  Metal = 1
+        if ($_POST['Q2'] == "R1") { $ombre++; } elseif ($_POST['Q2'] == "R2") { $energie++; }
+        elseif ($_POST['Q2'] == "R3") { $lumiere++; }  elseif ($_POST['Q2'] == "R4") { $nature++; } 
+        
+      # Ombre = 2  Void = 1  Glace = 1  Eau = 1  Feu = 1  Chaos = 1  Psy = 1  Nature = 2  Air = 1 Arcane = 1  Lumière = 2
+      # Chaleur = 1  Ordre = 1 Terre = 1  Energie = 2  Espace = 1  Metal = 1
       }
       else
       {
