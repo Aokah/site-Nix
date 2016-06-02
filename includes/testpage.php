@@ -18,10 +18,10 @@
         elseif ($_POST['Q1'] == "R3") {$feu++; $chaos++; } elseif ($_POST['Q1'] == "R4") { $void++; $psy++; $espace++; }
         elseif ($_POST['Q1'] == "R5") { $nature++; } elseif ($_POST['Q1'] == "R6") {$lumiere++; $energie++; $arcane++; $air++; }
         elseif ($_POST['Q1'] == "R7") {$chaleur++; $feu++;  } elseif ($_POST['Q1'] == "R8") {$lumiere++; $ordre++;}
-        elseif ($_POST['Q1'] == "R9") {$terre++;}
+        elseif ($_POST['Q1'] == "R9") {$terre++;} elseif ($_POST['Q1'] == "R10") {$metal++; $air++;}
         
-      # Ombre = 1  Void = 2  Glace = 1  Eau = 1  Feu = 2  Chaos = 1  Psy = 1  Nature = 1  Air = 1  Arcane = 1  Lumière = 2 
-      # Chaleur = 1  Ordre = 1 Terre = 1  Energie = 1  Espace = 1
+      # Ombre = 1  Void = 2  Glace = 1  Eau = 1  Feu = 2  Chaos = 1  Psy = 1  Nature = 1  Air = 2  Arcane = 1  Lumière = 2 
+      # Chaleur = 1  Ordre = 1 Terre = 1  Energie = 1  Espace = 1  Metal = 1
       }
       else
       {
@@ -40,6 +40,7 @@
           <input type="radio" name="Q1" value="R7" id="R7" /> <label for="R7" class="name1" style="color:orange;">Le Orange</label><br />
           <input type="radio" name="Q1" value="R8" id="R8" /> <label for="R8" class="name1" style="color:yellow;">Le Jaune</label><br />
           <input type="radio" name="Q1" value="R9" id="R9" /> <label for="R9" class="name1" style="color:brown;">Le Marron</label><br />
+          <input type="radio" name="Q1" value="R10" id="R10" /> <label for="R10" class="name1" style="color:silver;">Le Gris</label><br />
           
         </form>
       <?php
