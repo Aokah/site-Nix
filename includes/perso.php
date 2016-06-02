@@ -695,9 +695,8 @@
 			}
 			elseif ($_GET['action'] == "validbg")
 			{
-				echo $_SESSION['id'];
 				if($_SESSION['rank'] >= 5) {
-				$update = $db->prepare('UPDATE members SET valid_bg = 1, valider_id = ? WHERE id = ?');
+				$update = $db->prepare('UPDATE members SET valider_id = ?, valid_bg = 1 WHERE id = ?');
 				$update->execute(array($_SESSION['id'], $perso));
 				echo '<p>BackGround RolePlay validé !</p>';?>
 				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
