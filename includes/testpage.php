@@ -15,9 +15,9 @@
         $feu = 0; $glace = 0; $lumiere = 0; $metal = 0;  $nature = 0;  $ombre = 0;  $ordre = 0;
         $psy = 0; $terre = 0;  $void = 0;
         if ($_POST['Q1'] == "R1") { $ombre++; $void++; } elseif ($_POST['Q1'] == "R2") {$glace++; $eau++; } 
-        elseif ($_POST['Q1'] == "R3") {$feu++; $chaos++ } elseif ($_POST['Q1'] == "R4") { $void++; $psy++; }
+        elseif ($_POST['Q1'] == "R3") {$feu++; $chaos++; } elseif ($_POST['Q1'] == "R4") { $void++; $psy++; }
         elseif ($_POST['Q1'] == "R5") { $nature++; } elseif ($_POST['Q1'] == "R6") {$lumiere++; $arcane++; $air++; }
-        elseif ($_POST['Q1'] == "R7") {$chaleur++; $feu++;  } elseif ($_POST['Q1'] == "R8") {$lumiere++ $ordre++;}
+        elseif ($_POST['Q1'] == "R7") {$chaleur++; $feu++;  } elseif ($_POST['Q1'] == "R8") {$lumiere++; $ordre++;}
          elseif ($_POST['Q1'] == "R9") {$terre++;}
         
         Ombre = 1  Void = 2  Glace = 1  Eau = 1  Feu = 2  Chaos = 1  Psy = 1  Nature = 1  Air = 1  Arcane = 1  Lumière = 2 
