@@ -1,5 +1,7 @@
 <?php function testpage()
 {
+  global $_SESSION, $_POST, $db;
+  
   if ($_SESSION['connected'])
   {
     $verif = $db->prepare('SELECT id, testm FROM members WHERE id = ? AND testm = 0');
