@@ -43,7 +43,7 @@
           <input type="radio" name="Q1" value="R10" id="Q1R10" /> <label for="Q1R10" class="name1" style="color:silver;">Le Gris</label><br />
           
           <p>Quel objet vous correspond le mieux ?</p>
-          <input type="radio" name="Q1" value="R1" id="Q2R1" /> <label for="R1" class="name1"><img src="pics/items/Ender_Pearl.phn" alt="" width="30px" />La Perle Noire.</label><br />
+          <input type="radio" name="Q1" value="R1" id="Q2R1" /> <label for="R1" class="name1"><img src="pics/items/Ender_Pearl.png" alt="" width="30px" />La Perle Noire.</label><br />
         </form>
       <?php
       }
