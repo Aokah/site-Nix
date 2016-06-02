@@ -6,6 +6,7 @@
   {
     $verif = $db->prepare('SELECT id, testm FROM members WHERE id = ? AND testm = 0');
     $verif->execute(array($_SESSION['id']));
+    echo '<h2>Test de Personalité Magique</h2>';
     if ($verif->fetch())
     {
       if (isset($_POST['valid']))
