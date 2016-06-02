@@ -13,6 +13,9 @@
 		<li>Réadapter la Page d'Acceuil aux évènements passés IG</li>
 		<li>Reconstruire la Structure de la ChatBox</li>
 		<li>Réécrire la page des PMs</li>
+		<li>Création de la Page "Mes Aptitudes" et listage d'au moins 10 Compétence dans chaque domaine</li>
+		<li>Création d'une page "Rapport d'erreur" à disposition des Joueurs</li>
+		<li>Création du test de détermination magique</li>
 		
 	</ul>
 	
