@@ -871,7 +871,7 @@
 								
 							<tr>
 								<td colspan="2">
-									<p>Magie : <? echo $magieok; if ($line['magieok'] == 0) {?>
+									<p>Magie : <? echo $magieok; if ($_SESSION['rank'] > 4) { if ($line['magieok'] == 0) {?>
 									<a title="Activer la Maîtrise de la Magie" href="index?p=perso&perso=<?php echo $perso; ?>&action=magieok" style="color:blue;">[mOK]</a>
 									<?php } else { ?>
 									<a title="Désactiver la Maîtrise de la Magie" href="index?p=perso&perso=<?php echo $perso; ?>&action=magieko" style="color:red;">[mKO]</a> 
