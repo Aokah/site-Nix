@@ -871,7 +871,7 @@
 								
 							<tr>
 								<td colspan="2">
-									<p>Magie : <? echo $magieok;?>></p>
+									<p>Magie : <? echo $magieok;?></p>
 								</td>
 							</tr>
 							<tr>
