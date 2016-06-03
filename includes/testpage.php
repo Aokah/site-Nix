@@ -51,7 +51,7 @@
           <input type="radio" name="Q2" value="R2" id="Q2R2" /> <label for="Q2R2"><img src="pics/items/Lapis-lazuli.png" alt="" width="20px" /> Le Lapis Lazuli.</label><br />
           <input type="radio" name="Q2" value="R3" id="Q2R3" /> <label for="Q2R3"><img src="pics/items/Quartz.png" alt="" width="20px" /> Le Quartz.</label><br />
           <input type="radio" name="Q2" value="R4" id="Q2R4" /> <label for="Q2R4"><img src="pics/items/Flower.png" alt="" width="20px" /> La Fleur.</label><br />
-          <input type="radio" name="Q2" value="R5" id="Q2R5" /> <label for="Q2R5"><img src="pics/items/inron_pickaxe.png" alt="" width="20px" /> La Pioche.</label><br />
+          <input type="radio" name="Q2" value="R5" id="Q2R5" /> <label for="Q2R5"><img src="pics/items/iron_pickaxe.png" alt="" width="20px" /> La Pioche.</label><br />
         </form>
       <?php
       }
