@@ -871,11 +871,7 @@
 								
 							<tr>
 								<td colspan="2">
-									<p>Magie : <? echo $magieok; if ($_SESSION['rank'] > 4 AND $line['magieok'] == 0) {?>
-									<a title="Activer la Maîtrise de la Magie" href="index?p=perso&perso=<?php echo $perso; ?>&action=magieok" style="color:blue;">[mOK]</a>
-									<?php } else { ?>
-									<a title="Désactiver la Maîtrise de la Magie" href="index?p=perso&perso=<?php echo $perso; ?>&action=magieko" style="color:red;">[mKO]</a> 
-									<?php } ?></p>
+									<p>Magie : <? echo $magieok;?>></p>
 								</td>
 							</tr>
 							<tr>
@@ -919,7 +915,12 @@
 									<a title="Supprimer le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=delete" style="color:red;">[X]</a>
 									<?php } else { ?>
 									<a title="Restaurer le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=restore" style="color:blue;">[X]</a> 
-									<?php } } ?>
+									<?php } }
+									 if ($_SESSION['rank'] > 4 AND $line['magieok'] == 0) {?>
+									<a title="Activer la Maîtrise de la Magie" href="index?p=perso&perso=<?php echo $perso; ?>&action=magieok" style="color:blue;">[mOK]</a>
+									<?php } else { ?>
+									<a title="Désactiver la Maîtrise de la Magie" href="index?p=perso&perso=<?php echo $perso; ?>&action=magieko" style="color:red;">[mKO]</a> 
+									<?php } ?>
 								</td>
 							</tr>
 						</tbody>
