@@ -22,9 +22,10 @@
         
         if ($_POST['Q2'] == "R1") { $ombre++; } elseif ($_POST['Q2'] == "R2") { $energie++; }
         elseif ($_POST['Q2'] == "R3") { $lumiere++; }  elseif ($_POST['Q2'] == "R4") { $nature++; } 
+          elseif ($_POST['Q2'] == "R5") { $terre++; $metal++; } 
         
       # Ombre = 2  Void = 1  Glace = 1  Eau = 1  Feu = 1  Chaos = 1  Psy = 1  Nature = 2  Air = 1 Arcane = 1  Lumière = 2
-      # Chaleur = 1  Ordre = 1 Terre = 1  Energie = 2  Espace = 1  Metal = 1
+      # Chaleur = 1  Ordre = 1 Terre = 2  Energie = 2  Espace = 1  Metal = 2
       }
       else
       {
@@ -50,6 +51,7 @@
           <input type="radio" name="Q2" value="R2" id="Q2R2" /> <label for="Q2R2"><img src="pics/items/Lapis-lazuli.png" alt="" width="20px" /> Le Lapis Lazuli.</label><br />
           <input type="radio" name="Q2" value="R3" id="Q2R3" /> <label for="Q2R3"><img src="pics/items/Quartz.png" alt="" width="20px" /> Le Quartz.</label><br />
           <input type="radio" name="Q2" value="R4" id="Q2R4" /> <label for="Q2R4"><img src="pics/items/Flower.png" alt="" width="20px" /> La Fleur.</label><br />
+          <input type="radio" name="Q2" value="R5" id="Q2R5" /> <label for="Q2R5"><img src="pics/items/inron_pickaxe.png" alt="" width="20px" /> La Pioche.</label><br />
         </form>
       <?php
       }
