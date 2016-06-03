@@ -916,11 +916,11 @@
 									<?php } else { ?>
 									<a title="Restaurer le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=restore" style="color:blue;">[X]</a> 
 									<?php } }
-									 if ($_SESSION['rank'] > 4 AND $line['magieok'] == 0) {?>
+									 if ($_SESSION['rank'] >= 5) { if ($line['magieok'] == 0) {?>
 									<a title="Activer la Maîtrise de la Magie" href="index?p=perso&perso=<?php echo $perso; ?>&action=magieok" style="color:aqua;">[mOK]</a>
 									<?php } else { ?>
 									<a title="Désactiver la Maîtrise de la Magie" href="index?p=perso&perso=<?php echo $perso; ?>&action=magieko" style="color:red;">[mKO]</a> 
-									<?php } ?>
+									<?php } } ?>
 								</td>
 							</tr>
 						</tbody>
