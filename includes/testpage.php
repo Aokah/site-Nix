@@ -46,10 +46,10 @@
           <input type="radio" name="Q1" value="R10" id="Q1R10" /> <label for="Q1R10" class="name1" style="color:silver;">Le Gris</label><br />
           
           <p>Quel objet vous correspond le mieux ?</p>
-          <input type="radio" name="Q2" value="R1" id="Q2R1" /> <label for="Q2R1" class="name1" style="color:silver;"><img src="pics/items/Ender_Pearl.png" alt="" width="20px" /> La Perle Noire.</label><br />
-          <input type="radio" name="Q2" value="R2" id="Q2R2" /> <label for="Q2R2" class="name1" style="color:silver;"><img src="pics/items/Lapis-lazuli.png" alt="" width="20px" /> Le Lapis Lazuli.</label><br />
-          <input type="radio" name="Q2" value="R3" id="Q2R3" /> <label for="Q2R3" class="name1" style="color:silver;"><img src="pics/items/Quartz.png" alt="" width="20px" /> Le Quartz.</label><br />
-          <input type="radio" name="Q2" value="R4" id="Q2R4" /> <label for="Q2R4" class="name1" style="color:silver;"><img src="pics/items/Flower.png" alt="" width="20px" /> La Fleur.</label><br />
+          <input type="radio" name="Q2" value="R1" id="Q2R1" /> <label for="Q2R1"><img src="pics/items/Ender_Pearl.png" alt="" width="20px" /> La Perle Noire.</label><br />
+          <input type="radio" name="Q2" value="R2" id="Q2R2" /> <label for="Q2R2"><img src="pics/items/Lapis-lazuli.png" alt="" width="20px" /> Le Lapis Lazuli.</label><br />
+          <input type="radio" name="Q2" value="R3" id="Q2R3" /> <label for="Q2R3"><img src="pics/items/Quartz.png" alt="" width="20px" /> Le Quartz.</label><br />
+          <input type="radio" name="Q2" value="R4" id="Q2R4" /> <label for="Q2R4"><img src="pics/items/Flower.png" alt="" width="20px" /> La Fleur.</label><br />
         </form>
       <?php
       }
