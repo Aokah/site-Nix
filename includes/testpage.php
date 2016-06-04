@@ -36,6 +36,7 @@
         
       # Ombre = 4  Void = 1  Glace = 3  Eau = 4  Feu = 3  Chaos = 2  Psy = 3  Nature = 3  Air = 3 Arcane = 2  Lumière = 5
       # Chaleur = 4  Ordre = 2 Terre = 3  Energie = 2  Espace = 1  Metal = 2
+          if (max($ombre, $lumiere) == $ombre) { echo "ombre"; }
       }
       else
       {
