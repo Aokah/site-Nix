@@ -137,7 +137,7 @@
 					case 0: $level = "Profane"; break; case 1:$level = "Adepte"; break; case 2: $level = "Apprenti Magicien"; break;
 					case 3: $level = "Magicien"; break; case 4: $level = "Mage"; break; case 5: $level = "Archimage"; break;
 					case 6: $level = "Sage"; break; case 7: $level = "Divin"; break; case 8: $level = "Titanèsque"; break;
-					case 9: $level = "Suprême"; break;
+					case 9: $level = "Suprême"; break; case 10: $level = "Universelle"; break;
 				}
 			$bgmsg = ($line['valid_bg'] == 1) ? 'BackGround RolePlay validé par le Staff' : 'BackGround en cours d\'écriture...';
 			$validbg = ($line['valid_bg'] == 1) ? 'on' : 'off';
