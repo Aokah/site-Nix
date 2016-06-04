@@ -58,6 +58,8 @@
           <input type="radio" name="Q2" value="R7" id="Q2R7" /> <label for="Q2R7"><img src="pics/items/Snowball.png" alt="" width="20px" /> La Boule de Neige.</label><br />
           <input type="radio" name="Q2" value="R8" id="Q2R8" /> <label for="Q2R8"><img src="pics/items/XP.gif" alt="" width="20px" /> L'orbe.</label><br />
           <input type="radio" name="Q2" value="R9" id="Q2R9" /> <label for="Q2R9"><img src="pics/items/Elytra.png" alt="" width="20px" /> Le Ailes.</label><br />
+          
+          <p><input type="submit" name="valid" value="Terminer" /></p>
       <?php
       }
     }
