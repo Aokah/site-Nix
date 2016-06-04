@@ -84,7 +84,7 @@
           <input type="radio" name="Q4" value="R3" id="Q4R3" /> <label for="Q4R3"><img src="pics/ico/rain.png" alt="" width="20px" /> La Pluie.</label><br />
           <input type="radio" name="Q4" value="R4" id="Q4R4" /> <label for="Q4R4"><img src="pics/ico/termometr.png" alt="" width="20px" /> Le Temps Sec.</label><br />
           <input type="radio" name="Q4" value="R5" id="Q4R5" /> <label for="Q4R5"><img src="pics/ico/snow.png" alt="" width="20px" /> La Neige.</label><br />
-          <input type="radio" name="Q4" value="R6" id="Q4R6" /> <label for="Q4R6"><img src="pics/ico/storm.png" alt="" width="20px" /> Le Orage.</label><br />
+          <input type="radio" name="Q4" value="R6" id="Q4R6" /> <label for="Q4R6"><img src="pics/ico/storm.png" alt="" width="20px" /> L'Orage.</label><br />
           
           <p><input type="submit" name="valid" value="Terminer" /></p>
       <?php
