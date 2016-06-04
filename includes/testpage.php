@@ -28,10 +28,14 @@
           
       if ($_POST['Q3'] == "R1") { $nature++; } elseif ($_POST['Q3'] == "R2") { $terre++; }  elseif ($_POST['Q3'] == "R3") { $chaleur++; $feu++; }
        elseif ($_POST['Q3'] == "R4") { $air++; }  elseif ($_POST['Q4'] == "R5") { $glace++; }  elseif ($_POST['Q4'] == "R6") { $eau++; }
-         elseif ($_POST['Q4'] == "R7") { $psy++; $chaos++; }
+         elseif ($_POST['Q4'] == "R7") { $psy++; $chaos++; }   elseif ($_POST['Q4'] == "R8") { $ombre++; }   elseif ($_POST['Q4'] == "R9") { $lumiere++; }
         
-      # Ombre = 2  Void = 1  Glace = 3  Eau = 3  Feu = 3  Chaos = 2  Psy = 3  Nature = 3  Air = 3 Arcane = 2  Lumière = 2
-      # Chaleur = 3  Ordre = 2 Terre = 3  Energie = 2  Espace = 1  Metal = 2
+        if ($_POST['Q4'] == "R1") { $lumiere++; } elseif ($_POST['Q4'] == "R2") { $ombre++; }elseif ($_POST['Q4'] == "R3") { $eau++; }
+        elseif ($_POST['Q4'] == "R4") { $chaleur++; } elseif ($_POST['Q4'] == "R5") { $glace++; }
+        elseif ($_POST['Q4'] == "R6") { $energie++; }
+        
+      # Ombre = 4  Void = 1  Glace = 3  Eau = 4  Feu = 3  Chaos = 2  Psy = 3  Nature = 3  Air = 3 Arcane = 2  Lumière = 5
+      # Chaleur = 4  Ordre = 2 Terre = 3  Energie = 2  Espace = 1  Metal = 2
       }
       else
       {
@@ -71,6 +75,16 @@
           <input type="radio" name="Q3" value="R5" id="Q3R5" /> <label for="Q3R5"><img src="pics/items/Dirt_Snow.png" alt="" width="20px" /> La Plaine Enneigée.</label><br />
           <input type="radio" name="Q3" value="R6" id="Q3R6" /> <label for="Q3R6"><img src="pics/items/Water.png" alt="" width="20px" /> L'Océan.</label><br />
           <input type="radio" name="Q3" value="R7" id="Q3R7" /> <label for="Q3R7"><img src="pics/items/Mushrooms.gif" alt="" width="20px" /> La Terre Champignon.</label><br />
+          <input type="radio" name="Q3" value="R8" id="Q3R8" /> <label for="Q3R8"><img src="pics/items/Coal.png" alt="" width="20px" /> Les Mines.</label><br />
+          <input type="radio" name="Q3" value="R9" id="Q3R9" /> <label for="Q3R9"><img src="pics/items/Redstone_Lamp.png" alt="" width="20px" /> Les Villes.</label><br />
+          
+          <p>Quelle météo ou quel moment de la journée vous met le plus à l'aise ?</p>
+          <input type="radio" name="Q4" value="R1" id="Q4R1" /> <label for="Q4R1"><img src="pics/ico/sun.png" alt="" width="20px" /> Le Jour.</label><br />
+          <input type="radio" name="Q4" value="R2" id="Q4R2" /> <label for="Q4R2"><img src="pics/ico/Moon.png" alt="" width="20px" /> La Nuit.</label><br />
+          <input type="radio" name="Q4" value="R3" id="Q4R3" /> <label for="Q4R3"><img src="pics/ico/rain.png" alt="" width="20px" /> La Pluie.</label><br />
+          <input type="radio" name="Q4" value="R4" id="Q4R4" /> <label for="Q4R4"><img src="pics/ico/termometr.png" alt="" width="20px" /> Le Temps Sec.</label><br />
+          <input type="radio" name="Q4" value="R5" id="Q4R5" /> <label for="Q4R5"><img src="pics/ico/snow.png" alt="" width="20px" /> La Neige.</label><br />
+          <input type="radio" name="Q4" value="R6" id="Q4R6" /> <label for="Q4R6"><img src="pics/ico/storm.png" alt="" width="20px" /> Le Orage.</label><br />
           
           <p><input type="submit" name="valid" value="Terminer" /></p>
       <?php
