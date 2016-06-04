@@ -23,10 +23,11 @@
         if ($_POST['Q2'] == "R1") { $ombre++; } elseif ($_POST['Q2'] == "R2") { $energie++; }
         elseif ($_POST['Q2'] == "R3") { $lumiere++; }  elseif ($_POST['Q2'] == "R4") { $nature++; } 
         elseif ($_POST['Q2'] == "R5") { $terre++; $metal++; }  elseif ($_POST['Q2'] == "R6") { $chaleur++;  $feu++;} 
-        elseif ($_POST['Q2'] == "R7") {$glace++;} 
+        elseif ($_POST['Q2'] == "R7") {$glace++;}  elseif ($_POST['Q2'] == "R8") {$ordre++; $arcane++; $psy++;} 
+          elseif ($_POST['Q2'] == "R9") {$ordre++; $arcane++; $psy++;} 
         
-      # Ombre = 2  Void = 1  Glace = 2  Eau = 2  Feu = 2  Chaos = 1  Psy = 1  Nature = 2  Air = 1 Arcane = 1  Lumière = 2
-      # Chaleur = 2  Ordre = 1 Terre = 2  Energie = 2  Espace = 1  Metal = 2
+      # Ombre = 2  Void = 1  Glace = 2  Eau = 2  Feu = 2  Chaos = 1  Psy = 2  Nature = 2  Air = 2 Arcane = 2  Lumière = 2
+      # Chaleur = 2  Ordre = 2 Terre = 2  Energie = 2  Espace = 1  Metal = 2
       }
       else
       {
@@ -54,7 +55,9 @@
           <input type="radio" name="Q2" value="R4" id="Q2R4" /> <label for="Q2R4"><img src="pics/items/Flower.png" alt="" width="20px" /> La Fleur.</label><br />
           <input type="radio" name="Q2" value="R5" id="Q2R5" /> <label for="Q2R5"><img src="pics/items/iron_pickaxe.png" alt="" width="20px" /> La Pioche.</label><br />
           <input type="radio" name="Q2" value="R6" id="Q2R6" /> <label for="Q2R6"><img src="pics/items/Briquet.png" alt="" width="20px" /> Le Briquet.</label><br />
-          <input type="radio" name="Q2" value="R7" id="Q2R7" /> <label for="Q2R7"><img src="pics/items/.png" alt="" width="20px" /> La Boule de Neige.</label><br />
+          <input type="radio" name="Q2" value="R7" id="Q2R7" /> <label for="Q2R7"><img src="pics/items/Snowball.png" alt="" width="20px" /> La Boule de Neige.</label><br />
+          <input type="radio" name="Q2" value="R8" id="Q2R8" /> <label for="Q2R8"><img src="pics/items/XP.gif" alt="" width="20px" /> L'orbe.</label><br />
+          <input type="radio" name="Q2" value="R9" id="Q2R9" /> <label for="Q2R9"><img src="pics/items/Elytra.png" alt="" width="20px" /> Le Ailes.</label><br />
       <?php
       }
     }
