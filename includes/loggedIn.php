@@ -29,6 +29,9 @@
 
 		switch($line ["rank"] )
 				{
+					case 11:
+					$img = "rankprincipe" ;
+					break;
 					
 					case 10:
 					$img = "rankcrea.png" ;
@@ -109,6 +112,10 @@
 
 		switch($line ["rank"] )
 				{
+					case 11:
+					$img = "rankprincipe" ;
+					break;
+					
 					case 10:
 					$img = "rankcrea.png" ;
 					break;
@@ -205,6 +212,10 @@
 		{
 			switch($line ["rank"] )
 					{
+						case 11:
+						$img = "rankprincipe" ;
+						break;
+					
 						case 10:
 						$img = "rankcrea.png" ;
 						break;
@@ -269,6 +280,10 @@
 
 		switch($line ["rank"] )
 				{
+					case 11:
+					$img = "rankprincipe" ;
+					break;
+						
 					case 10:
 					$img = "rankcrea.png" ;
 					break;
