@@ -25,9 +25,12 @@
         elseif ($_POST['Q2'] == "R5") { $terre++; $metal++; }  elseif ($_POST['Q2'] == "R6") { $chaleur++;  $feu++;} 
         elseif ($_POST['Q2'] == "R7") {$glace++;}  elseif ($_POST['Q2'] == "R8") {$ordre++; $arcane++; $psy++;} 
           elseif ($_POST['Q2'] == "R9") {$ordre++; $arcane++; $psy++;} 
+          
+      if ($_POST['Q3'] == "R1") { $nature++; } elseif ($_POST['Q3'] == "R2") { $terre++; }  elseif ($_POST['Q3'] == "R3") { $chaleur++: $feu++; }
+       elseif ($_POST['Q3'] == "R3") { $air++; }  elseif ($_POST['Q4'] == "R2") { $glace++; }
         
-      # Ombre = 2  Void = 1  Glace = 2  Eau = 2  Feu = 2  Chaos = 1  Psy = 2  Nature = 2  Air = 2 Arcane = 2  Lumière = 2
-      # Chaleur = 2  Ordre = 2 Terre = 2  Energie = 2  Espace = 1  Metal = 2
+      # Ombre = 2  Void = 1  Glace = 3  Eau = 2  Feu = 3  Chaos = 1  Psy = 2  Nature = 3  Air = 3 Arcane = 2  Lumière = 2
+      # Chaleur = 3  Ordre = 2 Terre = 3  Energie = 2  Espace = 1  Metal = 2
       }
       else
       {
@@ -58,6 +61,13 @@
           <input type="radio" name="Q2" value="R7" id="Q2R7" /> <label for="Q2R7"><img src="pics/items/Snowball.png" alt="" width="20px" /> La Boule de Neige.</label><br />
           <input type="radio" name="Q2" value="R8" id="Q2R8" /> <label for="Q2R8"><img src="pics/items/XP.gif" alt="" width="20px" /> L'orbe.</label><br />
           <input type="radio" name="Q2" value="R9" id="Q2R9" /> <label for="Q2R9"><img src="pics/items/Elytra.png" alt="" width="20px" /> Le Ailes.</label><br />
+          
+          <p>Quel environnement vous attire le plus ?</p>
+          <input type="radio" name="Q3" value="R1" id="Q3R1" /> <label for="Q3R1"><img src="pics/items/Spruce_Leaves.png" alt="" width="20px" /> La Forêt.</label><br />
+          <input type="radio" name="Q3" value="R2" id="Q3R2" /> <label for="Q3R2"><img src="pics/items/Stone.png" alt="" width="20px" /> La Montagne.</label><br />
+          <input type="radio" name="Q3" value="R3" id="Q3R3" /> <label for="Q3R3"><img src="pics/items/Red_Sand.png" alt="" width="20px" /> Le Désert.</label><br />
+          <input type="radio" name="Q3" value="R4" id="Q3R4" /> <label for="Q3R4"><img src="pics/items/Aercloud.png" alt="" width="20px" /> Le Ciel.</label><br />
+          <input type="radio" name="Q3" value="R5" id="Q3R5" /> <label for="Q3R5"><img src="pics/items/Dirt_Snow.png" alt="" width="20px" /> La Plaine Enneigée.</label><br />
           
           <p><input type="submit" name="valid" value="Terminer" /></p>
       <?php
