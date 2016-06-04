@@ -310,7 +310,7 @@
       ?>
       <h2>Votre candidature</h2>
       <?php
-      $verif = $db->prepare('SELECT * FROM candid WHERE accepted = 0 AND sender_id = ? verify = 0');
+      $verif = $db->prepare('SELECT * FROM candid WHERE accepted = 0 AND sender_id = ? AND verify = 0');
       $verif->execute(array($_SESSION['id']));
       if ($verif->fetch())
       {
