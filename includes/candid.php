@@ -310,12 +310,12 @@
       ?>
       <h2>Votre candidature</h2>
       <?php
-      $verif = $db->prepare('SELECT * FROM candid WHERE accepted = 0 AND sender_id = ?');
+      $verif = $db->prepare('SELECT * FROM candid WHERE accepted = 0 AND sender_id = ? verify = 0');
       $verif->execute(array($_SESSION['id']));
       if ($verif->fetch())
       {
         $verif = $db->query('SELECT COUNT(*) AS count FROM candid WHERE verify = 0');
-        if ($count = $verif->fetch())
+        if ( $count = $verif->fetch())
         {
          $count = $count['count'];
          if ($count == 1)
