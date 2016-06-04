@@ -795,7 +795,7 @@
 		$filename = 'pics/persoimg/perso_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
 		$filename = 'pics/avatar/skin_' .$line['id']. '.png';if (file_exists($filename)) {$avatar = $line['id'];} else {$avatar = 'no';}
 		if ($line['technician'] == 0 AND $line['removed'] == 0 AND $line['ban'] == 0 AND $line['rank'] < 9) { $grade = $line['rank']; }
-		if ($line['rank'] == 9) { $grade = "titan";} if ($line['rank'] == 10) { $grade = "crea"; }
+		if ($line['rank'] == 9) { $grade = "titan";} if ($line['rank'] == 10) { $grade = "crea"; } if ($line['rank'] == 11) { $grade = "principe"; }
 		if ($line['technician'] == 1) { $tech = "-T"; $techmode = "Retirer"; $grade = "tech"; } else { $techmode = "Attribuer";}  if ($line['pionier'] == 1) { $pionier = '-P'; }
 		if ($line['ban'] == 1) { $grade = "ban"; } if ($line['removed'] == 1) { $grade = "del";}
 		$title = $line['title'];
@@ -1767,7 +1767,7 @@
 		$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:red">(Dignitaire)</span>' : '';
 		$filename = 'pics/pnj/pnj_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
 		if ($line['technician'] == 0 AND $line['removed'] == 0 AND $line['ban'] == 0 AND $line['rank'] < 9) { $grade = $line['rank']; }
-		if ($line['rank'] == 9) { $grade = "titan";} if ($line['rank'] == 10) { $grade = "crea"; }
+		if ($line['rank'] == 9) { $grade = "titan";} if ($line['rank'] == 10) { $grade = "crea"; }  if ($line['rank'] == 11) { $grade = "principe"; }
 		if ($line['technician'] == 1) { $tech = "-T"; $techmode = "Retirer"; $grade = "tech"; } else { $techmode = "Attribuer";}  if ($line['pionier'] == 1) { $pionier = '-P'; }
 		if ($line['ban'] == 1) { $grade = "ban"; } if ($line['removed'] == 1) { $grade = "del";}
 		$title = $line['title'];
