@@ -26,10 +26,11 @@
         elseif ($_POST['Q2'] == "R7") {$glace++;}  elseif ($_POST['Q2'] == "R8") {$ordre++; $arcane++; $psy++;} 
           elseif ($_POST['Q2'] == "R9") {$ordre++; $arcane++; $psy++;} 
           
-      if ($_POST['Q3'] == "R1") { $nature++; } elseif ($_POST['Q3'] == "R2") { $terre++; }  elseif ($_POST['Q3'] == "R3") { $chaleur++: $feu++; }
-       elseif ($_POST['Q3'] == "R3") { $air++; }  elseif ($_POST['Q4'] == "R2") { $glace++; }
+      if ($_POST['Q3'] == "R1") { $nature++; } elseif ($_POST['Q3'] == "R2") { $terre++; }  elseif ($_POST['Q3'] == "R3") { $chaleur++; $feu++; }
+       elseif ($_POST['Q3'] == "R4") { $air++; }  elseif ($_POST['Q4'] == "R5") { $glace++; }  elseif ($_POST['Q4'] == "R6") { $eau++; }
+         elseif ($_POST['Q4'] == "R7") { $psy++; $chaos++; }
         
-      # Ombre = 2  Void = 1  Glace = 3  Eau = 2  Feu = 3  Chaos = 1  Psy = 2  Nature = 3  Air = 3 Arcane = 2  Lumière = 2
+      # Ombre = 2  Void = 1  Glace = 3  Eau = 3  Feu = 3  Chaos = 2  Psy = 3  Nature = 3  Air = 3 Arcane = 2  Lumière = 2
       # Chaleur = 3  Ordre = 2 Terre = 3  Energie = 2  Espace = 1  Metal = 2
       }
       else
@@ -68,6 +69,8 @@
           <input type="radio" name="Q3" value="R3" id="Q3R3" /> <label for="Q3R3"><img src="pics/items/Red_Sand.png" alt="" width="20px" /> Le Désert.</label><br />
           <input type="radio" name="Q3" value="R4" id="Q3R4" /> <label for="Q3R4"><img src="pics/items/Aercloud.png" alt="" width="20px" /> Le Ciel.</label><br />
           <input type="radio" name="Q3" value="R5" id="Q3R5" /> <label for="Q3R5"><img src="pics/items/Dirt_Snow.png" alt="" width="20px" /> La Plaine Enneigée.</label><br />
+          <input type="radio" name="Q3" value="R6" id="Q3R6" /> <label for="Q3R6"><img src="pics/items/Water.png" alt="" width="20px" /> L'Océan.</label><br />
+          <input type="radio" name="Q3" value="R7" id="Q3R7" /> <label for="Q3R7"><img src="pics/items/Mushrooms.gif" alt="" width="20px" /> La Terre Champignon.</label><br />
           
           <p><input type="submit" name="valid" value="Terminer" /></p>
       <?php
