@@ -215,6 +215,20 @@ li.navbg:hover {
 	background-color: #8a8aa3;
 }
 
+.memberbg_11
+{
+	background-color: #101010;
+	color: #ffffff;
+}
+.memberbg_11 a
+{
+	color:white;
+}
+.memberbg_11 a:hover
+{
+	color:yellow;
+}
+
 .memberbg_10
 {
 	background-color: #202020;
