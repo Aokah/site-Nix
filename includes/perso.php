@@ -789,7 +789,7 @@
 			case 0: $magie = "Profane"; break;	case 1: $magie = "Adepte"; break;	case 2: $magie = "Apprenti Magicien"; break;
 			case 3: $magie = "Magicien"; break;	case 4: $magie = "Mage"; break;		case 5: $magie = "Archimage"; break;
 			case 6: $magie = "Sage"; break;		case 7: $magie = "Divin"; break;	case 8: $magie = "Titanèsque"; break;
-			case 9: $magie = "Pouvoir Suprême"; break;
+			case 9: $magie = "Pouvoir Suprême"; break; case 10: $magie = "Force Universelle"; break;
 		}
 		$vanish = ($line['invisible'] == 1) ? 'Activée' : 'Désactivée';
 		$filename = 'pics/persoimg/perso_' .$line['id']. '.png';if (file_exists($filename)) {$img = $line['id'];} else {$img = 'no';}
@@ -1761,7 +1761,7 @@
 			case 0: $magie = "Profane"; break;	case 1: $magie = "Adepte"; break;	case 2: $magie = "Apprenti Magicien"; break;
 			case 3: $magie = "Magicien"; break;	case 4: $magie = "Mage"; break;		case 5: $magie = "Archimage"; break;
 			case 6: $magie = "Sage"; break;		case 7: $magie = "Divin"; break;	case 8: $magie = "Titanèsque"; break;
-			case 9: $magie = "Pouvoir Suprême"; break;
+			case 9: $magie = "Pouvoir Suprême"; break; case 10: $magie = "Force Universelle"; break;
 		}
 		$vanish = ($line['invisible'] == 1) ? 'Activée' : 'Désactivée';
 		$dignitaire = ($line['dignitaire'] == 1) ? '<span style="color:red">(Dignitaire)</span>' : '';
