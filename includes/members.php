@@ -161,7 +161,7 @@
 			if ($active->fetch()) { $act = 'on.PNG'; $act_title = "Activité Récente"; }else { $act = "off.png"; $act_title = "Aucune activité depuis 3 semaines" ;}
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
-				<td width="23%"  style="text-align:left;">
+				<td width="23%">
 					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?php echo $img;?>.png" alt="" width="30" /> <a title="Nom Minecraft : <?= $line['Minecraft_Account']?>" href="index?p=perso&perso=<?= $line['id']?>"><?= $line['name']?></a>
 				</td>
 				<td>
