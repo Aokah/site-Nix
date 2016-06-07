@@ -8,21 +8,21 @@
 		
 		switch($action)
 		{
-			case 'chagepsw':
+			case 'changepsw':
 			{
 				include('includes/account/chgPwd.php');
 				chgPwd();
 				break;
 			}
 			
-			case 'chagemc':
+			case 'changemc':
 			{
 				include('includes/account/changemc.php');
 				changemc();
 				break;
 			}
 
-			case 'chageemail':
+			case 'changemail':
 			{
 				include('includes/account/chgEmail.php');
 				chgEmail();
