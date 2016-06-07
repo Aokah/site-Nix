@@ -25,7 +25,7 @@
     <p>Entrez ici votre nouveau nom de Compte Minecraft.</p>
     <form action="index?p=account&action=changemc" method="POST">
       <p>
-        <input type="text" id="newMC" name="newMC" /> <label for="newMC">Nouveau nom de Compte Minecraft</label>
+        <label for="newMC">Nouveau nom de Compte Minecraft : </label><input type="text" id="newMC" name="newMC" /> <br />
         <input type="submit" name="valid" value="Modifier" />
       </p>
     </form>
