@@ -8,14 +8,21 @@
 		
 		switch($action)
 		{
-			case 'chgpwd':
+			case 'chagepsw':
 			{
 				include('includes/account/chgPwd.php');
 				chgPwd();
 				break;
-			}		
+			}
+			
+			case 'chagemc':
+			{
+				include('includes/account/changemc.php');
+				changemc();
+				break;
+			}
 
-			case 'chgemail':
+			case 'chageemail':
 			{
 				include('includes/account/chgEmail.php');
 				chgEmail();
@@ -26,12 +33,17 @@
 			{
 		
 			?>
-				<h3>Compte</h3>
-
-				<nav id="account">
-					<p><a href="index.php?p=account&amp;action=chgpwd">Changer le mot de passe</a></p>
-					<p><a href="index.php?p=account&amp;action=chgemail">Changer l'adresse email</a></p>
-				</nav>
+				<h2>Mon Compte</h2>
+				  <p>Sur cette page vous trouverez toutes les informatiosn relatives à votre comtpe RPNix.com.</p>
+				  
+				<h3>Adresse Mail</h3>
+				  <p>Vous souhaitez changer votre adresse mail ? <a href="index?p=account&action=changemail">C'est par ici</a> !</p>
+				  
+				<h3>Changer de mot de passe</h3>
+				  <p>Besoin de sécurité ou simple doute ? <a href="index?p=account&action=changepsw">Changez votre mot de passe ici</a> !</p>
+				  
+				<h3>Compte Minecraft</h3>
+				  <p>Le nom du compte Minecraft que vous utilisez est nécessaire pour profiter d'un maximum de chose en jeu, si vous souhaitez lier un novueau compte, <a href="index?p=account&action=changemc">c'est par ici</a> !</p>
 			<?php
 			}
 		}
