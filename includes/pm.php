@@ -17,10 +17,42 @@ global $_SESSION, $db, $_GET;
  elseif (isset($_GET['pm']))
  {
   $pm = intval($_GET['pm']);
-  $select = $db->prepare('SELECT pm.id pm_id, pm.subject, pm.from_id, pm.to_id, pm.date_send, pm.unread, m.id, m.name, m.title, m.ban, m.removed
+  $select = $db->prepare('SELECT pm.id pm_id, pm.subject, pm.from_id, pm.message, pm.to_id, pm.date_send, pm.unread, m.id, m.name, m.title, m.ban, m.removed
     FROM private_message pm
     RIGHT JOIN members m ON from_id = m.id AND to_id = m.id 
-    WHERE to_id = ?'); $select->execute(array($_SESSION['id']));
+    WHERE pm.id = ?'); $select->execute(array($pm));
+    if ($line = $select->fetch())
+    {
+     if ($line['to_id'] == $_SESSION['id'])
+     {
+      if ($line['ban'] == 1) { $title = "Banni"; } elseif ($line['removed'] == 1) { $title = "Oublié"; } else { $title = $line['title']; }
+      $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_send']);
+      $message = preg_replace('#\n#', '<br />', $line['message']);
+     ?>
+     <table cellspacing="0" cellpadding="10" width="100%" style="border: 3px solid black; color:#666666;">
+      <tbody>
+       <tr>
+        <th>Sujet</th> <th>Auteur</th> <th>Date d'envoi</th>
+       </tr>
+       <tr>
+        <td><?= $line['subject']?></td>
+        <td><?= $title, ' ' , $line['name']?></td>
+        <td><?= $date; ?></td>
+       </tr>
+       <tr><?= $message ?></tr>
+      </tbody>
+     </table>
+     <?php
+     }
+     else
+     {
+      echo '<p>Désolé mais ce message ne vous est pas adressé.</p>';
+     }
+    }
+    else
+    {
+     echo '<p>Navré, mais ce MP n\'existe pas.</p>';
+    }
  }
  else
  {
