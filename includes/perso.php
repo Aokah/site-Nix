@@ -865,7 +865,7 @@
 							</tr>
 							<tr>
 								<td colspan="2">
-									<p>Nom : <a href="index?p=pm&action=send&to=<?= $line['id']?>"><?= $line['name']?></a></p>
+									<p>Nom : <?= $line['name']?></p>
 								</td>
 							</tr>
 								
@@ -921,6 +921,7 @@
 									<?php } else { ?>
 									<a title="Désactiver la Maîtrise de la Magie" href="index?p=perso&perso=<?php echo $perso; ?>&action=magieko" style="color:red;">[mKO]</a> 
 									<?php } } ?>
+									<p><a href="index?p=pm&action=send&to=<?= $line['id']?>">[Envoyer un Message privé]</a></p>
 								</td>
 							</tr>
 						</tbody>
