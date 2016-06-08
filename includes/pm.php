@@ -35,9 +35,9 @@ global $_SESSION, $db, $_GET;
         <th style="background-color:#DDDDDD;">Sujet</th> <th style="background-color:#DDDDDD;">Auteur</th> <th style="background-color:#DDDDDD;">Date d'envoi</th>
        </tr>
        <tr>
-        <td style="text-align:center;background-color:#CCCCCC; border-bottom: grey solid 2px;"><?= $line['subject']?></td>
-        <td style="text-align:center;background-color:#CCCCCC; border-bottom: grey solid 2px;"><?= $title, ' ' , $line['name']?></td>
-        <td style="text-align:center;background-color:#CCCCCC; border-bottom: grey solid 2px;"><?= $date; ?></td>
+        <td style="text-align:center;background-color:#CCCCCC; border-bottom: #333333 solid 4px;"><?= $line['subject']?></td>
+        <td style="text-align:center;background-color:#CCCCCC; border-bottom: #333333 solid 4px;"><?= $title, ' ' , $line['name']?></td>
+        <td style="text-align:center;background-color:#CCCCCC; border-bottom: #333333 solid 4px;"><?= $date; ?></td>
        </tr>
        <tr>
         <td colspan="3" style="padding:1%;"><?= $message ?></td>
