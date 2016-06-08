@@ -20,7 +20,7 @@ global $_SESSION, $db, $_GET;
   <table cellspacing="0" cellpadding="10">
    <tbody>
     <tr>
-     <th coàlspan="2">Sujet :</th>
+     <th colspan="2">Sujet :</th>
      <th>Auteur :</th>
      <th>Date de réception :</th>
      <th>Action :</th>
@@ -40,8 +40,8 @@ global $_SESSION, $db, $_GET;
     ?>
     <tr>
      <td><?= $unread?></td>
-     <td> <?= $line['subject']?></td>
-     <td> <?= $title, ' ', $line['name']?></td>
+     <td><a href="index?p=#&pm=<?= $line['pm_id']?>"><?= $line['subject']?></a></td>
+     <td><a href="index?p=perso&perso=<?= $line['m.id']?>"><?= $title, ' ', $line['name']?></a></td>
      <td><?=$date?></td>
      <td> <span style="color:red">[x]</span></td>
     </tr>
