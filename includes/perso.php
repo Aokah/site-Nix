@@ -865,7 +865,7 @@
 							</tr>
 							<tr>
 								<td colspan="2">
-									<p>Nom : <?= $line['name']?></p>
+									<p>Nom : <a href="index?p=pm&action=send&to=<?= $line['id']?>"><?= $line['name']?></a></p>
 								</td>
 							</tr>
 								
