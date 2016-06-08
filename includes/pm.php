@@ -1,4 +1,4 @@
-<?php function testpage_2 ()
+<?php function pm ()
 {
 global $_SESSION, $db, $_GET;
 ?>
@@ -13,6 +13,14 @@ global $_SESSION, $db, $_GET;
     
     <?php
   }
+ }
+ elseif (isset($_GET['pm']))
+ {
+  $pm = intval($_GET['pm']);
+  $select = $db->prepare('SELECT pm.id pm_id, pm.subject, pm.from_id, pm.to_id, pm.date_send, pm.unread, m.id, m.name, m.title, m.ban, m.removed
+    FROM private_message pm
+    RIGHT JOIN members m ON from_id = m.id AND to_id = m.id 
+    WHERE to_id = ?'); $select->execute(array($_SESSION['id']));
  }
  else
  {
@@ -40,7 +48,7 @@ global $_SESSION, $db, $_GET;
     ?>
     <tr>
      <td><?= $unread?></td>
-     <td><a href="index?p=#&pm=<?= $line['pm_id']?>"><?= $line['subject']?></a></td>
+     <td><a href="index?p=pm&pm=<?= $line['pm_id']?>"><?= $line['subject']?></a></td>
      <td><a href="index?p=perso&perso=<?= $line['id']?>"><?= $title, ' ', $line['name']?></a></td>
      <td><?=$date?></td>
      <td> <span style="color:red">[x]</span></td>
