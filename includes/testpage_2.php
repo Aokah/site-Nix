@@ -41,7 +41,7 @@ global $_SESSION, $db, $_GET;
     <tr>
      <td><?= $unread?></td>
      <td><a href="index?p=#&pm=<?= $line['pm_id']?>"><?= $line['subject']?></a></td>
-     <td><a href="index?p=perso&perso=<?= $line['m.id']?>"><?= $title, ' ', $line['name']?></a></td>
+     <td><a href="index?p=perso&perso=<?= $line['id']?>"><?= $title, ' ', $line['name']?></a></td>
      <td><?=$date?></td>
      <td> <span style="color:red">[x]</span></td>
     </tr>
