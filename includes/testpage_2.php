@@ -1,31 +1,56 @@
 <?php function testpage_2 ()
 {
-global $_SESSION, $db;
-//$psw = $db->prepare('SELECT password, id FROM members WHERE id = ?'); $psw->execute(array($_SESSION['id'])); 
-
-//if ($line = $psw->fetch())
-//{
- // if (password_verify('dragonball76', $line['password']))
- // {
-  //  echo 'yes';
-  //}
- // else
- // {
- //   echo 'no';
- // }
-//}
+global $_SESSION, $db, $_GET;
 ?>
-  <h2>Mon Compte</h2>
-  <p>Sur cette page vosu trouverez toutes les informatiosn relatives à votre comtpe RPNix.com.</p>
-  
-  <h3>Adresse Mail</h3>
-  <p>Vous souhaitez changer votre adresse mail ? C'est <a href="#&action=changemail">par ici</a> !</p>
-  
-  <h3>Changer de mot de passe</h3>
-  <p>Besoin de sécurité ou simple doute ? Changez votre mot de passe <a href="#&action=changepsw">ici</a> !</p>
-  
-  <h3>Compte Minecraft</h3>
-  <p>Le nom du compte Minecraft que vous utilisez est nécessaire pour profiter d'un maximum de chose en jeu, si vous souhaitez lier un novueau compte, c'est <a href="#&action=changemc">par ici</a> !</p>
-<?php
+ <h2>Messagerie Privée</h2>
+ <p>Sur cette page vous pourrez discuter avec les membres de manière plus approfondie que sur la ChatBox.</p>
+ <? if (isset($_GET['action']))
+ {
+  if ($_GET['action'] == "send")
+  {
+    $to = intval($_GET['to']);
+    ?>
+    
+    <?php
+  }
+ }
+ else
+ {
+  ?>
+  <table cellspacing="0" cellpadding="10">
+   <tbody>
+    <tr>
+     <th coàlspan="2">Sujet :</th>
+     <th>Auteur :</th>
+     <th>Date de réception :</th>
+     <th>Action :</th>
+    </tr>
+    <?php 
+    $select = $db->prepare('SELECT pm.id pm_id, pm.subject, pm.from_id, pm.to_id, pm.date_send, pm.unread, m.id, m.name, m.title, m.ban, m.removed
+    FROM private_message pm
+    RIGHT JOIN members m ON from_id = m.id AND to_id = m.id 
+    WHERE to_id = ?
+    ORDER BY unread DESC, date_send DESC, subject ASC'); $select->execute(array($_SESSION['id']));
+    
+    while ($line = $select->fetch())
+    {
+     $unread = ($line['unread'] == 1) ? '<span style=color:"red">[!]</span>' : '';
+     if ($line['ban'] == 1) { $title = "Banni"; } elseif ($line['removed'] == 1) { $title = "Oublié"; } else { $title = $line['title']; }
+     $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_send']);
+    ?>
+    <tr>
+     <td><?= $unread?></td>
+     <td> <?= $line['subject']?></td>
+     <td> <?= $title, ' ', $line['name']?></td>
+     <td><?=$date?></td>
+     <td> <span style="color:red">[x]</span></td>
+    </tr>
+    <?php
+    }
+    ?>
+   </tbody>
+  </table>
+  <?php
+ }
 }
 ?>
