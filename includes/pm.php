@@ -32,12 +32,12 @@ global $_SESSION, $db, $_GET;
      <table cellspacing="0" cellpadding="10" width="100%" style="border: 3px solid black; ">
       <tbody>
        <tr>
-        <th style="background-color:#DDDDDD;">Sujet</th> <th style="background-color:#DDDDDD;">Auteur</th style="background-color:#DDDDDD;"> <th>Date d'envoi</th>
+        <th style="background-color:#DDDDDD;">Sujet</th> <th style="background-color:#DDDDDD;">Auteur</th> <th style="background-color:#DDDDDD;">Date d'envoi</th>
        </tr>
        <tr>
-        <td style="text-align:center;"><?= $line['subject']?></td>
-        <td style="text-align:center;"><?= $title, ' ' , $line['name']?></td>
-        <td style="text-align:center;"><?= $date; ?></td>
+        <td style="text-align:center;background-color:#DDDDDD;"><?= $line['subject']?></td>
+        <td style="text-align:center;background-color:#DDDDDD;"><?= $title, ' ' , $line['name']?></td>
+        <td style="text-align:center;background-color:#DDDDDD;"><?= $date; ?></td>
        </tr>
        <tr>
         <td colspan="3"><?= $message ?></td></tr>
