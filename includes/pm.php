@@ -29,17 +29,18 @@ global $_SESSION, $db, $_GET;
       $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_send']);
       $message = preg_replace('#\n#', '<br />', $line['message']);
      ?>
-     <table cellspacing="0" cellpadding="10" width="100%" style="border: 3px solid black; color:#666666;">
+     <table cellspacing="0" cellpadding="10" width="100%" style="border: 3px solid black; backgound-color:#DDDDDD;">
       <tbody>
        <tr>
         <th>Sujet</th> <th>Auteur</th> <th>Date d'envoi</th>
        </tr>
        <tr>
-        <td><?= $line['subject']?></td>
-        <td><?= $title, ' ' , $line['name']?></td>
-        <td><?= $date; ?></td>
+        <td style="text-align:center;"><?= $line['subject']?></td>
+        <td style="text-align:center;"><?= $title, ' ' , $line['name']?></td>
+        <td style="text-align:center;"><?= $date; ?></td>
        </tr>
-       <tr><?= $message ?></tr>
+       <tr>
+        <td colspan="3"><?= $message ?></td></tr>
       </tbody>
      </table>
      <?php
