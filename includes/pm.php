@@ -9,8 +9,26 @@ global $_SESSION, $db, $_GET;
   if ($_GET['action'] == "send")
   {
     $to = intval($_GET['to']);
+    $ifto = (isset($_GET['to'])) ? 'to='. $to .'' : '';
     ?>
-    
+    <form action="index?p=pm&action=send<?=$ifto?>" method="POST">
+    <table cellspacing="0" cellpadding="10" width="100%">
+     <tbody>
+      <tr>
+       <td colspan="2" style="background-color:#DDDDDD;"><label for="subject">Sujet :</label><input type="text" name="subject" id="subject" value="<?= $_POST['subject']?>" /></td>
+      </tr>
+      <tr>
+       <td colspan="2" style="background-color:#DDDDDD;"><label for="target">Destinataire :</label><input type="text" name="target" id="target" value="<?= $_POST['target']?>" /></td>
+      </tr>
+      <tr>
+       <td colspan="2"><textarea name="pm" width="100%"><?=$_POST['pm']?></textarea></td>
+      </tr>
+      <tr>
+       <td>[Envoie d'image (bientôt disponible ?)]</td> <td style="text-align:right;"><input type="submit" name="send" value="Envoyer" /></td>
+      </tr>
+     </tbody>
+    </table>
+    </form>
     <?php
   }
  }
@@ -71,7 +89,7 @@ global $_SESSION, $db, $_GET;
     $select = $db->prepare('SELECT pm.id pm_id, pm.subject, pm.from_id, pm.to_id, pm.date_send, pm.unread, m.id, m.name, m.title, m.ban, m.removed
     FROM private_message pm
     RIGHT JOIN members m ON from_id = m.id AND to_id = m.id 
-    WHERE to_id = ?
+    WHERE to_id = ? AND del = 0
     ORDER BY unread DESC, date_send DESC, subject ASC'); $select->execute(array($_SESSION['id']));
     
     while ($line = $select->fetch())
