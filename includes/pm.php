@@ -94,10 +94,10 @@ global $_SESSION, $db, $_GET;
   <table cellspacing="0" cellpadding="10" width="100%">
    <tbody>
     <tr>
-     <th style="background-color:#DDDDDD;border black solid 1px" colspan="2">Sujet :</th>
-     <th style="background-color:#DDDDDD;border black solid 1px" width="20%">Auteur :</th>
-     <th style="background-color:#DDDDDD;border black solid 1px" width="20%">Date de réception :</th>
-     <th style="background-color:#DDDDDD;border black solid 1px" width="10%">Action :</th>
+     <th style="background-color:#DDDDDD;border:black solid 1px" colspan="2">Sujet :</th>
+     <th style="background-color:#DDDDDD;border:black solid 1px" width="20%">Auteur :</th>
+     <th style="background-color:#DDDDDD;border:black solid 1px" width="20%">Date de réception :</th>
+     <th style="background-color:#DDDDDD;border:black solid 1px" width="10%">Action :</th>
     </tr>
     <?php 
     $select = $db->prepare('SELECT pm.id pm_id, pm.subject, pm.from_id, pm.to_id, pm.date_send, pm.unread, m.id, m.name, m.title, m.ban, m.removed
