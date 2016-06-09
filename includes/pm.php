@@ -10,7 +10,9 @@ global $_SESSION, $db, $_GET;
   {
     $to = intval($_GET['to']);
     $ifto = (isset($_GET['to'])) ? 'to='. $to .'' : '';
+    $select = $db->prepare('SELECT id, name FROM members WHERE id = ?'); $select->execute(array($to)); $select = $select->fetch();
     $name = htmlspecialchars($_POST['target']);
+    $toid = (isset($_POST['send'])) ? $_POST['target'] : $select['name'];
     $presel = $db->prepare('SELECT id, name FROM members WHERE name = ?'); $presel->execute(array($name));
     if (isset($_POST['send']) AND isset($_POST['subject']) AND $presel = $presel->fetch() AND isset($_POST['pm']))
     {
@@ -27,7 +29,7 @@ global $_SESSION, $db, $_GET;
          <td colspan="2" style="background-color:#DDDDDD;"><label for="subject">Sujet :</label><input type="text" name="subject" id="subject" value="<?= $_POST['subject']?>" /></td>
         </tr>
         <tr>
-         <td colspan="2" style="background-color:#DDDDDD;"><label for="target">Destinataire :</label><input type="text" name="target" id="target" value="<?= $_POST['target']?>" /></td>
+         <td colspan="2" style="background-color:#DDDDDD;"><label for="target">Destinataire :</label><input type="text" name="target" id="target" value="<?= $toid?>" /></td>
         </tr>
         <tr>
          <td colspan="2"><textarea name="pm" width="100%"><?=$_POST['pm']?></textarea></td>
