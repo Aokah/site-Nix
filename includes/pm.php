@@ -91,6 +91,7 @@ global $_SESSION, $db, $_GET;
  else
  {
   ?>
+  <a href="index?p=pm&action=send">[Ecrire un nouveau message]</a>
   <table cellspacing="0" cellpadding="10" width="100%">
    <tbody>
     <tr>
