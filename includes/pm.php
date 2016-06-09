@@ -9,12 +9,12 @@ global $_SESSION, $db, $_GET;
   if ($_GET['action'] == "send")
   {
     $to = intval($_GET['to']);
-    $ifto = (isset($_GET['to'])) ? 'to='. $to .'' : '';
+    $ifto = (isset($_GET['to'])) ? '&to='. $to .'' : '';
     $select = $db->prepare('SELECT id, name FROM members WHERE id = ?'); $select->execute(array($to)); $select = $select->fetch();
     $name = htmlspecialchars($_POST['target']);
     $toid = (isset($_POST['send'])) ? $_POST['target'] : $select['name'];
-    $presel = $db->prepare('SELECT COUNT(*) AS count FROM members WHERE name = ?'); $presel->execute(array($name)); $presel = $presel->fetch();
-    if (isset($_POST['send']) AND isset($_POST['subject']) AND $presel['count'] == 1 AND isset($_POST['pm']))
+    $presel = $db->prepare('SELECT id,name FROM members WHERE name = ?'); $presel->execute(array($name)); 
+    if (isset($_POST['send']) AND isset($_POST['subject']) AND $presel = $presel->fetch() AND isset($_POST['pm']))
     {
      
     }
