@@ -108,7 +108,7 @@ global $_SESSION, $db, $_GET;
     
     while ($line = $select->fetch())
     {
-     $unread = ($line['unread'] == 1) ? '<span style=color:"red">[!]</span>' : '';
+     $unread = ($line['unread'] == 1) ? '<span style="color:red">[!]</span>' : '';
      if ($line['ban'] == 1) { $title = "Banni"; } elseif ($line['removed'] == 1) { $title = "Oublié"; } else { $title = $line['title']; }
      $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_send']);
     ?>
