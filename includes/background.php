@@ -19,7 +19,7 @@
                 <th class="bgth">Niveau de visionnage</th>
               </tr>
         <?php
-        $select = $db->prepare('SELECT * FROM bg_sub WHERE type_id = ? AND level <= ?'); $select->execute(array($type, $_SESSION['rank']));
+        $select = $db->prepare('SELECT * FROM bg_sub WHERE type_id = ? AND level <= ? ORDER BY name ASC'); $select->execute(array($type, $_SESSION['rank']));
         while ($line = $select->fetch())
         {
           switch ($line['level']) 
@@ -42,7 +42,7 @@
       elseif (isset($_GET['sub']))
       {
         $sub = intval($_GET['sub']);
-        $presel = $db->prepare('SELECT type_id, id FROM bg_sub WHERE id = ?'); $presel->execute(array($sub)); $line = $presel->fetch();
+        $presel = $db->prepare('SELECT type_id, id FROM bg_sub WHERE id = ? ORDER BY name ASC'); $presel->execute(array($sub)); $line = $presel->fetch();
         ?>
           <a href="index?p=background&type=<?=$line['type_id']?>">
             <img onmouseout="this.src='pics/ico/back.png';" onmouseover="this.src='pics/ico/back1.png';" src="pics/ico/back.png" width="60px" title="Revenir à la page précedente" />
@@ -77,7 +77,7 @@
       elseif (isset($_GET['id']))
       {
         $id = intval($_GET['id']);
-        $select = $db->prepare('SELECT * FROM bg_id WHERE id = ?'); $select->execute(array($id));
+        $select = $db->prepare('SELECT * FROM bg_id WHERE id = ? ORDER BY name ASC'); $select->execute(array($id));
         if ($line = $select->fetch())
         {
           if ($line['level'] <= $_SESSION['rank'])
@@ -103,7 +103,7 @@
       }
       else
       {
-       $select = $db->prepare('SELECT * FROM bg_type WHERE level <= ? ORDER BY type ASC'); $select->execute(array($_SESSION['rank']));
+       $select = $db->prepare('SELECT * FROM bg_type WHERE level <= ? ORDER BY name ASC'); $select->execute(array($_SESSION['rank']));
        ?>
           <table cellspacing="5" cellpadding="0" align="center" width="50%">
             <tbody>
