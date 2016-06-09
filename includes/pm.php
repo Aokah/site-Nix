@@ -12,7 +12,7 @@ global $_SESSION, $db, $_GET;
     $ifto = (isset($_GET['to'])) ? 'to='. $to .'' : '';
     ?>
     <form action="index?p=pm&action=send<?=$ifto?>" method="POST">
-    <table cellspacing="0" cellpadding="10" width="100%">
+    <table cellspacing="0" cellpadding="10" width="70%" align="center">
      <tbody>
       <tr>
        <td colspan="2" style="background-color:#DDDDDD;"><label for="subject">Sujet :</label><input type="text" name="subject" id="subject" value="<?= $_POST['subject']?>" /></td>
