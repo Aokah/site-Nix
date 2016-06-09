@@ -19,7 +19,7 @@
                 <th class="bgth">Niveau de visionnage</th>
               </tr>
         <?php
-        $select = $db->prepare('SELECT * FROM bg_sub WHERE type_id = ? AND level <= ? ORDER BY type ASC'); $select->execute(array($type, $_SESSION['rank']));
+        $select = $db->prepare('SELECT * FROM bg_sub WHERE type_id = ? AND level <= ? ORDER BY subject ASC'); $select->execute(array($type, $_SESSION['rank']));
         while ($line = $select->fetch())
         {
           switch ($line['level']) 
