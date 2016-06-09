@@ -19,7 +19,7 @@ global $_SESSION, $db, $_GET;
     else
     {
      ?>
-     <?php if (isset$_POST['send']) { ?><p style="color:red;">Avré, mais certains champs sont mal renseignés ou non comp^létés, réessayez.</p> <? } ?>
+     <?php if (isset($_POST['send'])) { ?><p style="color:red;">Avré, mais certains champs sont mal renseignés ou non comp^létés, réessayez.</p> <? } ?>
      <form action="index?p=pm&action=send<?=$ifto?>" method="POST">
       <table cellspacing="0" cellpadding="10" width="70%" align="center" style="border: black solid 2px;">
        <tbody>
