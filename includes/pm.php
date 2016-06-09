@@ -91,13 +91,13 @@ global $_SESSION, $db, $_GET;
  else
  {
   ?>
-  <table cellspacing="0" cellpadding="10">
+  <table cellspacing="0" cellpadding="10" width="100%">
    <tbody>
     <tr>
-     <th colspan="2">Sujet :</th>
-     <th>Auteur :</th>
-     <th>Date de réception :</th>
-     <th>Action :</th>
+     <th style="background-color:#DDDDDD;" colspan="2">Sujet :</th>
+     <th style="background-color:#DDDDDD;" width="20%">Auteur :</th>
+     <th style="background-color:#DDDDDD;" width="20%">Date de réception :</th>
+     <th style="background-color:#DDDDDD;" width="10%">Action :</th>
     </tr>
     <?php 
     $select = $db->prepare('SELECT pm.id pm_id, pm.subject, pm.from_id, pm.to_id, pm.date_send, pm.unread, m.id, m.name, m.title, m.ban, m.removed
@@ -117,7 +117,7 @@ global $_SESSION, $db, $_GET;
      <td><a href="index?p=pm&pm=<?= $line['pm_id']?>"><?= $line['subject']?></a></td>
      <td><a href="index?p=perso&perso=<?= $line['id']?>"><?= $title, ' ', $line['name']?></a></td>
      <td><?=$date?></td>
-     <td> <span style="color:red">[x]</span></td>
+     <td style="text-align:center"> <span style="color:red">[x]</span></td>
     </tr>
     <?php
     }
