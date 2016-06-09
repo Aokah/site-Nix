@@ -16,12 +16,14 @@ global $_SESSION, $db, $_GET;
     $presel = $db->prepare('SELECT id,name FROM members WHERE name = ?'); $presel->execute(array($name)); 
     if (isset($_POST['send']) AND isset($_POST['subject']) AND $presel = $presel->fetch() AND isset($_POST['pm']))
     {
-     
+     $insert = $db->prepare("INSERT INTO private_message vVALUE ('',?,?,NOW(),?,?,'0','0')");
+     $insert->execute(array(htmlspecialchars($_POST["subject"]), htmlspecialchars($_POST['pm']), $_SESSION['id'], $presel['id']));
+     echo '<p>Votre message a bien été envoyé.<p> <p><a href="index?p=pm">Cliquez ici pour retourner à la page des Messages Privés</a></p>';
     }
     else
     {
      ?>
-     <?php if (isset($_POST['send'])) { ?><p style="color:red;">Avré, mais certains champs sont mal renseignés ou non comp^létés, réessayez.</p> <? } ?>
+     <?php if (isset($_POST['send'])) { ?><p style="color:red;">Navré, mais certains champs sont mal renseignés ou non complétés, réessayez.</p> <? } ?>
      <form action="index?p=pm&action=send<?=$ifto?>" method="POST">
       <table cellspacing="0" cellpadding="10" width="70%" align="center" style="border: black solid 2px;">
        <tbody>
