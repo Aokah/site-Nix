@@ -113,11 +113,11 @@ global $_SESSION, $db, $_GET;
      $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_send']);
     ?>
     <tr>
-     <td><?= $unread?></td>
-     <td><a href="index?p=pm&pm=<?= $line['pm_id']?>"><?= $line['subject']?></a></td>
-     <td><a href="index?p=perso&perso=<?= $line['id']?>"><?= $title, ' ', $line['name']?></a></td>
-     <td><?=$date?></td>
-     <td style="text-align:center"> <span style="color:red">[x]</span></td>
+     <td width="5%" style="border:#555555 solid 1px;"><?= $unread?></td>
+     <td style="text-align:left;border:#555555 solid 1px;"><a href="index?p=pm&pm=<?= $line['pm_id']?>"><?= $line['subject']?></a></td>
+     <td style="text-align:center;border:#555555 solid 1px;"><a href="index?p=perso&perso=<?= $line['id']?>"><?= $title, ' ', $line['name']?></a></td>
+     <td style="text-align:center;border:#555555 solid 1px;"><?=$date?></td>
+     <td style="text-align:center;border:#555555 solid 1px;"> <span style="color:red">[x]</span></td>
     </tr>
     <?php
     }
