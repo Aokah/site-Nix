@@ -28,16 +28,16 @@ global $_SESSION, $db, $_GET;
       <table cellspacing="0" cellpadding="10" width="70%" align="center" style="border: black solid 2px;">
        <tbody>
         <tr>
-         <td colspan="2" style="background-color:#DDDDDD;"><label for="subject">Sujet :</label><input type="text" name="subject" id="subject" value="<?= $_POST['subject']?>" /></td>
+         <td style="background-color:#DDDDDD;"><label for="subject">Sujet :</label></td><td colspan="2" style="background-color:#DDDDDD;"><input type="text" name="subject" id="subject" value="<?= $_POST['subject']?>" /></td>
         </tr>
         <tr>
-         <td colspan="2" style="background-color:#DDDDDD;"><label for="target">Destinataire :</label><input type="text" name="target" id="target" value="<?= $toid?>" /></td>
+         <td style="background-color:#DDDDDD;"><label for="target">Destinataire :</label></td><td colspan="2" style="background-color:#DDDDDD;"><input type="text" name="target" id="target" value="<?= $toid?>" /></td>
         </tr>
         <tr>
-         <td colspan="2"><textarea name="pm" width="100%" style="width: 1000px; height: 150px;"><?=$_POST['pm']?></textarea></td>
+         <td colspan="3"><textarea name="pm" width="100%" style="width: 1000px; height: 150px;"><?=$_POST['pm']?></textarea></td>
         </tr>
         <tr>
-         <td>[Envoie d'image (bientôt disponible ?)]</td> <td style="text-align:right;"><input type="submit" name="send" value="Envoyer" /></td>
+         <td colspan="2">[Envoie d'image (bientôt disponible ?)]</td> <td style="text-align:right;"><input type="submit" name="send" value="Envoyer" /></td>
         </tr>
        </tbody>
       </table>
