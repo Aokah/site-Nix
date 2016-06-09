@@ -16,7 +16,7 @@ global $_SESSION, $db, $_GET;
     $presel = $db->prepare('SELECT id,name FROM members WHERE name = ?'); $presel->execute(array($name)); 
     if (isset($_POST['send']) AND isset($_POST['subject']) AND $presel = $presel->fetch() AND isset($_POST['pm']))
     {
-     $insert = $db->prepare("INSERT INTO private_message VALUES('',?,?,NOW(),?,?,'0','0')");
+     $insert = $db->prepare("INSERT INTO private_message VALUES('',?,?,NOW(),?,?,'1','0')");
      $insert->execute(array(htmlspecialchars($_POST["subject"]), htmlspecialchars($_POST['pm']), $_SESSION['id'], $presel['id']));
      echo '<p>Votre message a bien été envoyé.<p> <p><a href="index?p=pm">Cliquez ici pour retourner à la page des Messages Privés</a></p>';
     }
