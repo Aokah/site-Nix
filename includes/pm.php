@@ -10,26 +10,36 @@ global $_SESSION, $db, $_GET;
   {
     $to = intval($_GET['to']);
     $ifto = (isset($_GET['to'])) ? 'to='. $to .'' : '';
-    ?>
-    <form action="index?p=pm&action=send<?=$ifto?>" method="POST">
-    <table cellspacing="0" cellpadding="10" width="70%" align="center" style="border: black double 2px;">
-     <tbody>
-      <tr>
-       <td colspan="2" style="background-color:#DDDDDD;"><label for="subject">Sujet :</label><input type="text" name="subject" id="subject" value="<?= $_POST['subject']?>" /></td>
-      </tr>
-      <tr>
-       <td colspan="2" style="background-color:#DDDDDD;"><label for="target">Destinataire :</label><input type="text" name="target" id="target" value="<?= $_POST['target']?>" /></td>
-      </tr>
-      <tr>
-       <td colspan="2"><textarea name="pm" width="100%"><?=$_POST['pm']?></textarea></td>
-      </tr>
-      <tr>
-       <td>[Envoie d'image (bientôt disponible ?)]</td> <td style="text-align:right;"><input type="submit" name="send" value="Envoyer" /></td>
-      </tr>
-     </tbody>
-    </table>
-    </form>
-    <?php
+    $name = htmlspecialchars($_POST['target']);
+    $presel = $db->prepare('SELECT id, name FROM members WHERE name = ?'); $presel->execute(array($name));
+    if (isset($_POST['send']) AND isset($_POST['subject']) AND $presel = $presel->fetch() AND isset($_POST['pm']))
+    {
+     
+    }
+    else
+    {
+     ?>
+     <?php if (isset$_POST['send']) { ?><p style="color:red;">Avré, mais certains champs sont mal renseignés ou non comp^létés, réessayez.</p> <? } ?>
+     <form action="index?p=pm&action=send<?=$ifto?>" method="POST">
+      <table cellspacing="0" cellpadding="10" width="70%" align="center" style="border: black solid 2px;">
+       <tbody>
+        <tr>
+         <td colspan="2" style="background-color:#DDDDDD;"><label for="subject">Sujet :</label><input type="text" name="subject" id="subject" value="<?= $_POST['subject']?>" /></td>
+        </tr>
+        <tr>
+         <td colspan="2" style="background-color:#DDDDDD;"><label for="target">Destinataire :</label><input type="text" name="target" id="target" value="<?= $_POST['target']?>" /></td>
+        </tr>
+        <tr>
+         <td colspan="2"><textarea name="pm" width="100%"><?=$_POST['pm']?></textarea></td>
+        </tr>
+        <tr>
+         <td>[Envoie d'image (bientôt disponible ?)]</td> <td style="text-align:right;"><input type="submit" name="send" value="Envoyer" /></td>
+        </tr>
+       </tbody>
+      </table>
+     </form>
+     <?php
+    }
   }
  }
  elseif (isset($_GET['pm']))
