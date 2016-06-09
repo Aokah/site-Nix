@@ -12,8 +12,6 @@
 	<ul style="color:red;">
 		<li>Réadapter la Page d'Acceuil aux évènements passés IG</li>
 		<li>Reconstruire la Structure de la ChatBox</li>
-		<li>Réécrire la page des PMs</li>
-		<li>Création de la Page "Mes Aptitudes" et listage d'au moins 10 Compétence dans chaque domaine</li>
 		<li>Création d'une page "Rapport d'erreur" à disposition des Joueurs</li>
 		<li>Création du test de détermination magique</li>
 		
@@ -47,6 +45,8 @@
 		<li>Réécriture de la page des Guildes</li>
 		<li>Rendre le NAV propre à Nix et y incorporer des menus déroulants</li>
 		<li>Réécrire la page des Candidatures</li>
+		<li>Réécrire la page des PMs</li>
+		<li>Création de la Page "Mes Aptitudes" et listage d'au moins 10 Compétence dans chaque domaine</li>
 	</ul>
 <?php
 
