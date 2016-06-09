@@ -94,10 +94,10 @@ global $_SESSION, $db, $_GET;
   <table cellspacing="0" cellpadding="10" width="100%">
    <tbody>
     <tr>
-     <th style="background-color:#DDDDDD;" colspan="2">Sujet :</th>
-     <th style="background-color:#DDDDDD;" width="20%">Auteur :</th>
-     <th style="background-color:#DDDDDD;" width="20%">Date de réception :</th>
-     <th style="background-color:#DDDDDD;" width="10%">Action :</th>
+     <th style="background-color:#DDDDDD;border black solid 1px" colspan="2">Sujet :</th>
+     <th style="background-color:#DDDDDD;border black solid 1px" width="20%">Auteur :</th>
+     <th style="background-color:#DDDDDD;border black solid 1px" width="20%">Date de réception :</th>
+     <th style="background-color:#DDDDDD;border black solid 1px" width="10%">Action :</th>
     </tr>
     <?php 
     $select = $db->prepare('SELECT pm.id pm_id, pm.subject, pm.from_id, pm.to_id, pm.date_send, pm.unread, m.id, m.name, m.title, m.ban, m.removed
@@ -113,11 +113,11 @@ global $_SESSION, $db, $_GET;
      $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_send']);
     ?>
     <tr>
-     <td width="5%" style="border:#555555 solid 1px;"><?= $unread?></td>
-     <td style="text-align:left;border:#555555 solid 1px;"><a href="index?p=pm&pm=<?= $line['pm_id']?>"><?= $line['subject']?></a></td>
-     <td style="text-align:center;border:#555555 solid 1px;"><a href="index?p=perso&perso=<?= $line['id']?>"><?= $title, ' ', $line['name']?></a></td>
-     <td style="text-align:center;border:#555555 solid 1px;"><?=$date?></td>
-     <td style="text-align:center;border:#555555 solid 1px;"> <span style="color:red">[x]</span></td>
+     <td width="5%" style="border-bottom:#555555 solid 1px;border-left:#555555 solid 1px;"><?= $unread?></td>
+     <td style="text-align:left;border-right:#555555 solid 1px;border-bottom:#555555 solid 1px;"><a href="index?p=pm&pm=<?= $line['pm_id']?>"><?= $line['subject']?></a></td>
+     <td style="text-align:left;border-right:#555555 solid 1px;border-bottom:#555555 solid 1px;"><a href="index?p=perso&perso=<?= $line['id']?>"><?= $title, ' ', $line['name']?></a></td>
+     <td style="text-align:left;border-right:#555555 solid 1px;border-bottom:#555555 solid 1px;"><?=$date?></td>
+     <td style="text-align:left;border-right:#555555 solid 1px;border-bottom:#555555 solid 1px;"> <span style="color:red">[x]</span></td>
     </tr>
     <?php
     }
