@@ -69,6 +69,7 @@
 							case '' : 				{	include('includes/home.php'); 					home(); 				break; }
 							case 'login': 				{	include('includes/login.php'); 					login(); 				break; }
 							case 'testb': 				{	include('includes/testb.php'); 					testb(); 				break; }
+							case 'report': 				{	include('includes/report.php'); 					report(); 				break; }
 							case 'register':			{	include('includes/register.php'); 				register(); 			break; }
 							case 'a': 				{ 	include('includes/activate.php'); 				activate(); 			break; }
 							case 'members': 			{ 	include('includes/members.php'); 				members(); 				break; }
