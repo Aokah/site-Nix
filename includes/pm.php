@@ -57,6 +57,7 @@ global $_SESSION, $db, $_GET;
     {
      if ($line['to_id'] == $_SESSION['id'])
      {
+      $update = $db->prepare('UPDATE private_message SET unread = 0 WHERE id = ?'); $update->execute(array($pm));
       if ($line['ban'] == 1) { $title = "Banni"; } elseif ($line['removed'] == 1) { $title = "Oublié"; } else { $title = $line['title']; }
       $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_send']);
       $message = preg_replace('#\n#', '<br />', $line['message']);
