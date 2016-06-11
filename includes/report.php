@@ -9,7 +9,7 @@
     if (isset($_POST['send']))
     {
       $report = htmlspecialchars($_POST['report']);
-      $insert = $db->prepare("INSERT INTO report VALUES('',NOW(),?,?,?,1,0,'','')"); $insert->execute(array($_POST['type'], $report, $_SESSION['id']));
+      $insert = $db->prepare("INSERT INTO report VALUES('',NOW(),?,?,?,0,0,'','')"); $insert->execute(array($_POST['type'], $report, $_SESSION['id']));
       echo '<p>Votre rapport a bien été enregistré.<p>
       <p><a href="index?p=report">Cliquez ici</a> pour retourner à la page précédente.</p>';
     }
