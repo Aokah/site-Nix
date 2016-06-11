@@ -104,6 +104,7 @@
                     <td>Problème :
                     <p><?= $report?></p></td>
                   </tr>
+                  <?php
                     $sel = $db->prepare('SELECT id, name, rank, technician, pionier, removed, ban, title FROM members WHERE id = ?');
                     $sel->execute(array($line['resolver_id'])); $answ = $sel->fetch();
                     $tech = ($answ['technician'] == 1)? '-T' : '';
