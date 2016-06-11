@@ -47,7 +47,7 @@
             $pm = "Voici la réponse de" .$title. " " .$line_['name']. " à votre rapport d'erreur défini comme insoluble :<br /><br />" . $respond .
           "<br />Merci tout de même de nous avoir signalé cette erreur ! <br /> Shirka, le robot du Staff";
           }
-          $insert = $db->prepare("INSERT INTO private_message VALUE ('','[Page Erreur] : Réponse', ?, NOW(),92, ?,0,0 )");
+          $insert = $db->prepare("INSERT INTO private_message VALUE ('','[Page Erreur] : Réponse', ?, NOW(),92, ?,1,0 )");
           $insert->execute(array($pm, $line['reporter_id']));
         }
         echo '<p>Rapport édité ! <a href="index?p=report">Cliquez ici</a> pour retourner à la page des Rapports d\'Erreur.</p>';
