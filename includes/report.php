@@ -18,7 +18,39 @@
       $id = intval($_GET['answer']);
       if (isset($_POST['valid']))
       {
+        $select = $db->prepare('SELECT * FROM report WHERE id = ?'); $select->execute(array($id)); $line = $select->fetch();
         
+        $sel = $db->prepare('SELECT id, name, rank, technician, pionier, removed, ban, title FROM members WHERE id = ?');
+        $sel->execute(array($line['resolver_id'])); $line_ = $sel->fetch();
+        $tech = ($line_['technician'] == 1)? '-T' : '';
+        $pionier = ($line_['pionier'] == 1)? '-P' : '';
+        if ($line_['pionier'] == 1) { $title ="Pionier"; } elseif ($line_['ban'] == 1) { $title = "Banni"; }
+        elseif ($line_['removed'] == 1) { $title = "Oublié"; } else { $title = $line_['title']; }
+                    
+        $respond = htmlspecialchars($_POST['respond']);
+        $update = $db->prepare('UPDATE report SET resolve = ?, resolver_id = ?, respond = ?, resolve_date = NOW()');
+        $update->execute(array($_POST['state'], $_SESSION['id'], $respond));
+        if ($_POST['sate'] != 0)
+        {
+          if ($_POST['state'] == 1)
+          {
+          $pm = "Voici la réponse de" .$title. " " .$line_['name']. " à votre rapport d'erreur :<br /><br />" . $respond .
+          "<br />Merci de nous avoir signalé cette erreur ! <br /> Shirka, le robot du Staff";
+          }
+          elseif ($_POST['state'] == 2)
+          {
+          $pm = "Voici la réponse de" .$title. " " .$line_['name']. " à votre rapport d'erreur classé sans suite :<br /><br />" . $respond .
+          "<br />Merci tout de même de nous avoir signalé cette erreur ! <br /> Shirka, le robot du Staff";
+          }
+          else
+          {
+            $pm = "Voici la réponse de" .$title. " " .$line_['name']. " à votre rapport d'erreur défini comme insoluble :<br /><br />" . $respond .
+          "<br />Merci tout de même de nous avoir signalé cette erreur ! <br /> Shirka, le robot du Staff";
+          }
+          $insert = $db->prepare("INSERT INTO private_message VALUE ('','[Page Erreur] : Réponse', ?, NOW(),92, ?,0,0 )");
+          $insert->execute(array($pm, $line['reporter_id']));
+        }
+        echo '<p>Rapport édité ! <a href="index?p=report">Cliquez ici</a> pour retourner à la page des Rapports d\'Erreur.</p>';
       }
       else
       {
@@ -47,7 +79,7 @@
                   $pionier = ($line['pionier'] == 1)? '-P' : '';
                   if ($line['pionier'] == 1) { $title ="Pionier"; } elseif ($line['ban'] == 1) { $title = "Banni"; } elseif ($line['removed'] == 1) { $title = "Oublié"; } else { $title = $line['title']; }
             ?>
-            <form action="report&answer=<?= $id?>" method="POST">
+            <form action="index?p=report&answer=<?= $id?>" method="POST">
               <input type="submit" name="valid" value="Terminer" />
               <table cellspacing="0" cellpadding="5" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
                 <tbody>
