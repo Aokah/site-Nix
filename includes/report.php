@@ -62,7 +62,7 @@
                 case 1: $type = "Bug rencontré sur le serveur"; break; case 2: $type = "Grief repéré sur le Serveur"; break; case 3: $type = "RPQ surpris sur le serveur"; break;
                 case 4: $type = "Triche constatée sur le serveur"; break; case 5: $type = "Abus de pouvoir constaté par un Membre du Staff"; break;
                 case 6: $type = "\"Fatal Error\" détectée sur une page du site !"; break; case 7: $type ="Bug d'affichage repéré sur le site"; break;
-                default : $type = "Problème de type \"autre\" reporté"; break;
+                default : $type = "Problème de type \"autre\" reporté"; break; case 9: $type ="Faute d'orthographe sur le site."; break;
               }
               $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date']);
               $date_ = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['resolve_date']);
@@ -150,7 +150,7 @@
               case 1: $type = "Bug rencontré sur le serveur"; break; case 2: $type = "Grief repéré sur le Serveur"; break; case 3: $type = "RPQ surpris sur le serveur"; break;
               case 4: $type = "Triche constatée sur le serveur"; break; case 5: $type = "Abus de pouvoir constaté par un Membre du Staff"; break;
               case 6: $type = "\"Fatal Error\" détectée sur une page du site !"; break; case 7: $type ="Bug d'affichage repéré sur le site"; break;
-              default : $type = "Problème de type \"autre\" reporté"; break;
+              default : $type = "Problème de type \"autre\" reporté"; break; case 9: $type ="Faute d'orthographe sur le site."; break;
             }
             $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date']);
             $date_ = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['resolve_date']);
@@ -227,6 +227,7 @@
           <option value="5">Abus de pouvoir d'un Staffeux</option>
           <option value="6">"Fatal Error" sur le site</option>
           <option value="7">Bug d'affichage site</option>
+          <option value="9">Faute d'orthographe sur le site</option>
           <option value="8">Autres . . .</option>
         </select>
         <br /><textarea placeholder="Notez ici le problème que vous avez rencontré . . ." name="report" style="width: 500px; height: 200px;"></textarea>
@@ -248,7 +249,7 @@
             case 1: $type = "Bug rencontré sur le serveur"; break; case 2: $type = "Grief repéré sur le Serveur"; break; case 3: $type = "RPQ surpris sur le serveur"; break;
             case 4: $type = "Triche constatée sur le serveur"; break; case 5: $type = "Abus de pouvoir constaté par un Membre du Staff"; break;
             case 6: $type = "\"Fatal Error\" détectée sur une page du site !"; break; case 7: $type ="Bug d'affichage repéré sur le site"; break;
-            default : $type = "Problème de type \"autre\" reporté"; break;
+            case 9: $type ="Faute d'orthographe sur le site."; break; default : $type = "Problème de type \"autre\" reporté"; break;
           }
           $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date']);
           $date_ = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['resolve_date']);
