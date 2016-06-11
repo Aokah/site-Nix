@@ -66,7 +66,7 @@ if ($_SESSION['connected'])
       $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_send']);
       $message = preg_replace('#\n#', '<br />', $line['message']);
      ?>
-     <a href="index?p=pm&action=send&to<?= $presel['id']?>">[Répondre]</a>
+     <a href="index?p=pm&action=send&to=<?= $presel['id']?>">[Répondre]</a>
      <table cellspacing="0" cellpadding="10" width="100%" style="border: 3px solid black; ">
       <tbody>
        <tr>
