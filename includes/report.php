@@ -92,7 +92,7 @@
               $sel->execute(array($line['resolver_id'])); $answ = $sel->fetch();
               $tech = ($answ['technician'] == 1)? '-T' : '';
               $pionier = ($answ['pionier'] == 1)? '-P' : '';
-              if ($answ['ban'] == 1) { $title = "Banni"; } elseif ($answ['removed'] == 1) { $title = "Oublié"; } else { $title = $answ['title']; }
+              if ($answ['pionier'] == 1) { $title ="Pionier"; } elseif ($answ['ban'] == 1) { $title = "Banni"; } elseif ($answ['removed'] == 1) { $title = "Oublié"; } else { $title = $answ['title']; }
             ?>
             <tr>
               <td>Date de réponse : <?= $date_?></td>
