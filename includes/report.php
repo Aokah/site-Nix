@@ -167,7 +167,7 @@
                 $pionier = ($line['pionier'] == 1)? '-P' : '';
                 if ($line['pionier'] == 1) { $title ="Pionier"; } elseif ($line['ban'] == 1) { $title = "Banni"; } elseif ($line['removed'] == 1) { $title = "Oublié"; } else { $title = $line['title']; }
           ?>
-          <a href="index?p=report&answer=<?= $line['id']?>">[Etudier le problème]</a>
+          <a href="index?p=report&answer=<?= $line['id']?>" class="button">Etudier le problème</a>
           <table cellspacing="0" cellpadding="5" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
             <tbody>
               <tr style="background-color:#BBBBBB;">
