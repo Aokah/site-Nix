@@ -77,7 +77,7 @@
               <th><?= $type?></th>
             </tr>
             <tr>
-              <td>Etat d'analyse du problème : <img src="pics/ico/<?= $state?>" width="<?= $width?>" alt="" title="<?= $desc?>"/> </td>
+              <td>Etat d'analyse du problème : <img src="pics/ico/<?= $state?>" width="20px" alt="" title="<?= $desc?>"/> </td>
             </tr>
             <tr>
               <td>Date d'envoi : <?= $date?></td>
