@@ -52,6 +52,24 @@
         $select = $db->prepare('SELECT * FROM report WHERE reporter_id = ?'); $select->execute(array($_SESSION['id']));
         while ($line = $select->fetch())
         {
+          switch ($line['type'])
+          {
+            case 1: $type = "Bug rencontré sur le serveur"; break; case 2: $type = "Grief repéré sur le Serveur"; break; case 3: $type = "RPQ surpris sur le serveur"; break;
+            case 4: $type = "Triche constatée sur le serveur"; break; case 5: $type = "Abus de pouvoir constaté par un Membre du Staff"; break;
+            case 6: $type = "\"Fatal Error\" détectée sur une page du site !"; break; case 7: $type ="Bug d'affichage repéré sur le site"; break;
+            default : $type = "Problème de type \"autre\" reporté"; break;
+          }
+          $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date']);
+          $date_ = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['resolve_date']);
+          $respond = preg_replace('#\n#', '<br />', $line['respond']);
+          $report = preg_replace('#\n#', '<br />', $line['text']);
+          switch ($line['resolve'])
+          {
+            case 0: $state = "loader.gif"; $desc = "Problème encore en attente de résolution."; break;
+            case 1: $state = "resolved.png"; $desc = "Problème résolu !"; break;
+            case 2: $state = "unresolved.png"; $desc = "Problème classé sans suite."; break;
+            case 3: $state = "impossible.png"; $desc = "Problème insoluble."; break;
+          }
         ?>
         <table cellspacing="0" cellpadding="5" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
           <tbody>
@@ -59,7 +77,7 @@
               <th><?= $type?></th>
             </tr>
             <tr>
-              <td>Etat d'analyse du problème : <img src="pics/ico/<?= $state?>" alt="" title="<?= $desc?>"/> </td>
+              <td>Etat d'analyse du problème : <img src="pics/ico/<?= $state?>" width="<?= $width?>" alt="" title="<?= $desc?>"/> </td>
             </tr>
             <tr>
               <td>Date d'envoi : <?= $date?></td>
@@ -68,6 +86,9 @@
               <td>Problème :
               <p><?= $report?></p></td>
             </tr>
+            <?php if ($line['resolve'] == 1)
+            {
+            ?>
             <tr>
               <td>Date de réponse : <?= $date_?></td>
             </tr>
@@ -76,6 +97,7 @@
               <p><?= $respond?></p>
               </td>
             </tr>
+            <?php } ?>
           </tbody>
         </table>
        <?php
