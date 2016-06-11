@@ -45,7 +45,7 @@
                 $pm = "Votre candidature candidature vient d'être acceptée par " . $title . " " . $_SESSION['name'] .
                 '. <br />Vous pouvez désormais accéder au serveur avec l\'ip ci-dessous !<br />62.210.232.129:10414 <br /><br />Au plaisir de vous revoir en jeu !<br /><br />Shirka';
                 }
-                $insert = $db->prepare("INSERT INTO private_message VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1)");
+                $insert = $db->prepare("INSERT INTO private_message VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1,0)");
                 $insert->execute(array($pm, $line['sender_id']));
                 $verify = $db->prepare('SELECT id, rank FROM members WHERE id= ? ANd rank = 1');
                 $verify->execute(array($line['sender_id']));
@@ -168,7 +168,7 @@
                 $pm = "Votre candidature candidature vient d'être refusée par " . $title . " " . $_SESSION['name'] .
                 '. <br />Relisez-bien tous les onglets d\'information à votre disposition ou veillez à ce que l\'orthographe de votre candidature reste correcte puis réessayez.<br /><br />Shirka';
                 }
-                $insert = $db->prepare("INSERT INTO private_message VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1)");
+                $insert = $db->prepare("INSERT INTO private_message VALUE('','[Réponse] : Candidature', ?, NOW(), 92, ?, 1,0)");
                 $insert->execute(array($pm, $line['sender_id']));
               }
               else
