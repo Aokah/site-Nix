@@ -53,7 +53,7 @@
         while ($line = $select->fetch())
         {
         ?>
-        <table cellspacing="0" cellpadding="0" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
+        <table cellspacing="0" cellpadding="5" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
           <tbody>
             <tr style="background-color:#BBBBBB;">
               <th><?= $type?></th>
