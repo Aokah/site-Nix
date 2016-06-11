@@ -104,8 +104,6 @@
                     <td>Problème :
                     <p><?= $report?></p></td>
                   </tr>
-                  <?php if ($line['resolve'] == 1)
-                  {
                     $sel = $db->prepare('SELECT id, name, rank, technician, pionier, removed, ban, title FROM members WHERE id = ?');
                     $sel->execute(array($line['resolver_id'])); $answ = $sel->fetch();
                     $tech = ($answ['technician'] == 1)? '-T' : '';
@@ -123,7 +121,6 @@
                     <p><textarea value="<?= $line['respond']?>" name="respond"></textarea></p>
                     </td>
                   </tr>
-                  <?php } ?>
                 </tbody>
               </table>
             </form>
