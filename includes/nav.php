@@ -302,7 +302,7 @@
 										<?php
 										if ($report > 0 AND $_SESSION['rank'] > 4)
 										{ echo '<span style="color:red;">[', $report,']</span> '; }?>
-										Raport d'Erreur
+										Rapport d'Erreur
 									</div>
 								</a>
 								
