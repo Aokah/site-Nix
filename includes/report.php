@@ -49,7 +49,7 @@
         ?>
         <h3>Requête de votre part classées par date d'envoi</h3>
         <?php
-        $select = $db->prepare('SELECT * FROM report WHERE sender_id = ?'); $select->execute(array($_SESSION['id']));
+        $select = $db->prepare('SELECT * FROM report WHERE reporter_id = ?'); $select->execute(array($_SESSION['id']));
         while ($line = $select->fetch())
         {
         ?>
