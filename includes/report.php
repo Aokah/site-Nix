@@ -30,7 +30,7 @@
         $respond = htmlspecialchars($_POST['respond']);
         $update = $db->prepare('UPDATE report SET resolve = ?, resolver_id = ?, respond = ?, resolve_date = NOW()');
         $update->execute(array($_POST['state'], $_SESSION['id'], $respond));
-        if ($_POST['sate'] != 0)
+        if ($_POST['state'] != 0)
         {
           if ($_POST['state'] == 1)
           {
