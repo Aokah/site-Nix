@@ -8,6 +8,9 @@
 
 /* element généraux */
 
+input {
+	background-color: red;	
+}
 #header {
     background-color: #2b2b2b;
     height: 76px;
