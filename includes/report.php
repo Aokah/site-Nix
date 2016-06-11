@@ -119,7 +119,7 @@
                   </tr>
                   <tr>
                     <td>Réponse :
-                    <p><textarea value="<?= $line['respond']?>" name="respond"></textarea></p>
+                    <p><textarea name="respond"><?= $line['respond']?></textarea></p>
                     </td>
                   </tr>
                 </tbody>
