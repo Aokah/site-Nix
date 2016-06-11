@@ -42,7 +42,7 @@
         <br /><input type="submit" name="send" value="Envoyer" />
       </form>
       <?php
-      $presel = $db->prepare('SELECT COUNT(*) AS count FROM report WHERE reporter_id = ?'); $presel->eecute(array($_SESSION['id']));
+      $presel = $db->prepare('SELECT COUNT(*) AS count FROM report WHERE reporter_id = ?'); $presel->execute(array($_SESSION['id']));
       $presel = $presel->fetch();
       if ($presel['count'] > 0)
       {
