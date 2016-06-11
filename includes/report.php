@@ -91,7 +91,7 @@
               $sel = $db->prepare('SELECT id, name, rank, technician, pionier, removed, ban, title FROM members WHERE id = ?');
               $sel->execute(array($line['resolver_id'])); $answ = $sel->fetch();
               $tech = ($answ['technician'] == 1)? '-T' : '';
-              $pionier ($answ['pionier'] == 1)? '-P' : '';
+              $pionier = ($answ['pionier'] == 1)? '-P' : '';
               if ($answ['ban'] == 1) { $title = "Banni"; } elseif ($answ['removed'] == 1) { $title = "Oublié"; } else { $title = $answ['title']; }
             ?>
             <tr>
