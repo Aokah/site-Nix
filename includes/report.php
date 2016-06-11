@@ -142,7 +142,7 @@
          <h3>Liste des Problèmes enregistrés</h3>
          <p>Ici est listé les problèmes listés par date d'envoie et par statut !</p>
           <?php
-          $select = $db->prepare('SELECT * FROM report WHERE reporter_id = ?'); $select->execute(array($_SESSION['id']));
+          $select = $db->prepare('SELECT * FROM report WHERE reporter_id = ? ORDER BY resolve_date DESC id DESC'); $select->execute(array($_SESSION['id']));
           while ($line = $select->fetch())
           {
             switch ($line['type'])
