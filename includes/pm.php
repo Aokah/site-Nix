@@ -113,7 +113,7 @@ if ($_SESSION['connected'])
     
     while ($line = $select->fetch())
     {
-     $presel = $db->prepare('SELECT*  FROM members WHERE id = ?'); $presel->execute(array($line['from_id'])); $presel = $presel->fecth();
+     $presel = $db->prepare('SELECT*  FROM members WHERE id = ?'); $presel->execute(array($line['from_id'])); $presel = $presel->fetch();
      $unread = ($line['unread'] == 1) ? '<span style="color:red">[!]</span>' : '';
      if ($presel['ban'] == 1) { $title = "Banni"; } elseif ($presel['removed'] == 1) { $title = "Oublié"; } else { $title = $presel['title']; }
      $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_send']);
