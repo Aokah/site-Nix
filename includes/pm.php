@@ -54,14 +54,15 @@ if ($_SESSION['connected'])
   $pm = intval($_GET['pm']);
   $select = $db->prepare('SELECT pm.id pm_id, pm.subject, pm.from_id, pm.message, pm.to_id, pm.date_send, pm.unread, m.id, m.name, m.title, m.ban, m.removed
     FROM private_message pm
-    RIGHT JOIN members m ON from_id = m.id AND to_id = m.id 
+    RIGHT JOIN members m ON to_id = m.id 
     WHERE pm.id = ?'); $select->execute(array($pm));
     if ($line = $select->fetch())
     {
      if ($line['to_id'] == $_SESSION['id'])
      {
+      $presel = $db->prepare('SELECT*  FROM members WHERE id = ?'); $presel->execute(array($line['from_id'])); $presel = $presel->fetch();
       $update = $db->prepare('UPDATE private_message SET unread = 0 WHERE id = ?'); $update->execute(array($pm));
-      if ($line['ban'] == 1) { $title = "Banni"; } elseif ($line['removed'] == 1) { $title = "Oublié"; } else { $title = $line['title']; }
+      if ($presel['ban'] == 1) { $title = "Banni"; } elseif ($presel['removed'] == 1) { $title = "Oublié"; } else { $title = $presel['title']; }
       $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_send']);
       $message = preg_replace('#\n#', '<br />', $line['message']);
      ?>
@@ -72,7 +73,7 @@ if ($_SESSION['connected'])
        </tr>
        <tr>
         <td style="text-align:center;background-color:#CCCCCC; border-bottom: #333333 solid 4px;"><?= $line['subject']?></td>
-        <td style="text-align:center;background-color:#CCCCCC; border-bottom: #333333 solid 4px;"><?= $title, ' ' , $line['name']?></td>
+        <td style="text-align:center;background-color:#CCCCCC; border-bottom: #333333 solid 4px;"><?= $title, ' ' , $presel['name']?></td>
         <td style="text-align:center;background-color:#CCCCCC; border-bottom: #333333 solid 4px;"><?= $date; ?></td>
        </tr>
        <tr>
