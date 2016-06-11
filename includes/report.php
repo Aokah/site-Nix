@@ -19,7 +19,78 @@
       {
        ?>
        <div>
-         <h3>Liste des</h3>
+         <h3>Liste des Problèmes enregistrés</h3>
+         <p>Ici est listé les problèmes listés par date d'envoie et par statut !</p>
+          <?php
+          $select = $db->prepare('SELECT * FROM report WHERE reporter_id = ?'); $select->execute(array($_SESSION['id']));
+          while ($line = $select->fetch())
+          {
+            switch ($line['type'])
+            {
+              case 1: $type = "Bug rencontré sur le serveur"; break; case 2: $type = "Grief repéré sur le Serveur"; break; case 3: $type = "RPQ surpris sur le serveur"; break;
+              case 4: $type = "Triche constatée sur le serveur"; break; case 5: $type = "Abus de pouvoir constaté par un Membre du Staff"; break;
+              case 6: $type = "\"Fatal Error\" détectée sur une page du site !"; break; case 7: $type ="Bug d'affichage repéré sur le site"; break;
+              default : $type = "Problème de type \"autre\" reporté"; break;
+            }
+            $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date']);
+            $date_ = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['resolve_date']);
+            $respond = preg_replace('#\n#', '<br />', $line['respond']);
+            $report = preg_replace('#\n#', '<br />', $line['text']);
+            switch ($line['resolve'])
+            {
+              default: $state = "loader.gif"; $desc = "Problème encore en attente de résolution."; break;
+              case 1: $state = "tick.png"; $desc = "Problème résolu !"; break;
+              case 2: $state = "unresolved.gif"; $desc = "Problème classé sans suite."; break;
+              case 3: $state = "impossible.gif"; $desc = "Problème insoluble."; break;
+            }
+            $tech = ($line['technician'] == 1)? '-T' : '';
+                $pionier = ($line['pionier'] == 1)? '-P' : '';
+                if ($line['pionier'] == 1) { $title ="Pionier"; } elseif ($line['ban'] == 1) { $title = "Banni"; } elseif ($line['removed'] == 1) { $title = "Oublié"; } else { $title = $line['title']; }
+          ?>
+          <a href="index?p=report&answer=<?= $line['id']?>">[Etudier le problème]</a>
+          <table cellspacing="0" cellpadding="5" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
+            <tbody>
+              <tr style="background-color:#BBBBBB;">
+                <th><?= $type?></th>
+              </tr>
+              <tr>
+                <td>Etat d'analyse du problème : <img src="pics/ico/<?= $state?>" width="20px" alt="" title="<?= $desc?>"/> </td>
+              </tr>
+              <tr>
+                <td>Date d'envoi : <?= $date?></td>
+              </tr>
+              <tr>
+                <td>Envoyé par : <span class="name<?=$line['rank'],$tech,$pionier?>"><?= $title , ' ' , $line['name']?></span></td>
+              </tr>
+              <tr>
+                <td>Problème :
+                <p><?= $report?></p></td>
+              </tr>
+              <?php if ($line['resolve'] == 1)
+              {
+                $sel = $db->prepare('SELECT id, name, rank, technician, pionier, removed, ban, title FROM members WHERE id = ?');
+                $sel->execute(array($line['resolver_id'])); $answ = $sel->fetch();
+                $tech = ($answ['technician'] == 1)? '-T' : '';
+                $pionier = ($answ['pionier'] == 1)? '-P' : '';
+                if ($answ['pionier'] == 1) { $title ="Pionier"; } elseif ($answ['ban'] == 1) { $title = "Banni"; } elseif ($answ['removed'] == 1) { $title = "Oublié"; } else { $title = $answ['title']; }
+              ?>
+              <tr>
+                <td>Date de réponse : <?= $date_?></td>
+              </tr>
+              <tr>
+                <td>Par : <span class="name<?=$answ['rank'],$tech,$pionier?>"><?= $title , ' ' , $answ['name']?></span></td>
+              </tr>
+              <tr>
+                <td>Réponse :
+                <p><?= $respond?></p>
+                </td>
+              </tr>
+              <?php } ?>
+            </tbody>
+          </table>
+         <?php
+          }
+          ?>
        </div>
        <?
       }
