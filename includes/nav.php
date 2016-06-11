@@ -291,6 +291,12 @@
 									</div>
 								</a>
 								
+								<a href="index?p=report" class="link">
+									<div>
+										Raport d'Erreur
+									</div>
+								</a>
+								
 								<a href="index?p=pm" class="link">
 									<div>
 										<?php if ($_SESSION['alertNewMsgs']) { ?><span style="color:red">[<?= $_SESSION['alertNewMsgs']?>] </span><?php
