@@ -1,6 +1,9 @@
 <?php function pm ()
 {
 global $_SESSION, $db, $_GET;
+
+if ($_SESSION['connected'])
+{
 ?>
  <h2>Messagerie Privée</h2>
  <p>Sur cette page vous pourrez discuter avec les membres de manière plus approfondie que sur la ChatBox.</p>
@@ -128,5 +131,10 @@ global $_SESSION, $db, $_GET;
   </table>
   <?php
  }
+}
+else
+{
+ echo '<p>Veuillez vous connecter pour accéder à cette page.</p>';
+}
 }
 ?>
