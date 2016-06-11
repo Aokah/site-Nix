@@ -84,7 +84,6 @@
             </table>
           </form>
          <?php
-          }
       }
       else
       {
