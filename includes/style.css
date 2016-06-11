@@ -423,6 +423,12 @@ input, .button {
 	padding: 2px;
 }
 
+.button:hover, input:hover
+{
+	background-color: #cccccc;
+	color: black;
+}
+
 .avis0
 {
 	color: black;
