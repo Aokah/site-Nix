@@ -290,9 +290,18 @@
 										Mon Personnage
 									</div>
 								</a>
-								
+								<?php if ($_SESSION['rank'] > 4) {
+									$report = $db->query('SELECT COUNT(*) AS report FROM report WHERE resolve = 0'); $report = $report->fetch(); $report = $report['$report'];
+								if ($report > 0)
+								{
+								echo '<span style="color:red;">[!]</span>';
+								}
+								}?>
 								<a href="index?p=report" class="link">
 									<div>
+										<?php
+										if ($report > 0 AND $_SESSION['rank'] > 4)
+										{ echo '<span style="color:red;">[', $report,']</span> '; }?>
 										Raport d'Erreur
 									</div>
 								</a>
