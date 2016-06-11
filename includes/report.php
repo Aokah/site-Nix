@@ -66,9 +66,9 @@
           switch ($line['resolve'])
           {
             case 0: $state = "loader.gif"; $desc = "Problème encore en attente de résolution."; break;
-            case 1: $state = "resolved.png"; $desc = "Problème résolu !"; break;
-            case 2: $state = "unresolved.png"; $desc = "Problème classé sans suite."; break;
-            case 3: $state = "impossible.png"; $desc = "Problème insoluble."; break;
+            case 1: $state = "tick.png"; $desc = "Problème résolu !"; break;
+            case 2: $state = "unresolved.gif"; $desc = "Problème classé sans suite."; break;
+            case 3: $state = "impossible.gif"; $desc = "Problème insoluble."; break;
           }
         ?>
         <table cellspacing="0" cellpadding="5" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
