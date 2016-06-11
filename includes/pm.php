@@ -107,8 +107,8 @@ if ($_SESSION['connected'])
     <?php 
     $select = $db->prepare('SELECT pm.id pm_id, pm.subject, pm.from_id, pm.to_id, pm.date_send, pm.unread, m.id, m.name, m.title, m.ban, m.removed
     FROM private_message pm
-    RIGHT JOIN members m ON from_id = m.id AND to_id = m.id 
-    WHERE to_id = ? AND del = 0
+    RIGHT JOIN members m ON from_id = m.id AND pm.to_id = m.id 
+    WHERE pm.to_id = ? AND pm.del = 0
     ORDER BY unread DESC, date_send DESC, subject ASC'); $select->execute(array($_SESSION['id']));
     
     while ($line = $select->fetch())
