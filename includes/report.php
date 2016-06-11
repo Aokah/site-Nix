@@ -41,47 +41,48 @@
                 $pionier = ($line['pionier'] == 1)? '-P' : '';
                 if ($line['pionier'] == 1) { $title ="Pionier"; } elseif ($line['ban'] == 1) { $title = "Banni"; } elseif ($line['removed'] == 1) { $title = "Oublié"; } else { $title = $line['title']; }
           ?>
-          <a href="index?p=report&answer=<?= $line['id']?>">[Etudier le problème]</a>
-          <table cellspacing="0" cellpadding="5" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
-            <tbody>
-              <tr style="background-color:#BBBBBB;">
-                <th><?= $type?></th>
-              </tr>
-              <tr>
-                <td>Etat d'analyse du problème : <img src="pics/ico/<?= $state?>" width="20px" alt="" title="<?= $desc?>"/> </td>
-              </tr>
-              <tr>
-                <td>Date d'envoi : <?= $date?></td>
-              </tr>
-              <tr>
-                <td>Envoyé par : <span class="name<?=$line['rank'],$tech,$pionier?>"><?= $title , ' ' , $line['name']?></span></td>
-              </tr>
-              <tr>
-                <td>Problème :
-                <p><?= $report?></p></td>
-              </tr>
-              <?php if ($line['resolve'] == 1)
-              {
-                $sel = $db->prepare('SELECT id, name, rank, technician, pionier, removed, ban, title FROM members WHERE id = ?');
-                $sel->execute(array($line['resolver_id'])); $answ = $sel->fetch();
-                $tech = ($answ['technician'] == 1)? '-T' : '';
-                $pionier = ($answ['pionier'] == 1)? '-P' : '';
-                if ($answ['pionier'] == 1) { $title ="Pionier"; } elseif ($answ['ban'] == 1) { $title = "Banni"; } elseif ($answ['removed'] == 1) { $title = "Oublié"; } else { $title = $answ['title']; }
-              ?>
-              <tr>
-                <td>Date de réponse : <?= $date_?></td>
-              </tr>
-              <tr>
-                <td>Par : <span class="name<?=$answ['rank'],$tech,$pionier?>"><?= $title , ' ' , $answ['name']?></span></td>
-              </tr>
-              <tr>
-                <td>Réponse :
-                <p><?= $respond?></p>
-                </td>
-              </tr>
-              <?php } ?>
-            </tbody>
-          </table>
+          <form action="report&answer=<?= $id?>" method="POST">
+            <table cellspacing="0" cellpadding="5" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
+              <tbody>
+                <tr style="background-color:#BBBBBB;">
+                  <th><?= $type?></th>
+                </tr>
+                <tr>
+                  <td>Etat d'analyse du problème : <img src="pics/ico/<?= $state?>" width="20px" alt="" title="<?= $desc?>"/> </td>
+                </tr>
+                <tr>
+                  <td>Date d'envoi : <?= $date?></td>
+                </tr>
+                <tr>
+                  <td>Envoyé par : <span class="name<?=$line['rank'],$tech,$pionier?>"><?= $title , ' ' , $line['name']?></span></td>
+                </tr>
+                <tr>
+                  <td>Problème :
+                  <p><?= $report?></p></td>
+                </tr>
+                <?php if ($line['resolve'] == 1)
+                {
+                  $sel = $db->prepare('SELECT id, name, rank, technician, pionier, removed, ban, title FROM members WHERE id = ?');
+                  $sel->execute(array($line['resolver_id'])); $answ = $sel->fetch();
+                  $tech = ($answ['technician'] == 1)? '-T' : '';
+                  $pionier = ($answ['pionier'] == 1)? '-P' : '';
+                  if ($answ['pionier'] == 1) { $title ="Pionier"; } elseif ($answ['ban'] == 1) { $title = "Banni"; } elseif ($answ['removed'] == 1) { $title = "Oublié"; } else { $title = $answ['title']; }
+                ?>
+                <tr>
+                  <td>Date de réponse : <?= $date_?></td>
+                </tr>
+                <tr>
+                  <td>Par : <span class="name<?=$answ['rank'],$tech,$pionier?>"><?= $title , ' ' , $answ['name']?></span></td>
+                </tr>
+                <tr>
+                  <td>Réponse :
+                  <p><?= $respond?></p>
+                  </td>
+                </tr>
+                <?php } ?>
+              </tbody>
+            </table>
+          </form>
          <?php
           }
       }
