@@ -65,7 +65,7 @@
           $report = preg_replace('#\n#', '<br />', $line['text']);
           switch ($line['resolve'])
           {
-            case 0: $state = "loader.gif"; $desc = "Problème encore en attente de résolution."; break;
+            default: $state = "loader.gif"; $desc = "Problème encore en attente de résolution."; break;
             case 1: $state = "tick.png"; $desc = "Problème résolu !"; break;
             case 2: $state = "unresolved.gif"; $desc = "Problème classé sans suite."; break;
             case 3: $state = "impossible.gif"; $desc = "Problème insoluble."; break;
