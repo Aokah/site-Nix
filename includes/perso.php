@@ -509,7 +509,7 @@
 						
 						$update = $db->prepare("INSERT INTO avert VALUES ('',?,?,NOW(),?)");
 						$update->execute(array($_SESSION['id'], $perso, $avert));
-						$message = $db->prepare("INSERT INTO private_message VALUES ('',?,?,NOW(),92,?,1)");
+						$message = $db->prepare("INSERT INTO private_message VALUES ('',?,?,NOW(),92,?,1,0)");
 						$message->execute(array('Avertissement', $pm, $perso));
 						?>
 						<p>Avertissement enregistré avec succès.</p>
