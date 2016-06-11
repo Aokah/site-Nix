@@ -25,7 +25,7 @@
           <option value="7">Bug d'affichage site</option>
           <option value="8">Autres . . .</option>
         </select>
-        <textarea placeholder="Notez ici le problème que vous avez rencontré . . ." name="report" style="width: 500px; height: 200px;" align="center"></textarea>
+        <div align="center"><textarea placeholder="Notez ici le problème que vous avez rencontré . . ." name="report" style="width: 500px; height: 200px;"></textarea></div>
         <br /><input type="submit" name="send" value="Envoyer" />
       </form>
     <?php
