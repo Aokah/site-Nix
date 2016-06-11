@@ -11,6 +11,15 @@
     #}
     #else
     #{
+    if (isset($_POST['send']))
+    {
+      $report = htmlspecialchars($_POST['report']);
+      $insert = $db->prepare('INSERT INTO report VALUES('',?,?,?,1,0)'); $insert->execute(array($_POST['type'], $report, $_SESSION['id']));
+      echo '<p>Votre rapport a bien été enregistré.<p>
+      <p><a href="index?p=report">Cliquez ici</a> pour retourner à la page précédente.</p>'
+    }
+    else
+    {
     ?>
       <p>Ici vous pourrez exposer vos problèmes / bugs trouvés sur le site ou le serveur afin que le Staff puisse le régler quand il le verra.</p>
       <p>Tout abus ou usage malhonnête de cette page pourra amener à des sanctions.</p>
@@ -29,6 +38,7 @@
         <br /><input type="submit" name="send" value="Envoyer" />
       </form>
     <?php
+    }
     #}
   }
   else
