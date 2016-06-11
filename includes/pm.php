@@ -113,14 +113,15 @@ if ($_SESSION['connected'])
     
     while ($line = $select->fetch())
     {
+     $presel = $db->prepare('SELECT*  FROM members WHERE id = ?'); $presel->execute(array($line['from_id'])); $presel = $presel->fecth();
      $unread = ($line['unread'] == 1) ? '<span style="color:red">[!]</span>' : '';
-     if ($line['ban'] == 1) { $title = "Banni"; } elseif ($line['removed'] == 1) { $title = "Oublié"; } else { $title = $line['title']; }
+     if ($presel['ban'] == 1) { $title = "Banni"; } elseif ($presel['removed'] == 1) { $title = "Oublié"; } else { $title = $presel['title']; }
      $date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['date_send']);
     ?>
     <tr>
      <td width="5%" style="text-align:right; border-bottom:#555555 solid 1px;border-left:#555555 solid 1px;"><?= $unread?></td>
      <td style="text-align:left;border-right:#555555 solid 1px;border-bottom:#555555 solid 1px;"><a href="index?p=pm&pm=<?= $line['pm_id']?>"><?= $line['subject']?></a></td>
-     <td style="text-align:left;border-right:#555555 solid 1px;border-bottom:#555555 solid 1px;"><a href="index?p=perso&perso=<?= $line['id']?>"><?= $title, ' ', $line['name']?></a></td>
+     <td style="text-align:left;border-right:#555555 solid 1px;border-bottom:#555555 solid 1px;"><a href="index?p=perso&perso=<?= $presel['id']?>"><?= $title, ' ', $presel['name']?></a></td>
      <td style="text-align:left;border-right:#555555 solid 1px;border-bottom:#555555 solid 1px;"><?=$date?></td>
      <td style="text-align:center;border-right:#555555 solid 1px;border-bottom:#555555 solid 1px;"> <span style="color:red">[x]</span></td>
     </tr>
