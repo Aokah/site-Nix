@@ -1,7 +1,8 @@
 <?php function perso ()
 {
 	global $db, $_POST, $_GET, $_SESSION;
-
+if ($_SESSION['connected'])
+{
 	include('includes/interface/JSONapi.php');
 
 
@@ -2321,5 +2322,10 @@
 	}
 	}
 	}
+}
+else
+{
+	echo '<p>Veuillez vons connecter pour accéder à cette page</p>';
+}
 }
 ?>
