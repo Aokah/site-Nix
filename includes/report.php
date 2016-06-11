@@ -98,7 +98,7 @@
               <td>Date de réponse : <?= $date_?></td>
             </tr>
             <tr>
-              <td>Par : <span class="<?=$answ['rank'],$tech,$pionier?>"><?= $title , ' ' , $answ['name']?></span></td>
+              <td>Par : <span class="name<?=$answ['rank'],$tech,$pionier?>"><?= $title , ' ' , $answ['name']?></span></td>
             </tr>
             <tr>
               <td>Réponse :
