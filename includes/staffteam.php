@@ -79,11 +79,6 @@
 	
 	<th class="member_top">Encadrants</th>
 	<tr class="memberbg_4">
-	<td><img src="pics/staff_team/Artemis_Modo_1.png" alt="Encadrant Artemis" /></td>
-	<td><span style="color:blue">Artemis</span><br />France<br /></td>
-	<td></td>
-	</tr>
-	<tr class="memberbg_4">
 		<td><img src="pics/staff_team/Chugo_Enca_1.png" alt="Encadrant Chugo" /></td>
 		<td><span style="color:blue;">Chugo</span><br />25 ans<br />France</td>
 		<td>"Je préfére rire de tout que pleurer  pour un rien. Aprés tout, tout arrive a temps a qui sait attendre."</td>
@@ -148,6 +143,11 @@
 	<td><img src="pics/staff_team/Vahlm_MJ_1.png" alt="Dignitaire Alyssa" /></td>
 	<td><span style="color:green">Alyssa</span><br />Suisse</td>
 	<td> </td>
+	</tr>
+	<tr class="memberbg_4">
+	<td><img src="pics/staff_team/Artemis_Modo_1.png" alt="Encadrant Artemis" /></td>
+	<td><span style="color:green">Artemis</span><br />France<br /></td>
+	<td></td>
 	</tr>
 	<tr class="memberbg_4">
 	<td><img src="pics/staff_team/Eirik_Modo_1.png" alt="Dignitaire Eirik" /></td>
