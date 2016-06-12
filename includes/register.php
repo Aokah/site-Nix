@@ -47,6 +47,10 @@
 						VALUES (?, ?, CURDATE(), ?, 'Vagabond', ?, NOW())");
 			$insert->execute(array(htmlspecialchars($_POST['name']), password_hash($_POST['pwd1'], PASSWORD_DEFAULT), htmlspecialchars($_POST['email1']), 
 			  $activateKey));
+			  $presel = $db->prepare('SELECT id FROM members WHERE name = ? AND registration_daite = NOW()'); $presel->execute(array($_POST['name']);
+			  $presel = $presel->fetch();
+			  $caract = $db->prepare("INSERT INTO caract VALUES('',? , 100,0,0,0,0,0,0 ");
+			  $caract->execute(array($presel['id'])); 
 
 			$subject = 'Bienvenue sur Nix ' . $_POST['name'] . '.';
 
