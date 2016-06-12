@@ -25,7 +25,7 @@
 				<th width="14%">Savoir-faire</th>
 				<th width="14%">Chance</th>
 			</tr>
-			<tr class="name1" style="text-align:center;'">
+			<tr class="name1" style="text-align:center;">
 				<td><?=$line['puissance']?></td>
 				<td><?=$line['intelligeance']?></td>
 				<td><?=$line['charisme']?></td>
@@ -34,7 +34,7 @@
 				<td><?=$line['savoirfaire']?></td>
 				<td><?=$line['chance']?></td>
 			</tr>
-			<tr>
+			<tr style="text-align:center;">
 				<td colspan="7">Ce tableau statistique n'est là qu'à but indicatif, le plus important est la manière dont vous jouez votre personnage !</td>
 			</tr>
 		</tbody>
