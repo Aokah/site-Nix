@@ -1,5 +1,5 @@
 <?php function members ()
-{
+
 	global $db, $_SESSION, $_GET;
 	
 	if ($_SESSION['rank'] >= 7) { $ranklimit = 11; } elseif ($_SESSION['rank'] == 6) { $ranklimit = 9;}
