@@ -166,7 +166,7 @@
 	</tr>
 	<tr class="memberbg_4">
 	<td><img src="pics/staff_team/Mysterios_Modo_2.png" alt="Modérateur Odium" /></td>
-	<td><span style="color:green">Odium</span><br />12 ans<br />Bretagne, France<br />"Le jeune"</td>
+	<td><span style="color:green">Odium</span><br />13 ans<br />Bretagne, France<br />"Le jeune"</td>
 	<td>"Si tu poses une question, tu passes pour un abruti le temps qu'on te réponde. Mais si tu poses pas la question, tu reste un abruti toute ta vie."</td>
 	</tr>
 	<tr class="memberbg_4">
