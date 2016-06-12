@@ -17,15 +17,15 @@
 				<th colspan="7">Points non encore distribués : <?=$line['points']?></th>
 			</tr>
 			<tr style="background-color:#BBBBBB;">
-				<th>Force</th>
-				<th>Intelligence</th>
-				<th>Charisme</th>
-				<th>Agilité</th>
-				<th>Observation</th>
-				<th>Savoir-faire</th>
-				<th>Chance</th>
+				<th width="14%">Force</th>
+				<th width="14%">Intelligence</th>
+				<th width="14%">Charisme</th>
+				<th width="14%">Agilité</th>
+				<th width="14%">Observation</th>
+				<th width="14%">Savoir-faire</th>
+				<th width="14%">Chance</th>
 			</tr>
-			<tr class="name1">
+			<tr class="name1" style="text-align:center;'">
 				<td><?=$line['puissance']?></td>
 				<td><?=$line['intelligence']?></td>
 				<td><?=$line['charisme']?></td>
