@@ -63,7 +63,7 @@
 			$page->execute(array($linerank));
 			?>
 			<tr class="member_top">
-				<th><?php echo $linename; ?></th>
+				<th colspan="3"><?php echo $linename; ?></th>
 				<th>Titre</th>
 				<th>BG</th>
 				<th>Spé'</th>
@@ -161,8 +161,14 @@
 			if ($active->fetch()) { $act = 'on.PNG'; $act_title = "Activité Récente"; }else { $act = "off.png"; $act_title = "Aucune activité depuis 3 semaines" ;}
 			?>
 			<tr class="memberbg_<?php echo $linerank;?>" valign="middle">
+				<td>
+					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> 
+				</td>
+				<td>
+					<img src="pics/avatar/miniskin_<?php echo $img;?>.png" alt="" width="30" /> 
+				</td>
 				<td width="23%">
-					<img src="pics/rank<?php echo $imgrank; ?>.png" alt="" width="30" /> <img src="pics/avatar/miniskin_<?php echo $img;?>.png" alt="" width="30" /> <a title="Nom Minecraft : <?= $line['Minecraft_Account']?>" href="index?p=perso&perso=<?= $line['id']?>"><?= $line['name']?></a>
+					<a title="Nom Minecraft : <?= $line['Minecraft_Account']?>" href="index?p=perso&perso=<?= $line['id']?>"><?= $line['name']?></a>
 				</td>
 				<td>
 					<?php echo $title; ?> <?php echo $pnj;?> <?php echo $dignitaire; ?>
