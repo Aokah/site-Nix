@@ -27,7 +27,7 @@
 			</tr>
 			<tr class="name1" style="text-align:center;'">
 				<td><?=$line['puissance']?></td>
-				<td><?=$line['intelligence']?></td>
+				<td><?=$line['intelligeance']?></td>
 				<td><?=$line['charisme']?></td>
 				<td><?=$line['agilite']?></td>
 				<td><?=$line['observation']?></td>
