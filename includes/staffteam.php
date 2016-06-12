@@ -64,7 +64,7 @@
 	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Kindra_Modo_1.png" alt="Modérateur Kindra" /></td>
 	<td><span style="color:green">Kindra</span><br />16 ans<br />Lyon, France<br />"El loco"</td>
-	<td>"Si c'est toi qui paye, sa roule pour moi !"</td>
+	<td>"Si c'est toi qui paye, ça roule pour moi !"</td>
 	</tr>
 	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Niyo_Modo_1.png" alt="Modérateur Niyo" /></td>
