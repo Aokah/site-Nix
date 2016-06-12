@@ -8,7 +8,7 @@
 	while ($line = $select->fetch())
 	{
 	?>
-	<table cellspacing="0" cellapdding="10" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
+	<table cellspacing="0" cellpdding="10" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
 		<tbody>
 			<tr style="background-color:#BBBBBB;">
 				<th colspan="7">Points de compétence physiques</th>
