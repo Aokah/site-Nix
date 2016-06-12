@@ -44,14 +44,14 @@
 	<th class="member_top">Maîtres du Jeu</th>
 
 	<tr class="memberbg_6">
-	<td><img src="pics/staff_team/Draug_MJ_1.png" alt="Maître Draug" /></td>
-	<td><span style="color:red">Draug</span><br />16 ans<br />"L'informé"</td>
-	<td>"Mangez du lard."</td>
-	</tr>
-	<tr class="memberbg_6">
 	<td><img src="pics/staff_team/Kuda_Modo_1.png" alt="Maitresse Kuda" /></td>
 	<td><span style="color:red">Kuda</span><br />16 ans<br />Neuchâtel, Suisse<br />"Grammar Nazie"</td>
 	<td>"Si ce que tu as à dire n'est pas plus beau que le silence, tait toi."</td>
+	</tr>
+	<tr class="memberbg_6">
+	<td><img src="pics/staff_team/Draug_MJ_1.png" alt="Maître Draug" /></td>
+	<td><span style="color:red">Lars</span><br />16 ans<br />"L'informé"</td>
+	<td>"Mangez du lard."</td>
 	</tr>
 	
 	<th class="member_top">Modérateurs</th>
