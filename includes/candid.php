@@ -302,7 +302,7 @@
       }
       }
     }
-    else
+    elseif ($_SESSION['rank'] > 0)
     {
       $verif = $db->prepare('SELECT id, accepted FROM members WHERE id = ?'); $verif->execute(array($_SESSION['id'])); $line_ = $verif->fetch();
       if ($line_['accepted'] == 0)
@@ -383,6 +383,10 @@
       {
         echo '<p>Vous avez déjà passé votre candidature. Inutile donc de revenir sur cette page.</p>';
       }
+    }
+    else
+    {
+    	echo '<p>Vous devez d\'abbord valider votre adresse mail pour candidater.</p>';
     }
   }
   else
