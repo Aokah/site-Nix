@@ -46,7 +46,9 @@
 				</td>
 			</tr>
 			<tr>
-				<div style="border-bottom:3px dashed black;margin-bottom:1%;margin-top:1%;"></div>
+				<td>
+					<div style="border-bottom:3px dashed black;margin-bottom:1%;margin-top:1%;"></div>
+				</td>
 			</tr>
 			<tr>
 				<th colspan="2">Icônes : Les éléments magiques</th>
@@ -76,9 +78,10 @@
 				</td>
 			</tr>
 			<tr>
-				<div style="border-bottom:3px dashed black;margin-bottom:1%;margin-top:1%;"></div>
+				<td>
+					<div style="border-bottom:3px dashed black;margin-bottom:1%;margin-top:1%;"></div>
+				</td>
 			</tr>
-			<tr>
 				<th colspan="2">BackGround : Les Hybrides</th>
 			</tr>
 			<tr>
@@ -91,7 +94,9 @@
 				</td>
 			</tr>
 			<tr>
-				<div style="border-bottom:3px dashed black;margin-bottom:1%;margin-top:1%;"></div>
+				<td>
+					<div style="border-bottom:3px dashed black;margin-bottom:1%;margin-top:1%;"></div>
+				</td>
 			</tr>
 			<tr>
 				<th colspan="2">BackGround : Les Esprits</th>
