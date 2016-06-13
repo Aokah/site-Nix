@@ -144,7 +144,7 @@
           <?php
           $select = $db->query('SELECT m.id m_id, m.technician, m.rank, m.title, m.name, m.pionier, m.removed, m.ban, r.id, r.reporter_id,
           r.resolve_date, r.resolver_id, r.text, r.date, r.type, r.respond, r.resolve FROM report r
-          RIGHT JOIN members m ON r.reporter_id = m.id WHERE resolve >= 0 
+          RIGHT JOIN members m ON r.reporter_id = m.id WHERE resolve > 0 
           ORDER BY resolve_date DESC, id DESC');
           while ($line = $select->fetch())
           {
