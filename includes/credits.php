@@ -12,23 +12,91 @@
 			<!--<tr>
 				<th colspan="2">Event : Les Souvenirs d'Eralion</th>
 			</tr>
-			<td><ul>
-				<li class="name1" style="color:white">Alyssa</li>
-				<li class="name1" style="color:white">Chugo</li>
-				<li class="name1" style="color:white">Dragoniya</li>
-				<li class="name1" style="color:white">Herborus</li>
-				<li class="name1" style="color:white">Kindra</li>
-				<li class="name1" style="color:white">Kuda</li>
-				<li class="name1" style="color:white">Niyo</li>
-				<li class="name1" style="color:white">Shakha</li>
-				<li class="name1" style="color:white">Shawn</li>
-				<li class="name1" style="color:white">Shimmel</li>
-				<li class="name1" style="color:white">Shonrei</li>
-				<li class="name1" style="color:white">Zimon</li>
-			</ul></td>
-			<td>
-				<img src="#" alt="" width="100%"/>
-			</td>-->
+			<tr>
+				<td><ul>
+					<li class="name1" style="color:white">Alyssa</li>
+					<li class="name1" style="color:white">Chugo</li>
+					<li class="name1" style="color:white">Dragoniya</li>
+					<li class="name1" style="color:white">Herborus</li>
+					<li class="name1" style="color:white">Kindra</li>
+					<li class="name1" style="color:white">Kuda</li>
+					<li class="name1" style="color:white">Niyo</li>
+					<li class="name1" style="color:white">Shakha</li>
+					<li class="name1" style="color:white">Shawn</li>
+					<li class="name1" style="color:white">Shimmel</li>
+					<li class="name1" style="color:white">Shonrei</li>
+					<li class="name1" style="color:white">Zimon</li>
+				</ul></td>
+				<td>
+					<img src="#" alt="" width="100%"/>
+				</td>
+			</tr>-->
+			<tr style="background-color:#BBBBBB;">
+				<th colspan="2">Remerciements de Graphisme</th>
+			</tr>
+			<tr>
+				<th colspan="2">Icônes : Les Grades</th>
+			</tr>
+			<tr>
+				<td><ul>
+					<li class="name1" style="color:white">Einarr</li>
+				</ul></td>
+				<td>
+					<img src="#" alt="" width="100%"/>
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2">Icônes : Les éléments magiques</th>
+			</tr>
+			<tr>
+				<td><ul>
+					<li class="name1" style="color:white">Grim</li>
+					<li class="name1" style="color:white">Kuda</li>
+				</ul></td>
+				<td>
+					<img src="#" alt="" width="100%"/>
+				</td>
+			</tr>
+			<tr style="background-color:#BBBBBB;">
+				<th colspan="2">Remerciements d'écriture</th>
+			</tr>
+			<tr>
+				<th colspan="2">BackGround : La Magie</th>
+			</tr>
+			<tr>
+				<td><ul>
+					<li class="name1" style="color:white">Nikho</li>
+					<li class="name1" style="color:white">Shawn</li>
+				</ul></td>
+				<td>
+					<img src="#" alt="" width="100%"/>
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2">BackGround : Les Hybrides</th>
+			</tr>
+			<tr>
+				<td><ul>
+					<li class="name1" style="color:white">Ange</li>
+					<li class="name1" style="color:white">Dragoniya</li>
+				</ul></td>
+				<td>
+					<img src="#" alt="" width="100%"/>
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2">BackGround : Les Esprits</th>
+			</tr>
+			<tr>
+				<td><ul>
+					<li class="name1" style="color:white">Dragoniya</li>
+					<li class="name1" style="color:white">Nikho</li>
+					<li class="name1" style="color:white">Shawn</li>
+				</ul></td>
+				<td>
+					<img src="#" alt="" width="100%"/>
+				</td>
+			</tr>
 		</tbody>
 	</table>
 <?php
