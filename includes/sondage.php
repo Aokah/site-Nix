@@ -437,11 +437,11 @@
 				$verify->execute(array($line1['s_id'], $_SESSION['id']));
 				$read = ($verify->fetch()) ? 'unread' : 'read';
 				?>
-				<tr>
-					<td class="<?= $read?>">
+				<tr class="<?= $read?>">
+					<td>
 					<a href="index?p=sondage&s=<?= $line1['s_id'] ?>"> <?= $verr,  $line1['titre']?></a> <?php if ($_SESSION['rank'] > 4) { if ($line1['verr'] == 0) { ?><a class="name7" href="index?p=sondage&lock=<?= $line1['s_id']?>">[Verr]</a><?php } else { ?><a class="name5" href="index?p=sondage&unlock=<?= $line1['s_id']?>">[Déverr]</a><?php } }?>
 					</td>
-					<td>
+					<td class="<?= $read?>">
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line1['m.id']?>.png" alt="" />
 					<a class="name<?= $line1['rank']?>" href="index?p=perso&perso=<?= $line1['m.id']?>"> <?= $line1['title']?> <?= $line1['name']?></a>
 					<br>
@@ -478,11 +478,11 @@
 				$verify->execute(array($line2['s_id'], $_SESSION['id']));
 				$read = ($verify->fetch()) ? 'unread' : 'read';
 				?>
-				<tr>
-					<td class="<?= $read?>">
+				<tr class="<?= $read?>">
+					<td>
 					<a href="index?p=sondage&s=<?= $line2['s_id'] ?>"> <?= $verr,  $line2['titre']?></a> <?php if ($_SESSION['rank'] > 4) { if ($line2['verr'] == 0) { ?><a class="name7" href="index?p=sondage&lock=<?= $line2['s_id']?>">[Verr]</a><?php } else { ?><a class="name5" href="index?p=sondage&unlock=<?= $line2['s_id']?>">[Déverr]</a><?php } }?>
 					</td>
-					<td>
+					<td class="<?= $read?>">
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line2['m.id']?>.png" alt="" />
 					<a class="name<?= $line2['rank']?>" href="index?p=perso&perso=<?= $line2['m.id']?>"> <?= $line2['title']?> <?= $line2['name']?></a>
 					<br>
@@ -519,11 +519,11 @@
 				$verify->execute(array($line3['s_id'], $_SESSION['id']));
 				$read = ($verify->fetch()) ? 'unread' : 'read';
 				?>
-				<tr>
-					<td class="<?= $read?>">
+				<tr class="<?= $read?>">
+					<td>
 					<a href="index?p=sondage&s=<?= $line3['s_id'] ?>"> <?= $verr,  $line3['titre']?></a> <?php if ($_SESSION['rank'] > 4) { if ($line3['verr'] == 0) { ?><a class="name7" href="index?p=sondage&lock=<?= $line3['s_id']?>">[Verr]</a><?php } else { ?><a class="name5" href="index?p=sondage&unlock=<?= $line3['s_id']?>">[Déverr]</a><?php } }?>
 					</td>
-					<td>
+					<td class="<?= $read?>">
 					<img width="20px" src="/pics/avatar/miniskin_<?= $line3['m.id']?>.png" alt="" />
 					<a class="name<?= $line3['rank']?>" href="index?p=perso&perso=<?= $line3['m.id']?>"> <?= $line3['title']?> <?= $line3['name']?></a><br>
 					<?php echo $date; ?>
