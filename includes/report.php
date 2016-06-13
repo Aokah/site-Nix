@@ -142,10 +142,10 @@
          <h3>Liste des Problèmes enregistrés</h3>
          <p>Ici est listé les problèmes listés par date d'envoie et par statut !</p>
           <?php
-          $select = $db->prepare('SELECT m.id m_id, m.technician, m.rank, m.title, m.name, m.pionier, m.removed, m.ban, r.id, r.reporter_id
+          $select = $db->query('SELECT m.id m_id, m.technician, m.rank, m.title, m.name, m.pionier, m.removed, m.ban, r.id, r.reporter_id
           r.resolve_date, r.resolver_id, r.text, r.date, r.type, r.respond, r.resolve FROM report r
           RIGHT JOIN members m ON m.id = r.reporter_id
-          ORDER BY resolve_date DESC, id DESC'); $select->execute(array($_SESSION['id']));
+          ORDER BY resolve_date DESC, id DESC');
           while ($line = $select->fetch())
           {
             switch ($line['type'])
