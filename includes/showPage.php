@@ -72,6 +72,7 @@
 							case 'report': 				{	include('includes/report.php'); 					report(); 				break; }
 							case 'register':			{	include('includes/register.php'); 				register(); 			break; }
 							case 'a': 				{ 	include('includes/activate.php'); 				activate(); 			break; }
+							case 'credits': 			{ 	include('includes/credits.php'); 				credits(); 				break; }
 							case 'members': 			{ 	include('includes/members.php'); 				members(); 				break; }
 							case 'chatbox': 			{ 	include('includes/chatbox/chatboxPage.php'); 	chatboxPage(); 			break; }
 							case 'chatboxmj': 			{ 	if ($_SESSION['rank'] >= rank_cbm) { 	include('includes/chatbox_mj/chatboxPage.php');
