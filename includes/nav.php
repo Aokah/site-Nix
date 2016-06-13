@@ -141,6 +141,12 @@
 									</div>
 								</a>
 								
+								<a href="index?p=credits" class="link">
+									<div>
+										Crédits Divers
+									</div>
+								</a>
+								
 								<a href="index?p=chatbox" class="link">
 									<div>
 										Dialogue en Direct
