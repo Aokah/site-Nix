@@ -281,22 +281,19 @@
 					</ul>
 			        </td>
 			       	<td width="<?= $width,'%'?>">
+			       		<?php
+			       		$report = $db->query('SELECT COUNT(*) AS report FROM report WHERE resolve = 0'); $report = $report->fetch(); $report = $report['report'];
+			       		?>
 					<ul class="menu1">
 						<li>
-							Mon Compte <?php if ($_SESSION['alertNewMsgs']) { echo '<span style="color:red;">[!]</span>';}?>
+							Mon Compte <?php if ($_SESSION['alertNewMsgs'] OR $report > 0 AND $_SESSION['rank'] > 4) { echo '<span style="color:red;">[!]</span>';}?>
 							<div class="menu2">
 								<a href="index?p=perso" class="link">
 									<div>
 										Mon Personnage
 									</div>
 								</a>
-								<?php if ($_SESSION['rank'] > 4) {
-									$report = $db->query('SELECT COUNT(*) AS report FROM report WHERE resolve = 0'); $report = $report->fetch(); $report = $report['$report'];
-								if ($report > 0)
-								{
-								echo '<span style="color:red;">[!]</span>';
-								}
-								}?>
+								
 								<a href="index?p=report" class="link">
 									<div>
 										<?php
