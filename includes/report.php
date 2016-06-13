@@ -28,8 +28,8 @@
         elseif ($line_['removed'] == 1) { $title = "Oublié"; } else { $title = $line_['title']; }
                     
         $respond = htmlspecialchars($_POST['respond']);
-        $update = $db->prepare('UPDATE report SET resolve = ?, resolver_id = ?, respond = ?, resolve_date = NOW()');
-        $update->execute(array($_POST['state'], $_SESSION['id'], $respond));
+        $update = $db->prepare('UPDATE report SET resolve = ?, resolver_id = ?, respond = ?, resolve_date = NOW() WHERE id = ?');
+        $update->execute(array($_POST['state'], $_SESSION['id'], $respond, $id));
         if ($_POST['state'] != 0)
         {
           if ($_POST['state'] == 1)
@@ -144,7 +144,7 @@
           <?php
           $select = $db->query('SELECT m.id m_id, m.technician, m.rank, m.title, m.name, m.pionier, m.removed, m.ban, r.id, r.reporter_id,
           r.resolve_date, r.resolver_id, r.text, r.date, r.type, r.respond, r.resolve FROM report r
-          RIGHT JOIN members m ON m.id = r.reporter_id
+          RIGHT JOIN members m ON r.reporter_id = m.id
           ORDER BY resolve_date DESC, id DESC');
           while ($line = $select->fetch())
           {
