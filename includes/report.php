@@ -210,7 +210,7 @@
               <?php } ?>
             </tbody>
           </table>
-          <div style="border-bottom:3px dashed black;margin:1%;"></div>
+          <div style="border-bottom:3px dashed black;margin-bottom:1%;margin-top:1%;"></div>
          <?php
           }
           ?>
