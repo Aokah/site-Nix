@@ -111,6 +111,22 @@
 					<img src="#" alt="" width="100%"/>
 				</td>
 			</tr>
+			<tr>
+				<td>
+					<div style="border-bottom:3px dashed black;margin-bottom:1%;margin-top:1%;"></div>
+				</td>
+			</tr>
+				<th colspan="2">BackGround : Les Races</th>
+			</tr>
+			<tr>
+				<td><ul>
+					<li class="name1" style="color:white">Cassandra</li>
+					<li class="name1" style="color:white">Shawn</li>
+				</ul></td>
+				<td>
+					<img src="#" alt="" width="100%"/>
+				</td>
+			</tr>
 		</tbody>
 	</table>
 <?php
