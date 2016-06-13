@@ -188,7 +188,7 @@
                 <td>Problème :
                 <p><?= $report?></p></td>
               </tr>
-              <?php if ($line['resolve'] == 1)
+              <?php if ($line['resolve'] >= 1)
               {
                 $sel = $db->prepare('SELECT id, name, rank, technician, pionier, removed, ban, title FROM members WHERE id = ?');
                 $sel->execute(array($line['resolver_id'])); $answ = $sel->fetch();
@@ -280,7 +280,7 @@
               <td>Problème :
               <p><?= $report?></p></td>
             </tr>
-            <?php if ($line['resolve'] == 1)
+            <?php if ($line['resolve'] >= 1)
             {
               $sel = $db->prepare('SELECT id, name, rank, technician, pionier, removed, ban, title FROM members WHERE id = ?');
               $sel->execute(array($line['resolver_id'])); $answ = $sel->fetch();
