@@ -142,12 +142,11 @@
          <h3>Liste des Problèmes enregistrés</h3>
          <p>Ici est listé les problèmes listés par date d'envoie et par statut !</p>
           <?php
-          $select = $db->query('SELECT m.id m_id, m.technician, m.rank, m.title, m.name, m.pionier, m.removed, m.ban, r.id, r.reporter_id,
-          r.resolve_date, r.resolver_id, r.text, r.date, r.type, r.respond, r.resolve FROM report r
-          RIGHT JOIN members m ON r.reporter_id = m.id WHERE resolve > 0 
-          ORDER BY resolve_date DESC, id DESC');
+          $select = $db->query('SELECT * FROM report ORDER BY resolve_date DESC, id DESC');
           while ($line = $select->fetch())
           {
+          	$select_ = $db->prepare('SELECT * FROM members WHERE id = ?'); $select_->execute(array($line['reporter_id']));
+          	$line2 = $select_->fetch();
             switch ($line['type'])
             {
               case 1: $type = "Bug rencontré sur le serveur"; break; case 2: $type = "Grief repéré sur le Serveur"; break; case 3: $type = "RPQ surpris sur le serveur"; break;
@@ -166,9 +165,9 @@
               case 2: $state = "unresolved.gif"; $desc = "Problème classé sans suite."; break;
               case 3: $state = "impossible.gif"; $desc = "Problème insoluble."; break;
             }
-            $tech = ($line['technician'] == 1)? '-T' : '';
-                $pionier = ($line['pionier'] == 1)? '-P' : '';
-                if ($line['pionier'] == 1) { $title ="Pionier"; } elseif ($line['ban'] == 1) { $title = "Banni"; } elseif ($line['removed'] == 1) { $title = "Oublié"; } else { $title = $line['title']; }
+            $tech = ($line2['technician'] == 1)? '-T' : '';
+                $pionier = ($line2['pionier'] == 1)? '-P' : '';
+                if ($line2['pionier'] == 1) { $title ="Pionier"; } elseif ($line2['ban'] == 1) { $title = "Banni"; } elseif ($line2['removed'] == 1) { $title = "Oublié"; } else { $title = $line2['title']; }
           ?>
           <a href="index?p=report&answer=<?= $line['id']?>" class="button">Etudier le problème</a>
           <table cellspacing="0" cellpadding="5" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
@@ -183,7 +182,7 @@
                 <td>Date d'envoi : <?= $date?></td>
               </tr>
               <tr>
-                <td>Envoyé par : <span class="name<?=$line['rank'],$tech,$pionier?>"><?= $title , ' ' , $line['name']?></span></td>
+                <td>Envoyé par : <span class="name<?=$line2['rank'],$tech,$pionier?>"><?= $title , ' ' , $line2['name']?></span></td>
               </tr>
               <tr>
                 <td>Problème :
