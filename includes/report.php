@@ -208,11 +208,9 @@
                 </td>
               </tr>
               <?php } ?>
-              <tr>
-                <td style="border-bottom:3px dashed black;"><p></p></td>
-              </tr>
             </tbody>
           </table>
+          <div style="border-bottom:3px dashed black;"></div>
          <?php
           }
           ?>
