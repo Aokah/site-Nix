@@ -49,7 +49,7 @@
 			  $activateKey));
 			  $presel = $db->prepare('SELECT id FROM members WHERE name = ? AND registration_daite = NOW()'); $presel->execute(array($_POST['name']));
 			  $presel = $presel->fetch();
-			  $caract = $db->prepare("INSERT INTO caract VALUES('',? , 100");
+			  $caract = $db->prepare("INSERT INTO caract VALUES('',? ,100)");
 			  $caract->execute(array($presel['id'])); 
 
 			$subject = 'Bienvenue sur Nix ' . $_POST['name'] . '.';
