@@ -73,14 +73,14 @@
 	</tr>
 	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Zimon_Modo_1.png" alt="Modérateur Zimon" /></td>
-	<td><span style="color:green">Zimon</span><br />15 ans<br />Toulouse, France<br />"Le roux"</td>
+	<td><span style="color:green">Zimon</span><br />16 ans<br />Toulouse, France<br />"Le roux"</td>
 	<td>"No pasaran !"</td>
 	</tr>
 	
 	<th class="member_top">Encadrants</th>
 	<tr class="memberbg_4">
 		<td><img src="pics/staff_team/Chugo_Enca_1.png" alt="Encadrant Chugo" /></td>
-		<td><span style="color:blue;">Chugo</span><br />25 ans<br />France</td>
+		<td><span style="color:blue;">Chugo</span><br />26 ans<br />France</td>
 		<td>"Je préfére rire de tout que pleurer  pour un rien. Aprés tout, tout arrive a temps a qui sait attendre."</td>
 	</tr>
 	<tr class="memberbg_4">
@@ -160,13 +160,13 @@
 	<td>"La vérité est la croyance du naïf !"</td>
 	</tr>
 	<tr class="memberbg_4">
-	<td><img src="pics/staff_team/Diablox_Modo_3.png" alt="Modérateur Matsuya" /></td>
+	<td><img src="pics/staff_team/Diablox_Modo_3.png" alt="Dignitaire Matsuya" /></td>
 	<td><span style="color:green">Matsuya</span><br />16 ans<br />France<br />"l'Ours"</td>
 	<td> </td>
 	</tr>
 	<tr class="memberbg_4">
-	<td><img src="pics/staff_team/Mysterios_Modo_2.png" alt="Modérateur Odium" /></td>
-	<td><span style="color:green">Odium</span><br />13 ans<br />Bretagne, France<br />"Le jeune"</td>
+	<td><img src="pics/staff_team/Mysterios_Modo_2.png" alt="Dignitaire Odium" /></td>
+	<td><span style="color:green">Odium</span><br />14 ans<br />Bretagne, France<br />"Le jeune"</td>
 	<td>"Si tu poses une question, tu passes pour un abruti le temps qu'on te réponde. Mais si tu poses pas la question, tu reste un abruti toute ta vie."</td>
 	</tr>
 	<tr class="memberbg_4">
