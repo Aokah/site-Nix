@@ -15,6 +15,7 @@
 		<li>Création du test de détermination magique</li>
 		<li>Finir la "end_page"</li>
 		<li>Finir la "del_page"</li>
+		<li>Créer une page spéciale qui invite à se connecter pour visionner certaines pages.</li>
 		
 	</ul>
 	
