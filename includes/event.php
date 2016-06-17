@@ -28,6 +28,7 @@ global $db, $_SESSION, $_POST, $_GET;
         		if ($line = $select->fetch())
 		        {
       				$text = preg_replace('#\n#', '<br />', $line['content']);
+      				$character = preg_replace('#\n#', '<br />', $line['characters']);
 		        	switch ($line['type'])
 		        	{
 		        		default : $type = "Non encore défini"; break;
@@ -52,8 +53,11 @@ global $db, $_SESSION, $_POST, $_GET;
 		        	<td class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
 		        </tr>
 		        <tr>
-		        	<td colspan="4">
+		        	<td colspan="2">
 		        		<p style="text-align:center;"><?= $text?></p>
+		        	</td>
+		        	<td colspan="2">
+		        		<p style="text-align:center;"><?= $character?></p>
 		        	</td>
 		        </tr>
 		        <?php
@@ -118,8 +122,11 @@ global $db, $_SESSION, $_POST, $_GET;
 					        	<td class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
 					        </tr>
 					        <tr>
-					        	<td colspan="4">
+					        	<td colspan="2">
 					        		<textarea align="center" name="content"><?=$line['content']?></textarea>
+					        	</td>
+					        	<td colspan="2">
+					        		<textarea align="center" name="character"><?=$line['characters']?></textarea>
 					        	</td>
 					        </tr>
 				        	</tbody>
