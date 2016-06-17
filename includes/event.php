@@ -70,9 +70,10 @@ global $db, $_SESSION, $_POST, $_GET;
       		{
       			$content = htmlspecialchars($_POST['content']);
       			$begin = htmlspecialchars($_POST['begin']);
+      			$char = htmlspecialchars($_POST['character']);
       			
-      			$update = $db->prepare('UPDATE events SET content = ?, begin = ?, type = ? WHERE id = ?');
-      			$update->execute(array($content, $begin, $type, $event));
+      			$update = $db->prepare('UPDATE events SET content = ?, begin = ?, type = ?, character = ? WHERE id = ?');
+      			$update->execute(array($content, $begin, $type, $char, $event));
       			echo '<p>Les changement ont bien été effectués.</p>',
       			 '<p><a href="index?p=event&e=', $event,'">Cliquez ici</a> pour retourner à l\'évènement modifié.</p>',
       			 '<p><a href=index?p=event>Cliquez ici</a> pour retourner à la page des évènemnts.</p>';
@@ -104,7 +105,7 @@ global $db, $_SESSION, $_POST, $_GET;
 					        <tr style="text-align:center;">
 					        	<td><a href="index?p=event&e=<?=$line['id']?>"><?=$line['name']?></a></td>
 					        	<td><select name="type">
-					        		<option value="0">-- Option par défaut --</option>
+					        		<option value="<?= $line['type']?>">-- Option par défaut --</option>
 					        		<option value="1">Event Onirique</option>
 					        		<option value="2">Event Panthéon</option>
 					        		<option value="3">Event Catastrophe</option>
@@ -132,6 +133,14 @@ global $db, $_SESSION, $_POST, $_GET;
       	{	
 	      	$event = intval($_GET['addto']);
 	      	$select = $db->prepare('SELECT * FROM events WHERE id = ?'); $select->execute(array($event));
+	      	if (isset($_POST['add']))
+	      	{
+	      		
+	      	}
+	      	else
+	      	{
+	      		
+	      	}
       	}
       else
       {
