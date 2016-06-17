@@ -44,6 +44,11 @@ global $db, $_SESSION, $_POST, $_GET;
 		        	<td><?=$type?></td>
 		        	<td><?=$line['begin']?></td>
 		        </tr>
+		        <tr>
+		        	<td colspan="3">
+		        		<div style="border-bottom:3px dashed black;margin-bottom:1%;margin-top:1%;"></div>
+		        	</td>
+		        </tr>
 		        <?php
     			 }
     			 ?>
