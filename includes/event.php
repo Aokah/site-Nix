@@ -52,6 +52,10 @@ global $db, $_SESSION, $_POST, $_GET;
 		        	<td><?=$line['begin']?></td>
 		        	<td class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
 		        </tr>
+		        <tr style="background-color:#BBBBBB;">
+        			<th colspan="2">Script</th>
+        			<th colspan="2">PNJs connus utilisés</th>
+        		</tr>
 		        <tr>
 		        	<td colspan="2">
 		        		<p style="text-align:center;"><?= $text?></p>
@@ -121,6 +125,10 @@ global $db, $_SESSION, $_POST, $_GET;
 					        	<td><input type="text" name="begin" value="<?=$line['begin']?>" /></td>
 					        	<td class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
 					        </tr>
+					        <tr style="background-color:#BBBBBB;">
+			        			<th colspan="2">Script</th>
+			        			<th colspan="2">PNJs connus utilisés</th>
+			        		</tr>
 					        <tr>
 					        	<td colspan="2">
 					        		<textarea align="center" name="content"><?=$line['content']?></textarea>
