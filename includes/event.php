@@ -65,6 +65,9 @@ global $db, $_SESSION, $_POST, $_GET;
       }
       elseif (isset($_GET['modif']))
       	{
+      		
+      	$event = intval($_GET['modif']);
+      	$select = $db->prepare('SELECT * FROM events WHERE id = ?'); $select->execute(array($event));
       		if ($line = $select->fetch())
       		{
 		?>
@@ -112,8 +115,9 @@ global $db, $_SESSION, $_POST, $_GET;
 		}
       	}
       	elseif (isset($_GET['addto']))
-      	{
-      		
+      	{	
+	      	$event = intval($_GET['addto']);
+	      	$select = $db->prepare('SELECT * FROM events WHERE id = ?'); $select->execute(array($event));
       	}
       else
       {
