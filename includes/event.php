@@ -17,9 +17,9 @@ global $db, $_SESSION, $_POST, $_GET;
       {
         $select = $db->query('SELECT * FROM events ORDER BY name ASC');
         ?>
-        <table cellspacing="0">
+        <table width="100%" cellspacing="0" cellpadding="5" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
         	<tbody>
-        		<tr>
+        		<tr style="background-color:#BBBBBB;">
         			<th>Intitulé</th>
         			<th>Nature</th>
         			<th>Lancement</th>
