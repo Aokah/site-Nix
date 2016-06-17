@@ -76,7 +76,7 @@ global $db, $_SESSION, $_POST, $_GET;
       			$begin = htmlspecialchars($_POST['begin']);
       			$char = htmlspecialchars($_POST['character']);
       			
-      			$update = $db->prepare('UPDATE events SET content = ?, begin = ?, type = ?, character = ? WHERE id = ?');
+      			$update = $db->prepare('UPDATE events SET content = ?, begin = ?, type = ?, characters = ? WHERE id = ?');
       			$update->execute(array($content, $begin, $type, $char, $event));
       			echo '<p>Les changement ont bien été effectués.</p>',
       			 '<p><a href="index?p=event&e=', $event,'">Cliquez ici</a> pour retourner à l\'évènement modifié.</p>',
