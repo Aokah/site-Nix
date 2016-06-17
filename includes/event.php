@@ -66,14 +66,14 @@ global $db, $_SESSION, $_POST, $_GET;
       elseif (isset($_GET['modif']))
       	{
 		$event = intval($_GET['modif']);
-      		if (isset($_POST['vaild']))
+      		if (isset($_POST['valid']))
       		{
       			$content = htmlspecialchars($_POST['content']);
       			$begin = htmlspecialchars($_POST['begin']);
       			
       			$update = $db->prepare('UPDATE events SET content = ?, begin = ?, type = ? WHERE id = ?');
       			$update->execute(array($content, $begin, $type, $event));
-      			echo '<p>LEs changement ont bien été effectués.</p>';
+      			echo '<p>Les changement ont bien été effectués.</p>';
       		}
       		else
       		{
