@@ -9,7 +9,7 @@ global $db, $_SESSION, $_POST, $_GET;
       <h2>Evènements Nix</h2>
       <p>Ici sont écrits en plus amples détails tout ce qui a à savoir sur tel ou tel évènement lié au serveur !</p>
       <?php
-        $select = $db->query('SELECT * FROM event ORDER BY name ASC');
+        $select = $db->query('SELECT * FROM events ORDER BY name ASC');
         ?>
         <table cellspacing="0">
         	<tbody>
