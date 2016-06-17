@@ -14,7 +14,56 @@ global $db, $_SESSION, $_POST, $_GET;
       	$event = intval($_GET['e']);
       	$select = $db->prepare('SELECT * FROM events WHERE id = ?'); $select->execute(array($event));
       	
-      	if (isset($_GET['modif']))
+      	?>
+      	<p><a href="index?p=event&modif=<?= $event?>" class="button">Modifier l'évènement.</a> <a href="index?p=event&addto=<?= $event?>" class="button">Ajouter un rapport à l'évènement.</a></p>
+      	<table width="100%" cellspacing="0" cellpadding="5" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
+        	<tbody>
+        		<tr style="background-color:#BBBBBB;">
+        			<th>Intitulé</th>
+        			<th>Nature</th>
+        			<th>Lancement</th>
+        			<th>Lanceur</th>
+        		</tr>
+        		<?php
+        		if ($line = $select->fetch())
+		        {
+      				$text = preg_replace('#\n#', '<br />', $line['content']);
+		        	switch ($line['type'])
+		        	{
+		        		default : $type = "Non encore défini"; break;
+		        		case 1 : $type = "Event Onirique"; break;
+		        		case 2 : $type = "Event Panthéon"; break;
+		        		case 3 : $type = "Event Catastrophe"; break;
+		        		case 4 : $type = "Event Magie" ; break;
+		        		case 5 : $type = "Event Social"; break;
+		        		case 6 : $type = "Event Donjon"; break;
+		        		case 7 : $type = "Event Expédition"; break;
+		        	}
+		        	$select_ = $db->prepare('SELECT * FROM members WHERE id = ?'); $select_->execute(array($line['user_id']));
+		        	$line_ = $select_->fetch();
+		        	if ($line_['pionier'] == 1) { $title ="Pionier"; } elseif ($line_['ban'] == 1) { $title = "Banni"; } 
+		        	elseif ($line_['remove'] == 1) { $title = "Oublié"; } else { $title = $line_['title']; }
+		        	if ($line_['pionier'] == 1) { $pionier = "-P"; } if ($line_['technician'] == 1) { $tech = "-T"; }
+		        ?>
+		        <tr style="text-align:center;">
+		        	<td><?=$line['name']?></td>
+		        	<td><?=$type?></td>
+		        	<td><?=$line['begin']?></td>
+		        	<td class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
+		        </tr>
+		        <tr>
+		        	<td colspan="4">
+		        		<p style="text-align:center;"><?= $text?></p>
+		        	</td>
+		        </tr>
+		        <?php
+    			 }
+    			 ?>
+        	</tbody>
+        </table>
+      	<?php
+      }
+      elseif (isset($_GET['modif']))
       	{
       		if ($line = $select->fetch())
       		{
@@ -66,59 +115,6 @@ global $db, $_SESSION, $_POST, $_GET;
       	{
       		
       	}
-      	else
-      	{
-      	$select = $db->prepare('SELECT * FROM events WHERE id = ?'); $select->execute(array($event));
-      	?>
-      	<p><a href="index?p=event&modif=<?= $event?>" class="button">Modifier l'évènement.</a> <a href="index?p=event&addto=<?= $event?>" class="button">Ajouter un rapport à l'évènement.</a></p>
-      	<table width="100%" cellspacing="0" cellpadding="5" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
-        	<tbody>
-        		<tr style="background-color:#BBBBBB;">
-        			<th>Intitulé</th>
-        			<th>Nature</th>
-        			<th>Lancement</th>
-        			<th>Lanceur</th>
-        		</tr>
-        		<?php
-        		if ($line = $select->fetch())
-		        {
-      				$text = preg_replace('#\n#', '<br />', $line['content']);
-		        	switch ($line['type'])
-		        	{
-		        		default : $type = "Non encore défini"; break;
-		        		case 1 : $type = "Event Onirique"; break;
-		        		case 2 : $type = "Event Panthéon"; break;
-		        		case 3 : $type = "Event Catastrophe"; break;
-		        		case 4 : $type = "Event Magie" ; break;
-		        		case 5 : $type = "Event Social"; break;
-		        		case 6 : $type = "Event Donjon"; break;
-		        		case 7 : $type = "Event Expédition"; break;
-		        	}
-		        	$select_ = $db->prepare('SELECT * FROM members WHERE id = ?'); $select_->execute(array($line['user_id']));
-		        	$line_ = $select_->fetch();
-		        	if ($line_['pionier'] == 1) { $title ="Pionier"; } elseif ($line_['ban'] == 1) { $title = "Banni"; } 
-		        	elseif ($line_['remove'] == 1) { $title = "Oublié"; } else { $title = $line_['title']; }
-		        	if ($line_['pionier'] == 1) { $pionier = "-P"; } if ($line_['technician'] == 1) { $tech = "-T"; }
-		        ?>
-		        <tr style="text-align:center;">
-		        	<td><?=$line['name']?></td>
-		        	<td><?=$type?></td>
-		        	<td><?=$line['begin']?></td>
-		        	<td class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
-		        </tr>
-		        <tr>
-		        	<td colspan="4">
-		        		<p style="text-align:center;"><?= $text?></p>
-		        	</td>
-		        </tr>
-		        <?php
-    			 }
-    			 ?>
-        	</tbody>
-        </table>
-      	<?php
-      	}
-      }
       else
       {
         $select = $db->query('SELECT * FROM events ORDER BY name ASC');
