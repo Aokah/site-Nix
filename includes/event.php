@@ -34,7 +34,7 @@ global $db, $_SESSION, $_POST, $_GET;
 				        	$line_ = $select_->fetch();
 				        	if ($line_['pionier'] == 1) { $title ="Pionier"; } elseif ($line_['ban'] == 1) { $title = "Banni"; } 
 				        	elseif ($line_['remove'] == 1) { $title = "Oublié"; } else { $title = $line_['title']; }
-				        	if ($line_['ppionier'] == 1) { $pionier = "-P"; } if ($line_['technician'] == 1) { $tech = "-T"; }
+				        	if ($line_['pionier'] == 1) { $pionier = "-P"; } if ($line_['technician'] == 1) { $tech = "-T"; }
 				        ?>
 				        <tr style="text-align:center;">
 				        	<td><a href="index?p=event&e=<?=$line['id']?>"><?=$line['name']?></a></td>
@@ -56,9 +56,6 @@ global $db, $_SESSION, $_POST, $_GET;
 				        		<textarea name="content"><?=$line['content']?></textarea>
 				        	</td>
 				        </tr>
-				        <?php
-		    			 }
-		    			 ?>
 			        	</tbody>
 			        </table>
 		      	</form>
@@ -101,7 +98,7 @@ global $db, $_SESSION, $_POST, $_GET;
 		        	$line_ = $select_->fetch();
 		        	if ($line_['pionier'] == 1) { $title ="Pionier"; } elseif ($line_['ban'] == 1) { $title = "Banni"; } 
 		        	elseif ($line_['remove'] == 1) { $title = "Oublié"; } else { $title = $line_['title']; }
-		        	if ($line_['ppionier'] == 1) { $pionier = "-P"; } if ($line_['technician'] == 1) { $tech = "-T"; }
+		        	if ($line_['pionier'] == 1) { $pionier = "-P"; } if ($line_['technician'] == 1) { $tech = "-T"; }
 		        ?>
 		        <tr style="text-align:center;">
 		        	<td><?=$line['name']?></td>
