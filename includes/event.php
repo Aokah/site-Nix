@@ -9,7 +9,7 @@ global $db, $_SESSION, $_POST, $_GET;
       <h2>Evènements Nix</h2>
       <p>Ici sont écrits en plus amples détails tout ce qui a à savoir sur tel ou tel évènement lié au serveur !</p>
       <?php
-      if (isset($_GT['e']))
+      if (isset($_GET['e']))
       {
       	$event = intval($_GET['e']);
       	$select = $db->prepare('SELECT * FROM events WHERE id = ?'); $select->execute(array($event));
