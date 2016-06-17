@@ -73,7 +73,9 @@ global $db, $_SESSION, $_POST, $_GET;
       			
       			$update = $db->prepare('UPDATE events SET content = ?, begin = ?, type = ? WHERE id = ?');
       			$update->execute(array($content, $begin, $type, $event));
-      			echo '<p>Les changement ont bien été effectués.</p>';
+      			echo '<p>Les changement ont bien été effectués.</p>',
+      			 '<p><a href="index?p=event&e=', $event,'">Cliquez ici</a> pour retourner à l\'évènement modifié.</p>',
+      			 '<p><a href=index?p=event>Cliquez ici</a> pour retourner à la page des évènemnts.</p>';
       		}
       		else
       		{
