@@ -53,7 +53,7 @@ global $db, $_SESSION, $_POST, $_GET;
 				        </tr>
 				        <tr>
 				        	<td colspan="4">
-				        		<textarea name="content"><?=$line['content']?></textarea>
+				        		<textarea align="center" name="content"><?=$line['content']?></textarea>
 				        	</td>
 				        </tr>
 			        	</tbody>
@@ -108,7 +108,7 @@ global $db, $_SESSION, $_POST, $_GET;
 		        </tr>
 		        <tr>
 		        	<td colspan="4">
-		        		<p><?= $text?></p>
+		        		<p style="text-align:center;"><?= $text?></p>
 		        	</td>
 		        </tr>
 		        <?php
