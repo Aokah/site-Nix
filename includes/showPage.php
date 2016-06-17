@@ -78,6 +78,7 @@
 							case 'chatboxmj': 			{ 	if ($_SESSION['rank'] >= rank_cbm) { 	include('includes/chatbox_mj/chatboxPage.php');
 							chatboxPage(); 				} 	else { 	?><p>Vous n'aves pas accès à cette page</p><?php 	} 			break; }
 							case 'forum': 				{ 	include('includes/forum.php'); 					forum(); 				break; }
+							case 'event': 				{ 	include('includes/event.php'); 					event(); 				break; }
 							case 'perso': 				{ 	include('includes/perso.php'); 					perso(); 				break; }
 							case 'rules': 				{ 	include('includes/rules.php'); 					rules(); 				break; }
 							case 'account': 			{ 	include('includes/account.php'); 				account(); 				break; }
