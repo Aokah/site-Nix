@@ -39,7 +39,7 @@ global $db, $_SESSION, $_POST, $_GET;
 		        		case 7 : $type = "Event Expédition"; break;
 		        	}
 		        ?>
-		        <tr>
+		        <tr style="text-align:center;">
 		        	<td><a href="index?p=event&e=<?=$line['id']?>"><?=$line['name']?></a></td>
 		        	<td><?=$type?></td>
 		        	<td><?=$line['begin']?></td>
