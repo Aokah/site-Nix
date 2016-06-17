@@ -9,6 +9,12 @@ global $db, $_SESSION, $_POST, $_GET;
       <h2>Evènements Nix</h2>
       <p>Ici sont écrits en plus amples détails tout ce qui a à savoir sur tel ou tel évènement lié au serveur !</p>
       <?php
+      if (isset($_GT['e']))
+      {
+      	
+      }
+      else
+      {
         $select = $db->query('SELECT * FROM events ORDER BY name ASC');
         ?>
         <table cellspacing="0">
@@ -21,11 +27,22 @@ global $db, $_SESSION, $_POST, $_GET;
         		<?php
         		while ($line = $select->fetch())
 		        {
+		        	switch ($line['type'])
+		        	{
+		        		default : $type = "Non encore défini"; break;
+		        		case 1 : $type = "Event Onirique"; break;
+		        		case 2 : $type = "Event Panthéon"; break;
+		        		case 3 : $type = "Event Catastrophe"; break;
+		        		case 4 : $type = "Event Magie" ; break;
+		        		case 5 : $type = "Event Social"; break;
+		        		case 6 : $type = "Event Donjon"; break;
+		        		case 7 : $type = "Event Expédition"; break;
+		        	}
 		        ?>
 		        <tr>
 		        	<td><a href="index?p=event&e=<?=$line['id']?>"><?=$line['name']?></a></td>
 		        	<td><?=$type?></td>
-		        	<td><?=$begin?></td>
+		        	<td><?=$line['begin']?></td>
 		        </tr>
 		        <?php
     			 }
@@ -33,7 +50,7 @@ global $db, $_SESSION, $_POST, $_GET;
         	</tbody>
         </table>
         <?php
-        
+      }
      }
      else
      {
