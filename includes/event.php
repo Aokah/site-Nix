@@ -69,9 +69,8 @@ global $db, $_SESSION, $_POST, $_GET;
       	else
       	{
       	$select = $db->prepare('SELECT * FROM events WHERE id = ?'); $select->execute(array($event));
-      	$text = preg_replace('#\n#', '<br />', $line['content']);
       	?>
-      	<a href="index?p=event&modif=<?= $event?>" class="button">Modifier l'évènement.</a> <a href="index?p=event&addto=<?= $event?>" class="button">Ajouter un rapport à l'évènement.</a>
+      	<p><a href="index?p=event&modif=<?= $event?>" class="button">Modifier l'évènement.</a> <a href="index?p=event&addto=<?= $event?>" class="button">Ajouter un rapport à l'évènement.</a></p>
       	<table width="100%" cellspacing="0" cellpadding="5" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
         	<tbody>
         		<tr style="background-color:#BBBBBB;">
@@ -83,6 +82,7 @@ global $db, $_SESSION, $_POST, $_GET;
         		<?php
         		if ($line = $select->fetch())
 		        {
+      				$text = preg_replace('#\n#', '<br />', $line['content']);
 		        	switch ($line['type'])
 		        	{
 		        		default : $type = "Non encore défini"; break;
