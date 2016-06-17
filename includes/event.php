@@ -65,54 +65,66 @@ global $db, $_SESSION, $_POST, $_GET;
       }
       elseif (isset($_GET['modif']))
       	{
-      		
-      	$event = intval($_GET['modif']);
-      	$select = $db->prepare('SELECT * FROM events WHERE id = ?'); $select->execute(array($event));
-      		if ($line = $select->fetch())
+		$event = intval($_GET['modif']);
+      		if (isset($_POST['vaild']))
       		{
-		?>
-		      	<form action="index?p=event&modif=<?=$event?>" method="POST">
-		      		<input type="submit" name="valid" value="Terminer" />
-		      		<table width="100%" cellspacing="0" cellpadding="5" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
-		        	<tbody>
-		        		<tr style="background-color:#BBBBBB;">
-		        			<th>Intitulé</th>
-		        			<th>Nature</th>
-		        			<th>Lancement</th>
-		        			<th>Lanceur</th>
-		        		</tr>
-		        		<?php
-				        	$select_ = $db->prepare('SELECT * FROM members WHERE id = ?'); $select_->execute(array($line['user_id']));
-				        	$line_ = $select_->fetch();
-				        	if ($line_['pionier'] == 1) { $title ="Pionier"; } elseif ($line_['ban'] == 1) { $title = "Banni"; } 
-				        	elseif ($line_['remove'] == 1) { $title = "Oublié"; } else { $title = $line_['title']; }
-				        	if ($line_['pionier'] == 1) { $pionier = "-P"; } if ($line_['technician'] == 1) { $tech = "-T"; }
-				        ?>
-				        <tr style="text-align:center;">
-				        	<td><a href="index?p=event&e=<?=$line['id']?>"><?=$line['name']?></a></td>
-				        	<td><select name="type">
-				        		<option value="0">-- Option par défaut --</option>
-				        		<option value="1">Event Onirique</option>
-				        		<option value="2">Event Panthéon</option>
-				        		<option value="3">Event Catastrophe</option>
-				        		<option value="4">Event Magie</option>
-				        		<option value="5">Event Social</option>
-				        		<option value="6">Event Donjon</option>
-				        		<option value="7">Event Expédition</option>
-				        	</select></td>
-				        	<td><input type="text" name="begin" value="<?=$line['begin']?>" /></td>
-				        	<td class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
-				        </tr>
-				        <tr>
-				        	<td colspan="4">
-				        		<textarea align="center" name="content"><?=$line['content']?></textarea>
-				        	</td>
-				        </tr>
-			        	</tbody>
-			        </table>
-		      	</form>
-		<?php
-		}
+      			$content = htmlspecialchars($_POST['content']);
+      			$begin = htmlspecialchars($_POST['begin']);
+      			
+      			$update = $db->prepare('UPDATE events SET content = ?, begin = ?, type = ? WHERE id = ?');
+      			$update->execute(array($content, $begin, $type, $event));
+      			echo '<p>LEs changement ont bien été effectués.</p>';
+      		}
+      		else
+      		{
+      		
+		      	$select = $db->prepare('SELECT * FROM events WHERE id = ?'); $select->execute(array($event));
+	      		if ($line = $select->fetch())
+	      		{
+			?>
+			      	<form action="index?p=event&modif=<?=$event?>" method="POST">
+			      		<input type="submit" name="valid" value="Terminer" />
+			      		<table width="100%" cellspacing="0" cellpadding="5" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
+			        	<tbody>
+			        		<tr style="background-color:#BBBBBB;">
+			        			<th>Intitulé</th>
+			        			<th>Nature</th>
+			        			<th>Lancement</th>
+			        			<th>Lanceur</th>
+			        		</tr>
+			        		<?php
+					        	$select_ = $db->prepare('SELECT * FROM members WHERE id = ?'); $select_->execute(array($line['user_id']));
+					        	$line_ = $select_->fetch();
+					        	if ($line_['pionier'] == 1) { $title ="Pionier"; } elseif ($line_['ban'] == 1) { $title = "Banni"; } 
+					        	elseif ($line_['remove'] == 1) { $title = "Oublié"; } else { $title = $line_['title']; }
+					        	if ($line_['pionier'] == 1) { $pionier = "-P"; } if ($line_['technician'] == 1) { $tech = "-T"; }
+					        ?>
+					        <tr style="text-align:center;">
+					        	<td><a href="index?p=event&e=<?=$line['id']?>"><?=$line['name']?></a></td>
+					        	<td><select name="type">
+					        		<option value="0">-- Option par défaut --</option>
+					        		<option value="1">Event Onirique</option>
+					        		<option value="2">Event Panthéon</option>
+					        		<option value="3">Event Catastrophe</option>
+					        		<option value="4">Event Magie</option>
+					        		<option value="5">Event Social</option>
+					        		<option value="6">Event Donjon</option>
+					        		<option value="7">Event Expédition</option>
+					        	</select></td>
+					        	<td><input type="text" name="begin" value="<?=$line['begin']?>" /></td>
+					        	<td class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
+					        </tr>
+					        <tr>
+					        	<td colspan="4">
+					        		<textarea align="center" name="content"><?=$line['content']?></textarea>
+					        	</td>
+					        </tr>
+				        	</tbody>
+				        </table>
+			      	</form>
+			<?php
+			}
+      		}
       	}
       	elseif (isset($_GET['addto']))
       	{	
