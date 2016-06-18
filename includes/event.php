@@ -69,7 +69,42 @@ global $db, $_SESSION, $_POST, $_GET;
     			 ?>
         	</tbody>
         </table>
-      	<?php
+        <p style="text-align:center;">Comptes-rendus de l'event</p>
+        <?php
+        $select2 = $db->prepare('SELECT * FROM event_report WHERE event_id = ? ORDER BY date_post DESC');
+        $select2->execute(array($event));
+        while ($line2 = $select2->fetch())
+        {
+	        $select_ = $db->prepare('SELECT * FROM members WHERE id = ?'); $select_->execute(array($line2['user_id']));
+		$line_ = $select_->fetch();
+		if ($line_['pionier'] == 1) { $title ="Pionier"; } elseif ($line_['ban'] == 1) { $title = "Banni"; } 
+		elseif ($line_['remove'] == 1) { $title = "Oublié"; } else { $title = $line_['title']; }
+		if ($line_['pionier'] == 1) { $pionier = "-P"; } if ($line_['technician'] == 1) { $tech = "-T"; }
+	        ?>
+	        <table width="100%" cellspacing="0" cellpadding="5" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
+	        	<tbody>
+	        		<tr style="background-color:#BBBBBB;">
+	        			<th>Animateur</th>
+	        			<th>Date d'animation</th>
+	        		</tr>
+	        		<tr>
+	        			<td class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
+	        		</tr>
+	        		<tr>
+	        			<td><?=$date?></td>
+	        		</tr>
+	        		<tr style="background-color:#BBBBBB;">
+	        			<th colspan="2">Compte-rendu de l'évènmeent.</th>
+	        		</tr>
+	        		<tr>
+	        			<td>
+	        				<p style="text-align:center;"><?=$rapport?></p>
+	        			</td>
+	        		</tr>
+	        	</tbody>
+	        </table>
+	      	<?php
+        }
       }
       elseif (isset($_GET['modif']))
       	{
