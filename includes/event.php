@@ -150,11 +150,24 @@ global $db, $_SESSION, $_POST, $_GET;
 	      	$select = $db->prepare('SELECT * FROM events WHERE id = ?'); $select->execute(array($event));
 	      	if (isset($_POST['add']))
 	      	{
+	      		$rapport = htmlspecialchars($_POST['rapport']);
 	      		
+	      		$add = $db->prepare('INSERT INTO event_report VALUES('', ?,  NOW(), ?, ?)');
+	      		$add->execute(array($event, $rapport, $_SESSION['id']));
+	      		echo '<p>Le compte-rendu a bien été ajouté à l\'évent corrspondant !</p>',
+      			'<p><a href="index?p=event&e=', $event,'">Cliquez ici</a> pour retourner à l\'évènement modifié.</p>',
+      			'<p><a href=index?p=event>Cliquez ici</a> pour retourner à la page des évènemnts.</p>';
 	      	}
 	      	else
 	      	{
-	      		
+	      	?>
+	      		<h3>Rapport d'évènement</h3>
+	      		<p>Notez ici le contenu de l'animation que vous avez assuré en rapport avec l'évènement.</p>
+	      		<form action="index?p=event&addto=<?= $event?>" method="POST">
+	      		<div width="100%" align="center"><textarea name="rapport"></textarea></div>
+	      		<input type="submit" value="Envoyer" name="add" />
+	      		</form>
+	      	<?php
 	      	}
       	}
       else
