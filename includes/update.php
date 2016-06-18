@@ -16,6 +16,7 @@
 		<li>Finir la "end_page"</li>
 		<li>Finir la "del_page"</li>
 		<li>Créer une page spéciale qui invite à se connecter pour visionner certaines pages.</li>
+		<li>Créer la page de changement de nom.</li>
 		
 	</ul>
 	
