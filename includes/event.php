@@ -91,15 +91,13 @@ global $db, $_SESSION, $_POST, $_GET;
 	        		</tr>
 	        		<tr>
 	        			<td style="text-align:center;" class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
-	        		</tr>
-	        		<tr>
 	        			<td style="text-align:center;"><?=$date?></td>
 	        		</tr>
 	        		<tr style="background-color:#BBBBBB;">
 	        			<th colspan="2">Compte-rendu de l'évènmeent.</th>
 	        		</tr>
 	        		<tr>
-	        			<td>
+	        			<td colspan="2">
 	        				<p style="text-align:center;"><?=$rapport?></p>
 	        			</td>
 	        		</tr>
