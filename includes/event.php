@@ -80,6 +80,8 @@ global $db, $_SESSION, $_POST, $_GET;
 		if ($line_['pionier'] == 1) { $title ="Pionier"; } elseif ($line_['ban'] == 1) { $title = "Banni"; } 
 		elseif ($line_['remove'] == 1) { $title = "Oublié"; } else { $title = $line_['title']; }
 		if ($line_['pionier'] == 1) { $pionier = "-P"; } if ($line_['technician'] == 1) { $tech = "-T"; }
+		$rapport = preg_replace('#\n#', '<br />', $line['rapport']);
+		$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', '$3/$2/$1 à $4', $line['date_post']);
 	        ?>
 	        <table width="100%" cellspacing="0" cellpadding="5" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
 	        	<tbody>
@@ -88,10 +90,10 @@ global $db, $_SESSION, $_POST, $_GET;
 	        			<th>Date d'animation</th>
 	        		</tr>
 	        		<tr>
-	        			<td class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
+	        			<td style="text-align:center;" class="name<?= $line_['rank'], $pionier, $tech?>"><?=$title, ' ', $line_['name']?></td>
 	        		</tr>
 	        		<tr>
-	        			<td><?=$date?></td>
+	        			<td style="text-align:center;"><?=$date?></td>
 	        		</tr>
 	        		<tr style="background-color:#BBBBBB;">
 	        			<th colspan="2">Compte-rendu de l'évènmeent.</th>
