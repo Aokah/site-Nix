@@ -152,7 +152,7 @@ global $db, $_SESSION, $_POST, $_GET;
 	      	{
 	      		$rapport = htmlspecialchars($_POST['rapport']);
 	      		
-	      		$add = $db->prepare('INSERT INTO event_report VALUES('', ?,  NOW(), ?, ?)');
+	      		$add = $db->prepare("INSERT INTO event_report VALUES('', ?,  NOW(), ?, ?)");
 	      		$add->execute(array($event, $rapport, $_SESSION['id']));
 	      		echo '<p>Le compte-rendu a bien été ajouté à l\'évent corrspondant !</p>',
       			'<p><a href="index?p=event&e=', $event,'">Cliquez ici</a> pour retourner à l\'évènement modifié.</p>',
