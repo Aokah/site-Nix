@@ -86,7 +86,7 @@ global $db, $_SESSION, $_POST, $_GET;
 	        <table width="100%" cellspacing="0" cellpadding="5" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
 	        	<tbody>
 	        		<tr style="background-color:#BBBBBB;">
-	        			<th>Animateur</th>
+	        			<th width="50%">Animateur</th>
 	        			<th>Date d'animation</th>
 	        		</tr>
 	        		<tr>
