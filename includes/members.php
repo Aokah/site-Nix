@@ -176,7 +176,7 @@
 				<td style="text-align:center;">
 					<img src="pics/valid_bg_<?php echo $validbg;?>.gif" alt="" title="<?php echo $bgmsg; ?>" width="30" />
 				</td>
-				<td style="text-align:center;">
+				<td style="text-align:center;" width="10%">
 					<img src="pics/magie/Magie_<?= $line['specialisation']?>.png" width="30" alt="" class="magie_type" title="Affinité Naturelle : <?= $line['specialisation']?>"/> / <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" width="30" alt="" title="Affinité Secondaire : <?= $line['spe_2']?>" class="magie_type" />
 				</td>
 				<td style="text-align:center;">
