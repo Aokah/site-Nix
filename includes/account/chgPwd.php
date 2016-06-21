@@ -37,7 +37,7 @@
 	if ($dispForm)
 	{
 		?>
-			<form method="POST" action="index.php?p=account&amp;action=chgpwd">
+			<form method="POST" action="index.php?p=account&amp;action=changepsw">
 				<table>
 					<tr>
 						<td><label for="oldPwd">Ancien mot de passe :</label></td>
