@@ -9,7 +9,17 @@
 	
 	$page = (isset($_GET['p'])) ? $_GET['p'] : '';
 
-	
+	if ($_SESSION['connected'])
+	{
+		$account = $db->prepare('SELECT * FROM members WHERE id = ?');
+		$account->execute(array($_SESSION['id']));
+		$account = $account->fetch();
+		
+		if ($account['ban'] == 1 OR $account['removed'] == 1)
+		{
+			$_SESSION['connected'] = false;
+		}
+	}
 	?>
 	
 <div>
