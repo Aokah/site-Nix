@@ -34,7 +34,7 @@
 		
 			?>
 				<h2>Mon Compte</h2>
-				  <p>Sur cette page vous trouverez toutes les informatiosn relatives à votre comtpe RPNix.com.</p>
+				  <p>Sur cette page vous trouverez toutes les informations relatives à votre compte RPNix.com.</p>
 				  
 				<h3>Adresse Mail</h3>
 				  <p>Vous souhaitez changer votre adresse mail ? <a href="index?p=account&action=changemail">C'est par ici</a> !</p>
