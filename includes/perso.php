@@ -2325,7 +2325,7 @@ if ($_SESSION['connected'])
 }
 else
 {
-	echo '<p>Veuillez vons connecter pour accéder à cette page</p>';
+	echo '<p>Veuillez vous connecter pour accéder à cette page</p>';
 }
 }
 ?>
