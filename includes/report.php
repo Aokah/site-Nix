@@ -142,7 +142,7 @@
          <h3>Liste des Problèmes enregistrés</h3>
          <p>Ici est listé les problèmes listés par date d'envoie et par statut !</p>
           <?php
-          $select = $db->query('SELECT * FROM report ORDER BY resolve_date DESC, id DESC');
+          $select = $db->query('SELECT * FROM report ORDER BY resolve ASC, resolve_date DESC');
           while ($line = $select->fetch())
           {
           	$select_ = $db->prepare('SELECT * FROM members WHERE id = ?'); $select_->execute(array($line['reporter_id']));
