@@ -182,7 +182,7 @@
   						$add->execute(array($role, $prenom, $nom, $origine, $race, $taille, $poids, $sd, $element, $qualite,
   						$defaut, $event, $caractere, $equipement, $bg));
   						?>
-  						<p>Votre apge a bien été créée ! Vous pouvez la consulter dès maintenant.</p>
+  						<p>Votre page a bien été créée ! Vous pouvez la consulter dès maintenant.</p>
   						<p><a href="index?p=pnj_list">Cliquez ici</a> pour retourner à la Liste des Personnages Non Joueurs</p>
   						<?php
   					}
