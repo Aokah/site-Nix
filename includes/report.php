@@ -32,12 +32,12 @@
         $update->execute(array($_POST['state'], $_SESSION['id'], $respond, $id));
         if ($_POST['state'] != 0)
         {
-          if ($_POST['state'] == 1)
+          if ($_POST['state'] == 3)
           {
           $pm = "Voici la réponse de" .$title. " " .$line_['name']. " à votre rapport d'erreur :<br /><br />" . $respond .
           "<br />Merci de nous avoir signalé cette erreur ! <br /> Shirka, le robot du Staff";
           }
-          elseif ($_POST['state'] == 2)
+          elseif ($_POST['state'] == 1)
           {
           $pm = "Voici la réponse de" .$title. " " .$line_['name']. " à votre rapport d'erreur classé sans suite :<br /><br />" . $respond .
           "<br />Merci tout de même de nous avoir signalé cette erreur ! <br /> Shirka, le robot du Staff";
@@ -71,9 +71,9 @@
               switch ($line['resolve'])
               {
                 default: $state = "loader.gif"; $desc = "Problème encore en attente de résolution."; break;
-                case 1: $state = "tick.png"; $desc = "Problème résolu !"; break;
-                case 2: $state = "unresolved.gif"; $desc = "Problème classé sans suite."; break;
-                case 3: $state = "impossible.gif"; $desc = "Problème insoluble."; break;
+            case 3: $state = "tick.png"; $desc = "Problème résolu !"; break;
+            case 1: $state = "unresolved.gif"; $desc = "Problème classé sans suite."; break;
+            case 2: $state = "impossible.gif"; $desc = "Problème insoluble."; break;
               }
               $tech = ($line['technician'] == 1)? '-T' : '';
                   $pionier = ($line['pionier'] == 1)? '-P' : '';
@@ -161,9 +161,9 @@
             switch ($line['resolve'])
             {
               default: $state = "loader.gif"; $desc = "Problème encore en attente de résolution."; break;
-              case 1: $state = "tick.png"; $desc = "Problème résolu !"; break;
-              case 2: $state = "unresolved.gif"; $desc = "Problème classé sans suite."; break;
-              case 3: $state = "impossible.gif"; $desc = "Problème insoluble."; break;
+            case 3: $state = "tick.png"; $desc = "Problème résolu !"; break;
+            case 1: $state = "unresolved.gif"; $desc = "Problème classé sans suite."; break;
+            case 2: $state = "impossible.gif"; $desc = "Problème insoluble."; break;
             }
             $tech = ($line2['technician'] == 1)? '-T' : '';
                 $pionier = ($line2['pionier'] == 1)? '-P' : '';
@@ -261,9 +261,9 @@
           switch ($line['resolve'])
           {
             default: $state = "loader.gif"; $desc = "Problème encore en attente de résolution."; break;
-            case 1: $state = "tick.png"; $desc = "Problème résolu !"; break;
-            case 2: $state = "unresolved.gif"; $desc = "Problème classé sans suite."; break;
-            case 3: $state = "impossible.gif"; $desc = "Problème insoluble."; break;
+            case 3: $state = "tick.png"; $desc = "Problème résolu !"; break;
+            case 1: $state = "unresolved.gif"; $desc = "Problème classé sans suite."; break;
+            case 2: $state = "impossible.gif"; $desc = "Problème insoluble."; break;
           }
         ?>
         <table cellspacing="0" cellpadding="5" width="100%" style="border: 5px gray solid; border-radius: 10px; background-color: #DDDDDD;text-shadow: white 1px 1px 4px;">
