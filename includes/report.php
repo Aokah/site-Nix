@@ -89,9 +89,9 @@
                   <tr>
                     <td>Etat d'analyse du problème : <select name="state">
                       <option value="0">En cours. . .</option>
-                      <option value="1">Résolu !</option>
-                      <option value="2">Non résolu</option>
-                      <option value="3">Impossible</option>
+                      <option value="3">Résolu !</option>
+                      <option value="1">Non résolu</option>
+                      <option value="2">Impossible</option>
                     </select></td>
                   </tr>
                   <tr>
