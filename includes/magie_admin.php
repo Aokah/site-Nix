@@ -43,10 +43,10 @@
 			<tr>
 				<td><?= $line['name']?></td>
 				<td><?= $line['desc']?></td>
-				<td><img src="includes/img/magie/xp.png" alt="XP" class="magie_type" /> <?= $line['cost']?></td>
+				<td><img src="includes/pics/magie/xp.png" alt="XP" class="magie_type" /> <?= $line['cost']?></td>
 				<td><?= $line['command']?></td>
-				<td><img class="magie" src="includes/img/magie/Magie_<?php echo $level ?>.png" alt="Niveau <?php echo $level ?>" title="Niveau <?php echo $level ?>" /></td>
-				<td><img class="magie_type" src="includes/img/magie/Magie_<?php echo $type ?>.png" width="49" alt="Type <?php echo $type ?>" title="<?php echo $type ?>"/></td>
+				<td><img class="magie" src="includes/pics/magie/Magie_<?php echo $level ?>.png" alt="Niveau <?php echo $level ?>" title="Niveau <?php echo $level ?>" /></td>
+				<td><img class="magie_type" src="includes/pics/magie/Magie_<?php echo $type ?>.png" width="49" alt="Type <?php echo $type ?>" title="<?php echo $type ?>"/></td>
 			</tr>
 	<?php
 	}
