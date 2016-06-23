@@ -33,9 +33,10 @@
 							switch ($line['level']) { case 8: $level = "X"; break;	case 7:  $level = "S"; break; case 6:  $level = "A"; break; case 5:  $level = "B"; break; case 4:  $level = "C"; break; case 3:  $level = "D"; break; 
 								case 2:  $level = "E"; break; case 1:  $level = "F"; break;}
 							switch ($line['type']) {
-								case 13: $type	= "Terre" ; break; case 12: $type = "Psy" ; break; case 11: $type = "Ombre" ; break; case 10:  $type = "Nature" ; break; case 9:  $type = "Metal" ; break;
-								case 8: $type = "Lumiere" ; break; case 7: $type = "Glace" ; break; case 6: $type = "Feu" ; break; case 5: $type = "Energie" ; break;
-								case 4: $type = "Eau" ; break; case 3: $type = "Chaos" ; break; case 2: $type = "Arcane" ; break; case 1: $type = "Air" ; break; case 0: $type = "Unknow" ; break; }
+								 case 14: $type = "Chaleur" ; break;  case 15: $type = "Espace" ; break;  case 16: $type = "Ordre" ; break;  case 17: $type = "Void" ; break;
+								case 13: $type	= "Terre" ; break; case 12: $type = "Psy" ; break; case 11: $type = "Ombre" ; break; case 10:  $type = "Nature" ; break; case 9:  $type = "Métal" ; break;
+								case 8: $type = "Lumière" ; break; case 7: $type = "Glace" ; break; case 6: $type = "Feu" ; break; case 5: $type = "Energie" ; break;
+								case 4: $type = "Eau" ; break; case 3: $type = "Chaos" ; break; case 2: $type = "Arcane" ; break; case 1: $type = "Air" ; break; default: $type = "Inconnue" ; break; }
 
 		
 		?>
