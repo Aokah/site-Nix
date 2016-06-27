@@ -147,7 +147,7 @@
   				$id = $_POST['id'] ;
   				$prenom = "Inconnu";	$nom = "?";	$origine = "Inconnue";	$race = "Inconnue" ;
   				$taille = "?";		$poids = "?";	$sd = "Aucun";		$element = "?";
-  				$qualité = "?";		$defaut = "?";	$event = "Inconnu";	$caractere = "?";
+  				$qualite = "?";		$defaut = "?";	$event = "Inconnu";	$caractere = "?";
   				$equipement = "Inconnu";		$bg = "Non défini";	$role = htmlentities($_POST['role']);
   				if(!empty($_POST['prenom'])) { $prenom = htmlentities($_POST['prenom']); }
   				if(!empty($_POST['nom'])) { $nom = htmlentities($_POST['nom']); }
