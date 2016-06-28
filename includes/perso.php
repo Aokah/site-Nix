@@ -1068,6 +1068,14 @@ if ($_SESSION['connected'])
 							?>
 							<tr>
 								<td>
+									Puissance Magique :
+								</td>
+								<td style="text:align:center;">
+									<?= $line['puis_norma']?> Norma
+								</td>
+							</tr>
+							<tr>
+								<td>
 									Points de Compétence :
 								</td>
 								<td style="text:align:center;">
@@ -1973,6 +1981,14 @@ if ($_SESSION['connected'])
 							<?php if ($_SESSION['rank'] > 4)
 							{
 							?>
+							<tr>
+								<td>
+									Puissance Magique :
+								</td>
+								<td style="text:align:center;">
+									<?= $line['puis_norma']?> Norma
+								</td>
+							</tr>
 							<tr>
 								<td>
 									Points de Compétence :
