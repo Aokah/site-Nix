@@ -63,11 +63,11 @@
 					</div>
       				</td>
 				 <td valign="top" width="100%">
-				 	<div class="bigalert">
+				 	<!--<div class="bigalert">
 						<h1>Contenu Bêta</h1>
 						<p>Certaines fonctionnalités du site sont encore en cours d'élaboration, RPNix n'en est qu'à la version bêta mais reste tout de même libre d'entrée !<br />
 						Vous pouvez toujours vous tenir au courant des mises à jour à venir ou des fonctions futures auprès des membres du Staff concernés !</p>
-					</div>
+					</div>-->
 					<?php 
 						include('includes/alert.php'); 		alert();
 						include('includes/a_alerts.php');	a_alerts();
