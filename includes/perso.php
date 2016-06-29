@@ -401,7 +401,7 @@ if ($_SESSION['connected'])
 										Puissance Magique :
 									</td>
 									<td>
-										<input type="number" name="puis" min="0" step="0,00000000000001" max="4000" value="<?= $line['puis_norma']?>"></code>
+										<input type="number" name="puis" min="0" step="0.00000000000001" max="4000" value="<?= $line['puis_norma']?>"></code>
 									</td>
 									<? } ?>
 								</tr>
