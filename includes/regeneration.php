@@ -1,18 +1,10 @@
 <?php function regeneration()
 {
 global $_POST, $db, $_SESSION;
-  $max = $db->query('SELECT COUNT(*) AS idmax FROM members WHERE id != 0'); $max = $max->fetch();
-  $idmax = $max['idmax'] ;
-  
-  $id = $idmax;
-  
-  while ($id > 0)
-  {
     
-    $select = $db->prepare('SELECT * FROM members WHERE id = ?');
-    $select->execute(array($id));
+    $select = $db->query('SELECT * FROM members');
     
-      if ($select = $select->fetch())
+      while ($select = $select->fetch())
       {
         if ($select['magie_rank'] == 0) { $limit = 50; } elseif ($select['magie_rank'] == 1) { $limit = 100; } elseif ($select['magie_rank'] == 2) { $limit = 150; }
         elseif ($select['magie_rank'] == 3) { $limit = 200; } elseif ($select['magie_rank'] == 4) { $limit = 300; } elseif ($select['magie_rank'] == 5) { $limit = 400; }
@@ -41,7 +33,5 @@ global $_POST, $db, $_SESSION;
         $maj = $db->prepare('UPDATE members SET E_magique = E_magique + ?, E_vitale = E_vitale + ? WHERE id = ?');
         $maj->execute(array($add, $vadd, $id));
       }
-    $id --;
-  }
 }
   ?>
