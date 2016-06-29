@@ -190,8 +190,8 @@ if ($_SESSION['connected'])
 									case 14 : $spe_2 = "Spéciale"; break; case 15 : $spe_2 = "Terre"; break; case 16: $spe_2 = "Chaleur"; break;
 									case 17 : $spe_2 = "Void"; break; case 18 : $spe_2 = "Espace"; break; case 19 : $spe_2 = "Ordre"; break;
 								}
-								$update = $db->prepare('UPDATE members SET E_Magique = ?, E_Vitale = ?, specialisation = ?, spe_2 = ?, exp = ? WHERE id = ?');
-								$update->execute(array($_POST['e-magie'], $_POST['e-vie'], $spe_1, $spe_2, $_POST['exp'] ,$perso));
+								$update = $db->prepare('UPDATE members SET E_Magique = ?, E_Vitale = ?, specialisation = ?, spe_2 = ?, exp = ? , puis_norma = ? WHERE id = ?');
+								$update->execute(array($_POST['e-magie'], $_POST['e-vie'], $spe_1, $spe_2, $_POST['exp'], $_POST['puis'] ,$perso));
 								echo '<p>Modifications des informations magiques effectuées avec succès</p>';
 								?>
 								<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
@@ -394,6 +394,14 @@ if ($_SESSION['connected'])
 									</td>
 									<td>
 										<input type="number" name="exp" min="0" step="1" max="999" value="<?= $line['exp']?>"></code>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Puissance Magique :
+									</td>
+									<td>
+										<input type="number" name="puis" min="0" step="0.00000000000001" max="4000" value="<?= $line['puis_norma']?>"></code>
 									</td>
 									<? } ?>
 								</tr>
