@@ -13,8 +13,8 @@
 	
 	echo $norma['puis_norma'], ' + ', $incan['norma'], ' = ', $result, "<br /><br />";
 	
-	$pcs = $result / 3;
-	echo $pcs;
+	$pcs = ($result / 3) * 100000000000000;
+	echo number_format($pcs, 0);
 	
 	
 }
