@@ -676,7 +676,7 @@ if ($_SESSION['connected'])
 							$pcs = number_format($pcs, 0);
 							$pcs = $norma['exp'] + $pcs; 
 							
-							$update = $db->prepare('UPDATE members SET puis_norma = ?, exp = ? WHERE id = ?'); $update->execute(array($result, $pcs, $user))
+							$update = $db->prepare('UPDATE members SET puis_norma = ?, exp = ? WHERE id = ?'); $update->execute(array($result, $pcs, $user));
 	
 							if ($pm > $cost)
 							{
