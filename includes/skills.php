@@ -12,7 +12,12 @@
       {
         if (isset($_GET['confirm']))
         {
-          $id = intval($_GET['confirm']);
+          $number = intval($_GET['confirm']);
+          $type = intval($_GET['upgrade']);
+          $presel = $db->prepare('SELECT * FROM skil_list WHERE type = ? AND number = ?');
+          $presel->execute(array($type , $number)); $presel = $presel->fetch();
+          $id = $presel['id'];
+          
           $vget = $db->prepare('SELECT id FROM skil_get WHERE id = ?'); $vget->execute(array($id));
           // Vérifie si la compétence n'est pas déjà apprise -^
           // Vérifie s'il n'y a pas d'autres compétences à apprendre avant ->
@@ -42,7 +47,7 @@
             elseif ($id == $scount)
             {
               $presel = $db->prepare('SELECT exp, id FROM members WHERE id = ?'); $presel->execute(array($_SESSION['id'])); $presel = $presel->fetch();
-              $verif = $db->prepare('SELECT cost, id FROM skil_list WHERE id = ?'); $verif->execute(array($id)); $verif = $verif->fetch(); echo $id;
+              $verif = $db->prepare('SELECT cost, id FROM skil_list WHERE id = ?'); $verif->execute(array($id)); $verif = $verif->fetch();
               if ($presel['exp'] >= $verif['cost'])
               {
                 //Retrait des PCs
