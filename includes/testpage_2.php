@@ -11,7 +11,11 @@
 	$incan = $incan->fetch();
 	$result = $norma['puis_norma'] + $incan['norma']; 
 	
-	echo $norma['puis_norma'], ' + ', $incan['norma'], ' = ', $result;
+	echo $norma['puis_norma'], ' + ', $incan['norma'], ' = ', $result, "<br /><br />";
+	
+	$pcs = $result / 3;
+	echo $pcs;
+	
 	
 }
 ?>
