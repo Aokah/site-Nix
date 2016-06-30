@@ -42,12 +42,11 @@
             elseif ($id == $scount)
             {
               $presel = $db->prepare('SELECT exp, id FROM members WHERE id = ?'); $presel->execute(array($_SESSION['id'])); $presel = $presel->fetch();
-              $verif = $db->prepare('SELECT cost, id FROM skil_list WHERE id = ?'); $verif->execute(array($id)); $verif = $verif->fetch();
+              $verif = $db->prepare('SELECT cost, id FROM skil_list WHERE id = ?'); $verif->execute(array($id)); $verif = $verif->fetch(); echo $id;
               if ($presel['exp'] >= $verif['cost'])
               {
                 //Retrait des PCs
                 $final = $presel['exp'] - $verif['cost'];
-                echo $presel['exp'], $verif['cost'], $final;
                 #$update = $db->prepare('UPDATE members SET exp = ? WHERE id = ?'); $update->execute(array($final,$_SESSION['id']));
                 #$add = $db->prepare("INSERT INTO skil_get VALUES('',?, ?)"); $add->execute(array($_SESSION['id'], $select['id']));
                 #echo '<p>Compétence acquise avec succès !</p>',
