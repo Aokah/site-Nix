@@ -660,17 +660,30 @@ if ($_SESSION['connected'])
 						$cost = $incan['cost'];
 						$points = $pm + $pv;
 						
-						echo $pm, ' ', $pv, ' ', $cost, ' ', $points;
 						
 						
 						if ($points > $cost)
 						{
+							$norma = $db->prepare('SELECT id, puis_norma,race, exp FROM members WHERE id = ?'); $norma->execute(array($user));
+							$norma = $norma->fetch();
+							$incan = $db->prepare('SELECT id, norma FROM incan_list WHERE id = ?'); $incan->execute(array($sort));
+							$incan = $incan->fetch();
+							$result = $norma['puis_norma'] + $incan['norma']; 
+							$pcs = ($result / 3) * 100000000000000;
+							if ($norma['race'] == "Orque") { $coef = 0.5; } elseif ($norma['race'] == "Elfe" OR $norma['race'] == "Zaknafein") { $coef = 2; } 
+							elseif ($norma['race'] == "Ernelien") { $coef = 3; } elseif ( $norma['race'] == "Drake") { $coef = 4; }  else { $coef = 1; }
+							$pcs = $pcs * $coef;
+							$pcs = number_format($pcs, 0);
+							$pcs = $norma['exp'] + $pcs; 
+							
+							$update = $db->prepare('UPDATE members SET puis_norma = ?, exp = ? WHERE id = ?'); $update->execute(array($result, $pcs, $user))
+	
 							if ($pm > $cost)
 							{
 								$result = $pm - $cost;
 								$update = $db->prepare('UPDATE members SET E_magique = ? WHERE id = ?');
 								$update->execute(array($result, $user));
-								echo '<p>Le sort a bien étélancé pour un retrait de ', $cost, ' Points Magiques !';
+								echo '<p>Le sort a bien été lancé pour un retrait de ', $cost, ' Points Magiques !';
 							}
 							else
 							{
@@ -679,7 +692,7 @@ if ($_SESSION['connected'])
 								
 								$update = $db->prepare('UPDATE members SET E_magique = 0, E_vitale = ? WHERE id = ?');
 								$update->execute(array($result, $user));
-								echo '<p>Le sort a bien étélancé pour un retrait de ', $pm, ' Points Magiques et de ', $cost, ' Points Vitaux !';
+								echo '<p>Le sort a bien été lancé pour un retrait de ', $pm, ' Points Magiques et de ', $cost, ' Points Vitaux !';
 							}
 						}
 						else
