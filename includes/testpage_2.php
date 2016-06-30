@@ -2,7 +2,7 @@
 {
 	global $db; 
 	
-	$id = 79;
+	$id = 50;
 	$for =  204;
 	
 	$norma = $db->prepare('SELECT id, puis_norma FROM members WHERE id = ?'); $norma->execute(array($for));
