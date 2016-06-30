@@ -2,18 +2,25 @@
 {
 	global $db; 
 	
-	$select = $db->query('SELECT COUNT(*) AS count FROM incan_list');
-	$line = $select->fetch();
-	
-	$select = $db->query('SELECT * FROM incan_list');
-	
-	$cost = 0;
-	while ($line_ = $select->fetch())
+	$limit = 8;
+	while ($limit =! 0)
 	{
-		$cost = $cost + $line_['cost'];
+		$select = $db->prepare('SELECT COUNT(*) AS count FROM incan_list WHERE level = ?');
+		$select->execute(array($limit));
+		$line = $select->fetch();
+		
+		$select = $db->prepare('SELECT * FROM incan_list WHERE level = ?');
+		$select->execute(array($limit));
+		
+		$cost = 0;
+		while ($line_ = $select->fetch())
+		{
+			$cost = $cost + $line_['cost'];
+		}
+		
+		$result = $cost / $line['count'];
+		echo $result, '<br />';
+		$limit--;
 	}
-	
-	$result = $cost / $line['count'];
-	echo $result;
 }
 ?>
