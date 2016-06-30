@@ -2,9 +2,18 @@
 {
 	global $db; 
 	
-	$reset = $db->query('UPDATE `members` SET "specialisation" = "Inconnue", "spe_2" = "Inconnue" WHERE rank < 8 AND pnj = 0');
-	$restart = $db->query('UPDATE `members` SET magie_rank = 0 WHERE rank < 8 AND pnj = 0');
-	$pcs = $db->query('UPDATE `members` SET exp = 5 WHERE rank < 8 AND pnj = 0');
-	$pnj = $db->query('UPDATE `members` SET exp = 999 WHERE rank > 7 OR pnj = 1');
+	$select = $db->query('SELECT COUNT(*)AS count FROM incan_list');
+	$line = $select->fetch();
+	
+	$select = $db->query('SELECT * FROM incan_list');
+	
+	$cost = 0;
+	while ($line_ = $select->fetch())
+	{
+		$cost = $cost + $line['cost'];
+	}
+	
+	$result = $cost / $line['count'];
+	echo $result;
 }
 ?>
