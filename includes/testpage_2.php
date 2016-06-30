@@ -3,7 +3,7 @@
 	global $db; 
 	
 	$limit = 8;
-	while ($limit =! 0)
+	while ($limit != 0)
 	{
 		$select = $db->prepare('SELECT COUNT(*) AS count FROM incan_list WHERE level = ?');
 		$select->execute(array($limit));
