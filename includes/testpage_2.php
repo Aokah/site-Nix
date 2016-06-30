@@ -13,7 +13,7 @@
 		$cost = $cost + $line_['cost'];
 	}
 	
-	$result = $cost / $line_['count'];
+	$result = $cost / $line['count'];
 	echo $result;
 }
 ?>
