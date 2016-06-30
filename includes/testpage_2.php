@@ -2,25 +2,16 @@
 {
 	global $db; 
 	
-	$limit = 8;
-	while ($limit != 0)
-	{
-		$select = $db->prepare('SELECT COUNT(*) AS count FROM incan_list WHERE level = ?');
-		$select->execute(array($limit));
-		$line = $select->fetch();
-		
-		$select = $db->prepare('SELECT * FROM incan_list WHERE level = ?');
-		$select->execute(array($limit));
-		
-		$cost = 0;
-		while ($line_ = $select->fetch())
-		{
-			$cost = $cost + $line_['cost'];
-		}
-		
-		$result = $cost / $line['count'];
-		echo $result, '<br />';
-		$limit--;
-	}
+	$id = 79;
+	$for =  204;
+	
+	$norma = $db->prepare('SELECT id, puis_norma FROM members WHERE id = ?'); $norma->execute(array($for));
+	$norma = $norma->fetch();
+	$incan = $db->prepare('SELECT id, norma WHERE incan_list WHERE id = ?'); $incan->execute(array($id));
+	$incan = $incan->fetch();
+	$result = $norma['puis_norma'] + $incan['norma']; 
+	
+	echo $norma['puis_norma'], ' + ', $incan['norma'], ' = ', $result;
+	
 }
 ?>
