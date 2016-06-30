@@ -158,7 +158,7 @@
       <p>Cette page vous servira à répartir vos différents points de compétence et de vous informer sur les aptitudes de votre personnage dans le domaine de la Magie.</p>
       <? if ($select['specialisation'] == "Inconnue")
       {
-       ?> <p class="name3">Vous n'avez actuellement aucune spécialisation magique, il est préférable d'attendre d'avoir connu votre affinité avant d'attribuer des Points de Compétences (PCs)</p>
+        ?><p class="name3">Vous n'avez actuellement aucune spécialisation magique, il est préférable d'attendre d'avoir connu votre affinité avant d'attribuer des Points de Compétences (PCs)</p><? 
       }
       else
       {
