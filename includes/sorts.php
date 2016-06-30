@@ -741,22 +741,26 @@ if ($_SESSION['connected'])
 					if ($verif-> fetch())
 					{
 						echo 'Navré, mais ce personnage a déjà validé ce sort.';
+						echo "<p><a href=\"index?p=sorts\">[Retourner à la page des Mes sorts]</a></p>";
 					}
 					else
 					{
 						$update = $db->prepare('UPDATE incan_get SET valid = 1 WHERE user_id = ? AND incan_id = ?');
 						$update->execute(array($user, $sort));
 						echo 'Le sort a bien été validé !';
+						echo "<p><a href=\"index?p=sorts\">[Retourner à la page des Mes sorts]</a></p>";
 					}
 				}
 				else
 				{
 					echo 'Navré, mais ce personnage ne connait pas ce sort !';
+						echo "<p><a href=\"index?p=sorts\">[Retourner à la page des Mes sorts]</a></p>";
 				}
 			}
 			else
 			{
 				echo '<p>Uhm.... Tu es sûr que tu n\'as pas oublié de préciser à qui valider le sort ?</p>';
+						echo "<p><a href=\"index?p=sorts\">[Retourner à la page des Mes sorts]</a></p>";
 			}
 		}
 		else
