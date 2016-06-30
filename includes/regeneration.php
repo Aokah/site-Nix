@@ -29,9 +29,12 @@ global $_POST, $db, $_SESSION;
         }
         elseif ($vajout <= 200) { $vadd = 10; }
         else
-        { $vadd = 0; }
+        { 
+            $vadd = 0; 
+            
+        }
         $maj = $db->prepare('UPDATE members SET E_magique = E_magique + ?, E_vitale = E_vitale + ? WHERE id = ?');
-        $maj->execute(array($add, $vadd, $id));
+        $maj->execute(array($add, $vadd, $select['id']));
       }
 }
   ?>
