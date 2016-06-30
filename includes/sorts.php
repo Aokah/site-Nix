@@ -668,10 +668,12 @@ if ($_SESSION['connected'])
 							$norma = $norma->fetch();
 							$incan = $db->prepare('SELECT id, norma, cost FROM incan_list WHERE id = ?'); $incan->execute(array($sort));
 							$incan = $incan->fetch();
-							$result = $norma['puis_norma'] + $incan['norma']; 
-							$pcs = $incan['cost'] / 3 ;
+							
 							if ($norma['race'] == "Orque") { $coef = 0.5; } elseif ($norma['race'] == "Elfe" OR $norma['race'] == "Zaknafein") { $coef = 2; } 
 							elseif ($norma['race'] == "Ernelien") { $coef = 3; } elseif ( $norma['race'] == "Dragon") { $coef = 4; }  else { $coef = 1; }
+							$bonus = $incan['norma'] * $coef;
+							$result = $norma['puis_norma'] + $bonus; 
+							$pcs = $incan['cost'] / 3 ;
 							$pcs = $pcs * $coef;
 							$pcs = number_format($pcs, 0);
 							$pcs = $norma['exp'] + $pcs; 
