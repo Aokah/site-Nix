@@ -2,7 +2,7 @@
 {
 	global $db; 
 	
-	$select = $db->query('SELECT COUNT(*)AS count FROM incan_list');
+	$select = $db->query('SELECT COUNT(*) AS count FROM incan_list');
 	$line = $select->fetch();
 	
 	$select = $db->query('SELECT * FROM incan_list');
