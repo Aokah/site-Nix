@@ -671,7 +671,7 @@ if ($_SESSION['connected'])
 							$result = $norma['puis_norma'] + $incan['norma']; 
 							$pcs = ($result / 3) * 100000000000000;
 							if ($norma['race'] == "Orque") { $coef = 0.5; } elseif ($norma['race'] == "Elfe" OR $norma['race'] == "Zaknafein") { $coef = 2; } 
-							elseif ($norma['race'] == "Ernelien") { $coef = 3; } elseif ( $norma['race'] == "Drake") { $coef = 4; }  else { $coef = 1; }
+							elseif ($norma['race'] == "Ernelien") { $coef = 3; } elseif ( $norma['race'] == "Dragon") { $coef = 4; }  else { $coef = 1; }
 							$pcs = $pcs * $coef;
 							$pcs = number_format($pcs, 0);
 							$pcs = $norma['exp'] + $pcs; 
