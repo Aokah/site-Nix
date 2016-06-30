@@ -10,10 +10,10 @@
 	$cost = 0;
 	while ($line_ = $select->fetch())
 	{
-		$cost = $cost + $line['cost'];
+		$cost = $cost + $line_['cost'];
 	}
 	
-	$result = $cost / $line['count'];
+	$result = $cost / $line_['count'];
 	echo $result;
 }
 ?>
