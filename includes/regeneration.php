@@ -2,9 +2,9 @@
 {
 global $_POST, $db, $_SESSION;
     
-    $select = $db->query('SELECT * FROM members');
+    $select_ = $db->query('SELECT * FROM members');
     
-      while ($select = $select->fetch())
+      while ($select = $select_->fetch())
       {
         if ($select['magie_rank'] == 0) { $limit = 50; } elseif ($select['magie_rank'] == 1) { $limit = 100; } elseif ($select['magie_rank'] == 2) { $limit = 150; }
         elseif ($select['magie_rank'] == 3) { $limit = 200; } elseif ($select['magie_rank'] == 4) { $limit = 300; } elseif ($select['magie_rank'] == 5) { $limit = 400; }
