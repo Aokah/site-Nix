@@ -9,7 +9,7 @@
 	{
 		$id = $_SESSION['id'];
 	}
-	$presel = $db->prepare('SELECT * FROM members WHERE id = ?'); $prese->execute(array($id)); $presel = $presel->fetch();
+	$presel = $db->prepare('SELECT * FROM members WHERE id = ?'); $presel->execute(array($id)); $presel = $presel->fetch();
 ?>
 		<table>
 			<tbody>
