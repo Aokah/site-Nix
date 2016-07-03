@@ -1043,7 +1043,7 @@ if ($_SESSION['connected'])
 									<img src="pics/magie/EV_<? echo $tvie ?>.png" width="95%" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
-							<tr>
+							<!--<tr>
 								<td colspan="2">
 									Elément primaire : <img src="pics/magie/Magie_<?= $line['specialisation']?>.png" alt="" class="magie" width="25px" /> <?= $line['specialisation']?>
 								</td>
@@ -1052,7 +1052,7 @@ if ($_SESSION['connected'])
 								<td colspan="2">
 									Elément secondaire : <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" alt="" class="magie" width="25px" /> <?= $line['spe_2']?>
 								</td>
-							</tr>
+							</tr>-->
 							<tr>
 								<td>
 									Niveau magique :
@@ -1970,7 +1970,7 @@ if ($_SESSION['connected'])
 									<img src="pics/magie/EV_<? echo $tvie ?>.png" width="95%" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
-							<tr>
+							<!--<tr>
 								<td colspan="2">
 									Elément primaire : <img src="pics/magie/Magie_<?= $line['specialisation']?>.png" alt="" class="magie" width="25px" /> <?= $line['specialisation']?>
 								</td>
@@ -1979,7 +1979,7 @@ if ($_SESSION['connected'])
 								<td colspan="2">
 									Elément secondaire : <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" alt="" class="magie" width="25px" /> <?= $line['spe_2']?>
 								</td>
-							</tr>
+							</tr>-->
 							<tr>
 								<td>
 									Niveau magique :
