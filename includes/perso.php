@@ -1984,7 +1984,8 @@ if ($_SESSION['connected'])
 									Niveau magique :
 								</td>
 								<td style="text-align:center;" colspan="2">
-									 <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
+									<?php include('includes/magic_perso.php'); magic_level (); ?>
+									 <!-- <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?> -->
 								</td>
 							</tr>
 							<?php if ($_SESSION['rank'] > 4)
