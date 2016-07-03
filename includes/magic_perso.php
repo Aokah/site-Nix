@@ -19,7 +19,7 @@
 		{
 			switch ($line['element'])
 			{
-				default : $ico = "Inconnue"; $lore = "Acune aura magique"; break; case 1: $ico = "Air"; $lore  =" en Aeormancien": break;
+				default : $ico = "Inconnue"; $lore = "Acune aura magique"; break; case 1: $ico = "Air"; $lore  =" en Aeormancien"; break;
 				case 2: $ico = "Arcane"; $lore = "Temporel"; break; case 3: $ico = "Chaleur"; $lore = "en Termoancie"; break;
 				case 4: $ico = "Chaos"; $lore = "Entropique"; break; case 5: $ico = "Eau"; $lore = "en Hydromancie"; break;
 				case 6: $ico = "Espace"; $lore = "Spatial"; break; case 7: $ico = "Energie"; $lore = "en Electromancie"; break;
@@ -62,7 +62,7 @@
 		{
 			switch ($line['element'])
 			{
-				default : $ico = "Inconnue"; $lore = "Acune aura magique"; break; case 1: $ico = "Air"; $lore  =" en Aeormancien": break;
+				default : $ico = "Inconnue"; $lore = "Acune aura magique"; break; case 1: $ico = "Air"; $lore  =" en Aeormancien"; break;
 				case 2: $ico = "Arcane"; $lore  ="Temporel": break; case 3: $ico = "Chaleur"; $lore  ="en Termoancie": break;
 				case 4: $ico = "Chaos"; $lore  ="Entropique": break; case 5: $ico = "Eau"; $lore  ="en Hydromancie": break;
 				case 6: $ico = "Espace"; $lore  ="Spatial": break; case 7: $ico = "Energie"; $lore  ="en Electromancie": break;
