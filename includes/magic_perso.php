@@ -15,8 +15,8 @@
 		<table>
 			<tbody>
 	<?php
-		$select = $db->prepare('SELECT * FROM magic_level WHERE id = ? AND spe = 1'); $select->execute(array($id));
-		if ($line = $select->fetch())
+		$select = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND spe = 1'); $select->execute(array($id));
+		while ($line = $select->fetch())
 		{
 			switch ($line['element'])
 			{
@@ -59,8 +59,8 @@
 	}
 	if ($presel['spe_2'] != "Inconnue")
 	{
-		$select = $db->prepare('SELECT * FROM magic_level WHERE id = ? AND spe = 2'); $select->execute(array($id));
-		if ($line = $select->fetch())
+		$select = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND spe = 2'); $select->execute(array($id));
+		while ($line = $select->fetch())
 		{
 			switch ($line['element'])
 			{
