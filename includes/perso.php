@@ -1069,7 +1069,8 @@ if ($_SESSION['connected'])
 									 	[DOWN]
 									 </a>
 									 <?php } } ?>
-									 <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>
+									 <?php include('includes/magic_perso.php'); magic_level (); ?> 
+									 <!--<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>-->
 								</td>
 							</tr>
 							<?php if ($_SESSION['rank'] > 4)
