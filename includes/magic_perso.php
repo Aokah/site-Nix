@@ -11,10 +11,7 @@
 	}
 	
 	$presel = $db->prepare('SELECT * FROM members WHERE id = ?'); $presel->execute(array($id)); $presel = $presel->fetch();
-?>
-		<table>
-			<tbody>
-	<?php
+
 		$select = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND spe = 1'); $select->execute(array($id));
 		while ($line = $select->fetch())
 		{
@@ -33,19 +30,18 @@
 			}
 			switch ($presel['magie_rank'])
 			{
-				case 0: $magie = "Profane"; break;	case 1: $magie = "Adepte"; break;	case 2: $magie = "Apprenti Magicien"; break;
+				case 0: $magie = "Profane"; break;	case 1: $magie = "Adepte"; break;	case 2: $magie = "Apprenti"; break;
 				case 3: $magie = "Magicien"; break;	case 4: $magie = "Mage"; break;		case 5: $magie = "Archimage"; break;
 				case 6: $magie = "Sage"; break;		case 7: $magie = "Dieu"; break;		case 8: $magie = "Titan"; break;
 				case 9: $magie = "Être Suprême"; break;	case 10: $magie = "Principe Universel"; break;
 			}
 		?>
-				<tr>
-					<td>
+		<p>
 					<?php
 					if ($presel['specialitation'] != "Inconnue")
 					{
 					?>
-						<img src="ico/magie/<?= $ico?>.png" alt="" class="magie" width="25px" /> <?= $magie; ?> <?= $lore; ?>
+						<img src="pics/magie/<?= $ico?>.png" alt="" class="magie" width="25px" /> <?= $magie; ?> <?= $lore; ?>
 					<?php
 					}
 					else
@@ -53,8 +49,7 @@
 						echo "Aucune aura magique";
 					}
 					?>
-					</td>
-				</tr>
+		</p>
 	<?php 
 	}
 	if ($presel['spe_2'] != "Inconnue")
@@ -77,19 +72,18 @@
 			}
 			switch ($presel['magie_rank'])
 			{
-				case 0: $magie = "Profane"; break;	case 1: $magie = "Adepte"; break;	case 2: $magie = "Apprenti Magicien"; break;
+				case 0: $magie = "Profane"; break;	case 1: $magie = "Adepte"; break;	case 2: $magie = "Apprenti"; break;
 				case 3: $magie = "Magicien"; break;	case 4: $magie = "Mage"; break;		case 5: $magie = "Archimage"; break;
 				case 6: $magie = "Sage"; break;		case 7: $magie = "Dieu"; break;		case 8: $magie = "Titan"; break;
 				case 9: $magie = "Être Suprême"; break;	case 10: $magie = "Principe Universel"; break;
 			}
 		?>
-				<tr>
-					<td>
+			<p>
 						<?php
 						if ($presel['specialitation'] != "Inconnue")
 						{
 						?>
-							<img src="ico/magie/<?= $ico?>.png" alt="" class="magie" width="25px" /> <?= $magie; ?> <?= $lore; ?>
+							<img src="pics/magie/<?= $ico?>.png" alt="" class="magie" width="25px" /> <?= $magie; ?> <?= $lore; ?>
 						<?php
 						}
 						else
@@ -97,13 +91,9 @@
 							echo "Aucune aura magique";
 						}
 						?>
-					</td>
-				</tr>
+			</p>
 	<?php	
 		}
-	} ?>
-			</tbody>
-		</table>
-<?php
+	} 
 }
 ?>
