@@ -190,8 +190,111 @@ if ($_SESSION['connected'])
 									case 14 : $spe_2 = "Spéciale"; break; case 15 : $spe_2 = "Terre"; break; case 16: $spe_2 = "Chaleur"; break;
 									case 17 : $spe_2 = "Void"; break; case 18 : $spe_2 = "Espace"; break; case 19 : $spe_2 = "Ordre"; break;
 								}
+								
+								
+								switch ($spe_1)
+								{
+									case "Air": $element = 1; break; case "Arcane": $element = 2; break; case "Chaleur": $element = 3; break; case "Chaos": $element = 4; break;
+									case "Eau": $element = 5; break; case "Espace": $element = 6; break; case "Energie": $element = 7; break; case "Feu": $element = 8; break;
+									case "Glace": $element = 9; break; case "Lumière": $element = 10; break; case "Métal": $element = 11; break; case "Nature": $element = 12; break;
+									case "Ombre": $element = 13; break; case "Ordre": $element = 14; break; case "Psy": $element = 15; break; case "Terre": $element = 16; break;
+									case "Void": $element = 17; break; case "Spéciale": $element = 18; break; case "Inconnue": $element = 0; break;
+								}
+								switch ($spe_2)
+								{
+									case "Air": $element_2 = 1; break; case "Arcane": $element_2 = 2; break; case "Chaleur": $element_2 = 3; break; case "Chaos": $element_2 = 4; break;
+									case "Eau": $element_2 = 5; break; case "Espace": $element_2 = 6; break; case "Energie": $element_2 = 7; break; case "Feu": $element_2 = 8; break;
+									case "Glace": $element_2 = 9; break; case "Lumière": $element_2 = 10; break; case "Métal": $element_2 = 11; break; case "Nature": $element_2 = 12; break;
+									case "Ombre": $element_2 = 13; break; case "Ordre": $element_2 = 14; break; case "Psy": $element_2 = 15; break; case "Terre": $element_2 = 16; break;
+									case "Void": $element_2 = 17; break; case "Spéciale": $element_2 = 18; break; case "Inconnue": $element_2 = 0; break;
+								}
+								switch ($line['specialisation'])
+								{
+									case "Air": $origine = 1; break; case "Arcane": $origine = 2; break; case "Chaleur": $origine = 3; break; case "Chaos": $origine = 4; break;
+									case "Eau": $origine = 5; break; case "Espace": $origine = 6; break; case "Energie": $origine = 7; break; case "Feu": $origine = 8; break;
+									case "Glace": $origine = 9; break; case "Lumière": $origine = 10; break; case "Métal": $origine = 11; break; case "Nature": $origine = 12; break;
+									case "Ombre": $origine = 13; break; case "Ordre": $origine = 14; break; case "Psy": $origine = 15; break; case "Terre": $origine = 16; break;
+									case "Void": $origine = 17; break; case "Spéciale": $origine = 18; break; case "Inconnue": $origine = 0; break;
+								}
+								switch ($line['spe_2'])
+								{
+									case "Air": $origine_2 = 1; break; case "Arcane": $origine_2 = 2; break; case "Chaleur": $origine_2 = 3; break; case "Chaos": $origine_2 = 4; break;
+									case "Eau": $origine_2 = 5; break; case "Espace": $origine_2 = 6; break; case "Energie": $origine_2 = 7; break; case "Feu": $origine_2 = 8; break;
+									case "Glace": $origine_2 = 9; break; case "Lumière": $origine_2 = 10; break; case "Métal": $origine_2 = 11; break; case "Nature": $origine_2 = 12; break;
+									case "Ombre": $origine_2 = 13; break; case "Ordre": $origine_2 = 14; break; case "Psy": $origine_2 = 15; break; case "Terre": $origine_2 = 16; break;
+									case "Void": $origine_2 = 17; break; case "Spéciale": $origine_2 = 18; break; case "Inconnue": $origine_2 = 0; break;
+								}
+								
+								$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 1'); $preverif->execute(array($perso, $element));
+								if ($line = $preverif->fetch())
+								{
+									// La ligne avec cet élément existe
+									if ($line['element'] == $element)
+									{
+										// Si l'ancien élément = le nouvel élément
+										# *ne fait rien <3*
+									}
+									else
+									{
+										// Si l'ancien élément =/= le nouvel élément mais est déjà existant
+										$verify = $db->prepare('SELECT * FROM magic_level WHERE user_id AND element = ? AND spe = 0'); $verify->execute(array($perso, $element));
+										if ($line = $verify->fetch())
+										{
+											// Si le nouveau existait déjà
+											$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine));
+											$update2 = $db->prepare('UPDATE magic_level SET spe = 1 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $element));
+										}
+										else
+										{
+											// Si le nouveau n'existe pas
+											$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine));
+											$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 1)"); $insert->execute(array($perso, $element));
+										}
+									}
+								}
+								else
+								{
+									// La ligne avec cet élément n'existe pas
+									$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 1)"); $insert->execute(array($perso, $element));
+								}
+								
+								$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 2'); $preverif->execute(array($perso, $element_2));
+								if ($line = $preverif->fetch())
+								{
+									// La ligne avec cet élément existe
+									if ($line['element'] == $element_2)
+									{
+										// Si l'ancien élément = le nouvel élément
+										# *ne fait rien <3*
+									}
+									else
+									{
+										// Si l'ancien élément =/= le nouvel élément mais est déjà existant
+										$verify = $db->prepare('SELECT * FROM magic_level WHERE user_id AND element = ? AND spe = 0'); $verify->execute(array($perso, $element_2));
+										if ($line = $verify->fetch())
+										{
+											// Si le nouveau existait déjà
+											$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine_2));
+											$update2 = $db->prepare('UPDATE magic_level SET spe = 2 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $element_2));
+										}
+										else
+										{
+											// Si le nouveau n'existe pas
+											$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine_2));
+											$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 2)"); $insert->execute(array($perso, $element_2));
+										}
+									}
+								}
+								else
+								{
+									// La ligne avec cet élément n'existe pas
+									$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 2)"); $insert->execute(array($perso, $element_2));
+								}
+								
 								$update = $db->prepare('UPDATE members SET E_Magique = ?, E_Vitale = ?, specialisation = ?, spe_2 = ?, exp = ? , puis_norma = ? WHERE id = ?');
 								$update->execute(array($_POST['e-magie'], $_POST['e-vie'], $spe_1, $spe_2, $_POST['exp'], $_POST['puis'] ,$perso));
+								
+								
 								echo '<p>Modifications des informations magiques effectuées avec succès</p>';
 								?>
 								<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
