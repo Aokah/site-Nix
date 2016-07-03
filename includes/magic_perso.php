@@ -52,10 +52,11 @@
 						echo "Aucune aura magique";
 					}
 					?>
+					</td>
 				</tr>
 	<?php 
 	}
-	if ($line['spe_2'] != "Inconnue")
+	if ($presel['spe_2'] != "Inconnue")
 	{
 		$select = $db->prepare('SELECT * FROM magic_level WHERE id = ? AND spe = 2'); $select->execute(array($id));
 		while ($line = $select->fetch())
@@ -83,7 +84,18 @@
 		?>
 				<tr>
 					<td>
-						
+						<?php
+						if ($presel['specialitation'] != "Inconnue")
+						{
+						?>
+							<img src="ico/magie/<?= $ico?>.png" alt="" class="magie" width="25px" /> <?= $magie; ?> <?= $lore; ?>
+						<?php
+						}
+						else
+						{
+							echo "Aucune aura magique";
+						}
+						?>
 					</td>
 				</tr>
 	<?php	
