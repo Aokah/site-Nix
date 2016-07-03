@@ -28,7 +28,7 @@
 				case 16: $ico = "Terre"; $lore = "en Telluromancie"; break; case 17: $ico = "Void"; $lore = "Void"; break;
 				case 18: $ico = "Spéciale"; $lore  ="en Magie Spéciale"; break;
 			}
-			switch ($presel['magie_rank'])
+			switch ($line['rank'])
 			{
 				case 0: $magie = "Profane"; break;	case 1: $magie = "Adepte"; break;	case 2: $magie = "Apprenti"; break;
 				case 3: $magie = "Magicien"; break;	case 4: $magie = "Mage"; break;		case 5: $magie = "Archimage"; break;
@@ -70,7 +70,7 @@
 				case 16: $ico = "Terre"; $lore = "en Telluromancie"; break; case 17: $ico = "Void"; $lore = "Void"; break;
 				case 18: $ico = "Spéciale"; $lore  ="en Magie Spéciale"; break;
 			}
-			switch ($presel['magie_rank'])
+			switch ($line['rank'])
 			{
 				case 0: $magie = "Profane"; break;	case 1: $magie = "Adepte"; break;	case 2: $magie = "Apprenti"; break;
 				case 3: $magie = "Magicien"; break;	case 4: $magie = "Mage"; break;		case 5: $magie = "Archimage"; break;
