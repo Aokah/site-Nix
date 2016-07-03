@@ -28,7 +28,7 @@
 				case 12: $ico = "Nature"; $lore = "en Phytomancie"; break; case 13: $ico = "Ombre"; $lore = "en Occultomancie"; break;
 				case 14: $ico = "Ordre"; $lore = "Eurytmique"; break; case 15: $ico = "Psy"; $lore = " en Psychomancie"; break;
 				case 16: $ico = "Terre"; $lore = "en Telluromancie"; break; case 17: $ico = "Void"; $lore = "Void"; break;
-				case 18: $ico = "Spéciale"; $lore  ="en Magie Spéciale": break;
+				case 18: $ico = "Spéciale"; $lore  ="en Magie Spéciale"; break;
 			}
 			switch ($presel['magie_rank'])
 			{
@@ -71,7 +71,7 @@
 				case 12: $ico = "Nature"; $lore  ="en Phytomancie": break; case 13: $ico = "Ombre"; $lore  ="en Occultomancie": break;
 				case 14: $ico = "Ordre"; $lore  ="Eurytmique": break; case 15: $ico = "Psy"; $lore  =" en Psychomancie": break;
 				case 16: $ico = "Terre"; $lore  ="en Telluromancie": break; case 17: $ico = "Void"; $lore  ="Void": break;
-				case 18: $ico = "Spéciale"; $lore  ="en Magie Spéciale": break;
+				case 18: $ico = "Spéciale"; $lore  ="en Magie Spéciale"; break;
 			}
 			switch ($presel['magie_rank'])
 			{
