@@ -1,6 +1,6 @@
 <?php function magic_level ()
 {
-	global $db;
+	global $db, $_GET, $_SESSION;
 	if (isset($_GET['perso']))
 	{
 		$id = intval($_GET['perso']);
