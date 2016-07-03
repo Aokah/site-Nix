@@ -9,13 +9,14 @@
 	{
 		$id = $_SESSION['id'];
 	}
-	
-	$select = $db->prepare('SELECT * FROM magic_level WHERE id = ? AND spe = 1'); $select->execute(array($id));
-	while ($line = $select->fetch())
-	{
 ?>
 		<table>
 			<tbody>
+	<?php
+		$select = $db->prepare('SELECT * FROM magic_level WHERE id = ? AND spe = 1'); $select->execute(array($id));
+		while ($line = $select->fetch())
+		{
+		?>
 				<tr>
 					<td>
 						
