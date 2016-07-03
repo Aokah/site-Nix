@@ -63,14 +63,14 @@
 			switch ($line['element'])
 			{
 				default : $ico = "Inconnue"; $lore = "Acune aura magique"; break; case 1: $ico = "Air"; $lore  =" en Aeormancien"; break;
-				case 2: $ico = "Arcane"; $lore  ="Temporel": break; case 3: $ico = "Chaleur"; $lore  ="en Termoancie": break;
-				case 4: $ico = "Chaos"; $lore  ="Entropique": break; case 5: $ico = "Eau"; $lore  ="en Hydromancie": break;
-				case 6: $ico = "Espace"; $lore  ="Spatial": break; case 7: $ico = "Energie"; $lore  ="en Electromancie": break;
-				case 8: $ico = "Feu"; $lore  ="en Pyromancie": break; case 9: $ico = "Glace"; $lore  ="en Cryomancie": break;
-				case 10: $ico = "Lumière"; $lore  ="en Luciomancie": break; case 11: $ico = "Métal"; $lore  ="en Ferromancie": break;
-				case 12: $ico = "Nature"; $lore  ="en Phytomancie": break; case 13: $ico = "Ombre"; $lore  ="en Occultomancie": break;
-				case 14: $ico = "Ordre"; $lore  ="Eurytmique": break; case 15: $ico = "Psy"; $lore  =" en Psychomancie": break;
-				case 16: $ico = "Terre"; $lore  ="en Telluromancie": break; case 17: $ico = "Void"; $lore  ="Void": break;
+				case 2: $ico = "Arcane"; $lore = "Temporel"; break; case 3: $ico = "Chaleur"; $lore = "en Termoancie"; break;
+				case 4: $ico = "Chaos"; $lore = "Entropique"; break; case 5: $ico = "Eau"; $lore = "en Hydromancie"; break;
+				case 6: $ico = "Espace"; $lore = "Spatial"; break; case 7: $ico = "Energie"; $lore = "en Electromancie"; break;
+				case 8: $ico = "Feu"; $lore = "en Pyromancie"; break; case 9: $ico = "Glace"; $lore = "en Cryomancie"; break;
+				case 10: $ico = "Lumière"; $lore = "en Luciomancie"; break; case 11: $ico = "Métal"; $lore = "en Ferromancie"; break;
+				case 12: $ico = "Nature"; $lore = "en Phytomancie"; break; case 13: $ico = "Ombre"; $lore = "en Occultomancie"; break;
+				case 14: $ico = "Ordre"; $lore = "Eurytmique"; break; case 15: $ico = "Psy"; $lore = " en Psychomancie"; break;
+				case 16: $ico = "Terre"; $lore = "en Telluromancie"; break; case 17: $ico = "Void"; $lore = "Void"; break;
 				case 18: $ico = "Spéciale"; $lore  ="en Magie Spéciale"; break;
 			}
 			switch ($presel['magie_rank'])
