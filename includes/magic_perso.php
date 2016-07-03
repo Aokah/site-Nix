@@ -9,6 +9,7 @@
 	{
 		$id = $_SESSION['id'];
 	}
+	echo $id, ' ', $_SESSION['id'], ' ', $_GET['perso'];
 	$presel = $db->prepare('SELECT * FROM members WHERE id = ?'); $presel->execute(array($id)); $presel = $presel->fetch();
 ?>
 		<table>
