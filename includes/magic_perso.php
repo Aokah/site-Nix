@@ -9,14 +9,14 @@
 	{
 		$id = $_SESSION['id'];
 	}
-	echo $id, ' ', $_SESSION['id'], ' ', $_GET['perso'];
+	
 	$presel = $db->prepare('SELECT * FROM members WHERE id = ?'); $presel->execute(array($id)); $presel = $presel->fetch();
 ?>
 		<table>
 			<tbody>
 	<?php
 		$select = $db->prepare('SELECT * FROM magic_level WHERE id = ? AND spe = 1'); $select->execute(array($id));
-		while ($line = $select->fetch())
+		if ($line = $select->fetch())
 		{
 			switch ($line['element'])
 			{
@@ -60,7 +60,7 @@
 	if ($presel['spe_2'] != "Inconnue")
 	{
 		$select = $db->prepare('SELECT * FROM magic_level WHERE id = ? AND spe = 2'); $select->execute(array($id));
-		while ($line = $select->fetch())
+		if ($line = $select->fetch())
 		{
 			switch ($line['element'])
 			{
