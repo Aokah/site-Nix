@@ -41,7 +41,7 @@
 					if ($presel['specialitation'] != "Inconnue")
 					{
 					?>
-						<img src="pics/magie/Magie_<?= $ico?>.png" alt="" class="magie_type" width="25px" /> <?= $magie; ?> <?= $lore; ?>
+						<img src="ico/magie/magie_rank_<?= $line['rank']?>.gif" alt="" /> <img src="pics/magie/Magie_<?= $ico?>.png" alt="" class="magie_type" width="25px" /> <?= $magie; ?> <?= $lore; ?>
 					<?php
 					}
 					else
@@ -83,7 +83,7 @@
 						if ($presel['specialitation'] != "Inconnue")
 						{
 						?>
-							<img src="pics/magie/Magie_<?= $ico?>.png" alt="" class="magie_type" width="25px" /> <?= $magie; ?> <?= $lore; ?>
+							<img src="ico/magie/magie_rank_<?= $line['rank']?>.gif" alt="" /> <img src="pics/magie/Magie_<?= $ico?>.png" alt="" class="magie_type" width="25px" /> <?= $magie; ?> <?= $lore; ?>
 						<?php
 						}
 						else
