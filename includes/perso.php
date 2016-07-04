@@ -234,7 +234,7 @@ if ($_SESSION['connected'])
 									case "Void": $origine_2 = 17; break; case "Spéciale": $origine_2 = 18; break; case "Inconnue": $origine_2 = 0; break;
 								}
 								echo $element, ' ', $element_2, ' ', $origine, ' ', $origine_2;
-								if ($element != $origine)
+								if ($element != $origine AND $element != 0)
 								{
 									$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 0'); $preverif->execute(array($perso, $element));
 									if ($line = $preverif->fetch())
@@ -262,7 +262,7 @@ if ($_SESSION['connected'])
 									}
 								}
 								
-								if ($element_2 != $origine_2)
+								if ($element_2 != $origine_2 AND $element_2 != 0)
 								{
 									$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 0'); $preverif->execute(array($perso, $element_2));
 									if ($line = $preverif->fetch())
