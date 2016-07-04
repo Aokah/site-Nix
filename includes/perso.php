@@ -234,7 +234,7 @@ if ($_SESSION['connected'])
 									case "Void": $origine_2 = 17; break; case "Spéciale": $origine_2 = 18; break; case "Inconnue": $origine_2 = 0; break;
 								}
 								echo $element, ' ', $element_2, ' ', $origine, ' ', $origine_2;
-								if ($element == $element_2)
+								if ($element != $element_2)
 								{
 									
 									if ($element != $origine AND $element != 0)
