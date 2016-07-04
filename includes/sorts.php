@@ -86,6 +86,7 @@ if ($_SESSION['connected'])
 															{
 																switch ($line['type'])
 																{
+																case 14: $type = "Chaleur" ; break;  case 15: $type = "Espace" ; break;  case 16: $type = "Ordre" ; break;  case 17: $type = "Void" ; break;
 																case 13: $type	= "Terre" ; break; case 12: $type = "Psy" ; break; case 11: $type = "Ombre" ; break; case 10:  $type = "Nature" ; break; case 9:  $type = "Métal" ; break;
 																case 8: $type = "Lumière" ; break; case 7: $type = "Glace" ; break; case 6: $type = "Feu" ; break; case 5: $type = "Energie" ; break;
 																case 4: $type = "Eau" ; break; case 3: $type = "Chaos" ; break; case 2: $type = "Arcane" ; break; case 1: $type = "Air" ; break; case 0: $type = "Inconnue" ; break; 
@@ -232,6 +233,7 @@ if ($_SESSION['connected'])
 									{
 										switch ($line['type'])
 										{
+											case 14: $type = "Chaleur" ; break;  case 15: $type = "Espace" ; break;  case 16: $type = "Ordre" ; break;  case 17: $type = "Void" ; break;
 											case 13: $type	= "Terre" ; break; case 12: $type = "Psy" ; break; case 11: $type = "Ombre" ; break; case 10:  $type = "Nature" ; break; case 9:  $type = "Métal" ; break;
 											case 8: $type = "Lumière" ; break; case 7: $type = "Glace" ; break; case 6: $type = "Feu" ; break; case 5: $type = "Energie" ; break;
 											case 4: $type = "Eau" ; break; case 3: $type = "Chaos" ; break; case 2: $type = "Arcane" ; break; case 1: $type = "Air" ; break; case 0: $type = "Inconnue" ; break; 
@@ -534,6 +536,7 @@ if ($_SESSION['connected'])
 										{
 											switch ($line['type'])
 											{
+												case 14: $type = "Chaleur" ; break;  case 15: $type = "Espace" ; break;  case 16: $type = "Ordre" ; break;  case 17: $type = "Void" ; break;
 												case 13: $type	= "Terre" ; break; case 12: $type = "Psy" ; break; case 11: $type = "Ombre" ; break; case 10:  $type = "Nature" ; break; case 9:  $type = "Métal" ; break;
 												case 8: $type = "Lumière" ; break; case 7: $type = "Glace" ; break; case 6: $type = "Feu" ; break; case 5: $type = "Energie" ; break;
 												case 4: $type = "Eau" ; break; case 3: $type = "Chaos" ; break; case 2: $type = "Arcane" ; break; case 1: $type = "Air" ; break; case 0: $type = "Inconnue" ; break; 
@@ -874,6 +877,7 @@ if ($_SESSION['connected'])
 								{
 									switch ($line['type'])
 									{
+									case 14: $type = "Chaleur" ; break;  case 15: $type = "Espace" ; break;  case 16: $type = "Ordre" ; break;  case 17: $type = "Void" ; break;
 									case 13: $type = "Terre" ; break; case 12: $type = "Psy" ; break; case 11: $type = "Ombre" ; break; case 10:  $type = "Nature" ; break; case 9:  $type = "Métal" ; break;
 									case 8: $type = "Lumière" ; break; case 7: $type = "Glace" ; break; case 6: $type = "Feu" ; break; case 5: $type = "Energie" ; break;
 									case 4: $type = "Eau" ; break; case 3: $type = "Chaos" ; break; case 2: $type = "Arcane" ; break; case 1: $type = "Air" ; break; case 0: $type = "Inconnue" ; break; 
