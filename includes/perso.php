@@ -1310,17 +1310,34 @@ if ($_SESSION['connected'])
 									Niveau magique :
 								</td>
 								<td style="text-align:center;" colspan="2">
-									<?php if ($_SESSION['rank'] >= 5) { 
-									if ($line['magie_rank'] >= 0 AND $line['magie_rank'] < 8 ) { ?>
-									 <a href="index?p=perso&perso=<? echo $perso;?>&action=magieup" title="Monter le niveau magique" style="color:green;">
-									 	[UP]
-									 </a>
-									 <?php }
-									 if ($line['magie_rank'] > 1 AND $line['magie_rank'] < 9 ) { ?>
-									  <a href="index?p=perso&perso=<? echo $perso;?>&action=magiedown" title="Descendre le niveau magique" style="color:red;">
-									 	[DOWN]
-									 </a>
-									 <?php } } ?>
+									<?php if ($_SESSION['rank'] >= 5)
+									{
+										$presel = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND spe > 0 ORDER BY spe ASC');
+										$presel->execute(array($perso));
+										$number = 1;
+										while ($sel = $presel->fetch())
+										{
+											echo '(Spe' , $number, ' ';
+											if ($sel['rank'] >= 0 AND $sel['renk'] < 8 )
+											{
+												?>
+												 <a href="index?p=perso&perso=<? echo $perso;?>&action=magieup_<?= $number?>" title="Monter le niveau magique de la spécialisation N°<?= $number?>" style="color:green;">
+												 	[+]
+												 </a>
+												 <?php	
+											}
+											 if ($sel['rank'] > 1 AND $sel['rank'] < 9 )
+											 {
+												 ?>
+												  <a href="index?p=perso&perso=<? echo $perso;?>&action=magiedown_<?= $number?>" title="Descendre le niveau magique de la spécialisation N°<?= $number?>" style="color:red;">
+												 	[-]
+												 </a>
+												 <?php
+											 }
+											 echo ' )';
+											$number ++;
+										}
+									 } ?>
 									 <?php include('includes/magic_perso.php'); magic_level (); ?> 
 								</td>
 							</tr>
