@@ -759,35 +759,68 @@ if ($_SESSION['connected'])
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
-			elseif($_GET['action'] == 'magieup')
+			elseif($_GET['action'] == 'magieup_1')
 			{
-				if ($_SESSION['rank'] >= 5) {
-				$update = $db->prepare('UPDATE members SET magie_rank = ? WHERE id = ?');
-				$update->execute(array( $line['magie_rank'] +1, $perso));
-				$nom = $line['name'];
-				$msg = "Tuduung~~ ! $nom gagne un niveau !";
-				$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '', ?)");
-				$shirka->execute(array($msg));
-				echo "<p>Le personnage gagne un niveau !</p>";
-				?>
-				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
-				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
-				<?php
+				if ($_SESSION['rank'] >= 5)
+				{
+					switch ($line['specialisation'])
+					{
+						case "Air": $type = 1; $magie = "Aeromancie"; break;
+						case "Arcane": $type = 2; $magie = "Magie Temporelle"; break;
+						case "Chaleur": $type = 3; $magie = "Thermoancie";  break;
+						case "Chaos": $type = 4; $magie = "Entropie";  break;
+						case "Eau": $type = 5; $magie = "Hydromancie";  break;
+						case "Espace": $type = 6; $magie = "Magie Spatiale";  break;
+						case "Energie": $type = 7; $magie = "Electromancie";  break;
+						case "Feu": $type = 8; $magie = "Pyromancie";  break;
+						case "Glace": $type = 9; $magie = "Cryomancie";  break;
+						case "Lumière": $type = 10; $magie = "Luciomancie";  break;
+						case "Métal": $type = 11;  $magie = "Ferromancie"; break;
+						case "Nature": $type = 12; $magie = "Phytomancie";  break;
+						case "Ombre": $type = 13; $magie = "Occultomancie";  break;
+						case "Ordre": $type = 14; $magie = "Eurytmie";  break;
+						case "Psy": $type = 15;  $magie = "Psychomancie"; break;
+						case "Terre": $type = 16;  $magie = "Telluromancie"; break;
+						case "Void": $type = 17; $magie = "Void";  break;
+						case "Spéciale": $type = 18; $magie = "Magie Spéciale";  break;
+						case "Inconnue": $type = 0; break;
+					}
+					$presel = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ?'); $presel->execute(array($perso, $type));
+					$presel = $presel->fetch();
+					$update = $db->prepare('UPDATE magic_level SET rank = ? WHERE user_id = ? AND element = ?');
+					$update->execute(array($presel['rank'] + 1, $perso, $type));
+					
+					$nom = $line['name'];
+					$msg = "Tuduung~~ ! $nom gagne un niveau en $magie !";
+					$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '', ?)");
+					$shirka->execute(array($msg));
+					echo "<p>Le personnage a gagné un niveau !</p>";
+					?>
+					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+					<?php
 				}
-				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
+				else
+				{
+					echo '<p>Non non non ! On ne triche pas ! ;-) !</p>';
+				}
 			}
 			elseif($_GET['action'] == 'magiedown')
 			{
-				if ($_SESSION['rank'] >= 5) {
-				$update = $db->prepare('UPDATE members SET magie_rank = ? WHERE id = ?');
-				$update->execute(array( $line['magie_rank'] -1, $perso));
-				echo "<p>Le personnage perd un niveau !</p>";
-				?>
-				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
-				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
-				<?php
+				if ($_SESSION['rank'] >= 5)
+				{
+					$update = $db->prepare('UPDATE members SET magie_rank = ? WHERE id = ?');
+					$update->execute(array( $line['magie_rank'] -1, $perso));
+					echo "<p>Le personnage perd un niveau !</p>";
+					?>
+					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+					<?php
 				}
-				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
+				else 
+				{
+					echo '<p>Non non non ! On ne triche pas ! ;-) !</p>';
+				}
 			}
 			elseif($_GET['action'] == 'vanishoff')
 			{
@@ -1155,16 +1188,6 @@ if ($_SESSION['connected'])
 									<img src="pics/magie/EV_<? echo $tvie ?>.png" width="95%" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
-							<!--<tr>
-								<td colspan="2">
-									Elément primaire : <img src="pics/magie/Magie_<?= $line['specialisation']?>.png" alt="" class="magie" width="25px" /> <?= $line['specialisation']?>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									Elément secondaire : <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" alt="" class="magie" width="25px" /> <?= $line['spe_2']?>
-								</td>
-							</tr>-->
 							<tr>
 								<td>
 									Niveau magique :
@@ -1182,7 +1205,6 @@ if ($_SESSION['connected'])
 									 </a>
 									 <?php } } ?>
 									 <?php include('includes/magic_perso.php'); magic_level (); ?> 
-									 <!--<img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?>-->
 								</td>
 							</tr>
 							<?php if ($_SESSION['rank'] > 4)
@@ -2082,23 +2104,12 @@ if ($_SESSION['connected'])
 									<img src="pics/magie/EV_<? echo $tvie ?>.png" width="95%" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
-							<!--<tr>
-								<td colspan="2">
-									Elément primaire : <img src="pics/magie/Magie_<?= $line['specialisation']?>.png" alt="" class="magie" width="25px" /> <?= $line['specialisation']?>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									Elément secondaire : <img src="pics/magie/Magie_<?= $line['spe_2']?>.png" alt="" class="magie" width="25px" /> <?= $line['spe_2']?>
-								</td>
-							</tr>-->
 							<tr>
 								<td>
 									Niveau magique :
 								</td>
 								<td style="text-align:center;" colspan="2">
 									<?php include('includes/magic_perso.php'); magic_level (); ?>
-									 <!-- <img src="pics/magie_rank_<?= $line['magie_rank']?>.gif" alt="" /> <? echo $magie; ?> -->
 								</td>
 							</tr>
 							<?php if ($_SESSION['rank'] > 4)
