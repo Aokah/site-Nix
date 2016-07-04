@@ -429,6 +429,7 @@ if ($_SESSION['connected'])
 					if ($line['E_magique'] >= 7) { $overmagie = 'Inutile de modifier l\'énergie d\'un personnage aux pouvoirs illimités !'; }
 				?>
 					<h3>Modification des informations magiques du personnage</h3>
+					<p class="name6">ATTENTION : Ne pas effectuer d'échange Spécialisation Primaire - Secondaire ou d'entrer une spécialitation identique à l'autre (mettre Energie en Spécialitation primaire alors qu'il y a déjà l'Energie en Secondaire) Au prix de provoquer un bug !</p>
 					<form action="index?p=perso&perso=<?php echo $perso;?>&modif=save" method="POST">
 						<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 							<tbody>
