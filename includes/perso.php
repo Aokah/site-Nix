@@ -430,7 +430,7 @@ if ($_SESSION['connected'])
 						<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 							<tbody>
 								<tr>
-									<td>
+									<td width="50%">
 										Energie Magique :
 									</td>
 									<td>
@@ -438,7 +438,7 @@ if ($_SESSION['connected'])
 										<input type="number" name="e-magie" min="0" step="1" value="<?= $line['E_magique']?>" max="<?php echo $maxmagie; ?>"></code> <?php } else { ?>
 										<?php echo $overmagie; }?>
 									</td>
-									<td>
+									<td width="50%">
 										Energie Vitale :
 									</td>
 									<td>
