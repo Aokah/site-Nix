@@ -274,9 +274,10 @@ if ($_SESSION['connected'])
 										}
 										else
 										{
-											// Si l'ancien élément =/= le nouvel élément mais est déjà existant
+											// Si l'ancien élément =/= le nouvel élément mais est déjà existant 
+											echo $element_2;
 											$verify = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 0'); $verify->execute(array($perso, $element_2));
-											if ($line = $verify->fetch())
+											if ($verify->fetch())
 											{
 												// Si le nouveau existait déjà
 												$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine_2));
