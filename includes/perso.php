@@ -270,7 +270,7 @@ if ($_SESSION['connected'])
 										// La ligne avec cet élément existe
 										
 										if ($line['element'] == $element_2)
-										{
+										{	echo  "blblbl";
 											// Si l'ancien élément a déjà été apppris
 											$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine_2));
 											$update2 = $db->prepare('UPDATE magic_level SET spe = 2 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $element_2));
