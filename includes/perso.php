@@ -1317,6 +1317,10 @@ if ($_SESSION['connected'])
 										$number = 1;
 										while ($sel = $presel->fetch())
 										{
+											if ($number == 1)
+											{
+												echo '(1)';
+											}
 											if ($sel['rank'] >= 0 AND $sel['rank'] < 10 )
 											{
 												?>
@@ -1336,6 +1340,10 @@ if ($_SESSION['connected'])
 											 if ($number == 1)
 											 {
 											 	echo '||';
+											 }
+											 else
+											 {
+											 	echo '(2)';
 											 }
 											$number ++;
 										}
