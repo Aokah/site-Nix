@@ -12,6 +12,9 @@
 	
 	$presel = $db->prepare('SELECT * FROM members WHERE id = ?'); $presel->execute(array($id)); $presel = $presel->fetch();
 
+	?>
+	<p>
+	<?php
 		$select = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND spe = 1'); $select->execute(array($id));
 		while ($line = $select->fetch())
 		{
@@ -35,9 +38,6 @@
 				case 6: $magie = "Sage"; break;		case 7: $magie = "Dieu"; break;		case 8: $magie = "Titan"; break;
 				case 9: $magie = "Être Suprême"; break;	case 10: $magie = "Principe Universel"; break;
 			}
-		?>
-		<p>
-					<?php
 					if ($presel['specialitation'] != "Inconnue")
 					{
 					?>
@@ -49,7 +49,6 @@
 						echo "Aucune aura magique";
 					}
 					?>
-		</p>
 	<?php 
 	}
 	if ($presel['spe_2'] != "Inconnue")
@@ -78,7 +77,6 @@
 				case 9: $magie = "Être Suprême"; break;	case 10: $magie = "Principe Universel"; break;
 			}
 		?>
-			<p>
 						<?php
 						if ($presel['specialitation'] != "Inconnue")
 						{
@@ -90,10 +88,10 @@
 						{
 							echo "Aucune aura magique";
 						}
-						?>
-			</p>
-	<?php	
 		}
+	?>
+	</p>	
+	<?php	
 	} 
 }
 ?>
