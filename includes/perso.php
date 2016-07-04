@@ -258,6 +258,7 @@ if ($_SESSION['connected'])
 									{
 										// La ligne avec cet élément n'existe pas
 										$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 1)"); $insert->execute(array($perso, $element));
+										$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine));
 									}
 								}
 								
@@ -285,6 +286,7 @@ if ($_SESSION['connected'])
 									{
 										// La ligne avec cet élément n'existe pas
 										$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 2)"); $insert->execute(array($perso, $element_2));
+										$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine_2));
 									}
 								}
 								
