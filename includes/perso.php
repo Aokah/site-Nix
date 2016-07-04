@@ -173,7 +173,7 @@ if ($_SESSION['connected'])
 						{
 							if ($_SESSION['rank'] >= 5) {
 								switch ($_POST['spe_1']) {
-									case 0: $spe_1 = $line['specialisation']; $element = false; break;
+									case 0: $spe_1 = $line['specialisation']; $element = 20; break;
 									case 1 : $spe_1 = "Air";  $element = 1; break;
 									case 2 : $spe_1 = "Arcane"; $element = 2; break;
 									case 3 : $spe_1 = "Chaos";  $element = 3; break;
@@ -195,7 +195,7 @@ if ($_SESSION['connected'])
 									case 19 : $spe_1 = "Ordre"; $element = 14; break;
 								}
 								switch ($_POST['spe_2']) {
-									case 0: $spe_2 = $line['spe_2'];  $element_2 = false ; break;
+									case 0: $spe_2 = $line['spe_2'];  $element_2 = 20 ; break;
 									case 1 : $spe_2 = "Air";  $element_2 = 1; break;
 									case 2 : $spe_2 = "Arcane";  $element_2 = 2; break;
 									case 3 : $spe_2 = "Chaos";  $element_2 = 3; break;
@@ -234,7 +234,7 @@ if ($_SESSION['connected'])
 									case "Void": $origine_2 = 17; break; case "Spéciale": $origine_2 = 18; break; case "Inconnue": $origine_2 = 0; break;
 								}
 								
-								if ($element != $element_2 OR $element = false AND $element_2 = false)
+								if ($element != $element_2 OR $element = 20 AND $element_2 = 20)
 								{
 									
 									if ($element != $origine AND $element != 0)
