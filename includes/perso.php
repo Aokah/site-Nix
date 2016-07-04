@@ -239,7 +239,7 @@ if ($_SESSION['connected'])
 										else
 										{
 											// Si l'ancien élément =/= le nouvel élément mais est déjà existant
-											$verify = $db->prepare('SELECT * FROM magic_level WHERE user_id AND element = ? AND spe = 0'); $verify->execute(array($perso, $element));
+											$verify = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 0'); $verify->execute(array($perso, $element));
 											if ($line = $verify->fetch())
 											{
 												// Si le nouveau existait déjà
@@ -275,7 +275,7 @@ if ($_SESSION['connected'])
 										else
 										{
 											// Si l'ancien élément =/= le nouvel élément mais est déjà existant
-											$verify = $db->prepare('SELECT * FROM magic_level WHERE user_id AND element = ? AND spe = 0'); $verify->execute(array($perso, $element_2));
+											$verify = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 0'); $verify->execute(array($perso, $element_2));
 											if ($line = $verify->fetch())
 											{
 												// Si le nouveau existait déjà
