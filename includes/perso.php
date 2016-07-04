@@ -174,7 +174,7 @@ if ($_SESSION['connected'])
 							if ($_SESSION['rank'] >= 5) {
 								switch ($_POST['spe_1']) {
 									case 0: $spe_1 = $line['specialisation']; $element = 0; break;
-									case 1 : $spe_1 = "Air";  $element = 1 break;
+									case 1 : $spe_1 = "Air";  $element = 1; break;
 									case 2 : $spe_1 = "Arcane"; $element = 2; break;
 									case 3 : $spe_1 = "Chaos";  $element = 3; break;
 									case 4 : $spe_1 = "Eau"; ; $element = 5; break;
