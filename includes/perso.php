@@ -237,7 +237,7 @@ if ($_SESSION['connected'])
 								if ($element != $element_2 OR $element = 20 AND $element_2 = 20)
 								{
 									
-									if ($element != $origine AND $element != 0)
+									if ($element != $origine AND $element != 0 AND $element != 20)
 									{
 										$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 0'); $preverif->execute(array($perso, $element));
 										if ($line = $preverif->fetch())
@@ -265,7 +265,7 @@ if ($_SESSION['connected'])
 										}
 									}
 									
-									if ($element_2 != $origine_2 AND $element_2 != 0)
+									if ($element_2 != $origine_2 AND $element_2 != 0 AND $element_2 != 20)
 									{
 										$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 0'); $preverif->execute(array($perso, $element_2));
 										if ($line = $preverif->fetch())
