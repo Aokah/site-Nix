@@ -244,12 +244,12 @@ if ($_SESSION['connected'])
 										{
 											// La ligne avec cet élément existe
 											
-											if ($line['element'] == $element_2)
+											if ($line['element'] == $element)
 											{
 												// Si l'ancien élément a déjà été apppris
 												$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine));
 												$update2 = $db->prepare('UPDATE magic_level SET spe = 1 WHERE user_id = ? AND element = ?'); $update2->execute(array($perso, $element));
-												$update3 = $db->prepare('UPDATE members SET magie_rank = 0 WHERE id = ?'); $update3->execute(array($perso, $line['rank']));
+												$update3 = $db->prepare('UPDATE members SET magie_rank = ? WHERE id = ?'); $update3->execute(array($line['rank'],$perso));
 											}
 											else
 											{
