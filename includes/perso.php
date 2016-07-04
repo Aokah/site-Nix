@@ -233,6 +233,7 @@ if ($_SESSION['connected'])
 									case "Ombre": $origine_2 = 13; break; case "Ordre": $origine_2 = 14; break; case "Psy": $origine_2 = 15; break; case "Terre": $origine_2 = 16; break;
 									case "Void": $origine_2 = 17; break; case "Spéciale": $origine_2 = 18; break; case "Inconnue": $origine_2 = 0; break;
 								}
+								echo $element, ' ', $element_2, ' ', $origine, ' ', $origine_2;
 								if ($element != $origine)
 								{
 									$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 0'); $preverif->execute(array($perso, $element));
@@ -247,7 +248,7 @@ if ($_SESSION['connected'])
 											$update2 = $db->prepare('UPDATE magic_level SET spe = 1 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $element));
 										}
 										else
-										{	echo "lolz";
+										{	echo "lolz /o/";
 											// Si le nouvel élément n'existe pas
 											$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine));
 											$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 1)"); $insert->execute(array($perso, $element));
@@ -255,7 +256,7 @@ if ($_SESSION['connected'])
 									}
 									else
 									{
-										echo "here";
+										echo "here \o\\";
 										// La ligne avec cet élément n'existe pas
 										$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 1)"); $insert->execute(array($perso, $element));
 									}
