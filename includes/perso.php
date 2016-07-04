@@ -174,47 +174,47 @@ if ($_SESSION['connected'])
 							if ($_SESSION['rank'] >= 5) {
 								switch ($_POST['spe_1']) {
 									case 0: $spe_1 = $line['specialisation']; $element = 0; break;
-									case 1 : $spe_1 = "Air"; break; $element = 1 break;
-									case 2 : $spe_1 = "Arcane"; break; $element = 2; break;
-									case 3 : $spe_1 = "Chaos"; break; $element = 3; break;
-									case 4 : $spe_1 = "Eau"; break; $element = 5; break;
-									case 5 : $spe_1 = "Energie"; break;  $element = 7; break;
-									case 6 : $spe_1 = "Feu"; break; $element = 8; break;
-									case 7 : $spe_1 = "Glace"; break; $element = 9; break;
-									case 8 : $spe_1 = "Inconnue"; break; $element = 0; break;
-									case 9 : $spe_1 = "Lumière"; break; $element = 10; break;
-									case 10 : $spe_1 = "Métal"; break; $element = 11; break;
-									case 11 : $spe_1 = "Nature";break; $element = 12; break;
-									case 12 : $spe_1 = "Ombre"; break; $element = 13; break;
-									case 13 : $spe_1 = "Psy"; break; $element = 15; break;
-									case 14 : $spe_1 = "Spéciale"; break; $element = 18; break;
-									case 15 : $spe_1 = "Terre";break; $element = 16; break;
-									case 16: $spe_1 = "Chaleur"; break; $element = 4; break;
-									case 17 : $spe_1 = "Void";  break; $element = 17; break;
-									case 18 : $spe_1 = "Espace"; break; $element = 6; break;
-									case 19 : $spe_1 = "Ordre"; break; $element = 14; break;
+									case 1 : $spe_1 = "Air";  $element = 1 break;
+									case 2 : $spe_1 = "Arcane"; $element = 2; break;
+									case 3 : $spe_1 = "Chaos";  $element = 3; break;
+									case 4 : $spe_1 = "Eau"; ; $element = 5; break;
+									case 5 : $spe_1 = "Energie";   $element = 7; break;
+									case 6 : $spe_1 = "Feu";  $element = 8; break;
+									case 7 : $spe_1 = "Glace";  $element = 9; break;
+									case 8 : $spe_1 = "Inconnue";  $element = 0; break;
+									case 9 : $spe_1 = "Lumière";  $element = 10; break;
+									case 10 : $spe_1 = "Métal"; $element = 11; break;
+									case 11 : $spe_1 = "Nature"; $element = 12; break;
+									case 12 : $spe_1 = "Ombre";  $element = 13; break;
+									case 13 : $spe_1 = "Psy";  $element = 15; break;
+									case 14 : $spe_1 = "Spéciale"; $element = 18; break;
+									case 15 : $spe_1 = "Terre"; $element = 16; break;
+									case 16: $spe_1 = "Chaleur";  $element = 4; break;
+									case 17 : $spe_1 = "Void";   $element = 17; break;
+									case 18 : $spe_1 = "Espace"; $element = 6; break;
+									case 19 : $spe_1 = "Ordre"; $element = 14; break;
 								}
 								switch ($_POST['spe_2']) {
-									case 0: $spe_2 = $line['spe_2']; break; $element_2 = 0; break;
-									case 1 : $spe_2 = "Air"; break; $element_2 = 1; break;
-									case 2 : $spe_2 = "Arcane"; break; $element_2 = 2; break;
-									case 3 : $spe_2 = "Chaos"; break; $element_2 = 3; break;
-									case 4 : $spe_2 = "Eau"; break; $element_2 = 5; break;
-									case 5 : $spe_2 = "Energie"; break; $element_2 = 7; break;
-									case 6 : $spe_2 = "Feu"; break; $element_2 = 8; break;
-									case 7 : $spe_2 = "Glace"; break; $element_2 = 9; break;
-									case 8 : $spe_2 = "Inconnue"; break; $element_2 = 0; break;
-									case 9 : $spe_2 = "Lumière"; break; $element_2 = 10; break;
-									case 10 : $spe_2 = "Métal"; break; $element_2 = 11; break;
-									case 11 : $spe_2 = "Nature"; break; $element_2 = 12; break;
-									case 12 : $spe_2 = "Ombre"; break; $element_2 = 13; break;
-									case 13 : $spe_2 = "Psy"; break; $element_2 = 15; break;
-									case 14 : $spe_2 = "Spéciale"; break; $element_2 = 18; break;
-									case 15 : $spe_2 = "Terre"; break; $element_2 = 16; break;
-									case 16: $spe_2 = "Chaleur"; break; $element_2 = 4; break;
-									case 17 : $spe_2 = "Void"; break; $element_2 = 17; break;
-									case 18 : $spe_2 = "Espace"; break; $element_2 = 6; break;
-									case 19 : $spe_2 = "Ordre"; break; $element_2 = 14; break;
+									case 0: $spe_2 = $line['spe_2'];  $element_2 = 0; break;
+									case 1 : $spe_2 = "Air";  $element_2 = 1; break;
+									case 2 : $spe_2 = "Arcane";  $element_2 = 2; break;
+									case 3 : $spe_2 = "Chaos";  $element_2 = 3; break;
+									case 4 : $spe_2 = "Eau";  $element_2 = 5; break;
+									case 5 : $spe_2 = "Energie";  $element_2 = 7; break;
+									case 6 : $spe_2 = "Feu";  $element_2 = 8; break;
+									case 7 : $spe_2 = "Glace";  $element_2 = 9; break;
+									case 8 : $spe_2 = "Inconnue";  $element_2 = 0; break;
+									case 9 : $spe_2 = "Lumière";  $element_2 = 10; break;
+									case 10 : $spe_2 = "Métal"; $element_2 = 11; break;
+									case 11 : $spe_2 = "Nature";  $element_2 = 12; break;
+									case 12 : $spe_2 = "Ombre";  $element_2 = 13; break;
+									case 13 : $spe_2 = "Psy";  $element_2 = 15; break;
+									case 14 : $spe_2 = "Spéciale"; $element_2 = 18; break;
+									case 15 : $spe_2 = "Terre";  $element_2 = 16; break;
+									case 16: $spe_2 = "Chaleur";  $element_2 = 4; break;
+									case 17 : $spe_2 = "Void";  $element_2 = 17; break;
+									case 18 : $spe_2 = "Espace";  $element_2 = 6; break;
+									case 19 : $spe_2 = "Ordre"; $element_2 = 14; break;
 								}
 								
 								switch ($line['specialisation'])
