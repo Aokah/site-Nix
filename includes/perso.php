@@ -236,7 +236,7 @@ if ($_SESSION['connected'])
 								echo $element_2;
 								if ($element != 0)
 								{
-									$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 1'); $preverif->execute(array($perso, $element));
+									$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 0'); $preverif->execute(array($perso, $element));
 									if ($line = $preverif->fetch())
 									{
 										// La ligne avec cet élément existe
@@ -272,7 +272,7 @@ if ($_SESSION['connected'])
 								
 								if ($element_2 != 0)
 								{
-									$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 2'); $preverif->execute(array($perso, $element_2));
+									$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 0'); $preverif->execute(array($perso, $element_2));
 									if ($line = $preverif->fetch())
 									{
 										// La ligne avec cet élément existe
