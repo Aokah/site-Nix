@@ -53,6 +53,7 @@
 	}
 	if ($presel['spe_2'] != "Inconnue")
 	{
+		echo '<br />';
 		$select = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND spe = 2'); $select->execute(array($id));
 		while ($line = $select->fetch())
 		{
