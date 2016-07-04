@@ -1318,7 +1318,7 @@ if ($_SESSION['connected'])
 										while ($sel = $presel->fetch())
 										{
 											echo '(Spe' , $number, ' ';
-											if ($sel['rank'] >= 0 AND $sel['renk'] < 8 )
+											if ($sel['rank'] >= 0 AND $sel['rank'] < 10 )
 											{
 												?>
 												 <a href="index?p=perso&perso=<? echo $perso;?>&action=magieup_<?= $number?>" title="Monter le niveau magique de la spécialisation N°<?= $number?>" style="color:green;">
@@ -1326,7 +1326,7 @@ if ($_SESSION['connected'])
 												 </a>
 												 <?php	
 											}
-											 if ($sel['rank'] > 1 AND $sel['rank'] < 9 )
+											 if ($sel['rank'] > 0 AND $sel['rank'] <= 10 )
 											 {
 												 ?>
 												  <a href="index?p=perso&perso=<? echo $perso;?>&action=magiedown_<?= $number?>" title="Descendre le niveau magique de la spécialisation N°<?= $number?>" style="color:red;">
