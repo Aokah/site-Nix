@@ -790,6 +790,8 @@ if ($_SESSION['connected'])
 					$update = $db->prepare('UPDATE magic_level SET rank = ? WHERE user_id = ? AND element = ?');
 					$update->execute(array($presel['rank'] + 1, $perso, $type));
 					
+					$update2 = $db->prepare('UPDATE members SET magie_rank = ? WHERE id = ?');
+					$update2->execute(array( $line['magie_rank']+1, $perso));
 					$nom = $line['name'];
 					$msg = "Tuduung~~ ! $nom gagne un niveau en $magie !";
 					$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '', ?)");
@@ -805,12 +807,127 @@ if ($_SESSION['connected'])
 					echo '<p>Non non non ! On ne triche pas ! ;-) !</p>';
 				}
 			}
-			elseif($_GET['action'] == 'magiedown')
+			elseif($_GET['action'] == 'magiedown_1')
 			{
 				if ($_SESSION['rank'] >= 5)
 				{
+					switch ($line['specialisation'])
+					{
+						case "Air": $type = 1; $magie = "Aeromancie"; break;
+						case "Arcane": $type = 2; $magie = "Magie Temporelle"; break;
+						case "Chaleur": $type = 3; $magie = "Thermoancie";  break;
+						case "Chaos": $type = 4; $magie = "Entropie";  break;
+						case "Eau": $type = 5; $magie = "Hydromancie";  break;
+						case "Espace": $type = 6; $magie = "Magie Spatiale";  break;
+						case "Energie": $type = 7; $magie = "Electromancie";  break;
+						case "Feu": $type = 8; $magie = "Pyromancie";  break;
+						case "Glace": $type = 9; $magie = "Cryomancie";  break;
+						case "Lumière": $type = 10; $magie = "Luciomancie";  break;
+						case "Métal": $type = 11;  $magie = "Ferromancie"; break;
+						case "Nature": $type = 12; $magie = "Phytomancie";  break;
+						case "Ombre": $type = 13; $magie = "Occultomancie";  break;
+						case "Ordre": $type = 14; $magie = "Eurytmie";  break;
+						case "Psy": $type = 15;  $magie = "Psychomancie"; break;
+						case "Terre": $type = 16;  $magie = "Telluromancie"; break;
+						case "Void": $type = 17; $magie = "Void";  break;
+						case "Spéciale": $type = 18; $magie = "Magie Spéciale";  break;
+						case "Inconnue": $type = 0; break;
+					}
+					$presel = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 1'); $presel->execute(array($perso, $type));
+					$presel = $presel->fetch();
+					$update = $db->prepare('UPDATE magic_level SET rank = ? WHERE user_id = ? AND element = ? AND spe = 1');
+					$update->execute(array($presel['rank'] - 1, $perso, $type));
+					
 					$update = $db->prepare('UPDATE members SET magie_rank = ? WHERE id = ?');
 					$update->execute(array( $line['magie_rank'] -1, $perso));
+					echo "<p>Le personnage perd un niveau !</p>";
+					?>
+					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+					<?php
+				}
+				else 
+				{
+					echo '<p>Non non non ! On ne triche pas ! ;-) !</p>';
+				}
+			}
+			elseif($_GET['action'] == 'magieup_2')
+			{
+				if ($_SESSION['rank'] >= 5)
+				{
+					switch ($line['spe_2'])
+					{
+						case "Air": $type = 1; $magie = "Aeromancie"; break;
+						case "Arcane": $type = 2; $magie = "Magie Temporelle"; break;
+						case "Chaleur": $type = 3; $magie = "Thermoancie";  break;
+						case "Chaos": $type = 4; $magie = "Entropie";  break;
+						case "Eau": $type = 5; $magie = "Hydromancie";  break;
+						case "Espace": $type = 6; $magie = "Magie Spatiale";  break;
+						case "Energie": $type = 7; $magie = "Electromancie";  break;
+						case "Feu": $type = 8; $magie = "Pyromancie";  break;
+						case "Glace": $type = 9; $magie = "Cryomancie";  break;
+						case "Lumière": $type = 10; $magie = "Luciomancie";  break;
+						case "Métal": $type = 11;  $magie = "Ferromancie"; break;
+						case "Nature": $type = 12; $magie = "Phytomancie";  break;
+						case "Ombre": $type = 13; $magie = "Occultomancie";  break;
+						case "Ordre": $type = 14; $magie = "Eurytmie";  break;
+						case "Psy": $type = 15;  $magie = "Psychomancie"; break;
+						case "Terre": $type = 16;  $magie = "Telluromancie"; break;
+						case "Void": $type = 17; $magie = "Void";  break;
+						case "Spéciale": $type = 18; $magie = "Magie Spéciale";  break;
+						case "Inconnue": $type = 0; break;
+					}
+					$presel = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 2'); $presel->execute(array($perso, $type));
+					$presel = $presel->fetch();
+					$update = $db->prepare('UPDATE magic_level SET rank = ? WHERE user_id = ? AND element = ? AND spe = 2');
+					$update->execute(array($presel['rank'] + 1, $perso, $type));
+					
+					$nom = $line['name'];
+					$msg = "Tuduung~~ ! $nom gagne un niveau en $magie !";
+					$shirka = $db->prepare("INSERT INTO chatbox VALUES('', NOW(), 92, 0, '', ?)");
+					$shirka->execute(array($msg));
+					echo "<p>Le personnage a gagné un niveau !</p>";
+					?>
+					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+					<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+					<?php
+				}
+				else
+				{
+					echo '<p>Non non non ! On ne triche pas ! ;-) !</p>';
+				}
+			}
+			elseif($_GET['action'] == 'magiedown_2')
+			{
+				if ($_SESSION['rank'] >= 5)
+				{
+					switch ($line['spe_2'])
+					{
+						case "Air": $type = 1; $magie = "Aeromancie"; break;
+						case "Arcane": $type = 2; $magie = "Magie Temporelle"; break;
+						case "Chaleur": $type = 3; $magie = "Thermoancie";  break;
+						case "Chaos": $type = 4; $magie = "Entropie";  break;
+						case "Eau": $type = 5; $magie = "Hydromancie";  break;
+						case "Espace": $type = 6; $magie = "Magie Spatiale";  break;
+						case "Energie": $type = 7; $magie = "Electromancie";  break;
+						case "Feu": $type = 8; $magie = "Pyromancie";  break;
+						case "Glace": $type = 9; $magie = "Cryomancie";  break;
+						case "Lumière": $type = 10; $magie = "Luciomancie";  break;
+						case "Métal": $type = 11;  $magie = "Ferromancie"; break;
+						case "Nature": $type = 12; $magie = "Phytomancie";  break;
+						case "Ombre": $type = 13; $magie = "Occultomancie";  break;
+						case "Ordre": $type = 14; $magie = "Eurytmie";  break;
+						case "Psy": $type = 15;  $magie = "Psychomancie"; break;
+						case "Terre": $type = 16;  $magie = "Telluromancie"; break;
+						case "Void": $type = 17; $magie = "Void";  break;
+						case "Spéciale": $type = 18; $magie = "Magie Spéciale";  break;
+						case "Inconnue": $type = 0; break;
+					}
+					$presel = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 2'); $presel->execute(array($perso, $type));
+					$presel = $presel->fetch();
+					$update = $db->prepare('UPDATE magic_level SET rank = ? WHERE user_id = ? AND element = ? AND spe = 2');
+					$update->execute(array($presel['rank'] - 1, $perso, $type));
+					
 					echo "<p>Le personnage perd un niveau !</p>";
 					?>
 					<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
