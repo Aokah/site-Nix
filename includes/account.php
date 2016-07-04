@@ -43,7 +43,7 @@
 				  <p>Besoin de sécurité ou simple doute ? <a href="index?p=account&action=changepsw">Changez votre mot de passe ici</a> !</p>
 				  
 				<h3>Compte Minecraft</h3>
-				  <p>Le nom du compte Minecraft que vous utilisez est nécessaire pour profiter d'un maximum de chose en jeu, si vous souhaitez lier un novueau compte, <a href="index?p=account&action=changemc">c'est par ici</a> !</p>
+				  <p>Le nom du compte Minecraft que vous utilisez est nécessaire pour profiter d'un maximum de chose en jeu, si vous souhaitez lier un nouveau compte, <a href="index?p=account&action=changemc">c'est par ici</a> !</p>
 			<?php
 			}
 		}
