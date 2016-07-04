@@ -233,7 +233,7 @@ if ($_SESSION['connected'])
 									case "Ombre": $origine_2 = 13; break; case "Ordre": $origine_2 = 14; break; case "Psy": $origine_2 = 15; break; case "Terre": $origine_2 = 16; break;
 									case "Void": $origine_2 = 17; break; case "Spéciale": $origine_2 = 18; break; case "Inconnue": $origine_2 = 0; break;
 								}
-								
+								echo $element_2;
 								if ($element != 0)
 								{
 									$preverif = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 1'); $preverif->execute(array($perso, $element));
@@ -284,7 +284,7 @@ if ($_SESSION['connected'])
 										else
 										{
 											// Si l'ancien élément =/= le nouvel élément mais est déjà existant 
-											echo $element_2;
+											
 											$verify = $db->prepare('SELECT * FROM magic_level WHERE user_id = ? AND element = ? AND spe = 0'); $verify->execute(array($perso, $element_2));
 											if ($verify->fetch())
 											{
