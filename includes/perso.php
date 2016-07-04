@@ -430,7 +430,7 @@ if ($_SESSION['connected'])
 						<table cellspacing="5" cellpadding="5" class="pnjtable" width="100%">
 							<tbody>
 								<tr>
-									<td width="50%">
+									<td>
 										Energie Magique :
 									</td>
 									<td>
@@ -438,7 +438,7 @@ if ($_SESSION['connected'])
 										<input type="number" name="e-magie" min="0" step="1" value="<?= $line['E_magique']?>" max="<?php echo $maxmagie; ?>"></code> <?php } else { ?>
 										<?php echo $overmagie; }?>
 									</td>
-									<td width="50%">
+									<td>
 										Energie Vitale :
 									</td>
 									<td>
@@ -1148,10 +1148,10 @@ if ($_SESSION['connected'])
 					<table width="640px" cellspacing="5" cellpadding="5" class="pnjtable" align="center">
 						<tbody>
 							<tr>
-								<td style="text-align:center;">
+								<td width="50%" style="text-align:center;">
 									<img src="pics/magie/EM_<? echo $tmagie ?>.png" width="95%" title="<?php echo $pmcount; ?>" alt="" />
 								</td>
-								<td style="text-align:center;">
+								<td width="50%" style="text-align:center;">
 									<img src="pics/magie/EV_<? echo $tvie ?>.png" width="95%" title="<?= $line['E_vitale']?> PV restants !" alt="" />
 								</td>
 							</tr>
