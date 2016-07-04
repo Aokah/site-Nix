@@ -1332,6 +1332,12 @@ if ($_SESSION['connected'])
 												 	[+]
 												 </a>
 												 <?php	
+												 
+											if ($number == 2)
+											{
+												echo '||';
+											}
+											
 											}
 											 if ($sel['rank'] > 0 AND $sel['rank'] <= 10 )
 											 {
@@ -1341,11 +1347,7 @@ if ($_SESSION['connected'])
 												 </a>
 												 <?php
 											 }
-											 if ($number == 1)
-											 {
-											 	echo '||';
-											 }
-											 else
+											 if ($number == 2)
 											 {
 											 	echo '(2)';
 											 }
