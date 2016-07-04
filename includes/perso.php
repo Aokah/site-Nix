@@ -241,14 +241,14 @@ if ($_SESSION['connected'])
 									{
 										// La ligne avec cet élément existe
 										
-										if ($line['element'] == $element)
+										if ($line['element'] == $element_2)
 										{
 											// Si l'ancien élément a déjà été apppris
 											$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine));
-											$update2 = $db->prepare('UPDATE magic_level SET spe = 1 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $element));
+											$update2 = $db->prepare('UPDATE magic_level SET spe = 1 WHERE user_id = ? AND element = ?'); $update2->execute(array($perso, $element));
 										}
 										else
-										{	echo "lolz /o/";
+										{
 											// Si le nouvel élément n'existe pas
 											$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine));
 											$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 1)"); $insert->execute(array($perso, $element));
@@ -256,7 +256,6 @@ if ($_SESSION['connected'])
 									}
 									else
 									{
-										echo "here \o\\";
 										// La ligne avec cet élément n'existe pas
 										$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 1)"); $insert->execute(array($perso, $element));
 									}
@@ -270,13 +269,13 @@ if ($_SESSION['connected'])
 										// La ligne avec cet élément existe
 										
 										if ($line['element'] == $element_2)
-										{	echo  "blblbl";
+										{
 											// Si l'ancien élément a déjà été apppris
 											$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine_2));
-											$update2 = $db->prepare('UPDATE magic_level SET spe = 2 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $element_2));
+											$update2 = $db->prepare('UPDATE magic_level SET spe = 2 WHERE user_id = ? AND element = ?'); $update2->execute(array($perso, $element_2));
 										}
 										else
-										{	echo "lolz";
+										{
 											// Si le nouvel élément n'existe pas
 											$update = $db->prepare('UPDATE magic_level SET spe = 0 WHERE user_id = ? AND element = ?'); $update->execute(array($perso, $origine_2));
 											$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 2)"); $insert->execute(array($perso, $element_2));
@@ -284,7 +283,6 @@ if ($_SESSION['connected'])
 									}
 									else
 									{
-										echo "here";
 										// La ligne avec cet élément n'existe pas
 										$insert = $db->prepare("INSERT INTO magic_level VALUES('', ?, ?, 0, 2)"); $insert->execute(array($perso, $element_2));
 									}
