@@ -24,8 +24,7 @@
           }
           $verify = $db->prepare('SELECT COUNT(*) AS number FROM skil_list WHERE type = ?'); $verify->execute(array($id)); $line = $verify->fetch();
           $count = $line['number'] + 1;
-          
-          echo $id, ' ', $count, ' ', $type;
+         
           $desc = htmlspecialchars($_POST['desc']);
           $name = htmlspecialchars($_POST['name']);
           $lore = htmlspecialchars($_POST['lore']);
