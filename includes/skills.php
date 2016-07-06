@@ -48,7 +48,7 @@
         else
         {
         ?>
-        <form action="index?p=skills&create=<?= $id;?>" methode="POST" >
+        <form action="index?p=skills&create=<?= $id;?>" method="POST" >
           <table>
             <tbody>
               <tr>
