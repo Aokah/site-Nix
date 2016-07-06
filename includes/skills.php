@@ -11,7 +11,7 @@
       
       if ($_GET['create'] >= 1 AND $_GET['create'] <= 17)
       {
-        if (isset($_POST['create']) AND isset($_POST['lore']) AND isset($_POST['desc']) AND isset($_POST['name']) AND isset($_POST['cost']))
+        if (isset($_POST['valid']) AND isset($_POST['lore']) AND isset($_POST['desc']) AND isset($_POST['name']) AND isset($_POST['cost']))
         {
           switch ($_GET['create'])
           {
@@ -74,7 +74,7 @@
                   <div align="center">
                       <textarea name="lore" style="width: 90%; height: 150px;"></textarea>
                   </div>
-                  <input type="submit" name="create" />
+                  <input type="submit" name="valid" />
                 </td>
               </tr>
             </tbody>
