@@ -36,7 +36,7 @@
          $add->execute(array($type, $name, $lore));
           
           echo '<p>La compétence a bien été créée !</p>
-          <p><a href="index/p=skills">Cliquez ici</a> pour retourner à la page des Compétences.</p>';
+          <p><a href="index?p=skills">Cliquez ici</a> pour retourner à la page des Compétences.</p>';
         }
         else
         {
