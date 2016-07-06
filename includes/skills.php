@@ -19,14 +19,14 @@
             case 4: $type = 12 ;		break; case 5: $type = 26 ; break; 		case 6: $type = 25 ; break;
             case 7: $type = 13 ;		break; case 8: $type = 16 ; break; 		case 9: $type = 14 ; break;
             case 10: $type = 19 ;		break; case 11: $type = 18 ; break;		case 12: $type = 15 ; break;
-            case 13: $type = 22 ; 		break; case 14: $type = 20 ; break;		case 15: $type = 17 ; break;
+            case 13: $type = 22 ; 	break; case 14: $type = 20 ; break;		case 15: $type = 17 ; break;
             case 16: $type = 11 ;		break; case 17: $type = 21 ; break;
           }
           $verify = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verify->execute(array($_SESSION['id']));
           $count = 1;
           while ($line = $verify->fetch())
           {
-            $verify_ = $db->prepare('SELECT * FROM skil_list WHERE id = ? AND type = ?'); $verify_->execute(array($line['skil_id'], $type));
+            $verify_ = $db->prepare('SELECT * FROM skil_list WHERE id = ? AND type = ?'); $verify_->execute(array($line['skil_id'], $id));
             if ($verify_->fetch())
             {
               $count ++;
