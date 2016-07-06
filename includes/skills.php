@@ -19,17 +19,26 @@
                 <th>Nouvelle compétence à écrire</th>
               </tr>
               <tr>
-                <th>Nome de la Compétence</th>
+                <th>Nom de la Compétence</th>
                 <td>
                   <input type="text" name="name" />
                 </td>
+                <th>Description de la Compétence</th>
+                <td>
+                  <input type="text" name="desc" />
+                </td>
+                <th>Prix de la Compétence</th>
+                <td>
+                  <input type="number" name="cost" />
+                </td>
               </tr>
-              <tr rawspan="2">
+              <tr rawspan="6">
                 <th>Contenu visible du Staff</th>
                 <td style="text-align: center;">
                   <div align="center">
                       <textarea name="lore"></textarea>
                   </div>
+                  <input type="submit" name="create" />
                 </td>
               </tr>
             </tbody>
