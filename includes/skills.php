@@ -36,7 +36,7 @@
           $name = htmlspecialchars($_POST['name']);
           $lore = htmlspecialchars($_POST['lore']);
           
-          $ajout = $db->prepare("INSERT INTO skill_list VALUES('', ?, ?, ?, ?, ?)");
+          $ajout = $db->prepare("INSERT INTO skil_list VALUES('', ?, ?, ?, ?, ?)");
           $ajout->execute(array($name, $_POST['create'], $_POST['cost'], $count, $desc));
           
           $add = $dg->prepare("INSET INTO bg_id VALUES('', ?, ? , 6 , ?)");
