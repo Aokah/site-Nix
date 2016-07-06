@@ -16,7 +16,7 @@
           <table>
             <tbody>
               <tr>
-                <th>Nouvelle compétence à écrire</th>
+                <th colspan="7">Nouvelle compétence à écrire</th>
               </tr>
               <tr>
                 <th>Nom de la Compétence</th>
@@ -32,9 +32,9 @@
                   <input type="number" name="cost" />
                 </td>
               </tr>
-              <tr rawspan="6">
+              <tr>
                 <th>Contenu visible du Staff</th>
-                <td style="text-align: center;">
+                <td colspan="6" style="text-align: center;">
                   <div align="center">
                       <textarea name="lore"></textarea>
                   </div>
