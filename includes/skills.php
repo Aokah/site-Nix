@@ -5,7 +5,44 @@
   if ($_SESSION['connected']) {
     //if ($_SESSION['rank'] > 4) {
       
-    if (isset($_GET['upgrade']))
+    if (isset($_GET['create']))
+    {
+      $type = intval($_GET['create']);
+      
+      if ($_GET['upgrade'] >= 1 AND $_GET['upgrade'] <= 17)
+      {
+        ?>
+        <form action="index?p=skills&create=<?= $type;?>" methode="POST" >
+          <table>
+            <tbody>
+              <tr>
+                <th>Nouvelle compétence à écrire</th>
+              </tr>
+              <tr>
+                <th>Nome de la Compétence</th>
+                <td>
+                  <input type="text" name="name" />
+                </td>
+              </tr>
+              <tr rawspan="2">
+                <th>Contenu visible du Staff</th>
+                <td style="text-align: center;">
+                  <div align="center">
+                      <textarea name="lore"></textarea>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+        <?php
+      }
+      else
+      {
+        echo '<p>Navré mais cet élément n\'existe pas.</p>';
+      }
+    }
+    elseif (isset($_GET['upgrade']))
     {
       $type = intval($_GET['upgrade']);
       if ($_GET['upgrade'] >= 1 AND $_GET['upgrade'] <= 17)
