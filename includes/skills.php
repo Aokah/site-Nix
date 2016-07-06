@@ -22,25 +22,19 @@
             case 13: $type = 22 ; 	break; case 14: $type = 20 ; break;		case 15: $type = 17 ; break;
             case 16: $type = 11 ;		break; case 17: $type = 21 ; break;
           }
-          $verify = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verify->execute(array($_SESSION['id']));
-          $count = 1;
-          while ($line = $verify->fetch())
-          {
-            $verify_ = $db->prepare('SELECT * FROM skil_list WHERE id = ? AND type = ?'); $verify_->execute(array($line['skil_id'], $id));
-            if ($verify_->fetch())
-            {
-              $count ++;
-            }
-          }echo $id, ' ', $count, ' ', $type;
+          $verify = $db->prepare('SELECT COUNT(*) AS number FROM skil_get WHERE type = ?'); $verify->execute(array($id)); $line = $verify->fetch();
+          $count = $line['number'] + 1;
+          
+          echo $id, ' ', $count, ' ', $type;
           $desc = htmlspecialchars($_POST['desc']);
           $name = htmlspecialchars($_POST['name']);
           $lore = htmlspecialchars($_POST['lore']);
           
-          $ajout = $db->prepare("INSERT INTO skil_list VALUES('', ?, ?, ?, ?, ?)");
-          $ajout->execute(array($name, $_GET['create'], $_POST['cost'], $count, $desc));
+         # $ajout = $db->prepare("INSERT INTO skil_list VALUES('', ?, ?, ?, ?, ?)");
+          #$ajout->execute(array($name, $_GET['create'], $_POST['cost'], $count, $desc));
           
-          $add = $db->prepare("INSET INTO bg_id VALUES('', ?, ? , 6 , ?)");
-          $add->execute(array($type, $name, $lore));
+         #$add = $db->prepare("INSET INTO bg_id VALUES('', ?, ? , 6 , ?)");
+         # $add->execute(array($type, $name, $lore));
           
           echo '<p>La compétence a bien été créée !</p>
           <p><a href="index/p=skills">Cliquez ici</a> pour retourner à la page des Compétences.</p>';
