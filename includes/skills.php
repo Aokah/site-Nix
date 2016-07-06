@@ -37,7 +37,7 @@
           $lore = htmlspecialchars($_POST['lore']);
           
           $ajout = $db->prepare("INSERT INTO skil_list VALUES('', ?, ?, ?, ?, ?)");
-          $ajout->execute(array($name, $_POST['create'], $_POST['cost'], $count, $desc));
+          $ajout->execute(array($name, $_GET['create'], $_POST['cost'], $count, $desc));
           
           $add = $dg->prepare("INSET INTO bg_id VALUES('', ?, ? , 6 , ?)");
           $add->execute(array($type, $name, $lore));
