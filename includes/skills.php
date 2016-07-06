@@ -32,7 +32,7 @@
           $ajout = $db->prepare("INSERT INTO skil_list VALUES('', ?, ?, ?, ?, ?)");
           $ajout->execute(array($name, $_GET['create'], $_POST['cost'], $count, $desc));
           
-         $add = $db->prepare("INSET INTO bg_id VALUES('', ?, ? , 6 , ?)");
+         $add = $db->prepare("INSERT INTO bg_id VALUES('', ?, ? , 6 , ?)");
          $add->execute(array($type, $name, $lore));
           
           echo '<p>La compétence a bien été créée !</p>
