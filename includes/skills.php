@@ -30,11 +30,11 @@
           $name = htmlspecialchars($_POST['name']);
           $lore = htmlspecialchars($_POST['lore']);
           
-         # $ajout = $db->prepare("INSERT INTO skil_list VALUES('', ?, ?, ?, ?, ?)");
-          #$ajout->execute(array($name, $_GET['create'], $_POST['cost'], $count, $desc));
+          $ajout = $db->prepare("INSERT INTO skil_list VALUES('', ?, ?, ?, ?, ?)");
+          $ajout->execute(array($name, $_GET['create'], $_POST['cost'], $count, $desc));
           
-         #$add = $db->prepare("INSET INTO bg_id VALUES('', ?, ? , 6 , ?)");
-         # $add->execute(array($type, $name, $lore));
+         $add = $db->prepare("INSET INTO bg_id VALUES('', ?, ? , 6 , ?)");
+         $add->execute(array($type, $name, $lore));
           
           echo '<p>La compétence a bien été créée !</p>
           <p><a href="index/p=skills">Cliquez ici</a> pour retourner à la page des Compétences.</p>';
