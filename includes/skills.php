@@ -11,6 +11,42 @@
       
       if ($_GET['create'] >= 1 AND $_GET['create'] <= 17)
       {
+        if (isset($_POST['create']) AND isset($_POST['lore']) AND isset($_POST['desc']) AND isset($_POST['name']) AND isset($_POST['cost']))
+        {
+          switch ($_GET['create'])
+          {
+            case 1: $type = 10 ;		break; case 2: $type = 24 ; break;   	case 3: $type = 23 ; break;
+            case 4: $type = 12 ;		break; case 5: $type = 26 ; break; 		case 6: $type = 25 ; break;
+            case 7: $type = 13 ;		break; case 8: $type = 16 ; break; 		case 9: $type = 14 ; break;
+            case 10: $type = 19 ;		break; case 11: $type = 18 ; break;		case 12: $type = 15 ; break;
+            case 13: $type = 22 ; 		break; case 14: $type = 20 ; break;		case 15: $type = 17 ; break;
+            case 16: $type = 11 ;		break; case 17: $type = 21 ; break;
+          }
+          $verify = $db->prepare('SELECT * FROM skil_get WHERE user_id = ?'); $verify->execute(array($_SESSION['id']));
+          $count = 1;
+          while ($line = $verify->fetch())
+          {
+            $verify_ = $db->prepare('SELECT * FROM skil_list WHERE id = ? AND type = ?'); $verify_->execute(array($line['skil_id'], $type));
+            if ($verify_->fetch())
+            {
+              $count ++;
+            }
+          }
+          $desc = htmlspecialchars($_POST['desc']);
+          $name = htmlspecialchars($_POST['name']);
+          $lore = htmlspecialchars($_POST['lore']);
+          
+          $ajout = $db->prepare("INSERT INTO skill_list VALUES('', ?, ?, ?, ?, ?)");
+          $ajout->execute(array($name, $_POST['create'], $_POST['cost'], $count, $desc));
+          
+          $add = $dg->prepare("INSET INTO bg_id VALUES('', ?, ? , 6 , ?)");
+          $add->execute(array($type, $name, $lore));
+          
+          echo '<p>La compétence a bien été créée !</p>
+          <p><a href="index/p=skills">Cliquez ici</a> pour retourner à la page des Compétences.</p>';
+        }
+        else
+        {
         ?>
         <form action="index?p=skills&create=<?= $type;?>" methode="POST" >
           <table>
@@ -45,6 +81,7 @@
           </table>
         </form>
         <?php
+        }
       }
       else
       {
