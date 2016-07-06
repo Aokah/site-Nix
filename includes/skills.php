@@ -36,7 +36,7 @@
                 <th>Contenu visible du Staff</th>
                 <td colspan="6" style="text-align: center;">
                   <div align="center">
-                      <textarea name="lore" width="95%"></textarea>
+                      <textarea name="lore" style="width: 90%; height: 150px;"></textarea>
                   </div>
                   <input type="submit" name="create" />
                 </td>
