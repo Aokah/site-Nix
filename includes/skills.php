@@ -7,7 +7,7 @@
       
     if (isset($_GET['create']))
     {
-      $type = intval($_GET['create']);
+      $id = intval($_GET['create']);
       
       if ($_GET['create'] >= 1 AND $_GET['create'] <= 17)
       {
@@ -48,7 +48,7 @@
         else
         {
         ?>
-        <form action="index?p=skills&create=<?= $type;?>" methode="POST" >
+        <form action="index?p=skills&create=<?= $id;?>" methode="POST" >
           <table>
             <tbody>
               <tr>
