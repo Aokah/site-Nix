@@ -22,7 +22,7 @@
             case 13: $type = 22 ; 	break; case 14: $type = 20 ; break;		case 15: $type = 17 ; break;
             case 16: $type = 11 ;		break; case 17: $type = 21 ; break;
           }
-          $verify = $db->prepare('SELECT COUNT(*) AS number FROM skil_get WHERE type = ?'); $verify->execute(array($id)); $line = $verify->fetch();
+          $verify = $db->prepare('SELECT COUNT(*) AS number FROM skil_list WHERE type = ?'); $verify->execute(array($id)); $line = $verify->fetch();
           $count = $line['number'] + 1;
           
           echo $id, ' ', $count, ' ', $type;
