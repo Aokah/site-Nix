@@ -9,7 +9,7 @@
     {
       $type = intval($_GET['create']);
       
-      if ($_GET['upgrade'] >= 1 AND $_GET['upgrade'] <= 17)
+      if ($_GET['create'] >= 1 AND $_GET['create'] <= 17)
       {
         ?>
         <form action="index?p=skills&create=<?= $type;?>" methode="POST" >
@@ -298,6 +298,7 @@
                   <tr>
                     <td colspan="3">
                       <a href="index?p=skills&upgrade=<?= $type?>" style="color:white;">[Obtenir une nouvelle compétence]</a>
+                      <?php if ($_SESSION['rank'] > 4) { ?> <a href="index?p=skills&create=<?= $type?>" style="color:white;">[Créer une nouvelle compétence]</a><?php } ?>
                     </td>
                   </tr>
                   <tr>
