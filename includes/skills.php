@@ -31,7 +31,7 @@
             {
               $count ++;
             }
-          }
+          }echo $id, ' ', $count, ' ', $type;
           $desc = htmlspecialchars($_POST['desc']);
           $name = htmlspecialchars($_POST['name']);
           $lore = htmlspecialchars($_POST['lore']);
