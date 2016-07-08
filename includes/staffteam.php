@@ -62,11 +62,6 @@
 		<td>"Ce qui importe n'est pas l'emballage qu'est le corps, mais l'âme qui est l'essence de l'être !"</td>
 	</tr>
 	<tr class="memberbg_5">
-	<td><img src="pics/staff_team/Kindra_Modo_1.png" alt="Modérateur Kindra" /></td>
-	<td><span style="color:green">Kindra</span><br />16 ans<br />Lyon, France<br />"El loco"</td>
-	<td>"Si c'est toi qui paye, ça roule pour moi !"</td>
-	</tr>
-	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Niyo_Modo_1.png" alt="Modérateur Niyo" /></td>
 	<td><span style="color:green">Niyo</span><br />France<br /></td>
 	<td></td>
@@ -87,6 +82,11 @@
 	<td><img src="pics/staff_team/Grim_MJ_1.png" alt="Encadrant Grim" /></td>
 	<td><span style="color:blue">Grim</span><br />Toulouse, France</td>
 	<td>"Le monstre sous le lit ? c'est moi."</td>
+	</tr>
+	<tr class="memberbg_4">
+	<td><img src="pics/staff_team/Kindra_Modo_1.png" alt="Encadrant Kindra" /></td>
+	<td><span style="color:blue">Kindra</span><br />16 ans<br />Lyon, France<br />"El loco"</td>
+	<td>"Si c'est toi qui paye, ça roule pour moi !"</td>
 	</tr>
 	
 	<th class="member_top">Anciens Opérateurs</th>
