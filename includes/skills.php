@@ -5,7 +5,7 @@
   if ($_SESSION['connected']) {
     //if ($_SESSION['rank'] > 4) {
       
-    if (isset($_GET['create']))
+    if (isset($_GET['create']) AND $_SESSION['name'] == "Nikho")
     {
       $id = intval($_GET['create']);
       
@@ -337,7 +337,7 @@
                   <tr>
                     <td colspan="3">
                       <a href="index?p=skills&upgrade=<?= $type?>" style="color:white;">[Obtenir une nouvelle compétence]</a>
-                      <?php if ($_SESSION['rank'] > 4) { ?> <a href="index?p=skills&create=<?= $type?>" style="color:white;">[Créer une nouvelle compétence]</a><?php } ?>
+                      <?php if ($_SESSION['name'] == "Nikho") { ?> <a href="index?p=skills&create=<?= $type?>" style="color:white;">[Créer une nouvelle compétence]</a><?php } ?>
                     </td>
                   </tr>
                   <tr>
