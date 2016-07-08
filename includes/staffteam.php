@@ -36,7 +36,7 @@
 	<td>"Si l'echec permet d'apprendre, alors j'ai dû apprendre plus de chose que je ne le pensais."</td>
 	</tr>
 	<tr class="memberbg_7">
-	<td><img src="pics/staff_team/Balka_MJ_1.png" alt="Opérateur Balka" /></td>
+	<td><img src="pics/staff_team/Balka_MJ_2.png" alt="Opérateur Shawn" /></td>
 	<td><span style="color:red">Shawn</span><br />15 ans<br />France<br />"Biscotte"</td>
 	<td>"Finissons comme nous avons commencé , ensemble !"</td>
 	</tr>
