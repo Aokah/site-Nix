@@ -23,7 +23,7 @@
 	?>
 	
 <div>
-  <table cellspacing="0" cellpadding="0" width="100%" background="pics/Nix.jpg">
+  <table cellspacing="0" cellpadding="0" width="100%" background="https://flagaddict.files.wordpress.com/2015/07/drapeau-france.jpg">
     <tbody>
       <tr>
       	<td>
