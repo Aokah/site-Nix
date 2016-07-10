@@ -188,6 +188,12 @@
 									</div>
 								</a>
 								
+								<a href="index?p=event" class="link">
+									<div>
+										Evènements
+									</div>
+								</a>
+								
 								<a href="index?p=magie_admin" class="link">
 									<div>
 										Administration Magique
