@@ -23,7 +23,7 @@
 	?>
 	
 <div>
-  <table cellspacing="0" cellpadding="0" width="100%" background="http://img1.svstatic.com/wallpapers/3b3ecb4c15e246632e7f97d5ab5ef079_large.jpeg">
+  <table cellspacing="0" cellpadding="0" width="100%" >
     <tbody>
       <tr>
       	<td>
