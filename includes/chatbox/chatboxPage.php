@@ -9,7 +9,7 @@
 	{	
 	?>
 		<h3>Chatbox</h3>
-		<section id="chatbox" background="https://flagaddict.files.wordpress.com/2015/07/drapeau-france.jpg">
+		<section id="chatbox" style="background-image: 'https://flagaddict.files.wordpress.com/2015/07/drapeau-france.jpg';">
 			Activez Javascript pour accéder à la chatbox, ou arrêtez d'utiliser Internet Explorer, essayez plutôt <a href="https://www.mozilla.org/fr/firefox/desktop/">Firefox</a>, <a href="https://www.google.fr/chrome/browser/desktop/">Google Chrome</a> ou <a href="http://www.opera.com/fr">Opera</a>.
 		</section>
 
