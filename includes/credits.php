@@ -9,7 +9,7 @@
 			<tr style="background-color:#BBBBBB;">
 				<th colspan="2">Remerciements de Construction</th>
 			</tr>
-			<!--<tr>
+			<tr>
 				<th colspan="2">Event : Les Souvenirs d'Eralion</th>
 			</tr>
 			<tr>
@@ -30,7 +30,7 @@
 				<td>
 					<img src="#" alt="" width="100%"/>
 				</td>
-			</tr>-->
+			</tr>
 			<tr style="background-color:#BBBBBB;">
 				<th colspan="2">Remerciements de Graphisme</th>
 			</tr>
