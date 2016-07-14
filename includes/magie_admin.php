@@ -67,6 +67,12 @@
 			Traduction : Zitsi superbus tribu duce nos honoris tui nobiscum fidélibus tuis! <br />
 			(fr) Zitsi, fier guide de notre tribue, fais nous l'honneur de ta présence à nous, tes plus fidèles serviteurs !</p>
 			
+			<h4>Saramino</h4>
+			<p><img src="http://www.rpnix.com/pics/Image_pdsara.gif" alt="Prière à Saramino" /><br />
+			Traduction : Domine Deus noster chaos mundi gloria nostra coram nobis et respondit inferioribus vocationis ! <br />
+			(fr) Ô dieu du chaos et de notre monde, fais-nous l'honneur de ta présence sur notre bas-monde et réponds à notre appel !</p>
+			
+			
 	<? } ?>	<?php if ($_SESSION["rank"] < 5) { ?>
 		<p>Vous n'avez pas le grade suffisant pour voir cette page.</p>
 	<? } 
