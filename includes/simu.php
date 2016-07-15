@@ -1,5 +1,6 @@
 <?php function simu ()
 {
+	global $_GET, $_POST, $db, $_SESSION;
 	
 	$user = intval($_GET['for']);
 				$sort = intval($_GET['launch']);
