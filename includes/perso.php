@@ -1325,6 +1325,10 @@ if ($_SESSION['connected'])
 											{
 												echo '(1)';
 											}
+											if ($number == 2)
+											{
+												echo '||';
+											}
 											if ($sel['rank'] >= 0 AND $sel['rank'] < 10 )
 											{
 												?>
@@ -1335,10 +1339,6 @@ if ($_SESSION['connected'])
 											}
 											 if ($sel['rank'] > 0 AND $sel['rank'] <= 10 )
 											 {
-											 	if ($number == 2)
-												{
-													echo '||';
-												}
 												 ?>
 												  <a href="index?p=perso&perso=<? echo $perso;?>&action=magiedown_<?= $number?>" title="Descendre le niveau magique de la spécialisation N°<?= $number?>" style="color:red;">
 												 	[-]
