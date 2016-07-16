@@ -127,6 +127,8 @@
 							case 'herobrinesg': 			{ 	include('includes/private.php'); 				privated(); 				break; }
 							case 'dev': 				{ 	include('includes/dev.php'); 				dev(); 				break; }
 							case 'skills': 				{ 	include('includes/skills.php'); 				skills(); 				break; }
+							case 'enca': 				{ 	include('includes/enca.php'); 				enca(); 				break; }
+							case 'relics': 				{ 	include('includes/relics.php'); 				relics(); 				break; }
 						} 
 						?>
 					</div>
