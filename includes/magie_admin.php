@@ -58,8 +58,8 @@
 		<h2>Pages de prières aux entités</h2>
 		<?php 
 			$name = "Thorgeir";
-			//$name = mb_strtolower($name);
-			$codename = substr($name, 0, 2);
+			$name = mb_strtolower($name);
+			$codename = substr($name, 0, 4);
 			echo $name, ' ', $codename;
 		?>
 			<h4>Thorgeir</h4>
