@@ -24,7 +24,7 @@
 			$text = htmlspecialchars($_POST['text-fr']);
 			$galactic = htmlspecialchars($_POST['text-la']);
 			
-			$presel = $db->prepare('SELECT * FROM prieres WHERE code = ?');
+			$presel = $db->prepare('SELECT * FROM pieres WHERE code = ?');
 			$presel->execute(array($code));
 			
 			if ($presel->fetch())
@@ -33,7 +33,7 @@
 			}
 			else
 			{
-				$add = $db->prepare("INSERT INTO prieres VALUES('', ? , ? , ? , ?)");
+				$add = $db->prepare("INSERT INTO pieres VALUES('', ? , ? , ? , ?)");
 				$add->execute(array(htmlspecialchars($_POST['name']), $code, $text, $galactic));
 				echo '<p class="name5">La prière a bien été ajoutée, n\'oubliez pas de conclure l\'ajout par la formule d\'appel à l\'entité correspondante !</p>';
 			}
