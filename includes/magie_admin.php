@@ -56,7 +56,12 @@
 		</table>
 		
 		<h2>Pages de prières aux entités</h2>
-		
+		<?php 
+			$name = "Thorgeir";
+			//$name = mb_strtolower($name);
+			$codename = substr($name, 0, 2);
+			echo $name, ' ', $codename;
+		?>
 			<h4>Thorgeir</h4>
 			<p><img src="http://www.rpnix.com/pics/Image_pgthor.gif" alt="Prière à Thorgeir" /><br />
 			Traduction : Thorgeir tatium quantum curator orbis, audient vocem tuam et veni fidelem nobis <br />
