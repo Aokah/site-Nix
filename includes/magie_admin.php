@@ -38,11 +38,7 @@
 			}
 			elseif (isset($_POST['add']))
 			{
-				$desc = htmlspecialchars($_POST['description']);
-				$name = htmlspecialchars($_POST['name']);
-				$name = mb_strtoupper($name);
-				$command = htmlspecialchars($_POST['command']);
-				$norma = $_POST['cost'] / 100000000000000;
+				
 				$verif = $db->prepare('SELECT name FROM incan_list WHERE name = ?'); $verif->execute(array($name));
 				
 				if ($verif->fetch())
@@ -51,7 +47,11 @@
 				}
 				elseif (isset($_POST['name']) AND isset($_POST['cost']) AND isset($_POST['description']))
 				{
-					$command = (isset($_POST['command'])) ? $command : 'none';
+					$command = (isset($_POST['command'])) ? htmlspecialchars($_POST['command']) : 'none';
+					$desc = htmlspecialchars($_POST['description']);
+					$name = htmlspecialchars($_POST['name']);
+					$name = mb_strtoupper($name);
+					$norma = $_POST['cost'] / 100000000000000;
 					$add = $db->prepare("INSERT INTO incan_list VALUES('',? , ? , ? , ? , ?, ? , ?)");
 					$add->execute(array($name, $desc, $_POST['level'], $_POST['type'], $_POST['cost'], $norma, $command));
 					echo '<p class="name5">Le sort a bel et bien été ajouté, vous pouvez désormais le consulter ci-dessous.</p>';
