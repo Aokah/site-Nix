@@ -68,10 +68,10 @@
 		{
 		?>
 			<form action="index?p=magie_admin" methode="POST">
-				<table style="text-align:center;">
+				<table style="text-align:center;" width="100%">
 					<tbody>
 						<tr>
-							 <th>Formule à incorporer</th> <th>Commande éventuelle</th>
+							 <th width=50%>Formule à incorporer</th> <th>Commande éventuelle</th>
 						</tr>
 						<tr>
 							<td>
@@ -95,24 +95,24 @@
 						<tr>
 							<td>
 								<select name="type">
+									<option value="0">Type Inconnu</option>
 									<option value="1">Aeromancie</option>
-									<option value="2">Temps</option>
-									<option value="3">Entropie</option>
-									<option value="4">Hydromancie</option>
-									<option value="5">Electromancie</option>
-									<option value="6">Pyromancie</option>
 									<option value="7">Cryomancie</option>
-									<option value="8">Luciomancie</option>
+									<option value="5">Electromancie</option>
+									<option value="3">Entropie</option>
+									<option value="16">Eurythmie</option>
 									<option value="9">Ferromancie</option>
-									<option value="10">Phytomancie</option>
+									<option value="4">Hydromancie</option>
+									<option value="8">Luciomancie</option>
 									<option value="11">Occultomancie</option>
+									<option value="10">Phytomancie</option>
 									<option value="12">Psychomancie</option>
+									<option value="6">Pyromancie</option>
 									<option value="13">Telluromancie</option>
 									<option value="14">Thermoancie</option>
+									<option value="2">Temps</option>
 									<option value="15">Spatial</option>
-									<option value="16">Eurythmie</option>
 									<option value="17">Void</option>
-									<option value="0">Type Inconnu</option>
 								</select>
 							</td>
 							<td>
@@ -134,7 +134,7 @@
 								<input type="number" name="cost" />
 							</td>
 							<td>
-								<input typ="submit" name="add" />
+								<input type="submit" name="add" value="Ajouter"/>
 							</td>
 						</tr>
 					</tbody>
