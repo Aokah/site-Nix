@@ -50,7 +50,7 @@
 			
 			<table>
 				<tbody>
-					<tr>
+					<tr class="member_top">
 						<th>Formule</th>
 						<th>Description</th>
 						<th>Energie nécessaire</th>
@@ -77,7 +77,7 @@
 							case 2: $type = "Arcane" ; break; case 1: $type = "Air" ; break; default: $type = "Inconnue" ; break;
 						}	
 					?>
-					<tr>
+					<tr class="memberbg_4">
 						<td><?= $line['name']?></td>
 						<td><?= $line['desc']?></td>
 						<td><img src="pics/magie/xp.png" alt="XP" class="magie_type" /> <?= $line['cost']?></td>
