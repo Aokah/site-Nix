@@ -146,13 +146,13 @@
 										Crédits Divers
 									</div>
 								</a>
-								
+								<!--
 								<a href="index?p=chatbox" class="link">
 									<div>
 										Dialogue en Direct
 									</div>
 								</a>
-								
+								-->
 								<a href="index?p=staffteam" class="link">
 									<div>
 										L'Equipe Admin'
