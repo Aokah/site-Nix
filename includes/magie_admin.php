@@ -46,7 +46,7 @@
 				$name = htmlspecialchars($_POST['name']);
 				$name = mb_strtoupper($name);
 				$command = htmlspecialchars($_POST['command']);
-				$norma = ($_POST['cost'] / 100000000000000);
+				$norma = $_POST['cost'] / 100000000000000;
 				$verif = $db->('SELECT name FROM incan_list WHERE name = ?'); $verif->execute(array($name));
 				
 				if ($verif->fetch())
