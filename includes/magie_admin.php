@@ -2,10 +2,6 @@
 {
 	global $db, $_SESSION;
 
-	$answer = $db->query("SELECT COUNT(*) AS number FROM incan_list");
-	$line = $answer->fetch();
-	$answer->closeCursor();
-
 	if ($_SESSION["connected"])
 	{
 		
@@ -56,7 +52,7 @@
 				elseif (isset($_POST['name']) AND isset($_POST['cost']) AND isset($_POST['description']))
 				{
 					$command = (isset($_POST['cost'])) ? $cost : 'none';
-					$add = $db->prepare("INSERT INTO ican_list VALUES('',? , ? , ? , ? , ?, ? , ?)");
+					$add = $db->prepare("INSERT INTO incan_list VALUES('',? , ? , ? , ? , ?, ? , ?)");
 					$add->execute(array($name, $desc, $_POST['level'], $_POST['type'], $_POST['cost'], $norma, $command));
 					echo '<p class="name5">Le sort a bel et bien été ajouté, vous pouvez désormais le consulter ci-dessous.</p>';
 				}
