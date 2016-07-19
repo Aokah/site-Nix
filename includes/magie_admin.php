@@ -137,7 +137,7 @@
 			<?php
 			} 
 				
-			$select  $db->prepare('SELECT * FROM pieres ORDER by name DESC');
+			$select = $db->prepare('SELECT * FROM pieres ORDER by name DESC');
 			while ($line = $select->fetch())
 			{
 			?>
