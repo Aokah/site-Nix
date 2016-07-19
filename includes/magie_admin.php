@@ -240,7 +240,7 @@
 			{
 			?>
 				<h4>Prière à <?= $line['name']?></h4>
-				<p><img src="pics/Image_<?= $line['code']?>.png" width="100%" alt="" align="center"/> <br />
+				<p><img src="pics/Image_<?= $line['code']?>.png" width="60%" alt="" align="center"/> <br />
 				Prière traduite : <?= $line['text_fr']?> <br/>
 				Prière RP : <?= $line['text_rp']?></p>
 			<?php
