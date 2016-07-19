@@ -40,11 +40,108 @@
 					echo '<p class="name5">La prière a bien été ajoutée, n\'oubliez pas de conclure l\'ajout par la formule d\'appel à l\'entité correspondante !</p>';
 				}
 			}
+			elseif (isset($_POST['add']))
+			{
+				$desc = htmlspecialchars($_POST['description']);
+				$name = htmlspecialchars($_POST['name']);
+				$name = mb_strtoupper($name);
+				$command = htmlspecialchars($_POST['command']);
+				$norma = ($_POST['cost'] / 100000000000000);
+				$verif = $db->('SELECT name FROM incan_list WHERE name = ?'); $verif->execute(array($name))
+				
+				if ($verif->fetch())
+				{
+					echo '<p class="name6">Navré, mais le sort existe déjà, vérifiez qu\'il n\'est pas déjà dans la liste ci-dessous.</p>';
+				}
+				else
+				{
+					$add = $db->prepare("INSTER INTO ican_list VALUES('',? , ? , ? , ? , ?, ? , ?)");
+					$add->execute(array($name, $desc, $_POST['level'], $_POST['type'], $_POST['cost'], $norma, $command));
+					echo '<p class="name5">Le sort a bel et bien été ajouté, vous pouvez désormais le consulter ci-dessous.</p>';
+				}
+			}
 			?>
 	
 		<h2>Liste des sorts et d'incantations</h2>
 		
-		<?php
+		<?php if ($_SESSION['rank'] > 6)
+		{
+		?>
+			<form action="index?p=magie_admin" methode="POST">
+				<table style="text-align:center;">
+					<tbody>
+						<tr>
+							 <th>Formule à incorporer</th> <th>Commande éventuelle</th>
+						</tr>
+						<tr>
+							<td>
+								<input type="text" name="name" />
+							</td>
+							<td>
+								<input type="text" name="command" />
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">Description du sort</th>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="text" name="description" />
+							</td>
+						</tr>
+						<tr>
+							<th>Niveau du sort</th> <th>Element du sort</th> <th>Coùt du sort</th>
+						</tr>
+						<tr>
+							<td>
+								<select name="type">
+									<option value="1">Aeromancie</option>
+									<option value="2">Temps</option>
+									<option value="3">Entropie</option>
+									<option value="4">Hydromancie</option>
+									<option value="5">Electromancie</option>
+									<option value="6">Pyromancie</option>
+									<option value="7">Cryomancie</option>
+									<option value="8">Luciomancie</option>
+									<option value="9">Ferromancie</option>
+									<option value="10">Phytomancie</option>
+									<option value="11">Occultomancie</option>
+									<option value="12">Psychomancie</option>
+									<option value="13">Telluromancie</option>
+									<option value="14">Thermoancie</option>
+									<option value="15">Spatial</option>
+									<option value="16">Eurythmie</option>
+									<option value="17">Void</option>
+									<option value="0">Type Inconnu</option>
+								</select>
+							</td>
+							<td>
+								<select name="level">
+									<option value="1">Niveau F</option>
+									<option value="2">Niveau E</option>
+									<option value="3">Niveau D</option>
+									<option value="4">Niveau C</option>
+									<option value="5">Niveau B</option>
+									<option value="6">Niveau A</option>
+									<option value="7">Niveau S</option>
+									<option value="8">Niveau X</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							
+							<td>
+								<input type="number" name="cost" />
+							</td>
+							<td>
+								<input typ="submit" name="add" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		<?php	
+		}
 				$answer = $db->query("SELECT * FROM incan_list ORDER BY level DESC , type ASC, name ASC");
 		?>
 			
@@ -65,7 +162,7 @@
 						{
 							case 8: $level = "X"; break;	case 7:  $level = "S"; break; case 6:  $level = "A"; break;
 							case 5:  $level = "B"; break; case 4:  $level = "C"; break; case 3:  $level = "D"; break; 
-							case 2:  $level = "E"; break; case 1:  $level = "F"; break;
+							case 2:  $level = "E"; break; case 1:  $level = "F"; break; default : $level = "F"; break;
 						}
 						switch ($line['type'])
 						{
@@ -80,10 +177,10 @@
 					<tr class="memberbg_4">
 						<td><?= $line['name']?></td>
 						<td><?= $line['desc']?></td>
-						<td><img src="pics/magie/xp.png" alt="XP" class="magie_type" /> <?= $line['cost']?></td>
+						<td><?= $line['cost']?></td>
 						<td><?= $line['command']?></td>
-						<td><img class="magie" src="pics/magie/Magie_<?php echo $level ?>.png" alt="Niveau <?php echo $level ?>" title="Niveau <?php echo $level ?>" /></td>
-						<td><img class="magie_type" src="pics/magie/Magie_<?php echo $type ?>.png" width="49" alt="Type <?php echo $type ?>" title="<?php echo $type ?>"/></td>
+						<td style="text-align:center;"><img class="magie" src="pics/magie/Magie_<?php echo $level ?>.png" alt="Niveau <?php echo $level ?>" title="Niveau <?php echo $level ?>" /></td>
+						<td style="text-align: center;"><img class="magie_type" src="pics/magie/Magie_<?php echo $type ?>.png" width="49" alt="Type <?php echo $type ?>" title="<?php echo $type ?>"/></td>
 					</tr>
 					<?php
 					}
@@ -97,7 +194,7 @@
 			?>
 				<h4>Création d'une nouvelle prière</h4>
 				<form action="index?p=magie_admin" method="POST">
-					<table style="text-align:center;">
+					<table style="text-align:center;" width="100%">
 						<tbody>
 							<tr>
 								<th>Nom de l'entité</th> <th>Poste de l'entité</th>
