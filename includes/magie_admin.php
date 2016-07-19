@@ -51,7 +51,7 @@
 				}
 				elseif (isset($_POST['name']) AND isset($_POST['cost']) AND isset($_POST['description']))
 				{
-					$command = (isset($_POST['cost'])) ? $cost : 'none';
+					$command = (isset($_POST['command'])) ? $command : 'none';
 					$add = $db->prepare("INSERT INTO incan_list VALUES('',? , ? , ? , ? , ?, ? , ?)");
 					$add->execute(array($name, $desc, $_POST['level'], $_POST['type'], $_POST['cost'], $norma, $command));
 					echo '<p class="name5">Le sort a bel et bien été ajouté, vous pouvez désormais le consulter ci-dessous.</p>';
