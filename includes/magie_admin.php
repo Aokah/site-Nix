@@ -8,7 +8,37 @@
 
 	if ($_SESSION["connected"]) {
 		
-	if ($_SESSION["rank"] >= 4) { ?>
+	if ($_SESSION["rank"] >= 5) { 
+		
+		if (isset($_POST['valid']))
+		{
+			$name = mb_strtolower($_POST['name']);
+			$codename = substr($name, 0, 4);
+			switch ($_POST['title'])
+			{
+				default : $titlecode = "xx"; break; case 2: $titlecode = "di"; break;
+				case 1: $titlecode = "ti"; break; case 3 : $titlecode = "ga"; break;
+				case 4 : $titlecode = "de"; break;
+			}
+			$code = 'p'. $titlecode.''. $codename .'';
+			$text = htmlspecialchars($_POST['text-fr']);
+			$galactic = htmlspecialchars($_POST['text-la']);
+			
+			$presel = $db->prepare('SELECT * FROM priere WHERE code = ?');
+			$presel->execute(array($code));
+			
+			if ($presel->fetch())
+			{
+				echo '<p class="name6">Erreur : L\'entité posède déjà une prière pour osn poste, vérifiez si la prière n\'est pas déjà listée.</p>';
+			}
+			else
+			{
+				$add = $db->prepare("INSERT INTO priere VALUES('', ? , ? , ? , ?)");
+				$add->execute(array(htmlspecialchars($_POST['name']), $code, $text, $galactic));
+				echo '<p class="name5">La prière a bien été ajoutée, n\'oubliez pas de conclure l\'ajout par la formule d\'appel à l\'entité correspondante !</p>';
+			}
+		}
+		?>
 
 	<h2>Liste des sorts et d'incantations</h2>
 	
@@ -56,20 +86,7 @@
 		</table>
 		
 		<h2>Pages de prières aux entités</h2>
-		<?php 
-			$name = "Thorgeir";
-			$title = "Gardien";
-			$name = mb_strtolower($name);
-			$codename = substr($name, 0, 4);
-			switch ($title)
-			{
-				default : $titlecode = "xx"; break; case 2: $titlecode = "di"; break;
-				case 1: $titlecode = "ti"; break; case 3 : $titlecode = "ga"; break;
-				case 4 : $titlecode = "de"; break;
-			}
-			$code = 'p'. $titlecode.''. $codename .'';
-			echo $name, ' ', $code;
-		?>
+		
 			<h4>Création d'une nouvelle prière</h4>
 			<form action="index?p=magie_admin" method="POST">
 				<table style="text-align:center;">
@@ -90,14 +107,14 @@
 							<th>Prière en Français</th> <th>Prière en Galactique</th>
 						</tr>
 						<tr>
-							<td>
+							<td width="50%">
 								<div align="center">
 									<textarea name="text-fr" placeholder="Prière en Français"></textarea>
 								</div>
 							</td>
-							<td>
+							<td width="50%">
 								<div align="center">
-									<textarea name="text-gala" placeholder="Prière en Latin"></textarea>
+									<textarea name="text-la" placeholder="Prière en Latin"></textarea>
 								</div>
 							</td>
 						</tr>
