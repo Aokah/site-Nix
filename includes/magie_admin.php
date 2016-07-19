@@ -64,7 +64,7 @@
 	
 		<h2>Liste des sorts et d'incantations</h2>
 		
-		<?php if ($_SESSION['rank'] > 6)
+		<?php if ($_SESSION['rank'] > 5)
 		{
 		?>
 			<form action="index?p=magie_admin" methode="POST">
@@ -233,8 +233,8 @@
 				</form>
 			<?php
 			} 
-				
-			$select = $db->prepare('SELECT * FROM pieres ORDER by name DESC');
+			
+			$select = $db->query('SELECT * FROM pieres ORDER by name DESC');
 			while ($line = $select->fetch())
 			{
 			?>
