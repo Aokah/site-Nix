@@ -53,11 +53,16 @@
 				{
 					echo '<p class="name6">Navré, mais le sort existe déjà, vérifiez qu\'il n\'est pas déjà dans la liste ci-dessous.</p>';
 				}
-				else
+				elseif (isset($_POST['name']) AND isset($_POST['cost']) AND isset($_POST['description']))
 				{
+					$command = (isset($_POST['cost'])) ? $cost : 'none';
 					$add = $db->prepare("INSTER INTO ican_list VALUES('',? , ? , ? , ? , ?, ? , ?)");
 					$add->execute(array($name, $desc, $_POST['level'], $_POST['type'], $_POST['cost'], $norma, $command));
 					echo '<p class="name5">Le sort a bel et bien été ajouté, vous pouvez désormais le consulter ci-dessous.</p>';
+				}
+				else
+				{
+					echo '<p class="name6">Navré, mais vous n\'avez pas rempli tous les champs de ce formulaire, veuillez recommencer.</p>';
 				}
 			}
 			?>
@@ -67,7 +72,7 @@
 		<?php if ($_SESSION['rank'] > 5)
 		{
 		?>
-			<form action="index?p=magie_admin" methode="POST">
+			<form action="index?p=magie_admin" method="POST">
 				<table style="text-align:center;" width="100%">
 					<tbody>
 						<tr>
@@ -177,8 +182,8 @@
 					<tr class="memberbg_4">
 						<td><?= $line['name']?></td>
 						<td><?= $line['desc']?></td>
-						<tdstyle="text-align:center;"><?= $line['cost']?></td>
-						<tdstyle="text-align:center;"><?= $line['command']?></td>
+						<td style="text-align:center;"><?= $line['cost']?></td>
+						<td style="text-align:center;"><?= $line['command']?></td>
 						<td style="text-align:center;"><img class="magie" src="pics/magie/Magie_<?php echo $level ?>.png" alt="Niveau <?php echo $level ?>" title="Niveau <?php echo $level ?>" /></td>
 						<td style="text-align: center;"><img class="magie_type" src="pics/magie/Magie_<?php echo $type ?>.png" width="49" alt="Type <?php echo $type ?>" title="<?php echo $type ?>"/></td>
 					</tr>
