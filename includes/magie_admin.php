@@ -58,9 +58,18 @@
 		<h2>Pages de prières aux entités</h2>
 		<?php 
 			$name = "Thorgeir";
+			$title = "Gardien";
 			$name = mb_strtolower($name);
 			$codename = substr($name, 0, 4);
-			echo $name, ' ', $codename;
+			switch ($title)
+			{
+				default : $titlecode = "xx"; break; case "Dieu": $titlecode = "di"; break;
+				case "Titan": $titlecode = "ti"; break; case "Gardien" : $titlecode = "ga"; break;
+				case "Démon" : $titlecode = "de"; break; case "Gardienne" : $titlecode = "ga"; break;
+				case "Démonne": $titlecode = "de"; break;
+			}
+			$code = 'p'. $titlecode.''. $codename .'';
+			echo $name, ' ', $code;
 		?>
 			<h4>Thorgeir</h4>
 			<p><img src="http://www.rpnix.com/pics/Image_pgthor.gif" alt="Prière à Thorgeir" /><br />
