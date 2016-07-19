@@ -21,15 +21,15 @@
 				case 4 : $titlecode = "de"; break;
 			}
 			$code = 'p'. $titlecode.''. $codename .'';
-			$text = htmlspecialchars($_POST['text-fr']);
-			$galactic = htmlspecialchars($_POST['text-la']);
+			$text = htmlspecialchars($_POST['textfr']);
+			$galactic = htmlspecialchars($_POST['textla']);
 			
 			$presel = $db->prepare('SELECT * FROM pieres WHERE code = ?');
 			$presel->execute(array($code));
 			
 			if ($presel->fetch())
 			{
-				echo '<p class="name6">Erreur : L\'entité posède déjà une prière pour osn poste, vérifiez si la prière n\'est pas déjà listée.</p>';
+				echo '<p class="name6">Erreur : L\'entité posède déjà une prière pour son poste, vérifiez si la prière n\'est pas déjà listée.</p>';
 			}
 			else
 			{
@@ -109,12 +109,12 @@
 						<tr>
 							<td width="50%">
 								<div align="center">
-									<textarea name="text-fr" placeholder="Prière en Français"></textarea>
+									<textarea name="textfr" placeholder="Prière en Français"></textarea>
 								</div>
 							</td>
 							<td width="50%">
 								<div align="center">
-									<textarea name="text-la" placeholder="Prière en Latin"></textarea>
+									<textarea name="textla" placeholder="Prière en Latin"></textarea>
 								</div>
 							</td>
 						</tr>
