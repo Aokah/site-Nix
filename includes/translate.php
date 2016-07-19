@@ -10,6 +10,25 @@ global $db, $_POST;
 				<h3>Transcription Galactique</h3>
 				<p>Ici vous pourrez transcrires vos textes de l'alphabet commun à l'alphabet Galactique.</p>
 			<?php
+			if (isset($_POST['translate']))
+			{
+				$text = htmlspecialchars($_POST['text']);
+			?>
+				<h4>Texte d'origine</h4>
+				<p><?= $text?></p>
+				
+				<h4>Texte transcrit</h4>
+				<p style="font-family: minecraft-enchantment; src: url('minecraft-enchantment.ttf');"><?= $text?></p>
+			<?php
+			}
+			?>
+				<form action="index?p=translate" method="POST">
+					<div align="center">
+						<textarea name="text" placeholder="Text à transcrire."></textarea><br/>
+						<input name="translate" value="Transcrire" />
+					</div>
+				</form>
+			<?php
 		}
 		else
 		{
