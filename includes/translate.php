@@ -18,7 +18,7 @@ global $db, $_POST;
 				<p><?= $text?></p>
 				
 				<h4>Texte transcrit</h4>
-				<p style="font-family: minecraft-enchantment; src: url('minecraft-enchantment.ttf');"><?= $text?></p>
+				<p style="font-family: minecraft enchantment; src: url('minecraft-enchantment.ttf'); font-size: 2em;"><?= $text?></p>
 			<?php
 			}
 			?>
