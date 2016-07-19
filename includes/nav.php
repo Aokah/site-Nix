@@ -194,6 +194,12 @@
 									</div>
 								</a>
 								
+								<a href="index?p=translate" class="link">
+									<div>
+										Transcription Galactique
+									</div>
+								</a>
+								
 								<a href="index?p=magie_admin" class="link">
 									<div>
 										Administration Magique
