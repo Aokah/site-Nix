@@ -65,7 +65,7 @@
 	
 		<h2>Liste des sorts et d'incantations</h2>
 		
-		<?php if ($_SESSION['rank'] > 5)
+		<?php if ($_SESSION['rank'] > 6 OR $_SESSION['id'] == 132)
 		{
 		?>
 			<form action="index?p=magie_admin" method="POST">
@@ -190,7 +190,7 @@
 			</table>
 			
 			<h2>Pages de prières aux entités</h2>
-			<?php if ($_SESSION['rank'] > 6)
+			<?php if ($_SESSION['rank'] > 6 OR $_SESSION['id'] == 132)
 			{
 			?>
 				<h4>Création d'une nouvelle prière</h4>
