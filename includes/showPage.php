@@ -128,6 +128,7 @@
 							case 'dev': 				{ 	include('includes/dev.php'); 				dev(); 				break; }
 							case 'skills': 				{ 	include('includes/skills.php'); 				skills(); 				break; }
 							case 'enca': 				{ 	include('includes/enca.php'); 				enca(); 				break; }
+							case 'translate': 			{ 	include('includes/translate.php'); 				translate(); 				break; }
 							case 'relics': 				{ 	include('includes/relics.php'); 				relics(); 				break; }
 						} 
 						?>
