@@ -63,14 +63,52 @@
 			$codename = substr($name, 0, 4);
 			switch ($title)
 			{
-				default : $titlecode = "xx"; break; case "Dieu": $titlecode = "di"; break;
-				case "Titan": $titlecode = "ti"; break; case "Gardien" : $titlecode = "ga"; break;
-				case "Démon" : $titlecode = "de"; break; case "Gardienne" : $titlecode = "ga"; break;
-				case "Démonne": $titlecode = "de"; break;
+				default : $titlecode = "xx"; break; case 2: $titlecode = "di"; break;
+				case 1: $titlecode = "ti"; break; case 3 : $titlecode = "ga"; break;
+				case 4 : $titlecode = "de"; break;
 			}
 			$code = 'p'. $titlecode.''. $codename .'';
 			echo $name, ' ', $code;
 		?>
+			<h4>Création d'une nouvelle prière</h4>
+			<form action="index?p=magie_admin" method="POST">
+				<table style="text-align:center;">
+					<tbody>
+						<tr>
+							<th>Nom de l'entité</th> <th>Poste de l'entité</th>
+						</tr>
+						<tr>
+							<td><input type="text" name="name" /></td>
+							<td><select name="title">
+								<option value="1">Titan</option>
+								<option value="2">Dieu</option>
+								<option value="3">Gardien</option>
+								<option value="4">Démon</option>
+							</select></td>
+						</tr>
+						<tr>
+							<th>Prière en Français</th> <th>Prière en Galactique</th>
+						</tr>
+						<tr>
+							<td>
+								<div align="center">
+									<textarea name="text-fr" placeholder="Prière en Français"></textarea>
+								</div>
+							</td>
+							<td>
+								<div align="center">
+									<textarea name="text-gala" placeholder="Prière en Latin"></textarea>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="submit" name="valid" value="Ajouter la Prière"
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
 			<h4>Thorgeir</h4>
 			<p><img src="http://www.rpnix.com/pics/Image_pgthor.gif" alt="Prière à Thorgeir" /><br />
 			Traduction : Thorgeir tatium quantum curator orbis, audient vocem tuam et veni fidelem nobis <br />
