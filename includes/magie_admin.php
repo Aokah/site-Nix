@@ -90,7 +90,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th>Niveau du sort</th> <th>Element du sort</th> <th>Coùt du sort</th>
+							<th>Niveau du sort</th> <th>Element du sort</th>
 						</tr>
 						<tr>
 							<td>
@@ -131,7 +131,7 @@
 						<tr>
 							
 							<td>
-								<input type="number" name="cost" />
+								<label for="cost">Coùt </label><input type="number" name="cost" id="cost" />
 							</td>
 							<td>
 								<input type="submit" name="add" value="Ajouter"/>
@@ -177,8 +177,8 @@
 					<tr class="memberbg_4">
 						<td><?= $line['name']?></td>
 						<td><?= $line['desc']?></td>
-						<td><?= $line['cost']?></td>
-						<td><?= $line['command']?></td>
+						<tdstyle="text-align:center;"><?= $line['cost']?></td>
+						<tdstyle="text-align:center;"><?= $line['command']?></td>
 						<td style="text-align:center;"><img class="magie" src="pics/magie/Magie_<?php echo $level ?>.png" alt="Niveau <?php echo $level ?>" title="Niveau <?php echo $level ?>" /></td>
 						<td style="text-align: center;"><img class="magie_type" src="pics/magie/Magie_<?php echo $type ?>.png" width="49" alt="Type <?php echo $type ?>" title="<?php echo $type ?>"/></td>
 					</tr>
