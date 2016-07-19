@@ -25,7 +25,7 @@ global $db, $_POST;
 				<form action="index?p=translate" method="POST">
 					<div align="center">
 						<textarea name="text" placeholder="Text à transcrire."></textarea><br/>
-						<input name="translate" value="Transcrire" />
+						<input type="submit" name="translate" value="Transcrire" />
 					</div>
 				</form>
 			<?php
