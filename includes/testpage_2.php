@@ -7,9 +7,26 @@
 		<div align="center" width="95%" class="memberbg_4">
 			<div width="100%" style="padding:1%;">
 				<?php
-				 $cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = "" AND to_id = ? OR
-				 del = 0 AND salon = "" AND to_id = 0');
-				 $cb_select->execute(array($_SESSION['id']));
+				if (isset($_GET['admin']))
+				{
+					if ($_GET['admin'] == "see_del")
+					{
+						$cb_select = $db->prepare('SELECT * FROM cb_test WHERE AND salon = "" AND to_id = ? OR
+					 	AND salon = "" AND to_id = 0');
+						$cb_select->execute(array($_SESSION['id']));	
+					}
+					elseif ($_GET['admin'] == "see_whisp")
+					{
+						$cb_select = $db->query('SELECT * FROM cb_test WHERE del = 0 AND salon = "" ');
+					}
+				}
+				else
+				{
+					$cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = "" AND to_id = ? OR
+					 del = 0 AND salon = "" AND to_id = 0');
+					 $cb_select->execute(array($_SESSION['id']));	
+				}
+				 
 				 
 				 while ($line = $cb_select->fetch())
 				 {
