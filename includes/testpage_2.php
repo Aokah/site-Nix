@@ -18,9 +18,10 @@
 				 	$name_cb = $select_members->fetch();
 				 	$tech = ($name_cb['technician'] == 1)? '-T' : '';
 				 	$pionier = ($name_cb['pionier'] == 1)? '-P' : '';
+				 	$date_send = preg_replace('#^.{11}(.{2}):(.{2}):.{2}$#', '$1:$2', $line['post_date']);
 				?>
 				<p>
-				<span class="name<?= $name_cb['rank'], $tech, $pionier; ?>"><?= $name_cb['name']?></span> : <span <?= $bonus
+				<?= $date_send; ?> : <span class="name<?= $name_cb['rank'], $tech, $pionier; ?>"><?= $name_cb['name']?></span> : <span <?= $bonus
 				?>><?= $line['message']?></span>
 				</p>
 				<?php
