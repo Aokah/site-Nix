@@ -21,7 +21,7 @@
 				 	$date_send = preg_replace('#^.{11}(.{2}):(.{2}):.{2}$#', '$1:$2', $line['post_date']);
 				 	if ($line['staff_effect'] == "class" OR $line['staff_effect'] == "style")
 				 	{
-				 		$param = $line['staff_parameter'];
+				 		$option = $line['staff_parameter'];
 				 		$effect = $line['staff_effect']. '="' . $option . '" ';
 				 	}
 				 	
