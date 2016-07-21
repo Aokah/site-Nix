@@ -19,10 +19,16 @@
 				 	$tech = ($name_cb['technician'] == 1)? '-T' : '';
 				 	$pionier = ($name_cb['pionier'] == 1)? '-P' : '';
 				 	$date_send = preg_replace('#^.{11}(.{2}):(.{2}):.{2}$#', '$1:$2', $line['post_date']);
+				 	if ($line['staff_effect'] == "class" OR $line['staff_effect'] == "style")
+				 	{
+				 		$param = $line['staff_parameter'];
+				 		$effect = $line['staff_effect']. '="' . $option . '" ';
+				 	}
+				 	
 				?>
 				<p style="text-align:left;">
 				[<?= $date_send; ?>] <img src="pics/avatar/miniskin_<?= $line['sender_id']?>.png" alt="" width="15px" />
-				<span class="name<?= $name_cb['rank'], $tech, $pionier; ?>"><?= $name_cb['name']?></span> : <span <?= $bonus
+				<span class="name<?= $name_cb['rank'], $tech, $pionier; ?>"><?= $name_cb['name']?></span> : <span <?= $effect
 				?>><?= $line['message']?></span>
 				</p>
 				<?php
