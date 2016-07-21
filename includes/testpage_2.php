@@ -30,7 +30,9 @@
 				 
 				 while ($line = $cb_select->fetch())
 				 {
-				 	v
+				 	$select_member = $db->prepare('SELECT * FROM members WHERE id = ?');
+					$select_member->execute(array($line['sender_id']));
+					$name_cb = $select_member->fetch();
 				 	$tech = ($name_cb['technician'] == 1)? '-T' : '';
 				 	$pionier = ($name_cb['pionier'] == 1)? '-P' : '';
 				 	$date_send = preg_replace('#^.{11}(.{2}):(.{2}):.{2}$#', '$1:$2', $line['post_date']);
