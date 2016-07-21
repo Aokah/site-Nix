@@ -4,11 +4,31 @@
 	
 	echo "<h2>CB</h2>";
 	?>
-		<div align="center" class="memberbg_4">
-			<form action="cb_form" method="POST">
+		<div align="center" width="95%" class="memberbg_4">
+			<div width="100%">
+				<?php
+				 $cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = "" AND to_id = ? OR
+				 del = 0 AND salon = "" AND to_id = 0');
+				 $cb_select->execute(array($_SESSION['id']));
+				 
+				 while ($line = $cb_select->fetch())
+				 {
+				 	$select_members = $db->prepare('SELECT * FROM members WHERE id = ?');
+				 	$select_members->execute(array($line['id']));
+				 	$name_cb = $select-members->fetch();
+				 	$tech = ($name_cb['technician'] == 1)? '-T' : '';
+				 	$pionier = ($name_cb['pionier'] == 1)? '-P' : '';
+				?>
+				<span class="name<?= $name_cb['rank'], $tech, $pionier: ?>"><?= $name_cb['name']?></span> : <span <?= $bonus
+				?>><? $line['message']?></span>
+				<?php
+				 }
+				 ?>
+			</div>
+			<form action="cb_form" method="POST" style="text-align:left;">
 				<label for="cb_msg">Message : </label> <input type="text" name="cb_msg" id="cb_msg" /></br>
-				<label for="cb_whisp">Message : </label> <input type="text" name="cb_whisp" id="cb_whisp" />
-				<label for="cb_salon">Message : </label> <input type="text" name="cb_salon" id="cb_salon" />
+				<label for="cb_whisp">Chuchoter à : </label> <input type="text" name="cb_whisp" id="cb_whisp" />
+				<label for="cb_salon">Salon : </label> <input type="text" name="cb_salon" id="cb_salon" />
 				<input type="submit" value="Envoyer" />
 			</form>
 		</div>
