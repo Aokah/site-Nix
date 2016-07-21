@@ -14,7 +14,7 @@
 				 while ($line = $cb_select->fetch())
 				 {
 				 	$select_members = $db->prepare('SELECT * FROM members WHERE id = ?');
-				 	$select_members->execute(array($line['id']));
+				 	$select_members->execute(array($line['sender_id']));
 				 	$name_cb = $select_members->fetch();
 				 	$tech = ($name_cb['technician'] == 1)? '-T' : '';
 				 	$pionier = ($name_cb['pionier'] == 1)? '-P' : '';
