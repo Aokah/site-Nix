@@ -24,6 +24,10 @@
 				 		$option = $line['staff_parameter'];
 				 		$effect = $line['staff_effect']. '="' . $option . '" ';
 				 	}
+				 	else
+				 	{
+				 		$effect = "";
+				 	}
 				 	
 				?>
 				<p style="text-align:left;">
