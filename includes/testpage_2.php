@@ -17,13 +17,13 @@
 					}
 					elseif ($_GET['admin'] == "see_whisp")
 					{
-						$cb_select = $db->query('SELECT * FROM cb_test WHERE del = 0 AND salon = "" ');
+						$cb_select = $db->query('SELECT * FROM cb_test WHERE del = 0 AND salon = ""  ORDER BY post_date DESC LIMIT 0, 20');
 					}
 				}
 				else
 				{
 					$cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = "" AND to_id = ? OR
-					 del = 0 AND salon = "" AND to_id = 0');
+					 del = 0 AND salon = "" AND to_id = 0  ORDER BY post_date DESC LIMIT 0, 20');
 					 $cb_select->execute(array($_SESSION['id']));	
 				}
 				 
