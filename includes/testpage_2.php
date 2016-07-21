@@ -11,7 +11,7 @@
 				{
 					if ($_GET['admin'] == "see_del")
 					{
-						$cb_select = $db->prepare('SELECT * FROM cb_test WHERE AND salon = "" AND to_id = ? OR
+						$cb_select = $db->prepare('SELECT * FROM cb_test WHERE salon = "" AND to_id = ? OR
 					 	AND salon = "" AND to_id = 0');
 						$cb_select->execute(array($_SESSION['id']));	
 					}
