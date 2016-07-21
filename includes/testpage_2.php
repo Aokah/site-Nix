@@ -19,14 +19,14 @@
 				 	$tech = ($name_cb['technician'] == 1)? '-T' : '';
 				 	$pionier = ($name_cb['pionier'] == 1)? '-P' : '';
 				 	$date_send = preg_replace('#^.{11}(.{2}):(.{2}):.{2}$#', '$1:$2', $line['post_date']);
-				 	if ($line['staff_effect'] == "class" OR $line['staff_effect'] == "style")
+				 	if ($line['staff_effect'] == "class" AND $name_cb['rank'] > 5 OR $line['staff_effect'] == "style" AND $name_cb['rank'] > 5 )
 				 	{
 				 		$option = $line['staff_parameter'];
 				 		$effect = $line['staff_effect']. '="' . $option . '" ';
 				 	}
 				 	else
 				 	{
-				 		$effect = "";
+				 		$effect = " ";
 				 	}
 				 	
 				?>
