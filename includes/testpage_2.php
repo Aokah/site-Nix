@@ -19,8 +19,10 @@
 				 	$tech = ($name_cb['technician'] == 1)? '-T' : '';
 				 	$pionier = ($name_cb['pionier'] == 1)? '-P' : '';
 				?>
+				<p>
 				<span class="name<?= $name_cb['rank'], $tech, $pionier; ?>"><?= $name_cb['name']?></span> : <span <?= $bonus
 				?>><?= $line['message']?></span>
+				</p>
 				<?php
 				 }
 				 ?>
