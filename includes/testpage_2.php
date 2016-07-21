@@ -12,7 +12,7 @@
 					if ($_GET['admin'] == "see_del")
 					{
 						$cb_select = $db->prepare('SELECT * FROM cb_test WHERE salon = "" AND to_id = ? OR
-					 	 salon = "" AND to_id = 0');
+					 	 salon = "" AND to_id = 0 ORDER BY post_date DESC LIMIT 0, 20');
 						$cb_select->execute(array($_SESSION['id']));	
 					}
 					elseif ($_GET['admin'] == "see_whisp")
