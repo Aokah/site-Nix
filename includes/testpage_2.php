@@ -1,7 +1,7 @@
 <?php function testpage_2 ()
 {
 	global $db; 
-	
+	include ('includes/cb_form.php'); cb_form();
 	echo "<h2>CB</h2>";
 	?>
 		<div align="center" width="95%" class="memberbg_4">
@@ -71,7 +71,7 @@
 				 }
 				 ?>
 			</div>
-			<form action="cb_form.php" method="POST" style="text-align:left;">
+			<form action="testpage_2.php" method="POST" style="text-align:left;">
 				<label for="cb_msg">Message : </label> <input type="text" name="cb_msg" id="cb_msg" /></br>
 				<label for="cb_whisp">Chuchoter à : </label> <input type="text" name="cb_whisp" id="cb_whisp" />
 				<label for="cb_salon">Salon : </label> <input type="text" name="cb_salon" id="cb_salon" />
