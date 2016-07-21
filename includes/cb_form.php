@@ -6,7 +6,7 @@
 		$to = (isset($_POST['cb_whisp'])) ? $_POST['cb_whisp'] : 0;
 		if (isset($_POST['cb_whisp']))
 		{
-			$presel = $db->prepare('SELECT id, name FROM members WHERE name = ?'); $presel->execute(array($to))
+			$presel = $db->prepare('SELECT id, name FROM members WHERE name = ?'); $presel->execute(array($to));
 			$line = $presel->fetch();
 			$to = $line['id'];
 		}
