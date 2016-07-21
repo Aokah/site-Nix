@@ -10,8 +10,8 @@
 			$line = $presel->fetch();
 			$to = $line['id'];
 		}
-		$effect = (isset($_POST['effect'])) ? $_POST['effect'] : '';
-		$option = (isset($_POST['option'])) ? $_POST['option'] : '';
+		$effect = (isset($_POST['effect'])) ? $_POST['effect'] : " ";
+		$option = (isset($_POST['option'])) ? $_POST['option'] : " ";
 		$req = $db->prepare("INSTER INTO cb_test VALUES('', ?, ?, '', 0, ?, ?, NOX(), 0)");
 		$req->execute(array($_SESSION['id'], $to , htmlspecialchars($_POST['cb_msg']), htmlspecialchars($effect),
 		htmlspecialchars($option)));
