@@ -15,7 +15,7 @@
 				 {
 				 	$select_members = $db->prepare('SELECT * FROM members WHERE id = ?');
 				 	$select_members->execute(array($line['id']));
-				 	$name_cb = $select-members->fetch();
+				 	$name_cb = $select_members->fetch();
 				 	$tech = ($name_cb['technician'] == 1)? '-T' : '';
 				 	$pionier = ($name_cb['pionier'] == 1)? '-P' : '';
 				?>
