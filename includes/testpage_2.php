@@ -5,7 +5,7 @@
 	echo "<h2>CB</h2>";
 	?>
 		<div align="center" width="95%" class="memberbg_4">
-			<div width="100%">
+			<div width="100%" style="margin:2%;">
 				<?php
 				 $cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = "" AND to_id = ? OR
 				 del = 0 AND salon = "" AND to_id = 0');
