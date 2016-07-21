@@ -6,6 +6,5 @@
 	$req->execute(array($_SESSION['id'], $_POST['cb_whisp'], htmlspecialchars($_POST['cb_msg']), htmlspecialchars($_POST['effect']),
 	htmlspecialchars($_POST['option'] )));
 	
-	header('Location: testpage_2.php');
 }
 ?>
