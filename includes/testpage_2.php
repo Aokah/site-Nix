@@ -21,7 +21,7 @@
 				 	$date_send = preg_replace('#^.{11}(.{2}):(.{2}):.{2}$#', '$1:$2', $line['post_date']);
 				?>
 				<p style="text-align:left;">
-				[<?= $date_send; ?>] <img src="pics/skin/miniskin_<?= $line['sender_id']?>.png" alt="" width="100%" />
+				[<?= $date_send; ?>] <img src="pics/avatar/miniskin_<?= $line['sender_id']?>.png" alt="" width="100%" />
 				<span class="name<?= $name_cb['rank'], $tech, $pionier; ?>"><?= $name_cb['name']?></span> : <span <?= $bonus
 				?>><?= $line['message']?></span>
 				</p>
