@@ -75,7 +75,15 @@
 				<label for="cb_msg">Message : </label> <input type="text" id="reloadCB" onclick="toggleAutoRefresh(this);" name="cb_msg" id="cb_msg" /></br>
 				<label for="cb_whisp">Chuchoter à : </label> <input type="text" name="cb_whisp" id="cb_whisp" /><br />
 			<!--	<label for="cb_salon">Salon : </label> <input type="text" name="cb_salon" id="cb_salon" /> -->
-				<a href="index?p=cb&admin=see_del" class="button">Voir les messages supprimés</a>
+				<? if ($_GET['admin'] != "see_del")
+					{
+						echo '<a href="index?p=cb&admin=see_del" class="button">Voir les messages supprimés</a>';
+					}
+				if (isset($_GET['admin']))
+					{
+						echo '<a href="index?p=cb" class="button">Retour à la CB Classique</a>';
+					}
+				?>
 				<input type="submit" name="send_cb" value="Envoyer" />
 			</form>
 		</div>
