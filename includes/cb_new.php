@@ -4,8 +4,8 @@
 	include ('includes/cb_form.php'); cb_form();
 	echo "<h2>CB</h2>";
 	?>
-		<div align="center" width="95%" class="memberbg_4">
-			<div width="100%" style="padding:1%;" class=memberbg_1>
+		<div align="center" width="95%" class="memberbg_6">
+			<div width="100%" style="padding:1%;" class=memberbg_4>
 				<?php
 				if (isset($_GET['admin']))
 				{
