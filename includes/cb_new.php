@@ -14,7 +14,10 @@
 						$count = $db->prepare('SELECT COUNT(*) AS count FROM cb_test WHERE salon = "" AND to_id = ? OR
 					 	 salon = "" AND to_id = 0 ORDER BY post_date ASC');
 					 	 $count->execute(array($_SESSION['id']));
-					 	 
+					 	$limit1 = $count['count'];
+					 	$limit2 = $limit1 - 20;
+					 	$limit2 = ($limit2 < 0) ? 0 : $limit2;
+					 	
 						$cb_select = $db->prepare('SELECT * FROM cb_test WHERE salon = "" AND to_id = ? OR
 					 	 salon = "" AND to_id = 0 ORDER BY post_date ASC LIMIT ?, ?');
 					 	$cb_select->execute(array($_SESSION['id'], $limit1, $limit2));	
@@ -25,6 +28,7 @@
 					 	$count->execute(array($_SESSION['id'])); $count = $count->fetch();
 					 	$limit1 = $count['count'];
 					 	$limit2 = $limit1 - 20;
+					 	$limit2 = ($limit2 < 0) ? 0 : $limit2;
 						$cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = ""  ORDER BY post_date ASC LIMIT ?, ?');
 						$cb_select->execute(arra($limit1, $limit2));
 					}
@@ -36,6 +40,8 @@
 					 	$count->execute(array($_SESSION['id'])); $count = $count->fetch();
 					 	$limit1 = $count['count'];
 					 	$limit2 = $limit1 - 20;
+					 	$limit2 = ($limit2 < 0) ? 0 : $limit2;
+					 	
 					$cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = "" AND to_id = ? OR
 					 del = 0 AND salon = "" AND to_id = 0  ORDER BY post_date ASC LIMIT ?, ?');
 					 $cb_select->execute(array($_SESSION['id'], $limit1, $limit2));	
