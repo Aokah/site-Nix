@@ -1,4 +1,4 @@
-<?php function testpage_2 ()
+<?php function cb_new ()
 {
 	global $db; 
 	include ('includes/cb_form.php'); cb_form();
@@ -71,10 +71,10 @@
 				 }
 				 ?>
 			</div>
-			<form action="index?p=testpage_2" method="POST" style="text-align:left;">
+			<form action="index?p=cb_new" method="POST" style="text-align:left;">
 				<label for="cb_msg">Message : </label> <input type="text" name="cb_msg" id="cb_msg" /></br>
 				<label for="cb_whisp">Chuchoter à : </label> <input type="text" name="cb_whisp" id="cb_whisp" />
-				<label for="cb_salon">Salon : </label> <input type="text" name="cb_salon" id="cb_salon" />
+			<!--	<label for="cb_salon">Salon : </label> <input type="text" name="cb_salon" id="cb_salon" /> -->
 				<input type="submit" name="send_cb" value="Envoyer" />
 			</form>
 		</div>
