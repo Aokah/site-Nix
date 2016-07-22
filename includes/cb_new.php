@@ -5,7 +5,7 @@
 	echo "<h2>CB</h2>";
 	?>
 		<div align="center" width="95%" class="memberbg_6">
-			<div width="100%" style="padding:1%;" class=memberbg_4>
+			<div width="100%" style="padding:1%;" class="memberbg_4">
 				<?php
 				if (isset($_GET['admin']))
 				{
@@ -49,7 +49,7 @@
 					 if ($line['del'] == 0)	
 					 {
 						?>
-						<p style="text-align:left;">
+						<p style="text-align:left;"> <a href="cb&del=<?= $line['id']?>" style="color:red;">[x]</a> 
 						[<?= $date_send; ?>] <img src="pics/avatar/miniskin_<?= $line['sender_id']?>.png" alt="" width="15px" />
 						<span class="name<?= $name_cb['rank'], $tech, $pionier; ?>"><?= $name_cb['name']?></span> : <span <?= $effect
 						?>><?= $line['message']?></span>
