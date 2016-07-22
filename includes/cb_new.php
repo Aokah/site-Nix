@@ -5,7 +5,7 @@
 	echo "<h2>CB</h2>";
 	?>
 		<div align="center" width="95%" class="memberbg_4">
-			<div width="100%" style="padding:1%;">
+			<div width="100%" style="padding:1%;" class=memberbg_1>
 				<?php
 				if (isset($_GET['admin']))
 				{
