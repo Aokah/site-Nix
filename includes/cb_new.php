@@ -5,6 +5,28 @@
 	echo "<h2>CB</h2>";
 	?>
 		<div align="center" width="95%" class="memberbg_6">
+			<form method="POST" action="index?p=cb" style="text-align:left; padding:1%">
+				<label for="cb_msg">Message : </label> <input type="text" id="reloadCB" onclick="toggleAutoRefresh(this);" name="cb_msg" id="cb_msg" /></br>
+				<label for="cb_whisp">Chuchoter à : </label> <input type="text" name="cb_whisp" id="cb_whisp" /><br />
+			<!--	<label for="cb_salon">Salon : </label> <input type="text" name="cb_salon" id="cb_salon" /> -->
+				<? if ($_GET['admin'] != "see_del")
+					{
+						echo '<a href="index?p=cb&admin=see_del" class="button">Voir les messages supprimés</a>';
+					}
+				if (isset($_GET['admin']))
+					{
+						echo '<a href="index?p=cb" class="button">Retour à la CB Classique</a>';
+					}
+				?>
+				<br /><input type="checkbox" name="staffeffect" id="staffeffect" /> <label for="staffeffect">Activer un effet de texte (NECESSITE DES BASES EN HTML)</label><br />
+				<select name="effect">
+					<option value="class">Class</option>
+					<option value="style">Style</option>
+				</select>
+				<input type="text" name="option"/>
+				<br /><input type="submit" name="send_cb" value="Envoyer" />
+			</form>
+			
 			<div width="100%" style="padding:1%;" class="memberbg_4">
 				<?php
 				if (isset($_GET['admin']))
@@ -19,7 +41,7 @@
 					 #	$limit2 = ($limit2 < 0) ? 0 : $limit2;
 					 	
 						$cb_select = $db->prepare('SELECT * FROM cb_test WHERE salon = "" AND to_id = ? OR
-					 	 salon = "" AND to_id = 0 ORDER BY post_date ASC LIMIT 0, 20');
+					 	 salon = "" AND to_id = 0 ORDER BY post_date DESC LIMIT 0, 20');
 					 	$cb_select->execute(array($_SESSION['id']));	
 					}
 					elseif ($_GET['admin'] == "see_whisp")
@@ -29,7 +51,7 @@
 					 #	$limit1 = $count['count'];
 					 #	$limit2 = $limit1 - 20;
 					 #	$limit2 = ($limit2 < 0) ? 0 : $limit2;
-						$cb_select = $db->query('SELECT * FROM cb_test WHERE del = 0 AND salon = ""  ORDER BY post_date ASC LIMIT 0, 20');
+						$cb_select = $db->query('SELECT * FROM cb_test WHERE del = 0 AND salon = ""  ORDER BY post_date DESC LIMIT 0, 20');
 					}
 				}
 				else
@@ -42,7 +64,7 @@
 					 #	$limit2 = ($limit2 < 0) ? 0 : $limit2;
 					 	
 					$cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = "" AND to_id = ? OR
-					 del = 0 AND salon = "" AND to_id = 0  ORDER BY post_date ASC LIMIT 0, 20');
+					 del = 0 AND salon = "" AND to_id = 0  ORDER BY post_date DESC LIMIT 0, 20');
 					 $cb_select->execute(array($_SESSION['id']));	
 				}
 				 
@@ -90,27 +112,6 @@
 				 }
 				 ?>
 			</div>
-			<form method="POST" action="index?p=cb" style="text-align:left; padding:1%">
-				<label for="cb_msg">Message : </label> <input type="text" id="reloadCB" onclick="toggleAutoRefresh(this);" name="cb_msg" id="cb_msg" /></br>
-				<label for="cb_whisp">Chuchoter à : </label> <input type="text" name="cb_whisp" id="cb_whisp" /><br />
-			<!--	<label for="cb_salon">Salon : </label> <input type="text" name="cb_salon" id="cb_salon" /> -->
-				<? if ($_GET['admin'] != "see_del")
-					{
-						echo '<a href="index?p=cb&admin=see_del" class="button">Voir les messages supprimés</a>';
-					}
-				if (isset($_GET['admin']))
-					{
-						echo '<a href="index?p=cb" class="button">Retour à la CB Classique</a>';
-					}
-				?>
-				<br /><input type="checkbox" name="staffeffect" id="staffeffect" /> <label for="staffeffect">Activer un effet de texte (NECESSITE DES BASES EN HTML)</label><br />
-				<select name="effect">
-					<option value="class">Class</option>
-					<option value="style">Style</option>
-				</select>
-				<input type="text" name="option"/>
-				<br /><input type="submit" name="send_cb" value="Envoyer" />
-			</form>
 		</div>
 	<?php
 	
