@@ -43,8 +43,8 @@
 					 	$limit2 = ($limit2 < 0) ? 0 : $limit2;
 					 	
 					$cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = "" AND to_id = ? OR
-					 del = 0 AND salon = "" AND to_id = 0  ORDER BY post_date ASC LIMIT ?, ?');
-					 $cb_select->execute(array($_SESSION['id'], $limit2, $limit1));	
+					 del = 0 AND salon = "" AND to_id = 0  ORDER BY post_date ASC LIMIT 20, 0');
+					 $cb_select->execute(array($_SESSION['id']));	
 				}
 				 
 				 
