@@ -130,6 +130,7 @@
 							case 'enca': 				{ 	include('includes/enca.php'); 				enca(); 				break; }
 							case 'translate': 			{ 	include('includes/translate.php'); 				translate(); 				break; }
 							case 'relics': 				{ 	include('includes/relics.php'); 				relics(); 				break; }
+							case 'cb': 			{ 	include('includes/cb_new.php'); 				cb_new(); 				break; }
 						} 
 						?>
 					</div>
