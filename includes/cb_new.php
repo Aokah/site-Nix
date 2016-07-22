@@ -84,7 +84,13 @@
 						echo '<a href="index?p=cb" class="button">Retour à la CB Classique</a>';
 					}
 				?>
-				<input type="submit" name="send_cb" value="Envoyer" />
+				<br /><input type="checkbox" name="staffeffect" id="staffeffect" /> <label for="staffeffect">Activer un effet de texte</label><br />
+				<select name="effect">
+					<option value="class">Class</option>
+					<option value="style">Style</option>
+				</select>
+				<input type="text" name="option"/>
+				<br /><input type="submit" name="send_cb" value="Envoyer" />
 			</form>
 		</div>
 	<?php
