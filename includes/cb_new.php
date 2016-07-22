@@ -20,7 +20,7 @@
 					 	
 						$cb_select = $db->prepare('SELECT * FROM cb_test WHERE salon = "" AND to_id = ? OR
 					 	 salon = "" AND to_id = 0 ORDER BY post_date ASC LIMIT ?, ?');
-					 	$cb_select->execute(array($_SESSION['id'], $limit1, $limit2));	
+					 	$cb_select->execute(array($_SESSION['id'], $limit2, $limit1));	
 					}
 					elseif ($_GET['admin'] == "see_whisp")
 					{
@@ -30,7 +30,7 @@
 					 	$limit2 = $limit1 - 20;
 					 	$limit2 = ($limit2 < 0) ? 0 : $limit2;
 						$cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = ""  ORDER BY post_date ASC LIMIT ?, ?');
-						$cb_select->execute(arra($limit1, $limit2));
+						$cb_select->execute(arra($limit2, $limit1));
 					}
 				}
 				else
@@ -44,7 +44,7 @@
 					 	
 					$cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = "" AND to_id = ? OR
 					 del = 0 AND salon = "" AND to_id = 0  ORDER BY post_date ASC LIMIT ?, ?');
-					 $cb_select->execute(array($_SESSION['id'], $limit1, $limit2));	
+					 $cb_select->execute(array($_SESSION['id'], $limit2, $limit1));	
 				}
 				 
 				 
