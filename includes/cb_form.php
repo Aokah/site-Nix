@@ -1,7 +1,7 @@
 <?php function cb_form()
 {
 	global $db, $_POST, $_SESSION;
-	if (isset($_POST['send_cb']) AND isset($_POST['cb_msg']))
+	if (isset($_POST['send_cb']) AND isset($_POST['cb_msg']) AND $_POST['cb_msg'] != "")
 	{
 		if (isset($_POST['cb_whisp']))
 		{
