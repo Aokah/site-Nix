@@ -62,7 +62,7 @@
 					 	$select_del->execute(array($line['deleter_id']));
 					 	$del = $select_del->fetch();
 					 	?>
-					 	<p style="text-align:left; color: darkred;"> <a href="cb&del=<?= $line['id']?>" style="color:red;">[x]</a> 
+					 	<p style="text-align:left; color: darkred;">
 						[<?= $date_send; ?>] <img src="pics/avatar/miniskin_<?= $line['sender_id']?>.png" alt="" width="15px" />
 						<span class="name<?= $name_cb['rank'], $tech, $pionier; ?>"><?= $name_cb['name']?></span> : <span style="color:gold">(Supprimé par <?= $del['name']?>)</span> <?= $line['message']?>
 						</p>
