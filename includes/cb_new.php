@@ -75,6 +75,7 @@
 				<label for="cb_msg">Message : </label> <input type="text" id="reloadCB" onclick="toggleAutoRefresh(this);" name="cb_msg" id="cb_msg" /></br>
 				<label for="cb_whisp">Chuchoter à : </label> <input type="text" name="cb_whisp" id="cb_whisp" />
 			<!--	<label for="cb_salon">Salon : </label> <input type="text" name="cb_salon" id="cb_salon" /> -->
+				<a href="index?p=cb&admin=see_del" class="button">Voir les messages supprimés</a>
 				<input type="submit" name="send_cb" value="Envoyer" />
 			</form>
 		</div>
