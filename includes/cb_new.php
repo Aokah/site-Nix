@@ -11,20 +11,34 @@
 				{
 					if ($_GET['admin'] == "see_del")
 					{
+						$count = $db->prepare('SELECT COUNT(*) AS count FROM cb_test WHERE salon = "" AND to_id = ? OR
+					 	 salon = "" AND to_id = 0 ORDER BY post_date ASC');
+					 	 $count->execute(array($_SESSION['id']));
+					 	 
 						$cb_select = $db->prepare('SELECT * FROM cb_test WHERE salon = "" AND to_id = ? OR
-					 	 salon = "" AND to_id = 0 ORDER BY post_date ASC LIMIT 0, 20');
-						$cb_select->execute(array($_SESSION['id']));	
+					 	 salon = "" AND to_id = 0 ORDER BY post_date ASC LIMIT ?, ?');
+					 	$cb_select->execute(array($_SESSION['id'], $limit1, $limit2));	
 					}
 					elseif ($_GET['admin'] == "see_whisp")
 					{
-						$cb_select = $db->query('SELECT * FROM cb_test WHERE del = 0 AND salon = ""  ORDER BY post_date ASC LIMIT 0, 20');
+						$count = $db->prepare('SELECT COUNT(*) AS count FROM cb_test WHERE del = 0 AND salon = ""  ORDER BY post_date ASC ');
+					 	$count->execute(array($_SESSION['id'])); $count = $count->fetch();
+					 	$limit1 = $count['count'];
+					 	$limit2 = $limit1 - 20;
+						$cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = ""  ORDER BY post_date ASC LIMIT ?, ?');
+						$cb_select->execute(arra($limit1, $limit2));
 					}
 				}
 				else
 				{
+					$count = $db->prepare('SELECT COUNT(*) AS count FROM cb_test WHERE del = 0 AND salon = "" AND to_id = ? OR
+					 del = 0 AND salon = "" AND to_id = 0  ORDER BY post_date ASC ');
+					 	$count->execute(array($_SESSION['id'])); $count = $count->fetch();
+					 	$limit1 = $count['count'];
+					 	$limit2 = $limit1 - 20;
 					$cb_select = $db->prepare('SELECT * FROM cb_test WHERE del = 0 AND salon = "" AND to_id = ? OR
-					 del = 0 AND salon = "" AND to_id = 0  ORDER BY post_date ASC LIMIT 0, 20');
-					 $cb_select->execute(array($_SESSION['id']));	
+					 del = 0 AND salon = "" AND to_id = 0  ORDER BY post_date ASC LIMIT ?, ?');
+					 $cb_select->execute(array($_SESSION['id'], $limit1, $limit2));	
 				}
 				 
 				 
