@@ -24,7 +24,7 @@
 					<option value="style">Style</option>
 				</select>
 				<input type="text" name="option"/>
-				<br /><input type="submit" name="send_cb" value="Envoyer" />
+				<br /><input type="submit" name="send_cb" value="Envoyer" /> <input type="submit" name="refresh" value="Reload" />
 			</form>
 			
 			<div width="100%" style="padding:1%;" class="memberbg_4">
