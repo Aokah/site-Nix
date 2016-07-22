@@ -22,7 +22,7 @@
 	}
 	if (isset($_GET['del']))
 	{
-		$id = intval($_GET['del'])
+		$id = intval($_GET['del']);
 		$del =$db->prepare('UPDATE cb_test SET del = 1, deleter_id = ?');
 		$del->execute(array($_SESSION['id']));
 	}
