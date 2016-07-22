@@ -49,7 +49,7 @@
 					 if ($line['del'] == 0)	
 					 {
 						?>
-						<p style="text-align:left;"> <a href="cb&del=<?= $line['id']?>" style="color:red;">[x]</a> 
+						<p style="text-align:left;"> <a href="index?p=cb&del=<?= $line['id']?>" style="color:red;">[x]</a> 
 						[<?= $date_send; ?>] <img src="pics/avatar/miniskin_<?= $line['sender_id']?>.png" alt="" width="15px" />
 						<span class="name<?= $name_cb['rank'], $tech, $pionier; ?>"><?= $name_cb['name']?></span> : <span <?= $effect
 						?>><?= $line['message']?></span>
