@@ -6,7 +6,7 @@
 	{
 		if ($_SESSION['rank'] > 4)
 		{
-			$select = $db->query('SELECT * FROM members WHERE rank > 4 AND rank < 8 AND dignitaire = 0 AND vanish = 0 AND pnj = 0 ORDER BY Rank DESC');
+			$select = $db->query('SELECT * FROM members WHERE rank > 4 AND rank < 8 AND dignitaire = 0 AND invisible = 0 AND pnj = 0 ORDER BY Rank DESC');
 			?>
 			<table class="member_top" style="text-align:center;" cellpadding="1%">
 				<tbody>
