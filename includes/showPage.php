@@ -77,7 +77,7 @@
 				        	switch ($page)
 						{
 							case '' : 				{	include('includes/home.php'); 					home(); 				break; }
-							case 'staffjob' : 				{	include('includes/role.php'); 					role(); 				break; }
+							case 'staffjob' : 				{	include('includes/roles.php'); 					roles(); 				break; }
 							case 'login': 				{	include('includes/login.php'); 					login(); 				break; }
 							case 'testb': 				{	include('includes/testb.php'); 					testb(); 				break; }
 							case 'report': 				{	include('includes/report.php'); 					report(); 				break; }
