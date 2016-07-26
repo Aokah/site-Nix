@@ -8,7 +8,7 @@
 		{
 			$select = $db->query('SELECT * FROM members WHERE rank > 4 AND rank < 8 AND dignitaire = 0 AND invisible = 0 AND pnj = 0 ORDER BY Rank DESC');
 			?>
-			<table class="member_top" style="text-align:center;" cellpadding="1%">
+			<table class="member_top" style="text-align:center;" cellpadding="1%" width="100%">
 				<tbody>
 					<tr>
 						<th>Staffeux</th> <th>Tâche assignée</th> <th>Détails</th> <th>Statut de la tâche</th>
