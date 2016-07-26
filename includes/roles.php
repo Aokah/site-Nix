@@ -1,6 +1,6 @@
 <?php function roles ()
 {
-	global $bd, $_SESSION;
+	global $db, $_SESSION;
 	
 	if ($_SESSION['connected'])
 	{
