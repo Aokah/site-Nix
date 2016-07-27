@@ -96,7 +96,7 @@
 	</tr>
 	<tr class="memberbg_4">
 	<td><img src="pics/staff_team/Herborus_MJ_1.png" alt="Encadrant Herborus" /></td>
-	<td><span style="color:red">Herborus</span><br />16 ans<br />Belgique</td>
+	<td><span style="color:blue">Herborus</span><br />16 ans<br />Belgique</td>
 	<td>"La construction, c'est ma passion "</td>
 	</tr>
 	
