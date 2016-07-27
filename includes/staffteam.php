@@ -9,6 +9,17 @@
 	
 	<table cellspacing="0" cellpadding="0">
 	<th class="member_top">Opérateurs</th>
+	
+	<tr class="memberbg_7">
+	<td><img src="pics/staff_team/Vahlm_MJ_1.png" alt="Opérateur Alyssa" /></td>
+	<td><span style="color:red">Alyssa</span><br />Suisse</td>
+	<td> </td>
+	</tr>
+	<tr class="memberbg_7">
+	<td><img src="pics/staff_team/Cauchemar_OP_1.png" alt="Opérateur Cauchemar" /></td>
+	<td><span style="color:red">Cauchemar</span><br /></td>
+	<td> </td>
+	</tr>
 	<tr class="memberbg_7">
 	<td><img src="pics/staff_team/Eftarthadeth_OP_1.png" alt="Opérateur Eftarthadeth" /></td>
 	<td><span style="color:red">Eftarthadeth</span><br />18 ans<br />Normandie, France</td>
@@ -31,6 +42,11 @@
 	</td>
 	</tr>
 	<tr class="memberbg_7">
+	<td><img src="pics/staff_team/Karma_OP_1.png" alt="Opérateur Ser Karma" /></td>
+	<td><span style="color:red">Ser Karma</span><br /></td>
+	<td> </td>
+	</tr>
+	<tr class="memberbg_7">
 	<td><img src="pics/staff_team/Nikho_OP_1.png" alt="Opérateur Nikho" /></td>
 	<td><span style="color:red">Nikho</span><br/>18 ans <br />Normandie, France<br />"Le Boulet"</td>
 	<td>"Si l'echec permet d'apprendre, alors j'ai dû apprendre plus de chose que je ne le pensais."</td>
@@ -44,9 +60,9 @@
 	<th class="member_top">Maîtres du Jeu</th>
 
 	<tr class="memberbg_6">
-	<td><img src="pics/staff_team/Kuda_Modo_1.png" alt="Maitresse Kuda" /></td>
-	<td><span style="color:red">Kuda</span><br />16 ans<br />Neuchâtel, Suisse<br />"Grammar Nazie"</td>
-	<td>"Si ce que tu as à dire n'est pas plus beau que le silence, tait toi."</td>
+		<td><img src="pics/staff_team/Dragoniya_Enca_1.png" alt="Maîtresse Dragoniya" /></td>
+		<td><span style="color:red;">Dragoniya</span><br />Normande, France<br />"Môman"</td>
+		<td>"Ce qui importe n'est pas l'emballage qu'est le corps, mais l'âme qui est l'essence de l'être !"</td>
 	</tr>
 	<tr class="memberbg_6">
 	<td><img src="pics/staff_team/Draug_MJ_1.png" alt="Maître Draug" /></td>
@@ -57,14 +73,14 @@
 	<th class="member_top">Modérateurs</th>
 	
 	<tr class="memberbg_5">
-		<td><img src="pics/staff_team/Dragoniya_Enca_1.png" alt="Encadrante Dragoniya" /></td>
-		<td><span style="color:green;">Dragoniya</span><br />Normande, France<br />"Môman"</td>
-		<td>"Ce qui importe n'est pas l'emballage qu'est le corps, mais l'âme qui est l'essence de l'être !"</td>
-	</tr>
-	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Niyo_Modo_1.png" alt="Modérateur Niyo" /></td>
 	<td><span style="color:green">Niyo</span><br />France<br /></td>
 	<td></td>
+	</tr>
+	<tr class="memberbg_5">
+	<td><img src="pics/staff_team/Diablox_Modo_3.png" alt="Modérateur Matsuya" /></td>
+	<td><span style="color:green">Matsuya</span><br />16 ans<br />France<br />"l'Ours"</td>
+	<td> </td>
 	</tr>
 	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Zimon_Modo_1.png" alt="Modérateur Zimon" /></td>
@@ -79,14 +95,9 @@
 		<td>"Je préfére rire de tout que pleurer  pour un rien. Aprés tout, tout arrive a temps a qui sait attendre."</td>
 	</tr>
 	<tr class="memberbg_4">
-	<td><img src="pics/staff_team/Grim_MJ_1.png" alt="Encadrant Grim" /></td>
-	<td><span style="color:blue">Grim</span><br />Toulouse, France</td>
-	<td>"Le monstre sous le lit ? c'est moi."</td>
-	</tr>
-	<tr class="memberbg_4">
-	<td><img src="pics/staff_team/Kindra_Modo_1.png" alt="Encadrant Kindra" /></td>
-	<td><span style="color:blue">Kindra</span><br />16 ans<br />Lyon, France<br />"El loco"</td>
-	<td>"Si c'est toi qui paye, ça roule pour moi !"</td>
+	<td><img src="pics/staff_team/Herborus_MJ_1.png" alt="Encadrant Herborus" /></td>
+	<td><span style="color:red">Herborus</span><br />16 ans<br />Belgique</td>
+	<td>"La construction, c'est ma passion "</td>
 	</tr>
 	
 	<th class="member_top">Anciens Opérateurs</th>
@@ -109,11 +120,6 @@
 	<td>"Rien n'est impossible, quand nous ne sommes pas seul."</td>
 	</tr>
 	<tr class="memberbg_5">
-	<td><img src="pics/staff_team/Herborus_MJ_1.png" alt="Dignitaire Herborus" /></td>
-	<td><span style="color:red">Herborus</span><br />16 ans<br />Belgique</td>
-	<td>"La construction, c'est ma passion "</td>
-	</tr>
-	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Karial_MJ_1.png" alt="Ex-MJ Karial" /></td>
 	<td><span style="color:red">Karial</span><br />Auvergne, France<br />"Kariou"</td>
 	<td>"Ce fut un plaisir énorme que de jouer à vos côtés"</td>
@@ -122,6 +128,11 @@
 	<td><img src="pics/staff_team/Koshoff_MJ_1.png" alt="Dignitaire Koshoff" /></td>
 	<td><span style="color:red">Koshoff</span><Br />France</td>
 	<td> </td>
+	</tr>
+	<tr class="memberbg_5">
+	<td><img src="pics/staff_team/Kuda_Modo_1.png" alt="Dignitaire Kuda" /></td>
+	<td><span style="color:red">Kuda</span><br />16 ans<br />Neuchâtel, Suisse<br />"Grammar Nazie"</td>
+	<td>"Si ce que tu as à dire n'est pas plus beau que le silence, tait toi."</td>
 	</tr>
 	<tr class="memberbg_5">
 	<td><img src="pics/staff_team/Shaolern_MJ_1.png" alt="Dignitaire Shaolern" /></td>
@@ -140,12 +151,7 @@
 	<td> </td>
 	</tr>
 	<tr class="memberbg_4">
-	<td><img src="pics/staff_team/Vahlm_MJ_1.png" alt="Dignitaire Alyssa" /></td>
-	<td><span style="color:green">Alyssa</span><br />Suisse</td>
-	<td> </td>
-	</tr>
-	<tr class="memberbg_4">
-	<td><img src="pics/staff_team/Artemis_Modo_1.png" alt="Encadrant Artemis" /></td>
+	<td><img src="pics/staff_team/Artemis_Modo_1.png" alt="Dignitaire Artemis" /></td>
 	<td><span style="color:green">Artemis</span><br />France<br /></td>
 	<td></td>
 	</tr>
@@ -160,11 +166,6 @@
 	<td>"La vérité est la croyance du naïf !"</td>
 	</tr>
 	<tr class="memberbg_4">
-	<td><img src="pics/staff_team/Diablox_Modo_3.png" alt="Dignitaire Matsuya" /></td>
-	<td><span style="color:green">Matsuya</span><br />16 ans<br />France<br />"l'Ours"</td>
-	<td> </td>
-	</tr>
-	<tr class="memberbg_4">
 	<td><img src="pics/staff_team/Mysterios_Modo_2.png" alt="Dignitaire Odium" /></td>
 	<td><span style="color:green">Odium</span><br />14 ans<br />Bretagne, France<br />"Le jeune"</td>
 	<td>"Si tu poses une question, tu passes pour un abruti le temps qu'on te réponde. Mais si tu poses pas la question, tu reste un abruti toute ta vie."</td>
@@ -173,6 +174,18 @@
 	<td><img src="pics/staff_team/Tristan_Modo_1.png" alt="Dignitaire Tristan" /></td>
 	<td><span style="color:green">Tristan</span><Br />France</td>
 	<td> </td>
+	</tr>
+	
+	<th class="member_top">Anciens Encadrants</th>
+	<tr class="memberbg_3">
+	<td><img src="pics/staff_team/Grim_MJ_1.png" alt="Dignitaire Grim" /></td>
+	<td><span style="color:blue">Grim</span><br />Toulouse, France</td>
+	<td>"Le monstre sous le lit ? c'est moi."</td>
+	</tr>
+	<tr class="memberbg_3">
+	<td><img src="pics/staff_team/Kindra_Modo_1.png" alt="Dignitaire Kindra" /></td>
+	<td><span style="color:blue">Kindra</span><br />16 ans<br />Lyon, France<br />"El loco"</td>
+	<td>"Le regard levé au ciel, l'épée plantée, le rouge voilant le paysage... puis enfin la délivrance"</td>
 	</tr>
 	</table>
 
