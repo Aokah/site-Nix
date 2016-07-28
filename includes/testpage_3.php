@@ -16,7 +16,7 @@
 	}
 	else
 	{
-		$select = $db->prepare('SELECT * FROM forum_category WHERE group = 0 AND rank <= ?'); $select->execute(array($view));
+		$select = $db->prepare('SELECT * FROM forum_category WHERE \'group\' = 0 AND rank <= ?'); $select->execute(array($view));
 		?>
 		<div width="100%" style"padding:1%;margin:1%;">
 			<?php
