@@ -22,7 +22,7 @@
 			<?php
 			while ($line = $select->fetch())
 			{
-				$flist = $db->prepare('SELECT * FROM forum_forum WHERE del = 0 AND category = ? ORDER BY important DESC, last_post DESC');
+				$flist = $db->prepare('SELECT * FROM forum_forum WHERE del = 0 AND category = ? ORDER BY important DESC, last_post DESC LIMIT 10');
 				$flist->execute(array($line['id']));
 			?>
 			<h4><?= $line['name']?></h4>
