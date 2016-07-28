@@ -22,12 +22,31 @@
 			<?php
 			while ($line = $select->fetch())
 			{
+				$flist = $db->query('SELECT * FROM forum_forum WHERE del = 0 ORDER BY important DESC, last_post DESC');
 			?>
 			<h4><?= $line['name']?></h4>
 			<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
 			<table cellspacing="0" cellpadding="1%" align="center" width="95%">
 				<tbody>
-					<tr></tr>
+					<tr>
+						<th>Sujet</th> <th width="25%">Dernière activité</th>
+					</tr>
+					<?php 
+					while ($list = $flist->fetch())
+					{
+					?>
+					<tr>
+						<td>
+							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?= $list['name']</a>
+						</td>
+						<td>\o/</td>
+					</tr>
+					<?php
+					}
+					?>
+					<tr>
+						
+					</tr>
 				</tbody>
 			</table>
 			<?php
