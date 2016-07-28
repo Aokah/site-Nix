@@ -37,7 +37,7 @@
 					?>
 					<tr>
 						<td>
-							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?= $list['name']</a>
+							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?= $list['name']?></a>
 						</td>
 						<td>\o/</td>
 					</tr>
