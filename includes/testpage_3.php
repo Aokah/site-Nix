@@ -22,7 +22,8 @@
 			<?php
 			while ($line = $select->fetch())
 			{
-				$flist = $db->query('SELECT * FROM forum_forum WHERE del = 0 ORDER BY important DESC, last_post DESC');
+				$flist = $db->prepare('SELECT * FROM forum_forum WHERE del = 0 AND category = ? ORDER BY important DESC, last_post DESC');
+				$flist->execute(array($line['id']));
 			?>
 			<h4><?= $line['name']?></h4>
 			<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
