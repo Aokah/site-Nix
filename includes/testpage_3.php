@@ -36,12 +36,29 @@
 					while ($list = $flist->fetch())
 					{
 						$important = ($list['important'] == 1) ? '[Important] ' : "";
-						#$unread = 
 						$verif = $db->prepare('SELECT * FROM forum_unread WHERE user_id = ? AND forum_id = ?');
 						$verif->execute(array($_SESSION['id'], $list['id']));
+						if ($verif = $verif->fetch())
+						{
+							if ($verif['unread'] == 1)
+							{
+								$read = "";
+								$page = $verif['page'];
+							}
+							else
+							{
+								$read = "class=\"unread\"";
+								$page = $verif['page'];
+							}
+						}
+						else
+						{
+							$read = "class=\"unread\"";
+							$page = 1;
+						}
 					?>
 					<tr class="memberbg_5">
-						<td <?= $unread?>>
+						<td <?= $read?>>
 							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$important, $list['name']?></a>
 						</td>
 						
