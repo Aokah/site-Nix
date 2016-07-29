@@ -56,9 +56,18 @@
 							$read = "class=\"unread\"";
 							$page = 1;
 						}
+						if ($list['important'] == 1)
+						{
+							$imp = "<a href=\"index?p=forum&imp=". $list['id']. "\" class=\"button\">[I]</a>";
+						}
+						else
+						{
+							$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" class=\"button\">[N]</a>";
+						}
 					?>
 					<tr class="memberbg_5">
 						<td <?= $read?>>
+							<a href="index?p=forum&del=<?=$list['id']?>" class="button">[X]</a> <?= $imp?>
 							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$important, $list['name']?></a>
 						</td>
 						
