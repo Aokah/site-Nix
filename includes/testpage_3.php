@@ -62,7 +62,7 @@
 						}
 						else
 						{
-							$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:cyan;\">[N]</a>";
+							$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
 						}
 					?>
 					<tr class="memberbg_5">
