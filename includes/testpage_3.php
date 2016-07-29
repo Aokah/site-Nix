@@ -18,7 +18,7 @@
 	{
 		$select = $db->prepare('SELECT * FROM forum_category WHERE \'group\' = 0 AND rank <= ? ORDER BY rank ASC, name ASC'); $select->execute(array($view));
 		?>
-		<div width="100%" style"padding:2%" class="memberbg_7">
+		<div width="100%" style="padding:2%" class="memberbg_7">
 			<?php
 			while ($line = $select->fetch())
 			{
