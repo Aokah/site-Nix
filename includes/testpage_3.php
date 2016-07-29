@@ -37,7 +37,7 @@
 					{
 						$important = ($list['important'] == 1) ? '[Important] ' : "";
 						#$unread = 
-						$verif = $db->prepare('SELECT * forum_unread WHERE user_id = ? AND forum_id = ?');
+						$verif = $db->prepare('SELECT * FROM forum_unread WHERE user_id = ? AND forum_id = ?');
 						$verif->execute(array($_SESSION['id'], $list['id']));
 					?>
 					<tr class="memberbg_5">
