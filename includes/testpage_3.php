@@ -29,17 +29,22 @@
 			<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
 			<table cellspacing="0" cellpadding="1%" align="center" width="95%">
 				<tbody>
-					<tr>
+					<tr class="member_top">
 						<th>Sujet</th> <th width="25%">Dernière activité</th>
 					</tr>
 					<?php 
 					while ($list = $flist->fetch())
 					{
+						$important = ($list['important'] == 1) ? '[Important] ' : "";
+						#$unread = 
+						$verif = $db->prepare('SELECT * forum_unread WHERE user_id = ? AND forum_id = ?');
+						$verif->execute(array($_SESSION['id'], $list['id']));
 					?>
-					<tr>
-						<td>
-							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?= $list['name']?></a>
+					<tr class="memberbg_5">
+						<td <?= $unread?>>
+							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$important, $list['name']?></a>
 						</td>
+						
 						<td>\o/</td>
 					</tr>
 					<?php
