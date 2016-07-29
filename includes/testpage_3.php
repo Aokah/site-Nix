@@ -64,11 +64,12 @@
 						{
 							$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
 						}
+						$rp = ($list['rp'] == 1) ? "<span style='color:green;'> [RP] </span>" : "";
 					?>
 					<tr class="memberbg_5">
 						<td <?= $read?>>
 							<a href="index?p=forum&del=<?=$list['id']?>" style="color:red;">[X]</a> <?= $imp?>
-							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$important, $list['name']?></a>
+							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
 						</td>
 						
 						<td <?= $read?>>\o/</td>
