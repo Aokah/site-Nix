@@ -62,7 +62,7 @@
 							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$important, $list['name']?></a>
 						</td>
 						
-						<td>\o/</td>
+						<td <?= $read?>>\o/</td>
 					</tr>
 					<?php
 					}
