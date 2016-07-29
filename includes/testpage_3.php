@@ -64,7 +64,7 @@
 						{
 							$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
 						}
-						$rp = ($list['rp'] == 0) ? "<span style='color:green;'> [RP] </span>" : "";
+						$rp = ($list['rp'] == 1) ? "<span style='color:green;'> [RP] </span>" : "";
 					?>
 					<tr class="memberbg_5">
 						<td <?= $read?>>
