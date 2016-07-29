@@ -35,7 +35,7 @@
 					<?php 
 					while ($list = $flist->fetch())
 					{
-						$important = ($list['important'] == 1) ? '[Important] ' : "";
+						$important = ($list['important'] == 1) ? '<span style="color:gold;">[Important]</span> ' : "";
 						$verif = $db->prepare('SELECT * FROM forum_unread WHERE user_id = ? AND forum_id = ?');
 						$verif->execute(array($_SESSION['id'], $list['id']));
 						if ($verif = $verif->fetch())
