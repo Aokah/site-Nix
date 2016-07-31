@@ -21,7 +21,7 @@
 							echo '<a href="index?p=cb" class="button">Retour à la CB Classique</a>';
 						}
 				?>
-				<br /><input type="checkbox" name="staffeffect" id="staffeffect" /> <label for="staffeffect">Activer un effet de texte (NECESSITE DES BASES EN HTML)</label><br />
+				<br /><input type="checkbox" name="staffeffect" id="staffeffect" /> <label for="staffeffect">Activer un effet de texte (NECESSITE DES BASES EN CSS)</label><br />
 				<select name="effect">
 					<option value="class">Class</option>
 					<option value="style">Style</option>
