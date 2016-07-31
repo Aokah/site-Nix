@@ -9,6 +9,6 @@
 		$salt = 'salt';
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 	
-	$api->call("sendcommand", array("weather clear"));
+	$api->call("sendcommand", array("weather", "clear"));
 }
 ?>
