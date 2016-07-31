@@ -9,6 +9,6 @@
 		$salt = 'salt';
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 	
-	$api->call("runConsoleCommand", array("nick", "Jolfrid &4 Tya"));
+	$api->call("runConsoleCommand", array("gamemode", "chugo 3"));
 }
 ?>
