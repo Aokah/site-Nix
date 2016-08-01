@@ -983,7 +983,7 @@ if ($_SESSION['connected'])
 			}
 			elseif ($_GET['action'] == "avisok")
 			{
-				if($_SESSION['rank'] >= 3) {
+				if($_SESSION['rank'] >= 3 AND $_SESSION['id'] != $line['id']) {
 				$select = $db->prepare('SELECT * FROM hrpavis WHERE sender_id = ? AND target_id = ?');
 				$select->execute(array($_SESSION['id'], $perso));
 				if ($line = $select->fetch())
@@ -1010,7 +1010,7 @@ if ($_SESSION['connected'])
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
-			elseif ($_GET['action'] == "avisko")
+			elseif ($_GET['action'] == "avisko" AND $_SESSION['id'] != $line['id'])
 			{
 				if($_SESSION['rank'] >= 3) {
 				$select = $db->prepare('SELECT * FROM hrpavis WHERE sender_id = ? AND target_id = ?');
