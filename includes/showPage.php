@@ -23,7 +23,7 @@
 	?>
 	
 <div>
-  <table cellspacing="0" cellpadding="0" width="100%" background="http://pre05.deviantart.net/181d/th/pre/i/2014/048/6/9/broken_wings_by_t1na-d76uf1r.jpg">
+  <table cellspacing="0" cellpadding="0" width="100%" background="http://pre05.deviantart.net/181d/th/pre/i/2014/048/6/9/broken_wings_by_t1na-d76uf1r.jpg" id="background">
     <tbody>
       <tr>
       	<td>
