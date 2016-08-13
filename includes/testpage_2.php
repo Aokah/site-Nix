@@ -13,7 +13,7 @@
 		$verif = $db->prepare('SELECT * FROM members WHERE id = ?'); $verif->execute(array($_SESSION['id']));
 		$verif = $verif->fetch();
 		$mc = $verif['Minecraft_Account'];
-		$mc = "ElenyahKenray";
+		$mc = "Nikho_Gabriel";
 		$playerData = $api->call("getPlayer", array($mc));
 		if($playerData[0]['success'] == 0)
 		{
