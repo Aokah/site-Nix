@@ -12,8 +12,7 @@
 		$mc = "Nikho_Gabriel";
 	
 		$playerData = $api->call("getPlayer", array($mc));
-		echo $playerData['success'];
-		if($playerData['success'] == 0)
+		if($playerData[0]['success'] == 0)
 		{
 			echo "Joueur hors ligne.";
 		}
@@ -21,6 +20,7 @@
 		{
 			echo "Trouvé";
 		}
+		echo $playerData[0]['success'];
 	/*
 	$string = 'execute @@ ~ ~ ~ weather rain';
 	$patterns = array();
