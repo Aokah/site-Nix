@@ -10,6 +10,18 @@
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 	
 	$mc = "Nikho_Gabriel";
+	
+		$players = $api->call("this.getPlayerExact(0)", array($mc));
+		
+		if ($players[0]["is_success"])
+		{
+			echo "Trouvé !";
+		}
+		else
+		{
+			echo 'Non trouvé';
+		}
+	
 	$string = 'execute @@ ~ ~ ~ weather rain';
 	$patterns = array();
 	$patterns[0] = '/@@/';
