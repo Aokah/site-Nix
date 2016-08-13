@@ -9,17 +9,17 @@
 		$salt = 'salt';
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 	
-	$mc = "Nikho_Gabriel";
+		$mc = "Nikho_Gabriel";
 	
-		$players = $api->call("getPlayer", array($mc));
+		$playerData = $api->call("getPlayer", array($mc));
 		
-		if ($players["success"] != 0)
+		if($playerData['success'] == 0) // si playerData est nul
 		{
-			echo "Trouvé !";
+			echo "Joueur hors ligne.";
 		}
 		else
 		{
-			echo 'Non trouvé';
+			// c'est ici qu'on va afficher la vie / niveau / gm
 		}
 	/*
 	$string = 'execute @@ ~ ~ ~ weather rain';
