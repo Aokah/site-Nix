@@ -9,10 +9,10 @@
 		$salt = 'salt';
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 	
-		$mc = "Nikho_Gabrie";
+		$mc = "Nikho_Gabriel";
 	
 		$playerData = $api->call("getPlayer", array($mc));
-		
+		echo $playerData['success'];
 		if($playerData['success'] == 0)
 		{
 			echo "Joueur hors ligne.";
