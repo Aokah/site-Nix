@@ -9,7 +9,7 @@
 		$salt = 'salt';
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 	
-	$mc = "chugo";
+	$mc = "Nikho_Gabriel";
 	$string = 'execute @@ ~ ~ ~ weather rain';
 	$patterns = array();
 	$patterns[0] = '/@@/';
@@ -39,14 +39,15 @@
 		case 16: $string = 'no'; break;
 		case 17: $string = 'execute @@ ~ ~ ~ particle dragonbreath ~ ~1 ~ 1 1 1 0.01 100 force'; break;
 	}
-	$string = 'execute @@ ~ ~ ~ particle cloud ~ ~1 ~ 1 2 1 0.1 200 force';
-	$patterns = array();
-	$patterns[0] = '/@@/';
-	$replacements = array();
-	$replacements[0] = "$mc";
-	$command3 = preg_replace($patterns, $replacements, $string);
-	$api->call("runConsoleCommand", array("$command3"));
-	
+	if ($string != 'no')
+	{
+		$patterns = array();
+		$patterns[0] = '/@@/';
+		$replacements = array();
+		$replacements[0] = "$mc";
+		$command3 = preg_replace($patterns, $replacements, $string);
+		$api->call("runConsoleCommand", array("$command3"));	
+	}
 	
 	$string = 'execute @@ ~ ~ ~ tellraw @a ["",{"text":"[","color":"white"},{"text":"Console","color":"gray"},{"text":"]","color":"white"},{"text":" ** Le temps devient soudainement pluvieux ! **","color":"aqua"}]';
 	$patterns = array();
