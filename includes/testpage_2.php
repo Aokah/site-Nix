@@ -13,13 +13,13 @@
 	
 		$playerData = $api->call("getPlayer", array($mc));
 		
-		if($playerData['success'] == 0) // si playerData est nul
+		if($playerData['success'] == 0)
 		{
 			echo "Joueur hors ligne.";
 		}
 		else
 		{
-			// c'est ici qu'on va afficher la vie / niveau / gm
+			echo "Trouvé";
 		}
 	/*
 	$string = 'execute @@ ~ ~ ~ weather rain';
