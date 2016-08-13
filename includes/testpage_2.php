@@ -29,7 +29,7 @@
 		$select = $db->prepare('SELECT * FROM incan_list WHERE id = ?'); $select->execute(array($id)); 
 		 if ($line = $select->fetch())
 		 {
-		 	$command = mb_strtolower($line['command']);
+		 	$command = $line['command'];
 		 	$name = $line['name'];
 		 	$type = $line['type'];
 		 	
