@@ -11,7 +11,7 @@
 	
 	#$api->call("runConsoleCommand", array("nick Jolfrid &3 Tya"));
 	$mc = "Nikho_Gabriel";
-	$string = 'execute @@ ~ ~ ~ weather clear';
+	$string = 'execute @@ ~ ~ ~ weather thunder';
 	$patterns = array();
 	$patterns[0] = '/@@/';
 	$replacements = array();
