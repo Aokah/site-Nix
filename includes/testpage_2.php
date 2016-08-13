@@ -9,7 +9,7 @@
 		$salt = 'salt';
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 	
-		$mc = "Nikho_Gabriel";
+		$mc = "Nikho_Gabrie";
 	
 		$playerData = $api->call("getPlayer", array($mc));
 		
