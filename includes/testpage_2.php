@@ -76,7 +76,7 @@
 					$api->call("runConsoleCommand", array("$command3"));	
 				}
 				
-				if (isset($line['gamedesc']))
+				if ($line['gamedesc'] != "")
 				{
 			 		$textdesc = $line['gamedesc'];
 			 		$radius = $line['descradius'];
