@@ -85,6 +85,7 @@
 			 			case 0 : $option = "@a";$color = "white"; break; case 1: $option = "@a[r=100]"; $color = "red"; break;
 			 			case 2 : $option = "@a[r=50]"; $color = "yellow"; break; case 4: $option = "@a[r=30]"; $color ="green"; break;
 			 			case 5: $option = "@a[r=10]"; $color = "dark_green"; break; case 6: $option = "@a[r=5]"; $color ="dark_aqua"; break;
+			 			case 7 : $option = "@p"; $color = "dark_gray"; break;
 			 		}
 					//message descriptif
 					$string = 'execute @@ ~ ~ ~ tellraw '. $option .' ["",{"text":"[","color":"'. $color .'"},{"text":"Console","color":"gray"},{"text":"]","color":"'. $color .'"},{"text":" ** '. $textdesc .' **","color":"aqua"}]';
