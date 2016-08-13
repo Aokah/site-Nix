@@ -13,7 +13,7 @@
 	
 		$players = $api->call("this.getPlayerExact(0)", array($mc));
 		
-		if ($players["is_success"])
+		if ($players["is_success"] != 0)
 		{
 			echo "Trouvé !";
 		}
