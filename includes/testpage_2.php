@@ -36,5 +36,13 @@
 	$command2 = preg_replace($patterns, $replacements, $string);
 	$api->call("runConsoleCommand", array("$command2"));
 	
+	$string = 'execute @@ ~ ~ ~ tellraw @p ["",{"text":"[","color":"green"},{"text":"Console","color":"gray"},{"text":"]","color":"green"},{"text":" ** Vos ressources magiques diminuent en conséquence. **","color":"aqua"}]';
+	$patterns = array();
+	$patterns[0] = '/@@/';
+	$replacements = array();
+	$replacements[0] = "$mc";
+	$command4 = preg_replace($patterns, $replacements, $string);
+	$api->call("runConsoleCommand", array("$command4"));
+	
 }
 ?>
