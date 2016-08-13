@@ -21,7 +21,7 @@
 		{
 			echo 'Non trouvé';
 		}
-	
+	/*
 	$string = 'execute @@ ~ ~ ~ weather rain';
 	$patterns = array();
 	$patterns[0] = '/@@/';
@@ -76,6 +76,6 @@
 	$replacements[0] = "$mc";
 	$command4 = preg_replace($patterns, $replacements, $string);
 	$api->call("runConsoleCommand", array("$command4"));
-	
+	*/
 }
 ?>
