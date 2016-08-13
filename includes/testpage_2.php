@@ -9,7 +9,7 @@
 		$salt = 'salt';
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 	
-		$mc = "Nikho_Gabriel";
+		$mc = "Nikho_Gabrie";
 	
 		$playerData = $api->call("getPlayer", array($mc));
 		if($playerData[0]['success'] == 0)
@@ -20,7 +20,6 @@
 		{
 			echo "Trouvé";
 		}
-		echo $playerData[0]['success'];
 	/*
 	$string = 'execute @@ ~ ~ ~ weather rain';
 	$patterns = array();
