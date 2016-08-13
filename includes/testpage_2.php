@@ -11,9 +11,9 @@
 	
 	$mc = "Nikho_Gabriel";
 	
-		$players = $api->call("this.getPlayerExact(0)", array($mc));
+		$players = $api->call("getPlayer", array($mc));
 		
-		if ($players["is_success"] != 0)
+		if ($players["is_success"])
 		{
 			echo "Trouvé !";
 		}
