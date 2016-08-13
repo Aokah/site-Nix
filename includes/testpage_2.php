@@ -1,5 +1,6 @@
 <?php function testpage_2 ()
 {
+	global $_SESSION, $db;
 	
 	include('includes/interface/JSONapi.php');
 		$ip = 'soul.omgcraft.fr';
