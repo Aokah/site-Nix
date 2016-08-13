@@ -9,17 +9,21 @@
 		$salt = 'salt';
 		$api = new JSONAPI($ip, $port, $user, $pwd, $salt);
 	
-		$mc = "Nikho_Gabrie";
+		$verif = $db->prepare('SELECT * FROM members WHERE id = ?'); $verif->execute(array($_SESSION['id']));
+		$verif = $verif->fetch();
+		$mc = $verif['Minecraft_Account'];
 	
 		$playerData = $api->call("getPlayer", array($mc));
 		if($playerData[0]['success'] == 0)
 		{
-			echo "Joueur hors ligne.";
+			$online = 0;
 		}
 		else
 		{
-			echo "Trouvé";
+			$online = 1;
 		}
+	if ($online == 1)
+	{
 	/*
 	$string = 'execute @@ ~ ~ ~ weather rain';
 	$patterns = array();
@@ -76,5 +80,6 @@
 	$command4 = preg_replace($patterns, $replacements, $string);
 	$api->call("runConsoleCommand", array("$command4"));
 	*/
+	}
 }
 ?>
