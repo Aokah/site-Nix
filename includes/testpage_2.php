@@ -15,7 +15,7 @@
 	$patterns = array();
 	$patterns[0] = '/@@/';
 	$replacements = array();
-	$replacements[0] = $mc;
+	$replacements[0] = "/$mc/";
 	echo preg_replace($patterns, $replacements, $string);
 	
 }
