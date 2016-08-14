@@ -13,7 +13,7 @@
 		$verif = $db->prepare('SELECT * FROM members WHERE id = ?'); $verif->execute(array($_SESSION['id']));
 		$verif = $verif->fetch();
 		$mc = $verif['Minecraft_Account'];
-		$mc = "Letutout";
+		$mc = "Nikho_Gabriel";
 		$playerData = $api->call("getPlayer", array($mc));
 		if($playerData[0]['success'] == 0)
 		{
@@ -25,7 +25,7 @@
 		}
 	if ($online == 1)
 	{
-		$id = 16;
+		$id = 35;
 		$select = $db->prepare('SELECT * FROM incan_list WHERE id = ?'); $select->execute(array($id)); 
 		 if ($line = $select->fetch())
 		 {
