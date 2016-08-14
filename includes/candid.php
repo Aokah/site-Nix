@@ -344,7 +344,13 @@
             <h3>Ecrivez ici votre candidature</h3>
         <p>Afin de vous garantir une intégration convenable sur le serveur, il est nécessaire pour nous de connaitre votre niveau de jeu et vos motivations de venir jouer parmi nous.</p>
         <p style="color:red;">Pour rappel : Il est vivement conseillé de ne pas mentionner le fait que vous soyez un quelconque mage de puissante renomée, mieux vaut découvrir le système technique de la magie en RP, ceci vous permettra également de profiter de l'apprentissage sur le vif.</p>
-        <p>
+        <p>Nix, une terre de magie et d'aventures. Autrefois, les terres de nix fourmillaient de mages, de créatures magiques et de nombreux lieux racontant maintes et maintes histoires, ce temps là pourrait être révolu, une grande catastrophe survint, et seule une paire de personnes savent ce qu'il s'est réellement produit. Le monde s'effondra et les dieux se cachèrent. Les personnes virent leurs morts et leurs monde dépérir mais ce n'est pas pour autant la fin et il reste encore un espoir...
+	<br /><br />
+	A présent, que choisirez vous a votre retour ? Serez vous un parangon du chaos et de la mort ou serez vous un paladin des dieux, protecteurs des faibles ? Serez vous un assassin ou un marchand ?
+	Choisissez votre voie, choisissez votre destin, mais attention... tout acte a des conséquences... et ces conséquences... des répercutions que vous n'imaginerez sans doute pas. 
+ 	<br /> <br/>
+          -Ser Karma</p>
+          <p>
        <form action="index?p=candid" method="POST">
           <input type="text" name="mc" value="<?=$mc?>" placeholder="Pseudo Minecraft" />
           <span style="color:red;">Navré, mais ce compte Minecraft est déjà utilisé.</span><br />
@@ -367,6 +373,12 @@
       ?>
         <h3>Ecrivez ici votre candidature</h3>
         <p>Afin de vous garantir une intégration convenable sur le serveur, il est nécessaire pour nous de connaitre votre niveau de jeu et vos motivations de venir jouer parmi nous.</p>
+        <p>Nix, une terre de magie et d'aventures. Autrefois, les terres de nix fourmillaient de mages, de créatures magiques et de nombreux lieux racontant maintes et maintes histoires, ce temps là pourrait être révolu, une grande catastrophe survint, et seule une paire de personnes savent ce qu'il s'est réellement produit. Le monde s'effondra et les dieux se cachèrent. Les personnes virent leurs morts et leurs monde dépérir mais ce n'est pas pour autant la fin et il reste encore un espoir...
+	<br /><br />
+	A présent, que choisirez vous a votre retour ? Serez vous un parangon du chaos et de la mort ou serez vous un paladin des dieux, protecteurs des faibles ? Serez vous un assassin ou un marchand ?
+	Choisissez votre voie, choisissez votre destin, mais attention... tout acte a des conséquences... et ces conséquences... des répercutions que vous n'imaginerez sans doute pas. 
+ 	<br /> <br/>
+          -Ser Karma</p>
         <p style="color:red;">Pour rappel : Il est vivement conseillé de ne pas mentionner le fait que vous soyez un quelconque mage de puissante renomée, mieux vaut découvrir le système technique de la magie en RP, ceci vous permettra également de profiter de l'apprentissage sur le vif.</p>
         <p>
         <form action="index?p=candid" method="POST">
