@@ -51,6 +51,22 @@
 				</td>
 			</tr>
 			<tr>
+				<th colspan="2">Fond du site</th>
+			</tr>
+			<tr>
+				<td><ul>
+					<li class="name1" style="color:white"><a href="http://t1na.deviantart.com/" target=_blank >t1na</a></li>
+				</ul></td>
+				<td>
+					<img src="#" alt="" width="100%"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div style="border-bottom:3px dashed black;margin-bottom:1%;margin-top:1%;"></div>
+				</td>
+			</tr>
+			<tr>
 				<th colspan="2">Icônes : Les éléments magiques</th>
 			</tr>
 			<tr>
