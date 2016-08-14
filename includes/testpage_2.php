@@ -19,7 +19,7 @@
 		{
 			$online = 0;
 		}
-		else
+		else 
 		{
 			$online = 1;
 		}
