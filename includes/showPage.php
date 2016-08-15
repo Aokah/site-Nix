@@ -17,7 +17,7 @@
 		$ip = $_SERVER['REMOTE_ADDR'];
 		$add = $db->prepare('UPDATE members SET ip = ? WHERE id = ?'); $add->execute(array($ip, $_SESSION['id']));
 		
-		$sel_rank = $db->prepare('SELECT id, rank FROM members WHERE id = ?'); $sel_rank->execute(array($$_SESSION['id']));
+		$sel_rank = $db->prepare('SELECT id, rank FROM members WHERE id = ?'); $sel_rank->execute(array($_SESSION['id']));
 		$sel_rank = $sel_rank->fetch();
 		$_SESSION['rank'] = $sel_rank['rank'];
 		
