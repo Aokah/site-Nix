@@ -1,6 +1,6 @@
 <?php function search_ip()
 {
-global $db, $_GET;
+global $db, $_POST;
 	
 	if ($_SESSION['connected'])
 	{
