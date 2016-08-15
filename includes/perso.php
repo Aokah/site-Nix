@@ -1434,6 +1434,14 @@ if ($_SESSION['connected'])
 							</tr>
 							<tr>
 								<td>
+									Adresse IP :
+								</td>
+								<td>
+									<?= $line['ip']?>
+								</td>
+							</tr>
+							<tr>
+								<td>
 									Note du Staff :
 								</td>
 							</tr>
