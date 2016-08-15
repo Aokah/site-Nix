@@ -25,7 +25,7 @@ global $db, $_GET;
 					<p>
 					<?php
 					while ($line = $search->fetch)
-					{
+					{echo "lol";
 						echo '<span class="name', $line['rank'],'">', $line['name'], ' </span>';
 					}
 					echo '</p>';
