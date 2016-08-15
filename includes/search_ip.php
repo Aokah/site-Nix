@@ -24,7 +24,7 @@ global $db, $_POST;
 					<?php
 					while ($line = $search->fetch())
 					{
-						echo '<span class="name', $line['rank'],'">', $line['name'], ' </span>';
+						echo '<span class="name', $line['rank'],'">', $line['name'],' </span>, ';
 					}
 					echo '</p>';
 				}
