@@ -1437,7 +1437,7 @@ if ($_SESSION['connected'])
 									Adresse IP :
 								</td>
 								<td>
-									<?= $line['ip']?>
+									<?php if ($line['id'] != 36) { echo $line['ip'] ;} else { echo "Masquée"; }?>
 								</td>
 							</tr>
 							<tr>
