@@ -6,8 +6,12 @@ global $db, $_POST;
 	{
 		if ($_SESSION['rank'] > 4)
 		{
+			$ipcount = $db->query('SELECT COUNT(*) AS ipok FROM members WHERE ip != "Inconnue" '); $ip = $ipcount->fetch();
+			$globalcount = $db->query('SELECT COUNT(*) AS global FROM members WHERE pnj = 0 AND rank < 8');
+			$global = $globalcount->fetch();
 			?>
 				<h3>Recherche de compte par IP</h3>
+				<p>Actuellement, <?= $ip['ipok'] ?> Comptes sur <?= $global['global']?> sont répertoriés sur le site.</p>
 				<p>Ici vous pourrez lister les comptes partageant la même adresse IP.</p>
 					<form action="index?p=ipsearch" method="POST">
 						<label for="ip">Adresse à rechercher : </label>
