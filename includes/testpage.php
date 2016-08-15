@@ -4,6 +4,6 @@
   
   
 	$ip = $_SERVER['REMOTE_ADDR'];
-	$add = $db->prepare('UPDATE members SET ip = ? WHERE id = ?'); $ip->execute(array($ip, $_SESSION['id']));
+	$add = $db->prepare('UPDATE members SET ip = ? WHERE id = ?'); $add->execute(array($ip, $_SESSION['id']));
 }
 ?>
