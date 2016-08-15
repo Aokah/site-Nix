@@ -18,7 +18,7 @@ global $db, $_GET;
 				</p>
 				<?php if (isset($_POST['search']))
 				{
-				$ip = htmlspecialchars($_POST['ip']);
+					$ip = htmlspecialchars($_POST['ip']);
 					$search = $db->prepare('SELECT * FROM members WHERE ip = ? ORDER BY name ASC'); $search->execute(array($ip));
 				?>
 					<p>
@@ -27,6 +27,7 @@ global $db, $_GET;
 					{
 						echo '<span class="name', $line['rank'],'">', $line['name'], ' </span>';
 					}
+					echo '</p>';
 				}
 		}
 		else
