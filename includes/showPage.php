@@ -14,6 +14,8 @@
 		$account = $db->prepare('SELECT * FROM members WHERE id = ?');
 		$account->execute(array($_SESSION['id']));
 		$account = $account->fetch();
+		$ip =  $_SERVER['REMOTE_ADDR'];
+  		$ip = $db->prepare('UPDATE members SET ip = ? WHERE id = ?'); $ip->execute(array($ip, $_SESSION['id']));
 		
 		if ($account['ban'] == 1 OR $account['removed'] == 1)
 		{
