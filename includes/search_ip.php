@@ -19,6 +19,7 @@ global $db, $_GET;
 				<?php if (isset($_POST['search']))
 				{
 					$ip = htmlspecialchars($_POST['ip']);
+					echo $ip;
 					$search = $db->prepare('SELECT * FROM members WHERE ip = ? ORDER BY name ASC'); $search->execute(array($ip));
 				?>
 					<p>
