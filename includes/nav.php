@@ -241,6 +241,12 @@
 									</div>
 								</a>
 								
+								<a href="index?p=ipsearch" class="link">
+									<div>
+										Recherche par IP
+									</div>
+								</a>
+								
 								<a href="index?p=serv_admin" class="link">
 									<div>
 										Administration Serveur
