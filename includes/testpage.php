@@ -2,6 +2,8 @@
 {
   global $_SESSION, $_POST, $db;
   
-  echo $_SERVER['REMOTE_ADDR'];
+  $ip =  $_SERVER['REMOTE_ADDR'];
+  
+  $db = $ip->prepare('UPDATE members SET ip = ? WHERE id = ?'); $ip->execute(array($ip, $_SESSION['id']));
 }
 ?>
