@@ -18,12 +18,12 @@ global $db, $_POST;
 				{
 					$ip = htmlspecialchars($_POST['ip']);
 					echo $ip;
-					$search = $db->prepare('SELECT * FROM members WHERE ip = ? ORDER BY name ASC'); $search->execute(array($ip));
+					$search = $db->prepare('SELECT * FROM members WHERE ip = ? AND id != 36 ORDER BY name ASC'); $search->execute(array($ip));
 				?>
 					<p>
 					<?php
 					while ($line = $search->fetch())
-					{echo "lol";
+					{
 						echo '<span class="name', $line['rank'],'">', $line['name'], ' </span>';
 					}
 					echo '</p>';
