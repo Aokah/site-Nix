@@ -141,7 +141,7 @@ if ($_SESSION['connected'])
 							if (!empty($_POST['sd'])) { $sd = htmlentities($_POST['sd']); }
 							if (!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
 							if (!empty($_POST['job'])) { $job = htmlentities($_POST['job']); }
-							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? job = ? WHERE id = ?');
+							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title = ?, qualites = ?, defauts = ?, sd = ?, caractere = ?, job = ? WHERE id = ?');
 							$update->execute(array($prenom, $nom, $race, $title, $qualite, $defauts, $sd, $caractere, $job, $perso));
 							echo '<p>Modifications des informations personnelles effectuées avec succès</p>';
 								?>
@@ -330,7 +330,7 @@ if ($_SESSION['connected'])
 									<td>
 										Identité :
 									</td>
-									<td <? if ($_SESSION['rank'] > 5) { echo 'colspan="2"'; } ?> >
+									<td>
 										<label for="prenom">Prénom :</label> <input type="text" id="prenom" name="prenom" value="<?= $line['name']?>" />
 									</td>
 									<td>
@@ -370,7 +370,7 @@ if ($_SESSION['connected'])
 									<td>
 										Personalité :
 									</td>
-									<td>
+									<td <? if ($_SESSION['rank'] > 5) { echo 'colspan="2"'; } ?> >
 										<label for="qualite">Qualité :</label>  <textarea id="qualite" name="qualite"><?= $line['qualites']?></textarea>
 									</td>
 									<td>
