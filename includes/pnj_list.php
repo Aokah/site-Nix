@@ -29,7 +29,7 @@
 	<input type="submit" name="modifier" value="Modifier" style="color:blue;" />
 	</form>
 	
-	<table class="pnjtable"  cellspacing="10px">
+	<table class="pnjtable"  cellspacing="10px" width="100%">
 		<tbody>
 				<tr>
 					<td rowspan="4" width="150px" height="150px" style="border-radius: 10px;"><img width="180px" height="180px" src="pics/pnj/pnj_<?echo $img?>.png" /></td>	<td height="20px" style="border: 0px grey solid; background-color: grey;"> <p></p></td>
@@ -55,7 +55,7 @@
 				</tr>
 				<tr>
 					<td><p>Qualités :</p><p><?= $line['qualite']?></p></td>
-																<td style="vertical-align: top;" colspan="4" rowspan="5" width="100%" ><p>Histoire : </p>
+																<td style="vertical-align: top;" colspan="4" rowspan="4" width="100%" ><p>Histoire : </p>
 																<p><?php echo $bg; ?><p> </td>
 				</tr>
 				<tr>
@@ -98,7 +98,7 @@
 				$bg = preg_replace('#\n#', '<br />', $line['bg']);
 			?>	
 		<h3 style="color:<? echo $color?>; text-shadow: 2px 2px 2px #000000;">PNJ <?= $line['prenom']?></h3>
-			<table class="pnjtable"  cellspacing="10px">
+			<table class="pnjtable"  cellspacing="10px" width="100%">
 				<tbody>
 					<form action="index.php?p=pnj_list&a=valid" method="POST">
 						<input type="hidden" name="id" value="<?php echo $id;?>" />
@@ -127,7 +127,7 @@
 						</tr>
 						<tr>
 							<td><p>Qualités :</p><p><input name="qualite" value="<?= $line['qualite']?>" type="text"/></p></td>
-																		<td style="vertical-align: top;" colspan="4" rowspan="5" width="100%" ><p>Histoire : </p>
+																		<td style="vertical-align: top;" colspan="4" rowspan="4" width="100%" ><p>Histoire : </p>
 																		<p><textarea style="width: 616px; height: 282px;" name="bg" ><?= $line['bg']?></textarea></p></td>
 						</tr>
 						<tr>
@@ -207,7 +207,7 @@
   				?>
   				<h3>Création d'une fiche PNJ</h3>
 	
-					<table class="pnjtable"  cellspacing="10px">
+					<table class="pnjtable"  cellspacing="10px" width="100%">
 						<tbody>
 							<form action="index.php?p=pnj_list&a=valid" method="POST">
 								<tr>
@@ -234,7 +234,7 @@
 								</tr>
 								<tr>
 									<td><p>Qualités :</p><p><input name="qualite" type="text"/></p></td>
-																				<td style="vertical-align: top;" colspan="4" rowspan="5" width="100%" ><p>Histoire : </p>
+																				<td style="vertical-align: top;" colspan="4" rowspan="4" width="100%" ><p>Histoire : </p>
 																				<p><textarea style="width: 616px; height: 282px;" name="bg" ></textarea></p></td>
 								</tr>
 								<tr>
