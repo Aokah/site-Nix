@@ -9,7 +9,8 @@
 	<div class="navtitle">Connexion (Indev)</div>
 		<ul class="nav">
 			<li class="navbg2" style="clear: both;;list-style-type: none;">
-				<?php if ($verif->fetch())
+				<?php 
+				if ($verif->fetch())
 				{
 				?>
 					Votre adresse IP figure parmis les adresses bannies, vous ne pouvez donc pas vous conneter.
@@ -17,13 +18,21 @@
 				}
 				else
 				{
-				?>
-					<form action="index?p=<?= $_GET['p']?>" method="POST">
-						<label for="user">Identifiant : </label><input type="text" name="user" id="user"/><br/>
-						<label for="pass">Mot de Passe : </label><input type="password"  id="pass" name="pass" /><br />
-						<input type="submit" name="login" />
-					</form>
-				<?php
+					if (isset($_POST['login']))
+					{
+						#$name = htmlspecialchars
+						$select = $db->prepare('SELECT * FROM members WHERE name = ?');
+					}
+					else
+					{
+						?>
+							<form action="index?p=<?= $_GET['p']?>" method="POST">
+								<label for="user">Identifiant : </label><input type="text" name="user" id="user"/><br/>
+								<label for="pass">Mot de Passe : </label><input type="password"  id="pass" name="pass" /><br />
+								<input type="submit" name="login" />
+							</form>
+						<?php
+					}
 				}
 				?>
 			</li>
