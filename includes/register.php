@@ -65,7 +65,15 @@
 
 	if ($dispForm)
 	{
-	?>
+		$ip = $_SERVER['REMOTE_ADDR'];
+		$verif = $db->prepare('SELECT * FROM blacklist WHERE ip = ?'); $verif->execute(array($ip)):
+		if ($verif->fetch())
+		{
+			echo "<span class='name6'>Votre IP est bannie du site, vous ne pouvez donc pas vous inscrire sous un autre nom.</span>"	;
+		}
+		else
+		{
+		?>
 		<h3>Inscription</h3>
 		
 		<form method="POST" action="index.php?p=register">
@@ -117,7 +125,8 @@
 				</tr>
 			</table>
 		</form>
-	<?php
+		<?php
+		}
 	}
 }
 ?>
