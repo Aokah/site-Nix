@@ -362,7 +362,7 @@ if ($_SESSION['connected'])
 										<label>Titre :</label> <input type="text" name="titre" value="<?= $line['title']?>" />
 									</td>
 									<td>
-										<label for="job">Nom :</label> <input type="text" id="job" name="job" value="<?= $line['job']?>" />
+										<label for="job">Métier exercé :</label> <input type="text" id="job" name="job" value="<?= $line['job']?>" />
 									</td>
 									<?php } ?>
 								</tr>
