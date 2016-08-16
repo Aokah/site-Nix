@@ -24,7 +24,7 @@
 						<input type="submit" name="login" />
 					</form>
 				<?php
-			*/	}
+			*/#	}
 				?>
 			</li>
 		</ul>
