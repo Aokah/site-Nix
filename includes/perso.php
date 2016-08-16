@@ -126,7 +126,7 @@ if ($_SESSION['connected'])
 						{
 							if ($_SESSION['rank'] >= 5) {
 							$prenom = $line['name']; $nom = "?"; $qualite = "?"; $title = $line['title'];
-							$defauts = "?"; $sd = "Non définis"; $caractere = "?";
+							$defauts = "?"; $sd = "Non définis"; $caractere = "?"; $job = "Non connu";
 							switch ($_POST['race']) {
 								case 0 : $race = $line['race']; break; case 1: $race = "Elfe"; break; case 1: $race = "Elfe"; break; case 2: $race = "Ernelien"; break;
 								case 3: $race = "Humain"; break; case 4: $race = "Hybride"; break; case 5: $race = "Inconnue"; break; case 6: $race = "Nain"; break;
@@ -140,8 +140,9 @@ if ($_SESSION['connected'])
 							if (!empty($_POST['defauts'])) { $defauts = htmlentities($_POST['defauts']); }
 							if (!empty($_POST['sd'])) { $sd = htmlentities($_POST['sd']); }
 							if (!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
-							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? WHERE id = ?');
-							$update->execute(array($prenom, $nom, $race, $title, $qualite, $defauts, $sd, $caractere, $perso));
+							if (!empty($_POST['job'])) { $job = htmlentities($_POST['job']); }
+							$update = $db->prepare('UPDATE members SET name = ?, nom = ?, race = ?, title = ?, qualites = ?, defauts = ?, sd = ?, caractere = ? job = ? WHERE id = ?');
+							$update->execute(array($prenom, $nom, $race, $title, $qualite, $defauts, $sd, $caractere, $job, $perso));
 							echo '<p>Modifications des informations personnelles effectuées avec succès</p>';
 								?>
 								<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
@@ -329,7 +330,7 @@ if ($_SESSION['connected'])
 									<td>
 										Identité :
 									</td>
-									<td>
+									<td <? if ($_SESSION['rank'] > 5) { echo 'colspan="2"'; } ?> >
 										<label for="prenom">Prénom :</label> <input type="text" id="prenom" name="prenom" value="<?= $line['name']?>" />
 									</td>
 									<td>
@@ -359,6 +360,9 @@ if ($_SESSION['connected'])
 									</td>
 									<td>
 										<label>Titre :</label> <input type="text" name="titre" value="<?= $line['title']?>" />
+									</td>
+									<td>
+										<label for="job">Nom :</label> <input type="text" id="job" name="job" value="<?= $line['job']?>" />
 									</td>
 									<?php } ?>
 								</tr>
@@ -1310,6 +1314,11 @@ if ($_SESSION['connected'])
 							<tr>
 								<td colspan="3">
 									Signes distinctifs : <?= $line['sd']?>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									Métier exercé : <?= $line['job']?>
 								</td>
 							</tr>
 							<tr>
