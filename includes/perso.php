@@ -698,6 +698,20 @@ if ($_SESSION['connected'])
 				}
 				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
 			}
+			elseif($_GET['action'] == 'banip')
+			{
+				if ($_SESSION['rank'] >= 6) {
+				$update = $db->prepare('UPDATE members SET ban = 1 WHERE ip = ?');
+				$update->execute(array($line['ip']));
+				$ban = $db->prepare('INSERT INTO blacklist VALUES("", ?)'); $ban->execute(array($line['ip']));
+				echo '<p>Joueur banni.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
+			}
 			elseif($_GET['action'] == 'magieok')
 			{
 				if ($_SESSION['rank'] >= 5) {
@@ -729,6 +743,24 @@ if ($_SESSION['connected'])
 				if ($_SESSION['rank'] >= 5) {
 				$update = $db->prepare('UPDATE members SET ban = 0 WHERE id= ?');
 				$update->execute(array($perso));
+				echo '<p>Joueur débanni.</p>';
+				?>
+				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
+				<p><a href="index?p=perso">Cliquez ici</a> pour retourner à votre fiche personnage.</p>
+				<?php
+				}
+				else { echo '<p>Non non non ! On ne triche pas ! ;-) !</p>'; }
+			}
+			
+			elseif($_GET['action'] == 'pardonip')
+			{
+				if ($_SESSION['rank'] >= 6) {
+				$update = $db->prepare('UPDATE members SET ban = 0 WHERE ip = ?');
+				$update->execute(array($line['ip']));
+				
+				$deban = $db->prepare('DELETE FROM blacklist WHERE ip = ?');
+				$deban->execute(array($line['ip']));
+				
 				echo '<p>Joueur débanni.</p>';
 				?>
 				<p><a href="index?p=perso&perso=<?php echo $perso;?>">Cliquez ici</a> pour retourner à la fiche personnage modifiée.</p>
@@ -1186,7 +1218,14 @@ if ($_SESSION['connected'])
 									<?php }
 									if ($_SESSION['rank'] >= 5 AND $_SESSION['rank'] > $line['rank'] AND $line['ban'] == 1) { ?>
 									<a title="Supprimer le bannissement du compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=pardon" style="color:lime;">[P]</a>
-									<?php } if ($_SESSION['name'] == "Eftarthadeth" OR $_SESSION['name'] == "Nikho") { 
+									<?php }
+									if ($_SESSION['rank'] >= 6 AND $_SESSION['rank'] > $line['rank'] AND $line['ban'] == 0) { ?>
+									<a title="Bannir le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=banip" style="color:red;">[B-ip]</a> 
+									<?php }
+									if ($_SESSION['rank'] >= 6 AND $_SESSION['rank'] > $line['rank'] AND $line['ban'] == 1) { ?>
+									<a title="Supprimer le bannissement du compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=pardonip" style="color:lime;">[P-ip]</a>
+									<?php }
+									if ($_SESSION['name'] == "Eftarthadeth" OR $_SESSION['name'] == "Nikho") { 
 									if ($line['removed'] == 0) {?>
 									<a title="Supprimer le compte" href="index?p=perso&perso=<?php echo $perso; ?>&action=delete" style="color:red;">[X]</a>
 									<?php } else { ?>
