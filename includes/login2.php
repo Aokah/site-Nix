@@ -9,11 +9,11 @@
 	<div class="navtitle">Connexion (Indev)</div>
 		<ul class="nav">
 			<li class="navbg2" style="clear: both;;list-style-type: none;">
-				<?php /*if ($verif->fetch())
-				{*/
+				<?php if ($verif->fetch())
+				{
 				?>
 					Votre adresse IP figure parmis les adresses bannies, vous ne pouvez donc pas vous conneter.
-				<?php /*
+				<?php 
 				}
 				else
 				{
@@ -24,7 +24,7 @@
 						<input type="submit" name="login" />
 					</form>
 				<?php
-			*/#	}
+				}
 				?>
 			</li>
 		</ul>
