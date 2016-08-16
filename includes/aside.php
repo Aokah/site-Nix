@@ -12,6 +12,10 @@
 				
 	$grada = $db->query('SELECT * FROM hist_grada ORDER BY id DESC LIMIT 10');
 	
+	if (!$_SESSION['connected'])
+	{
+		include('includes/login2.php'); login();
+	}
 ?>
 	<div class="navtitle">Progression</div>
 		<ul class="nav" style="padding: 10px;">
