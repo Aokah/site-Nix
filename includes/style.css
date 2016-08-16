@@ -581,7 +581,7 @@ a .avisnegative:houver, a .avis0:hover,a  .avis10:hover, a .avis20:hover, a .avi
 	text-shadow: 2px 2px 2px #000000;
 }
 
-.name10 {
+.name11 {
 	font-weight: bold;
 	font-size: 1.1em;
 	color: #FF99CC;
@@ -589,7 +589,7 @@ a .avisnegative:houver, a .avis0:hover,a  .avis10:hover, a .avis20:hover, a .avi
 }
 
 .name0-P , .name1-P , .name2-P, .name3-P, .name4-P, .name5-P, .name6-P, .name7-P, .name8-P, .name9-P, .name10-P,
-.name0-T-P , .name1-T-P , .name2-T-P, .name3-T-P, .name4-T-P, .name5-T-P, .name6-T-P, .name7-T-P, .name8-T-P, .name9-T-P, .name10-T-P  {
+.name0-T-P , .name1-T-P , .name2-T-P, .name3-T-P, .name4-T-P, .name5-T-P, .name6-T-P, .name7-T-P, .name8-T-P, .name9-T-P, .name10-T-P , .name11-T-P  {
 	font-weight: bold;
 	font-size: 1.1em;
 	color: #11EE00;
