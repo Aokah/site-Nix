@@ -12,7 +12,7 @@
 				<?php /*if ($verif->fetch())
 				{*/
 				?>
-					<p>Votre adresse IP figure parmis les adresses bannies, vous ne pouvez donc pas vous conneter.</p>
+					Votre adresse IP figure parmis les adresses bannies, vous ne pouvez donc pas vous conneter.
 				<?php /*
 				}
 				else
