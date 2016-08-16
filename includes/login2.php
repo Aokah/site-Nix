@@ -1,4 +1,4 @@
-<?php function testpage()
+<?php function login()
 {
   global $_SESSION, $_POST, $db;
   
