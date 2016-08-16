@@ -21,6 +21,7 @@
 			elseif ($line['role'] == 4) { $color = "#FF0000"; $role = "Primaire";  }
 			else { $color = "#808080"; $role = "Inconnu";  }
 			$bg = preg_replace('#\n#', '<br />', $line['bg']);
+			$psycho = preg_replace('#\n#', '<br />', $line['psycho']);
 ?>
 	<h3 style="color:<? echo $color?>; text-shadow: 2px 2px 2px #000000;">PNJ <?= $line['prenom']?></h3>
 	<form action="index.php?p=pnj_list&a=edit" method="POST">
@@ -67,6 +68,12 @@
 				<tr>
 					<td><p>Equipement :</p>
 					<p><?= $line['equipement']?></p></td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						<p>Psychologie :</p>
+						<p><?= $psycho?></p>
+					</td>
 				</tr>
 		</tbody>
 	</table>
@@ -135,6 +142,12 @@
 							<p><input name="equipement" value="<?= $line['equipement']?>" type="text"/></p></td>
 						</tr>
 						<tr>
+							<td colspan="5">
+								<p>Psychologie :</p>
+								<p><textarea name="psycho" value="<?= $line['psycho']?>"></textarea></p>
+							</td>
+						</tr>
+						<tr>
 						<input name="end" type="submit" value="Terminer">
 						</tr>
 					</form>
@@ -149,6 +162,7 @@
   				$taille = "?";		$poids = "?";	$sd = "Aucun";		$element = "?";
   				$qualite = "?";		$defaut = "?";	$event = "Inconnu";	$caractere = "?";
   				$equipement = "Inconnu";		$bg = "Non défini";	$role = htmlentities($_POST['role']);
+  				$psycho = "Non définie";
   				if(!empty($_POST['prenom'])) { $prenom = htmlentities($_POST['prenom']); }
   				if(!empty($_POST['nom'])) { $nom = htmlentities($_POST['nom']); }
   				if(!empty($_POST['origine'])) { $origine = htmlentities($_POST['origine']); }
@@ -163,13 +177,14 @@
   				if(!empty($_POST['caractere'])) { $caractere = htmlentities($_POST['caractere']); }
   				if(!empty($_POST['equipement'])) { $equipement = htmlentities($_POST['equipement']); }
   				if(!empty($_POST['bg'])) { $bg = htmlentities($_POST['bg']); }
+  				if(!empty($_POST['psycho'])) { $psycho = htmlentities($_POST['psycho']); }
   				
   				if (isset($_POST['end']))
   					{
   						$edit = $db->prepare('UPDATE pnj_list SET role = ?, prenom = ?, nom = ?, origine = ?, race = ?, taille = ?,
-  						poids = ?, sd=  ?, element = ?, qualite = ?, defauts = ?, events = ?, caractere = ?, equipement = ?, bg = ? WHERE id = ?');
+  						poids = ?, sd=  ?, element = ?, qualite = ?, defauts = ?, events = ?, caractere = ?, equipement = ?, bg = ?, psycho = ? WHERE id = ?');
   						$edit->execute(array($role, $prenom, $nom, $origine, $race, $taille, $poids, $sd, $element, $qualite,
-  						 $defaut, $event, $caractere, $equipement, $bg, $id));
+  						 $defaut, $event, $caractere, $equipement, $bg,$psycho, $id));
   						?>
   						<p>Votre page a bien été modifiée !</p> 
   						<p><a href = "index?p=pnj_list&pnj=<?php echo $id; ?>">Cliquez ici</a> Pour accéder à la page.</p>
@@ -178,9 +193,9 @@
   					}
   				elseif (isset($_POST['envoi']))
   					{
-  						$add = $db->prepare("INSERT INTO pnj_list VALUES(' ',?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+  						$add = $db->prepare("INSERT INTO pnj_list VALUES(' ',?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
   						$add->execute(array($role, $prenom, $nom, $origine, $race, $taille, $poids, $sd, $element, $qualite,
-  						$defaut, $event, $caractere, $equipement, $bg));
+  						$defaut, $event, $caractere, $equipement, $bg, $psycho));
   						?>
   						<p>Votre page a bien été créée ! Vous pouvez la consulter dès maintenant.</p>
   						<p><a href="index?p=pnj_list">Cliquez ici</a> pour retourner à la Liste des Personnages Non Joueurs</p>
@@ -234,6 +249,12 @@
 									<p><input name="equipement" type="text"/></p></td>
 								</tr>
 								<tr>
+									<td colspan="5">
+										<p>Psychologie :</p>
+										<p><textarea name="psycho"></textarea></p>
+									</td>
+								</tr>
+								<tr>
 								<input name="envoi" type="submit">
 								</tr>
 							</form>
@@ -263,7 +284,7 @@
 			<th>PNJs Majeurs</th>
 			<th>PNJs Primaires</th>
 			<tr style="v-align: top;">
-			<td><ul> <?	while ($line = $answer0->fetch()) 	{	?>
+			<td><ul align="top"> <?	while ($line = $answer0->fetch()) 	{	?>
 			<li>
 			<a style="color:#0066FF; text-shadow: 2px 2px 2px #000000;" href="index.php?p=pnj_list&pnj=<?= $line['id']?>"><?= $line['prenom']?></a>
 			</li> <?} ?>
