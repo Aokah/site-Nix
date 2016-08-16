@@ -4,7 +4,7 @@
   
   
 	$ip = $_SERVER['REMOTE_ADDR'];
-	$verif = $db-prepare('SELECT * FROM blacklist WHERE ip = ?'); $verif->execute(array($ip));
+	$verif = $db->prepare('SELECT * FROM blacklist WHERE ip = ?'); $verif->execute(array($ip));
 	?>
 	<div class="navtitle">Connexion (Indev)</div>
 		<ul class="nav">
