@@ -108,8 +108,8 @@ li:hover div.menu2 {
 {
 	z-index: 2;
 	background: url("/pics/ico/menu_ico_left.png") left scroll no-repeat, url("/pics/ico/menu_ico_right.png") right scroll no-repeat;
-	background-color: #205420;
-	border: 5px solid #bfbff6;
+	background-color: #6b8e23;
+	border: 5px solid #205420;
 	padding-left: 0;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -161,13 +161,13 @@ a.link div
 {
 	color: #000000;
 	padding: 10px;
-	background-color: #8080ee;
+	background-color: #6b8e23;
 	background: url("/pics/ico/menu_dev_left.png") repeat-y scroll left center, #6b8e23 url("/pics/ico/menu_dev_right.png") repeat-y scroll right center;
 }
 a.link div:hover
 {
 	color: #ffffff;
-	background-color: #7070dd;
+	background-color: #205420 ;
 }
 
 li.navbg {
