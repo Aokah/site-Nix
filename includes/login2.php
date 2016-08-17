@@ -25,7 +25,7 @@
 						$select->execute(array($name));
 						if ($line = $select->fetch())
 						{
-							if (password_verify($_POST['pwd'], $line['password']))
+							if (password_verify($_POST['pass'], $line['password']))
 							{
 								if ($line['ban'] == 1)
 								{
@@ -50,6 +50,28 @@
 									echo "Connexion effectuée <span class='name", $line['rank'],"'>", $line['name'], " !";
 								}
 							}
+							else
+							{
+							?>
+								Mot de passe incorect.<br/>
+								<form action="index?p=<?= $_GET['p']?>" method="POST">
+									<label for="user">Identifiant : </label><input type="text" name="user" value="<?=$_POST['user']?>" id="user"/><br/>
+									<label for="pass">Mot de Passe : </label><input type="password"  id="pass" name="pass" /><br />
+									<input type="submit" name="login" />
+								</form>	
+							<?php
+							}
+						}
+						else
+						{
+							?>
+							Compte inexistant.<br />
+							<form action="index?p=<?= $_GET['p']?>" method="POST">
+								<label for="user">Identifiant : </label><input type="text" name="user" id="user"/><br/>
+								<label for="pass">Mot de Passe : </label><input type="password"  id="pass" name="pass" /><br />
+								<input type="submit" name="login" />
+							</form>
+							<?php
 						}
 					}
 					else
