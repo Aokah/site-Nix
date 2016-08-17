@@ -47,7 +47,7 @@
 									$_SESSION['rank'] = $line['rank'];
 									$_SESSION['title'] = $line['title'];
 									
-									echo "Connexion effectuée <span class='name", $line['rank'],"'>", $line['name'], " !";
+									echo "Connexion effectuée <span class='name", $line['rank'],"'>", $line['name'], "</span> !";
 								}
 							}
 							else
