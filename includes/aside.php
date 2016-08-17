@@ -12,7 +12,10 @@
 				
 	$grada = $db->query('SELECT * FROM hist_grada ORDER BY id DESC LIMIT 10');
 	
-	if ($_SESSION['connected'] != true)
+	if ($_SESSION['connected'])
+	{
+	}
+	else
 	{
 		include('includes/login2.php'); login();
 	}
