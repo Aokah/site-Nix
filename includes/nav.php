@@ -93,13 +93,13 @@
 										Forums
 									</div>
 								</a>
-								<!--
-								<a href="index?p=chatbox" class="link">
+								
+								<a href="index?p=cb" class="link">
 									<div>
-										Dialogue en Direct
+										CB 2.0 (Alpha)
 									</div>
 								</a>
-								-->
+								
 								<a href="index?p=update" class="link">
 									<div>
 										Maintenance
