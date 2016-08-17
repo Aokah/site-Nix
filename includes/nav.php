@@ -359,12 +359,6 @@
 										S'inscrire
 									</div>
 								</a>
-								
-								<a href="index?p=login" class="link">
-									<div>
-										Se connecter
-									</div>
-								</a>
 							</div>
 						</li>
 					</ul>
