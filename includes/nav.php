@@ -335,7 +335,7 @@
 									</div>
 								</a>
 								
-								<a href="index?p=login&action=disconnection" class="link">
+								<a href="index?p=<?= $_GET['p']?>&log=off" class="link">
 									<div>
 										Deconnexion
 									</div>
