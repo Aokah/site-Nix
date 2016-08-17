@@ -11,6 +11,10 @@
 
 	if ($_SESSION['connected'])
 	{
+		if (isset($_GET['log']) AND $_GET['log'] == "off")
+		{
+			$_SESSION['connected'] = false;
+		}
 		$account = $db->prepare('SELECT * FROM members WHERE id = ?');
 		$account->execute(array($_SESSION['id']));
 		$account = $account->fetch();
