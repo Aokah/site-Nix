@@ -6,7 +6,7 @@
 	$ip = $_SERVER['REMOTE_ADDR'];
 	$verif = $db->prepare('SELECT * FROM blacklist WHERE ip = ?'); $verif->execute(array($ip));
 	?>
-	<div class="navtitle">Connexion (Indev)</div>
+	<div class="navtitle">Connexion</div>
 		<ul class="nav">
 			<li class="navbg2" style="clear: both;;list-style-type: none;">
 				<?php 
