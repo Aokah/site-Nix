@@ -108,7 +108,7 @@ li:hover div.menu2 {
 {
 	z-index: 2;
 	background: url("/pics/ico/menu_ico_left.png") left scroll no-repeat, url("/pics/ico/menu_ico_right.png") right scroll no-repeat;
-	background-color: #6b8e23;
+	background-color: #205420;
 	border: 5px solid #bfbff6;
 	padding-left: 0;
 	padding-top: 10px;
@@ -184,7 +184,7 @@ li.navbg:hover {
     background-repeat: no-repeat;
     list-style-type: none;
     padding: 10px;
-	background-color: #B0B0FF ;
+	background-color: #4b6e03;
 }
 
 /* elements principaux */
