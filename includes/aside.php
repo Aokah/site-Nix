@@ -12,8 +12,9 @@
 				
 	$grada = $db->query('SELECT * FROM hist_grada ORDER BY id DESC LIMIT 10');
 	
-	if ($_SESSION['connected'])
+	if (!$_SESSION['connected'])
 	{
+		echo 'blblbl';
 	}
 	else
 	{
