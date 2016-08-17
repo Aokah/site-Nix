@@ -1,6 +1,12 @@
 <?php function aside()
 {
 	global $db, $_POST, $_GET, $_SESSION;
+	
+	if (!$_SESSION['connected'])
+	{
+		include('includes/login2.php'); login();
+	}
+	
 	if ($_SESSION["rank"] >= 3) { 
 			
 	$answer = $db->query('SELECT COUNT(*) AS ngrada FROM hist_grada');
@@ -13,7 +19,6 @@
 	$grada = $db->query('SELECT * FROM hist_grada ORDER BY id DESC LIMIT 10');
 	
 	
-		include('includes/login2.php'); login();
 ?>
 	<div class="navtitle">Progression</div>
 		<ul class="nav" style="padding: 10px;">
