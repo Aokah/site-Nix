@@ -30,7 +30,7 @@
 			<div width="100%" style="padding:1%" class="forumbg">
 				<h4><a href="index?p=testpage_3&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
 				<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
-				<table cellspacing="0" cellpadding="1%" align="center" width="95%">
+				<table cellspacing="0" cellpadding="3%" align="center" width="95%">
 					<tbody>
 						<tr class="member_top">
 							<th>Sujet</th> <th width="25%">Dernière activité</th>
@@ -257,7 +257,7 @@
 			?>
 			<h4><a href="index?p=testpage_3&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
 			<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
-			<table cellspacing="0" cellpadding="1%" align="center" width="95%">
+			<table cellspacing="0" cellpadding="3%" align="center" width="95%">
 				<tbody>
 					<tr class="member_top">
 						<th>Sujet</th> <th width="25%">Dernière activité</th>
