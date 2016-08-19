@@ -91,7 +91,7 @@
 									<p><?= $post?></p>
 								</td>
 								<td valign="top">
-									<?= $img, $a , $title , " ", $user, $aend ,"<br />" , $date, $delmsg; ?>
+									<?= $img, " " , $a , $title , " ", $user, $aend ,"<br />" , $date, $delmsg; ?>
 								</td>
 							</tr>
 						<?php		
