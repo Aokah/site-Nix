@@ -236,7 +236,7 @@
 						<tr>
 							<td>
 								<div width="100%" align="center">
-									<form action="index?p=forum&forum=<?= $forum?>" method="POST">
+									<form action="index?p=forum&forum=<?= $forum?>&page=<?= $page?>" method="POST">
 										<label for="newpost" style="text-align:right;">Envoyer une réponse</label><br />
 										<textarea style="width: 95%; height: 120px;" id="newpost" name="newpost"></textarea><br />
 										<?= $anonymebutton ?>
