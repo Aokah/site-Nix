@@ -20,7 +20,7 @@
 		if ($verify['rank'] <= $view)
 		{
 			$page = (isset($_GET['page']))? intval($_GET['page']) : 1;
-			$fname = $db->prepare('SELECT fc.id, fc.name AS fc_name, ff.name, ff.id As f_id, ff.category, ff.rp, ff.important, ff.del, ff.locked FROM forum_category fc
+			$fname = $db->prepare('SELECT fc.id, fc.name AS fc_name, ff.name, ff.id AS f_id, ff.category, ff.rp, ff.important, ff.del, ff.locked FROM forum_category fc
 			RIGHT JOIN forum_forum ff ON fc.id = ff.catgory
 			WHERE f_id = ?');
 			$fname->execute(array($forum));
