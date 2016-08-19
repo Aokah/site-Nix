@@ -1,6 +1,6 @@
 <?php function testpage_3 ()
 {
-	global $db;
+	global $db, $_GET, $_SESSION;
 		
 	echo "<h3>Forums</h3>";
 	
@@ -14,7 +14,7 @@
 	{
 		$forum = intval($_GET['forum']);
 		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ? AND rank >= ?');
-		$verify->execute(array($forum, $_SESSION['rank']));
+		$verify->execute(array($forum, $view));
 		
 		if ($verify ->fetch())
 		{
@@ -25,7 +25,7 @@
 			$fname->execute(array($forum));
 			$fname = $fname->fetch();
 			
-			if ($_SESSION['rank'] < 6)
+			if ($view < 6)
 			{
 				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY date_post DESC');
 				$select->execute(array($forum));
@@ -145,7 +145,7 @@
 					<tr class="memberbg_5">
 						<td <?= $read?>>
 							<?php 
-							if ($_SESSION['rank'] > 5)
+							if ($view > 5)
 							{
 							?>
 							<a href="index?p=testpage_3&del=<?=$list['id']?>" style="color:red;">[X]</a> <?= $imp?> |
