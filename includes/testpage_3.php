@@ -231,7 +231,20 @@
 							</tr>
 						<?php		
 						}
+						$anonymebutton = ($line['rp'] == 1) ? "<label for='senunknow'>Envoyer ensans signature</label> <input type='check' name='sendunknow' id='sendunknow' /><br />" : "";
 						?>
+						<tr>
+							<td>
+								<div width="100%" align="center">
+									<form action="index?p=forum&forum=<?= $forum?>" method="POST">
+										<label for="newpost">Envoyer une réponse</label><br />
+										<textarea width="95%" id="newpost" name="newpost"></textarea><br />
+										<?= $anonymebutton ?>
+										<input type="submit" name="sendnew" value="Envoyer" />
+									</form>
+								</div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			<?php
@@ -350,20 +363,7 @@
 					</tr>
 					<?php
 					}
-					$anonymebutton = ($line['rp'] == 1) ? "<label for='senunknow'>Envoyer ensans signature</label> <input type='check' name='sendunknow' id='sendunknow' /><br />" : "";
 					?>
-					<tr>
-						<td>
-							<div width="100%" align="center">
-								<form action="index?p=forum&forum=<?= $forum?>" method="POST">
-									<label for="newpost">Envoyer une réponse</label><br />
-									<textarea width="95%" id="newpost" name="newpost"></textarea><br />
-									<?= $anonymebutton ?>
-									<input type="submit" name="sendnew" value="Envoyer" />
-								</form>
-							</div>
-						</td>
-					</tr>
 				</tbody>
 			</table>
 			<?php
