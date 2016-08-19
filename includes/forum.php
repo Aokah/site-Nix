@@ -59,14 +59,31 @@
 								$read = "class=\"unread\"";
 								$page = 1;
 							}
-							if ($list['important'] == 0)
-							{
-								$imp = "<a href=\"index?p=forum&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
-							}
-							else
-							{
-								$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
-							}
+							
+								if ($list['important'] == 0)
+								{
+									$imp = "<a href=\"index?p=forum&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
+								}
+								else
+								{
+									$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
+								}
+								if ($list['rp'] == 0)
+								{
+									$srp = "<a href=\"index?p=forum&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
+								}
+								else
+								{
+									$srp = "<a href=\"index?p=forum&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
+								}
+								if ($list['del'] == 0)
+								{
+									$sdel = "<a href=\"index?p=forum&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
+								}
+								else
+								{
+									$sdel= "<a href=\"index?p=forum&del=". $list['id']. "\" style=\"color:blue;\">[X]</a>";
+								}
 							$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
 							$del = ($list['del'] == 1)? "<span style='color:red;'>[Supprimé] </span>" : "";
 							
@@ -113,8 +130,7 @@
 								<?php 
 								if ($view > 5)
 								{
-								?>
-								<a href="index?p=forum&del=<?=$list['id']?>" style="color:red;">[X]</a> <?= $imp?> |
+									echo $sdel, " ", $imp, " ", $srp?> |
 								<?
 								}
 								?>
@@ -125,12 +141,24 @@
 						</tr>
 						<?php
 						}
+						if ($view > 0)
+						{
+							$importantbutton = ($view > 5)? "<br /><label for='setImp'>Considérer le nouveau sujet comme Important : </label><input type='check' name='setImp' id='setImp' />": "";
+							?>
+							<tr>
+								<form action="index?p=forum&cat=<?= $cat?>" method="POST">
+									<label for="newsubject">Nouveau sujet : </label><input type="text" name="newsubject" id="newsubject" width="65%" />
+									<input type="submit" name="sendsubject" value="Créer"/><br />
+									<label for="setRP">Considérer le nouveau sujet comme Rôleplay :</label> <input type="check" id="setRP" name="setRP" />
+									<?= $importantbutton ?>
+								</form>
+							</tr>
+						<?php
+						}
 						?>
-						<tr>
-							
-						</tr>
 					</tbody>
 				</table>
+			</div>
 			<?php
 		}
 		else
