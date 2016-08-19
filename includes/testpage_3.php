@@ -42,7 +42,7 @@
 			$islock = ($fname['locked'] == 1)? "<span style=\"color:#990000;\">[Vérrouillé]</span> ": "";
 			
 			?>
-			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index/p=forum&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <a href="index?p=forum&forum=<?= $forum?>"><?= $fname['name']?></a></h4>
+			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index?p=forum">Forum</a> > <a href="index/p=forum&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <?= $fname['name']?></h4>
 				<table></table>
 			<?php
 			
