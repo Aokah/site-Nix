@@ -25,7 +25,7 @@
 				$flist = $db->prepare('SELECT * FROM forum_forum WHERE del = 0 AND category = ? ORDER BY important DESC, last_post DESC LIMIT 10');
 				$flist->execute(array($line['id']));
 			?>
-			<h4><?= $line['name']?></h4>
+			<h4><a href="index?p=testpage_3&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
 			<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
 			<table cellspacing="0" cellpadding="1%" align="center" width="95%">
 				<tbody>
