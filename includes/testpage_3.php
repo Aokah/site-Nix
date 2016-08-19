@@ -105,7 +105,14 @@
 					?>
 					<tr class="memberbg_5">
 						<td <?= $read?>>
-							<a href="index?p=testpage_3&del=<?=$list['id']?>" style="color:red;">[X]</a> <?= $imp?>
+							<?php 
+							if ($_SESSION['rank'] > 5)
+							{
+							?>
+							<a href="index?p=testpage_3&del=<?=$list['id']?>" style="color:red;">[X]</a> <?= $imp?> |
+							<?
+							}
+							?>
 							<a href="index?p=testpage_3&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
 						</td>
 						
