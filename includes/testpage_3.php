@@ -83,6 +83,7 @@
 								$color = $member['rank']. "" . $tech. "" . $pionier;
 								$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>";
 								$aend = "</a>";
+								$img = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' />"
 							}
 							else
 							{
@@ -91,10 +92,11 @@
 								$color = "1";
 								$a = "<span class='name" . $color . "'>";
 								$aend = "</span>";
+								$img = "";
 							}
 							$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['post_date']);
 							
-							$last = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' /> ". $a ."" . $title . " ". $user. "". $aend ."<br />" . $date ."";
+							$last = $img ." ". $a ."" . $title . " ". $user. "". $aend ."<br />" . $date ."";
 						}
 						else
 						{
@@ -107,7 +109,7 @@
 							<a href="index?p=testpage_3&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
 						</td>
 						
-						<td <?= $read?>><?= $last?></td>
+						<td <?= $read?>><?php $last ?></td>
 					</tr>
 					<?php
 					}
