@@ -83,7 +83,7 @@
 								$color = $member['rank']. "" . $tech. "" . $pionier;
 								$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>";
 								$aend = "</a>";
-								$img = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' />"
+								$img = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' />";
 							}
 							else
 							{
