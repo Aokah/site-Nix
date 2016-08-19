@@ -1,4 +1,4 @@
-<?php function testpage_3 ()
+<?php function forum ()
 {
 	global $db, $_GET, $_SESSION;
 		
