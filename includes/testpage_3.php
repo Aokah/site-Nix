@@ -38,8 +38,8 @@
 			}
 			$isrp = ($fname['rp'] == 1)? "<span style=\"color:lime;\">[RP]</span> ": "";
 			$isimportant = ($fname['important'] == 1)? "<span style=\"color:gold;\">[Important]</span> ": "";
-			$isdel = ($fname['del'] == 1)? "<span style=\"color:red;\">[Supprimé]</span> ": "";
-			$islock = ($fname['locked'] == 1)? "<span style=\"color:red;\">[Vérrouillé]</span> ": "";
+			$isdel = ($fname['del'] == 1)? "<span style=\"color:#990000;\">[Supprimé]</span> ": "";
+			$islock = ($fname['locked'] == 1)? "<span style=\"color:#990000;\">[Vérrouillé]</span> ": "";
 			
 			?>
 			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index/p=forum&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <a href="index?p=forum&forum=<?= $forum?>"><?= $fname['name']?></a></h4>
