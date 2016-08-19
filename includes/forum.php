@@ -11,7 +11,15 @@
 		$cat = intval($_GET['cat']);
 		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ?'); $verify->execute(array($cat));
 		$verify = $verify->fetch();
-		
+		if (isset($_POST['sendsubject']) AND isset($_POST['newsubject']))
+		{
+			$fimp = (isset($_POST['setImp']))? 1 : 0;
+			$frp = (isset($_POST['setRP']))? 1 : 0;
+			$fname = htmlspecialchars($_POST['newsubject']);
+			
+			$add = $db->prepare('INSERT INTO forum_forum VALUES("", ?, ?, 0, ?, ?, 0, 0, 0, 0)');
+			$add->execute(array($fname, $cat, $fimp, $frp));
+		}
 		if ($verif['rank'] <= $view)
 		{
 			if ($view < 6)
@@ -83,6 +91,14 @@
 								else
 								{
 									$sdel= "<a href=\"index?p=forum&del=". $list['id']. "\" style=\"color:blue;\">[X]</a>";
+								}
+								if ($list['lock'] == 0)
+								{
+									$sdel = "<a href=\"index?p=forum&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
+								}
+								else
+								{
+									$sdel= "<a href=\"index?p=forum&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
 								}
 							$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
 							$del = ($list['del'] == 1)? "<span style='color:red;'>[Supprimé] </span>" : "";
