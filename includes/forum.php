@@ -143,15 +143,18 @@
 						}
 						if ($view > 0)
 						{
-							$importantbutton = ($view > 5)? "<br /><label for='setImp'>Considérer le nouveau sujet comme Important : </label><input type='check' name='setImp' id='setImp' />": "";
+							$importantbutton = ($view > 5)? "<br /><label for='setImp'>Considérer le nouveau sujet comme Important : </label><input type='checkbox' name='setImp' id='setImp' />": "";
 							?>
 							<tr>
-								<form action="index?p=forum&cat=<?= $cat?>" method="POST">
-									<label for="newsubject">Nouveau sujet : </label><input type="text" name="newsubject" id="newsubject" width="65%" />
-									<input type="submit" name="sendsubject" value="Créer"/><br />
-									<label for="setRP">Considérer le nouveau sujet comme Rôleplay :</label> <input type="check" id="setRP" name="setRP" />
-									<?= $importantbutton ?>
-								</form>
+								<td>
+									<form action="index?p=forum&cat=<?= $cat?>" method="POST">
+										<label for="newsubject">Nouveau sujet : </label><input type="text" name="newsubject" id="newsubject" width="65%" />
+										<input type="submit" name="sendsubject" value="Créer"/><br />
+										<label for="setRP">Considérer le nouveau sujet comme Rôleplay :</label> <input type="checkbox" id="setRP" name="setRP" />
+										<?= $importantbutton ?>
+									</form>
+								</td>
+								
 							</tr>
 						<?php
 						}
