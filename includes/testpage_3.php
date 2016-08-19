@@ -88,7 +88,7 @@
 								$user = "Anonyme";
 								$color = "1";
 							}
-							$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['date_post']);
+							$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['post_date']);
 							
 							$last = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' /> <span class='name" . $color . "'>" .$title . " ". $user. "</span><br />" . $date ."";
 						}
