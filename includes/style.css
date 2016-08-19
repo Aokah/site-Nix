@@ -347,6 +347,8 @@ li.navbg:hover {
 .forumrank10		{	background-color: rgba(0, 0, 0, 1);	color: white;	}
 
 .forumbg		{	background-color: #514628;	}
+.unread			{	background-color: #867142;	}
+.forumf			{	background-color: #665132;	}
 
 #categories 	
 {
@@ -362,7 +364,7 @@ li.navbg:hover {
 #categories .last_post 	{	width: 25%;							}
 #categories table			{	padding-left: 15px;					}
 #categories th 			{	text-align: left;					}
-.unread					{	background-color: #867142;			}
+
 .forum tr td	
 {
 	border-bottom: 2px solid #2d2d2d;
