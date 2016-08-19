@@ -81,7 +81,7 @@
 								$tech = ($member['technician'] == 1)? "-T" : "";
 								$pionier = ($member['pionier'] == 1)? "-P" : "";
 								$color = $member['rank']. "" . $tech. "" . $pionier;
-								$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>"
+								$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>";
 								$aend = "</a>";
 							}
 							else
