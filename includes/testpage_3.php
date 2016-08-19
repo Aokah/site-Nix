@@ -67,7 +67,7 @@
 						$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
 						
 						$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
-						if ($latest->fetch())
+						if ($latest = $latest->fetch())
 						{
 							if ($list['unknow'] == 0)
 							{
