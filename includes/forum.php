@@ -85,7 +85,7 @@
 			?>
 			<div width="100%" style="padding:1%" class="forumbg">
 				<h4><a href="index?p=forum">Forum</a> > <?= $line['name']?></h4>
-			<?php if (isset($_GET['imp']) OR isset($_GET['norm']) OR isset($_GET['rp']) Or isset($_GET['hrp']) OR isset$_GET['rest'] OR
+			<?php if (isset($_GET['imp']) OR isset($_GET['norm']) OR isset($_GET['rp']) OR isset($_GET['hrp']) OR isset($_GET['rest']) OR
 			isset($_GET['del']) OR isset($_GET['lock']) OR isset($_GET['unlock']))
 			{
 				echo "<p>", $msg, "</p>";
