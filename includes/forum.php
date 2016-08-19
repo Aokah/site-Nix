@@ -148,11 +148,11 @@
 								}
 								if ($list['lock'] == 0)
 								{
-									$sdel = "<a href=\"index?p=forum&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
+									$slock = "<a href=\"index?p=forum&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
 								}
 								else
 								{
-									$sdel= "<a href=\"index?p=forum&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
+									$slock= "<a href=\"index?p=forum&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
 								}
 							$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
 							$del = ($list['del'] == 1)? "<span style='color:red;'>[Supprimé] </span>" : "";
@@ -200,7 +200,7 @@
 								<?php 
 								if ($view > 5)
 								{
-									echo $sdel, " ", $imp, " ", $srp?> |
+									echo $sdel, " ", $imp, " ", $srp, " ", $slock?> |
 								<?
 								}
 								?>
