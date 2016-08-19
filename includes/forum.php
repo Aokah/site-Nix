@@ -268,6 +268,55 @@
 			$update = $db->prepare('UPDATE forum_unread SET unread = 0 WHERE forum_id = ?');
 			$update->execute(array($forum));
 		}
+		elseif (isset($_GET['del']))
+		{
+			if ($view > 5)
+			{
+				$delete = intval($_GET['del']);
+				$del = $db->prepare('UPDATE forum_post SET del = 1, deleter_id = ? WHERE id = ?');
+				$del->execute(array($_SESSION['id'], $delete));
+				$msg = "Le post a bien été supprimé.";
+			}
+		}
+		elseif (isset($_GET['restore']))
+		{
+			if ($view > 5)
+			{
+				$restore = intval($_GET['restore']);
+				$rest = $db->prepare('UPDATE forum_post SET del = 0, deleter_id = 0 WHERE id = ?');
+				$rest->execute(array($restore));
+				$msg = "Le post a bien été restauré.";
+			}
+		}
+		elseif (isset($_GET['edit']))
+		{
+			$edit = intval($_GET['edit']);
+			if (isset($_POST['editpost']))
+			{
+				$text = htmlspecialchars($_POST['newpost']);
+				if ($view > 5)
+				{
+					$text = preg_replace('#(?<!\|)\(b\)([^<>]+)\(/b\)#isU', '<span style="font-weight: bold;">$1</span>', $text);
+					$text = preg_replace('#(?<!\|)\(i\)([^<>]+)\(/i\)#isU', '<span style="font-style: italic;">$1</span>', $text);
+					$text = preg_replace('#(?<!\|)\(u\)([^<>]+)\(/u\)#isU', '<span style="text-decoration: underline;">$1</span>', $text);
+					$text = preg_replace('#(?<!\|)\(a (https?://[a-z0-9._\-/&\?^()]+)\)([^<>]+)\(/a\)#isU', '<a href="$1" style="color: #FF8D1C;">$2</a>', $text);
+					$text = preg_replace('#(?<!\|)\(img (https?://[a-z0-9._\-/&\?^()]+)\)#isU', '<img src="$1" alt=" "/>', $text);
+					$text = preg_replace('#(?<!\|)\(c ([^<>]+)\)([^<>]+)\(/c\)#isU', '<span style="color: $1">$2</span>', $text);
+				}
+				$update = $db->prepare('UPDATE forum_post SET post = ? WHERE id = ?');
+				$update->execute(array($text, $edit));
+				$msg = "Le post a bien été modifié !";
+			}
+			else
+			{
+				$presel = $db->prepare('SELECT * FROM forum_post WHERE id = ?'); $presel->execute(array($edit));
+				$edit = $presel->fetch();
+				if ($view > 5 OR $edit['date_post'] == NOW())
+				{
+					$emsg = $edit['post'];
+				}
+			}
+		}
 			
 		if ($verify['rank'] <= $view)
 		{
@@ -305,6 +354,10 @@
 				if (isset($_POST['sendnew']) AND isset($_POST['newpost']))
 				{
 					echo "Message envoyé avec succès !";
+				}
+				elseif (isset($_GET['del']) OR isset($_GET['restore']) Or isset($_POST['editpost']))
+				{
+					echo $msg;
 				}
 			?>
 			
@@ -371,12 +424,29 @@
 						<tr>
 							<td>
 								<div width="100%" align="center">
+									<?
+									if (isset($_GET['edit'])
+									{
+									?>
+									<form action="index?p=forum&forum=<?= $forum?>&page=<?= $page?>&edit=<?= $edit['id']?>" method="POST">
+										<label for="newpost" style="text-align:right;">Envoyer une réponse</label><br />
+										<textarea style="width: 95%; height: 120px;" id="newpost" name="newpost"><?= $emsg?></textarea><br />
+										<input type="submit" style="text-align:right;" name="editpost" value="Modifier" />
+									</form>
+									<?php
+									}
+									else
+									{
+									?>
 									<form action="index?p=forum&forum=<?= $forum?>&page=<?= $page?>" method="POST">
 										<label for="newpost" style="text-align:right;">Envoyer une réponse</label><br />
 										<textarea style="width: 95%; height: 120px;" id="newpost" name="newpost"></textarea><br />
 										<?= $anonymebutton ?>
 										<input type="submit" style="text-align:right;" name="sendnew" value="Envoyer" />
 									</form>
+									<?php
+									}
+									?>
 								</div>
 							</td>
 						</tr>
