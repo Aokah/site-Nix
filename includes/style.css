@@ -314,10 +314,10 @@ li.navbg:hover {
 .forumrank4		{	background-color: rgba(0, 0, 0, 0.4);	}
 .forumrank5		{	background-color: rgba(0, 0, 0, 0.5);	}
 .forumrank6		{	background-color: rgba(0, 0, 0, 0.6);	}
-.forumrank7		{	background-color: rgba(0, 0, 0, 0.7);	}
-.forumrank8		{	background-color: rgba(0, 0, 0, 0.8);	}
-.forumrank9		{	background-color: rgba(0, 0, 0, 0.9);	}
-.forumrank10	{	background-color: rgba(0, 0, 0, 1);		}
+.forumrank7		{	background-color: rgba(0, 0, 0, 0.7);	color: white;	}
+.forumrank8		{	background-color: rgba(0, 0, 0, 0.8);	color: white;	}
+.forumrank9		{	background-color: rgba(0, 0, 0, 0.9);	color: white;	}
+.forumrank10		{	background-color: rgba(0, 0, 0, 1);	color: white;	}
 
 /* Classes sur la magie */
 .magie			{	border-radius: 10px;	}
