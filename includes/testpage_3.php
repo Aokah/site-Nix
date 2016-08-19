@@ -10,7 +10,7 @@
 	{
 		$cat = intval($_GET['cat']);
 		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ?'); $verify->execute(array($cat));
-		$verify = $verify->fetch()
+		$verify = $verify->fetch();
 		
 		if ($verif['rank'] <= $view)
 		{
@@ -169,10 +169,14 @@
 				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY post_date DESC');
 				$select->execute(array($forum));
 			}
+			$dname = $db->prepare('SELECT id,name FROM members WHERE id = ?'); $dname->execute(array($fname['deleter_id']));
+			$dname = $dname->fetch();
+			$vname = $db->prepare('SELECT id,name FROM members WHERE id = ?'); $vname->execute(array($fname['locker_id']));
+			$vname = $vname->fetch();
 			$isrp = ($fname['rp'] == 1)? "<span style=\"color:lime;\">[RP]</span> ": "";
 			$isimportant = ($fname['important'] == 1)? "<span style=\"color:gold;\">[Important]</span> ": "";
-			$isdel = ($fname['del'] == 1)? "<span style=\"color:#990000;\">[Supprimé]</span> ": "";
-			$islock = ($fname['locked'] == 1)? "<span style=\"color:#990000;\">[Vérrouillé]</span> ": "";
+			$isdel = ($fname['del'] == 1)? "<span style=\"color:#990000;\">[Supprimé (par ". $dname['name'].")]</span> ": "";
+			$islock = ($fname['locked'] == 1)? "<span style=\"color:#990000;\">[Vérrouillé (par ". $vname['name'].")]</span> ": "";
 			
 			?>
 			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index?p=forum">Forum</a> > <a href="index?p=forum&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <?= $fname['name']?></h4>
