@@ -13,10 +13,11 @@
 	elseif (isset($_GET['forum']))
 	{
 		$forum = intval($_GET['forum']);
-		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ? AND rank <= ?');
-		$verify->execute(array($forum, $view)); echo $view;
+		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ?');
+		$verify->execute(array($forum, $view));
+		$verify = $verify->fetch();
 		
-		if ($verify->fetch())
+		if ($verify['rank'] <= $view)
 		{
 			$page = (isset($_GET['page']))? intval($_GET['page']) : 1;
 			$fname = $db->prepare('SELECT fc.id, fc.name AS fc_name, ff.name, ff.id As f_id, ff.category, ff.rp, ff.important, ff.del, ff.locked FROM forum_category fc
