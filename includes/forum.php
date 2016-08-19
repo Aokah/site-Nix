@@ -28,7 +28,7 @@
 			$line = $select->fetch();
 			?>
 			<div width="100%" style="padding:1%" class="forumbg">
-				<h4><a href="index?p=forum&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
+				<h4><a href="index?p=forum">Forum</a> > <?= $line['name']?></h4>
 				<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
 				<table cellspacing="0" cellpadding="3%" align="center" width="95%">
 					<tbody>
