@@ -80,7 +80,7 @@
 								$user = $member['name'];
 								$tech = ($member['technician'] == 1)? "-T" : "";
 								$pionier = ($member['pionier'] == 1)? "-P" : "";
-								$color = $member['rank'], $tech, $pionier;
+								$color = $member['rank']. "" . $tech. "" . $pionier;
 							}
 							else
 							{
@@ -90,7 +90,7 @@
 							}
 							$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['date_post']);
 							
-							$last = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' /> <span class='name" . $color . "'>" .$title , $user. "</span><br />" . $date ."";
+							$last = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' /> <span class='name" . $color . "'>" .$title . "" $user. "</span><br />" . $date ."";
 						}
 						else
 						{
