@@ -108,8 +108,8 @@
 								$last = "Aucun message dans ce forum.";
 							}
 						?>
-						<tr class="forumf" style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
-							<td <?= $read?>>
+						<tr class="forumf">
+							<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
 								<?php 
 								if ($view > 5)
 								{
@@ -121,7 +121,7 @@
 								<a href="index?p=testpage_3&forum=<?=$list['id']?>&page=1"><?=$del, $important, $rp , $list['name']?></a>
 							</td>
 							
-							<td <?= $read?>><?= $last ?></td>
+							<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;"><?= $last ?></td>
 						</tr>
 						<?php
 						}
@@ -333,8 +333,8 @@
 							$last = "Aucun message dans ce forum.";
 						}
 					?>
-					<tr class="forumf" style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
-						<td <?= $read?>>
+					<tr class="forumf">
+						<td <?= $read?> style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
 							<?php 
 							if ($view > 5)
 							{
@@ -346,7 +346,7 @@
 							<a href="index?p=testpage_3&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
 						</td>
 						
-						<td <?= $read?>><?= $last ?></td>
+						<td <?= $read?> style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;"><?= $last ?></td>
 					</tr>
 					<?php
 					}
