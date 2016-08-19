@@ -109,7 +109,7 @@
 							<a href="index?p=testpage_3&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
 						</td>
 						
-						<td <?= $read?>><?php $last ?></td>
+						<td <?= $read?>><?= $last ?></td>
 					</tr>
 					<?php
 					}
