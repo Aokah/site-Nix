@@ -68,6 +68,7 @@
 								$imp = "<a href=\"index?p=testpage_3&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
 							}
 							$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
+							$del = ($list['del'] == 1)? "<span color:red;>[Supprimé] </span>" : "";
 							
 							$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
 							if ($latest = $latest->fetch())
@@ -105,7 +106,6 @@
 							{
 								$last = "Aucun message dans ce forum.";
 							}
-							$del = ($flist['del'] == 1)? "<span color:red;>[Supprimé] </span>" : "";
 						?>
 						<tr class="memberbg_5">
 							<td <?= $read?>>
