@@ -237,10 +237,10 @@
 							<td>
 								<div width="100%" align="center">
 									<form action="index?p=forum&forum=<?= $forum?>" method="POST">
-										<label for="newpost">Envoyer une réponse</label><br />
-										<textarea width="95%" id="newpost" name="newpost"></textarea><br />
+										<label for="newpost" style="text-align:right;">Envoyer une réponse</label><br />
+										<textarea style="width: 95%; height: 120px;" id="newpost" name="newpost"></textarea><br />
 										<?= $anonymebutton ?>
-										<input type="submit" name="sendnew" value="Envoyer" />
+										<input type="submit" style="text-align:right;" name="sendnew" value="Envoyer" />
 									</form>
 								</div>
 							</td>
