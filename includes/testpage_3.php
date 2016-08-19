@@ -13,8 +13,8 @@
 	elseif (isset($_GET['forum']))
 	{
 		$forum = intval($_GET['forum']);
-		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ? AND rank >= ?');
-		$verify->execute(array($forum, $view)); echo $view;
+		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ? AND rank <= ?');
+		$verify->execute(array($forum, $view));
 		
 		if ($verify ->fetch())
 		{
