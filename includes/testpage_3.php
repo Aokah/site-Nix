@@ -14,7 +14,7 @@
 	{
 		$forum = intval($_GET['forum']);
 		$verify = $db->prepare('SELECT * FROM forum_category WHERE where id = ? AND rank >= ?');
-		$verif->execute(array($forum, $_SESSION['id']));
+		$verify->execute(array($forum, $_SESSION['id']));
 		
 		if ($verify ->fetch())
 		{
