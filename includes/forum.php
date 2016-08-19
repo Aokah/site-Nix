@@ -19,7 +19,7 @@
 		{
 			$update = $db->prepare('UPDATE forum_forum SET important = 0 WHERE id = ?');
 			$update->execute(array($cat));
-			$msg = "Le sujet a bien été défini comme standard.":
+			$msg = "Le sujet a bien été défini comme standard.";
 		}
 		elseif (isset($_GET['rp']))
 		{
