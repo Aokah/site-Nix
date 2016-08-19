@@ -350,7 +350,7 @@
 					</tr>
 					<?php
 					}
-					$anonymebutton = ($line['rp']^== 1) ? "<label for='senunknow'>Envoyer ensans signature</label> <input type='check' name='sendunknow' id='sendunknow' /><br />" : "";
+					$anonymebutton = ($line['rp'] == 1) ? "<label for='senunknow'>Envoyer ensans signature</label> <input type='check' name='sendunknow' id='sendunknow' /><br />" : "";
 					?>
 					<tr>
 						<td>
