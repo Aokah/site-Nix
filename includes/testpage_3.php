@@ -156,26 +156,6 @@
 			$fname->execute(array($forum));
 			$fname = $fname->fetch();
 			
-			if (isset($_GET['sendnew']))
-			{
-				$text = htmlspecialchars($_POST['newpost']);
-				$anonyme = (isset($_POST["sendunknow"]) AND $fname['rp'] == 1)? 1 : 0;
-				if ($view > 5)
-				{
-					$text = preg_replace('#(?<!\|)\(b\)([^<>]+)\(/b\)#isU', '<span style="font-weight: bold;">$1</span>', $text);
-					$text = preg_replace('#(?<!\|)\(i\)([^<>]+)\(/i\)#isU', '<span style="font-style: italic;">$1</span>', $text);
-					$text = preg_replace('#(?<!\|)\(u\)([^<>]+)\(/u\)#isU', '<span style="text-decoration: underline;">$1</span>', $text);
-					$text = preg_replace('#(?<!\|)\(a (https?://[a-z0-9._\-/&\?^()]+)\)([^<>]+)\(/a\)#isU', '<a href="$1" style="color: #FF8D1C;">$2</a>', $text);
-					$text = preg_replace('#(?<!\|)\(img (https?://[a-z0-9._\-/&\?^()]+)\)#isU', '<img src="$1" alt=" "/>', $text);
-					$text = preg_replace('#(?<!\|)\(c ([^<>]+)\)([^<>]+)\(/c\)#isU', '<span style="color: $1">$2</span>', $text);
-				}
-				
-				$add = $db->prepare("INSERT INTO forum_post VALUES('', ?, NOW(), ?, ?, ?, 0, 0)");
-				$add->execute(array($text, $_SESSION['id'], $forum, $anonyme));
-				$update = $db->prepare('UPDATE forum_unread SET unread = 0 WHERE forum_id = ?');
-				$update->execute(array($forum));
-			}
-			
 			if ($view < 6)
 			{
 				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY post_date DESC');
@@ -198,6 +178,30 @@
 			
 			?>
 			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index?p=forum">Forum</a> > <a href="index?p=forum&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <?= $fname['name']?></h4>
+			
+			<?php
+				if (isset($_GET['sendnew']))
+				{
+					$text = htmlspecialchars($_POST['newpost']);
+					$anonyme = (isset($_POST["sendunknow"]) AND $fname['rp'] == 1)? 1 : 0;
+					if ($view > 5)
+					{
+						$text = preg_replace('#(?<!\|)\(b\)([^<>]+)\(/b\)#isU', '<span style="font-weight: bold;">$1</span>', $text);
+						$text = preg_replace('#(?<!\|)\(i\)([^<>]+)\(/i\)#isU', '<span style="font-style: italic;">$1</span>', $text);
+						$text = preg_replace('#(?<!\|)\(u\)([^<>]+)\(/u\)#isU', '<span style="text-decoration: underline;">$1</span>', $text);
+						$text = preg_replace('#(?<!\|)\(a (https?://[a-z0-9._\-/&\?^()]+)\)([^<>]+)\(/a\)#isU', '<a href="$1" style="color: #FF8D1C;">$2</a>', $text);
+						$text = preg_replace('#(?<!\|)\(img (https?://[a-z0-9._\-/&\?^()]+)\)#isU', '<img src="$1" alt=" "/>', $text);
+						$text = preg_replace('#(?<!\|)\(c ([^<>]+)\)([^<>]+)\(/c\)#isU', '<span style="color: $1">$2</span>', $text);
+					}
+					
+					$add = $db->prepare("INSERT INTO forum_post VALUES('', ?, NOW(), ?, ?, ?, 0, 0)");
+					$add->execute(array($text, $_SESSION['id'], $forum, $anonyme));
+					$update = $db->prepare('UPDATE forum_unread SET unread = 0 WHERE forum_id = ?');
+					$update->execute(array($forum));
+					echo "Message envoyé avec succès !";
+				}
+			?>
+			
 				<table cellspacing="1" cellpadding="5" width="90%" align="center">
 					<tbody>
 						<tr class="member_top">
