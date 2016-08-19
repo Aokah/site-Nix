@@ -43,7 +43,59 @@
 			
 			?>
 			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index?p=forum">Forum</a> > <a href="index?p=forum&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <?= $fname['name']?></h4>
-				<table></table>
+				<table cellspacing="1" cellpadding="5" width="90%" align="center">
+					<tbody>
+						<tr class="member_top">
+							<th>Message</th> <th width="25%">Envoyé par :</th>
+						</tr>
+						<?php
+						while ($line = $select->fetch())
+						{
+							$post = preg_replace('#\n#', '<br />', $line['post']);
+							$ranksel = $db->('SELECT * FROM members WHERE id = ?'); $ranksel->execute(array($line['sender_id']));
+							$ranksel = $ranksel->fetch();
+							if ($line['unknow'] == 0)
+							{
+								$member = $db->prepare('SELECT * FROM members WHERE id = ?'); $member->execute(array($line['user_id']));
+								$member = $member->fetch();
+								$title = $member['title'];
+								$title = ($member['pionier']== 1)? "Pionier" : $title;
+								$title = ($member['ban'] == 1)? "Banni" : $title;
+								$title = ($members['removed'] == 1)? "Oublié" : $title;
+								$user = $member['name'];
+								$tech = ($member['technician'] == 1)? "-T" : "";
+								$pionier = ($member['pionier'] == 1)? "-P" : "";
+								$color = $member['rank']. "" . $tech. "" . $pionier;
+								$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>";
+								$aend = "</a>";
+								$img = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' />";
+							}
+							else
+							{
+								$title = "Message";
+								$user = "Anonyme";
+								$color = "1";
+								$a = "<span class='name" . $color . "'>";
+								$aend = "</span>";
+								$img = "";
+							}
+							$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['post_date']);
+							$isdel = ($line['del'] === 1)? "background-color:rgba(70,0,0,.5);" : "";
+							
+						?>
+							<tr class="forumrank<?= $ranksel['rank']?>" <?=$isdel?> >
+								<td align="top">
+									<p><?= $post?></p>
+								</td>
+								<td align="top">
+									<?= $img, $a , $title , " ", $user, $aend ,"<br />" , $date; ?>
+								</td>
+							</tr>
+						<?php		
+						}
+						?>
+					</tbody>
+				</table>
 			<?php
 			
 		}
