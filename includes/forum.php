@@ -9,6 +9,54 @@
 	if (isset($_GET['cat']))
 	{
 		$cat = intval($_GET['cat']);
+		if (isset($_GET['imp']))
+		{
+			$update = $db->prepare('UPDATE forum_forum SET important = 1 WHERE id = ?');
+			$update->execute(array($cat));
+			$msg "Le sujet a bien été défini comme important !";
+		}
+		elseif (isset($_GET['norm']))
+		{
+			$update = $db->prepare('UPDATE forum_forum SET important = 0 WHERE id = ?');
+			$update->execute(array($cat));
+			$msg = "Le sujet a bien été défini comme standard.":
+		}
+		elseif (isset($_GET['rp']))
+		{
+			$update = $db->prepare('UPDATE forum_forum SET rp = 1 WHERE id = ?');
+			$update->execute(array($cat));
+			$msg =  "Le sujet a bien été rendu RP !";
+		}
+		elseif (isset($_GET['hrp']))
+		{
+			$update = $db->prepare('UPDATE forum_forum SET rp = 0 WHERE id = ?');
+			$update->execute(array($cat));
+			$msg = "Le sujet a bien été rendu HRP.";
+		}
+		elseif (isset($_GET['lock']))
+		{
+			$update = $db->prepare('UPDATE forum_forum SET locked = 1, locker_id = ? WHERE id = ?');
+			$update->execute(array($_SESSION['id'], $cat));
+			$msg = "Le sujet a bien été vérouillé.";
+		}
+		elseif (isset($_GET['unlock']))
+		{
+			$update = $db->prepare('UPDATE forum_forum SET locked = 0, locker_id = 0 WHERE id = ?');
+			$update->execute(array($cat));
+			$msg = "Le sujet a bien été déverrouillé !";
+		}
+		elseif (isset($_GET['del']))
+		{
+			$update = $db->prepare('UPDATE forum_forum SET del = 1, deleter_id = ? WHERE id = ?');
+			$update->execute(array($_SESSION['id'], $cat));
+			$msg = "Le sujet a bien été supprimé.";
+		}
+		elseif (isset($_GET['rest']))
+		{
+			$update = $db->prepare('UPDATE forum_forum SET del = 0, deleter_id = 0 WHERE id = ?');
+			$update->execute(array($cat));
+			$msg = "Le sujet a bien été réstauré !";
+		}
 		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ?'); $verify->execute(array($cat));
 		$verify = $verify->fetch();
 		if (isset($_POST['sendsubject']) AND isset($_POST['newsubject']))
@@ -37,6 +85,12 @@
 			?>
 			<div width="100%" style="padding:1%" class="forumbg">
 				<h4><a href="index?p=forum">Forum</a> > <?= $line['name']?></h4>
+			<?php if (isset($_GET['imp']) OR isset($_GET['norm']) OR isset($_GET['rp']) Or isset($_GET['hrp']) OR isset$_GET['rest'] OR
+			isset($_GET['del']) OR isset($_GET['lock']) OR isset($_GET['unlock']))
+			{
+				echo "<p>", $msg, "</p>";
+			}
+			?>
 				<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
 				<table cellspacing="0" cellpadding="3%" align="center" width="95%">
 					<tbody>
@@ -90,7 +144,7 @@
 								}
 								else
 								{
-									$sdel= "<a href=\"index?p=forum&del=". $list['id']. "\" style=\"color:blue;\">[X]</a>";
+									$sdel= "<a href=\"index?p=forum&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
 								}
 								if ($list['lock'] == 0)
 								{
