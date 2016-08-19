@@ -56,7 +56,7 @@
 							$read = "class=\"unread\"";
 							$page = 1;
 						}
-						if ($list['important'] == 1)
+						if ($list['important'] == 0)
 						{
 							$imp = "<a href=\"index?p=testpage_3&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
 						}
