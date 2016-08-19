@@ -52,7 +52,7 @@
 						while ($line = $select->fetch())
 						{
 							$post = preg_replace('#\n#', '<br />', $line['post']);
-							$ranksel = $db->('SELECT * FROM members WHERE id = ?'); $ranksel->execute(array($line['sender_id']));
+							$ranksel = $db->prepare('SELECT * FROM members WHERE id = ?'); $ranksel->execute(array($line['sender_id']));
 							$ranksel = $ranksel->fetch();
 							if ($line['unknow'] == 0)
 							{
