@@ -346,9 +346,9 @@ li.navbg:hover {
 .forumrank9		{	background-color: rgba(0, 0, 0, 0.9);	color: white;	}
 .forumrank10		{	background-color: rgba(0, 0, 0, 1);	color: white;	}
 
-.forumbg		{	background-color: #514628;	}
+.forumbg		{	background-color: #514628;	border: black 3px solid;}
 .unread			{	background-color: #867142;	}
-.forumf			{	background-color: #665132;	}
+.forumf			{	background-color: #665132;	border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;	}
 
 #categories 	
 {
