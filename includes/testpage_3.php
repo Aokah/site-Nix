@@ -81,16 +81,20 @@
 								$tech = ($member['technician'] == 1)? "-T" : "";
 								$pionier = ($member['pionier'] == 1)? "-P" : "";
 								$color = $member['rank']. "" . $tech. "" . $pionier;
+								$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>"
+								$aend = "</a>";
 							}
 							else
 							{
 								$title = "Message";
 								$user = "Anonyme";
 								$color = "1";
+								$a = "<span class='name" . $color . "'>";
+								$aend = "</span>";
 							}
 							$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['post_date']);
 							
-							$last = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' /> <span class='name" . $color . "'>" .$title . " ". $user. "</span><br />" . $date ."";
+							$last = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' /> ". $a ."" . $title . " ". $user. "". $aend ."<br />" . $date ."";
 						}
 						else
 						{
