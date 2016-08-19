@@ -5,58 +5,59 @@
 	echo "<h3>Forums</h3>";
 	
 	$view = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 0;
-	
-	if (isset($_GET['cat']))
-	{
-		$cat = intval($_GET['cat']);
+		
 		if (isset($_GET['imp']))
 		{
 			$update = $db->prepare('UPDATE forum_forum SET important = 1 WHERE id = ?');
-			$update->execute(array($cat));
+			$update->execute(array($_GET['imp']));
 			$msg = "Le sujet a bien été défini comme important !";
 		}
 		elseif (isset($_GET['norm']))
 		{
 			$update = $db->prepare('UPDATE forum_forum SET important = 0 WHERE id = ?');
-			$update->execute(array($cat));
+			$update->execute(array($_GET['norm']));
 			$msg = "Le sujet a bien été défini comme standard.";
 		}
 		elseif (isset($_GET['rp']))
 		{
 			$update = $db->prepare('UPDATE forum_forum SET rp = 1 WHERE id = ?');
-			$update->execute(array($cat));
+			$update->execute(array($_GET['rp']));
 			$msg =  "Le sujet a bien été rendu RP !";
 		}
 		elseif (isset($_GET['hrp']))
 		{
 			$update = $db->prepare('UPDATE forum_forum SET rp = 0 WHERE id = ?');
-			$update->execute(array($cat));
+			$update->execute(array($_GET['hrp']));
 			$msg = "Le sujet a bien été rendu HRP.";
 		}
 		elseif (isset($_GET['lock']))
 		{
 			$update = $db->prepare('UPDATE forum_forum SET locked = 1, locker_id = ? WHERE id = ?');
-			$update->execute(array($_SESSION['id'], $cat));
+			$update->execute(array($_SESSION['id'], $_GET['lock']));
 			$msg = "Le sujet a bien été vérouillé.";
 		}
 		elseif (isset($_GET['unlock']))
 		{
 			$update = $db->prepare('UPDATE forum_forum SET locked = 0, locker_id = 0 WHERE id = ?');
-			$update->execute(array($cat));
+			$update->execute(array($_GET['unlock']));
 			$msg = "Le sujet a bien été déverrouillé !";
 		}
 		elseif (isset($_GET['del']))
 		{
 			$update = $db->prepare('UPDATE forum_forum SET del = 1, deleter_id = ? WHERE id = ?');
-			$update->execute(array($_SESSION['id'], $cat));
+			$update->execute(array($_SESSION['id'], $_GET['del']));
 			$msg = "Le sujet a bien été supprimé.";
 		}
 		elseif (isset($_GET['rest']))
 		{
 			$update = $db->prepare('UPDATE forum_forum SET del = 0, deleter_id = 0 WHERE id = ?');
-			$update->execute(array($cat));
+			$update->execute(array($_GET['rest']));
 			$msg = "Le sujet a bien été réstauré !";
 		}
+		
+	if (isset($_GET['cat']))
+	{
+		$cat = intval($_GET['cat']);
 		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ?'); $verify->execute(array($cat));
 		$verify = $verify->fetch();
 		if (isset($_POST['sendsubject']) AND isset($_POST['newsubject']))
@@ -124,35 +125,35 @@
 							
 								if ($list['important'] == 0)
 								{
-									$imp = "<a href=\"index?p=forum&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
+									$imp = "<a href=\"index?p=forum&cat". $cat. "&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
 								}
 								else
 								{
-									$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
+									$imp = "<a href=\"index?p=forum&cat". $cat. "&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
 								}
 								if ($list['rp'] == 0)
 								{
-									$srp = "<a href=\"index?p=forum&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
+									$srp = "<a href=\"index?p=forum&cat". $cat. "&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
 								}
 								else
 								{
-									$srp = "<a href=\"index?p=forum&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
+									$srp = "<a href=\"index?p=forum&cat". $cat. "&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
 								}
 								if ($list['del'] == 0)
 								{
-									$sdel = "<a href=\"index?p=forum&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
+									$sdel = "<a href=\"index?p=forum&cat". $cat. "&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
 								}
 								else
 								{
-									$sdel= "<a href=\"index?p=forum&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
+									$sdel= "<a href=\"index?p=forum&cat". $cat. "&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
 								}
 								if ($list['lock'] == 0)
 								{
-									$slock = "<a href=\"index?p=forum&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
+									$slock = "<a href=\"index?p=forum&cat". $cat. "&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
 								}
 								else
 								{
-									$slock= "<a href=\"index?p=forum&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
+									$slock= "<a href=\"index?p=forum&cat". $cat. "&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
 								}
 							$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
 							$del = ($list['del'] == 1)? "<span style='color:red;'>[Supprimé] </span>" : "";
@@ -434,13 +435,37 @@
 							$page = 1;
 						}
 						if ($list['important'] == 0)
-						{
-							$imp = "<a href=\"index?p=forum&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
-						}
-						else
-						{
-							$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
-						}
+								{
+									$imp = "<a href=\"index?p=forum&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
+								}
+								else
+								{
+									$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
+								}
+								if ($list['rp'] == 0)
+								{
+									$srp = "<a href=\"index?p=forum&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
+								}
+								else
+								{
+									$srp = "<a href=\"index?p=forum&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
+								}
+								if ($list['del'] == 0)
+								{
+									$sdel = "<a href=\"index?p=forum&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
+								}
+								else
+								{
+									$sdel= "<a href=\"index?p=forum&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
+								}
+								if ($list['lock'] == 0)
+								{
+									$slock = "<a href=\"index?p=forum&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
+								}
+								else
+								{
+									$slock= "<a href=\"index?p=forum&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
+								}
 						$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
 						
 						$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
@@ -483,13 +508,12 @@
 					<tr class="forumf">
 						<td <?= $read?> style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
 							<?php 
-							if ($view > 5)
-							{
-							?>
-							<a href="index?p=forum&del=<?=$list['id']?>" style="color:red;">[X]</a> <?= $imp?> |
-							<?
-							}
-							?>
+								if ($view > 5)
+								{
+									echo $sdel, " ", $imp, " ", $srp, " ", $slock?> |
+								<?
+								}
+								?>
 							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
 						</td>
 						
