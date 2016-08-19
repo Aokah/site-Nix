@@ -12,7 +12,46 @@
 	}
 	elseif (isset($_GET['forum']))
 	{
+		$forum = intval($_GET['forum']);
+		$verify = $db->prepare('SELECT * FROM forum_category WHERE where id = ? AND rank >= ?');
+		$verif->execute(array($forum, $_SESSION['id']));
 		
+		if ($verify ->fetch())
+		{
+			$page = (isset($_GET['page']))? intval($_GET['page']) : 1;
+			$fname = $db->prepare('SELECT fc.id, fc.name AS fc_name, ff.name, ff.id As f_id, ff.category, ff.rp, ff.important, ff.del, ff.locked FROM forum_category fc
+			RIGHT JOIN forum_forum ff ON fc.id = ff.catgory
+			WHERE f_id = ?');
+			$fname->execute(array($forum));
+			$fname = $fname->fetch();
+			
+			if ($_SESSION['rank'] < 6)
+			{
+				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY date_post DESC');
+				$select->execute(array($forum));
+			}
+			else
+			{
+				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY date_post DESC');
+				$select->execute(array($forum));
+			}
+			$isrp = ($fname['rp'] == 1)? "<span style=\"color:lime;\">[RP]</span> ": "";
+			$isimportant = ($fname['important'] == 1)? "<span style=\"color:gold;\">[Important]</span> ": "";
+			$isdel = ($fname['del'] == 1)? "<span style=\"color:red;\">[Supprimé]</span> ": "";
+			$islock = ($fname['locked'] == 1)? "<span style=\"color:red;\">[Vérrouillé]</span> ": "";
+			
+			?>
+			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index/p=forum&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <a href="index?p=forum&forum=<?= $forum?>"><?= $fname['name']?></a></h4>
+				<table></table>
+			<?php
+			
+		}
+		else
+		{
+		?>
+			<p>Vous n'avez pas le grade nécessaire pour accéder à cette page.</p>
+		<?php
+		}
 	}
 	else
 	{
