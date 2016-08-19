@@ -178,12 +178,12 @@
 			
 			if ($view < 6)
 			{
-				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY post_date DESC');
+				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY post_date ASC');
 				$select->execute(array($forum));
 			}
 			else
 			{
-				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY post_date DESC');
+				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY post_date ASC');
 				$select->execute(array($forum));
 			}
 			$dname = $db->prepare('SELECT id,name FROM members WHERE id = ?'); $dname->execute(array($fname['deleter_id']));
