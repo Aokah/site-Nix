@@ -65,6 +65,37 @@
 							$imp = "<a href=\"index?p=testpage_3&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
 						}
 						$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
+						
+						$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
+						if ($latest->fetch())
+						{
+							if ($list['unknow'] == 0)
+							{
+								$member = $db->prepare('SELECT * FROM members WHERE id = ?'); $member->execute(array($latest['user_id']));
+								$member = $member->fetch();
+								$title = $member['title'];
+								$title = ($member['pionier']== 1)? "Pionier" : $title;
+								$title = ($member['ban'] == 1)? "Banni" : $title;
+								$title = ($members['removed'] == 1)? "Oublié" : $title;
+								$user = $member['name'];
+								$tech = ($member['technician'] == 1)? "-T" : "";
+								$pionier = ($member['pionier'] == 1)? "-P" : "";
+								$color = $member['rank'], $tech, $pionier;
+							}
+							else
+							{
+								$title = "Message";
+								$user = "Anonyme";
+								$color = "1";
+							}
+							$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['date_post']);
+							
+							$last = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' /> <span class='name" . $color . "'>" .$title , $user. "</span><br />" . $date ."";
+						}
+						else
+						{
+							$last = "Aucun message dans ce forum.";
+						}
 					?>
 					<tr class="memberbg_5">
 						<td <?= $read?>>
@@ -72,7 +103,7 @@
 							<a href="index?p=testpage_3&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
 						</td>
 						
-						<td <?= $read?>>\o/</td>
+						<td <?= $read?>><?= $last?></td>
 					</tr>
 					<?php
 					}
