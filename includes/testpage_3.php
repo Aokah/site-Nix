@@ -121,7 +121,7 @@
 								<a href="index?p=testpage_3&forum=<?=$list['id']?>&page=1"><?=$del, $important, $rp , $list['name']?></a>
 							</td>
 							
-							<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;"><?= $last ?></td>
+							<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
 						</tr>
 						<?php
 						}
@@ -346,7 +346,7 @@
 							<a href="index?p=testpage_3&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
 						</td>
 						
-						<td <?= $read?> style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;"><?= $last ?></td>
+						<td <?= $read?> style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
 					</tr>
 					<?php
 					}
