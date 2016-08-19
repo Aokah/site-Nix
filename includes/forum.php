@@ -28,7 +28,7 @@
 			$line = $select->fetch();
 			?>
 			<div width="100%" style="padding:1%" class="forumbg">
-				<h4><a href="index?p=testpage_3&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
+				<h4><a href="index?p=forum&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
 				<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
 				<table cellspacing="0" cellpadding="3%" align="center" width="95%">
 					<tbody>
@@ -61,11 +61,11 @@
 							}
 							if ($list['important'] == 0)
 							{
-								$imp = "<a href=\"index?p=testpage_3&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
+								$imp = "<a href=\"index?p=forum&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
 							}
 							else
 							{
-								$imp = "<a href=\"index?p=testpage_3&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
+								$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
 							}
 							$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
 							$del = ($list['del'] == 1)? "<span style='color:red;'>[Supprimé] </span>" : "";
@@ -114,11 +114,11 @@
 								if ($view > 5)
 								{
 								?>
-								<a href="index?p=testpage_3&del=<?=$list['id']?>" style="color:red;">[X]</a> <?= $imp?> |
+								<a href="index?p=forum&del=<?=$list['id']?>" style="color:red;">[X]</a> <?= $imp?> |
 								<?
 								}
 								?>
-								<a href="index?p=testpage_3&forum=<?=$list['id']?>&page=1"><?=$del, $important, $rp , $list['name']?></a>
+								<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$del, $important, $rp , $list['name']?></a>
 							</td>
 							
 							<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
@@ -292,7 +292,7 @@
 				$flist = $db->prepare('SELECT * FROM forum_forum WHERE del = 0 AND category = ? ORDER BY important DESC, last_post DESC LIMIT 10');
 				$flist->execute(array($line['id']));
 			?>
-			<h4><a href="index?p=testpage_3&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
+			<h4><a href="index?p=forum&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
 			<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
 			<table cellspacing="0" cellpadding="3%" align="center" width="95%">
 				<tbody>
@@ -325,11 +325,11 @@
 						}
 						if ($list['important'] == 0)
 						{
-							$imp = "<a href=\"index?p=testpage_3&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
+							$imp = "<a href=\"index?p=forum&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
 						}
 						else
 						{
-							$imp = "<a href=\"index?p=testpage_3&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
+							$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
 						}
 						$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
 						
@@ -376,11 +376,11 @@
 							if ($view > 5)
 							{
 							?>
-							<a href="index?p=testpage_3&del=<?=$list['id']?>" style="color:red;">[X]</a> <?= $imp?> |
+							<a href="index?p=forum&del=<?=$list['id']?>" style="color:red;">[X]</a> <?= $imp?> |
 							<?
 							}
 							?>
-							<a href="index?p=testpage_3&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
+							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
 						</td>
 						
 						<td <?= $read?> style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
