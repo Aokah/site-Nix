@@ -25,13 +25,9 @@
 				$flist->execute(array($cat));
 			}
 			$select = $db->prepare('SELECT * FROM forum_category WHERE id = ?'); $select->execute(array($cat));
+			$line = $select->fetch();
 			?>
 			<div width="100%" style="padding:1%" class="memberbg_7">
-				<?php
-				while ($line = $select->fetch())
-				{
-					
-				?>
 				<h4><a href="index?p=testpage_3&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
 				<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
 				<table cellspacing="0" cellpadding="1%" align="center" width="95%">
