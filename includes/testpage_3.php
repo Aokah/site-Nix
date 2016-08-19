@@ -28,12 +28,12 @@
 			
 			if ($view < 6)
 			{
-				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY date_post DESC');
+				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY post_date DESC');
 				$select->execute(array($forum));
 			}
 			else
 			{
-				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY date_post DESC');
+				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY post_date DESC');
 				$select->execute(array($forum));
 			}
 			$isrp = ($fname['rp'] == 1)? "<span style=\"color:lime;\">[RP]</span> ": "";
