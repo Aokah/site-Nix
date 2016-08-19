@@ -219,6 +219,7 @@
 							$ranksel = $ranksel->fetch();
 							if ($line['unknow'] == 0)
 							{
+								$rank = $ranksel['rank'];
 								$member = $db->prepare('SELECT * FROM members WHERE id = ?'); $member->execute(array($line['user_id']));
 								$member = $member->fetch();
 								$title = $member['title'];
@@ -235,6 +236,7 @@
 							}
 							else
 							{
+								$rank = 3;
 								$title = "Message";
 								$user = "Anonyme";
 								$color = "1";
@@ -251,7 +253,7 @@
 							$editbutton = ($view > 4 AND $view >= $ranksel['rank'] OR $_SESSION['id'] == $line['user_id'] AND $line['post_date'] == NOW())? "<br /><a href='index?p=forum&forum=" . $forum ."&edit=" . $line['id'] ."' style='color:blue;' />[Modifier]</a>": "";
 							
 						?>
-							<tr class="forumrank<?= $ranksel['rank']?>" <?=$isdel?> >
+							<tr class="forumrank<?= $rank?>" <?=$isdel?> >
 								<td valign="top">
 									<p><?= $post?></p>
 								</td>
