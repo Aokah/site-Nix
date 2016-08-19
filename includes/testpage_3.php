@@ -70,6 +70,7 @@
 							$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
 							$del = ($list['del'] == 1)? "<span style='color:red;'>[Supprimé] </span>" : "";
 							
+							
 							$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
 							if ($latest = $latest->fetch())
 							{
@@ -172,7 +173,8 @@
 			$isrp = ($fname['rp'] == 1)? "<span style=\"color:lime;\">[RP]</span> ": "";
 			$isimportant = ($fname['important'] == 1)? "<span style=\"color:gold;\">[Important]</span> ": "";
 			$isdel = ($fname['del'] == 1)? "<span style=\"color:#990000;\">[Supprimé (par ". $dname['name'].")]</span> ": "";
-			$islock = ($fname['locked'] == 1)? "<span style=\"color:#990000;\">[Vérrouillé (par ". $vname['name'].")]</span> ": "";
+			$lockinfo = ($vniew > 5) ? " (par ". $vname['name'].")" : "";
+			$islock = ($fname['locked'] == 1)? "<span style=\"color:#990000;\">[Vérrouillé". $lockinfo ."]</span> ": "";
 			
 			?>
 			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index?p=forum">Forum</a> > <a href="index?p=forum&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <?= $fname['name']?></h4>
