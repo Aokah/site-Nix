@@ -147,6 +147,26 @@
 		$verify->execute(array($forum));
 		$verify = $verify->fetch();
 		
+		if (isset($_POST['sendnew']) AND isset($_POST['newpost']))
+		{	
+			$text = (isset($_POST['newpost']))? htmlspecialchars($_POST['newpost']) : "Message vierge (à supprimer)";
+			$anonyme = (isset($_POST["sendunknow"]) AND $fname['rp'] == 1)? 1 : 0;
+			if ($view > 5)
+			{
+				$text = preg_replace('#(?<!\|)\(b\)([^<>]+)\(/b\)#isU', '<span style="font-weight: bold;">$1</span>', $text);
+				$text = preg_replace('#(?<!\|)\(i\)([^<>]+)\(/i\)#isU', '<span style="font-style: italic;">$1</span>', $text);
+				$text = preg_replace('#(?<!\|)\(u\)([^<>]+)\(/u\)#isU', '<span style="text-decoration: underline;">$1</span>', $text);
+				$text = preg_replace('#(?<!\|)\(a (https?://[a-z0-9._\-/&\?^()]+)\)([^<>]+)\(/a\)#isU', '<a href="$1" style="color: #FF8D1C;">$2</a>', $text);
+				$text = preg_replace('#(?<!\|)\(img (https?://[a-z0-9._\-/&\?^()]+)\)#isU', '<img src="$1" alt=" "/>', $text);
+				$text = preg_replace('#(?<!\|)\(c ([^<>]+)\)([^<>]+)\(/c\)#isU', '<span style="color: $1">$2</span>', $text);
+			}
+			
+			$add = $db->prepare("INSERT INTO forum_post VALUES('', ?, NOW(), ?, ?, ?, 0, 0)");
+			$add->execute(array($text, $_SESSION['id'], $forum, $anonyme));
+			$update = $db->prepare('UPDATE forum_unread SET unread = 0 WHERE forum_id = ?');
+			$update->execute(array($forum));
+		}
+			
 		if ($verify['rank'] <= $view)
 		{
 			$page = (isset($_GET['page']) AND $_GET['page'] > 0)? intval($_GET['page']) : 1;
@@ -173,31 +193,15 @@
 			$isrp = ($fname['rp'] == 1)? "<span style=\"color:lime;\">[RP]</span> ": "";
 			$isimportant = ($fname['important'] == 1)? "<span style=\"color:gold;\">[Important]</span> ": "";
 			$isdel = ($fname['del'] == 1)? "<span style=\"color:#990000;\">[Supprimé (par ". $dname['name'].")]</span> ": "";
-			$lockinfo = ($vniew > 5) ? " (par ". $vname['name'].")" : "";
+			$lockinfo = ($view > 5) ? " (par ". $vname['name'].")" : "";
 			$islock = ($fname['locked'] == 1)? "<span style=\"color:#990000;\">[Vérrouillé". $lockinfo ."]</span> ": "";
 			
 			?>
 			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index?p=forum">Forum</a> > <a href="index?p=forum&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <?= $fname['name']?></h4>
 			
 			<?php
-				if (isset($_POST['sendnew']))
+				if (isset($_POST['sendnew']) AND isset($_POST['newpost']))
 				{
-					$text = (isset($_POST['newpost']))? htmlspecialchars($_POST['newpost']) : "Message vierge (à supprimer)";
-					$anonyme = (isset($_POST["sendunknow"]) AND $fname['rp'] == 1)? 1 : 0;
-					if ($view > 5)
-					{
-						$text = preg_replace('#(?<!\|)\(b\)([^<>]+)\(/b\)#isU', '<span style="font-weight: bold;">$1</span>', $text);
-						$text = preg_replace('#(?<!\|)\(i\)([^<>]+)\(/i\)#isU', '<span style="font-style: italic;">$1</span>', $text);
-						$text = preg_replace('#(?<!\|)\(u\)([^<>]+)\(/u\)#isU', '<span style="text-decoration: underline;">$1</span>', $text);
-						$text = preg_replace('#(?<!\|)\(a (https?://[a-z0-9._\-/&\?^()]+)\)([^<>]+)\(/a\)#isU', '<a href="$1" style="color: #FF8D1C;">$2</a>', $text);
-						$text = preg_replace('#(?<!\|)\(img (https?://[a-z0-9._\-/&\?^()]+)\)#isU', '<img src="$1" alt=" "/>', $text);
-						$text = preg_replace('#(?<!\|)\(c ([^<>]+)\)([^<>]+)\(/c\)#isU', '<span style="color: $1">$2</span>', $text);
-					}
-					
-					$add = $db->prepare("INSERT INTO forum_post VALUES('', ?, NOW(), ?, ?, ?, 0, 0)");
-					$add->execute(array($text, $_SESSION['id'], $forum, $anonyme));
-					$update = $db->prepare('UPDATE forum_unread SET unread = 0 WHERE forum_id = ?');
-					$update->execute(array($forum));
 					echo "Message envoyé avec succès !";
 				}
 			?>
