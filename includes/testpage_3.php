@@ -69,7 +69,7 @@
 						$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
 						if ($latest = $latest->fetch())
 						{
-							if ($list['unknow'] == 1)
+							if ($latest['unknow'] == 0)
 							{
 								$member = $db->prepare('SELECT * FROM members WHERE id = ?'); $member->execute(array($latest['user_id']));
 								$member = $member->fetch();
