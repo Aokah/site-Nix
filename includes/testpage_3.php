@@ -108,7 +108,7 @@
 								$last = "Aucun message dans ce forum.";
 							}
 						?>
-						<tr class="forumf">
+						<tr class="forumf" style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
 							<td <?= $read?>>
 								<?php 
 								if ($view > 5)
@@ -333,7 +333,7 @@
 							$last = "Aucun message dans ce forum.";
 						}
 					?>
-					<tr class="forumf">
+					<tr class="forumf" style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
 						<td <?= $read?>>
 							<?php 
 							if ($view > 5)
