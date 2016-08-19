@@ -425,7 +425,7 @@
 							<td>
 								<div width="100%" align="center">
 									<?
-									if (isset($_GET['edit'])
+									if (isset($_GET['edit']))
 									{
 									?>
 									<form action="index?p=forum&forum=<?= $forum?>&page=<?= $page?>&edit=<?= $edit['id']?>" method="POST">
