@@ -149,12 +149,32 @@
 		
 		if ($verify['rank'] <= $view)
 		{
-			$page = (isset($_GET['page']))? intval($_GET['page']) : 1;
+			$page = (isset($_GET['page']) AND $_GET['page'] > 0)? intval($_GET['page']) : 1;
 			$fname = $db->prepare('SELECT fc.id, fc.name AS fc_name, ff.name, ff.id AS ff_id, ff.category, ff.locker_id, ff.deleter_id, ff.rp, ff.important, ff.del, ff.locked FROM forum_category fc
 			RIGHT JOIN forum_forum ff ON fc.id = ff.category
 			WHERE ff.id = ?');
 			$fname->execute(array($forum));
 			$fname = $fname->fetch();
+			
+			if (isset($_GET['sendnew']))
+			{
+				$text = htmlspecialchars($_POST['newpost']);
+				$anonyme = (isset($_POST["sendunknow"]) AND $fname['rp'] == 1)? 1 : 0;
+				if ($view > 5)
+				{
+					$text = preg_replace('#(?<!\|)\(b\)([^<>]+)\(/b\)#isU', '<span style="font-weight: bold;">$1</span>', $text);
+					$text = preg_replace('#(?<!\|)\(i\)([^<>]+)\(/i\)#isU', '<span style="font-style: italic;">$1</span>', $text);
+					$text = preg_replace('#(?<!\|)\(u\)([^<>]+)\(/u\)#isU', '<span style="text-decoration: underline;">$1</span>', $text);
+					$text = preg_replace('#(?<!\|)\(a (https?://[a-z0-9._\-/&\?^()]+)\)([^<>]+)\(/a\)#isU', '<a href="$1" style="color: #FF8D1C;">$2</a>', $text);
+					$text = preg_replace('#(?<!\|)\(img (https?://[a-z0-9._\-/&\?^()]+)\)#isU', '<img src="$1" alt=" "/>', $text);
+					$text = preg_replace('#(?<!\|)\(c ([^<>]+)\)([^<>]+)\(/c\)#isU', '<span style="color: $1">$2</span>', $text);
+				}
+				
+				$add = $db->prepare("INSERT INTO forum_post VALUES('', ?, NOW(), ?, ?, ?, 0, 0)");
+				$add->execute(array($text, $_SESSION['id'], $forum, $anonyme));
+				$update = $db->prepare('UPDATE forum_unread SET unread = 0 WHERE forum_id = ?');
+				$update->execute(array($forum));
+			}
 			
 			if ($view < 6)
 			{
@@ -231,7 +251,7 @@
 							</tr>
 						<?php		
 						}
-						$anonymebutton = ($line['rp'] == 1) ? "<label for='senunknow'>Envoyer ensans signature</label> <input type='check' name='sendunknow' id='sendunknow' /><br />" : "";
+						$anonymebutton = ($line['rp'] == 1) ? "<label for='sendunknow'>Envoyer ensans signature</label> <input type='check' name='sendunknow' id='sendunknow' /><br />" : "";
 						?>
 						<tr>
 							<td>
