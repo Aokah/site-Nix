@@ -87,10 +87,10 @@
 							
 						?>
 							<tr class="forumrank<?= $ranksel['rank']?>" <?=$isdel?> >
-								<td align="top">
+								<td valign="top">
 									<p><?= $post?></p>
 								</td>
-								<td align="top">
+								<td valign="top">
 									<?= $img, $a , $title , " ", $user, $aend ,"<br />" , $date, $delmsg; ?>
 								</td>
 							</tr>
