@@ -13,7 +13,7 @@
 		{
 			$update = $db->prepare('UPDATE forum_forum SET important = 1 WHERE id = ?');
 			$update->execute(array($cat));
-			$msg "Le sujet a bien été défini comme important !";
+			$msg = "Le sujet a bien été défini comme important !";
 		}
 		elseif (isset($_GET['norm']))
 		{
