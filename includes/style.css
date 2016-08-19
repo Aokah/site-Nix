@@ -305,20 +305,6 @@ li.navbg:hover {
 	margin: 20px;
 }
 
-/* Classes relatives aux forums */
-
-.forumrank0		{	background-color: rgba(0, 0, 0, 0.0);	}
-.forumrank1		{	background-color: rgba(0, 0, 0, 0.1);	}
-.forumrank2		{	background-color: rgba(0, 0, 0, 0.2);	}
-.forumrank3		{	background-color: rgba(0, 0, 0, 0.3);	}
-.forumrank4		{	background-color: rgba(0, 0, 0, 0.4);	}
-.forumrank5		{	background-color: rgba(0, 0, 0, 0.5);	}
-.forumrank6		{	background-color: rgba(0, 0, 0, 0.6);	}
-.forumrank7		{	background-color: rgba(0, 0, 0, 0.7);	color: white;	}
-.forumrank8		{	background-color: rgba(0, 0, 0, 0.8);	color: white;	}
-.forumrank9		{	background-color: rgba(0, 0, 0, 0.9);	color: white;	}
-.forumrank10		{	background-color: rgba(0, 0, 0, 1);	color: white;	}
-
 /* Classes sur la magie */
 .magie			{	border-radius: 10px;	}
 .magie_tab		{	padding-left: 10%; padding-right: 10%; }
@@ -355,10 +341,12 @@ li.navbg:hover {
 .forumrank4		{	background-color: rgba(0, 0, 0, 0.4);	}
 .forumrank5		{	background-color: rgba(0, 0, 0, 0.5);	}
 .forumrank6		{	background-color: rgba(0, 0, 0, 0.6);	}
-.forumrank7		{	background-color: rgba(0, 0, 0, 0.7);	}
-.forumrank8		{	background-color: rgba(0, 0, 0, 0.8);	}
-.forumrank9		{	background-color: rgba(0, 0, 0, 0.9);	}
-.forumrank10	{	background-color: rgba(0, 0, 0, 1);		}
+.forumrank7		{	background-color: rgba(0, 0, 0, 0.7);	color: white;	}
+.forumrank8		{	background-color: rgba(0, 0, 0, 0.8);	color: white;	}
+.forumrank9		{	background-color: rgba(0, 0, 0, 0.9);	color: white;	}
+.forumrank10		{	background-color: rgba(0, 0, 0, 1);	color: white;	}
+
+.forumbg		{	background-color: #514628;	}
 
 #categories 	
 {
@@ -374,7 +362,7 @@ li.navbg:hover {
 #categories .last_post 	{	width: 25%;							}
 #categories table			{	padding-left: 15px;					}
 #categories th 			{	text-align: left;					}
-.unread					{	background-color: #adadad;			}
+.unread					{	background-color: #867142;			}
 .forum tr td	
 {
 	border-bottom: 2px solid #2d2d2d;
