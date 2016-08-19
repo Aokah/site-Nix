@@ -80,7 +80,7 @@
 								$img = "";
 							}
 							$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $line['post_date']);
-							$isdel = ($line['del'] === 1)? "style='background-color:rgba(70,0,0,.5);'" : "";
+							$isdel = ($line['del'] == 1)? "style='background-color:rgba(70,0,0,.5);'" : "";
 							$deleter = $db->prepare('SELECT name, id FROM members WHERE id = ?');
 							$deleter->execute(array($line['deleter_id'])); $del = $deleter->fetch();
 							$delmsg = ($line['del'] == 1)? "<br />(Message Supprimé par " . $del['name'] .")" : "" ;
@@ -91,7 +91,7 @@
 									<p><?= $post?></p>
 								</td>
 								<td valign="top">
-									<?= $img, " " , $a , $title , " ", $user, $aend ,"<br />" , $date, $delmsg, $isdel; ?>
+									<?= $img, " " , $a , $title , " ", $user, $aend ,"<br />" , $date, $delmsg; ?>
 								</td>
 							</tr>
 						<?php		
