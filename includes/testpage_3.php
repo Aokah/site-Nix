@@ -108,7 +108,7 @@
 								$last = "Aucun message dans ce forum.";
 							}
 						?>
-						<tr class="memberbg_5">
+						<tr class="forumf">
 							<td <?= $read?>>
 								<?php 
 								if ($view > 5)
@@ -248,7 +248,7 @@
 	{
 		$select = $db->prepare('SELECT * FROM forum_category WHERE \'group\' = 0 AND rank <= ? ORDER BY rank ASC, name ASC'); $select->execute(array($view));
 		?>
-		<div width="100%" style="padding:1%" class="memberbg_7">
+		<div width="100%" style="padding:1%" class="forumbg">
 			<?php
 			while ($line = $select->fetch())
 			{
@@ -333,7 +333,7 @@
 							$last = "Aucun message dans ce forum.";
 						}
 					?>
-					<tr class="memberbg_5">
+					<tr class="forumf">
 						<td <?= $read?>>
 							<?php 
 							if ($view > 5)
