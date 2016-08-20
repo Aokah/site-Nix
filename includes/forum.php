@@ -334,7 +334,7 @@
 			}
 			else
 			{
-				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY post_date ASC');
+				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY post_date ASC LIMIT 1, 5');
 				$select->execute(array($forum));
 			}
 			$dname = $db->prepare('SELECT id,name FROM members WHERE id = ?'); $dname->execute(array($fname['deleter_id']));
