@@ -341,7 +341,7 @@
 			{
 				$fcount = $db->prepare('SELECT COUNT(*) AS pages FROM forum_post WHERE forum_id = ?'); $fcount->execute(array($forum));
 				$count = $fcount->fetch();
-				$plimit = floor($count['pages'] / 10); echo $plimit, $count['pages'];
+				$plimit = ceil($count['pages'] / 10);
 				$page = ($page > $plimit)? $plimit : $page;
 				$pmin = ($page*10)-10;
 				$pmax = $page*10;
