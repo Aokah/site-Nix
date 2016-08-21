@@ -329,13 +329,14 @@
 			
 			if ($view < 6)
 			{
-				$fcount = $db->prepare('SELECT COUNT(*) AS pages FROM forum_post WHERE forum_id = ? AND del= 0'); $fcount->execute(array($forum));
-				$fcount = $fcount->fetch();
+				$fcount = $db->prepare('SELECT COUNT(*) AS pages FROM forum_post WHERE forum_id = ? AND del = 0'); $fcount->execute(array($forum));
+				$count = $fcount->fetch();
+				$plimit = ceil($count['pages'] / 10);
+				$page = ($page > $plimit)? $plimit : $page;
 				$pmin = ($page*10)-10;
 				$pmax = $page*10;
 				
-				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY post_date ASC');
-				$select->execute(array($forum));
+				$select = $db->query("SELECT * FROM forum_post WHERE forum_id = $forum AND del = 0 ORDER BY post_date ASC LIMIT $pmin , $pmax");
 			}
 			else
 			{
