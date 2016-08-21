@@ -333,6 +333,11 @@
 				$fcount = $fcount->fetch();
 				$pmin = ($page*10)-10;
 				$pmax = $page*10;
+				$select = $db->prepare("SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY post_date ASC LIMIT ?, ?");
+				$select->bindValue('forum', $forum, PDO::PARAM_INT);
+				$select->bindValue('pmin', $pmin, PDO::PARAM_INT);
+				$select->bindValue('pmax', $max, PDO::PARAM_INT);
+				$select->execute();
 				
 				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY post_date ASC');
 				$select->execute(array($forum));
@@ -344,8 +349,11 @@
 				$pmin = ($page*10)-10;
 				$pmax = $page*10;
 				
-				$select = $db->prepare("SELECT * FROM forum_post WHERE forum_id = ? ORDER BY post_date ASC LIMIT 0, 10");
-				$select->execute(array($forum));
+				$select = $db->prepare("SELECT * FROM forum_post WHERE forum_id = ? ORDER BY post_date ASC LIMIT ?, ?");
+				$select->bindValue('forum', $forum, PDO::PARAM_INT);
+				$select->bindValue('pmin', $pmin, PDO::PARAM_INT);
+				$select->bindValue('pmax', $max, PDO::PARAM_INT);
+				$select->execute();
 			}
 			$dname = $db->prepare('SELECT id,name FROM members WHERE id = ?'); $dname->execute(array($fname['deleter_id']));
 			$dname = $dname->fetch();
