@@ -349,10 +349,8 @@
 				$pmax = $page*10;
 				
 				$select = $db->prepare("SELECT * FROM forum_post WHERE forum_id = :forum ORDER BY post_date ASC LIMIT :pmin, :pmax");
-				$select->bindValue('forum', $forum, PDO::PARAM_INT);
-				$select->bindValue('pmin', $pmin, PDO::PARAM_INT);
-				$select->bindValue('pmax', $max, PDO::PARAM_INT);
-				$select->execute();
+				$select->bindValue('forum', $forum, PDO::PARAM_INT, 'pmin', $pmin, PDO::PARAM_INT, 'pmax', $max, PDO::PARAM_INT);
+					$select->execute();
 			}
 			$dname = $db->prepare('SELECT id,name FROM members WHERE id = ?'); $dname->execute(array($fname['deleter_id']));
 			$dname = $dname->fetch();
