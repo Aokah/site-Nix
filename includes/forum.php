@@ -333,10 +333,6 @@
 				$fcount = $fcount->fetch();
 				$pmin = ($page*10)-10;
 				$pmax = $page*10;
-				$select = $db->prepare("SELECT * FROM forum_post WHERE forum_id = :forum ORDER BY post_date ASC LIMIT :pmin, :pmax");
-				$select->bindValue('forum', $forum, PDO::PARAM_INT, 'pmin', $pmin, PDO::PARAM_INT, 'pmax', $max, PDO::PARAM_INT);
-				
-				$select->execute();
 				
 				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY post_date ASC');
 				$select->execute(array($forum));
@@ -345,6 +341,8 @@
 			{
 				$fcount = $db->prepare('SELECT COUNT(*) AS pages FROM forum_post WHERE forum_id = ?'); $fcount->execute(array($forum));
 				$fcount = $fcount->fetch();
+				$plimit = floor($fcount['pages'] / 10);
+				$page = ($page > $plimit)? $plimit : $page;
 				$pmin = ($page*10)-10;
 				$pmax = $page*10;
 				
