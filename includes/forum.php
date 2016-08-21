@@ -344,8 +344,8 @@
 				$pmin = ($page*10)-10;
 				$pmax = $page*10;
 				
-				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? LIMIT ?, ? ORDER BY post_date ASC');
-				$select->execute(array($forum,$pmin, $pmax));
+				$select = $db->prepare("SELECT * FROM forum_post WHERE forum_id = ? ORDER BY post_date ASC LIMIT $pmin, $pmax");
+				$select->execute(array($forum));
 			}
 			$dname = $db->prepare('SELECT id,name FROM members WHERE id = ?'); $dname->execute(array($fname['deleter_id']));
 			$dname = $dname->fetch();
