@@ -334,9 +334,8 @@
 				$pmin = ($page*10)-10;
 				$pmax = $page*10;
 				$select = $db->prepare("SELECT * FROM forum_post WHERE forum_id = :forum ORDER BY post_date ASC LIMIT :pmin, :pmax");
-				$select->bindValue('forum', $forum, PDO::PARAM_INT);
-				$select->bindValue('pmin', $pmin, PDO::PARAM_INT);
-				$select->bindValue('pmax', $max, PDO::PARAM_INT);
+				$select->bindValue('forum', $forum, PDO::PARAM_INT, 'pmin', $pmin, PDO::PARAM_INT, 'pmax', $max, PDO::PARAM_INT);
+				
 				$select->execute();
 				
 				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY post_date ASC');
