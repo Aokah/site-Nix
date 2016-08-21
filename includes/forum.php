@@ -333,7 +333,7 @@
 				$fcount = $fcount->fetch();
 				$pmin = ($page*10)-10;
 				$pmax = $page*10;
-				$select = $db->prepare("SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY post_date ASC LIMIT ?, ?");
+				$select = $db->prepare("SELECT * FROM forum_post WHERE forum_id = :forum ORDER BY post_date ASC LIMIT :pmin, :pmax");
 				$select->bindValue('forum', $forum, PDO::PARAM_INT);
 				$select->bindValue('pmin', $pmin, PDO::PARAM_INT);
 				$select->bindValue('pmax', $max, PDO::PARAM_INT);
@@ -349,7 +349,7 @@
 				$pmin = ($page*10)-10;
 				$pmax = $page*10;
 				
-				$select = $db->prepare("SELECT * FROM forum_post WHERE forum_id = ? ORDER BY post_date ASC LIMIT ?, ?");
+				$select = $db->prepare("SELECT * FROM forum_post WHERE forum_id = :forum ORDER BY post_date ASC LIMIT :pmin, :pmax");
 				$select->bindValue('forum', $forum, PDO::PARAM_INT);
 				$select->bindValue('pmin', $pmin, PDO::PARAM_INT);
 				$select->bindValue('pmax', $max, PDO::PARAM_INT);
