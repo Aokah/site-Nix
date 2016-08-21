@@ -329,14 +329,23 @@
 			
 			if ($view < 6)
 			{
+				$fcount = $db->prepare('SELECT COUNT(*) AS pages FROM forum_post WHERE forum_id = ? AND del= 0'); $fcount->execute(array($forum));
+				$fcount = $fcount->fetch();
+				$pmin = (1 + ($page*10)-10);
+				$pmax = 1 + ($page*10);
+				
 				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? AND del = 0 ORDER BY post_date ASC');
 				$select->execute(array($forum));
 			}
 			else
 			{
+				$fcount = $db->prepare('SELECT COUNT(*) AS pages FROM forum_post WHERE forum_id = ?'); $fcount->execute(array($forum));
+				$fcount = $fcount->fetch();
+				$pmin = (1 + ($page*10)-10);
+				$pmax = 1 + ($page*10);
 				
 				$select = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY post_date ASC LIMIT ?, ?');
-				$select->execute(array($forum));
+				$select->execute(array($forum,$pmin, $pmax));
 			}
 			$dname = $db->prepare('SELECT id,name FROM members WHERE id = ?'); $dname->execute(array($fname['deleter_id']));
 			$dname = $dname->fetch();
