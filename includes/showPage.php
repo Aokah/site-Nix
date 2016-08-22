@@ -143,6 +143,7 @@
 							case 'relics': 				{ 	include('includes/relics.php'); 				relics(); 				break; }
 							case 'cb': 			{ 	include('includes/cb_new.php'); 				cb_new(); 				break; }
 							case 'ipsearch': 			{ 	include('includes/search_ip.php'); 				search_ip(); 				break; }
+							case 'forumg': 			{ 	include('includes/forum_g.php'); 				forum_g(); 				break; }
 						
 						} 
 						?>
