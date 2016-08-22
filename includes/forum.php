@@ -63,7 +63,7 @@
 		$cat = intval($_GET['cat']);
 		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ?'); $verify->execute(array($cat));
 		$verify = $verify->fetch();
-		if ($verify['group'] == 0)
+		if ($verify['guild'] == 0)
 		{
 			if (isset($_POST['sendsubject']) AND isset($_POST['newsubject']))
 			{
@@ -511,7 +511,7 @@
 	}
 	else
 	{
-		$select = $db->prepare('SELECT * FROM forum_category WHERE \'group\' = 0 AND rank <= ? ORDER BY rank ASC, name ASC'); $select->execute(array($view));
+		$select = $db->prepare('SELECT * FROM forum_category WHERE guild = 0 AND rank <= ? ORDER BY rank ASC, name ASC'); $select->execute(array($view));
 		?>
 		<div width="100%" style="padding:1%" class="forumbg">
 			<?php
