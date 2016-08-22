@@ -373,23 +373,23 @@
 				}
 				$ppage = $page-1;
 				$npage = $page+1;
-				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=1\" title=\"Première Page\">[<<] </a>" : "<span style='color:red'>[<<]</span>";
+				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=1\" title=\"Première Page\">[<<] </a>" : "<span style='color:red'>[<<] </span>";
 				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $ppage ."\" title=\"Page Précédente\">[<]</a>" : "<span style='color:red'>[<]</span>";
-				$next = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $npage ."\" title=\"Page Suivante\"> [>]</a>" : "<span style='color:red'>[>]</span>";
-				$last = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $plimit ."\" title=\"Dernière Page\"> [>>]</a>" : "<span style='color:red'>[>>]</span>";
+				$next = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $npage ."\" title=\"Page Suivante\"> [>]</a>" : "<span style='color:red'> [>]</span>";
+				$last = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $plimit ."\" title=\"Dernière Page\"> [>>]</a>" : "<span style='color:red'> [>>]</span>";
 			?>
 			
 				<table cellspacing="1" cellpadding="5" width="90%" align="center">
 					<tbody>
-						<tr class="member_top">
-							<th>Message</th> <th width="25%">Envoyé par :</th>
-						</tr>
 						<tr>
 							<td colspan="2">
 								<div align="right">
 									<?= $first, $preview, $next, $last; ?>
 								</div>
 							</td>
+						</tr>
+						<tr class="member_top">
+							<th>Message</th> <th width="25%">Envoyé par :</th>
 						</tr>
 						<?php
 						while ($line = $select->fetch())
