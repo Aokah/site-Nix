@@ -242,8 +242,7 @@
 							</tbody>
 						</table>
 					</div>
-					<?php
-				}
+				<?php
 			}
 		}
 		else
