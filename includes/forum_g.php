@@ -164,85 +164,86 @@
 									{
 										$slock= "<a href=\"index?p=forum&cat". $cat. "&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
 									}
-								$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
-								$del = ($list['del'] == 1)? "<span style='color:red;'>[Supprimé] </span>" : "";
-								
-								
-								$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
-								if ($latest = $latest->fetch())
-								{
-									if ($latest['unknow'] == 0)
+									$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
+									$del = ($list['del'] == 1)? "<span style='color:red;'>[Supprimé] </span>" : "";
+									
+									
+									$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
+									if ($latest = $latest->fetch())
 									{
-										$member = $db->prepare('SELECT * FROM members WHERE id = ?'); $member->execute(array($latest['user_id']));
-										$member = $member->fetch();
-										$title = $member['title'];
-										$title = ($member['pionier']== 1)? "Pionier" : $title;
-										$title = ($member['ban'] == 1)? "Banni" : $title;
-										$title = ($members['removed'] == 1)? "Oublié" : $title;
-										$user = $member['name'];
-										$tech = ($member['technician'] == 1)? "-T" : "";
-										$pionier = ($member['pionier'] == 1)? "-P" : "";
-										$color = $member['rank']. "" . $tech. "" . $pionier;
-										$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>";
-										$aend = "</a>";
-										$img = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' />";
+										if ($latest['unknow'] == 0)
+										{
+											$member = $db->prepare('SELECT * FROM members WHERE id = ?'); $member->execute(array($latest['user_id']));
+											$member = $member->fetch();
+											$title = $member['title'];
+											$title = ($member['pionier']== 1)? "Pionier" : $title;
+											$title = ($member['ban'] == 1)? "Banni" : $title;
+											$title = ($members['removed'] == 1)? "Oublié" : $title;
+											$user = $member['name'];
+											$tech = ($member['technician'] == 1)? "-T" : "";
+											$pionier = ($member['pionier'] == 1)? "-P" : "";
+											$color = $member['rank']. "" . $tech. "" . $pionier;
+											$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>";
+											$aend = "</a>";
+											$img = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' />";
+										}
+										else
+										{
+											$title = "Message";
+											$user = "Anonyme";
+											$color = "1";
+											$a = "<span class='name" . $color . "'>";
+											$aend = "</span>";
+											$img = "";
+										}
+										$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['post_date']);
+										
+										$last = $img ." ". $a ."" . $title . " ". $user. "". $aend ."<br />" . $date ."";
 									}
 									else
 									{
-										$title = "Message";
-										$user = "Anonyme";
-										$color = "1";
-										$a = "<span class='name" . $color . "'>";
-										$aend = "</span>";
-										$img = "";
+										$last = "Aucun message dans ce forum.";
 									}
-									$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['post_date']);
-									
-									$last = $img ." ". $a ."" . $title . " ". $user. "". $aend ."<br />" . $date ."";
-								}
-								else
-								{
-									$last = "Aucun message dans ce forum.";
-								}
-							?>
-							<tr class="forumf">
-								<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
-									<?php 
-									if ($view > 5)
-									{
-										echo $sdel, " ", $imp, " ", $srp, " ", $slock?> |
-									<?
-									}
-									?>
-									<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$del, $important, $rp , $list['name']?></a>
-								</td>
-								
-								<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
-							</tr>
-							<?php
-							}
-							if ($view > 0)
-							{
-								$importantbutton = ($view > 5)? "<br /><label for='setImp'>Considérer le nouveau sujet comme Important : </label><input type='checkbox' name='setImp' id='setImp' />": "";
 								?>
-								<tr>
-									<td>
-										<form action="index?p=forum&cat=<?= $cat?>" method="POST">
-											<label for="newsubject">Nouveau sujet : </label><input type="text" name="newsubject" id="newsubject" width="65%" />
-											<input type="submit" name="sendsubject" value="Créer"/><br />
-											<label for="setRP">Considérer le nouveau sujet comme Rôleplay :</label> <input type="checkbox" id="setRP" name="setRP" />
-											<?= $importantbutton ?>
-										</form>
+								<tr class="forumf">
+									<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
+										<?php 
+										if ($view > 5)
+										{
+											echo $sdel, " ", $imp, " ", $srp, " ", $slock?> |
+										<?
+										}
+										?>
+										<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$del, $important, $rp , $list['name']?></a>
 									</td>
 									
+									<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
 								</tr>
-							<?php
-							}
-							?>
-						</tbody>
-					</table>
-				</div>
-				<?php
+								<?php
+								}
+								if ($view > 0)
+								{
+									$importantbutton = ($view > 5)? "<br /><label for='setImp'>Considérer le nouveau sujet comme Important : </label><input type='checkbox' name='setImp' id='setImp' />": "";
+									?>
+									<tr>
+										<td>
+											<form action="index?p=forum&cat=<?= $cat?>" method="POST">
+												<label for="newsubject">Nouveau sujet : </label><input type="text" name="newsubject" id="newsubject" width="65%" />
+												<input type="submit" name="sendsubject" value="Créer"/><br />
+												<label for="setRP">Considérer le nouveau sujet comme Rôleplay :</label> <input type="checkbox" id="setRP" name="setRP" />
+												<?= $importantbutton ?>
+											</form>
+										</td>
+										
+									</tr>
+								<?php
+								}
+								?>
+							</tbody>
+						</table>
+					</div>
+					<?php
+				}
 			}
 		}
 		else
