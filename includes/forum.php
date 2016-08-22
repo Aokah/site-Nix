@@ -5,55 +5,58 @@
 	echo "<h3>Forums</h3>";
 	
 	$view = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 0;
+		if ($view > 4)
+		{
+			if (isset($_GET['imp']))
+			{
+				$update = $db->prepare('UPDATE forum_forum SET important = 1 WHERE id = ?');
+				$update->execute(array($_GET['imp']));
+				$msg = "Le sujet a bien été défini comme important !";
+			}
+			elseif (isset($_GET['norm']))
+			{
+				$update = $db->prepare('UPDATE forum_forum SET important = 0 WHERE id = ?');
+				$update->execute(array($_GET['norm']));
+				$msg = "Le sujet a bien été défini comme standard.";
+			}
+			elseif (isset($_GET['rp']))
+			{
+				$update = $db->prepare('UPDATE forum_forum SET rp = 1 WHERE id = ?');
+				$update->execute(array($_GET['rp']));
+				$msg =  "Le sujet a bien été rendu RP !";
+			}
+			elseif (isset($_GET['hrp']))
+			{
+				$update = $db->prepare('UPDATE forum_forum SET rp = 0 WHERE id = ?');
+				$update->execute(array($_GET['hrp']));
+				$msg = "Le sujet a bien été rendu HRP.";
+			}
+			elseif (isset($_GET['lock']))
+			{
+				$update = $db->prepare('UPDATE forum_forum SET locked = 1, locker_id = ? WHERE id = ?');
+				$update->execute(array($_SESSION['id'], $_GET['lock']));
+				$msg = "Le sujet a bien été vérouillé.";
+			}
+			elseif (isset($_GET['unlock']))
+			{
+				$update = $db->prepare('UPDATE forum_forum SET locked = 0, locker_id = 0 WHERE id = ?');
+				$update->execute(array($_GET['unlock']));
+				$msg = "Le sujet a bien été déverrouillé !";
+			}
+			elseif (isset($_GET['del']))
+			{
+				$update = $db->prepare('UPDATE forum_forum SET del = 1, deleter_id = ? WHERE id = ?');
+				$update->execute(array($_SESSION['id'], $_GET['del']));
+				$msg = "Le sujet a bien été supprimé.";
+			}
+			elseif (isset($_GET['rest']))
+			{
+				$update = $db->prepare('UPDATE forum_forum SET del = 0, deleter_id = 0 WHERE id = ?');
+				$update->execute(array($_GET['rest']));
+				$msg = "Le sujet a bien été réstauré !";
+			}
+		}
 		
-		if (isset($_GET['imp']))
-		{
-			$update = $db->prepare('UPDATE forum_forum SET important = 1 WHERE id = ?');
-			$update->execute(array($_GET['imp']));
-			$msg = "Le sujet a bien été défini comme important !";
-		}
-		elseif (isset($_GET['norm']))
-		{
-			$update = $db->prepare('UPDATE forum_forum SET important = 0 WHERE id = ?');
-			$update->execute(array($_GET['norm']));
-			$msg = "Le sujet a bien été défini comme standard.";
-		}
-		elseif (isset($_GET['rp']))
-		{
-			$update = $db->prepare('UPDATE forum_forum SET rp = 1 WHERE id = ?');
-			$update->execute(array($_GET['rp']));
-			$msg =  "Le sujet a bien été rendu RP !";
-		}
-		elseif (isset($_GET['hrp']))
-		{
-			$update = $db->prepare('UPDATE forum_forum SET rp = 0 WHERE id = ?');
-			$update->execute(array($_GET['hrp']));
-			$msg = "Le sujet a bien été rendu HRP.";
-		}
-		elseif (isset($_GET['lock']))
-		{
-			$update = $db->prepare('UPDATE forum_forum SET locked = 1, locker_id = ? WHERE id = ?');
-			$update->execute(array($_SESSION['id'], $_GET['lock']));
-			$msg = "Le sujet a bien été vérouillé.";
-		}
-		elseif (isset($_GET['unlock']))
-		{
-			$update = $db->prepare('UPDATE forum_forum SET locked = 0, locker_id = 0 WHERE id = ?');
-			$update->execute(array($_GET['unlock']));
-			$msg = "Le sujet a bien été déverrouillé !";
-		}
-		elseif (isset($_GET['del']))
-		{
-			$update = $db->prepare('UPDATE forum_forum SET del = 1, deleter_id = ? WHERE id = ?');
-			$update->execute(array($_SESSION['id'], $_GET['del']));
-			$msg = "Le sujet a bien été supprimé.";
-		}
-		elseif (isset($_GET['rest']))
-		{
-			$update = $db->prepare('UPDATE forum_forum SET del = 0, deleter_id = 0 WHERE id = ?');
-			$update->execute(array($_GET['rest']));
-			$msg = "Le sujet a bien été réstauré !";
-		}
 		
 	if (isset($_GET['cat']))
 	{
@@ -253,7 +256,7 @@
 		{	
 			$text = (isset($_POST['newpost']))? htmlspecialchars($_POST['newpost']) : "Message vierge (à supprimer)";
 			$anonyme = (isset($_POST["sendunknow"]) AND $fname['rp'] == 1)? 1 : 0;
-			if ($view > 5)
+			if ($view > 4)
 			{
 				$text = preg_replace('#(?<!\|)\(b\)([^<>]+)\(/b\)#isU', '<span style="font-weight: bold;">$1</span>', $text);
 				$text = preg_replace('#(?<!\|)\(i\)([^<>]+)\(/i\)#isU', '<span style="font-style: italic;">$1</span>', $text);
@@ -270,7 +273,7 @@
 		}
 		elseif (isset($_GET['del']))
 		{
-			if ($view > 5)
+			if ($view > 4)
 			{
 				$delete = intval($_GET['del']);
 				$del = $db->prepare('UPDATE forum_post SET del = 1, deleter_id = ? WHERE id = ?');
@@ -294,7 +297,7 @@
 			if (isset($_POST['editpost']))
 			{
 				$text = htmlspecialchars($_POST['newpost']);
-				if ($view > 5)
+				if ($view > 4)
 				{
 					$text = preg_replace('#(?<!\|)\(b\)([^<>]+)\(/b\)#isU', '<span style="font-weight: bold;">$1</span>', $text);
 					$text = preg_replace('#(?<!\|)\(i\)([^<>]+)\(/i\)#isU', '<span style="font-style: italic;">$1</span>', $text);
@@ -311,7 +314,7 @@
 			{
 				$presel = $db->prepare('SELECT * FROM forum_post WHERE id = ?'); $presel->execute(array($edit));
 				$edit = $presel->fetch();
-				if ($view > 5 OR $edit['date_post'] == NOW())
+				if ($view > 4 OR $edit['date_post'] == NOW())
 				{
 					$emsg = $edit['post'];
 				}
