@@ -13,7 +13,7 @@
 				$flist->execute(array($line['id']));
 				
 				$precount = $db->prepare('SELECT * FROM forum_forum WHERE del = 0 AND category = ?');
-				$precount->execture(array($line['id'])); $presel = $precount->fetch();
+				$precount->execute(array($line['id'])); $presel = $precount->fetch();
 				$preselect = $db->prepare('SELECT fu.id, fu.user_id, fu.forum_id, fu.page, fu.page, fp.forum_id, fp.post_date
 				FROM forum_unread fu
 				RIGHT JOIN forum_post fp ON fp.forum_id = fu.forum_id
