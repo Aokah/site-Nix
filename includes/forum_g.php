@@ -19,7 +19,7 @@
 				$update->execute(array($_GET['norm']));
 				$msg = "Le sujet a bien été défini comme standard.";
 			}
-			elseif (isset($_GET['rp']))
+			elseif (isset($_GET['rp'])) 
 			{
 				$update = $db->prepare('UPDATE forum_forum SET rp = 1 WHERE id = ?');
 				$update->execute(array($_GET['rp']));
