@@ -24,6 +24,7 @@
 	{
 		$page = $db->prepare('UPDATE forum_unread SET page = ?');
 		$page->execute(array($curpage));
+	}
 }
 function post()
 {
