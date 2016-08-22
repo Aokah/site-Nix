@@ -278,7 +278,7 @@
 			$update = $db->prepare('UPDATE forum_unread SET unread = 0 WHERE forum_id = ?');
 			$update->execute(array($forum));
 			
-			include ('includes/forum_alert.php'); post();
+			include ('includes/forum_post.php'); post();
 		}
 		elseif (isset($_GET['del']))
 		{
