@@ -457,17 +457,18 @@
 									?>
 								</td>
 							</tr>
-							<tr>
+							
+						<?php		
+						}
+						$anonymebutton = ($line['rp'] == 1) ? "<label for='sendunknow'>Envoyer ensans signature</label> <input type='check' name='sendunknow' id='sendunknow' /><br />" : "";
+						?>
+						<tr>
 							<td colspan="2">
 								<div align="right">
 									<?= $first, $preview, $next, $last; ?>
 								</div>
 							</td>
 						</tr>
-						<?php		
-						}
-						$anonymebutton = ($line['rp'] == 1) ? "<label for='sendunknow'>Envoyer ensans signature</label> <input type='check' name='sendunknow' id='sendunknow' /><br />" : "";
-						?>
 						<tr>
 							<td>
 								<?php if ($page == $plimit)
