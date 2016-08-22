@@ -277,6 +277,8 @@
 			$add->execute(array($text, $_SESSION['id'], $forum, $anonyme));
 			$update = $db->prepare('UPDATE forum_unread SET unread = 0 WHERE forum_id = ?');
 			$update->execute(array($forum));
+			
+			include ('includes/forum_alert.php'); post();
 		}
 		elseif (isset($_GET['del']))
 		{
