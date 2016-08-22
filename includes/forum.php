@@ -375,6 +375,8 @@
 			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index?p=forum">Forum</a> > <a href="index?p=forum&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <?= $fname['name']?></h4>
 			
 			<?php
+			include ("includes/forum_alert.php"); unread();
+			
 				if (isset($_POST['sendnew']) AND isset($_POST['newpost']))
 				{
 					echo "Message envoyé avec succès !";
