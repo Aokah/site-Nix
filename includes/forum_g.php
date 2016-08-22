@@ -519,7 +519,7 @@
 			while ($line = $select->fetch())
 			{
 				$verif = $db->prepare('SELECT * FROM group_members WHERE group_id = ? AND user_id = ? AND user_rank > 0');
-				$verif = $db->execute(array($line['group'], $_SESSION['id']));
+				$verif->execute(array($line['group'], $_SESSION['id']));
 				if ($verif->fetch() OR $view > 5)
 				{
 					$groupok ++;
