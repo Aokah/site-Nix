@@ -90,7 +90,13 @@
 								
 								<a href="index?p=forum" class="link">
 									<div>
-										Forums
+										Forums Généraux
+									</div>
+								</a>
+								
+								<a href="index?p=forumg" class="link">
+									<div>
+										Forums de Guildes
 									</div>
 								</a>
 								
