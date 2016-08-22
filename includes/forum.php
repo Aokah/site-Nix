@@ -373,10 +373,10 @@
 				}
 				$ppage = $page-1;
 				$npage = $page+1;
-				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=1\" title=\"Première Page\">[<<] </a>" : "<span style='color:red'>[<<] </span>";
-				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $ppage ."\" title=\"Page Précédente\">[<]</a>" : "<span style='color:red'>[<]</span>";
-				$next = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $npage ."\" title=\"Page Suivante\"> [>]</a>" : "<span style='color:red'> [>]</span>";
-				$last = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $plimit ."\" title=\"Dernière Page\"> [>>]</a>" : "<span style='color:red'> [>>]</span>";
+				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=1\" title=\"Première Page\" class=\"name1\">[<<] </a>" : "<span class=\"name6\">[<<] </span>";
+				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $ppage ."\" title=\"Page Précédente\" class=\"name1\">[<]</a>" : "<span class=\"name6\">[<]</span>";
+				$next = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $npage ."\" title=\"Page Suivante\" class=\"name1\"> [>]</a>" : "<span class=\"name6\"> [>]</span>";
+				$last = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $plimit ."\" title=\"Dernière Page\" class=\"name1\"> [>>]</a>" : "<span class=\"name6\"> [>>]</span>";
 			?>
 			
 				<table cellspacing="1" cellpadding="5" width="90%" align="center">
