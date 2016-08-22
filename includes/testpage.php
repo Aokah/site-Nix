@@ -19,6 +19,10 @@
 				RIGHT JOIN forum_post fp ON fp.forum_id = fu.forum_id
 				WHERE fu.unread = 0 AND fu.forum_id = ? AND fu.user_id = ? AND ADDDATE(fp.post_date, INTERVAL "1" MONTH) > NOW()');
 				$preselect->execute(array($presel['id'], $_SESSION['id']));
+				while ($line_ = $preselect->fetch())
+				{
+					
+				}
 				
 			?>
 			<h4><a href="index?p=forum&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
