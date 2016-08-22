@@ -63,7 +63,7 @@
 		$cat = intval($_GET['cat']);
 		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ?'); $verify->execute(array($cat));
 		$verify = $verify->fetch();
-		if ($verify['group'] == 0)
+		if ($verify['guild'] == 0)
 		{
 			echo '<p>Ce forum n\'est pas un forum de groupe.</p>';
 		}
@@ -519,7 +519,7 @@
 			while ($line = $select->fetch())
 			{
 				$verif = $db->prepare('SELECT * FROM group_members WHERE group_id = ? AND user_id = ? AND user_rank > 0');
-				$verif->execute(array($line['group'], $_SESSION['id']));
+				$verif->execute(array($line['guild'], $_SESSION['id']));
 				if ($verif->fetch() OR $view > 5)
 				{
 					$groupok ++;
