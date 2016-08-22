@@ -1,5 +1,6 @@
 <?php function testpage()
 {
+	global $db;
 	
 	$view = $_SESSION['rank'];
 	$select = $db->prepare('SELECT * FROM forum_category WHERE guild = 0 AND rank <= ? ORDER BY rank ASC, name ASC'); $select->execute(array($view));
