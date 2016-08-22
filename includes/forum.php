@@ -450,7 +450,6 @@
 							else
 							{
 								$delbutton = ($view > 5)? "<br /><a href='index?p=forumg&forum=" . $forum ."&restore=" . $line['id'] ."' style='color:aqua;' />[Restaurer]</a>" : "";
-							
 							}
 							$editbutton = ($view > 4 AND $view >= $ranksel['rank'] OR $_SESSION['id'] == $line['user_id'] AND $line['post_date'] == NOW())? "<br /><a href='index?p=forum&forum=" . $forum ."&edit=" . $line['id'] ."' style='color:blue;' />[Modifier]</a>": "";
 							
