@@ -373,10 +373,10 @@
 				}
 				$ppage = $page-1;
 				$npage = $page+1;
-				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "\" &page=1>[Première Page] </a>" : "";
-				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "\" &page=". $ppage .">[Page Précédente]</a>" : "";
-				$next = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "\" &page=". $npage ."> [Page Suivante]</a>" : "";
-				$last = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "\" &page=". $plimit ."> [Dernière Page]</a>" : "";
+				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=1\">[Première Page] </a>" : "";
+				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $ppage ."\">[Page Précédente]</a>" : "";
+				$next = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $npage ."\"> [Page Suivante]</a>" : "";
+				$last = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $plimit ."\"> [Dernière Page]</a>" : "";
 			?>
 			<div align="left">
 				<?= $first, $preview, $next, $last; ?>
