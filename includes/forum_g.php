@@ -511,7 +511,7 @@
 	}
 	else
 	{
-		$select = $db->prepare('SELECT * FROM forum_category WHERE guild != 0 AND rank <= ? ORDER BY rank ASC, name ASC'); $select->execute(array($view));
+		$select = $db->prepare('SELECT * FROM forum_category WHERE guild != 0 AND rank <= ? ORDER BY guild ASC, name ASC'); $select->execute(array($view));
 		?>
 		<div width="100%" style="padding:1%" class="forumbg">
 			<?php
