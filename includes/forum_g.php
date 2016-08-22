@@ -244,12 +244,12 @@
 					</div>
 				<?php
 			}
-		}
-		else
-		{
-		?>
-			<p>Vous n'avez pas les droits nécessaires pour visionner cette catégorie.</p>
-		<?php
+			else
+			{
+			?>
+				<p>Vous n'avez pas les droits nécessaires pour visionner cette catégorie.</p>
+			<?php
+			}
 		}
 	}
 	elseif (isset($_GET['forum']))
