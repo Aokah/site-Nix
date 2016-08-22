@@ -94,7 +94,7 @@
 				$line = $select->fetch();
 				?>
 				<div width="100%" style="padding:1%" class="forumbg">
-					<h4><a href="index?p=forum">Forum</a> > <?= $line['name']?></h4>
+					<h4><a href="index?p=forumg">Forum</a> > <?= $line['name']?></h4>
 				<?php if (isset($_GET['imp']) OR isset($_GET['norm']) OR isset($_GET['rp']) OR isset($_GET['hrp']) OR isset($_GET['rest']) OR
 				isset($_GET['del']) OR isset($_GET['lock']) OR isset($_GET['unlock']))
 				{
@@ -134,35 +134,35 @@
 								
 									if ($list['important'] == 0)
 									{
-										$imp = "<a href=\"index?p=forum&cat". $cat. "&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
+										$imp = "<a href=\"index?p=forumg&cat". $cat. "&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
 									}
 									else
 									{
-										$imp = "<a href=\"index?p=forum&cat". $cat. "&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
+										$imp = "<a href=\"index?p=forumg&cat". $cat. "&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
 									}
 									if ($list['rp'] == 0)
 									{
-										$srp = "<a href=\"index?p=forum&cat". $cat. "&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
+										$srp = "<a href=\"index?p=forumg&cat". $cat. "&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
 									}
 									else
 									{
-										$srp = "<a href=\"index?p=forum&cat". $cat. "&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
+										$srp = "<a href=\"index?p=forumg&cat". $cat. "&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
 									}
 									if ($list['del'] == 0)
 									{
-										$sdel = "<a href=\"index?p=forum&cat". $cat. "&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
+										$sdel = "<a href=\"index?p=forumg&cat". $cat. "&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
 									}
 									else
 									{
-										$sdel= "<a href=\"index?p=forum&cat". $cat. "&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
+										$sdel= "<a href=\"index?p=forumg&cat". $cat. "&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
 									}
 									if ($list['lock'] == 0)
 									{
-										$slock = "<a href=\"index?p=forum&cat". $cat. "&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
+										$slock = "<a href=\"index?p=forumg&cat". $cat. "&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
 									}
 									else
 									{
-										$slock= "<a href=\"index?p=forum&cat". $cat. "&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
+										$slock= "<a href=\"index?p=forumg&cat". $cat. "&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
 									}
 									$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
 									$del = ($list['del'] == 1)? "<span style='color:red;'>[Supprimé] </span>" : "";
@@ -214,7 +214,7 @@
 										<?
 										}
 										?>
-										<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$del, $important, $rp , $list['name']?></a>
+										<a href="index?p=forumg&forum=<?=$list['id']?>&page=1"><?=$del, $important, $rp , $list['name']?></a>
 									</td>
 									
 									<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
@@ -227,7 +227,7 @@
 									?>
 									<tr>
 										<td>
-											<form action="index?p=forum&cat=<?= $cat?>" method="POST">
+											<form action="index?p=forumg&cat=<?= $cat?>" method="POST">
 												<label for="newsubject">Nouveau sujet : </label><input type="text" name="newsubject" id="newsubject" width="65%" />
 												<input type="submit" name="sendsubject" value="Créer"/><br />
 												<label for="setRP">Considérer le nouveau sujet comme Rôleplay :</label> <input type="checkbox" id="setRP" name="setRP" />
@@ -372,7 +372,7 @@
 			$islock = ($fname['locked'] == 1)? "<span style=\"color:#990000;\">[Vérrouillé". $lockinfo ."]</span> ": "";
 			
 			?>
-			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index?p=forum">Forum</a> > <a href="index?p=forum&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <?= $fname['name']?></h4>
+			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index?p=forumg">Forum</a> > <a href="index?p=forumg&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <?= $fname['name']?></h4>
 			
 			<?php
 				if (isset($_POST['sendnew']) AND isset($_POST['newpost']))
@@ -385,10 +385,10 @@
 				}
 				$ppage = $page-1;
 				$npage = $page+1;
-				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=1\" title=\"Première Page\" class=\"name1\">[<<] </a>" : "<span class=\"name6\">[<<] </span>";
-				$preview = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $ppage ."\" title=\"Page Précédente\" class=\"name1\">[<]</a>" : "<span class=\"name6\">[<]</span>";
-				$next = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $npage ."\" title=\"Page Suivante\" class=\"name1\"> [>]</a>" : "<span class=\"name6\"> [>]</span>";
-				$last = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $plimit ."\" title=\"Dernière Page\" class=\"name1\"> [>>]</a>" : "<span class=\"name6\"> [>>]</span>";
+				$first = ($page > 1)? "<a href=\"index?p=forumg&forum=". $forum . "&page=1\" title=\"Première Page\" class=\"name1\">[<<] </a>" : "<span class=\"name6\">[<<] </span>";
+				$preview = ($page > 1)? "<a href=\"index?p=forumg&forum=". $forum . "&page=". $ppage ."\" title=\"Page Précédente\" class=\"name1\">[<]</a>" : "<span class=\"name6\">[<]</span>";
+				$next = ($page < $plimit)? "<a href=\"index?p=forumg&forum=". $forum . "&page=". $npage ."\" title=\"Page Suivante\" class=\"name1\"> [>]</a>" : "<span class=\"name6\"> [>]</span>";
+				$last = ($page < $plimit)? "<a href=\"index?p=forumg&forum=". $forum . "&page=". $plimit ."\" title=\"Dernière Page\" class=\"name1\"> [>>]</a>" : "<span class=\"name6\"> [>>]</span>";
 			?>
 			
 				<table cellspacing="1" cellpadding="5" width="90%" align="center">
@@ -441,8 +441,8 @@
 							$deleter = $db->prepare('SELECT name, id FROM members WHERE id = ?');
 							$deleter->execute(array($line['deleter_id'])); $del = $deleter->fetch();
 							$delmsg = ($line['del'] == 1)? "<br />(Message Supprimé par " . $del['name'] .")" : "" ;
-							$delbutton = ($view > 4 AND $view >= $ranksel['rank'])? "<br /><a href='index?p=forum&forum=" . $forum ."&del=" . $line['id'] ."' style='color:red;' />[Supprimer]</a>" : "";
-							$editbutton = ($view > 4 AND $view >= $ranksel['rank'] OR $_SESSION['id'] == $line['user_id'] AND $line['post_date'] == NOW())? "<br /><a href='index?p=forum&forum=" . $forum ."&edit=" . $line['id'] ."' style='color:blue;' />[Modifier]</a>": "";
+							$delbutton = ($view > 4 AND $view >= $ranksel['rank'])? "<br /><a href='index?p=forumg&forum=" . $forum ."&del=" . $line['id'] ."' style='color:red;' />[Supprimer]</a>" : "";
+							$editbutton = ($view > 4 AND $view >= $ranksel['rank'] OR $_SESSION['id'] == $line['user_id'] AND $line['post_date'] == NOW())? "<br /><a href='index?p=forumg&forum=" . $forum ."&edit=" . $line['id'] ."' style='color:blue;' />[Modifier]</a>": "";
 							
 						?>
 							<tr class="forumrank<?= $rank?>" <?=$isdel?> >
@@ -468,7 +468,7 @@
 									if (isset($_GET['edit']))
 									{
 									?>
-									<form action="index?p=forum&forum=<?= $forum?>&page=<?= $page?>&edit=<?= $edit['id']?>" method="POST">
+									<form action="index?p=forumg&forum=<?= $forum?>&page=<?= $page?>&edit=<?= $edit['id']?>" method="POST">
 										<label for="newpost" style="text-align:right;">Envoyer une réponse</label><br />
 										<textarea style="width: 95%; height: 120px;" id="newpost" name="newpost"><?= $emsg?></textarea><br />
 										<input type="submit" style="text-align:right;" name="editpost" value="Modifier" />
@@ -478,7 +478,7 @@
 									else
 									{
 									?>
-									<form action="index?p=forum&forum=<?= $forum?>&page=<?= $page?>" method="POST">
+									<form action="index?p=forumg&forum=<?= $forum?>&page=<?= $page?>" method="POST">
 										<label for="newpost" style="text-align:right;">Envoyer une réponse</label><br />
 										<textarea style="width: 95%; height: 120px;" id="newpost" name="newpost"></textarea><br />
 										<?= $anonymebutton ?>
@@ -492,7 +492,7 @@
 								}
 								else
 								{
-									echo "<p>Vous devez être sur la dernière page pour poster une nouvelle réponse, pour se faire, <a href=\"index?p=forum&forum=", $forum, "&page=", $plimit,"\">Cliquez ici</a></p>";
+									echo "<p>Vous devez être sur la dernière page pour poster une nouvelle réponse, pour se faire, <a href=\"index?p=forumg&forum=", $forum, "&page=", $plimit,"\">Cliquez ici</a></p>";
 								}
 								?>
 							</td>
@@ -526,7 +526,7 @@
 					$flist = $db->prepare('SELECT * FROM forum_forum WHERE del = 0 AND category = ? ORDER BY important DESC, last_post DESC LIMIT 10');
 					$flist->execute(array($line['id']));
 				?>
-				<h4><a href="index?p=forum&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
+				<h4><a href="index?p=forumg&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
 				<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
 				<table cellspacing="0" cellpadding="3%" align="center" width="95%">
 					<tbody>
@@ -559,35 +559,35 @@
 							}
 							if ($list['important'] == 0)
 									{
-										$imp = "<a href=\"index?p=forum&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
+										$imp = "<a href=\"index?p=forumg&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
 									}
 									else
 									{
-										$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
+										$imp = "<a href=\"index?p=forumg&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
 									}
 									if ($list['rp'] == 0)
 									{
-										$srp = "<a href=\"index?p=forum&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
+										$srp = "<a href=\"index?p=forumg&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
 									}
 									else
 									{
-										$srp = "<a href=\"index?p=forum&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
+										$srp = "<a href=\"index?p=forumg&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
 									}
 									if ($list['del'] == 0)
 									{
-										$sdel = "<a href=\"index?p=forum&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
+										$sdel = "<a href=\"index?p=forumg&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
 									}
 									else
 									{
-										$sdel= "<a href=\"index?p=forum&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
+										$sdel= "<a href=\"index?p=forumg&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
 									}
 									if ($list['lock'] == 0)
 									{
-										$slock = "<a href=\"index?p=forum&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
+										$slock = "<a href=\"index?p=forumg&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
 									}
 									else
 									{
-										$slock= "<a href=\"index?p=forum&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
+										$slock= "<a href=\"index?p=forumg&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
 									}
 							$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
 							
@@ -637,7 +637,7 @@
 									<?
 									}
 									?>
-								<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
+								<a href="index?p=forumg&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
 							</td>
 							
 							<td <?= $read?> style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
@@ -650,7 +650,7 @@
 				<?php
 				}
 			}
-			if ($groupok == 0) { echo "<p>Vous n'appartenez au acun groupe vous ayant laissé l'autorisation de consulter leur forum.</p>"; }
+			if ($groupok == 0) { echo "<p>Vous n'appartenez à aucun groupe vous ayant laissé l'autorisation de consulter leur forum.</p>"; }
 			?>
 		</div>
 		<?php
