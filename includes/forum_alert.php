@@ -14,7 +14,7 @@
 	else
 	{
 		$add = $db->prepare('INSERT INTO forum_unread VALUES("", ?, ?, 0, 1)');
-		$add->execute(array($forum, $_SESSION['id{']));
+		$add->execute(array($forum, $_SESSION['id']));
 	}
 	$curpage = ($_GET['page'] > 1)? intval($_GET['page']) : 1;
 	
