@@ -480,7 +480,7 @@
 								}
 								else
 								{
-									echo "<p>Vous devez être sur la dernière page pour poster une nouvelle réponse, pour se faiore, <a href=\"index?p=forum&forum=", $forum, "&page=", $plimit,"\">Cliquez ici</a></p>";
+									echo "<p>Vous devez être sur la dernière page pour poster une nouvelle réponse, pour se faire, <a href=\"index?p=forum&forum=", $forum, "&page=", $plimit,"\">Cliquez ici</a></p>";
 								}
 								?>
 							</td>
