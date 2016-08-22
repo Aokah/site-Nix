@@ -448,6 +448,9 @@
 						?>
 						<tr>
 							<td>
+								<?php if ($page == $plimit)
+								{
+								?>
 								<div width="100%" align="center">
 									<?
 									if (isset($_GET['edit']))
@@ -473,6 +476,13 @@
 									}
 									?>
 								</div>
+								<?php
+								}
+								else
+								{
+									echo "<p>Vous devez être sur la dernière page pour poster une nouvelle réponse, pour se faiore, <a href=\"index?p=forum&forum=" $forum "&page=" $plimit"\">Cliquez ici</a></p>";
+								}
+								?>
 							</td>
 						</tr>
 					</tbody>
