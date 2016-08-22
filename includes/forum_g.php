@@ -2,7 +2,7 @@
 {
 	global $db, $_GET, $_SESSION;
 		
-	echo "<h3>Forums</h3>";
+	echo "<h3>Forums de Groupe</h3>";
 	
 	$view = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 0;
 		if ($view > 4)
@@ -63,185 +63,192 @@
 		$cat = intval($_GET['cat']);
 		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ?'); $verify->execute(array($cat));
 		$verify = $verify->fetch();
-		if (isset($_POST['sendsubject']) AND isset($_POST['newsubject']))
+		if ($verify['group'] == 0)
 		{
-			$fimp = (isset($_POST['setImp']))? 1 : 0;
-			$frp = (isset($_POST['setRP']))? 1 : 0;
-			$fname = htmlspecialchars($_POST['newsubject']);
-			
-			$add = $db->prepare('INSERT INTO forum_forum VALUES("", ?, ?, 0, ?, ?, 0, 0, 0, 0)');
-			$add->execute(array($fname, $cat, $fimp, $frp));
+			echo '<p>Ce forum n\'est pas un forum de groupe.</p>';
 		}
-		if ($verif['rank'] <= $view)
+		else
 		{
-			if ($view < 6)
+			if (isset($_POST['sendsubject']) AND isset($_POST['newsubject']))
 			{
-				$flist = $db->prepare('SELECT * FROM forum_forum WHERE category = ? AND del = 0');
-				$flist->execute(array($cat));
+				$fimp = (isset($_POST['setImp']))? 1 : 0;
+				$frp = (isset($_POST['setRP']))? 1 : 0;
+				$fname = htmlspecialchars($_POST['newsubject']);
+				
+				$add = $db->prepare('INSERT INTO forum_forum VALUES("", ?, ?, 0, ?, ?, 0, 0, 0, 0)');
+				$add->execute(array($fname, $cat, $fimp, $frp));
 			}
-			else
+			if ($verif['rank'] <= $view)
 			{
-				$flist = $db->prepare('SELECT * FROM forum_forum WHERE category = ?');
-				$flist->execute(array($cat));
-			}
-			$select = $db->prepare('SELECT * FROM forum_category WHERE id = ?'); $select->execute(array($cat));
-			$line = $select->fetch();
-			?>
-			<div width="100%" style="padding:1%" class="forumbg">
-				<h4><a href="index?p=forum">Forum</a> > <?= $line['name']?></h4>
-			<?php if (isset($_GET['imp']) OR isset($_GET['norm']) OR isset($_GET['rp']) OR isset($_GET['hrp']) OR isset($_GET['rest']) OR
-			isset($_GET['del']) OR isset($_GET['lock']) OR isset($_GET['unlock']))
-			{
-				echo "<p>", $msg, "</p>";
-			}
-			?>
-				<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
-				<table cellspacing="0" cellpadding="3%" align="center" width="95%">
-					<tbody>
-						<tr class="member_top">
-							<th>Sujet</th> <th width="25%">Dernière activité</th>
-						</tr>
-						<?php 
-						while ($list = $flist->fetch())
-						{
-							$important = ($list['important'] == 1) ? '<span style="color:gold;">[Important]</span> ' : "";
-							$verif = $db->prepare('SELECT * FROM forum_unread WHERE user_id = ? AND forum_id = ?');
-							$verif->execute(array($_SESSION['id'], $list['id']));
-							if ($verif = $verif->fetch())
+				if ($view < 6)
+				{
+					$flist = $db->prepare('SELECT * FROM forum_forum WHERE category = ? del = 0');
+					$flist->execute(array($cat));
+				}
+				else
+				{
+					$flist = $db->prepare('SELECT * FROM forum_forum WHERE category = ?');
+					$flist->execute(array($cat));
+				}
+				$select = $db->prepare('SELECT * FROM forum_category WHERE id = ?'); $select->execute(array($cat));
+				$line = $select->fetch();
+				?>
+				<div width="100%" style="padding:1%" class="forumbg">
+					<h4><a href="index?p=forum">Forum</a> > <?= $line['name']?></h4>
+				<?php if (isset($_GET['imp']) OR isset($_GET['norm']) OR isset($_GET['rp']) OR isset($_GET['hrp']) OR isset($_GET['rest']) OR
+				isset($_GET['del']) OR isset($_GET['lock']) OR isset($_GET['unlock']))
+				{
+					echo "<p>", $msg, "</p>";
+				}
+				?>
+					<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
+					<table cellspacing="0" cellpadding="3%" align="center" width="95%">
+						<tbody>
+							<tr class="member_top">
+								<th>Sujet</th> <th width="25%">Dernière activité</th>
+							</tr>
+							<?php 
+							while ($list = $flist->fetch())
 							{
-								if ($verif['unread'] == 1)
+								$important = ($list['important'] == 1) ? '<span style="color:gold;">[Important]</span> ' : "";
+								$verif = $db->prepare('SELECT * FROM forum_unread WHERE user_id = ? AND forum_id = ?');
+								$verif->execute(array($_SESSION['id'], $list['id']));
+								if ($verif = $verif->fetch())
 								{
-									$read = "";
-									$page = $verif['page'];
+									if ($verif['unread'] == 1)
+									{
+										$read = "";
+										$page = $verif['page'];
+									}
+									else
+									{
+										$read = "class=\"unread\"";
+										$page = $verif['page'];
+									}
 								}
 								else
 								{
 									$read = "class=\"unread\"";
-									$page = $verif['page'];
+									$page = 1;
 								}
-							}
-							else
-							{
-								$read = "class=\"unread\"";
-								$page = 1;
-							}
-							
-								if ($list['important'] == 0)
-								{
-									$imp = "<a href=\"index?p=forum&cat". $cat. "&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
-								}
-								else
-								{
-									$imp = "<a href=\"index?p=forum&cat". $cat. "&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
-								}
-								if ($list['rp'] == 0)
-								{
-									$srp = "<a href=\"index?p=forum&cat". $cat. "&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
-								}
-								else
-								{
-									$srp = "<a href=\"index?p=forum&cat". $cat. "&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
-								}
-								if ($list['del'] == 0)
-								{
-									$sdel = "<a href=\"index?p=forum&cat". $cat. "&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
-								}
-								else
-								{
-									$sdel= "<a href=\"index?p=forum&cat". $cat. "&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
-								}
-								if ($list['lock'] == 0)
-								{
-									$slock = "<a href=\"index?p=forum&cat". $cat. "&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
-								}
-								else
-								{
-									$slock= "<a href=\"index?p=forum&cat". $cat. "&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
-								}
-							$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
-							$del = ($list['del'] == 1)? "<span style='color:red;'>[Supprimé] </span>" : "";
-							
-							
-							$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
-							if ($latest = $latest->fetch())
-							{
-								if ($latest['unknow'] == 0)
-								{
-									$member = $db->prepare('SELECT * FROM members WHERE id = ?'); $member->execute(array($latest['user_id']));
-									$member = $member->fetch();
-									$title = $member['title'];
-									$title = ($member['pionier']== 1)? "Pionier" : $title;
-									$title = ($member['ban'] == 1)? "Banni" : $title;
-									$title = ($members['removed'] == 1)? "Oublié" : $title;
-									$user = $member['name'];
-									$tech = ($member['technician'] == 1)? "-T" : "";
-									$pionier = ($member['pionier'] == 1)? "-P" : "";
-									$color = $member['rank']. "" . $tech. "" . $pionier;
-									$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>";
-									$aend = "</a>";
-									$img = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' />";
-								}
-								else
-								{
-									$title = "Message";
-									$user = "Anonyme";
-									$color = "1";
-									$a = "<span class='name" . $color . "'>";
-									$aend = "</span>";
-									$img = "";
-								}
-								$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['post_date']);
 								
-								$last = $img ." ". $a ."" . $title . " ". $user. "". $aend ."<br />" . $date ."";
-							}
-							else
-							{
-								$last = "Aucun message dans ce forum.";
-							}
-						?>
-						<tr class="forumf">
-							<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
-								<?php 
-								if ($view > 5)
+									if ($list['important'] == 0)
+									{
+										$imp = "<a href=\"index?p=forum&cat". $cat. "&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
+									}
+									else
+									{
+										$imp = "<a href=\"index?p=forum&cat". $cat. "&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
+									}
+									if ($list['rp'] == 0)
+									{
+										$srp = "<a href=\"index?p=forum&cat". $cat. "&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
+									}
+									else
+									{
+										$srp = "<a href=\"index?p=forum&cat". $cat. "&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
+									}
+									if ($list['del'] == 0)
+									{
+										$sdel = "<a href=\"index?p=forum&cat". $cat. "&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
+									}
+									else
+									{
+										$sdel= "<a href=\"index?p=forum&cat". $cat. "&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
+									}
+									if ($list['lock'] == 0)
+									{
+										$slock = "<a href=\"index?p=forum&cat". $cat. "&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
+									}
+									else
+									{
+										$slock= "<a href=\"index?p=forum&cat". $cat. "&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
+									}
+								$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
+								$del = ($list['del'] == 1)? "<span style='color:red;'>[Supprimé] </span>" : "";
+								
+								
+								$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
+								if ($latest = $latest->fetch())
 								{
-									echo $sdel, " ", $imp, " ", $srp, " ", $slock?> |
-								<?
+									if ($latest['unknow'] == 0)
+									{
+										$member = $db->prepare('SELECT * FROM members WHERE id = ?'); $member->execute(array($latest['user_id']));
+										$member = $member->fetch();
+										$title = $member['title'];
+										$title = ($member['pionier']== 1)? "Pionier" : $title;
+										$title = ($member['ban'] == 1)? "Banni" : $title;
+										$title = ($members['removed'] == 1)? "Oublié" : $title;
+										$user = $member['name'];
+										$tech = ($member['technician'] == 1)? "-T" : "";
+										$pionier = ($member['pionier'] == 1)? "-P" : "";
+										$color = $member['rank']. "" . $tech. "" . $pionier;
+										$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>";
+										$aend = "</a>";
+										$img = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' />";
+									}
+									else
+									{
+										$title = "Message";
+										$user = "Anonyme";
+										$color = "1";
+										$a = "<span class='name" . $color . "'>";
+										$aend = "</span>";
+										$img = "";
+									}
+									$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['post_date']);
+									
+									$last = $img ." ". $a ."" . $title . " ". $user. "". $aend ."<br />" . $date ."";
 								}
-								?>
-								<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$del, $important, $rp , $list['name']?></a>
-							</td>
-							
-							<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
-						</tr>
-						<?php
-						}
-						if ($view > 0)
-						{
-							$importantbutton = ($view > 5)? "<br /><label for='setImp'>Considérer le nouveau sujet comme Important : </label><input type='checkbox' name='setImp' id='setImp' />": "";
+								else
+								{
+									$last = "Aucun message dans ce forum.";
+								}
 							?>
-							<tr>
-								<td>
-									<form action="index?p=forum&cat=<?= $cat?>" method="POST">
-										<label for="newsubject">Nouveau sujet : </label><input type="text" name="newsubject" id="newsubject" width="65%" />
-										<input type="submit" name="sendsubject" value="Créer"/><br />
-										<label for="setRP">Considérer le nouveau sujet comme Rôleplay :</label> <input type="checkbox" id="setRP" name="setRP" />
-										<?= $importantbutton ?>
-									</form>
+							<tr class="forumf">
+								<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
+									<?php 
+									if ($view > 5)
+									{
+										echo $sdel, " ", $imp, " ", $srp, " ", $slock?> |
+									<?
+									}
+									?>
+									<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$del, $important, $rp , $list['name']?></a>
 								</td>
 								
+								<td <?= $read?>  style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
 							</tr>
-						<?php
-						}
-						?>
-					</tbody>
-				</table>
-			</div>
-			<?php
+							<?php
+							}
+							if ($view > 0)
+							{
+								$importantbutton = ($view > 5)? "<br /><label for='setImp'>Considérer le nouveau sujet comme Important : </label><input type='checkbox' name='setImp' id='setImp' />": "";
+								?>
+								<tr>
+									<td>
+										<form action="index?p=forum&cat=<?= $cat?>" method="POST">
+											<label for="newsubject">Nouveau sujet : </label><input type="text" name="newsubject" id="newsubject" width="65%" />
+											<input type="submit" name="sendsubject" value="Créer"/><br />
+											<label for="setRP">Considérer le nouveau sujet comme Rôleplay :</label> <input type="checkbox" id="setRP" name="setRP" />
+											<?= $importantbutton ?>
+										</form>
+									</td>
+									
+								</tr>
+							<?php
+							}
+							?>
+						</tbody>
+					</table>
+				</div>
+				<?php
+			}
 		}
 		else
 		{
 		?>
-			<p>Vous n'avez pas les droits nécessaires pour visinner cette catégorie.</p>
+			<p>Vous n'avez pas les droits nécessaires pour visionner cette catégorie.</p>
 		<?php
 		}
 	}
@@ -508,134 +515,142 @@
 		?>
 		<div width="100%" style="padding:1%" class="forumbg">
 			<?php
+			$groupok = 0;
 			while ($line = $select->fetch())
 			{
-				$flist = $db->prepare('SELECT * FROM forum_forum WHERE del = 0 AND category = ? ORDER BY important DESC, last_post DESC LIMIT 10');
-				$flist->execute(array($line['id']));
-			?>
-			<h4><a href="index?p=forum&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
-			<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
-			<table cellspacing="0" cellpadding="3%" align="center" width="95%">
-				<tbody>
-					<tr class="member_top">
-						<th>Sujet</th> <th width="25%">Dernière activité</th>
-					</tr>
-					<?php 
-					while ($list = $flist->fetch())
-					{
-						$important = ($list['important'] == 1) ? '<span style="color:gold;">[Important]</span> ' : "";
-						$verif = $db->prepare('SELECT * FROM forum_unread WHERE user_id = ? AND forum_id = ?');
-						$verif->execute(array($_SESSION['id'], $list['id']));
-						if ($verif = $verif->fetch())
+				$verif = $db->prepare('SELECT * FROM group_members WHERE group_id = ? AND user_id = ? AND user_rank > 0');
+				$verif = $db->execute(array($line['group'], $_SESSION['id']));
+				if ($verif->fetch() OR $view > 5)
+				{
+					$groupok ++;
+					$flist = $db->prepare('SELECT * FROM forum_forum WHERE del = 0 AND category = ? ORDER BY important DESC, last_post DESC LIMIT 10');
+					$flist->execute(array($line['id']));
+				?>
+				<h4><a href="index?p=forum&cat=<?= $line['id']?>"><?= $line['name']?></a></h4>
+				<p><img src="pics/forumcat_<?= $line['id']?>.png" class="guild" /></p>
+				<table cellspacing="0" cellpadding="3%" align="center" width="95%">
+					<tbody>
+						<tr class="member_top">
+							<th>Sujet</th> <th width="25%">Dernière activité</th>
+						</tr>
+						<?php 
+						while ($list = $flist->fetch())
 						{
-							if ($verif['unread'] == 1)
+							$important = ($list['important'] == 1) ? '<span style="color:gold;">[Important]</span> ' : "";
+							$verif = $db->prepare('SELECT * FROM forum_unread WHERE user_id = ? AND forum_id = ?');
+							$verif->execute(array($_SESSION['id'], $list['id']));
+							if ($verif = $verif->fetch())
 							{
-								$read = "";
-								$page = $verif['page'];
+								if ($verif['unread'] == 1)
+								{
+									$read = "";
+									$page = $verif['page'];
+								}
+								else
+								{
+									$read = "class=\"unread\"";
+									$page = $verif['page'];
+								}
 							}
 							else
 							{
 								$read = "class=\"unread\"";
-								$page = $verif['page'];
+								$page = 1;
 							}
-						}
-						else
-						{
-							$read = "class=\"unread\"";
-							$page = 1;
-						}
-						if ($list['important'] == 0)
-								{
-									$imp = "<a href=\"index?p=forum&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
-								}
-								else
-								{
-									$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
-								}
-								if ($list['rp'] == 0)
-								{
-									$srp = "<a href=\"index?p=forum&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
-								}
-								else
-								{
-									$srp = "<a href=\"index?p=forum&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
-								}
-								if ($list['del'] == 0)
-								{
-									$sdel = "<a href=\"index?p=forum&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
-								}
-								else
-								{
-									$sdel= "<a href=\"index?p=forum&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
-								}
-								if ($list['lock'] == 0)
-								{
-									$slock = "<a href=\"index?p=forum&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
-								}
-								else
-								{
-									$slock= "<a href=\"index?p=forum&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
-								}
-						$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
-						
-						$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
-						if ($latest = $latest->fetch())
-						{
-							if ($latest['unknow'] == 0)
+							if ($list['important'] == 0)
+									{
+										$imp = "<a href=\"index?p=forum&imp=". $list['id']. "\" style=\"color:gold;\">[I]</a>";
+									}
+									else
+									{
+										$imp = "<a href=\"index?p=forum&norm=". $list['id']. "\" style=\"color:blue;\">[N]</a>";
+									}
+									if ($list['rp'] == 0)
+									{
+										$srp = "<a href=\"index?p=forum&hrp=". $list['id']. "\" style=\"color:gray;\">[sHRP]</a>";
+									}
+									else
+									{
+										$srp = "<a href=\"index?p=forum&rp=". $list['id']. "\" style=\"color:lime;\">[sRP]</a>";
+									}
+									if ($list['del'] == 0)
+									{
+										$sdel = "<a href=\"index?p=forum&del=". $list['id']. "\" style=\"color:red;\">[X]</a>";
+									}
+									else
+									{
+										$sdel= "<a href=\"index?p=forum&rest". $list['id']. "\" style=\"color:blue;\">[X]</a>";
+									}
+									if ($list['lock'] == 0)
+									{
+										$slock = "<a href=\"index?p=forum&lock=". $list['id']. "\" style=\"color:gold;\">[V]</a>";
+									}
+									else
+									{
+										$slock= "<a href=\"index?p=forum&unlock=". $list['id']. "\" style=\"color:gray;\">[dV]</a>";
+									}
+							$rp = ($list['rp'] == 1) ? "<span style='color:lime;'> [RP] </span>" : "";
+							
+							$latest = $db->prepare('SELECT * FROM forum_post WHERE forum_id = ? ORDER BY id DESC'); $latest->execute(array($list['id']));
+							if ($latest = $latest->fetch())
 							{
-								$member = $db->prepare('SELECT * FROM members WHERE id = ?'); $member->execute(array($latest['user_id']));
-								$member = $member->fetch();
-								$title = $member['title'];
-								$title = ($member['pionier']== 1)? "Pionier" : $title;
-								$title = ($member['ban'] == 1)? "Banni" : $title;
-								$title = ($members['removed'] == 1)? "Oublié" : $title;
-								$user = $member['name'];
-								$tech = ($member['technician'] == 1)? "-T" : "";
-								$pionier = ($member['pionier'] == 1)? "-P" : "";
-								$color = $member['rank']. "" . $tech. "" . $pionier;
-								$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>";
-								$aend = "</a>";
-								$img = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' />";
+								if ($latest['unknow'] == 0)
+								{
+									$member = $db->prepare('SELECT * FROM members WHERE id = ?'); $member->execute(array($latest['user_id']));
+									$member = $member->fetch();
+									$title = $member['title'];
+									$title = ($member['pionier']== 1)? "Pionier" : $title;
+									$title = ($member['ban'] == 1)? "Banni" : $title;
+									$title = ($members['removed'] == 1)? "Oublié" : $title;
+									$user = $member['name'];
+									$tech = ($member['technician'] == 1)? "-T" : "";
+									$pionier = ($member['pionier'] == 1)? "-P" : "";
+									$color = $member['rank']. "" . $tech. "" . $pionier;
+									$a = "<a class='name". $color ."' href='index?p=perso&perso=" . $member['id'] ."'>";
+									$aend = "</a>";
+									$img = "<img src='pics/avatar/miniskin_" . $latest['user_id'] . ".png' alt='' width='6%' />";
+								}
+								else
+								{
+									$title = "Message";
+									$user = "Anonyme";
+									$color = "1";
+									$a = "<span class='name" . $color . "'>";
+									$aend = "</span>";
+									$img = "";
+								}
+								$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['post_date']);
+								
+								$last = $img ." ". $a ."" . $title . " ". $user. "". $aend ."<br />" . $date ."";
 							}
 							else
 							{
-								$title = "Message";
-								$user = "Anonyme";
-								$color = "1";
-								$a = "<span class='name" . $color . "'>";
-								$aend = "</span>";
-								$img = "";
+								$last = "Aucun message dans ce forum.";
 							}
-							$date = preg_replace('#^(.{4})-(.{2})-(.{2}) (.{2}:.{2}):.{2}$#', 'Le $3/$2/$1 à $4', $latest['post_date']);
+						?>
+						<tr class="forumf">
+							<td <?= $read?> style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
+								<?php 
+									if ($view > 5)
+									{
+										echo $sdel, " ", $imp, " ", $srp, " ", $slock?> |
+									<?
+									}
+									?>
+								<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
+							</td>
 							
-							$last = $img ." ". $a ."" . $title . " ". $user. "". $aend ."<br />" . $date ."";
+							<td <?= $read?> style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
+						</tr>
+						<?php
 						}
-						else
-						{
-							$last = "Aucun message dans ce forum.";
-						}
-					?>
-					<tr class="forumf">
-						<td <?= $read?> style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid;">
-							<?php 
-								if ($view > 5)
-								{
-									echo $sdel, " ", $imp, " ", $srp, " ", $slock?> |
-								<?
-								}
-								?>
-							<a href="index?p=forum&forum=<?=$list['id']?>&page=1"><?=$important, $rp , $list['name']?></a>
-						</td>
-						
-						<td <?= $read?> style="border-bottom: solid 2px black; border-left: solid 2px black; border-right: black 2px solid; text-align:center;"><?= $last ?></td>
-					</tr>
-					<?php
-					}
-					?>
-				</tbody>
-			</table>
-			<?php
+						?>
+					</tbody>
+				</table>
+				<?php
+				}
 			}
+			if ($groupok == 0) { echo "<p>Vous n'appartenez au acun groupe vous ayant laissé l'autorisation de consulter leur forum.</p>"; }
 			?>
 		</div>
 		<?php
