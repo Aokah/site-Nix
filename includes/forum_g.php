@@ -444,7 +444,16 @@
 							$deleter = $db->prepare('SELECT name, id FROM members WHERE id = ?');
 							$deleter->execute(array($line['deleter_id'])); $del = $deleter->fetch();
 							$delmsg = ($line['del'] == 1)? "<br />(Message Supprimé par " . $del['name'] .")" : "" ;
-							$delbutton = ($view > 4 AND $view >= $ranksel['rank'])? "<br /><a href='index?p=forumg&forum=" . $forum ."&del=" . $line['id'] ."' style='color:red;' />[Supprimer]</a>" : "";
+							if ($line['del'] == 1)
+							{
+								$delbutton = ($view > 4 AND $view >= $ranksel['rank'])? "<br /><a href='index?p=forumg&forum=" . $forum ."&del=" . $line['id'] ."' style='color:red;' />[Supprimer]</a>" : "";
+							}
+							else
+							{
+								$delbutton = ($view > 5)? "<br /><a href='index?p=forumg&forum=" . $forum ."&restore=" . $line['id'] ."' style='color:aqua;' />[Restaurer]</a>" : "";
+							
+							}
+							
 							$editbutton = ($view > 4 AND $view >= $ranksel['rank'] OR $_SESSION['id'] == $line['user_id'] AND $line['post_date'] == NOW())? "<br /><a href='index?p=forumg&forum=" . $forum ."&edit=" . $line['id'] ."' style='color:blue;' />[Modifier]</a>": "";
 							
 						?>
