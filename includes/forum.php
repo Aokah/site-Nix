@@ -373,12 +373,12 @@
 				}
 				$ppage = $page-1;
 				$npage = $page+1;
-				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=1\">[Première Page] </a>" : "";
-				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $ppage ."\">[Page Précédente]</a>" : "";
-				$next = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $npage ."\"> [Page Suivante]</a>" : "";
-				$last = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $plimit ."\"> [Dernière Page]</a>" : "";
+				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=1\" title=\"Première Page\">[<<] </a>" : "";
+				$first = ($page > 1)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $ppage ."\" title=\"Page Précédente\">[<]</a>" : "";
+				$next = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $npage ."\" title=\"Page Suivante\"> [>]</a>" : "";
+				$last = ($page < $plimit)? "<a href=\"index?p=forum&forum=". $forum . "&page=". $plimit ."\" title=\"Dernière Page\"> [>>]</a>" : "";
 			?>
-			<div align="left">
+			<div align="right">
 				<?= $first, $preview, $next, $last; ?>
 			</div>
 				<table cellspacing="1" cellpadding="5" width="90%" align="center">
