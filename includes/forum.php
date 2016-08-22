@@ -239,6 +239,7 @@
 					</table>
 				</div>
 				<?php
+			}
 		}
 		else
 		{
