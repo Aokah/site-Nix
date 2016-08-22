@@ -275,8 +275,8 @@
 			
 			$add = $db->prepare("INSERT INTO forum_post VALUES('', ?, NOW(), ?, ?, ?, 0, 0)");
 			$add->execute(array($text, $_SESSION['id'], $forum, $anonyme));
-			$update = $db->prepare('UPDATE forum_unread SET unread = 0 WHERE forum_id = ?');
-			$update->execute(array($forum));
+			
+			include ('includes/forum_post.php'); post();
 		}
 		elseif (isset($_GET['del']))
 		{
@@ -375,6 +375,9 @@
 			<h4><?=$islock , $isimportant, $isdel, $isrp?><a href="index?p=forumg">Forum</a> > <a href="index?p=forumg&cat=<?= $fname['id']?>"><?= $fname['fc_name'] ?></a> > <?= $fname['name']?></h4>
 			
 			<?php
+			
+				include ("includes/forum_alert.php"); unread();
+				
 				if (isset($_POST['sendnew']) AND isset($_POST['newpost']))
 				{
 					echo "Message envoyé avec succès !";
@@ -454,6 +457,13 @@
 									?>
 								</td>
 							</tr>
+							<tr>
+							<td colspan="2">
+								<div align="right">
+									<?= $first, $preview, $next, $last; ?>
+								</div>
+							</td>
+						</tr>
 						<?php		
 						}
 						$anonymebutton = ($line['rp'] == 1) ? "<label for='sendunknow'>Envoyer ensans signature</label> <input type='check' name='sendunknow' id='sendunknow' /><br />" : "";
