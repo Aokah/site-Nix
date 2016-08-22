@@ -443,7 +443,7 @@
 							$deleter = $db->prepare('SELECT name, id FROM members WHERE id = ?');
 							$deleter->execute(array($line['deleter_id'])); $del = $deleter->fetch();
 							$delmsg = ($line['del'] == 1)? "<br />(Message Supprimé par " . $del['name'] .")" : "" ;
-							if ($line['del'] == 1)
+							if ($line['del'] == 0)
 							{
 								$delbutton = ($view > 4 AND $view >= $ranksel['rank'])? "<br /><a href='index?p=forumg&forum=" . $forum ."&del=" . $line['id'] ."' style='color:red;' />[Supprimer]</a>" : "";
 							}
