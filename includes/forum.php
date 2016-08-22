@@ -275,8 +275,6 @@
 			
 			$add = $db->prepare("INSERT INTO forum_post VALUES('', ?, NOW(), ?, ?, ?, 0, 0)");
 			$add->execute(array($text, $_SESSION['id'], $forum, $anonyme));
-			$update = $db->prepare('UPDATE forum_unread SET unread = 0 WHERE forum_id = ?');
-			$update->execute(array($forum));
 			
 			include ('includes/forum_post.php'); post();
 		}
@@ -458,6 +456,13 @@
 									?>
 								</td>
 							</tr>
+							<tr>
+							<td colspan="2">
+								<div align="right">
+									<?= $first, $preview, $next, $last; ?>
+								</div>
+							</td>
+						</tr>
 						<?php		
 						}
 						$anonymebutton = ($line['rp'] == 1) ? "<label for='sendunknow'>Envoyer ensans signature</label> <input type='check' name='sendunknow' id='sendunknow' /><br />" : "";
