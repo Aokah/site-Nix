@@ -8,7 +8,7 @@
 		{
 			if (isset($_GET['k']))
 			{
-				$answer = $db->prepare('SELECT activate, rank FROM members WHERE id=?');
+				$answer = $db->prepare('SELECT activate, rank FROM members WHERE id= ?');
 				$answer->execute(array($_SESSION['id']));
 				$line = $answer->fetch();
 
