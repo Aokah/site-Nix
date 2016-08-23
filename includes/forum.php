@@ -330,6 +330,7 @@
 			
 		if ($verify['rank'] <= $view)
 		{
+			echo $view, ' ' $verify['rank'];
 			$page = (isset($_GET['page']) AND $_GET['page'] > 0)? intval($_GET['page']) : 1;
 			$fname = $db->prepare('SELECT fc.id, fc.name AS fc_name, ff.name, ff.id AS ff_id, ff.category, ff.locker_id, ff.deleter_id, ff.rp, ff.important, ff.del, ff.locked FROM forum_category fc
 			RIGHT JOIN forum_forum ff ON fc.id = ff.category
