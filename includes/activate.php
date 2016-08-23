@@ -8,8 +8,8 @@
 		{
 			if (isset($_GET['k']))
 			{
-				$answer = $db->prepare('SELECT activate, rank FROM members WHERE name=?');
-				$answer->execute(array($_SESSION['name']));
+				$answer = $db->prepare('SELECT activate, rank FROM members WHERE id=?');
+				$answer->execute(array($_SESSION['id']));
 				$line = $answer->fetch();
 
 				if ($line['activate'] == 'true')
@@ -23,21 +23,15 @@
 					{
 						if ($line['rank'] == 0)
 						{
-							$update = $db->prepare("UPDATE members SET activate='true', rank=1 WHERE name=?");
-							$update->execute(array($_SESSION['name']));
+							$update = $db->prepare("UPDATE members SET activate='true', rank=1 WHERE id=?");
+							$update->execute(array($_SESSION['id']));
 
-							$answer = $db->query('SELECT id FROM forum_forum');
-
-							while ($line = $answer->fetch())
-							{
-								$insert = $db->prepare("INSERT INTO forum_unread VALUES ('', ?, ?, 1)");
-								$insert->execute(array($line['id'], $_SESSION['id']));
-							}
+							
 						}
 						else
 						{
-							$update = $db->prepare("UPDATE members SET activate='true' WHERE name=?");
-							$update->execute(array($_SESSION['name']));
+							$update = $db->prepare("UPDATE members SET activate='true' WHERE id=?");
+							$update->execute(array($_SESSION['id']));
 						}
 						$_SESSION['alertEmail'] = false;
 						$_SESSION['rank'] = 1;
