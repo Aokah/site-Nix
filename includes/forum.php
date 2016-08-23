@@ -255,7 +255,10 @@
 	elseif (isset($_GET['forum']))
 	{
 		$forum = intval($_GET['forum']);
-		$verify = $db->prepare('SELECT * FROM forum_category WHERE id = ?');
+		$verify = $db->prepare('SELECT c.id, f.category, f.id AS f_id, c.rank
+		FROM forum_category c
+		RIGHT JOING forum_forum f ON f.category = c.id
+		WHERE f.id = ?');
 		$verify->execute(array($forum));
 		$verify = $verify->fetch();
 		
