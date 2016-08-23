@@ -449,13 +449,13 @@
 							$delmsg = ($line['del'] == 1)? "<br />(Message Supprimé par " . $del['name'] .")" : "" ;
 							if ($line['del'] == 0)
 							{
-								$delbutton = ($view > 4 AND $view >= $ranksel['rank'])? "<br /><a href='index?p=forumg&forum=" . $forum ."&del=" . $line['id'] ."' style='color:red;' />[Supprimer]</a>" : "";
+								$delbutton = ($view > 4 AND $view >= $ranksel['rank'])? "<br /><a href='index?p=forumg&forum=" . $forum ."&page=" . $page ."&del=" . $line['id'] ."' style='color:red;' />[Supprimer]</a>" : "";
 							}
 							else
 							{
-								$delbutton = ($view > 5)? "<br /><a href='index?p=forumg&forum=" . $forum ."&restore=" . $line['id'] ."' style='color:aqua;' />[Restaurer]</a>" : "";
+								$delbutton = ($view > 5)? "<br /><a href='index?p=forumg&forum=" . $forum ."&page=" . $page . "&restore=" . $line['id'] ."' style='color:aqua;' />[Restaurer]</a>" : "";
 							}
-							$editbutton = ($view > 4 AND $view >= $ranksel['rank'] OR $_SESSION['id'] == $line['user_id'] AND $line['post_date'] == NOW())? "<br /><a href='index?p=forum&forum=" . $forum ."&edit=" . $line['id'] ."' style='color:blue;' />[Modifier]</a>": "";
+							$editbutton = ($view > 4 AND $view >= $ranksel['rank'] OR $_SESSION['id'] == $line['user_id'] AND $line['post_date'] == NOW())? "<br /><a href='index?p=forum&forum=" . $forum ."&page=" . $page. "&edit=" . $line['id'] ."' style='color:blue;' />[Modifier]</a>": "";
 							
 						?>
 							<tr class="forumrank<?= $rank?>" <?=$isdel?> >
