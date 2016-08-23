@@ -328,7 +328,7 @@
 			}
 		}
 			
-		echo $view, $verify['rank'];
+		echo $view,'/', $verify['rank'];
 		
 		if ($verify['rank'] <= $view)
 		{
