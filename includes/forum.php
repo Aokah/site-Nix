@@ -480,7 +480,7 @@
 						</tr>
 						<tr>
 							<td>
-								<?php if ($page == $plimit)
+								<?php if ($page == $plimit OR isset($_GET['edit']))
 								{
 								?>
 								<div width="100%" align="center">
