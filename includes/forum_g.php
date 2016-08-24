@@ -82,7 +82,7 @@
 			{
 				if ($view < 6)
 				{
-					$flist = $db->prepare('SELECT * FROM forum_forum WHERE category = ? del = 0');
+					$flist = $db->prepare('SELECT * FROM forum_forum WHERE category = ? AND del = 0');
 					$flist->execute(array($cat));
 				}
 				else
