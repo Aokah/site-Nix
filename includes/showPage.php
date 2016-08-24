@@ -25,7 +25,7 @@
 		$sel_rank = $sel_rank->fetch();
 		$_SESSION['rank'] = $sel_rank['rank'];
 		
-		if ($account['ban'] == 1 OR $account['removed'] == 1)
+		if ($account['ban'] == 1 OR $account['removed'] == 1 OR $account['locked'] == 1)
 		{
 			$_SESSION['connected'] = false;
 		}
